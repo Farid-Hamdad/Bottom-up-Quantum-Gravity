@@ -1,0 +1,538 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{authblk}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{braket}
+
+\geometry{margin=2.5cm}
+\setstretch{1.15}
+
+\definecolor{myblue}{RGB}{0,82,147}
+\definecolor{mygreen}{RGB}{0,128,0}
+\definecolor{myred}{RGB}{180,0,0}
+
+% Figures live in repo_root/figures/, while this .tex is in repo_root/paper/
+\graphicspath{{../figures/}}
+
+\title{\textbf{Up\_Bottom Gravity:}\\
+\vspace{0.3em}
+\Large{Une Théorie de l'Émergence Gravitationnelle}\\
+\vspace{0.3em}
+\large{Espace, Temps et Gravité depuis l'Intrication Quantique}}
+
+\author{Farid Hamdad}
+\date{Février 2026}
+
+\begin{document}
+
+\maketitle
+
+\vspace{1em}
+\begin{center}
+\itshape
+L’intrication est une structure géométrique.\\
+Ce que nous appelons espace est le motif collectif de ces corrélations.\\
+Ce que nous appelons gravité est la thermodynamique de leur réorganisation.
+\end{center}
+\vspace{1.5em}
+
+\begin{abstract}
+\begin{tcolorbox}[colback=gray!10,colframe=myblue,title=Résumé Opérationnel]
+Nous présentons le cadre \textbf{Up\_Bottom Gravity} dans lequel l'espace-temps et la gravité ne sont pas fondamentaux mais émergent de l'intrication quantique d'un état global $\ket{\Psi}$. Le temps est le flot modulaire des corrélations, l'espace est la géométrie informationnelle déduite de l'entropie d'intrication, et la gravité est la thermodynamique de leur réorganisation. Nous validons numériquement quatre prédictions: (1) une relation de type Jacobson $\delta S \simeq \delta E/T$, (2) une causalité effective compatible avec Lieb-Robinson, (3) l'émergence dimensionnelle $2\text{D} \to 3\text{D}$ via intrication non-locale, et (4) une signature opérationnelle de la correspondance ER=EPR (raccourcis géodésiques induits par l'intrication).
+\end{tcolorbox}
+\end{abstract}
+
+%=============================================================================
+\section{Ontologie Minimale: Le Postulat Fondamental}
+%=============================================================================
+
+\begin{tcolorbox}[colback=myblue!5,colframe=myblue,title=Postulat Unique]
+Il existe un état quantique global pur $\ket{\Psi} \in \mathcal{H} = \bigotimes_{i \in V} \mathcal{H}_i$ où $V$ indexe un ensemble de degrés de liberté élémentaires (qubits).
+\end{tcolorbox}
+
+\textbf{Ce qui est absent:}
+\begin{itemize}
+    \item Aucun espace-temps préexistant
+    \item Aucune métrique a priori
+    \item Aucune structure causale externe
+    \item Aucun champ classique
+\end{itemize}
+
+L'état $\ket{\Psi}$ est \textbf{atemporel} dans le sens où il n'évolue pas par rapport à un temps externe. C'est le ``bloc'' entier de l'existence quantique. Toute dynamique doit émerger de structures relationnelles \emph{internes} à $\ket{\Psi}$.
+
+%=============================================================================
+\section{Temps Émergent: Le Flot Modulaire}
+%=============================================================================
+
+\subsection{Partition et Horloge Interne}
+
+On partitionne l'espace de Hilbert:
+\begin{equation}
+\mathcal{H} = \mathcal{H}_C \otimes \mathcal{H}_S
+\end{equation}
+où $C$ est une sous-système ``horloge'' et $S$ est le ``système'' (le reste).
+
+\textbf{Contrainte de temps sans temps:}
+\begin{equation}
+(\hat{H}_C + \hat{H}_S)\ket{\Psi} = 0
+\end{equation}
+Cette contrainte exprime l'absence de temps externe : la dynamique est relationnelle.
+
+\subsection{Flot Modulaire comme Temps Relationnel}
+
+Pour toute région $A$:
+\begin{equation}
+\rho_A = \mathrm{Tr}_{\bar{A}} \ket{\Psi}\bra{\Psi}, \qquad K_A = -\log \rho_A
+\end{equation}
+
+Le \textbf{temps modulaire} $\tau$ est défini par:
+\begin{equation}
+\mathcal{O}(\tau) = e^{i K_A \tau} \mathcal{O} e^{-i K_A \tau}
+\end{equation}
+
+\textbf{Interprétation:} le temps n'est pas un paramètre externe mais un \textbf{paramètre interne} lié aux corrélations : une ``lecture'' relationnelle induite par le flot modulaire.
+
+%=============================================================================
+\section{Espace Émergent: Géométrie Informationnelle}
+%=============================================================================
+
+\subsection{Distance Informationnelle}
+
+L'\textbf{information mutuelle} entre sites définit une proximité émergente:
+\begin{equation}
+I(i:j) = S(i) + S(j) - S(ij)
+\end{equation}
+
+On définit une distance informationnelle effective:
+\begin{equation}
+d_{ij} = -\log \frac{I(i:j)}{I_{\max}}
+\end{equation}
+
+Cette distance n'est pas nécessairement une métrique stricte (au sens de l'inégalité triangulaire), mais constitue une quantité opérationnelle : des degrés de liberté fortement corrélés sont géométriquement proches dans l'espace émergent reconstruit.
+
+\subsection{Laplacien et Structure Géométrique}
+
+Le graphe d'intrication a pour Laplacien:
+\begin{equation}
+L = D - W, \quad W_{ij} = I(i:j), \quad D_{ii} = \sum_j W_{ij}
+\end{equation}
+
+Dans la limite continue, ce Laplacien discret joue un rôle analogue à l'opérateur de Laplace-Beltrami.
+
+\subsection{Loi d'Aire Holographique}
+
+Pour des états fondamentaux gappés, l'entropie d'intrication admet typiquement une loi d'aire:
+\begin{equation}
+S(A) = \alpha |\partial A| + \gamma + \mathcal{O}(1/|\partial A|)
+\end{equation}
+signature d'un stockage de l'information sur la frontière, plutôt que dans le volume.
+
+%=============================================================================
+\section{Champs de Jauge Émergents: Structure Topologique}
+%=============================================================================
+
+\subsection{Code de Surface $Z_2$}
+
+Sur un réseau discret, on peut implémenter un code topologique de type surface:
+\begin{itemize}
+    \item Opérateurs étoile: $A_v = \prod_{e \ni v} X_e$
+    \item Opérateurs plaquette: $B_p = \prod_{e \in \partial p} Z_e$
+\end{itemize}
+
+Hamiltonien: $H_0 = -J_e \sum_v A_v - J_m \sum_p B_p$
+
+L'état fondamental satisfait $\langle A_v \rangle = \langle B_p \rangle = 1$.
+
+\subsection{Excitations et causalité effective}
+
+Sous perturbations locales, les excitations peuvent se propager sous une borne de type Lieb-Robinson, suggérant une structure causale effective émergente.
+
+%=============================================================================
+\section{Gravité émergente : argument thermodynamique de Jacobson}
+%=============================================================================
+
+Dans le cadre \emph{Up\_Bottom Gravity}, la gravité n’est pas postulée comme une
+interaction fondamentale, mais interprétée comme une manifestation
+thermodynamique collective de la réorganisation de l’intrication quantique.
+Cette idée s’inscrit dans la lignée de l’argument de Jacobson, selon lequel les
+équations d’Einstein peuvent être comprises comme une équation d’état reliant
+entropie, énergie et température.
+
+\subsection{Principe thermodynamique}
+
+L’argument de Jacobson repose sur l’hypothèse qu’une relation thermodynamique
+locale de la forme
+\begin{equation}
+\delta S = \frac{\delta E}{T}
+\end{equation}
+est satisfaite pour toute région suffisamment petite, associée à un horizon causal local.
+Sous cette hypothèse, les équations d’Einstein émergent comme condition de cohérence
+thermodynamique.
+
+Dans notre cadre, cette relation est reformulée de manière purement
+informationnelle :
+\begin{itemize}
+    \item $S$ est l’entropie d’intrication associée à une sous-région $A$,
+    \item $E$ est une énergie modulaire effective, définie par $E = \langle H \rangle$,
+    \item $T$ est une température effective liée au flot modulaire, avec $T^{-1} = \beta = dS/dE$.
+\end{itemize}
+Aucune hypothèse d’espace-temps classique ni de champ gravitationnel n’est introduite à ce stade.
+
+\subsection{Test numérique de la relation de Jacobson}
+
+Nous testons numériquement la validité de la relation variationnelle
+$\delta S \simeq \beta\,\delta E$ sur des états quantiques discrets de petite taille.
+L’entropie d’intrication $S(A)$ est calculée à partir de la matrice de densité réduite,
+tandis que l’énergie $E$ correspond à la valeur moyenne d’un Hamiltonien effectif
+contrôlant les corrélations.
+
+La Fig.~\ref{fig:jacobson} montre que l’entropie d’intrication varie de manière monotone
+avec l’énergie effective.
+De plus, les variations locales $\delta S$ et $\delta E$ présentent une corrélation
+approximativement linéaire, indiquant que la relation thermodynamique de type Jacobson
+est satisfaite à un bon niveau d’approximation.
+
+Ces résultats constituent une validation numérique de principe de l’argument
+thermodynamique, dans un cadre discret et sans géométrie préalable.
+
+\subsection{Température modulaire et constante gravitationnelle effective}
+
+La dérivée $\beta = dS/dE$ joue le rôle d’une température inverse effective,
+associée au flot modulaire des corrélations.
+Lorsque l’entropie satisfait une loi d’aire
+\begin{equation}
+S(A) = \alpha\,|\partial A| + \cdots ,
+\end{equation}
+la constante gravitationnelle effective est donnée par
+\begin{equation}
+G_{\mathrm{eff}} = \frac{1}{4\alpha}.
+\end{equation}
+
+Les estimations numériques de $G_{\mathrm{eff}}$ obtenues ici sont finies et cohérentes
+sur une plage d’énergies, bien que dépendantes de la taille finie du système.
+Elles doivent être interprétées comme des indicateurs qualitatifs de l’émergence
+d’une dynamique gravitationnelle effective.
+
+\subsection{Portée et limites}
+
+Les résultats présentés ne constituent pas une dérivation complète des équations d’Einstein.
+Ils montrent cependant que les conditions thermodynamiques nécessaires à l’argument de Jacobson
+peuvent être satisfaites dans un cadre purement quantique, discret et informationnel.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{fig3_jacobson.png}
+\caption{
+\textbf{Relation thermodynamique de type Jacobson et gravité émergente.}
+(\textit{Haut}) Entropie d’intrication $S(A)$ en fonction de l’énergie modulaire effective $E=\langle H\rangle$, montrant une relation monotone bien définie.
+(\textit{Bas}) Test local de la relation variationnelle $\delta S \simeq \beta\,\delta E$, où $\beta = dS/dE$ joue le rôle d’une température inverse effective.
+La corrélation observée indique que la dynamique gravitationnelle émergente peut être interprétée comme une thermodynamique de l’intrication, conformément à l’argument de Jacobson.
+Les résultats présentés constituent une validation numérique de principe, limitée à des systèmes de petite taille.
+}
+\label{fig:jacobson}
+\end{figure}
+
+%=============================================================================
+\section{Méthodes Numériques}
+%=============================================================================
+
+Cette section décrit explicitement les procédures numériques utilisées
+pour reconstruire une géométrie émergente à partir de l’intrication quantique,
+tester l’émergence dimensionnelle et analyser la correspondance ER=EPR.
+L’objectif n’est pas l’optimisation algorithmique, mais la validation
+opérationnelle du cadre conceptuel présenté.
+
+\subsection{Système quantique considéré}
+
+Nous considérons un système discret de $N$ qubits,
+décrit par un état quantique global pur
+\begin{equation}
+\ket{\Psi} \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathbb{C}^2 .
+\end{equation}
+
+Dans les simulations présentées ici, $N=9$ qubits disposés sur un réseau
+$3 \times 3$ sont utilisés. Cette taille réduite permet un calcul exact
+des matrices de densité réduites et des entropies de von Neumann,
+tout en conservant une structure spatiale non triviale.
+Les résultats doivent être compris comme des \emph{preuves de principe}.
+
+\subsection{Calcul de l’information mutuelle}
+
+Pour toute paire de qubits $(i,j)$, nous calculons l’information mutuelle
+quantique définie par
+\begin{equation}
+I(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij}),
+\end{equation}
+où $S(\rho) = -\mathrm{Tr}(\rho \log \rho)$ est l’entropie de von Neumann,
+$\rho_i = \mathrm{Tr}_{\bar{i}} \ket{\Psi}\bra{\Psi}$ et
+$\rho_{ij} = \mathrm{Tr}_{\overline{ij}} \ket{\Psi}\bra{\Psi}$.
+
+\subsection{Normalisation et seuil numérique}
+
+L’information mutuelle est normalisée par sa valeur maximale :
+\begin{equation}
+\tilde{I}(i:j) = \frac{I(i:j)}{I_{\max}},
+\qquad
+I_{\max} = \max_{k,l} I(k:l).
+\end{equation}
+
+Pour éviter les divergences numériques liées au logarithme, un seuil $\epsilon$ est introduit :
+\begin{equation}
+\tilde{I}(i:j) \leftarrow \max(\tilde{I}(i:j), \epsilon),
+\qquad \epsilon \sim 10^{-12}.
+\end{equation}
+
+\subsection{Distance informationnelle effective}
+
+À partir de l’information mutuelle normalisée :
+\begin{equation}
+d_{ij} = -\log \tilde{I}(i:j).
+\end{equation}
+Cette distance capture opérationnellement l’idée centrale : des degrés de liberté
+fortement intriqués sont géométriquement proches dans l’espace émergent reconstruit.
+
+\subsection{Construction du graphe d’intrication}
+
+Le système est représenté comme un graphe pondéré
+$G = (V, E, W)$, où les sommets sont les qubits et les poids
+$W_{ij} = I(i:j)$.
+Le Laplacien est défini par
+\begin{equation}
+L = D - W,
+\qquad
+D_{ii} = \sum_j W_{ij}.
+\end{equation}
+
+\subsection{Embarquement géométrique par MDS}
+
+À partir de la matrice des distances $D = (d_{ij})$, un algorithme de
+Multi-Dimensional Scaling (MDS) reconstruit des points $\{x_i\}$ dans $\mathbb{R}^d$
+minimisant l’erreur relative :
+\begin{equation}
+\epsilon_d =
+\sqrt{
+\frac{
+\sum_{i<j} \left( \|x_i - x_j\| - d_{ij} \right)^2
+}{
+\sum_{i<j} d_{ij}^2
+}
+}.
+\end{equation}
+
+\subsection{Critère d’émergence dimensionnelle}
+
+Une dimension $d$ est dite émergente si $\epsilon_d$ chute fortement par rapport à $\epsilon_{d-1}$
+et se stabilise pour $d+1$, indiquant que l’augmentation de dimension n’apporte plus de gain
+significatif.
+
+\subsection{Test ER=EPR et géodésiques émergentes}
+
+Pour une paire de sites $(i,j)$, nous comparons la séparation topologique sur le réseau initial
+à la distance géodésique émergente $\|x_i-x_j\|$ dans l’espace reconstruit.
+Une réduction drastique de la distance émergente pour une paire fortement intriquée est interprétée
+comme une signature de canal informationnel de type \emph{wormhole-like}.
+
+%=============================================================================
+\section{Résultat central : émergence dimensionnelle}
+%=============================================================================
+
+L’un des résultats centraux de ce travail est la mise en évidence explicite du
+caractère \emph{émergent} de la dimension spatiale.
+Dans le cadre proposé, la dimension n’est ni postulée a priori, ni fixée par la
+topologie du réseau, mais résulte collectivement de la structure de l’intrication quantique.
+
+\subsection{Hypothèse physique}
+
+\begin{quote}
+\emph{Si des degrés de liberté quantiques topologiquement distants sont fortement
+intriqués, alors une géométrie émergente de faible dimension ne peut plus
+représenter fidèlement les corrélations, et une dimension spatiale effective
+supplémentaire devient nécessaire.}
+\end{quote}
+
+Intuitivement, l’intrication non-locale agit comme une contrainte géométrique :
+pour préserver la proximité informationnelle entre sites fortement corrélés,
+l’espace émergent doit se courber ou se déplier dans une dimension plus élevée.
+
+\subsection{Méthode de reconstruction}
+
+À partir de $I(i:j)$, une distance $d_{ij}$ est construite puis un MDS reconstruit
+une géométrie effective dans $\mathbb{R}^d$.
+La dimension effective est identifiée comme la plus petite dimension $d$ pour
+laquelle l’erreur $\epsilon_d$ devient faible et se stabilise.
+
+\subsection{Résultats numériques}
+
+Les résultats sont présentés sur la Fig.~\ref{fig:dimension}.
+Pour un état à intrication locale, l’espace émergent est fidèlement représenté en 2D
+et l’erreur ne diminue pas significativement au-delà de $d=2$.
+Pour un état à intrication non-locale, une reconstruction 2D induit une distorsion importante,
+et l’erreur chute lors du passage $d=2 \rightarrow 3$, indiquant une dimension effective supérieure.
+
+\subsection{Interprétation physique}
+
+La dimension spatiale apparaît comme une variable collective déterminée par la structure
+des corrélations quantiques.
+L’intrication non-locale agit comme une source de courbure informationnelle contraignant
+l’espace émergent à s’étendre dans une dimension supplémentaire afin de préserver la proximité
+entre degrés de liberté fortement corrélés.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{fig1_dimension_emergente.png}
+\caption{
+\textbf{Émergence dimensionnelle induite par l’intrication quantique.}
+(\textit{Haut}) Reconstruction géométrique par Multi-Dimensional Scaling (MDS) d’un réseau de qubits $3\times3$.
+À gauche, un état à intrication locale est fidèlement embarqué dans un espace bidimensionnel quasi plan.
+À droite, un état à intrication non-locale nécessite une dimension spatiale supplémentaire pour être représenté sans distorsion.
+(\textit{Bas}) Erreur relative de reconstruction $\epsilon_d$ en fonction de la dimension d’embarquement.
+L’intrication non-locale induit une chute de l’erreur lors du passage de $d=2$ à $d=3$, indiquant que la dimension effective de l’espace émergent est imposée par la structure des corrélations quantiques.
+}
+\label{fig:dimension}
+\end{figure}
+
+%=============================================================================
+\section{Correspondance ER = EPR : géodésiques d’intrication}
+%=============================================================================
+
+La correspondance ER = EPR suggère qu’une intrication quantique forte (EPR) entre deux sous-systèmes
+se reflète, dans une description géométrique effective, par un pont de type Einstein–Rosen (ER).
+Ici, nous testons cette idée de manière \emph{opérationnelle}, sans supposer de géométrie AdS/CFT
+ni de dynamique gravitationnelle préalable.
+
+\subsection{Principe opérationnel}
+
+\begin{quote}
+\emph{Si deux degrés de liberté quantiques sont fortement intriqués, alors la
+distance géodésique entre eux dans l’espace émergent reconstruit à partir des
+corrélations doit être fortement réduite, indépendamment de leur séparation topologique initiale.}
+\end{quote}
+
+Cette formulation ne postule pas un trou de ver classique, mais identifie une signature géométrique :
+l’apparition d’un raccourci géodésique induit par l’intrication.
+
+\subsection{Méthode de test}
+
+Sur un réseau $3\times3$, nous comparons deux cas pour une paire topologiquement distante $(0,8)$ :
+\begin{itemize}
+    \item un état à intrication locale, $I(0,8)\ll I_{\max}$,
+    \item un état à intrication non-locale, $I(0,8)\simeq I_{\max}$.
+\end{itemize}
+Nous comparons la distance topologique sur le réseau initial à la distance géodésique émergente
+$\|x_0-x_8\|$ dans l’espace reconstruit.
+
+\subsection{Résultats numériques}
+
+Les résultats (Fig.~\ref{fig:erepr}) montrent que, dans l’état local, la distance émergente reste
+comparable à la distance du réseau.
+Dans l’état non-local, une intrication forte induit une réduction drastique de la distance géodésique :
+malgré une séparation topologique importante, les deux sites deviennent géométriquement proches dans
+l’espace reconstruit, signature \emph{wormhole-like} compatible avec ER = EPR.
+
+\subsection{Interprétation et portée}
+
+Ce résultat ne constitue pas une construction complète de trous de ver dynamiques au sens de la relativité générale.
+Il met en évidence une \emph{signature géométrique opérationnelle} : correspondance entre intrication maximale
+et raccourci géodésique dans une géométrie émergente reconstruite à partir des corrélations.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{fig2_er_epr.png}
+\caption{
+\textbf{Signature géométrique opérationnelle de la correspondance ER = EPR.}
+Comparaison entre un état local (\textit{gauche}) et un état non-local (\textit{droite}) pour une paire de qubits topologiquement distants $(0,8)$.
+Dans l’état local, l’information mutuelle est faible ($I(0,8)\ll I_{\max}$) et la distance géodésique dans l’espace émergent reconstruit reste comparable à la distance sur le réseau initial.
+Dans l’état non-local, une intrication forte ($I(0,8)\simeq I_{\max}$) induit un raccourci géométrique drastique : la distance géodésique émergente devient quasi nulle malgré une séparation topologique importante.
+Ce comportement constitue une signature géométrique mesurable d’un canal informationnel de type \emph{wormhole-like}, en accord avec l’idée ER = EPR.
+}
+\label{fig:erepr}
+\end{figure}
+
+%=============================================================================
+\section{Synthèse: Chaîne d'Émergence Complète}
+%=============================================================================
+
+\begin{tcolorbox}[colback=mygreen!5,colframe=mygreen,title=Schéma Global]
+\[
+\ket{\Psi} \xrightarrow{\text{Réduction}} \rho_A \xrightarrow{-\log} K_A \xrightarrow{e^{iK_A\tau}} \textbf{Temps}
+\]
+\[
+\ket{\Psi} \xrightarrow{\text{Corrélations}} I(i:j) \xrightarrow{-\log} d_{ij} \xrightarrow{\text{MDS}} g_{\mu\nu} \xrightarrow{\text{Jacobson}} \textbf{Gravité}
+\]
+\[
+\ket{\Psi} \xrightarrow{\text{Non-local}} \text{Dimension émergente} \xrightarrow{\text{Raccourci géodésique}} \textbf{ER=EPR}
+\]
+\end{tcolorbox}
+
+%=============================================================================
+\section{Validations Numériques Réalisées}
+%=============================================================================
+
+\begin{enumerate}
+    \item \textbf{Relation de type Jacobson:} test variationnel $\delta S \simeq \beta\,\delta E$ (preuve de principe) et émergence d'une échelle effective.
+    \item \textbf{Causalité effective:} compatibilité qualitative avec une borne de type Lieb-Robinson dans des modèles topologiques discrets.
+    \item \textbf{Émergence dimensionnelle:} transition $2\text{D} \rightarrow 3\text{D}$ sous intrication non-locale (Fig.~\ref{fig:dimension}).
+    \item \textbf{ER=EPR:} intrication forte $\Rightarrow$ raccourci géodésique \emph{wormhole-like} (Fig.~\ref{fig:erepr}).
+\end{enumerate}
+
+%=============================================================================
+\section{Limites et Perspectives}
+%=============================================================================
+
+\subsection{Limites Actuelles}
+\begin{itemize}
+    \item Taille système: preuve de principe sur petites tailles (effets de bord possibles)
+    \item Dimension: reconstruction euclidienne effective (pas une mesure complète de dimension fractale)
+    \item Dynamique: analyse principalement statique (états)
+\end{itemize}
+
+\subsection{Extensions Proposées}
+\begin{itemize}
+    \item \textbf{Tensor networks / DMRG:} extension à $N \gtrsim 25$ pour tester le scaling et stabiliser $G_{\mathrm{eff}}$
+    \item \textbf{Courbure discrète (Ricci):} estimation contrôlée sur la géométrie reconstruite
+    \item \textbf{Expérimental:} implémentations sur plateformes qubits (supraconducteurs, ions piégés)
+    \item \textbf{ER=EPR dynamique:} étude de scénarios modulaires et évolution des raccourcis géodésiques
+\end{itemize}
+
+%=============================================================================
+\section{Conclusion}
+%=============================================================================
+
+\begin{tcolorbox}[colback=myred!5,colframe=myred,title=Maxime Fondamentale]
+\begin{center}
+\Large
+L'univers fondamental est un état quantique atemporel.\\
+L'espace est la carte de ses corrélations.\\
+Le temps est la lecture interne de ces corrélations.\\
+La gravité est la thermodynamique de leur réorganisation.
+\end{center}
+\end{tcolorbox}
+
+Dans ce cadre, la physique peut être vue comme l'étude de la manière dont l'espace-temps et les lois effectives émergent
+d'une structure relationnelle quantique fondamentale.
+Les validations numériques présentées constituent des preuves de principe : elles montrent que des signatures géométriques
+et thermodynamiques attendues (dimension effective, raccourcis géodésiques, relation de type Jacobson) peuvent être obtenues
+à partir de corrélations d'intrication dans des systèmes discrets.
+
+%=============================================================================
+\begin{thebibliography}{9}
+\bibitem{jacobson} T. Jacobson, ``Thermodynamics of Spacetime: The Einstein Equation of State,'' \textit{Phys. Rev. Lett.} 75, 1260 (1995).
+\bibitem{er=epr} J. Maldacena and L. Susskind, ``Cool Horizons for Entangled Black Holes,'' \textit{Fortschritte der Physik} 61, 781 (2013).
+\bibitem{vanraamsdonk} M. Van Raamsdonk, ``Building up Spacetime with Quantum Entanglement,'' \textit{Int. J. Mod. Phys. D} 19, 2429 (2010).
+\bibitem{ryu-takayanagi} S. Ryu and T. Takayanagi, ``Holographic Derivation of Entanglement Entropy from AdS/CFT,'' \textit{Phys. Rev. Lett.} 96, 181602 (2006).
+\end{thebibliography}
+
+\end{document}
