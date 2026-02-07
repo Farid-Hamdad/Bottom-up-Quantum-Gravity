@@ -2,10 +2,6 @@
 
 Emergent space, time and gravity from quantum entanglement — a minimal theoretical and numerical framework.
 
-# bottom-up-quantum-gravity
-
-### Espace, Temps et Gravité comme phénomènes émergents de l’intrication quantique
-
 **Farid Hamdad — 2026**
 
 ---
@@ -35,7 +31,7 @@ Ce projet explore une idée simple mais radicale :
 
 ## Le postulat minimal
 
-Up_Bottom Gravity repose sur un **postulat unique** :
+bottom-up-quantum-gravity repose sur un **postulat unique** :
 
 - il existe un état quantique global pur \(|\Psi\rangle\),
 - défini sur un ensemble de degrés de liberté (qubits),
@@ -149,7 +145,7 @@ montrant comment espace, temps et gravité peuvent émerger d’un même socle q
 
 ## Perspective
 
-Up_Bottom Gravity suggère un changement de point de vue :
+bottom-up-quantum-gravity suggère un changement de point de vue :
 
 > La physique fondamentale n’est pas l’étude de champs dans l’espace-temps,  
 > mais l’étude de **comment l’espace-temps lui-même émerge  
@@ -161,7 +157,7 @@ Up_Bottom Gravity suggère un changement de point de vue :
 
 If you use or build upon this work, please cite:
 
-Farid Hamdad, *Up_Bottom Gravity: Emergent Space, Time and Gravity from Quantum Entanglement*, GitHub repository (2026).
+Farid Hamdad, *bottom-up-quantum-gravity: Emergent Space, Time and Gravity from Quantum Entanglement*, GitHub repository (2026).
 
 ---
 
