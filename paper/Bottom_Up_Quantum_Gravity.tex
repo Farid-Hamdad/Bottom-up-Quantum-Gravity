@@ -8,7 +8,7 @@
 % -------------------- Maths / Symboles --------------------
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{bm}
-\usepackage{braket} % on garde braket et on supprime physics (évite conflits)
+\usepackage{braket}
 
 % -------------------- Mise en page / Figures --------------------
 \usepackage{geometry}
@@ -20,7 +20,6 @@
 \usepackage{tcolorbox}
 \usepackage{xcolor}
 \usepackage{siunitx}
-\usepackage{ifthen}
 
 % -------------------- Hyperliens (en dernier) --------------------
 \usepackage{hyperref}
@@ -39,6 +38,7 @@
   urlcolor=myblue
 }
 
+% Figures : le .tex est dans paper/ donc ../figures marche
 \graphicspath{{../figures/}{./figures/}{figures/}}
 
 \title{\textbf{Bottom-Up Quantum Gravity :}\\
@@ -51,31 +51,30 @@
 \date{Février 2026}
 
 \begin{document}
-
 \maketitle
 
-\vspace{1em}
+\vspace{0.8em}
 \begin{center}
 \itshape
 L'intrication est une structure géométrique.\\
 Ce que nous appelons espace est le motif collectif de ces corrélations.\\
 Ce que nous appelons gravité est la thermodynamique de leur réorganisation.
 \end{center}
-\vspace{1.5em}
+\vspace{1.2em}
 
 \begin{abstract}
 \begin{tcolorbox}[colback=gray!10,colframe=myblue,title=Résumé Opérationnel]
 Nous présentons \textbf{Bottom-Up Quantum Gravity}, un cadre minimal où espace, temps et gravité
-émergent de l'intrication d'un état quantique global $\ket{\Psi}$ \emph{sans géométrie préalable}.
-\textbf{Résultat central :} la dimension spatiale n'est pas postulée mais \emph{mesurée}
-par reconstruction métrique : des états à intrication principalement locale se reconstruisent en 2D,
-tandis que des états à intrication non-locale imposent une troisième dimension effective.
-Nous validons numériquement quatre mécanismes : (1) temps modulaire (flot modulaire),
-(2) géométrie informationnelle (distance issue de l'information mutuelle),
-(3) gravité thermodynamique (test variationnel de type Jacobson),
-et (4) signature géométrique de type ER=EPR (raccourci géodésique \emph{wormhole-like}).
-Ce travail constitue une \emph{preuve de concept} sur des systèmes de $N=9$ qubits, avec discussion
-des effets de taille finie et des extensions nécessaires vers la limite thermodynamique.
+émergent de l'intrication d'un état quantique global pur $\ket{\Psi}$ \emph{sans géométrie préalable}.
+\textbf{Résultat central :} la dimension spatiale n'est pas postulée mais \emph{mesurée} via reconstruction métrique :
+des états à intrication principalement locale se reconstruisent en 2D, tandis que des états à intrication non-locale
+imposent une dimension effective plus élevée.
+Nous validons numériquement trois signatures sur des systèmes finis :
+(1) temps relationnel via flot modulaire, (2) géométrie informationnelle via information mutuelle et embarquement (MDS),
+et (3) gravité thermodynamique effective via un test variationnel de type Jacobson.
+Nous ajoutons un test opérationnel de type ER=EPR : des paires topologiquement distantes deviennent géométriquement proches
+dans l'espace émergent lorsque l'intrication non-locale est renforcée.
+Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, réduisant les effets de taille finie et renforçant la robustesse.
 \end{tcolorbox}
 \end{abstract}
 
@@ -84,69 +83,61 @@ des effets de taille finie et des extensions nécessaires vers la limite thermod
 %=============================================================================
 
 \begin{tcolorbox}[colback=myblue!5,colframe=myblue,title=Postulat Unique]
-Il existe un état quantique global pur $\ket{\Psi} \in \mathcal{H} = \bigotimes_{i \in V} \mathcal{H}_i$ où $V$ indexe un ensemble fini de degrés de liberté élémentaires (qubits).
+Il existe un état quantique global pur $\ket{\Psi} \in \mathcal{H} = \bigotimes_{i \in V} \mathcal{H}_i$
+où $V$ indexe un ensemble fini de degrés de liberté élémentaires (qubits).
 \end{tcolorbox}
 
 \textbf{Ce qui est absent :}
 \begin{itemize}
-    \item Aucun espace-temps préexistant
-    \item Aucune métrique a priori
-    \item Aucune structure causale externe
-    \item Aucun champ classique fondamental
+  \item aucun espace-temps préexistant ;
+  \item aucune métrique a priori ;
+  \item aucune structure causale externe ;
+  \item aucun champ classique fondamental.
 \end{itemize}
 
 L'état $\ket{\Psi}$ est \textbf{atemporel} au sens où il n'évolue pas par rapport à un temps externe.
-Il constitue le ``bloc'' quantique global. Toute dynamique doit donc émerger de relations internes,
-c'est-à-dire d'observables définies sur des sous-systèmes et des corrélations entre eux.
-L'approche adoptée ici est volontairement \emph{bottom-up} :
-nous partons d'une description purement quantique et cherchons les signatures opératoires
-de notions usuelles (temps, distance, dimension, gravité).
+Toute dynamique doit émerger de relations internes, i.e. d'observables de sous-systèmes et de corrélations entre eux.
+L'approche est volontairement \emph{bottom-up} : partir de $\ket{\Psi}$ et extraire des notions opératoires de temps,
+distance, dimension et gravité effective.
 
 %=============================================================================
-\section{Système Modèle et Protocole Expérimental Unifié}
-%=============================================================================
+\section{Systèmes Modèles et Protocole Numérique Unifié}
 \label{sec:systeme}
+%=============================================================================
 
-Toutes les simulations présentées dans ce travail utilisent le \textbf{même système de référence} :
-un réseau de $N=9$ qubits disposés sur une grille $3 \times 3$.
-Ce choix est dicté par un compromis entre calculabilité exacte et structure spatiale non triviale.
+Nous adoptons un protocole unique réutilisé à différentes tailles $N$ :
+(i) définir une famille d'états $\ket{\Psi(\lambda)}$ contrôlée par un paramètre de non-localité corrélationnelle $\lambda$,
+(ii) calculer l'information mutuelle $I(i:j)$, (iii) définir une distance informationnelle $d_{ij}$,
+(iv) reconstruire une géométrie par embarquement (MDS), et (v) tester des signatures thermodynamiques (Jacobson)
+et géodésiques (ER=EPR).
 
-\subsection{Pourquoi $N=9$ et $3 \times 3$ ?}
+\subsection{Tailles étudiées : $N=9$ puis $N=16$}
 
 \begin{itemize}
-    \item \textbf{Diagonalisation exacte possible :} $2^9 = 512$ états, matrices gérables en mémoire vive standard.
-    \item \textbf{Structure spatiale émergente :} assez de degrés de liberté pour distinguer voisins proches et sites éloignés.
-    \item \textbf{Chemins concurrents :} plusieurs routes topologiques entre coins (utile pour tester des raccourcis informationnels de type ER=EPR).
+  \item \textbf{$N=9$ :} grille $3\times 3$ (preuve de concept exacte, $2^9=512$).
+  \item \textbf{$N=16$ :} grille $4\times 4$ (validation intermédiaire, réduction des effets de bord).
 \end{itemize}
 
-\textbf{Limitation :} effets de bord importants (tous les qubits sont proches du bord).
-Les résultats doivent être interprétés comme \emph{preuves de principe} ; des extrapolations
-vers $N \to \infty$ sont nécessaires (Section~\ref{sec:taille-finie}).
+Les résultats $N=9$ fixent la structure conceptuelle ; l'extension à $N=16$ teste la robustesse.
 
-\subsection{Famille d'états étudiée}
+\subsection{Famille d'états paramétrée par $\lambda$}
 
-Nous considérons une famille d'états paramétrée par une intensité d'intrication non-locale
-$\lambda \in [0, 1]$ :
+Nous considérons une famille d'états contrôlée par $\lambda \in [0,1]$ :
 \begin{equation}
 \ket{\Psi(\lambda)} = \frac{1}{\mathcal{N}(\lambda)} \sum_{c=0}^{2^N-1} \alpha_c(\lambda)\, \ket{c}.
 \end{equation}
 
-Les amplitudes $\alpha_c(\lambda)$ interpolent entre :
+Intuition :
 \begin{itemize}
-    \item \textbf{$\lambda = 0$ (état local) :} intrication dominée par les voisinages sur le réseau.
-    \item \textbf{$\lambda = 1$ (état non-local) :} intrication renforcée entre qubits topologiquement distants (coins opposés).
+  \item $\lambda=0$ : intrication dominée par la localité sur la grille ;
+  \item $\lambda \to 1$ : intrication renforcée entre sites topologiquement distants (coins).
 \end{itemize}
 
-Cette paramétrisation permet d'étudier de manière contrôlée comment la structure d'intrication
-modifie la géométrie effective reconstruite (dimension, géodésiques, compression).
+Une construction explicite est fournie en Annexe~\ref{app:construction-etats}.
 
-La construction explicite est donnée dans l'Annexe~\ref{app:construction-etats}.
+\subsection{Hamiltonien de référence (pour tests thermodynamiques)}
 
-\subsection{Hamiltonien de référence}
-
-Pour les tests thermodynamiques (Section~\ref{sec:jacobson}),
-nous utilisons un Hamiltonien \emph{Ising transverse} perturbé,
-auquel on ajoute un couplage non-local entre coins :
+Pour les tests de type Jacobson, nous utilisons un Ising transverse perturbé et un terme non-local entre coins :
 \begin{equation}
 H(\lambda) = -J \sum_{\langle i,j \rangle} Z_i Z_j
              - h(\lambda) \sum_i X_i
@@ -154,39 +145,26 @@ H(\lambda) = -J \sum_{\langle i,j \rangle} Z_i Z_j
 \label{eq:hamiltonien}
 \end{equation}
 
-où :
-\begin{itemize}
-    \item $J = 1.0$ (énergie de lien, unité de référence),
-    \item $h(\lambda) = h_0 + \lambda\,\delta h$ (champ transverse, contrôle l'entrelacement global),
-    \item $J_{\text{nl}}$ couplage non-local entre coins opposés (0 et 8, 2 et 6).
-\end{itemize}
-
-L'état fondamental $\ket{\Psi(\lambda)}$ est obtenu par diagonalisation exacte de $H(\lambda)$
-pour chaque valeur de $\lambda$. Dans tout le papier, la variable $\lambda$ doit être comprise
-comme un bouton contrôlant la \emph{non-localité corrélationnelle}.
+Dans la pratique, $\lambda$ doit être compris comme un bouton contrôlant la \emph{non-localité corrélationnelle}.
 
 %=============================================================================
-\section{Temps Émergent : Le Flot Modulaire}
+\section{Temps Émergent : Flot Modulaire}
 %=============================================================================
 
-\subsection{Partition et horloge interne}
+\subsection{Partition et horloge relationnelle}
 
-On partitionne l'espace de Hilbert :
+On partitionne :
 \begin{equation}
 \mathcal{H} = \mathcal{H}_C \otimes \mathcal{H}_S,
 \end{equation}
-où $C$ est un sous-système ``horloge'' et $S$ le reste.
-
-Dans l'approche relationnelle, l'absence de temps externe peut être encodée par une contrainte
-de type Page--Wootters :
+où $C$ est un sous-système horloge, $S$ le reste.
+En l'absence de temps externe, on adopte une lecture relationnelle (Page--Wootters) :
 \begin{equation}
-(\hat{H}_C + \hat{H}_S)\ket{\Psi} = 0.
+(\hat{H}_C + \hat{H}_S)\ket{\Psi} = 0,
 \end{equation}
-Cette contrainte ne définit pas une dynamique externe, mais impose que la dynamique soit
-\emph{relative} : les corrélations entre l'horloge et le système jouent le rôle de paramètre
-temporel interne.
+où la dynamique est encodée dans les corrélations horloge-système.
 
-\subsection{Flot modulaire comme temps relationnel}
+\subsection{Flot modulaire}
 
 Pour toute région $A$ :
 \begin{equation}
@@ -195,143 +173,84 @@ Pour toute région $A$ :
 K_A(\lambda) = -\log \rho_A(\lambda).
 \end{equation}
 
-Le \textbf{temps modulaire} $\tau$ est défini par :
+Le flot modulaire définit une évolution interne :
 \begin{equation}
 \mathcal{O}(\tau) = e^{i K_A(\lambda)\tau}\, \mathcal{O}\, e^{-i K_A(\lambda)\tau}.
 \end{equation}
 
-\textbf{Interprétation :} le temps n'est pas un paramètre externe,
-mais un paramètre interne lié à la structure d'intrication du sous-système :
-le flot modulaire agit comme un générateur d'évolution \emph{déduit} de l'état lui-même.
-Cela fournit une notion opératoire de temps, directement liée aux corrélations quantiques.
+Interprétation : le temps est un paramètre opératoire déduit de l'état via l'intrication du sous-système.
 
 %=============================================================================
 \section{Espace Émergent : Géométrie Informationnelle}
 %=============================================================================
 
-\subsection{Distance informationnelle}
+\subsection{Information mutuelle et distance}
 
-L'\textbf{information mutuelle} entre sites, calculée sur $\ket{\Psi(\lambda)}$,
-définit une proximité émergente :
+L'information mutuelle entre sites définit une proximité émergente :
 \begin{equation}
 I_\lambda(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij}),
+\qquad
+S(\rho) = -\mathrm{Tr}(\rho \log \rho).
 \end{equation}
-où $S(\rho) = -\mathrm{Tr}(\rho \log \rho)$.
 
-La distance informationnelle effective est définie par :
+Nous définissons une distance informationnelle :
 \begin{equation}
 d_{ij}(\lambda) =
 -\log \left(\frac{I_\lambda(i:j)}{I_\lambda^{\max} + \epsilon}\right),
 \label{eq:distance}
 \end{equation}
-avec $\epsilon = 10^{-12}$ pour régulariser les zéros numériques.
+avec $\epsilon = 10^{-12}$ pour régulariser.
 
-Ce choix encode l'idée opérationnelle suivante :
-les corrélations fortes correspondent à des distances petites,
-et l'absence de corrélation correspond à une distance grande.
+\subsection{Embarquement (MDS) et erreur}
 
-\subsection{Procédure MDS et estimation d'erreur}
-
-Pour chaque $\lambda$, nous effectuons un Multi-Dimensional Scaling (MDS) dans $\mathbb{R}^d$
-($d = 2, 3, 4$). L'erreur de reconstruction est :
+Pour chaque $\lambda$, on reconstruit un ensemble de points $x_i(\lambda) \in \mathbb{R}^d$ par MDS.
+L'erreur relative :
 \begin{equation}
 \epsilon_d(\lambda) =
 \sqrt{\frac{\sum_{i<j} \left(\|x_i - x_j\| - d_{ij}(\lambda)\right)^2}
 {\sum_{i<j} d_{ij}(\lambda)^2}}.
 \end{equation}
 
-\textbf{Incertitudes :} nous testons :
-\begin{itemize}
-    \item différentes initialisations du MDS (random seed),
-    \item variation de la régularisation $\epsilon \in [10^{-15}, 10^{-10}]$,
-    \item normalisation alternative : $d_{ij} = 1/I(i:j) - 1$ (distance inverse).
-\end{itemize}
-
-La dispersion donne une estimation d'erreur systématique (typiquement $\pm 15\%$ sur $\epsilon_d$).
-Dans la suite, la \emph{dimension effective} est identifiée comme la plus petite dimension $d$
-pour laquelle l'erreur devient faible et stable.
+La \emph{dimension effective} est la plus petite dimension $d$ pour laquelle $\epsilon_d(\lambda)$ devient
+faible et stable (à incertitudes numériques près).
 
 %=============================================================================
-\section{Gravité Émergente : Argument Thermodynamique de Jacobson}
-%=============================================================================
+\section{Gravité Émergente : Test Thermodynamique de Jacobson}
 \label{sec:jacobson}
+%=============================================================================
 
-\subsection{Protocole de test}
+\subsection{Protocole}
 
-Pour chaque valeur de $\lambda$, nous calculons :
+Pour chaque $\lambda$ :
 \begin{itemize}
-    \item l'entropie d'intrication $S_A(\lambda)$ d'une région $A$ (4 qubits centraux),
-    \item l'énergie $E(\lambda) = \bra{\Psi(\lambda)} H(\lambda) \ket{\Psi(\lambda)}$.
+  \item entropie d'intrication $S_A(\lambda)$ d'une région $A$ ;
+  \item énergie $E(\lambda)=\bra{\Psi(\lambda)}H(\lambda)\ket{\Psi(\lambda)}$.
 \end{itemize}
 
-La température inverse effective est estimée par différence finie :
+Une température inverse effective est estimée par différence finie :
 \begin{equation}
 \beta(\lambda) \approx
 \frac{S_A(\lambda + \delta\lambda) - S_A(\lambda - \delta\lambda)}
 {E(\lambda + \delta\lambda) - E(\lambda - \delta\lambda)},
-\end{equation}
-avec $\delta\lambda = 0.05$.
-
-Cette procédure teste de manière opérationnelle une relation variationnelle
-de type Jacobson, où l'on interprète $\beta = dS/dE$ comme une température inverse effective.
-Dans un système fini, il s'agit d'un test \emph{effectif}, non d'une dérivation continue
-des équations d'Einstein.
-
-\subsection{Résultats et analyse de significativité}
-
-La Fig.~\ref{fig:jacobson} montre la relation $S(E)$ et le test $\delta S \simeq \beta\,\delta E$.
-
-Le coefficient de corrélation est :
-\begin{equation}
-r =
-\frac{\sum_i (\delta S_i - \overline{\delta S})(\delta E_i - \overline{\delta E})}
-{\sqrt{\sum_i (\delta S_i - \overline{\delta S})^2 \sum_i (\delta E_i - \overline{\delta E})^2}}.
+\qquad \delta\lambda>0.
 \end{equation}
 
-Nous obtenons $r = 0.87 \pm 0.08$, significatif à $p < 0.01$ (test t de Student,
-6 degrés de liberté). L'intervalle de confiance à 95\% pour la pente $\beta$
-est $[0.75, 1.12]$, excluant zéro.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{fig3_jacobson.png}
-\caption{
-\textbf{Relation thermodynamique de type Jacobson et gravité émergente.}
-(\textit{Haut}) Entropie d’intrication $S(A)$ en fonction de l’énergie effective
-$E=\langle H\rangle$, utilisée ici comme proxy du générateur modulaire,
-montrant une relation monotone bien définie.
-(\textit{Bas}) Test local de la relation variationnelle
-$\delta S \simeq \beta\,\delta E$, où
-$\beta = dS/dE$ joue le rôle d’une température inverse effective.
-La corrélation observée indique que la dynamique gravitationnelle émergente
-peut être interprétée comme une thermodynamique de l’intrication,
-conformément à l’argument de Jacobson.
-Les résultats présentés constituent une validation numérique de principe,
-limitée à des systèmes de petite taille.
-}
-\label{fig:jacobson}
-\end{figure}
+On teste alors $\delta S \simeq \beta\,\delta E$ comme relation variationnelle effective.
 
 %=============================================================================
-\section{Résultat Central : Émergence Dimensionnelle}
+\section{Résultats (I) : $N=9$ qubits — Preuve de Concept}
+\label{sec:N9}
 %=============================================================================
-\label{sec:dimension}
 
-\subsection{Protocole}
+Dans cette section, nous présentons les résultats sur la grille $3\times 3$ ($N=9$),
+qui sert de référence minimale entièrement calculable.
 
-Pour chaque $\lambda \in \{0.0, 0.2, 0.4, 0.6, 0.8, 1.0\}$,
-nous calculons $\epsilon_d(\lambda)$ pour $d = 2, 3, 4$.
-Nous utilisons le ratio $\epsilon_{2D}/\epsilon_{3D}$ comme indicateur opérationnel
-de la nécessité d'une dimension supplémentaire.
-
-\subsection{Résultats et interprétation}
+\subsection{Transition dimensionnelle à $N=9$}
 
 \begin{table}[h]
 \centering
-\caption{Erreur de reconstruction MDS $\epsilon_d(\lambda) \times 10^2$
-(moyenne $\pm$ écart-type sur 10 initialisations).
-Le ratio $\epsilon_{2D}/\epsilon_{3D}$ quantifie la nécessité d'une dimension supplémentaire.}
-\label{tab:dimension}
+\caption{Erreur de reconstruction MDS $\epsilon_d(\lambda) \times 10^2$ (moyenne $\pm$ écart-type sur 10 initialisations).}
+\label{tab:dimensionN9}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
 $\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio $\epsilon_{2D}/\epsilon_{3D}$ \\
@@ -346,62 +265,23 @@ $\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio $\epsilo
 \end{tabular}
 \end{table}
 
-\textbf{Interprétation :}
-Pour $\lambda = 0$ (état local), $\epsilon_{2D} \approx \epsilon_{3D}$ (ratio $\approx 1$) :
-la dimension effective est compatible avec 2.
-Pour $\lambda = 1$ (état non-local), $\epsilon_{2D} \gg \epsilon_{3D}$ (ratio $\approx 8$) :
-une troisième dimension est nécessaire pour représenter fidèlement les distances informationnelles.
-
-Pour $\lambda$ intermédiaires (0.4--0.6), le ratio $\epsilon_{2D}/\epsilon_{3D} \in [2,4]$
-suggère un régime de transition, potentiellement associé à une dimension effective non entière
-dans ce système fini. La caractérisation précise (dimension de Hausdorff ou spectrale)
-nécessiterait des systèmes plus grands.
-
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.95\linewidth]{fig1_dimension_emergente.png}
 \caption{
-\textbf{Émergence dimensionnelle induite par l’intrication.}
-(\textit{Haut}) Reconstructions géométriques pour des états à intrication locale
-(embarquement effectif 2D) et non-locale (nécessitant un embarquement 3D).
-(\textit{Bas}) Erreur relative de reconstruction MDS en fonction de la dimension
-d’embarquement.
-Pour l’état local, l’erreur est comparable en 2D et 3D,
-tandis que pour l’état non-local une chute brutale apparaît en 3D,
-indiquant une dimension effective supérieure.
-(\textit{Complément}) Les matrices $I(i:j)$ montrent que la concentration de l’intrication
-sur des paires topologiquement distantes explique l’apparition d’une dimension supplémentaire.
-Ces résultats illustrent que la dimension spatiale effective n’est pas postulée,
-mais imposée par la structure de l’intrication.
+\textbf{Émergence dimensionnelle induite par l’intrication (N=9).}
+Reconstructions MDS et erreurs relatives : un état local ($\lambda\simeq 0$) est compatible 2D,
+tandis qu’un état non-local ($\lambda\simeq 1$) exige un embarquement 3D pour réduire l’erreur.
 }
-\label{fig:dimension}
+\label{fig:dimensionN9}
 \end{figure}
 
-%=============================================================================
-\section{Correspondance ER = EPR : Géodésiques d'Intrication}
-%=============================================================================
-\label{sec:erepr}
-
-\subsection{Test sur la paire (0,8)}
-
-Pour $\lambda = 0$, $\lambda = 0.5$ et $\lambda = 1$, nous comparons :
-\begin{itemize}
-    \item distance topologique sur le réseau : $d_{\text{topo}} = 4$
-    (par exemple 0-1-2-5-8 ou 0-3-6-7-8),
-    \item distance émergente : $d_{\text{bulk}}(\lambda) = \|x_0(\lambda) - x_8(\lambda)\|$ (MDS),
-    \item compression : $C(\lambda) = d_{\text{topo}} / d_{\text{bulk}}(\lambda)$.
-\end{itemize}
-
-Cette quantité $C$ mesure un \emph{raccourci géométrique effectif} :
-si deux sites restent éloignés topologiquement mais deviennent proches dans l'espace reconstruit,
-on observe une signature compatible avec l'idée ER=EPR au niveau géométrique.
-
-\subsection{Résultats et interprétation prudente}
+\subsection{Signature ER=EPR (N=9)}
 
 \begin{table}[h]
 \centering
-\caption{Test ER=EPR pour la paire de coins (0,8).}
-\label{tab:erepr}
+\caption{Test ER=EPR (N=9) pour la paire de coins (0,8).}
+\label{tab:ereprN9}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
 $\lambda$ & $I(0:8)$ & $d_{\text{topo}}$ & $d_{\text{bulk}}$ & Compression $C$ \\
@@ -413,73 +293,120 @@ $\lambda$ & $I(0:8)$ & $d_{\text{topo}}$ & $d_{\text{bulk}}$ & Compression $C$ \
 \end{tabular}
 \end{table}
 
-\textbf{Interprétation :}
-La compression $C \sim 100$ pour $\lambda=1$ est une signature \emph{wormhole-like}
-au sens géométrique : un raccourci extrême apparaît entre sites fortement intriqués.
-\textbf{Cela ne constitue pas} un trou de ver dynamique au sens de la relativité générale,
-mais met en évidence qu'une intrication non-locale peut induire une distorsion radicale
-dans la géométrie émergente reconstruite.
-
-La grande incertitude ($\pm 50$) reflète la sensibilité du MDS lorsque
-$d_{\text{bulk}}$ devient très petit. Néanmoins, la signature qualitative est robuste :
-pour $\lambda=1$, on observe systématiquement $d_{\text{bulk}} < 0.1$.
-
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.95\linewidth]{fig2_er_epr.png}
 \caption{
-\textbf{Signature géométrique de type ER = EPR dans l’espace émergent.}
-(\textit{Gauche}) État à intrication locale :
-la paire de sites $(0,8)$, topologiquement distante sur le réseau,
-reste également éloignée dans la géométrie émergente reconstruite
-($d_{\text{bulk}} \approx d_{\text{topo}}$), sans raccourci géométrique.
-(\textit{Droite}) État à intrication non-locale maximale :
-la distance géodésique émergente entre $(0,8)$ devient quasi nulle
-($d_{\text{bulk}} \to 0$), traduisant une compression géométrique extrême.
-Cette signature est interprétée comme un raccourci \emph{wormhole-like}
-conforme à l’idée ER = EPR.
-Il ne s’agit pas d’un trou de ver dynamique de la relativité générale,
-mais d’une manifestation géométrique effective de l’intrication quantique
-dans un système fini.
+\textbf{Signature géométrique de type ER=EPR (N=9).}
+La paire de sites topologiquement distante devient géométriquement proche dans l'espace reconstruit lorsque l'intrication non-locale augmente.
+Signature \emph{wormhole-like} au sens géométrique (système fini, pas de trou de ver dynamique).
 }
-\label{fig:erepr}
+\label{fig:ereprN9}
+\end{figure}
+
+\subsection{Test de Jacobson (N=9)}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{fig3_jacobson.png}
+\caption{
+\textbf{Relation thermodynamique de type Jacobson (N=9).}
+Relation $S(E)$ et test variationnel $\delta S \simeq \beta\,\delta E$.
+Résultat interprété comme une thermodynamique effective de l'intrication dans un système fini.
+}
+\label{fig:jacobsonN9}
+\end{figure}
+
+%=============================================================================
+\section{Résultats (II) : $N=16$ qubits — Validation Intermédiaire}
+\label{sec:N16}
+%=============================================================================
+
+L'objectif ici est de tester que les signatures observées à $N=9$ ne sont pas des artefacts
+de petite taille. Nous répétons le protocole sur une grille $4\times 4$ ($N=16$),
+ce qui réduit les effets de bord et augmente la distance topologique entre coins opposés.
+
+\subsection{Graphe $4\times 4$ et paires de coins}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.70\linewidth]{fig4_grid_N16.png}
+\caption{
+\textbf{Système $N=16$ (grille $4\times 4$) et coins utilisés pour le test ER=EPR.}
+La distance topologique entre coins opposés est $d_{\text{topo}}=6$.
+}
+\label{fig:grid16}
+\end{figure}
+
+\subsection{Transition dimensionnelle (MDS) à $N=16$}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{fig5_mds_N16.png}
+\caption{
+\textbf{Reconstruction géométrique MDS pour $N=16$.}
+Pour plusieurs valeurs de $\lambda$, la hiérarchie des erreurs montre qu'à faible non-localité
+les reconstructions 2D/3D sont comparables, tandis qu'à forte non-localité la reconstruction 3D devient nettement meilleure que 2D.
+Cela confirme la transition dimensionnelle observée à $N=9$ et en améliore la stabilité.
+}
+\label{fig:mds16}
+\end{figure}
+
+\subsection{Signature ER=EPR à $N=16$ : raccourci géodésique}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{fig6_erepr_N16.png}
+\caption{
+\textbf{Test ER=EPR pour $N=16$ (coins opposés 0--15).}
+(\textit{Gauche}) la distance géodésique émergente $d_{\text{bulk}}(0,15)$ décroît avec $\lambda$ alors que $d_{\text{topo}}=6$ reste fixe.
+(\textit{Centre}) la compression $C=d_{\text{topo}}/d_{\text{bulk}}$ croît monotone et atteint des valeurs $\mathcal{O}(10)$ à forte non-localité.
+(\textit{Droite}) corrélation directe entre information mutuelle et proximité géométrique : la géométrie émergente est pilotée par l'intrication.
+}
+\label{fig:erepr16}
+\end{figure}
+
+\subsection{Relation de Jacobson à $N=16$}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{fig7_jacobson_N16.png}
+\caption{
+\textbf{Relation thermodynamique de type Jacobson pour $N=16$.}
+(\textit{Gauche}) la relation $S(E)$ est bien approximée par un ajustement linéaire sur l'intervalle exploré.
+(\textit{Droite}) la pente effective $\beta=dS/dE$ varie lentement avec $\lambda$ et reste stable,
+suggérant une thermodynamique effective robuste de l'intrication lorsque la taille du système augmente.
+}
+\label{fig:jacobson16}
 \end{figure}
 
 %=============================================================================
 \section{Effets de Taille Finie et Extrapolation}
-%=============================================================================
 \label{sec:taille-finie}
+%=============================================================================
 
-\subsection{Estimation des erreurs systématiques}
+Le passage de $N=9$ à $N=16$ réduit déjà deux limites majeures :
+(i) domination des effets de bord et (ii) faible résolution géométrique.
+Néanmoins, les résultats restent ceux de systèmes finis, et doivent être interprétés comme des signatures opératoires.
 
 \begin{table}[h]
 \centering
-\caption{Sources d'erreur et leurs estimations pour $N=9$.}
+\caption{Sources d'erreur typiques et impacts qualitatifs.}
 \label{tab:erreurs}
 \begin{tabular}{@{}lcc@{}}
 \toprule
-Source & Estimation & Impact \\
+Source & Ordre de grandeur & Impact \\
 \midrule
-Effets de bord (sites proches du bord) & $\sim 30\%$ & Biais sur distances et $G_{\text{eff}}$ \\
-Résolution entière de la dimension & $\pm 0.5$ & Impossible de stabiliser une dimension fractionnaire \\
-Erreur MDS (initialisation) & $\pm 15\%$ sur $\epsilon_d$ & Dispersion des reconstructions \\
-Tolérance diagonalisation & $10^{-14}$ & Négligeable \\
+Effets de bord & important à $N=9$, réduit à $N=16$ & biais sur distances reconstruites \\
+Sensibilité MDS (init.) & $\sim 10\%$ à $15\%$ & dispersion de $\epsilon_d$ \\
+Choix de régularisation $\epsilon$ & faible & stabilité des zéros de $I(i:j)$ \\
+Systèmes finis & structurel & pas de limite continue ni RG complet \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Extrapolation vers $N \to \infty$}
-
-Sur la base d'explorations préliminaires pour $N \in \{4,6,9,12\}$
-(ce dernier via méthodes approximatives), on observe des tendances cohérentes :
-\begin{itemize}
-    \item $G_{\text{eff}}(N)$ décroît avec $N$ puis tend vers une constante,
-    \item la transition dimensionnelle se renforce lorsque la taille augmente,
-    \item la compression géodésique associée à ER=EPR tend à croître avec $N$.
-\end{itemize}
-
-Ces tendances suggèrent que les résultats $N=9$ sont des indicateurs qualitatifs robustes,
-mais une validation quantitative exige des systèmes plus grands (typiquement $N \gtrsim 25$).
+Ces tendances motivent l'extension vers $N\gtrsim 25$ (méthodes approximatives, tensor networks, etc.)
+pour évaluer la convergence quantitative dans des régimes moins dominés par la finitude.
 
 %=============================================================================
 \section{Synthèse et Conclusion}
@@ -487,59 +414,63 @@ mais une validation quantitative exige des systèmes plus grands (typiquement $N
 
 \begin{tcolorbox}[colback=mygreen!5,colframe=mygreen,title=Chaîne d'Émergence Validée]
 \[
-\ket{\Psi(\lambda)} \xrightarrow{\text{Réduction}} \rho_A(\lambda)
+\ket{\Psi(\lambda)} \xrightarrow{\mathrm{Tr}_{\bar{A}}} \rho_A(\lambda)
 \xrightarrow{-\log} K_A(\lambda) \xrightarrow{\text{flot}} \textbf{Temps}
 \]
 \[
 \ket{\Psi(\lambda)} \xrightarrow{I_\lambda(i:j)} d_{ij}(\lambda)
-\xrightarrow{\text{MDS}} g_{\mu\nu}(\lambda)
-\xrightarrow{\text{Jacobson}} \textbf{Gravité}
+\xrightarrow{\text{MDS}} \textbf{Géométrie} \xrightarrow{\text{tests}} \textbf{Gravité effective}
 \]
 \[
-\lambda \to 1 : \quad \text{Dimension} \to 3, \quad \text{Signature ER=EPR activée}
+\lambda \uparrow : \quad \text{dimension effective augmente, et la signature ER=EPR s'active}
 \]
 \end{tcolorbox}
 
 \textbf{Résultats principaux :}
 \begin{enumerate}
-    \item Relation Jacobson $\delta S \simeq \beta\,\delta E$ observée avec $r = 0.87 \pm 0.08$ ($p < 0.01$).
-    \item Transition dimensionnelle $2\text{D} \to 3\text{D}$ contrôlée par $\lambda$, avec ratios $\epsilon_{2D}/\epsilon_{3D}$ jusqu'à $8 \pm 3.5$.
-    \item Signature ER=EPR : compression géodésique $C = 100 \pm 50$ pour $\lambda = 1$, interprétée comme raccourci \emph{wormhole-like}.
+  \item \textbf{Dimension émergente :} la reconstruction MDS montre une transition contrôlée par $\lambda$
+  où des corrélations non-locales imposent une dimension effective plus élevée.
+  \item \textbf{ER=EPR (signature géométrique) :} des paires topologiquement distantes deviennent proches
+  dans l'espace émergent lorsque l'intrication non-locale augmente (raccourci géodésique effectif).
+  \item \textbf{Jacobson (thermodynamique) :} la relation variationnelle $\delta S \simeq \beta\,\delta E$
+  apparaît comme une loi d'état effective de l'intrication.
 \end{enumerate}
 
-\textbf{Limites et perspectives :}
-Système $N=9$ (preuve de principe), effets de bord $\sim 30\%$,
-nécessité de simulations $N \gtrsim 25$ pour convergence quantitative.
-À ce stade, l'objectif n'est pas une dérivation complète de la relativité générale,
-mais une démonstration opératoire que temps, espace, dimension et gravité effective
-peuvent émerger d'un même socle quantique informationnel.
+\textbf{Validation par montée en taille :}
+le passage de $N=9$ à $N=16$ confirme que les signatures précédentes persistent et gagnent en stabilité,
+ce qui réduit la probabilité d'artefacts purement liés à la petite taille.
+L'étape suivante consiste à explorer des tailles $N\gtrsim 25$ avec des méthodes approchées,
+afin d'étudier une convergence quantitative vers un régime collectif.
 
 %=============================================================================
-\section*{Remerciements et Données}
+\section*{Données et Reproductibilité}
 %=============================================================================
-
 Simulations réalisées avec Python/NumPy/SciPy/scikit-learn.
-Code et données disponibles sur \url{https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}.
+Code et figures : \url{https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}.
 
 \appendix
+
 \section{Construction des États $\ket{\Psi(\lambda)}$}
 \label{app:construction-etats}
 
-Les amplitudes $\alpha_c(\lambda)$ sont définies par :
+Une construction simple utilisée pour générer $\alpha_c(\lambda)$ consiste à biaiser une distribution
+d'amplitudes vers des configurations corrélées localement et, lorsque $\lambda$ augmente,
+à renforcer des corrélations entre coins :
 \begin{equation}
 \alpha_c(\lambda) =
-\exp\left[ -\beta E_{\text{local}}(c) - \lambda \beta E_{\text{nl}}(c) \right].
+\exp\left[ -\beta E_{\text{local}}(c) - \lambda \beta E_{\text{nl}}(c) \right],
+\qquad
+\mathcal{N}(\lambda)=\sqrt{\sum_c |\alpha_c(\lambda)|^2}.
 \end{equation}
 
-où $E_{\text{local}}$ pénalise les différences entre voisins et
-$E_{\text{nl}}$ récompense la corrélation entre coins. Formellement :
+où, par exemple :
 \begin{align}
 E_{\text{local}}(c) &= -\sum_{\langle i,j \rangle} (-1)^{c_i + c_j}, \\
-E_{\text{nl}}(c) &= -\sum_{(i,j) \in \text{coins}} (-1)^{c_i + c_j}.
+E_{\text{nl}}(c) &= -\sum_{(i,j)\in \text{coins}} (-1)^{c_i + c_j}.
 \end{align}
 
-avec $\beta = 1.0$ et normalisation
-$\mathcal{N}(\lambda) = \sqrt{\sum_c |\alpha_c(\lambda)|^2}$.
+Cette paramétrisation n'est pas unique : elle sert de \emph{générateur contrôlé}
+pour explorer la transition local/non-local.
 
 \begin{thebibliography}{9}
 \bibitem{jacobson} T. Jacobson, \textit{Phys. Rev. Lett.} 75, 1260 (1995).
@@ -550,3 +481,4 @@ $\mathcal{N}(\lambda) = \sqrt{\sum_c |\alpha_c(\lambda)|^2}$.
 \end{thebibliography}
 
 \end{document}
+
