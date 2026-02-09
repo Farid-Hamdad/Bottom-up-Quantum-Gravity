@@ -1,274 +1,181 @@
-bottom-up-quantum-gravity
+# bottom-up-quantum-gravity
 
-Emergent Space, Time and Gravity from Quantum Entanglement
+**Emergent Space, Time and Gravity from Quantum Entanglement**  
 Farid Hamdad — 2026
 
-Idée centrale (une phrase)
+---
 
-L’espace, le temps et la gravité ne sont pas fondamentaux :
-ils émergent collectivement de la structure d’intrication d’un état quantique global fini.
+## 🧠 Core Idea (One Sentence)
 
-Pourquoi ce projet ?
+**Space, time and gravity are not fundamental.  
+They emerge collectively from the entanglement structure of a global quantum state.**
 
-La physique moderne décrit avec une précision remarquable :
+---
 
-le monde quantique (théories des champs),
+## ❓ Why This Project?
 
-le monde classique (relativité générale),
+Modern physics successfully describes:
 
-mais laisse ouverte une question centrale :
+- **Quantum physics** (quantum field theories),
+- **Classical gravity** (general relativity),
 
-Pourquoi l’espace-temps existe-t-il, et pourquoi la gravité possède-t-elle une structure géométrique et thermodynamique ?
+yet leaves a deep question unanswered:
 
-Ce projet explore une hypothèse minimale mais radicale :
+> **Why does spacetime exist at all, and why does gravity have a geometric and thermodynamic nature?**
 
-Et si l’espace-temps n’était pas le cadre de la physique,
-mais un objet émergent reconstruit à partir de l’intrication quantique ?
+This project explores a minimal but radical hypothesis:
 
-Le postulat minimal
+> **Spacetime is not the stage of physics,  
+> but an emergent object reconstructed from quantum entanglement.**
 
-Le projet bottom-up-quantum-gravity repose sur un postulat unique :
+---
 
-Il existe un état quantique global pur 
-∣
-Ψ
-⟩
-∣Ψ⟩,
+## 🔑 Minimal Postulate
 
-défini sur un ensemble fini de degrés de liberté (qubits),
+The entire framework rests on a single assumption:
 
-sans espace, sans temps, sans métrique préalable.
+- There exists a **global pure quantum state** \( |\Psi\rangle \),
+- defined on a **finite set of degrees of freedom** (qubits),
+- with **no predefined space, no time, no background metric**.
 
-Tout le reste — temps, espace, dimension, géométrie, gravité —
-doit émerger uniquement de la structure interne de 
-∣
-Ψ
-⟩
-∣Ψ⟩.
+Everything else —  
+**time, space, dimension, geometry, gravity** —  
+must emerge **solely from the internal structure of entanglement in \( |\Psi\rangle \)**.
 
-Comment le temps émerge
+---
 
-Le temps n’est pas un paramètre externe.
+## ⏱️ How Time Emerges
 
-Il est identifié au flot modulaire associé aux matrices de densité réduites :
+Time is **not an external parameter**.
 
-𝐾
-𝐴
-=
-−
-log
-⁡
-𝜌
-𝐴
-K
-A
-	​
+It is identified with the **modular flow** associated with reduced density matrices:
 
-=−logρ
-A
-	​
+\[
+K_A = -\log \rho_A
+\]
 
+- Modular flow defines an intrinsic notion of evolution,
+- determined by correlations between subsystems.
 
-Le flot modulaire définit une dynamique interne,
+👉 **Time is interpreted as a relational, information-theoretic notion**,  
+linked to relative decoherence between subsystems.
 
-liée à la structure de corrélation entre sous-systèmes.
+---
 
-👉 Le temps est interprété comme une lecture relationnelle de l’intrication,
-associée à la décohérence relative entre parties du système.
+## 📐 How Space Emerges
 
-Comment l’espace émerge
+1. Compute **mutual information** \( I(i:j) \) between qubit pairs.
+2. Define an **information-theoretic distance**:
 
-On calcule l’information mutuelle 
-𝐼
-(
-𝑖
-:
-𝑗
-)
-I(i:j) entre paires de qubits.
+\[
+d_{ij} = -\log\left(\frac{I(i:j)}{I_{\max}}\right)
+\]
 
-On définit une distance informationnelle :
+3. Reconstruct an effective geometry using embedding techniques  
+   (graph reconstruction, MDS, spectral methods).
 
-𝑑
-𝑖
-𝑗
-=
-−
-log
-⁡
-(
-𝐼
-(
-𝑖
-:
-𝑗
-)
-𝐼
-max
-⁡
-)
-d
-ij
-	​
+👉 **Space is the geometric map of quantum correlations.**
 
-=−log(
-I
-max
-	​
+---
 
-I(i:j)
-	​
+## 🧩 Key Result #1 — Dimension Is Emergent
 
-)
+### ▶️ Case: **N = 9 qubits**
 
-On reconstruit une géométrie effective via des méthodes d’embarquement (MDS, graphes pondérés).
+- **Locally entangled states**
+  - Stable reconstruction of a **2D spatial geometry**,
+  - Spectral dimension consistent with \( d \approx 2 \).
 
-👉 L’espace est la carte géométrique des corrélations quantiques.
+- **Non-local entanglement patterns**
+  - Forced emergence of an **additional effective dimension**,
+  - Clear increase in spectral dimension.
 
-Résultat clé n°1 — La dimension est émergente
-Cas N = 9 qubits
+👉 **Spatial dimension is not postulated — it is imposed by entanglement.**
 
-États à intrication locale :
+---
 
-reconstruction stable en 2 dimensions spatiales,
+### ▶️ Extension: **N = 16 qubits (New)**
 
-spectre du Laplacien cohérent avec une dimension effective 
-𝑑
-≃
-2
-d≃2.
+- Improved numerical stability,
+- Reduced finite-size artifacts,
+- Clearer and smoother dimensional transitions.
 
-États à intrication non-locale contrôlée :
+Key observation:
 
-apparition d’une dimension effective supplémentaire,
+- Dimension depends on **entanglement structure**,  
+  **not** on the number of qubits alone.
 
-augmentation mesurable de la dimension spectrale.
+👉 **Dimensional emergence persists and strengthens with increasing system size.**
 
-👉 La dimension n’est pas postulée : elle est imposée par l’intrication.
+---
 
-Extension N = 16 qubits (nouveau)
+## 🌀 Key Result #2 — ER = EPR Becomes Measurable
 
-Robustesse accrue des résultats :
+The **ER = EPR** correspondence is tested operationally:
 
-reconstruction géométrique plus stable,
+- Two qubits are **strongly entangled**,
+- but **topologically distant** in the interaction graph,
+- yet become **geometrically close** in the reconstructed emergent space.
 
-réduction des artefacts de taille finie.
+👉 **Maximal entanglement manifests as a geodesic shortcut**  
+(*wormhole-like signature*).
 
-Confirmation que :
+This effect is observed for **N = 9** and confirmed for **N = 16**.
 
-la dimension effective dépend de la structure d’intrication,
+---
 
-et non du nombre de qubits seul.
+## 🌡️ Key Result #3 — Gravity as Thermodynamics
 
-Les transitions de dimension deviennent :
+A Jacobson-type relation is tested numerically:
 
-plus nettes,
+\[
+\delta S \simeq \beta \, \delta E
+\]
 
-plus continues,
+Results show:
 
-plus proches d’un comportement thermodynamique.
+- Variations of entanglement entropy correlate with
+- an effective energy variation defined from correlation reorganization.
 
-👉 L’émergence de la dimension persiste et se renforce avec N.
+👉 **Gravity emerges as a thermodynamic equation of state**,  
+not as a fundamental force.
 
-Résultat clé n°2 — ER = EPR devient mesurable
+---
 
-La correspondance ER = EPR est testée de manière opérationnelle :
+## 🚫 What This Work Does NOT Claim
 
-Deux qubits fortement intriqués,
+To be explicit:
 
-mais éloignés topologiquement sur le réseau,
+- ❌ Not a full derivation of General Relativity,
+- ❌ Not a final cosmological model,
+- ❌ Not a standard unification framework.
 
-deviennent géométriquement proches dans l’espace émergent reconstruit.
+This is a **proof of principle**:
 
-👉 L’intrication maximale se manifeste comme un raccourci géodésique
-(signature wormhole-like mesurable).
+- Conceptual,
+- Numerical,
+- Reproducible,
 
-Ce phénomène est observé pour N = 9 et confirmé pour N = 16.
+demonstrating how **space, time and gravity can emerge from a single quantum substrate**.
 
-Résultat clé n°3 — Gravité comme thermodynamique
+---
 
-En testant numériquement une relation de type Jacobson :
+## 🎯 Target Audience
 
-𝛿
-𝑆
-≃
-𝛽
- 
-𝛿
-𝐸
-δS≃βδE
+- MSc / PhD students in physics
+- Theoretical physicists
+- Quantum information researchers
+- Scientists interested in emergence and information
 
-on observe que :
+👉 **No prior expertise in quantum gravity is required.**
 
-la variation d’entropie d’intrication,
+---
 
-est proportionnelle à une variation d’énergie effective,
+## 📁 Repository Structure
 
-définie via la réorganisation collective des corrélations.
-
-👉 La gravité apparaît comme une loi d’état thermodynamique,
-et non comme une interaction fondamentale.
-
-Ce que ce travail n’affirme pas
-
-Pour être clair :
-
-❌ ce n’est pas une dérivation complète de la relativité générale,
-
-❌ ce n’est pas un modèle cosmologique final,
-
-❌ ce n’est pas une unification standard.
-
-👉 C’est une preuve de principe :
-
-conceptuelle,
-
-numérique,
-
-reproductible,
-
-montrant comment espace, temps et gravité peuvent émerger d’un même socle quantique.
-
-À qui s’adresse ce dépôt ?
-
-Étudiants M2 / doctorants en physique
-
-Physiciens théoriciens curieux
-
-Informaticiens quantiques
-
-Chercheurs intéressés par l’émergence et l’information
-
-👉 Aucune expertise préalable en gravité quantique n’est requise.
-
-Organisation du dépôt
-
-paper/ : article principal (LaTeX + PDF)
-
-figures/ : figures clés
-
-appendix/ : analyses avancées
-
-code/ : scripts de reconstruction géométrique
-
-README.md : ce document
-
-Perspective
-
-bottom-up-quantum-gravity suggère un changement de point de vue :
-
-La physique fondamentale n’est pas l’étude de champs dans l’espace-temps,
-mais l’étude de comment l’espace-temps lui-même émerge
-comme description effective d’un réseau d’intrication quantique.
-
-Citation
-
-If you use or build upon this work, please cite:
-
-Farid Hamdad,
-bottom-up-quantum-gravity: Emergent Space, Time and Gravity from Quantum Entanglement,
-GitHub repository (2026).
-
-📩 Contact : hamdadfarid54@gmail.com
-
-Les commentaires, critiques et extensions sont bienvenus via les issues GitHub.
+```text
+paper/      → Main article (LaTeX + PDF)
+figures/    → Key figures
+appendix/   → Extended analyses
+code/       → Geometry reconstruction scripts
+README.md   → This document
