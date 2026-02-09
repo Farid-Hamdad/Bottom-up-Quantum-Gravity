@@ -3,43 +3,44 @@ bottom-up-quantum-gravity
 Emergent Space, Time and Gravity from Quantum Entanglement
 Farid Hamdad — 2026
 
-Idée centrale (en une phrase)
+Idée centrale (une phrase)
 
 L’espace, le temps et la gravité ne sont pas fondamentaux :
-ils émergent collectivement de la structure d’intrication d’un état quantique global.
+ils émergent collectivement de la structure d’intrication d’un état quantique global fini.
 
 Pourquoi ce projet ?
 
-La physique moderne décrit remarquablement bien :
+La physique moderne décrit avec une précision remarquable :
 
-le monde quantique (théories quantiques des champs),
+le monde quantique (théories des champs),
 
-le monde classique et gravitationnel (relativité générale),
+le monde classique (relativité générale),
 
-mais elle peine encore à répondre à une question plus profonde :
+mais laisse ouverte une question centrale :
 
-pourquoi l’espace-temps existe-t-il,
-et pourquoi la gravité possède-t-elle une structure géométrique et thermodynamique ?
+Pourquoi l’espace-temps existe-t-il, et pourquoi la gravité possède-t-elle une structure géométrique et thermodynamique ?
 
-Ce projet explore une hypothèse simple mais radicale :
+Ce projet explore une hypothèse minimale mais radicale :
 
-Et si l’espace-temps n’était pas le théâtre de la physique,
+Et si l’espace-temps n’était pas le cadre de la physique,
 mais un objet émergent reconstruit à partir de l’intrication quantique ?
 
 Le postulat minimal
 
-Le cadre bottom-up-quantum-gravity repose sur un postulat volontairement minimal :
+Le projet bottom-up-quantum-gravity repose sur un postulat unique :
 
 Il existe un état quantique global pur 
 ∣
 Ψ
 ⟩
 ∣Ψ⟩,
+
 défini sur un ensemble fini de degrés de liberté (qubits),
+
 sans espace, sans temps, sans métrique préalable.
 
-Tout le reste — temps, espace, dimension, gravité — doit émerger
-exclusivement de la structure interne de l’intrication de 
+Tout le reste — temps, espace, dimension, géométrie, gravité —
+doit émerger uniquement de la structure interne de 
 ∣
 Ψ
 ⟩
@@ -47,10 +48,9 @@ exclusivement de la structure interne de l’intrication de
 
 Comment le temps émerge
 
-Le temps n’est pas introduit comme un paramètre externe.
+Le temps n’est pas un paramètre externe.
 
-Il est défini de manière relationnelle, à partir des corrélations internes,
-via le flot modulaire associé aux matrices de densité réduites :
+Il est identifié au flot modulaire associé aux matrices de densité réduites :
 
 𝐾
 𝐴
@@ -69,13 +69,14 @@ A
 	​
 
 
-👉 Le temps est interprété comme une lecture interne des corrélations,
-liée à la décohérence relative entre sous-systèmes,
-et non comme une variable fondamentale universelle.
+Le flot modulaire définit une dynamique interne,
+
+liée à la structure de corrélation entre sous-systèmes.
+
+👉 Le temps est interprété comme une lecture relationnelle de l’intrication,
+associée à la décohérence relative entre parties du système.
 
 Comment l’espace émerge
-
-L’espace est reconstruit de manière opérationnelle :
 
 On calcule l’information mutuelle 
 𝐼
@@ -95,7 +96,6 @@ On définit une distance informationnelle :
 −
 log
 ⁡
- ⁣
 (
 𝐼
 (
@@ -121,37 +121,71 @@ I(i:j)
 
 )
 
-On reconstruit une géométrie effective par des méthodes d’embarquement (MDS).
+On reconstruit une géométrie effective via des méthodes d’embarquement (MDS, graphes pondérés).
 
-👉 L’espace apparaît comme la carte géométrique des corrélations quantiques,
-sans être postulé a priori.
+👉 L’espace est la carte géométrique des corrélations quantiques.
 
 Résultat clé n°1 — La dimension est émergente
+Cas N = 9 qubits
 
-Les simulations montrent que :
+États à intrication locale :
 
-des états à intrication majoritairement locale se reconstruisent naturellement en 2D,
+reconstruction stable en 2 dimensions spatiales,
 
-des états à intrication non locale imposent l’émergence d’une dimension supplémentaire.
+spectre du Laplacien cohérent avec une dimension effective 
+𝑑
+≃
+2
+d≃2.
 
-👉 La dimension spatiale n’est pas postulée :
-elle est imposée par la structure de l’intrication.
+États à intrication non-locale contrôlée :
+
+apparition d’une dimension effective supplémentaire,
+
+augmentation mesurable de la dimension spectrale.
+
+👉 La dimension n’est pas postulée : elle est imposée par l’intrication.
+
+Extension N = 16 qubits (nouveau)
+
+Robustesse accrue des résultats :
+
+reconstruction géométrique plus stable,
+
+réduction des artefacts de taille finie.
+
+Confirmation que :
+
+la dimension effective dépend de la structure d’intrication,
+
+et non du nombre de qubits seul.
+
+Les transitions de dimension deviennent :
+
+plus nettes,
+
+plus continues,
+
+plus proches d’un comportement thermodynamique.
+
+👉 L’émergence de la dimension persiste et se renforce avec N.
 
 Résultat clé n°2 — ER = EPR devient mesurable
 
 La correspondance ER = EPR est testée de manière opérationnelle :
 
-deux qubits fortement intriqués,
+Deux qubits fortement intriqués,
 
-mais topologiquement distants sur le réseau,
+mais éloignés topologiquement sur le réseau,
 
 deviennent géométriquement proches dans l’espace émergent reconstruit.
 
-👉 L’intrication maximale se manifeste comme un raccourci géodésique effectif,
-signature wormhole-like dans un système fini
-(sans interprétation relativiste dynamique).
+👉 L’intrication maximale se manifeste comme un raccourci géodésique
+(signature wormhole-like mesurable).
 
-Résultat clé n°3 — La gravité comme thermodynamique
+Ce phénomène est observé pour N = 9 et confirmé pour N = 16.
+
+Résultat clé n°3 — Gravité comme thermodynamique
 
 En testant numériquement une relation de type Jacobson :
 
@@ -166,58 +200,26 @@ En testant numériquement une relation de type Jacobson :
 
 on observe que :
 
-l’entropie d’intrication et l’énergie effective sont reliées de manière stable,
+la variation d’entropie d’intrication,
 
-la gravité apparaît comme une loi d’état thermodynamique,
+est proportionnelle à une variation d’énergie effective,
 
-associée à la réorganisation collective de l’intrication.
+définie via la réorganisation collective des corrélations.
 
-👉 La gravité n’est pas une force fondamentale,
-mais une réponse macroscopique de l’intrication quantique.
-
-Montée en taille : de N = 9 à N = 16 qubits
-
-Les résultats sont établis en deux étapes :
-
-N = 9 qubits (grille 3×3)
-→ preuve de concept entièrement contrôlée numériquement.
-
-N = 16 qubits (grille 4×4)
-→ validation intermédiaire réduisant les effets de bord et de petite taille.
-
-L’extension à N = 16 confirme :
-
-la transition dimensionnelle,
-
-les signatures géométriques de type ER = EPR,
-
-la stabilité de la relation thermodynamique.
-
-👉 Ces résultats montrent que les mécanismes observés ne sont pas de simples artefacts
-liés à un système minimal.
-
-Documents conceptuels (lecture intuitive)
-
-Le dépôt inclut deux documents non académiques, destinés à expliquer
-l’intuition et la logique physique du projet indépendamment du formalisme :
-
-Présentation conceptuelle (français)
-paper/Bottom_Up_Quantum_Gravity_Conceptual_fr.pdf
-
-Conceptual overview (English)
-paper/Bottom_Up_Quantum_Gravity_Conceptual_en.pdf
-
-Ces documents complètent — sans les remplacer — l’article scientifique LaTeX.
+👉 La gravité apparaît comme une loi d’état thermodynamique,
+et non comme une interaction fondamentale.
 
 Ce que ce travail n’affirme pas
 
 Pour être clair :
 
-❌ ce n’est pas une dérivation complète de la relativité générale
-❌ ce n’est pas un modèle cosmologique final
-❌ ce n’est pas une théorie unifiée au sens standard
+❌ ce n’est pas une dérivation complète de la relativité générale,
 
-Il s’agit d’une preuve de principe :
+❌ ce n’est pas un modèle cosmologique final,
+
+❌ ce n’est pas une unification standard.
+
+👉 C’est une preuve de principe :
 
 conceptuelle,
 
@@ -225,8 +227,7 @@ numérique,
 
 reproductible,
 
-montrant comment espace, temps, dimension et gravité
-peuvent émerger d’un même socle quantique informationnel.
+montrant comment espace, temps et gravité peuvent émerger d’un même socle quantique.
 
 À qui s’adresse ce dépôt ?
 
@@ -238,21 +239,26 @@ Informaticiens quantiques
 
 Chercheurs intéressés par l’émergence et l’information
 
-👉 Aucune expertise préalable en gravité quantique n’est requise pour suivre l’idée générale.
+👉 Aucune expertise préalable en gravité quantique n’est requise.
 
 Organisation du dépôt
-paper/     : article scientifique (LaTeX) + PDFs conceptuels
-figures/   : figures clés (N=9 et N=16)
-appendix/  : analyses et compléments techniques
-code/      : scripts de reconstruction géométrique (à venir)
-README.md  : ce document
+
+paper/ : article principal (LaTeX + PDF)
+
+figures/ : figures clés
+
+appendix/ : analyses avancées
+
+code/ : scripts de reconstruction géométrique
+
+README.md : ce document
 
 Perspective
 
 bottom-up-quantum-gravity suggère un changement de point de vue :
 
-La physique fondamentale n’est peut-être pas l’étude de champs dans l’espace-temps,
-mais l’étude de la manière dont l’espace-temps lui-même émerge
+La physique fondamentale n’est pas l’étude de champs dans l’espace-temps,
+mais l’étude de comment l’espace-temps lui-même émerge
 comme description effective d’un réseau d’intrication quantique.
 
 Citation
@@ -263,6 +269,6 @@ Farid Hamdad,
 bottom-up-quantum-gravity: Emergent Space, Time and Gravity from Quantum Entanglement,
 GitHub repository (2026).
 
-Contact : hamdadfarid54@gmail.com
+📩 Contact : hamdadfarid54@gmail.com
 
-Commentaires, critiques et extensions sont bienvenus via les issues GitHub.
+Les commentaires, critiques et extensions sont bienvenus via les issues GitHub.
