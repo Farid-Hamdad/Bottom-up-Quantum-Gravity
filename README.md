@@ -5,14 +5,14 @@ Farid Hamdad — 2026
 
 ---
 
-## 🧠 Idée centrale (une phrase)
+## Idée centrale (une phrase)
 
 **L’espace, le temps et la gravité ne sont pas fondamentaux.  
 Ils émergent collectivement de la structure d’intrication d’un état quantique global fini.**
 
 ---
 
-## ❓ Pourquoi ce projet ?
+##  Pourquoi ce projet ?
 
 La physique moderne décrit avec une précision remarquable :
 
@@ -31,7 +31,7 @@ Ce projet explore une hypothèse minimale mais radicale :
 
 ---
 
-## 🔑 Postulat minimal
+##  Postulat minimal
 
 Le projet **bottom-up-quantum-gravity** repose sur un postulat unique :
 
@@ -45,7 +45,7 @@ doit émerger **exclusivement de la structure interne de l’intrication de \( |
 
 ---
 
-## ⏱️ Comment le temps émerge
+##  Comment le temps émerge
 
 Le temps n’est **pas** un paramètre externe.
 
@@ -58,12 +58,12 @@ K_A = -\log \rho_A
 - Le flot modulaire définit une dynamique intrinsèque,
 - entièrement déterminée par les corrélations entre sous-systèmes.
 
-👉 **Le temps est interprété comme une notion relationnelle**,  
+ **Le temps est interprété comme une notion relationnelle**,  
 issue de la décohérence relative et de la structure informationnelle de l’état.
 
 ---
 
-## 📐 Comment l’espace émerge
+##  Comment l’espace émerge
 
 1. Calcul de l’**information mutuelle** \( I(i:j) \) entre paires de qubits.
 2. Définition d’une **distance informationnelle** :
@@ -77,13 +77,13 @@ d_{ij} = -\log\left(\frac{I(i:j)}{I_{\max}}\right)
    - méthodes spectrales,
    - embarquements métriques (MDS).
 
-👉 **L’espace est la carte géométrique des corrélations quantiques.**
+ **L’espace est la carte géométrique des corrélations quantiques.**
 
 ---
 
-## 🧩 Résultat clé n°1 — La dimension est émergente
+##  Résultat clé n°1 — La dimension est émergente
 
-### ▶️ Cas **N = 9 qubits**
+###  Cas **N = 9 qubits**
 
 - **Intrication locale** :
   - reconstruction stable d’une **géométrie 2D**,
@@ -93,11 +93,11 @@ d_{ij} = -\log\left(\frac{I(i:j)}{I_{\max}}\right)
   - émergence d’une **dimension effective supplémentaire**,
   - augmentation mesurable de la dimension spectrale.
 
-👉 **La dimension spatiale n’est pas postulée, elle est imposée par l’intrication.**
+ **La dimension spatiale n’est pas postulée, elle est imposée par l’intrication.**
 
 ---
 
-### ▶️ Extension **N = 16 qubits**
+###  Extension **N = 16 qubits**
 
 - Stabilité numérique accrue,
 - Réduction des effets de taille finie,
@@ -108,11 +108,11 @@ Observation clé :
 - la dimension dépend de la **structure de l’intrication**,
 - et non du nombre de qubits seul.
 
-👉 **L’émergence dimensionnelle persiste et se renforce avec N.**
+ **L’émergence dimensionnelle persiste et se renforce avec N.**
 
 ---
 
-## 🌀 Résultat clé n°2 — ER = EPR devient mesurable
+##  Résultat clé n°2 — ER = EPR devient mesurable
 
 La correspondance **ER = EPR** est testée de manière opérationnelle :
 
@@ -120,14 +120,14 @@ La correspondance **ER = EPR** est testée de manière opérationnelle :
 - mais éloignés topologiquement dans le graphe,
 - deviennent **géométriquement proches** dans l’espace émergent reconstruit.
 
-👉 L’intrication maximale se manifeste comme un **raccourci géodésique**,  
+ L’intrication maximale se manifeste comme un **raccourci géodésique**,  
 signature *wormhole-like* mesurable.
 
 Ce comportement est observé pour **N = 9** et confirmé pour **N = 16**.
 
 ---
 
-## 🌡️ Résultat clé n°3 — La gravité comme thermodynamique
+##  Résultat clé n°3 — La gravité comme thermodynamique
 
 Une relation de type Jacobson est testée numériHU
 \[
@@ -140,12 +140,12 @@ Les simulations montrent que :
 - sont proportionnelles à une variation d’énergie effective,
 - définie par la réorganisation collective des corrélations.
 
-👉 **La gravité apparaît comme une loi d’état thermodynamique**,  
+ **La gravité apparaît comme une loi d’état thermodynamique**,  
 et non comme une interaction fondamentale.
 
 ---
 
-## 🚫 Ce que ce travail n’affirme pas
+##  Ce que ce travail n’affirme pas
 
 Pour être explicite :
 
@@ -153,7 +153,7 @@ Pour être explicite :
 - ❌ ce n’est pas un modèle cosmologique final,
 - ❌ ce n’est pas une unification standard.
 
-👉 Il s’agit d’une **preuve de principe** :
+ Il s’agit d’une **preuve de principe** :
 
 - conceptuelle,
 - numérique,
@@ -163,18 +163,18 @@ montrant comment **espace, temps et gravité peuvent émerger d’un même socle
 
 ---
 
-## 🎯 Public visé
+##  Public visé
 
 - Étudiants M2 / doctorants en physique
 - Physiciens théoriciens
 - Chercheurs en information quantique
 - Scientifiques intéressés par l’émergence
 
-👉 **Aucune expertise préalable en gravité quantique n’est requise.**
+ **Aucune expertise préalable en gravité quantique n’est requise.**
 
 ---
 
-## 📁 Organisation du dépôt
+##  Organisation du dépôt
 
 ```text
 paper/      → Article principal (LaTeX + PDF)
@@ -198,7 +198,7 @@ des tests numériques contrôlés de ER = EPR,
 
 une unification conceptuelle de l’espace, du temps et de la thermodynamique.
 
-📚 Citation
+ Citation
 
 Si vous utilisez ou prolongez ce travail, merci de citer :
 
@@ -206,6 +206,6 @@ Farid Hamdad,
 bottom-up-quantum-gravity : Émergence de l’espace, du temps et de la gravité à partir de l’intrication quantique,
 dépôt GitHub (2026).
 
-📩 Contact : hamdadfarid54@gmail.com
+ Contact : hamdadfarid54@gmail.com
 
 Commentaires, critiques et extensions sont bienvenus via les issues GitHub.
