@@ -182,7 +182,9 @@ figures/    → Figures clés
 appendix/   → Analyses avancées
 code/       → Scripts de reconstruction géométrique
 README.md   → Ce document
-Perspective scientifique
+
+
+## Perspective scientifique
 
 bottom-up-quantum-gravity propose un changement de point de vue fondamental :
 
@@ -198,7 +200,7 @@ des tests numériques contrôlés de ER = EPR,
 
 une unification conceptuelle de l’espace, du temps et de la thermodynamique.
 
- Citation
+ ## Citation
 
 Si vous utilisez ou prolongez ce travail, merci de citer :
 
