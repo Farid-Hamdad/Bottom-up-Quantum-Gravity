@@ -201,7 +201,7 @@ des tests numériques contrôlés de ER = EPR,
 une unification conceptuelle de l’espace, du temps et de la thermodynamique.
 
  ## Citation
-
+## Citation
 Si vous utilisez ou prolongez ce travail, merci de citer :
 
 Farid Hamdad,
