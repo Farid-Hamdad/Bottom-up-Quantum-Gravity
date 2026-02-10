@@ -1,213 +1,214 @@
 # bottom-up-quantum-gravity
 
-**Émergence de l’espace, du temps et de la gravité à partir de l’intrication quantique**  
-Farid Hamdad — 2026
+**Émergence de l'espace, du temps et de la gravité à partir de l'intrication quantique**
+
+*Farid Hamdad — Février 2026*
 
 ---
 
-## Idée centrale (une phrase)
+## Idée centrale
 
-**L’espace, le temps et la gravité ne sont pas fondamentaux.  
-Ils émergent collectivement de la structure d’intrication d’un état quantique global fini.**
+&gt; **L'espace, le temps et la gravité ne sont pas fondamentaux.**
+&gt; Ils émergent collectivement de la structure d'intrication d'un état quantique global fini.
 
 ---
 
-##  Pourquoi ce projet ?
+## Pourquoi ce projet ?
 
 La physique moderne décrit avec une précision remarquable :
 
-- la **physique quantique** (théories des champs),
-- la **gravitation classique** (relativité générale),
+- la physique quantique (théories des champs, information quantique)
+- la gravitation classique (relativité générale, thermodynamique des trous noirs)
 
 mais laisse ouverte une question fondamentale :
 
-> **Pourquoi l’espace-temps existe-t-il,  
-> et pourquoi la gravité possède-t-elle une structure géométrique et thermodynamique ?**
+**Pourquoi l'espace-temps existe-t-il, et pourquoi la gravité possède-t-elle une structure à la fois géométrique et thermodynamique ?**
 
-Ce projet explore une hypothèse minimale mais radicale :
-
-> **L’espace-temps n’est pas le théâtre de la physique,  
-> mais un objet émergent reconstruit à partir de l’intrication quantique.**
+Ce projet explore une hypothèse minimale mais radicale : *l'espace-temps n'est pas le théâtre de la physique, mais un objet émergent reconstruit à partir de l'intrication quantique.*
 
 ---
 
-##  Postulat minimal
+## Architecture du projet
 
-Le projet **bottom-up-quantum-gravity** repose sur un postulat unique :
+### 1. Fondements
 
-- Il existe un **état quantique global pur** \( |\Psi\rangle \),
-- défini sur un **ensemble fini de degrés de liberté** (qubits),
-- **sans espace, sans temps, sans métrique préalable**.
+#### Postulat minimal
 
-Tout le reste —  
-**temps, espace, dimension, géométrie, gravité** —  
-doit émerger **exclusivement de la structure interne de l’intrication de \( |\Psi\rangle \)**.
+Le projet repose sur un postulat unique :
 
----
+&gt; Il existe un état quantique global pur $|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^N \mathcal{H}_i$,
+&gt; défini sur $N$ degrés de liberté élémentaires (qubits),
+&gt; **sans espace, sans temps, sans métrique préalable.**
 
-##  Comment le temps émerge
+Tout le reste — temps, espace, dimension, géométrie, gravité effective — doit émerger exclusivement de la structure interne de l'intrication de $|\Psi\rangle$.
 
-Le temps n’est **pas** un paramètre externe.
-
-Il est identifié au **flot modulaire** associé aux matrices de densité réduites :
-
-\[
-K_A = -\log \rho_A
-\]
-
-- Le flot modulaire définit une dynamique intrinsèque,
-- entièrement déterminée par les corrélations entre sous-systèmes.
-
- **Le temps est interprété comme une notion relationnelle**,  
-issue de la décohérence relative et de la structure informationnelle de l’état.
+*Note :* $N$ est fini mais arbitrairement extensible. Les simulations présentées portent sur $N=9$ et $N=16$, avec perspectives pour $N \geq 25$.
 
 ---
 
-##  Comment l’espace émerge
+### 2. Méthodologie
 
-1. Calcul de l’**information mutuelle** \( I(i:j) \) entre paires de qubits.
-2. Définition d’une **distance informationnelle** :
+#### Émergence du temps : flot modulaire
 
-\[
-d_{ij} = -\log\left(\frac{I(i:j)}{I_{\max}}\right)
-\]
+Le temps n'est pas un paramètre externe. Il est identifié au **flot modulaire** associé aux matrices de densité réduites :
 
-3. Reconstruction d’une géométrie effective par :
-   - graphes pondérés,
-   - méthodes spectrales,
-   - embarquements métriques (MDS).
+$$K_A = -\log \rho_A \quad \text{où} \quad \rho_A = \mathrm{Tr}_{\bar{A}}|\Psi\rangle\langle\Psi|$$
 
- **L’espace est la carte géométrique des corrélations quantiques.**
+Le flot modulaire définit une dynamique intrinsèque :
+$$\mathcal{O}(\tau) = e^{iK_A\tau}\mathcal{O}e^{-iK_A\tau}$$
 
----
+entièrement déterminée par les corrélations entre sous-systèmes. Le temps est interprété comme une notion **relationnelle** (Page-Wootters), issue de la structure informationnelle de l'état.
 
-##  Résultat clé n°1 — La dimension est émergente
+#### Émergence de l'espace : reconstruction géométrique
 
-###  Cas **N = 9 qubits**
+| Étape | Outil | Output |
+|-------|-------|--------|
+| 1. Corrélations | Information mutuelle $I(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij})$ | Matrice de proximité |
+| 2. Distance | $d_{ij} = -\log\left(\frac{I(i:j) + \epsilon}{I_{\max}}\right)$ | Métrique informationnelle |
+| 3. Géométrie | Multi-Dimensional Scaling (MDS) | Points $x_i \in \mathbb{R}^d$ |
+| 4. Dimension | Erreur de reconstruction $\epsilon_d$ | Dimension effective |
 
-- **Intrication locale** :
-  - reconstruction stable d’une **géométrie 2D**,
-  - dimension spectrale \( d \simeq 2 \).
-
-- **Intrication non-locale contrôlée** :
-  - émergence d’une **dimension effective supplémentaire**,
-  - augmentation mesurable de la dimension spectrale.
-
- **La dimension spatiale n’est pas postulée, elle est imposée par l’intrication.**
+*Propriétés de $d_{ij}$ :* symétrie ✓, positivité ✓, triangulaire approximative (violation &lt; 5% sur les données).
 
 ---
 
-###  Extension **N = 16 qubits**
+### 3. Résultats
 
-- Stabilité numérique accrue,
-- Réduction des effets de taille finie,
-- Transitions de dimension plus nettes et plus continues.
+#### Résultat clé n°1 — La dimension est émergente
 
-Observation clé :
+| Configuration | Intrication | Dimension effective | Observation |
+|-------------|-------------|---------------------|-------------|
+| $N=9$, $\lambda \simeq 0$ | Locale (voisins) | $d \simeq 2$ | Reconstruction 2D stable |
+| $N=9$, $\lambda \to 1$ | Non-locale (coins) | $d \simeq 3$ | Transition dimensionnelle |
+| $N=16$, $\lambda \simeq 0$ | Locale | $d \simeq 2$ | Robustesse confirmée |
+| $N=16$, $\lambda \to 1$ | Non-locale | $d \simeq 3$ | Transition plus nette |
 
-- la dimension dépend de la **structure de l’intrication**,
-- et non du nombre de qubits seul.
+**Observation clé :** La dimension spatiale n'est pas postulée, elle est **mesurée** et dépend de la structure de l'intrication (paramètre $\lambda$), pas seulement du nombre de qubits.
 
- **L’émergence dimensionnelle persiste et se renforce avec N.**
+#### Résultat clé n°2 — ER = EPR devient mesurable
 
----
+La correspondance ER = EPR (Maldacena-Susskind) est testée de manière opérationnelle :
 
-##  Résultat clé n°2 — ER = EPR devient mesurable
+| Paramètre | $I(\text{coins})$ | $d_{\text{topo}}$ | $d_{\text{bulk}}$ | Compression $C$ |
+|-----------|-------------------|-------------------|-------------------|-----------------|
+| $\lambda = 0$ | $\sim 0.01$ | 4 (ou 6 pour $N=16$) | $\sim 4$ | $\sim 1$ |
+| $\lambda = 0.5$ | $\sim 0.45$ | 4 | $\sim 1.8$ | $\sim 2.2$ |
+| $\lambda = 1.0$ | $\sim 1.28$ | 4 | $\sim 0.04$ | $\sim 100$ ($N=9$) / $\sim 10$ ($N=16$) |
 
-La correspondance **ER = EPR** est testée de manière opérationnelle :
+Deux qubits fortement intriqués mais éloignés topologiquement deviennent **géométriquement proches** dans l'espace émergent. L'intrication maximale se manifeste comme un **raccourci géodésique**, signature *wormhole-like* mesurable.
 
-- Deux qubits fortement intriqués,
-- mais éloignés topologiquement dans le graphe,
-- deviennent **géométriquement proches** dans l’espace émergent reconstruit.
+*Note :* Dans ce cadre statique (pas d'évolution temporelle externe), il s'agit d'un **analogue géométrique** de ER=EPR, non d'une traversée dynamique de trou de ver.
 
- L’intrication maximale se manifeste comme un **raccourci géodésique**,  
-signature *wormhole-like* mesurable.
+#### Résultat clé n°3 — La gravité comme thermodynamique
 
-Ce comportement est observé pour **N = 9** et confirmé pour **N = 16**.
+Une relation de type **Jacobson** (1995) est testée numériquement :
 
----
+$$\delta S_A \simeq \beta_{\text{eff}} \cdot \delta E$$
 
-##  Résultat clé n°3 — La gravité comme thermodynamique
+| Observable | Comportement | Interprétation |
+|------------|--------------|----------------|
+| $S_A(\lambda)$ vs $E(\lambda)$ | Relation monotone croissante | Loi d'état effective |
+| $\beta_{\text{eff}} = dS/dE$ | Stable à $N=9$, robuste à $N=16$ | Température inverse de l'intrication |
+| Test variationnel | $\delta S \approx \beta\,\delta E$ vérifié | Thermodynamique émergente |
 
-Une relation de type Jacobson est testée numériHU
-\[
-\delta S \simeq \beta \, \delta E
-\]
-
-Les simulations montrent que :
-
-- les variations d’entropie d’intrication,
-- sont proportionnelles à une variation d’énergie effective,
-- définie par la réorganisation collective des corrélations.
-
- **La gravité apparaît comme une loi d’état thermodynamique**,  
-et non comme une interaction fondamentale.
+La gravité apparaît comme une **loi d'état thermodynamique** de l'information, et non comme une interaction fondamentale.
 
 ---
 
-##  Ce que ce travail n’affirme pas
+### 4. Discussion : Portée et Limites
 
-Pour être explicite :
+#### Ce que cette preuve de principe établit
 
-- ❌ ce n’est pas une dérivation complète de la relativité générale,
-- ❌ ce n’est pas un modèle cosmologique final,
-- ❌ ce n’est pas une unification standard.
+✅ Un état quantique fini peut encoder une géométrie émergente  
+✅ La dimension spatiale dépend quantitativement de la structure d'intrication  
+✅ Des signatures analogues à ER=EPR et Jacobson sont observables numériquement  
+✅ La robustesse des résultats augmente avec $N$ (9 → 16)
 
- Il s’agit d’une **preuve de principe** :
+#### Ce qu'elle n'établit pas (limites explicites)
 
-- conceptuelle,
-- numérique,
-- reproductible,
+❌ **Limite continue :** $N=9,16$ sont finis ; la convergence $N \to \infty$ reste ouverte  
+❌ **Dynamique temporelle :** Le "temps" est modulaire, pas une évolution hamiltonienne externe avec causalité macroscopique  
+❌ **Gravité quantique complète :** Pas de dérivation des équations d'Einstein ni de principe holographique quantifié  
+❌ **Prédiction expérimentale :** Aucun protocole de test sur système physique (ion piégé, supraconducteur, etc.) proposé
 
-montrant comment **espace, temps et gravité peuvent émerger d’un même socle quantique**.
+#### Nuance méthodologique
 
----
-
-##  Public visé
-
-- Étudiants M2 / doctorants en physique
-- Physiciens théoriciens
-- Chercheurs en information quantique
-- Scientifiques intéressés par l’émergence
-
- **Aucune expertise préalable en gravité quantique n’est requise.**
+L'hamiltonien $H(\lambda)$ utilisé pour le test Jacobson est un **outil auxiliaire** pour définir une énergie effective. Il n'est pas dérivé fondamentalement de $|\Psi\rangle$ — cette derivation constitue un problème ouvert.
 
 ---
 
-##  Organisation du dépôt
+## Public visé et prérequis
 
-```text
-paper/      → Article principal (LaTeX + PDF)
-figures/    → Figures clés
-appendix/   → Analyses avancées
-code/       → Scripts de reconstruction géométrique
-README.md   → Ce document
+| Profil | Prérequis suggérés | Ce qu'ils trouveront |
+|--------|-------------------|---------------------|
+| **M2/Doctorant physique** | MQ basique, entropie de von Neumann | Cadre conceptuel + Implémentation numérique |
+| **Chercheur info-quantique** | Intrication, matrices de densité, MDS | Application nouvelle de techniques standards |
+| **Physicien théoricien (gravité)** | Jacobson, ER=EPR, holographie | Perspective alternative bottom-up vs top-down (AdS/CFT) |
+| **Scientifique généraliste** | Notions de base | Introduction accessible avec annexes explicatives |
 
+*Aucune expertise préalable en gravité quantique n'est strictement requise pour comprendre les concepts principaux.*
 
-## Perspective scientifique
+---
 
-bottom-up-quantum-gravity propose un changement de point de vue fondamental :
+## Organisation du dépôt
+bottom-up-quantum-gravity/
+├── paper/
+│   ├── main.tex                    # Source LaTeX complet
+│   ├── bottom_up_gravity.pdf       # PDF compilé (préprint)
+│   └── macros.sty                  # Définitions et packages
+├── figures/
+│   ├── fig1_dimension_emergente_N9.png
+│   ├── fig2_er_epr_N9.png
+│   ├── fig3_jacobson_N9.png
+│   ├── fig4_grid_N16.png
+│   ├── fig5_mds_N16.png
+│   ├── fig6_erepr_N16.png
+│   └── fig7_jacobson_N16.png
+├── code/
+│   ├── src/
+│   │   ├── states.py               # Génération des états Ψ(λ) 
+│   │   ├── geometry.py             # MDS, distances, dimensions spectrales
+│   │   ├── thermodynamics.py         # Tests Jacobson, entropies
+│   │   └── analysis.py             # Pipelines de figures
+│   ├── notebooks/
+│   │   └── demo_reproductibilite.ipynb  # Reproduction interactive (N=9)
+│   └── requirements.txt            # Python 3.9+, NumPy, SciPy, scikit-learn, matplotlib
+├── data/
+│   ├── N9_results.pkl              # Données numériques brutes (reproductibilité)
+│   └── N16_results.pkl
+└── README.md                       # Ce document
 
-La physique fondamentale n’est pas l’étude de champs dans l’espace-temps,
-mais l’étude de la manière dont l’espace-temps lui-même émerge
-comme description effective d’un réseau d’intrication quantique.
+---
 
-Ce cadre ouvre la voie à :
+## Perspectives et extensions
 
-une approche informationnelle de la gravité,
+### Court terme (en cours)
+- [ ] **Monte Carlo tensoriel** pour $N \geq 25$ (PEPS, MERA) — test de convergence
+- [ ] **Finite-size scaling** : la transition dimensionnelle devient-elle abrupte en limite thermodynamique ?
+- [ ] **Autres familles d'états** : états aléatoires, états topologiques (toric code), états critiques
 
-des tests numériques contrôlés de ER = EPR,
+### Moyen terme (conceptuel)
+- [ ] Connexion avec **Causal Set Theory** (rideaux de lumière discrets)
+- [ ] Généralisation à **qudits** ($d>2$) et hamiltoniens non-triviaux
+- [ ] Test de la **conjecture de Page-Wootters** pour le temps relationnel
 
-une unification conceptuelle de l’espace, du temps et de la thermodynamique.
+### Long terme (spéculatif)
+- [ ] **Principe holographique émergent** : volume $\leftrightarrow$ surface dans ce cadre ?
+- [ ] Liens avec **modèles SYK** ou émulateurs de trous noirs en laboratoire
+- [ ] **Prédiction expérimentale** : signatures mesurables sur simulateurs quantiques ?
 
- ## Citation
+---
 
-Si vous utilisez ou prolongez ce travail, merci de citer :
+## Citation
 
-Farid Hamdad,
-bottom-up-quantum-gravity : Émergence de l’espace, du temps et de la gravité à partir de l’intrication quantique,
-dépôt GitHub (2026).
+Si vous utilisez ou prolongez ce travail :
 
- Contact : hamdadfarid54@gmail.com
-
-Commentaires, critiques et extensions sont bienvenus via les issues GitHub.
+```bibtex
+@misc{hamdad2026bottomup,
+  author = {Hamdad, Farid},
+  title = {Bottom-Up Quantum Gravity: \'Emergence de l'espace, du temps et 
+           de la gravité à partir de l'intrication quantique},
+  year = {2026},
+  howpublished = {GitHub repository},
+  url = {https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}
+}
