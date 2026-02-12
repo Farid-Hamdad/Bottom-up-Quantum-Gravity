@@ -202,7 +202,7 @@ bottom-up-quantum-gravity/
 ## Citation
 
 Si vous utilisez ou prolongez ce travail :
-
+hamdadfarid54@gmail.com
 ```bibtex
 @misc{hamdad2026bottomup,
   author = {Hamdad, Farid},
