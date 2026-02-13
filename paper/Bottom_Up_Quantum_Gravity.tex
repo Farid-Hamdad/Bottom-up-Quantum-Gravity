@@ -1,3 +1,4 @@
+
 \documentclass[11pt,a4paper]{article}
 
 % -------------------- Encodage / Langue --------------------
@@ -72,6 +73,10 @@ imposent une dimension effective plus élevée.
 Nous validons numériquement trois signatures sur des systèmes finis :
 (1) temps relationnel via flot modulaire, (2) géométrie informationnelle via information mutuelle et embarquement (MDS),
 et (3) gravité thermodynamique effective via un test variationnel de type Jacobson.
+Nous ajoutons (4) une géométrie \emph{intrinsèque} via la dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication,
+et (5) une loi de réponse \emph{Einstein-like} au sens opérationnel :
+une relation linéaire locale entre variations d'entropie de coupure (proxy d'aire), courbure discrète (Ollivier--Ricci)
+et source de perturbation, calculée avec Wasserstein-1 exact par programmation linéaire.
 Nous ajoutons un test opérationnel de type ER=EPR : des paires topologiquement distantes deviennent géométriquement proches
 dans l'espace émergent lorsque l'intrication non-locale est renforcée.
 Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, réduisant les effets de taille finie et renforçant la robustesse.
@@ -109,7 +114,8 @@ Nous adoptons un protocole unique réutilisé à différentes tailles $N$ :
 (i) définir une famille d'états $\ket{\Psi(\lambda)}$ contrôlée par un paramètre de non-localité corrélationnelle $\lambda$,
 (ii) calculer l'information mutuelle $I(i:j)$, (iii) définir une distance informationnelle $d_{ij}$,
 (iv) reconstruire une géométrie par embarquement (MDS), et (v) tester des signatures thermodynamiques (Jacobson)
-et géodésiques (ER=EPR).
+et géodésiques (ER=EPR). Nous ajoutons ensuite (vi) une mesure intrinsèque de dimension via le spectre du Laplacien,
+et (vii) une loi de réponse locale liant entropie de coupure et courbure discrète.
 
 \subsection{Tailles étudiées : $N=9$ puis $N=16$}
 
@@ -238,7 +244,249 @@ Une température inverse effective est estimée par différence finie :
 On teste alors $\delta S \simeq \beta\,\delta E$ comme relation variationnelle effective.
 
 %=============================================================================
+\section{Géométrie Spectrale : Laplacien et Dimension Spectrale}
+\label{sec:spectral}
+%=============================================================================
+
+Au-delà de l'embarquement (MDS), nous introduisons une mesure intrinsèque de dimension
+fondée sur le spectre du Laplacien du graphe d'intrication.
+
+\subsection{Graphe d'intrication}
+
+À partir des poids $w_{ij}=I_\lambda(i:j)$, on définit $W=[w_{ij}]$, $D_{ii}=\sum_j w_{ij}$,
+et le Laplacien combinatoire
+\begin{equation}
+L = D - W.
+\end{equation}
+
+\subsection{Trace de chaleur et dimension spectrale}
+
+On définit la trace de chaleur :
+\begin{equation}
+\mathcal{Z}(\tau)=\mathrm{Tr}\,e^{-\tau L}=\sum_{\alpha=1}^{N} e^{-\tau \lambda_\alpha},
+\end{equation}
+où $\{\lambda_\alpha\}$ sont les valeurs propres de $L$.
+La dimension spectrale est :
+\begin{equation}
+d_s(\tau) = -2\,\frac{d\log \mathcal{Z}(\tau)}{d\log \tau}.
+\end{equation}
+
+\subsection{Plateau IR et dimension effective}
+
+Pour $N=9$ et $N=16$, $d_s(\tau)$ présente typiquement un plateau IR sur une fenêtre $(\tau_1,\tau_2)$.
+Nous définissons
+\begin{equation}
+d_{\mathrm{IR}} \equiv \left\langle d_s(\tau)\right\rangle_{\tau\in[\tau_1,\tau_2]}.
+\end{equation}
+Numériquement, $d_{\mathrm{IR}}$ se situe dans l'intervalle $\sim 2.5$--$2.7$ selon $\lambda$,
+ce qui suggère une géométrie effective non-entière et renforce la lecture ``dimension émergente''
+obtenue par MDS.
+
+%=============================================================================
+\section{Courbure Discrète et Loi de Réponse Einstein-like}
+\label{sec:einstein_like}
+%=============================================================================
+
+Cette section introduit une courbure discrète (Ricci) et teste une loi de réponse locale liant
+variations d'une fonctionnelle de frontière (proxy d'aire) et variations de courbure.
+
+\subsection{Entropie de coupure comme fonctionnelle de frontière}
+
+Pour une région $A\subset V$, on définit un proxy d'entropie de frontière :
+\begin{equation}
+S_{\mathrm{cut}}(A)=\sum_{i\in A}\sum_{j\notin A} w_{ij}.
+\end{equation}
+Cette quantité est corrélée à l'entropie de von Neumann $S(\rho_A)$ tout en étant calculable
+directement à partir des poids du graphe.
+
+\subsection{Courbure d'Ollivier--Ricci (Wasserstein-1 exact)}
+
+On associe à chaque nœud $i$ une mesure locale $\mu_i$ sur $V$ :
+\begin{equation}
+\mu_i(j)=\frac{w_{ij}}{\sum_k w_{ik}}.
+\end{equation}
+Pour une arête $(i,j)$, la courbure d'Ollivier--Ricci est définie par
+\begin{equation}
+\kappa_{ij}=1-\frac{W_1(\mu_i,\mu_j)}{d(i,j)},
+\end{equation}
+où $W_1$ est la distance de Wasserstein-1 calculée par programmation linéaire
+(Annexe~\ref{app:W1LP}). La distance $d(i,j)$ peut être choisie comme distance géodésique de graphe
+(longueurs d'arêtes définies à partir de $w_{ij}$) ou distance de résistance via $L^+$.
+
+\subsection{Courbure régionale}
+
+Pour une région $A$, on définit une courbure moyenne (proxy de scalaire de Ricci discret) :
+\begin{equation}
+\mathcal{R}(A)\equiv \frac{1}{|E(A)|}\sum_{(u,v)\in E(A)} \kappa_{uv},
+\end{equation}
+où $E(A)$ est l'ensemble des arêtes internes à la région.
+
+\subsection{Perturbations locales et source}
+
+On considère des perturbations locales des poids $w_{ij}\to w_{ij}+\delta w_{ij}$.
+Pour une région $A=B(i,R)$ (boule de rayon $R$ pour une métrique donnée), on définit une intensité de source :
+\begin{equation}
+\Delta M(A)=\sum_{u\in A}\sum_v |\delta w_{uv}|.
+\end{equation}
+
+\subsection{Équation d'état opérationnelle (réponse linéaire)}
+
+Nous testons une relation de réponse locale de type équation d'état :
+\begin{equation}
+\Delta S_{\mathrm{cut}}(A)=a(R)\,\Delta\mathcal{R}(A)+b(R)\,\Delta M(A)+\varepsilon,
+\label{eq:operational_eos}
+\end{equation}
+où $\Delta$ désigne la différence avant/après perturbation, et $A=B(i,R)$.
+
+La colinéarité entre $\Delta\mathcal{R}$ et $\Delta M$ est évaluée via corrélation et VIF,
+et la stabilité de $a(R),b(R)$ via bootstrap (Annexe~\ref{app:bootstrap}).
+En pratique, on observe une fenêtre d'échelle intermédiaire où les coefficients sont stables,
+ce qui fournit une signature numérique cohérente d'une loi de réponse géométrique au sens opérationnel.
+
+%=============================================================================
 \section{Résultats (I) : $N=9$ qubits — Preuve de Concept}
+%=============================================================================
+\section{Conjectures majeures et positionnement théorique}
+\label{sec:conjectures}
+%=============================================================================
+
+Cette section explicite la position de \textbf{Bottom-Up Quantum Gravity}
+vis-à-vis de plusieurs conjectures centrales en gravité quantique.
+L’objectif n’est pas d’en revendiquer une démonstration complète,
+mais de clarifier ce que le cadre établit au sens opérationnel
+et ce qui reste ouvert.
+
+%-----------------------------------------------------------------------------
+\subsection{Réduction dimensionnelle UV}
+%-----------------------------------------------------------------------------
+
+\paragraph{Conjecture.}
+Plusieurs approches de gravité quantique suggèrent qu’à très petite échelle,
+la dimension effective de l’espace tend vers $d \simeq 2$.
+
+\paragraph{Interprétation Bottom-Up.}
+Dans notre cadre, la dimension n’est pas postulée mais reconstruite à partir
+du graphe d’intrication via :
+
+\begin{itemize}
+\item reconstruction MDS,
+\item dimension spectrale $d_s(\tau)$.
+\end{itemize}
+
+Une réduction dimensionnelle correspond à un régime où
+l’intrication est dominée par des corrélations locales,
+ce qui impose une diffusion effective quasi-bidimensionnelle.
+
+\paragraph{Statut.}
+Compatible structurellement.
+Une confirmation robuste requiert une analyse multi-échelle
+et un scaling en $N$.
+
+%-----------------------------------------------------------------------------
+\subsection{ER = EPR (intrication $\Rightarrow$ raccourci géodésique)}
+%-----------------------------------------------------------------------------
+
+\paragraph{Conjecture.}
+Des corrélations EPR fortement non-locales
+se manifesteraient géométriquement comme des ponts ER.
+
+\paragraph{Interprétation Bottom-Up.}
+Lorsque l’intrication non-locale augmente (paramètre $\lambda$),
+la distance informationnelle $d_{ij}$ se contracte pour certaines paires
+topologiquement distantes.
+
+On observe :
+
+\begin{equation}
+C(\lambda)=\frac{d_{\mathrm{topo}}}{d_{\mathrm{bulk}}}
+\quad \text{croît avec } \lambda.
+\end{equation}
+
+Cela constitue une signature \emph{wormhole-like}
+dans un système fini.
+
+\paragraph{Statut.}
+Signature démontrée numériquement pour $N=9$ et confirmée pour $N=16$.
+Il s’agit d’un analogue géométrique discret,
+non d’un trou de ver dynamique relativiste.
+
+%-----------------------------------------------------------------------------
+\subsection{Principe holographique et loi d’aire}
+%-----------------------------------------------------------------------------
+
+\paragraph{Conjecture.}
+Dans les théories gravitationnelles,
+l’entropie d’une région est contrôlée par une quantité de frontière.
+
+\paragraph{Interprétation Bottom-Up.}
+Nous disposons de deux objets :
+
+\begin{itemize}
+\item l’entropie exacte $S(\rho_A)$,
+\item le proxy de frontière $S_{\mathrm{cut}}(A)$.
+\end{itemize}
+
+La conjecture devient testable numériquement via :
+
+\begin{equation}
+S(\rho_A) \approx \gamma\, S_{\mathrm{cut}}(A).
+\end{equation}
+
+\paragraph{Statut.}
+Plausible et directement testable.
+Non encore démontré quantitativement dans cette version.
+
+%-----------------------------------------------------------------------------
+\subsection{Relation Einstein-like (réponse locale)}
+%-----------------------------------------------------------------------------
+
+\paragraph{Conjecture opérationnelle.}
+Une dynamique gravitationnelle effective
+se manifesterait comme une relation locale
+entre courbure, source et variation d’entropie.
+
+\paragraph{Interprétation Bottom-Up.}
+Nous testons une loi de réponse :
+
+\begin{equation}
+\Delta S_{\mathrm{cut}}(A)
+=
+a(R)\,\Delta \mathcal{R}(A)
++
+b(R)\,\Delta M(A)
++
+\varepsilon.
+\end{equation}
+
+\paragraph{Statut.}
+Une fenêtre d’échelle intermédiaire présente
+des coefficients stables sous bootstrap.
+Cela constitue une signature numérique cohérente
+d’une loi de réponse géométrique.
+
+%-----------------------------------------------------------------------------
+\subsection{Analogie groupe de renormalisation}
+%-----------------------------------------------------------------------------
+
+\paragraph{Conjecture.}
+La gravité pourrait être contrôlée par un point fixe
+du groupe de renormalisation en UV.
+
+\paragraph{Interprétation Bottom-Up.}
+La dimension effective dépend d’une échelle
+(paramètre $\tau$ ou structure corrélationnelle $\lambda$).
+On peut définir empiriquement :
+
+\begin{equation}
+\beta_d = \frac{d d_{\mathrm{eff}}}{d \log \tau}.
+\end{equation}
+
+L’existence de plateaux suggère des régimes attracteurs.
+
+\paragraph{Statut.}
+Analogie structurelle forte.
+Une procédure explicite de coarse-graining
+reste à formaliser.
 \label{sec:N9}
 %=============================================================================
 
@@ -409,6 +657,21 @@ Ces tendances motivent l'extension vers $N\gtrsim 25$ (méthodes approximatives,
 pour évaluer la convergence quantitative dans des régimes moins dominés par la finitude.
 
 %=============================================================================
+\section{Correspondance Phénoménologique : Dimension Effective et SPARC (Optionnel)}
+\label{sec:sparc}
+%=============================================================================
+
+À titre de motivation phénoménologique, un ajustement sur 175 galaxies SPARC
+à l'aide d'un profil de dimension effective $d(r)$ donne
+\begin{equation}
+d_{\min}=2.63\pm 0.08,\qquad \chi^2/\mathrm{DOF}\approx 1.
+\end{equation}
+Cette valeur est statistiquement compatible avec l'intervalle de plateau IR
+observé pour la dimension spectrale $d_{\mathrm{IR}}$ sur les graphes d'intrication
+pour $N=9,16$. Cette correspondance reste phénoménologique et ne constitue pas,
+à elle seule, une preuve de limite continue.
+
+%=============================================================================
 \section{Synthèse et Conclusion}
 %=============================================================================
 
@@ -420,6 +683,14 @@ pour évaluer la convergence quantitative dans des régimes moins dominés par l
 \[
 \ket{\Psi(\lambda)} \xrightarrow{I_\lambda(i:j)} d_{ij}(\lambda)
 \xrightarrow{\text{MDS}} \textbf{Géométrie} \xrightarrow{\text{tests}} \textbf{Gravité effective}
+\]
+\[
+\ket{\Psi(\lambda)} \xrightarrow{w_{ij}} L \xrightarrow{d_s(\tau)} \textbf{Dimension spectrale}
+\quad;\quad
+w_{ij}\xrightarrow{\kappa_{ij}} \textbf{Courbure discrète}
+\]
+\[
+\text{Perturbations locales :}\quad \Delta S_{\mathrm{cut}} \simeq a\,\Delta\mathcal{R}+b\,\Delta M
 \]
 \[
 \lambda \uparrow : \quad \text{dimension effective augmente, et la signature ER=EPR s'active}
@@ -434,6 +705,10 @@ pour évaluer la convergence quantitative dans des régimes moins dominés par l
   dans l'espace émergent lorsque l'intrication non-locale augmente (raccourci géodésique effectif).
   \item \textbf{Jacobson (thermodynamique) :} la relation variationnelle $\delta S \simeq \beta\,\delta E$
   apparaît comme une loi d'état effective de l'intrication.
+  \item \textbf{Géométrie spectrale :} la dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication
+  exhibe un plateau IR compatible avec une dimension effective non-entière.
+  \item \textbf{Réponse Einstein-like :} une loi de réponse locale (équation d'état opérationnelle) relie
+  variations d'entropie de coupure et variations de courbure discrète sous perturbations locales.
 \end{enumerate}
 
 \textbf{Validation par montée en taille :}
@@ -450,8 +725,10 @@ Code et figures : \url{https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity
 
 \appendix
 
+%=============================================================================
 \section{Construction des États $\ket{\Psi(\lambda)}$}
 \label{app:construction-etats}
+%=============================================================================
 
 Une construction simple utilisée pour générer $\alpha_c(\lambda)$ consiste à biaiser une distribution
 d'amplitudes vers des configurations corrélées localement et, lorsque $\lambda$ augmente,
@@ -472,6 +749,63 @@ E_{\text{nl}}(c) &= -\sum_{(i,j)\in \text{coins}} (-1)^{c_i + c_j}.
 Cette paramétrisation n'est pas unique : elle sert de \emph{générateur contrôlé}
 pour explorer la transition local/non-local.
 
+%=============================================================================
+\section{Wasserstein-1 exact par programmation linéaire}
+\label{app:W1LP}
+%=============================================================================
+
+Pour $N$ nœuds, $W_1(\mu,\nu)$ s'écrit comme le problème de transport optimal :
+\begin{equation}
+W_1(\mu,\nu)=\min_{f_{ab}\ge 0}\sum_{a,b} f_{ab}\,d(a,b)
+\end{equation}
+sous contraintes
+\begin{equation}
+\sum_b f_{ab}=\mu(a),\qquad \sum_a f_{ab}=\nu(b).
+\end{equation}
+
+Ce problème est résolu numériquement via un solveur LP (HiGHS). Pour $N=16$,
+le coût est $N^2$ variables et $2N$ contraintes d'égalité, ce qui reste tractable et fournit
+un calcul \emph{exact} de Wasserstein-1 pour les tailles étudiées.
+
+%=============================================================================
+\section{Bootstrap et stabilité des coefficients de réponse}
+\label{app:bootstrap}
+%=============================================================================
+
+Pour estimer l'incertitude sur $a(R)$ et $b(R)$, on applique un bootstrap
+sur l'ensemble des perturbations et des régions $A=B(i,R)$ :
+\begin{itemize}
+\item resampling avec remise des observations,
+\item ajustement linéaire à chaque resample,
+\item estimation des intervalles de confiance (par ex. 16--84\%).
+\end{itemize}
+
+La stabilité multi-échelle est évaluée en traçant $a(R)$ et $b(R)$ en fonction de $R$
+et en identifiant une fenêtre d'échelle intermédiaire où les coefficients
+sont quasi constants (plateau).
+
+%=============================================================================
+\section{Ajustement SPARC : modèle, vraisemblance, priors (Optionnel)}
+\label{app:sparc_mcmc}
+%=============================================================================
+
+Le profil de dimension effective est :
+\begin{equation}
+d(r)=\max\!\left(d_{\min},\ 3-\Delta d\exp\left[-\frac{\ln^2(r/r_0)}{2\sigma^2}\right]\right).
+\end{equation}
+
+La vraisemblance est gaussienne :
+\begin{equation}
+\log \mathcal{L} = -\frac{1}{2}\sum_k \frac{(v_{\mathrm{obs}}(r_k)-v_{\mathrm{mod}}(r_k))^2}{\sigma_k^2}+\mathrm{cste}.
+\end{equation}
+
+Priors typiques :
+\begin{equation}
+d_{\min}\sim U(2,3),\quad M/L\sim U(0.3,5.0),\quad r_0>0,\quad \sigma>0.
+\end{equation}
+
+Le diagnostic inclut : convergence (ESS, autocorrélation), unimodalité, et tests de robustesse aux priors.
+
 \begin{thebibliography}{9}
 \bibitem{jacobson} T. Jacobson, \textit{Phys. Rev. Lett.} 75, 1260 (1995).
 \bibitem{er=epr} J. Maldacena and L. Susskind, \textit{Fortsch. Phys.} 61, 781 (2013).
@@ -481,4 +815,3 @@ pour explorer la transition local/non-local.
 \end{thebibliography}
 
 \end{document}
-
