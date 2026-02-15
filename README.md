@@ -1,15 +1,14 @@
 # bottom-up-quantum-gravity
+**Émergence de l’espace, du temps et de la gravité à partir de l’intrication quantique**
 
-**Émergence de l'espace, du temps et de la gravité à partir de l'intrication quantique**
-
-*Farid Hamdad — Février 2026*
+Farid Hamdad — Février 2026
 
 ---
 
 ## Idée centrale
 
-&gt; **L'espace, le temps et la gravité ne sont pas fondamentaux.**
-&gt; Ils émergent collectivement de la structure d'intrication d'un état quantique global fini.
+> L’espace, le temps et la gravité ne sont pas fondamentaux.  
+> Ils émergent collectivement de la structure d’intrication d’un état quantique global fini.
 
 ---
 
@@ -17,198 +16,253 @@
 
 La physique moderne décrit avec une précision remarquable :
 
-- la physique quantique (théories des champs, information quantique)
-- la gravitation classique (relativité générale, thermodynamique des trous noirs)
+- la **physique quantique** (théories des champs, information quantique),
+- la **gravitation classique** (relativité générale, thermodynamique des trous noirs),
 
 mais laisse ouverte une question fondamentale :
 
-**Pourquoi l'espace-temps existe-t-il, et pourquoi la gravité possède-t-elle une structure à la fois géométrique et thermodynamique ?**
+> **Pourquoi l’espace-temps existe-t-il,  
+> et pourquoi la gravité possède-t-elle une structure géométrique et thermodynamique ?**
 
-Ce projet explore une hypothèse minimale mais radicale : *l'espace-temps n'est pas le théâtre de la physique, mais un objet émergent reconstruit à partir de l'intrication quantique.*
+Ce projet explore une hypothèse minimale :
 
----
-
-## Architecture du projet
-
-### 1. Fondements
-
-#### Postulat minimal
-
-Le projet repose sur un postulat unique :
-
-&gt; Il existe un état quantique global pur $|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^N \mathcal{H}_i$,
-&gt; défini sur $N$ degrés de liberté élémentaires (qubits),
-&gt; **sans espace, sans temps, sans métrique préalable.**
-
-Tout le reste — temps, espace, dimension, géométrie, gravité effective — doit émerger exclusivement de la structure interne de l'intrication de $|\Psi\rangle$.
-
-*Note :* $N$ est fini mais arbitrairement extensible. Les simulations présentées portent sur $N=9$ et $N=16$, avec perspectives pour $N \geq 25$.
+> **L’espace-temps n’est pas le théâtre de la physique.  
+> Il est reconstruit à partir de l’intrication quantique.**
 
 ---
 
-### 2. Méthodologie
+## 1. Fondement : Postulat minimal
 
-#### Émergence du temps : flot modulaire
+Il existe un **état quantique global pur**
 
-Le temps n'est pas un paramètre externe. Il est identifié au **flot modulaire** associé aux matrices de densité réduites :
+$$
+|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i
+$$
 
-$$K_A = -\log \rho_A \quad \text{où} \quad \rho_A = \mathrm{Tr}_{\bar{A}}|\Psi\rangle\langle\Psi|$$
+défini sur $N$ degrés de liberté élémentaires (qubits),  
+**sans espace, sans temps, sans métrique préalable**.
 
-Le flot modulaire définit une dynamique intrinsèque :
-$$\mathcal{O}(\tau) = e^{iK_A\tau}\mathcal{O}e^{-iK_A\tau}$$
-
-entièrement déterminée par les corrélations entre sous-systèmes. Le temps est interprété comme une notion **relationnelle** (Page-Wootters), issue de la structure informationnelle de l'état.
-
-#### Émergence de l'espace : reconstruction géométrique
-
-| Étape | Outil | Output |
-|-------|-------|--------|
-| 1. Corrélations | Information mutuelle $I(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij})$ | Matrice de proximité |
-| 2. Distance | $d_{ij} = -\log\left(\frac{I(i:j) + \epsilon}{I_{\max}}\right)$ | Métrique informationnelle |
-| 3. Géométrie | Multi-Dimensional Scaling (MDS) | Points $x_i \in \mathbb{R}^d$ |
-| 4. Dimension | Erreur de reconstruction $\epsilon_d$ | Dimension effective |
-
-*Propriétés de $d_{ij}$ :* symétrie ✓, positivité ✓, triangulaire approximative (violation &lt; 5% sur les données).
+Tout le reste — temps, espace, dimension, géométrie, gravité effective —  
+doit émerger exclusivement de la structure interne de l’intrication.
 
 ---
 
-### 3. Résultats
+## 2. Méthodologie d’émergence
 
-#### Résultat clé n°1 — La dimension est émergente
+### 2.1 Émergence du temps : flot modulaire
 
-| Configuration | Intrication | Dimension effective | Observation |
-|-------------|-------------|---------------------|-------------|
-| $N=9$, $\lambda \simeq 0$ | Locale (voisins) | $d \simeq 2$ | Reconstruction 2D stable |
-| $N=9$, $\lambda \to 1$ | Non-locale (coins) | $d \simeq 3$ | Transition dimensionnelle |
-| $N=16$, $\lambda \simeq 0$ | Locale | $d \simeq 2$ | Robustesse confirmée |
-| $N=16$, $\lambda \to 1$ | Non-locale | $d \simeq 3$ | Transition plus nette |
+Pour un sous-système $A$ :
 
-**Observation clé :** La dimension spatiale n'est pas postulée, elle est **mesurée** et dépend de la structure de l'intrication (paramètre $\lambda$), pas seulement du nombre de qubits.
+$$
+\rho_A = \mathrm{Tr}_{\bar{A}} |\Psi\rangle\langle\Psi|
+$$
+$$
+K_A = -\log(\rho_A)
+$$
 
-#### Résultat clé n°2 — ER = EPR devient mesurable
+Le **flot modulaire** :
 
-La correspondance ER = EPR (Maldacena-Susskind) est testée de manière opérationnelle :
+$$
+\mathcal{O}(\tau) = e^{i K_A \tau} \mathcal{O} e^{-i K_A \tau}
+$$
 
-| Paramètre | $I(\text{coins})$ | $d_{\text{topo}}$ | $d_{\text{bulk}}$ | Compression $C$ |
-|-----------|-------------------|-------------------|-------------------|-----------------|
-| $\lambda = 0$ | $\sim 0.01$ | 4 (ou 6 pour $N=16$) | $\sim 4$ | $\sim 1$ |
-| $\lambda = 0.5$ | $\sim 0.45$ | 4 | $\sim 1.8$ | $\sim 2.2$ |
-| $\lambda = 1.0$ | $\sim 1.28$ | 4 | $\sim 0.04$ | $\sim 100$ ($N=9$) / $\sim 10$ ($N=16$) |
+définit une dynamique intrinsèque relationnelle (Page–Wootters).  
+Le temps devient une propriété informationnelle interne.
 
-Deux qubits fortement intriqués mais éloignés topologiquement deviennent **géométriquement proches** dans l'espace émergent. L'intrication maximale se manifeste comme un **raccourci géodésique**, signature *wormhole-like* mesurable.
+### 2.2 Chaos modulaire (nouveau résultat)
 
-*Note :* Dans ce cadre statique (pas d'évolution temporelle externe), il s'agit d'un **analogue géométrique** de ER=EPR, non d'une traversée dynamique de trou de ver.
+Nous analysons le spectre de $K_A$.
 
-#### Résultat clé n°3 — La gravité comme thermodynamique
+**Ratio des gaps**
 
-Une relation de type **Jacobson** (1995) est testée numériquement :
+$$
+\langle r \rangle = \left\langle \frac{\min(\Delta_n, \Delta_{n+1})}{\max(\Delta_n, \Delta_{n+1})} \right\rangle
+$$
 
-$$\delta S_A \simeq \beta_{\text{eff}} \cdot \delta E$$
+Références universelles :
 
-| Observable | Comportement | Interprétation |
-|------------|--------------|----------------|
-| $S_A(\lambda)$ vs $E(\lambda)$ | Relation monotone croissante | Loi d'état effective |
-| $\beta_{\text{eff}} = dS/dE$ | Stable à $N=9$, robuste à $N=16$ | Température inverse de l'intrication |
-| Test variationnel | $\delta S \approx \beta\,\delta E$ vérifié | Thermodynamique émergente |
+- Poisson (intégrable) ≈ 0.386
+- GOE ≈ 0.536
+- GUE ≈ 0.603
 
-La gravité apparaît comme une **loi d'état thermodynamique** de l'information, et non comme une interaction fondamentale.
+**Résultat :**
+
+$$
+\langle r \rangle \in [0.53, 0.59]
+$$
+
+➡ Le flot modulaire devient chaotique (régime Random Matrix Theory).
+
+### 2.3 Spectral Form Factor (SFF)
+
+$$
+g_2(t) = \frac{1}{d_A^2} \left| \sum_{n=1}^{d_A} e^{-it \tilde{\kappa}_n} \right|^2
+$$
+
+Structure observée :
+
+- dip
+- ramp
+- plateau
+
+**Résultat central :**
+
+$$
+g_2^{\mathrm{plateau}} \sim \frac{1}{d_A}
+$$
+
+Scaling universel.
+
+### 2.4 Constante modulaire topologique
+
+On définit :
+
+$$
+C = d_A \times g_2^{\mathrm{plateau}}
+$$
+
+Le scaling $1/d_A$ est universel.  
+Mais le préfacteur $C$ **dépend de la topologie**.
+
+**Résultats (dA = 256, λ = 0.8)**
+
+| Topologie   | ⟨r⟩   | C     |
+|-------------|-------|-------|
+| Chaîne 1D   | 0.594 | 1.21  |
+| Grille 3×6  | 0.575 | 1.42  |
+| Graphe ER   | 0.528 | 1.63  |
+
+**Figures**
+
+![Constante modulaire](figures/topology_C.png)
+![Statistiques de niveaux](figures/topology_r.png)
+![Spectral Form Factor](figures/topology_SFF.png)
+
+**Interprétation**
+
+Le flot modulaire devient universellement chaotique.  
+Mais la géométrie d’intrication laisse une empreinte quantitative via $C$.
+
+Autrement dit :
+
+> La structure spatiale émergente influence le générateur temporel modulaire.
 
 ---
 
-### 4. Discussion : Portée et Limites
+## 3. Émergence de l’espace
 
-#### Ce que cette preuve de principe établit
+### Reconstruction géométrique
 
-✅ Un état quantique fini peut encoder une géométrie émergente  
-✅ La dimension spatiale dépend quantitativement de la structure d'intrication  
-✅ Des signatures analogues à ER=EPR et Jacobson sont observables numériquement  
-✅ La robustesse des résultats augmente avec $N$ (9 → 16)
+**Information mutuelle**
 
-#### Ce qu'elle n'établit pas (limites explicites)
+$$
+I(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij})
+$$
 
-❌ **Limite continue :** $N=9,16$ sont finis ; la convergence $N \to \infty$ reste ouverte  
-❌ **Dynamique temporelle :** Le "temps" est modulaire, pas une évolution hamiltonienne externe avec causalité macroscopique  
-❌ **Gravité quantique complète :** Pas de dérivation des équations d'Einstein ni de principe holographique quantifié  
-❌ **Prédiction expérimentale :** Aucun protocole de test sur système physique (ion piégé, supraconducteur, etc.) proposé
+**Distance informationnelle**
 
-#### Nuance méthodologique
+$$
+d_{ij} = -\log\left( \frac{I(i:j)}{I_{\max} + \epsilon} \right)
+$$
 
-L'hamiltonien $H(\lambda)$ utilisé pour le test Jacobson est un **outil auxiliaire** pour définir une énergie effective. Il n'est pas dérivé fondamentalement de $|\Psi\rangle$ — cette derivation constitue un problème ouvert.
+MDS → points $x_i \in \mathbb{R}^d$
+
+**Dimension effective** = dimension minimale stabilisant l’erreur.
+
+---
+
+## 4. Résultats principaux
+
+### Dimension émergente
+
+| Configuration  | Intrication   | Dimension |
+|----------------|---------------|-----------|
+| N=9, λ≈0       | Locale        | d≈2       |
+| N=9, λ→1       | Non-locale    | d≈3       |
+| N=16, λ≈0      | Locale        | d≈2       |
+| N=16, λ→1      | Non-locale    | d≈3       |
+
+### ER = EPR mesurable
+
+Des qubits topologiquement distants deviennent géométriquement proches lorsque l’intrication non-locale augmente.
+
+Signature **wormhole-like discrète** (statique).
+
+### Gravité thermodynamique
+
+Test de type Jacobson :
+
+$$
+\delta S \simeq \beta_{\mathrm{eff}} \, \delta E
+$$
+
+Relation stable pour N=9 et N=16.
 
 ---
 
-## Public visé et prérequis
+## 5. Ce que le projet établit
 
-| Profil | Prérequis suggérés | Ce qu'ils trouveront |
-|--------|-------------------|---------------------|
-| **M2/Doctorant physique** | MQ basique, entropie de von Neumann | Cadre conceptuel + Implémentation numérique |
-| **Chercheur info-quantique** | Intrication, matrices de densité, MDS | Application nouvelle de techniques standards |
-| **Physicien théoricien (gravité)** | Jacobson, ER=EPR, holographie | Perspective alternative bottom-up vs top-down (AdS/CFT) |
-| **Scientifique généraliste** | Notions de base | Introduction accessible avec annexes explicatives |
-
-*Aucune expertise préalable en gravité quantique n'est strictement requise pour comprendre les concepts principaux.*
+✅ Une géométrie peut émerger d’un état quantique fini  
+✅ La dimension dépend de l’intrication  
+✅ ER=EPR est mesurable opérationnellement  
+✅ Une thermodynamique de l’intrication apparaît  
+✅ Le flot modulaire est chaotique (RMT)  
+✅ Le plateau SFF suit $1/d_A$  
+✅ La constante modulaire dépend de la topologie
 
 ---
+
+## 6. Limites
+
+❌ Limite continue $N \to \infty$ non démontrée  
+❌ Pas de dynamique relativiste complète  
+❌ Pas de dérivation des équations d’Einstein  
+❌ Pas encore de prédiction expérimentale
 
 ## Organisation du dépôt
 bottom-up-quantum-gravity/
-├── paper/
-│   ├── main.tex                    # Source LaTeX complet
-│   ├── bottom_up_gravity.pdf       # PDF compilé (préprint)
-│   └── macros.sty                  # Définitions et packages
-├── figures/
-│   ├── fig1_dimension_emergente_N9.png
-│   ├── fig2_er_epr_N9.png
-│   ├── fig3_jacobson_N9.png
-│   ├── fig4_grid_N16.png
-│   ├── fig5_mds_N16.png
-│   ├── fig6_erepr_N16.png
-│   └── fig7_jacobson_N16.png
-├── code/
-│   ├── src/
-│   │   ├── states.py               # Génération des états Ψ(λ) 
-│   │   ├── geometry.py             # MDS, distances, dimensions spectrales
-│   │   ├── thermodynamics.py         # Tests Jacobson, entropies
-│   │   └── analysis.py             # Pipelines de figures
-│   ├── notebooks/
-│   │   └── demo_reproductibilite.ipynb  # Reproduction interactive (N=9)
-│   └── requirements.txt            # Python 3.9+, NumPy, SciPy, scikit-learn, matplotlib
-├── data/
-│   ├── N9_results.pkl              # Données numériques brutes (reproductibilité)
-│   └── N16_results.pkl
-└── README.md                       # Ce document
+├── paper/ # Manuscrit au format PDF/TeX
+├── figures/ # Toutes les figures générées
+│ ├── fig1_dimension_emergente_N9.png
+│ ├── fig2_er_epr_N9.png
+│ ├── fig3_jacobson_N9.png
+│ ├── fig4_grid_N16.png
+│ ├── fig5_mds_N16.png
+│ ├── fig6_erepr_N16.png
+│ ├── fig7_jacobson_N16.png
+│ ├── topology_C.png
+│ ├── topology_r.png
+│ └── topology_SFF.png
+├── code/ # Scripts Python/NumPy/SciPy
+├── data/ # Données brutes et résultats
+└── README.md
+
 
 ---
 
-## Perspectives et extensions
+## Perspectives
 
-### Court terme (en cours)
-- [ ] **Monte Carlo tensoriel** pour $N \geq 25$ (PEPS, MERA) — test de convergence
-- [ ] **Finite-size scaling** : la transition dimensionnelle devient-elle abrupte en limite thermodynamique ?
-- [ ] **Autres familles d'états** : états aléatoires, états topologiques (toric code), états critiques
-
-### Moyen terme (conceptuel)
-- [ ] Connexion avec **Causal Set Theory** (rideaux de lumière discrets)
-- [ ] Généralisation à **qudits** ($d>2$) et hamiltoniens non-triviaux
-- [ ] Test de la **conjecture de Page-Wootters** pour le temps relationnel
-
-### Long terme (spéculatif)
-- [ ] **Principe holographique émergent** : volume $\leftrightarrow$ surface dans ce cadre ?
-- [ ] Liens avec **modèles SYK** ou émulateurs de trous noirs en laboratoire
-- [ ] **Prédiction expérimentale** : signatures mesurables sur simulateurs quantiques ?
+- Finite-size scaling $N \to 25+$
+- États aléatoires / critiques / topologiques
+- Connexion avec SYK
+- Étude multi-échelle (dimension spectrale)
+- Implémentation sur simulateur quantique
 
 ---
 
 ## Citation
 
-Si vous utilisez ou prolongez ce travail :
-hamdadfarid54@gmail.com
 ```bibtex
 @misc{hamdad2026bottomup,
   author = {Hamdad, Farid},
-  title = {Bottom-Up Quantum Gravity: \'Emergence de l'espace, du temps et 
-           de la gravité à partir de l'intrication quantique},
+  title = {Bottom-Up Quantum Gravity: Emergence of Space, Time and Gravity from Quantum Entanglement},
   year = {2026},
   howpublished = {GitHub repository},
   url = {https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}
 }
+contact: hamdadfarid54@gmail.com
+
+
+---
+
+## Organisation du dépôt
