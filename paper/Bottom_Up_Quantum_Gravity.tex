@@ -70,16 +70,19 @@ Nous présentons \textbf{Bottom-Up Quantum Gravity}, un cadre minimal où espace
 \textbf{Résultat central :} la dimension spatiale n'est pas postulée mais \emph{mesurée} via reconstruction métrique :
 des états à intrication principalement locale se reconstruisent en 2D, tandis que des états à intrication non-locale
 imposent une dimension effective plus élevée.
-Nous validons numériquement trois signatures sur des systèmes finis :
+Nous validons numériquement plusieurs signatures sur des systèmes finis :
 (1) temps relationnel via flot modulaire, (2) géométrie informationnelle via information mutuelle et embarquement (MDS),
-et (3) gravité thermodynamique effective via un test variationnel de type Jacobson.
-Nous ajoutons (4) une géométrie \emph{intrinsèque} via la dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication,
+(3) gravité thermodynamique effective via un test variationnel de type Jacobson,
+(4) géométrie \emph{intrinsèque} via la dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication,
 et (5) une loi de réponse \emph{Einstein-like} au sens opérationnel :
-une relation linéaire locale entre variations d'entropie de coupure (proxy d'aire), courbure discrète (Ollivier--Ricci)
-et source de perturbation, calculée avec Wasserstein-1 exact par programmation linéaire.
+relation locale entre variations d'entropie de coupure (proxy d'aire), courbure discrète (Ollivier--Ricci)
+et intensité de perturbation, avec Wasserstein-1 calculé par programmation linéaire.
 Nous ajoutons un test opérationnel de type ER=EPR : des paires topologiquement distantes deviennent géométriquement proches
 dans l'espace émergent lorsque l'intrication non-locale est renforcée.
-Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, réduisant les effets de taille finie et renforçant la robustesse.
+\textbf{Nouveau résultat :} l'analyse spectrale du Hamiltonien modulaire $K_A=-\log\rho_A$ révèle un régime chaotique de type RMT
+et un plateau du Spectral Form Factor vérifiant $g_2^{\mathrm{plateau}}\sim 1/d_A$, avec un préfacteur
+$C=d_A g_2^{\mathrm{plateau}}$ modulé par la topologie (chaîne 1D, grille 2D, graphe aléatoire).
+Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, et complétés par l'étude modulaire à $d_A=256$.
 \end{tcolorbox}
 \end{abstract}
 
@@ -113,9 +116,10 @@ distance, dimension et gravité effective.
 Nous adoptons un protocole unique réutilisé à différentes tailles $N$ :
 (i) définir une famille d'états $\ket{\Psi(\lambda)}$ contrôlée par un paramètre de non-localité corrélationnelle $\lambda$,
 (ii) calculer l'information mutuelle $I(i:j)$, (iii) définir une distance informationnelle $d_{ij}$,
-(iv) reconstruire une géométrie par embarquement (MDS), et (v) tester des signatures thermodynamiques (Jacobson)
-et géodésiques (ER=EPR). Nous ajoutons ensuite (vi) une mesure intrinsèque de dimension via le spectre du Laplacien,
-et (vii) une loi de réponse locale liant entropie de coupure et courbure discrète.
+(iv) reconstruire une géométrie par embarquement (MDS), (v) tester des signatures thermodynamiques (Jacobson)
+et géodésiques (ER=EPR), (vi) extraire une dimension intrinsèque via la géométrie spectrale,
+(vii) tester une loi de réponse locale liant entropie de coupure et courbure discrète,
+et (viii) analyser le flot modulaire via ses signatures spectrales (chaos RMT, SFF).
 
 \subsection{Tailles étudiées : $N=9$ puis $N=16$}
 
@@ -123,8 +127,6 @@ et (vii) une loi de réponse locale liant entropie de coupure et courbure discr�
   \item \textbf{$N=9$ :} grille $3\times 3$ (preuve de concept exacte, $2^9=512$).
   \item \textbf{$N=16$ :} grille $4\times 4$ (validation intermédiaire, réduction des effets de bord).
 \end{itemize}
-
-Les résultats $N=9$ fixent la structure conceptuelle ; l'extension à $N=16$ teste la robustesse.
 
 \subsection{Famille d'états paramétrée par $\lambda$}
 
@@ -136,14 +138,14 @@ Nous considérons une famille d'états contrôlée par $\lambda \in [0,1]$ :
 Intuition :
 \begin{itemize}
   \item $\lambda=0$ : intrication dominée par la localité sur la grille ;
-  \item $\lambda \to 1$ : intrication renforcée entre sites topologiquement distants (coins).
+  \item $\lambda \to 1$ : intrication renforcée entre sites topologiquement distants.
 \end{itemize}
 
 Une construction explicite est fournie en Annexe~\ref{app:construction-etats}.
 
-\subsection{Hamiltonien de référence (pour tests thermodynamiques)}
+\subsection{Hamiltonien de référence (tests thermodynamiques)}
 
-Pour les tests de type Jacobson, nous utilisons un Ising transverse perturbé et un terme non-local entre coins :
+Pour les tests de type Jacobson, nous utilisons un Ising transverse perturbé et un terme non-local :
 \begin{equation}
 H(\lambda) = -J \sum_{\langle i,j \rangle} Z_i Z_j
              - h(\lambda) \sum_i X_i
@@ -151,10 +153,9 @@ H(\lambda) = -J \sum_{\langle i,j \rangle} Z_i Z_j
 \label{eq:hamiltonien}
 \end{equation}
 
-Dans la pratique, $\lambda$ doit être compris comme un bouton contrôlant la \emph{non-localité corrélationnelle}.
-
 %=============================================================================
-\section{Temps Émergent : Flot Modulaire}
+\section{Temps Émergent : Horloge Relationnelle et Flot Modulaire}
+\label{sec:time_modular}
 %=============================================================================
 
 \subsection{Partition et horloge relationnelle}
@@ -187,7 +188,108 @@ Le flot modulaire définit une évolution interne :
 Interprétation : le temps est un paramètre opératoire déduit de l'état via l'intrication du sous-système.
 
 %=============================================================================
+\section{Chaos Modulaire : Statistiques Spectrales et Universalité}
+\label{sec:modular_chaos}
+%=============================================================================
+
+Au-delà de l'interprétation conceptuelle du temps relationnel, nous analysons la structure spectrale de
+\(K_A=-\log\rho_A\) afin de tester l'émergence d'un régime chaotique universel de type Random Matrix Theory (RMT).
+
+\subsection{Ratio des gaps}
+
+Soit \(\{\kappa_n\}\) le spectre ordonné de \(K_A\) (après filtrage numérique des niveaux nuls).
+On définit les espacements \(\Delta_n=\kappa_{n+1}-\kappa_n\) et le ratio local
+\begin{equation}
+r_n=\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})},
+\qquad
+\langle r\rangle = \frac{1}{N_r}\sum_n r_n.
+\end{equation}
+Valeurs universelles :
+\(
+\langle r\rangle_{\text{Poisson}}\simeq 0.386
+\),
+\(
+\langle r\rangle_{\text{GOE}}\simeq 0.536
+\),
+\(
+\langle r\rangle_{\text{GUE}}\simeq 0.603
+\).
+
+\subsection{Spectral Form Factor (SFF) et unfolding}
+
+Nous évaluons le \emph{Spectral Form Factor} à partir des niveaux \emph{unfolded} \(\{\tilde{\kappa}_n\}\) :
+\begin{equation}
+g_2(t)=\frac{1}{d_A^2}\left|\sum_{n=1}^{d_A} e^{-it\,\tilde{\kappa}_n}\right|^2,
+\label{eq:sff_def}
+\end{equation}
+où \(d_A=2^{|A|}\) est la dimension du sous-système.
+Le SFF présente typiquement une structure \emph{dip--ramp--plateau} en régime chaotique.
+
+\subsection{Scaling du plateau et constante modulaire}
+
+Dans le régime fortement intriqué, nous observons numériquement :
+\begin{equation}
+g_2^{\mathrm{plateau}} \sim \frac{1}{d_A}.
+\label{eq:plateau_scaling}
+\end{equation}
+Nous introduisons la constante modulaire :
+\begin{equation}
+C \equiv d_A\, g_2^{\mathrm{plateau}}.
+\label{eq:C_def}
+\end{equation}
+Le scaling \(1/d_A\) est robuste, mais le préfacteur \(C\) conserve une dépendance à la structure du graphe
+d'intrication (topologie / connectivité effective).
+
+\subsection{Dépendance topologique (dA = 256, \(\lambda=0.8\))}
+
+Nous comparons trois topologies (moyenne sur seeds) :
+\begin{table}[h!]
+\centering
+\caption{Chaos modulaire et dépendance topologique de \(C=d_A g_2^{\mathrm{plateau}}\) (dA=256, \(\lambda=0.8\)).}
+\label{tab:topology_modular}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Topologie & \(\langle r\rangle\) & \(g_2^{\mathrm{plateau}}\) & \(C=d_A g_2^{\mathrm{plateau}}\) \\
+\midrule
+Chaîne 1D            & 0.594 & 0.004739 & 1.213 \\
+Grille \(3\times 6\) & 0.575 & 0.005541 & 1.419 \\
+ER (p\(\approx 0.176\)) & 0.528 & 0.006351 & 1.626 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Figures}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.90\linewidth]{topology_C.png}
+\caption{\textbf{Constante modulaire \(C=d_A g_2^{\mathrm{plateau}}\) selon la topologie} (dA=256, \(\lambda=0.8\)).}
+\label{fig:topology_C}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.90\linewidth]{topology_r.png}
+\caption{\textbf{Statistiques de niveaux via \(\langle r\rangle\)} (dA=256, \(\lambda=0.8\)).}
+\label{fig:topology_r}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.92\linewidth]{topology_SFF.png}
+\caption{\textbf{Spectral Form Factor moyen} (unfolded) pour les trois topologies (dip--ramp--plateau).}
+\label{fig:topology_SFF}
+\end{figure}
+
+\subsection{Interprétation}
+
+Le flot modulaire devient asymptotiquement ergodique (universalité RMT), mais la géométrie d'intrication ne disparaît pas :
+elle survit sous forme d'une modulation topologique du préfacteur \(C\). Cela fournit un mécanisme naturel, dans Bottom-Up,
+par lequel la structure spatiale émergente influence une dynamique temporelle relationnelle associée au sous-système.
+
+%=============================================================================
 \section{Espace Émergent : Géométrie Informationnelle}
+\label{sec:space_info}
 %=============================================================================
 
 \subsection{Information mutuelle et distance}
@@ -278,9 +380,8 @@ Nous définissons
 \begin{equation}
 d_{\mathrm{IR}} \equiv \left\langle d_s(\tau)\right\rangle_{\tau\in[\tau_1,\tau_2]}.
 \end{equation}
-Numériquement, $d_{\mathrm{IR}}$ se situe dans l'intervalle $\sim 2.5$--$2.7$ selon $\lambda$,
-ce qui suggère une géométrie effective non-entière et renforce la lecture ``dimension émergente''
-obtenue par MDS.
+Numériquement, $d_{\mathrm{IR}}$ se situe typiquement dans l'intervalle $\sim 2.5$--$2.7$ selon $\lambda$,
+ce qui suggère une géométrie effective non-entière et renforce la lecture ``dimension émergente''.
 
 %=============================================================================
 \section{Courbure Discrète et Loi de Réponse Einstein-like}
@@ -310,12 +411,13 @@ Pour une arête $(i,j)$, la courbure d'Ollivier--Ricci est définie par
 \kappa_{ij}=1-\frac{W_1(\mu_i,\mu_j)}{d(i,j)},
 \end{equation}
 où $W_1$ est la distance de Wasserstein-1 calculée par programmation linéaire
-(Annexe~\ref{app:W1LP}). La distance $d(i,j)$ peut être choisie comme distance géodésique de graphe
+(Annexe~\ref{app:W1LP}).
+La distance $d(i,j)$ peut être choisie comme distance géodésique de graphe
 (longueurs d'arêtes définies à partir de $w_{ij}$) ou distance de résistance via $L^+$.
 
 \subsection{Courbure régionale}
 
-Pour une région $A$, on définit une courbure moyenne (proxy de scalaire de Ricci discret) :
+Pour une région $A$, on définit une courbure moyenne :
 \begin{equation}
 \mathcal{R}(A)\equiv \frac{1}{|E(A)|}\sum_{(u,v)\in E(A)} \kappa_{uv},
 \end{equation}
@@ -338,155 +440,10 @@ Nous testons une relation de réponse locale de type équation d'état :
 \end{equation}
 où $\Delta$ désigne la différence avant/après perturbation, et $A=B(i,R)$.
 
-La colinéarité entre $\Delta\mathcal{R}$ et $\Delta M$ est évaluée via corrélation et VIF,
-et la stabilité de $a(R),b(R)$ via bootstrap (Annexe~\ref{app:bootstrap}).
-En pratique, on observe une fenêtre d'échelle intermédiaire où les coefficients sont stables,
-ce qui fournit une signature numérique cohérente d'une loi de réponse géométrique au sens opérationnel.
+La stabilité de $a(R),b(R)$ est évaluée via bootstrap (Annexe~\ref{app:bootstrap}).
 
 %=============================================================================
 \section{Résultats (I) : $N=9$ qubits — Preuve de Concept}
-%=============================================================================
-\section{Conjectures majeures et positionnement théorique}
-\label{sec:conjectures}
-%=============================================================================
-
-Cette section explicite la position de \textbf{Bottom-Up Quantum Gravity}
-vis-à-vis de plusieurs conjectures centrales en gravité quantique.
-L’objectif n’est pas d’en revendiquer une démonstration complète,
-mais de clarifier ce que le cadre établit au sens opérationnel
-et ce qui reste ouvert.
-
-%-----------------------------------------------------------------------------
-\subsection{Réduction dimensionnelle UV}
-%-----------------------------------------------------------------------------
-
-\paragraph{Conjecture.}
-Plusieurs approches de gravité quantique suggèrent qu’à très petite échelle,
-la dimension effective de l’espace tend vers $d \simeq 2$.
-
-\paragraph{Interprétation Bottom-Up.}
-Dans notre cadre, la dimension n’est pas postulée mais reconstruite à partir
-du graphe d’intrication via :
-
-\begin{itemize}
-\item reconstruction MDS,
-\item dimension spectrale $d_s(\tau)$.
-\end{itemize}
-
-Une réduction dimensionnelle correspond à un régime où
-l’intrication est dominée par des corrélations locales,
-ce qui impose une diffusion effective quasi-bidimensionnelle.
-
-\paragraph{Statut.}
-Compatible structurellement.
-Une confirmation robuste requiert une analyse multi-échelle
-et un scaling en $N$.
-
-%-----------------------------------------------------------------------------
-\subsection{ER = EPR (intrication $\Rightarrow$ raccourci géodésique)}
-%-----------------------------------------------------------------------------
-
-\paragraph{Conjecture.}
-Des corrélations EPR fortement non-locales
-se manifesteraient géométriquement comme des ponts ER.
-
-\paragraph{Interprétation Bottom-Up.}
-Lorsque l’intrication non-locale augmente (paramètre $\lambda$),
-la distance informationnelle $d_{ij}$ se contracte pour certaines paires
-topologiquement distantes.
-
-On observe :
-
-\begin{equation}
-C(\lambda)=\frac{d_{\mathrm{topo}}}{d_{\mathrm{bulk}}}
-\quad \text{croît avec } \lambda.
-\end{equation}
-
-Cela constitue une signature \emph{wormhole-like}
-dans un système fini.
-
-\paragraph{Statut.}
-Signature démontrée numériquement pour $N=9$ et confirmée pour $N=16$.
-Il s’agit d’un analogue géométrique discret,
-non d’un trou de ver dynamique relativiste.
-
-%-----------------------------------------------------------------------------
-\subsection{Principe holographique et loi d’aire}
-%-----------------------------------------------------------------------------
-
-\paragraph{Conjecture.}
-Dans les théories gravitationnelles,
-l’entropie d’une région est contrôlée par une quantité de frontière.
-
-\paragraph{Interprétation Bottom-Up.}
-Nous disposons de deux objets :
-
-\begin{itemize}
-\item l’entropie exacte $S(\rho_A)$,
-\item le proxy de frontière $S_{\mathrm{cut}}(A)$.
-\end{itemize}
-
-La conjecture devient testable numériquement via :
-
-\begin{equation}
-S(\rho_A) \approx \gamma\, S_{\mathrm{cut}}(A).
-\end{equation}
-
-\paragraph{Statut.}
-Plausible et directement testable.
-Non encore démontré quantitativement dans cette version.
-
-%-----------------------------------------------------------------------------
-\subsection{Relation Einstein-like (réponse locale)}
-%-----------------------------------------------------------------------------
-
-\paragraph{Conjecture opérationnelle.}
-Une dynamique gravitationnelle effective
-se manifesterait comme une relation locale
-entre courbure, source et variation d’entropie.
-
-\paragraph{Interprétation Bottom-Up.}
-Nous testons une loi de réponse :
-
-\begin{equation}
-\Delta S_{\mathrm{cut}}(A)
-=
-a(R)\,\Delta \mathcal{R}(A)
-+
-b(R)\,\Delta M(A)
-+
-\varepsilon.
-\end{equation}
-
-\paragraph{Statut.}
-Une fenêtre d’échelle intermédiaire présente
-des coefficients stables sous bootstrap.
-Cela constitue une signature numérique cohérente
-d’une loi de réponse géométrique.
-
-%-----------------------------------------------------------------------------
-\subsection{Analogie groupe de renormalisation}
-%-----------------------------------------------------------------------------
-
-\paragraph{Conjecture.}
-La gravité pourrait être contrôlée par un point fixe
-du groupe de renormalisation en UV.
-
-\paragraph{Interprétation Bottom-Up.}
-La dimension effective dépend d’une échelle
-(paramètre $\tau$ ou structure corrélationnelle $\lambda$).
-On peut définir empiriquement :
-
-\begin{equation}
-\beta_d = \frac{d d_{\mathrm{eff}}}{d \log \tau}.
-\end{equation}
-
-L’existence de plateaux suggère des régimes attracteurs.
-
-\paragraph{Statut.}
-Analogie structurelle forte.
-Une procédure explicite de coarse-graining
-reste à formaliser.
 \label{sec:N9}
 %=============================================================================
 
@@ -532,7 +489,7 @@ tandis qu’un état non-local ($\lambda\simeq 1$) exige un embarquement 3D pour
 \label{tab:ereprN9}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-$\lambda$ & $I(0:8)$ & $d_{\text{topo}}$ & $d_{\text{bulk}}$ & Compression $C$ \\
+$\lambda$ & $I(0:8)$ & $d_{\text{topo}}$ & $d_{\text{bulk}}$ & Compression \\
 \midrule
 0.0 & $0.009 \pm 0.001$ & 4 & $4.0 \pm 0.2$ & $1.0 \pm 0.1$ \\
 0.5 & $0.45 \pm 0.05$ & 4 & $1.8 \pm 0.3$ & $2.2 \pm 0.4$ \\
@@ -608,7 +565,7 @@ Cela confirme la transition dimensionnelle observée à $N=9$ et en améliore la
 \caption{
 \textbf{Test ER=EPR pour $N=16$ (coins opposés 0--15).}
 (\textit{Gauche}) la distance géodésique émergente $d_{\text{bulk}}(0,15)$ décroît avec $\lambda$ alors que $d_{\text{topo}}=6$ reste fixe.
-(\textit{Centre}) la compression $C=d_{\text{topo}}/d_{\text{bulk}}$ croît monotone et atteint des valeurs $\mathcal{O}(10)$ à forte non-localité.
+(\textit{Centre}) la compression croît monotone et atteint des valeurs $\mathcal{O}(10)$ à forte non-localité.
 (\textit{Droite}) corrélation directe entre information mutuelle et proximité géométrique : la géométrie émergente est pilotée par l'intrication.
 }
 \label{fig:erepr16}
@@ -633,7 +590,7 @@ suggérant une thermodynamique effective robuste de l'intrication lorsque la tai
 \label{sec:taille-finie}
 %=============================================================================
 
-Le passage de $N=9$ à $N=16$ réduit déjà deux limites majeures :
+Le passage de $N=9$ à $N=16$ réduit deux limites majeures :
 (i) domination des effets de bord et (ii) faible résolution géométrique.
 Néanmoins, les résultats restent ceux de systèmes finis, et doivent être interprétés comme des signatures opératoires.
 
@@ -654,31 +611,104 @@ Systèmes finis & structurel & pas de limite continue ni RG complet \\
 \end{table}
 
 Ces tendances motivent l'extension vers $N\gtrsim 25$ (méthodes approximatives, tensor networks, etc.)
-pour évaluer la convergence quantitative dans des régimes moins dominés par la finitude.
+pour étudier la convergence vers un régime collectif.
+
+%=============================================================================
+\section{Conjectures majeures et positionnement théorique}
+\label{sec:conjectures}
+%=============================================================================
+
+Cette section clarifie la position de \textbf{Bottom-Up Quantum Gravity} vis-à-vis de conjectures centrales en gravité quantique.
+L'objectif n'est pas d'en revendiquer une démonstration complète, mais d'expliciter ce que le cadre établit au sens opérationnel
+et ce qui reste ouvert.
+
+\subsection{Réduction dimensionnelle UV}
+
+\paragraph{Idée.}
+Plusieurs approches suggèrent qu'à très petite échelle, la dimension effective tend vers \(d\simeq 2\).
+
+\paragraph{Lecture Bottom-Up.}
+La dimension n'est pas postulée mais reconstruite à partir du graphe d'intrication via MDS et dimension spectrale.
+Une réduction dimensionnelle correspond à un régime où l'intrication est dominée par des corrélations locales,
+ce qui impose une diffusion effective quasi-bidimensionnelle.
+
+\paragraph{Statut.}
+Compatible structurellement ; une confirmation robuste requiert un scaling en \(N\) et une analyse multi-échelle.
+
+\subsection{ER=EPR (intrication \(\Rightarrow\) raccourci géodésique)}
+
+\paragraph{Idée.}
+Des corrélations non-locales peuvent se manifester comme des raccourcis géodésiques dans une géométrie reconstruite.
+
+\paragraph{Lecture Bottom-Up.}
+Lorsque l'intrication non-locale augmente (paramètre \(\lambda\)), certaines paires topologiquement distantes
+deviennent proches dans la métrique informationnelle et dans l'espace embarqué (MDS).
+Il s'agit d'un analogue géométrique discret dans un système fini (pas d'objet relativiste dynamique).
+
+\paragraph{Statut.}
+Signature numérique démontrée sur \(N=9\) et confirmée sur \(N=16\).
+
+\subsection{Principe holographique et loi d'aire}
+
+\paragraph{Idée.}
+L'entropie d'une région pourrait être contrôlée par une quantité de frontière.
+
+\paragraph{Lecture Bottom-Up.}
+Nous disposons de l'entropie exacte \(S(\rho_A)\) et d'un proxy de frontière \(S_{\mathrm{cut}}(A)\).
+La relation
+\(
+S(\rho_A) \approx \gamma\, S_{\mathrm{cut}}(A)
+\)
+est directement testable numériquement.
+
+\paragraph{Statut.}
+Testable ; pas encore établi de façon exhaustive dans cette version.
+
+\subsection{Relation Einstein-like (réponse locale)}
+
+\paragraph{Idée.}
+Une dynamique gravitationnelle effective se manifesterait comme une relation locale entre courbure, source et entropie.
+
+\paragraph{Lecture Bottom-Up.}
+Nous testons une loi de réponse locale de la forme \eqref{eq:operational_eos} et observons une fenêtre d'échelle
+où les coefficients sont stables sous bootstrap.
+
+\paragraph{Statut.}
+Signature numérique cohérente (opérationnelle), mais pas une dérivation continue de l'équation d'Einstein.
+
+\subsection{Analogie groupe de renormalisation}
+
+\paragraph{Idée.}
+Des plateaux de dimension et de réponses peuvent suggérer des régimes attracteurs multi-échelles.
+
+\paragraph{Lecture Bottom-Up.}
+La dépendance de \(d_s(\tau)\) à l'échelle \(\tau\) et les plateaux observés motivent une formalisation RG
+(coarse-graining explicite) à développer.
+
+\paragraph{Statut.}
+Analogie structurelle forte ; procédure RG explicite à formaliser.
 
 %=============================================================================
 \section{Correspondance Phénoménologique : Dimension Effective et SPARC (Optionnel)}
 \label{sec:sparc}
 %=============================================================================
 
-À titre de motivation phénoménologique, un ajustement sur 175 galaxies SPARC
-à l'aide d'un profil de dimension effective $d(r)$ donne
+À titre de motivation phénoménologique, un ajustement sur des galaxies SPARC
+avec un profil de dimension effective \(d(r)\) donne
 \begin{equation}
-d_{\min}=2.63\pm 0.08,\qquad \chi^2/\mathrm{DOF}\approx 1.
+d_{\min}\simeq 2.63,\qquad \chi^2/\mathrm{DOF}\sim 1.
 \end{equation}
-Cette valeur est statistiquement compatible avec l'intervalle de plateau IR
-observé pour la dimension spectrale $d_{\mathrm{IR}}$ sur les graphes d'intrication
-pour $N=9,16$. Cette correspondance reste phénoménologique et ne constitue pas,
-à elle seule, une preuve de limite continue.
+Cette correspondance est \emph{phénoménologique} et ne constitue pas, à elle seule,
+une preuve d'une limite continue du modèle.
 
 %=============================================================================
 \section{Synthèse et Conclusion}
 %=============================================================================
 
-\begin{tcolorbox}[colback=mygreen!5,colframe=mygreen,title=Chaîne d'Émergence Validée]
+\begin{tcolorbox}[colback=mygreen!5,colframe=mygreen,title=Chaîne d'Émergence (Synthèse)]
 \[
 \ket{\Psi(\lambda)} \xrightarrow{\mathrm{Tr}_{\bar{A}}} \rho_A(\lambda)
-\xrightarrow{-\log} K_A(\lambda) \xrightarrow{\text{flot}} \textbf{Temps}
+\xrightarrow{-\log} K_A(\lambda) \xrightarrow{\text{flot}} \textbf{Temps relationnel}
 \]
 \[
 \ket{\Psi(\lambda)} \xrightarrow{I_\lambda(i:j)} d_{ij}(\lambda)
@@ -693,29 +723,28 @@ w_{ij}\xrightarrow{\kappa_{ij}} \textbf{Courbure discrète}
 \text{Perturbations locales :}\quad \Delta S_{\mathrm{cut}} \simeq a\,\Delta\mathcal{R}+b\,\Delta M
 \]
 \[
-\lambda \uparrow : \quad \text{dimension effective augmente, et la signature ER=EPR s'active}
+\text{Chaos modulaire :}\quad g_2^{\mathrm{plateau}}\sim 1/d_A,\;\; C=d_A g_2^{\mathrm{plateau}}\;\text{dépend de la topologie}
 \]
 \end{tcolorbox}
 
 \textbf{Résultats principaux :}
 \begin{enumerate}
-  \item \textbf{Dimension émergente :} la reconstruction MDS montre une transition contrôlée par $\lambda$
-  où des corrélations non-locales imposent une dimension effective plus élevée.
-  \item \textbf{ER=EPR (signature géométrique) :} des paires topologiquement distantes deviennent proches
-  dans l'espace émergent lorsque l'intrication non-locale augmente (raccourci géodésique effectif).
-  \item \textbf{Jacobson (thermodynamique) :} la relation variationnelle $\delta S \simeq \beta\,\delta E$
+  \item \textbf{Dimension émergente :} reconstruction MDS montrant une transition contrôlée par \(\lambda\) :
+  des corrélations non-locales imposent une dimension effective plus élevée.
+  \item \textbf{ER=EPR (signature géométrique) :} des paires topologiquement distantes deviennent proches dans l'espace émergent
+  lorsque l'intrication non-locale augmente (raccourci géodésique effectif).
+  \item \textbf{Jacobson (thermodynamique) :} la relation variationnelle \(\delta S \simeq \beta\,\delta E\)
   apparaît comme une loi d'état effective de l'intrication.
-  \item \textbf{Géométrie spectrale :} la dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication
-  exhibe un plateau IR compatible avec une dimension effective non-entière.
-  \item \textbf{Réponse Einstein-like :} une loi de réponse locale (équation d'état opérationnelle) relie
-  variations d'entropie de coupure et variations de courbure discrète sous perturbations locales.
+  \item \textbf{Géométrie spectrale :} la dimension spectrale \(d_s(\tau)\) exhibe un plateau IR compatible avec une dimension non-entière.
+  \item \textbf{Réponse Einstein-like :} une loi de réponse locale relie variations d'entropie de coupure et variations de courbure discrète
+  sous perturbations locales.
+  \item \textbf{Chaos modulaire :} le spectre de \(K_A\) présente des signatures RMT (ratio \(\langle r\rangle\), SFF dip--ramp--plateau) et
+  un plateau respectant \(1/d_A\), avec un préfacteur \(C\) modulé par la topologie.
 \end{enumerate}
 
-\textbf{Validation par montée en taille :}
-le passage de $N=9$ à $N=16$ confirme que les signatures précédentes persistent et gagnent en stabilité,
-ce qui réduit la probabilité d'artefacts purement liés à la petite taille.
-L'étape suivante consiste à explorer des tailles $N\gtrsim 25$ avec des méthodes approchées,
-afin d'étudier une convergence quantitative vers un régime collectif.
+\textbf{Limites et suite :}
+les systèmes restent finis ; l'étape suivante consiste à explorer \(N\gtrsim 25\) avec des méthodes approchées
+(tensor networks, DMRG/TEBD, etc.) et à tester la convergence multi-échelle.
 
 %=============================================================================
 \section*{Données et Reproductibilité}
@@ -732,7 +761,7 @@ Code et figures : \url{https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity
 
 Une construction simple utilisée pour générer $\alpha_c(\lambda)$ consiste à biaiser une distribution
 d'amplitudes vers des configurations corrélées localement et, lorsque $\lambda$ augmente,
-à renforcer des corrélations entre coins :
+à renforcer des corrélations non-locales :
 \begin{equation}
 \alpha_c(\lambda) =
 \exp\left[ -\beta E_{\text{local}}(c) - \lambda \beta E_{\text{nl}}(c) \right],
@@ -777,7 +806,7 @@ sur l'ensemble des perturbations et des régions $A=B(i,R)$ :
 \begin{itemize}
 \item resampling avec remise des observations,
 \item ajustement linéaire à chaque resample,
-\item estimation des intervalles de confiance (par ex. 16--84\%).
+\item estimation d'intervalles de confiance (par ex. 16--84\%).
 \end{itemize}
 
 La stabilité multi-échelle est évaluée en traçant $a(R)$ et $b(R)$ en fonction de $R$
@@ -804,7 +833,7 @@ Priors typiques :
 d_{\min}\sim U(2,3),\quad M/L\sim U(0.3,5.0),\quad r_0>0,\quad \sigma>0.
 \end{equation}
 
-Le diagnostic inclut : convergence (ESS, autocorrélation), unimodalité, et tests de robustesse aux priors.
+Le diagnostic inclut : convergence (ESS), autocorrélation, et tests de robustesse aux priors.
 
 \begin{thebibliography}{9}
 \bibitem{jacobson} T. Jacobson, \textit{Phys. Rev. Lett.} 75, 1260 (1995).
