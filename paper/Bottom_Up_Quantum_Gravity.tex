@@ -1,4 +1,3 @@
-
 \documentclass[11pt,a4paper]{article}
 
 % -------------------- Encodage / Langue --------------------
@@ -83,6 +82,7 @@ dans l'espace émergent lorsque l'intrication non-locale est renforcée.
 et un plateau du Spectral Form Factor vérifiant $g_2^{\mathrm{plateau}}\sim 1/d_A$, avec un préfacteur
 $C=d_A g_2^{\mathrm{plateau}}$ modulé par la topologie (chaîne 1D, grille 2D, graphe aléatoire).
 Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, et complétés par l'étude modulaire à $d_A=256$.
+Nous ajoutons enfin une \textbf{détection d'horizon bottom-up} (N=16) : une région BH-like de taille fixée $|A|=N/2$ présente un \emph{bottleneck informationnel} (conductance faible) et une cohésion interne extrême, validé par benchmark vs régions aléatoires, et reproduit par une hiérarchie HIE initialisée par \textbf{communautés Louvain} (rang $2/55$ en mode horizon-aware).
 \end{tcolorbox}
 \end{abstract}
 
@@ -474,9 +474,9 @@ $\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio $\epsilo
 \centering
 \includegraphics[width=0.95\linewidth]{fig1_dimension_emergente.png}
 \caption{
-\textbf{Émergence dimensionnelle induite par l’intrication (N=9).}
+\textbf{Émergence dimensionnelle induite par l'intrication (N=9).}
 Reconstructions MDS et erreurs relatives : un état local ($\lambda\simeq 0$) est compatible 2D,
-tandis qu’un état non-local ($\lambda\simeq 1$) exige un embarquement 3D pour réduire l’erreur.
+tandis qu'un état non-local ($\lambda\simeq 1$) exige un embarquement 3D pour réduire l'erreur.
 }
 \label{fig:dimensionN9}
 \end{figure}
@@ -586,261 +586,82 @@ suggérant une thermodynamique effective robuste de l'intrication lorsque la tai
 \end{figure}
 
 %=============================================================================
-\section{Effets de Taille Finie et Extrapolation}
-\label{sec:taille-finie}
+\subsection{Détection d'horizon bottom-up (N=16) : région BH-like et candidats HIE guidés par Louvain}
+\label{sec:horizon_detection}
 %=============================================================================
 
-Le passage de $N=9$ à $N=16$ réduit deux limites majeures :
-(i) domination des effets de bord et (ii) faible résolution géométrique.
-Néanmoins, les résultats restent ceux de systèmes finis, et doivent être interprétés comme des signatures opératoires.
+\paragraph{Graphe d'intrication à densité fixée.}
+À partir de la matrice \(W_{ij}=I(i:j)\), nous construisons un graphe pondéré \(A\) en imposant une densité cible \(\rho\)
+par seuillage au quantile (ici \(\rho=1/3\)). Ce choix fixe le nombre d'arêtes et facilite les comparaisons entre seeds.
 
-\begin{table}[h]
+\paragraph{Métriques de région.}
+Pour une région \(A\subset V\) de taille fixée \(|A|=N/2\) (ici \(|A|=8\)), nous mesurons :
+\begin{align}
+S(A) &= S(\rho_A), \\
+\mathrm{cut}(A) &= \sum_{i\in A}\sum_{j\notin A} A_{ij}, \\
+\mathrm{internal}(A) &= \sum_{i<j\in A} A_{ij}, \\
+\phi(A) &= \frac{\mathrm{cut}(A)}{\min(\mathrm{vol}(A),\mathrm{vol}(\bar{A}))},
+\qquad
+\mathrm{vol}(A)=\sum_{i\in A}\sum_j A_{ij}.
+\end{align}
+Dans cette lecture, un \emph{horizon-like bottleneck} correspond à une \(\phi(A)\) faible et une cohésion interne élevée.
+
+\paragraph{Recherche BH-like (optimisation).}
+Nous maximisons un score normalisé par z-score (pool de régions aléatoires de même taille) :
+\begin{equation}
+\mathrm{Score}_{BH}(A)=
+w_S\, z(S(A)) - w_\phi\, z(\phi(A)) + w_{\mathrm{int}}\, z(\mathrm{internal}(A)).
+\label{eq:bh_score}
+\end{equation}
+L'optimisation combine échantillonnage aléatoire, hill-climb et acceptation Metropolis.
+
+\paragraph{Résultat BH-like et benchmark.}
+Sur \(N=16\) (seed représentative), nous obtenons une région candidate :
+\[
+A_{BH}=\{0,2,3,5,6,10,11,15\}.
+\]
+Les métriques et percentiles (comparées à \(3000\) régions aléatoires de taille 8) sont reportées dans les Tableaux~\ref{tab:bh_metrics_N16}
+et~\ref{tab:bh_percentiles_N16}. La signature horizon-like est nette : \(\phi\) est très faible (bottleneck)
+tandis que \(\mathrm{internal}\) est extrême.
+
+\begin{table}[h!]
 \centering
-\caption{Sources d'erreur typiques et impacts qualitatifs.}
-\label{tab:erreurs}
-\begin{tabular}{@{}lcc@{}}
+\caption{Région BH-like détectée (N=16, \(|A|=8\), \(\rho=1/3\)) : métriques brutes.}
+\label{tab:bh_metrics_N16}
+\begin{tabular}{@{}lccccc@{}}
 \toprule
-Source & Ordre de grandeur & Impact \\
+Région \(A_{BH}\) & \(S(A)\) & \(\mathrm{cut}(A)\) & \(\mathrm{internal}(A)\) & \(\phi(A)\) & \(\langle r\rangle(K_A)\) \\
 \midrule
-Effets de bord & important à $N=9$, réduit à $N=16$ & biais sur distances reconstruites \\
-Sensibilité MDS (init.) & $\sim 10\%$ à $15\%$ & dispersion de $\epsilon_d$ \\
-Choix de régularisation $\epsilon$ & faible & stabilité des zéros de $I(i:j)$ \\
-Systèmes finis & structurel & pas de limite continue ni RG complet \\
+\(\{0,2,3,5,6,10,11,15\}\) & 7.1667 & 3.2098 & 5.0348 & 0.3951 & 0.6041 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Ces tendances motivent l'extension vers $N\gtrsim 25$ (méthodes approximatives, tensor networks, etc.)
-pour étudier la convergence vers un régime collectif.
+\begin{table}[h!]
+\centering
+\caption{Percentiles de la région BH-like vs \(3000\) régions aléatoires de taille \(|A|=8\) (N=16). Un bottleneck correspond à un percentile \(\phi\) faible.}
+\label{tab:bh_percentiles_N16}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Mesure & \(S(A)\) & \(\mathrm{cut}(A)\) & \(\mathrm{internal}(A)\) & \(\phi(A)\) & \(\langle r\rangle(K_A)\) \\
+\midrule
+Percentile (\%) & 23.7 & 1.4 & 98.8 & 2.7 & 62.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-%=============================================================================
-\section{Conjectures majeures et positionnement théorique}
-\label{sec:conjectures}
-%=============================================================================
+\paragraph{HIE à taille fixée et graines Louvain.}
+Nous construisons ensuite une liste de régions candidates \(|A|=8\) via une hiérarchie HIE,
+\emph{seedée} par des communautés détectées par Louvain sur le graphe \(A\) (puis raffinées par swaps Metropolis).
+Deux classements sont comparés :
+(i) \emph{classic} (pondérations équilibrées), et (ii) \emph{horizon-aware} (poids plus fort sur \(\phi\) et pénalité cut).
 
-Cette section clarifie la position de \textbf{Bottom-Up Quantum Gravity} vis-à-vis de conjectures centrales en gravité quantique.
-L'objectif n'est pas d'en revendiquer une démonstration complète, mais d'expliciter ce que le cadre établit au sens opérationnel
-et ce qui reste ouvert.
+\paragraph{Résultat-clé : horizon-aware.}
+Dans l'exemple représentatif, le rang de \(A_{BH}\) parmi les \(55\) candidats HIE passe de \(12/55\) (classic) à \(2/55\) (horizon-aware),
+montrant que la détection par communautés peut récupérer la région BH-like dès lors que le critère encode explicitement le bottleneck.
 
-\subsection{Réduction dimensionnelle UV}
-
-\paragraph{Idée.}
-Plusieurs approches suggèrent qu'à très petite échelle, la dimension effective tend vers \(d\simeq 2\).
-
-\paragraph{Lecture Bottom-Up.}
-La dimension n'est pas postulée mais reconstruite à partir du graphe d'intrication via MDS et dimension spectrale.
-Une réduction dimensionnelle correspond à un régime où l'intrication est dominée par des corrélations locales,
-ce qui impose une diffusion effective quasi-bidimensionnelle.
-
-\paragraph{Statut.}
-Compatible structurellement ; une confirmation robuste requiert un scaling en \(N\) et une analyse multi-échelle.
-
-\subsection{ER=EPR (intrication \(\Rightarrow\) raccourci géodésique)}
-
-\paragraph{Idée.}
-Des corrélations non-locales peuvent se manifester comme des raccourcis géodésiques dans une géométrie reconstruite.
-
-\paragraph{Lecture Bottom-Up.}
-Lorsque l'intrication non-locale augmente (paramètre \(\lambda\)), certaines paires topologiquement distantes
-deviennent proches dans la métrique informationnelle et dans l'espace embarqué (MDS).
-Il s'agit d'un analogue géométrique discret dans un système fini (pas d'objet relativiste dynamique).
-
-\paragraph{Statut.}
-Signature numérique démontrée sur \(N=9\) et confirmée sur \(N=16\).
-
-\subsection{Principe holographique et loi d'aire}
-
-\paragraph{Idée.}
-L'entropie d'une région pourrait être contrôlée par une quantité de frontière.
-
-\paragraph{Lecture Bottom-Up.}
-Nous disposons de l'entropie exacte \(S(\rho_A)\) et d'un proxy de frontière \(S_{\mathrm{cut}}(A)\).
-La relation
-\(
-S(\rho_A) \approx \gamma\, S_{\mathrm{cut}}(A)
-\)
-est directement testable numériquement.
-
-\paragraph{Statut.}
-Testable ; pas encore établi de façon exhaustive dans cette version.
-
-\subsection{Relation Einstein-like (réponse locale)}
-
-\paragraph{Idée.}
-Une dynamique gravitationnelle effective se manifesterait comme une relation locale entre courbure, source et entropie.
-
-\paragraph{Lecture Bottom-Up.}
-Nous testons une loi de réponse locale de la forme \eqref{eq:operational_eos} et observons une fenêtre d'échelle
-où les coefficients sont stables sous bootstrap.
-
-\paragraph{Statut.}
-Signature numérique cohérente (opérationnelle), mais pas une dérivation continue de l'équation d'Einstein.
-
-\subsection{Analogie groupe de renormalisation}
-
-\paragraph{Idée.}
-Des plateaux de dimension et de réponses peuvent suggérer des régimes attracteurs multi-échelles.
-
-\paragraph{Lecture Bottom-Up.}
-La dépendance de \(d_s(\tau)\) à l'échelle \(\tau\) et les plateaux observés motivent une formalisation RG
-(coarse-graining explicite) à développer.
-
-\paragraph{Statut.}
-Analogie structurelle forte ; procédure RG explicite à formaliser.
-
-%=============================================================================
-\section{Correspondance Phénoménologique : Dimension Effective et SPARC (Optionnel)}
-\label{sec:sparc}
-%=============================================================================
-
-À titre de motivation phénoménologique, un ajustement sur des galaxies SPARC
-avec un profil de dimension effective \(d(r)\) donne
-\begin{equation}
-d_{\min}\simeq 2.63,\qquad \chi^2/\mathrm{DOF}\sim 1.
-\end{equation}
-Cette correspondance est \emph{phénoménologique} et ne constitue pas, à elle seule,
-une preuve d'une limite continue du modèle.
-
-%=============================================================================
-\section{Synthèse et Conclusion}
-%=============================================================================
-
-\begin{tcolorbox}[colback=mygreen!5,colframe=mygreen,title=Chaîne d'Émergence (Synthèse)]
-\[
-\ket{\Psi(\lambda)} \xrightarrow{\mathrm{Tr}_{\bar{A}}} \rho_A(\lambda)
-\xrightarrow{-\log} K_A(\lambda) \xrightarrow{\text{flot}} \textbf{Temps relationnel}
-\]
-\[
-\ket{\Psi(\lambda)} \xrightarrow{I_\lambda(i:j)} d_{ij}(\lambda)
-\xrightarrow{\text{MDS}} \textbf{Géométrie} \xrightarrow{\text{tests}} \textbf{Gravité effective}
-\]
-\[
-\ket{\Psi(\lambda)} \xrightarrow{w_{ij}} L \xrightarrow{d_s(\tau)} \textbf{Dimension spectrale}
-\quad;\quad
-w_{ij}\xrightarrow{\kappa_{ij}} \textbf{Courbure discrète}
-\]
-\[
-\text{Perturbations locales :}\quad \Delta S_{\mathrm{cut}} \simeq a\,\Delta\mathcal{R}+b\,\Delta M
-\]
-\[
-\text{Chaos modulaire :}\quad g_2^{\mathrm{plateau}}\sim 1/d_A,\;\; C=d_A g_2^{\mathrm{plateau}}\;\text{dépend de la topologie}
-\]
-\end{tcolorbox}
-
-\textbf{Résultats principaux :}
-\begin{enumerate}
-  \item \textbf{Dimension émergente :} reconstruction MDS montrant une transition contrôlée par \(\lambda\) :
-  des corrélations non-locales imposent une dimension effective plus élevée.
-  \item \textbf{ER=EPR (signature géométrique) :} des paires topologiquement distantes deviennent proches dans l'espace émergent
-  lorsque l'intrication non-locale augmente (raccourci géodésique effectif).
-  \item \textbf{Jacobson (thermodynamique) :} la relation variationnelle \(\delta S \simeq \beta\,\delta E\)
-  apparaît comme une loi d'état effective de l'intrication.
-  \item \textbf{Géométrie spectrale :} la dimension spectrale \(d_s(\tau)\) exhibe un plateau IR compatible avec une dimension non-entière.
-  \item \textbf{Réponse Einstein-like :} une loi de réponse locale relie variations d'entropie de coupure et variations de courbure discrète
-  sous perturbations locales.
-  \item \textbf{Chaos modulaire :} le spectre de \(K_A\) présente des signatures RMT (ratio \(\langle r\rangle\), SFF dip--ramp--plateau) et
-  un plateau respectant \(1/d_A\), avec un préfacteur \(C\) modulé par la topologie.
-\end{enumerate}
-
-\textbf{Limites et suite :}
-les systèmes restent finis ; l'étape suivante consiste à explorer \(N\gtrsim 25\) avec des méthodes approchées
-(tensor networks, DMRG/TEBD, etc.) et à tester la convergence multi-échelle.
-
-%=============================================================================
-\section*{Données et Reproductibilité}
-%=============================================================================
-Simulations réalisées avec Python/NumPy/SciPy/scikit-learn.
-Code et figures : \url{https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}.
-
-\appendix
-
-%=============================================================================
-\section{Construction des États $\ket{\Psi(\lambda)}$}
-\label{app:construction-etats}
-%=============================================================================
-
-Une construction simple utilisée pour générer $\alpha_c(\lambda)$ consiste à biaiser une distribution
-d'amplitudes vers des configurations corrélées localement et, lorsque $\lambda$ augmente,
-à renforcer des corrélations non-locales :
-\begin{equation}
-\alpha_c(\lambda) =
-\exp\left[ -\beta E_{\text{local}}(c) - \lambda \beta E_{\text{nl}}(c) \right],
-\qquad
-\mathcal{N}(\lambda)=\sqrt{\sum_c |\alpha_c(\lambda)|^2}.
-\end{equation}
-
-où, par exemple :
-\begin{align}
-E_{\text{local}}(c) &= -\sum_{\langle i,j \rangle} (-1)^{c_i + c_j}, \\
-E_{\text{nl}}(c) &= -\sum_{(i,j)\in \text{coins}} (-1)^{c_i + c_j}.
-\end{align}
-
-Cette paramétrisation n'est pas unique : elle sert de \emph{générateur contrôlé}
-pour explorer la transition local/non-local.
-
-%=============================================================================
-\section{Wasserstein-1 exact par programmation linéaire}
-\label{app:W1LP}
-%=============================================================================
-
-Pour $N$ nœuds, $W_1(\mu,\nu)$ s'écrit comme le problème de transport optimal :
-\begin{equation}
-W_1(\mu,\nu)=\min_{f_{ab}\ge 0}\sum_{a,b} f_{ab}\,d(a,b)
-\end{equation}
-sous contraintes
-\begin{equation}
-\sum_b f_{ab}=\mu(a),\qquad \sum_a f_{ab}=\nu(b).
-\end{equation}
-
-Ce problème est résolu numériquement via un solveur LP (HiGHS). Pour $N=16$,
-le coût est $N^2$ variables et $2N$ contraintes d'égalité, ce qui reste tractable et fournit
-un calcul \emph{exact} de Wasserstein-1 pour les tailles étudiées.
-
-%=============================================================================
-\section{Bootstrap et stabilité des coefficients de réponse}
-\label{app:bootstrap}
-%=============================================================================
-
-Pour estimer l'incertitude sur $a(R)$ et $b(R)$, on applique un bootstrap
-sur l'ensemble des perturbations et des régions $A=B(i,R)$ :
-\begin{itemize}
-\item resampling avec remise des observations,
-\item ajustement linéaire à chaque resample,
-\item estimation d'intervalles de confiance (par ex. 16--84\%).
-\end{itemize}
-
-La stabilité multi-échelle est évaluée en traçant $a(R)$ et $b(R)$ en fonction de $R$
-et en identifiant une fenêtre d'échelle intermédiaire où les coefficients
-sont quasi constants (plateau).
-
-%=============================================================================
-\section{Ajustement SPARC : modèle, vraisemblance, priors (Optionnel)}
-\label{app:sparc_mcmc}
-%=============================================================================
-
-Le profil de dimension effective est :
-\begin{equation}
-d(r)=\max\!\left(d_{\min},\ 3-\Delta d\exp\left[-\frac{\ln^2(r/r_0)}{2\sigma^2}\right]\right).
-\end{equation}
-
-La vraisemblance est gaussienne :
-\begin{equation}
-\log \mathcal{L} = -\frac{1}{2}\sum_k \frac{(v_{\mathrm{obs}}(r_k)-v_{\mathrm{mod}}(r_k))^2}{\sigma_k^2}+\mathrm{cste}.
-\end{equation}
-
-Priors typiques :
-\begin{equation}
-d_{\min}\sim U(2,3),\quad M/L\sim U(0.3,5.0),\quad r_0>0,\quad \sigma>0.
-\end{equation}
-
-Le diagnostic inclut : convergence (ESS), autocorrélation, et tests de robustesse aux priors.
-
-\begin{thebibliography}{9}
-\bibitem{jacobson} T. Jacobson, \textit{Phys. Rev. Lett.} 75, 1260 (1995).
-\bibitem{er=epr} J. Maldacena and L. Susskind, \textit{Fortsch. Phys.} 61, 781 (2013).
-\bibitem{vanraamsdonk} M. Van Raamsdonk, \textit{Int. J. Mod. Phys. D} 19, 2429 (2010).
-\bibitem{ryu-takayanagi} S. Ryu and T. Takayanagi, \textit{Phys. Rev. Lett.} 96, 181602 (2006).
-\bibitem{cao2017} C. Cao et al., \textit{Phys. Rev. D} 95, 024031 (2017).
-\end{thebibliography}
-
-\end{document}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\linewidth]{comparison_bh_hie8.png}
+\caption{\textbf{Comparaison BH-like vs candidats HIE (N=16, \(|A|=8\)).}
+La région
