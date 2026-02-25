@@ -1,667 +1,454 @@
-\documentclass[11pt,a4paper]{article}
+# Bottom-Up Quantum Gravity
+### Une Théorie de l'Émergence Gravitationnelle
+### Espace, Temps et Gravité depuis l'Intrication Quantique
 
-% -------------------- Encodage / Langue --------------------
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
+**Farid Hamdad — Février 2026**
 
-% -------------------- Maths / Symboles --------------------
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{bm}
-\usepackage{braket}
+![Status](https://img.shields.io/badge/status-preprint--v1-blue)
+![System size](https://img.shields.io/badge/system%20size-N%3D9%2C%2016-green)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-% -------------------- Mise en page / Figures --------------------
-\usepackage{geometry}
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{setspace}
-\usepackage{booktabs}
-\usepackage{authblk}
-\usepackage{tcolorbox}
-\usepackage{xcolor}
-\usepackage{siunitx}
+---
 
-% -------------------- Hyperliens (en dernier) --------------------
-\usepackage{hyperref}
+## 📌 Idée centrale
 
-\geometry{margin=2.5cm}
-\setstretch{1.15}
+> L'intrication est une structure géométrique.  
+> Ce que nous appelons espace est le motif collectif de ces corrélations.  
+> Ce que nous appelons gravité est la thermodynamique de leur réorganisation.
 
-\definecolor{myblue}{RGB}{0,82,147}
-\definecolor{mygreen}{RGB}{0,128,0}
-\definecolor{myred}{RGB}{180,0,0}
+---
 
-\hypersetup{
-  colorlinks=true,
-  linkcolor=myblue,
-  citecolor=myblue,
-  urlcolor=myblue
-}
+## 📖 Résumé opérationnel
 
-% Figures : le .tex est dans paper/ donc ../figures marche
-\graphicspath{{../figures/}{./figures/}{figures/}}
+Nous présentons **Bottom-Up Quantum Gravity**, un cadre minimal où espace, temps et gravité émergent de l'intrication d'un état quantique global pur $\ket{\Psi}$ **sans géométrie préalable**.
 
-\title{\textbf{Bottom-Up Quantum Gravity :}\\
-\vspace{0.3em}
-\Large{Une Théorie de l'Émergence Gravitationnelle}\\
-\vspace{0.3em}
-\large{Espace, Temps et Gravité depuis l'Intrication Quantique}}
+**Résultat central :** la dimension spatiale n'est pas postulée mais *mesurée* via reconstruction métrique. Des états à intrication principalement locale se reconstruisent en 2D, tandis que des états à intrication non-locale imposent une dimension effective plus élevée.
 
-\author{Farid Hamdad}
-\date{Février 2026}
-
-\begin{document}
-\maketitle
-
-\vspace{0.8em}
-\begin{center}
-\itshape
-L'intrication est une structure géométrique.\\
-Ce que nous appelons espace est le motif collectif de ces corrélations.\\
-Ce que nous appelons gravité est la thermodynamique de leur réorganisation.
-\end{center}
-\vspace{1.2em}
-
-\begin{abstract}
-\begin{tcolorbox}[colback=gray!10,colframe=myblue,title=Résumé Opérationnel]
-Nous présentons \textbf{Bottom-Up Quantum Gravity}, un cadre minimal où espace, temps et gravité
-émergent de l'intrication d'un état quantique global pur $\ket{\Psi}$ \emph{sans géométrie préalable}.
-\textbf{Résultat central :} la dimension spatiale n'est pas postulée mais \emph{mesurée} via reconstruction métrique :
-des états à intrication principalement locale se reconstruisent en 2D, tandis que des états à intrication non-locale
-imposent une dimension effective plus élevée.
 Nous validons numériquement plusieurs signatures sur des systèmes finis :
-(1) temps relationnel via flot modulaire, (2) géométrie informationnelle via information mutuelle et embarquement (MDS),
-(3) gravité thermodynamique effective via un test variationnel de type Jacobson,
-(4) géométrie \emph{intrinsèque} via la dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication,
-et (5) une loi de réponse \emph{Einstein-like} au sens opérationnel :
-relation locale entre variations d'entropie de coupure (proxy d'aire), courbure discrète (Ollivier--Ricci)
-et intensité de perturbation, avec Wasserstein-1 calculé par programmation linéaire.
-Nous ajoutons un test opérationnel de type ER=EPR : des paires topologiquement distantes deviennent géométriquement proches
-dans l'espace émergent lorsque l'intrication non-locale est renforcée.
-\textbf{Nouveau résultat :} l'analyse spectrale du Hamiltonien modulaire $K_A=-\log\rho_A$ révèle un régime chaotique de type RMT
-et un plateau du Spectral Form Factor vérifiant $g_2^{\mathrm{plateau}}\sim 1/d_A$, avec un préfacteur
-$C=d_A g_2^{\mathrm{plateau}}$ modulé par la topologie (chaîne 1D, grille 2D, graphe aléatoire).
-Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, et complétés par l'étude modulaire à $d_A=256$.
-Nous ajoutons enfin une \textbf{détection d'horizon bottom-up} (N=16) : une région BH-like de taille fixée $|A|=N/2$ présente un \emph{bottleneck informationnel} (conductance faible) et une cohésion interne extrême, validé par benchmark vs régions aléatoires, et reproduit par une hiérarchie HIE initialisée par \textbf{communautés Louvain} (rang $2/55$ en mode horizon-aware).
-\end{tcolorbox}
-\end{abstract}
+- **Temps relationnel** via flot modulaire
+- **Géométrie informationnelle** via information mutuelle et embarquement (MDS)
+- **Gravité thermodynamique effective** via test variationnel de type Jacobson
+- **Géométrie intrinsèque** via dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication
+- **Loi de réponse Einstein-like** au sens opérationnel (relation locale entre variations d'entropie de coupure, courbure discrète et intensité de perturbation)
+- **Test ER=EPR** : des paires topologiquement distantes deviennent géométriquement proches dans l'espace émergent lorsque l'intrication non-locale est renforcée
 
-%=============================================================================
-\section{Ontologie Minimale : Le Postulat Fondamental}
-%=============================================================================
+**Nouveau résultat :** l'analyse spectrale du Hamiltonien modulaire $K_A=-\log\rho_A$ révèle un régime chaotique de type RMT et un plateau du Spectral Form Factor vérifiant $g_2^{\mathrm{plateau}}\sim 1/d_A$, avec un préfacteur $C=d_A g_2^{\mathrm{plateau}}$ modulé par la topologie (chaîne 1D, grille 2D, graphe aléatoire). Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, et complétés par l'étude modulaire à $d_A=256$.
 
-\begin{tcolorbox}[colback=myblue!5,colframe=myblue,title=Postulat Unique]
-Il existe un état quantique global pur $\ket{\Psi} \in \mathcal{H} = \bigotimes_{i \in V} \mathcal{H}_i$
-où $V$ indexe un ensemble fini de degrés de liberté élémentaires (qubits).
-\end{tcolorbox}
+Nous ajoutons enfin une **détection d'horizon bottom-up** (N=16) : une région BH-like de taille fixée $|A|=N/2$ présente un *bottleneck informationnel* (conductance faible) et une cohésion interne extrême, validé par benchmark vs régions aléatoires, et reproduit par une hiérarchie HIE initialisée par **communautés Louvain** (rang $2/55$ en mode horizon-aware).
 
-\textbf{Ce qui est absent :}
-\begin{itemize}
-  \item aucun espace-temps préexistant ;
-  \item aucune métrique a priori ;
-  \item aucune structure causale externe ;
-  \item aucun champ classique fondamental.
-\end{itemize}
+---
 
-L'état $\ket{\Psi}$ est \textbf{atemporel} au sens où il n'évolue pas par rapport à un temps externe.
-Toute dynamique doit émerger de relations internes, i.e. d'observables de sous-systèmes et de corrélations entre eux.
-L'approche est volontairement \emph{bottom-up} : partir de $\ket{\Psi}$ et extraire des notions opératoires de temps,
-distance, dimension et gravité effective.
+## 📋 Table des matières
 
-%=============================================================================
-\section{Systèmes Modèles et Protocole Numérique Unifié}
-\label{sec:systeme}
-%=============================================================================
+- [1. Fondement : Postulat minimal](#1-fondement--postulat-minimal)
+- [2. Systèmes modèles et protocole numérique](#2-systèmes-modèles-et-protocole-numérique)
+- [3. Temps émergent : flot modulaire](#3-temps-émergent--flot-modulaire)
+- [4. Chaos modulaire et universalité RMT](#4-chaos-modulaire-et-universalité-rmt)
+- [5. Espace émergent : géométrie informationnelle](#5-espace-émergent--géométrie-informationnelle)
+- [6. Gravité émergente : test de Jacobson](#6-gravité-émergente--test-de-jacobson)
+- [7. Géométrie spectrale et dimension intrinsèque](#7-géométrie-spectrale-et-dimension-intrinsèque)
+- [8. Courbure discrète et réponse Einstein-like](#8-courbure-discrète-et-réponse-einstein-like)
+- [9. Résultats N=9 : preuve de concept](#9-résultats-n9--preuve-de-concept)
+- [10. Résultats N=16 : validation intermédiaire](#10-résultats-n16--validation-intermédiaire)
+- [11. Détection d'horizon bottom-up (N=16)](#11-détection-dhorizon-bottom-up-n16)
+- [12. Ce que le projet établit](#12-ce-que-le-projet-établit)
+- [13. Limites](#13-limites)
+- [14. Organisation du dépôt](#14-organisation-du-dépôt)
+- [15. Perspectives](#15-perspectives)
+- [16. Citation](#16-citation)
+
+---
+
+## 1. Fondement : Postulat minimal
+
+Il existe un état quantique global pur
+
+$$|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i$$
+
+défini sur $N$ degrés de liberté élémentaires (qubits), **sans espace, sans temps, sans métrique préalable**.
+
+**Ce qui est absent :**
+- Aucun espace-temps préexistant
+- Aucune métrique a priori
+- Aucune structure causale externe
+- Aucun champ classique fondamental
+
+L'état $\ket{\Psi}$ est **atemporel** : il n'évolue pas par rapport à un temps externe. Toute dynamique émerge de relations internes, i.e. d'observables de sous-systèmes et de corrélations entre eux.
+
+L'approche est **bottom-up** : partir de $\ket{\Psi}$ et extraire des notions opératoires de temps, distance, dimension et gravité effective.
+
+---
+
+## 2. Systèmes modèles et protocole numérique
 
 Nous adoptons un protocole unique réutilisé à différentes tailles $N$ :
-(i) définir une famille d'états $\ket{\Psi(\lambda)}$ contrôlée par un paramètre de non-localité corrélationnelle $\lambda$,
-(ii) calculer l'information mutuelle $I(i:j)$, (iii) définir une distance informationnelle $d_{ij}$,
-(iv) reconstruire une géométrie par embarquement (MDS), (v) tester des signatures thermodynamiques (Jacobson)
-et géodésiques (ER=EPR), (vi) extraire une dimension intrinsèque via la géométrie spectrale,
-(vii) tester une loi de réponse locale liant entropie de coupure et courbure discrète,
-et (viii) analyser le flot modulaire via ses signatures spectrales (chaos RMT, SFF).
 
-\subsection{Tailles étudiées : $N=9$ puis $N=16$}
+1. Définir une famille d'états $\ket{\Psi(\lambda)}$ contrôlée par un paramètre de non-localité corrélationnelle $\lambda$
+2. Calculer l'information mutuelle $I(i:j)$
+3. Définir une distance informationnelle $d_{ij}$
+4. Reconstruire une géométrie par embarquement (MDS)
+5. Tester des signatures thermodynamiques (Jacobson) et géodésiques (ER=EPR)
+6. Extraire une dimension intrinsèque via la géométrie spectrale
+7. Tester une loi de réponse locale liant entropie de coupure et courbure discrète
+8. Analyser le flot modulaire via ses signatures spectrales (chaos RMT, SFF)
 
-\begin{itemize}
-  \item \textbf{$N=9$ :} grille $3\times 3$ (preuve de concept exacte, $2^9=512$).
-  \item \textbf{$N=16$ :} grille $4\times 4$ (validation intermédiaire, réduction des effets de bord).
-\end{itemize}
+### 2.1 Tailles étudiées
 
-\subsection{Famille d'états paramétrée par $\lambda$}
+| Taille | Description | Espace de Hilbert |
+|--------|-------------|-------------------|
+| N=9 | Grille $3\times 3$ | $2^9 = 512$ |
+| N=16 | Grille $4\times 4$ | $2^{16} = 65536$ |
 
-Nous considérons une famille d'états contrôlée par $\lambda \in [0,1]$ :
-\begin{equation}
-\ket{\Psi(\lambda)} = \frac{1}{\mathcal{N}(\lambda)} \sum_{c=0}^{2^N-1} \alpha_c(\lambda)\, \ket{c}.
-\end{equation}
+### 2.2 Famille d'états paramétrée par $\lambda$
 
-Intuition :
-\begin{itemize}
-  \item $\lambda=0$ : intrication dominée par la localité sur la grille ;
-  \item $\lambda \to 1$ : intrication renforcée entre sites topologiquement distants.
-\end{itemize}
+$$|\Psi(\lambda)\rangle = \frac{1}{\mathcal{N}(\lambda)} \sum_{c=0}^{2^N-1} \alpha_c(\lambda) |c\rangle$$
 
-Une construction explicite est fournie en Annexe~\ref{app:construction-etats}.
+- $\lambda=0$ : intrication dominée par la localité sur la grille
+- $\lambda \to 1$ : intrication renforcée entre sites topologiquement distants
+- $\lambda=0.5$ : mélange équilibré local/non-local
 
-\subsection{Hamiltonien de référence (tests thermodynamiques)}
+### 2.3 Hamiltonien de référence (tests thermodynamiques)
 
-Pour les tests de type Jacobson, nous utilisons un Ising transverse perturbé et un terme non-local :
-\begin{equation}
-H(\lambda) = -J \sum_{\langle i,j \rangle} Z_i Z_j
-             - h(\lambda) \sum_i X_i
-             - \lambda\, J_{\text{nl}} \sum_{\text{coins}} X_i X_j.
-\label{eq:hamiltonien}
-\end{equation}
+$$H(\lambda) = -J \sum_{\langle i,j \rangle} Z_i Z_j - h(\lambda) \sum_i X_i - \lambda J_{\text{nl}} \sum_{\text{coins}} X_i X_j$$
 
-%=============================================================================
-\section{Temps Émergent : Horloge Relationnelle et Flot Modulaire}
-\label{sec:time_modular}
-%=============================================================================
+---
 
-\subsection{Partition et horloge relationnelle}
-
-On partitionne :
-\begin{equation}
-\mathcal{H} = \mathcal{H}_C \otimes \mathcal{H}_S,
-\end{equation}
-où $C$ est un sous-système horloge, $S$ le reste.
-En l'absence de temps externe, on adopte une lecture relationnelle (Page--Wootters) :
-\begin{equation}
-(\hat{H}_C + \hat{H}_S)\ket{\Psi} = 0,
-\end{equation}
-où la dynamique est encodée dans les corrélations horloge-système.
-
-\subsection{Flot modulaire}
+## 3. Temps émergent : flot modulaire
 
 Pour toute région $A$ :
-\begin{equation}
-\rho_A(\lambda) = \mathrm{Tr}_{\bar{A}} \ket{\Psi(\lambda)}\bra{\Psi(\lambda)},
-\qquad
-K_A(\lambda) = -\log \rho_A(\lambda).
-\end{equation}
+
+$$\rho_A(\lambda) = \mathrm{Tr}_{\bar{A}} |\Psi(\lambda)\rangle\langle\Psi(\lambda)|, \quad K_A(\lambda) = -\log \rho_A(\lambda)$$
 
 Le flot modulaire définit une évolution interne :
-\begin{equation}
-\mathcal{O}(\tau) = e^{i K_A(\lambda)\tau}\, \mathcal{O}\, e^{-i K_A(\lambda)\tau}.
-\end{equation}
 
-Interprétation : le temps est un paramètre opératoire déduit de l'état via l'intrication du sous-système.
+$$\mathcal{O}(\tau) = e^{i K_A(\lambda)\tau} \mathcal{O} e^{-i K_A(\lambda)\tau}$$
 
-%=============================================================================
-\section{Chaos Modulaire : Statistiques Spectrales et Universalité}
-\label{sec:modular_chaos}
-%=============================================================================
+**Interprétation :** le temps est un paramètre opératoire déduit de l'état via l'intrication du sous-système.
 
-Au-delà de l'interprétation conceptuelle du temps relationnel, nous analysons la structure spectrale de
-\(K_A=-\log\rho_A\) afin de tester l'émergence d'un régime chaotique universel de type Random Matrix Theory (RMT).
+---
 
-\subsection{Ratio des gaps}
+## 4. Chaos modulaire et universalité RMT
 
-Soit \(\{\kappa_n\}\) le spectre ordonné de \(K_A\) (après filtrage numérique des niveaux nuls).
-On définit les espacements \(\Delta_n=\kappa_{n+1}-\kappa_n\) et le ratio local
-\begin{equation}
-r_n=\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})},
-\qquad
-\langle r\rangle = \frac{1}{N_r}\sum_n r_n.
-\end{equation}
-Valeurs universelles :
-\(
-\langle r\rangle_{\text{Poisson}}\simeq 0.386
-\),
-\(
-\langle r\rangle_{\text{GOE}}\simeq 0.536
-\),
-\(
-\langle r\rangle_{\text{GUE}}\simeq 0.603
-\).
+### 4.1 Ratio des gaps
 
-\subsection{Spectral Form Factor (SFF) et unfolding}
+Soit $\{\kappa_n\}$ le spectre ordonné de $K_A$. On définit les espacements $\Delta_n=\kappa_{n+1}-\kappa_n$ et le ratio local :
 
-Nous évaluons le \emph{Spectral Form Factor} à partir des niveaux \emph{unfolded} \(\{\tilde{\kappa}_n\}\) :
-\begin{equation}
-g_2(t)=\frac{1}{d_A^2}\left|\sum_{n=1}^{d_A} e^{-it\,\tilde{\kappa}_n}\right|^2,
-\label{eq:sff_def}
-\end{equation}
-où \(d_A=2^{|A|}\) est la dimension du sous-système.
-Le SFF présente typiquement une structure \emph{dip--ramp--plateau} en régime chaotique.
+$$r_n = \frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}, \quad \langle r\rangle = \frac{1}{N_r}\sum_n r_n$$
 
-\subsection{Scaling du plateau et constante modulaire}
+**Valeurs universelles :**
+- Poisson (intégrable) ≈ 0.386
+- GOE ≈ 0.536
+- GUE ≈ 0.603
 
-Dans le régime fortement intriqué, nous observons numériquement :
-\begin{equation}
-g_2^{\mathrm{plateau}} \sim \frac{1}{d_A}.
-\label{eq:plateau_scaling}
-\end{equation}
-Nous introduisons la constante modulaire :
-\begin{equation}
-C \equiv d_A\, g_2^{\mathrm{plateau}}.
-\label{eq:C_def}
-\end{equation}
-Le scaling \(1/d_A\) est robuste, mais le préfacteur \(C\) conserve une dépendance à la structure du graphe
-d'intrication (topologie / connectivité effective).
+**Résultat :** $\langle r \rangle \in [0.53, 0.59]$ → le flot modulaire devient chaotique (régime RMT)
 
-\subsection{Dépendance topologique (dA = 256, \(\lambda=0.8\))}
+### 4.2 Spectral Form Factor (SFF)
 
-Nous comparons trois topologies (moyenne sur seeds) :
-\begin{table}[h!]
-\centering
-\caption{Chaos modulaire et dépendance topologique de \(C=d_A g_2^{\mathrm{plateau}}\) (dA=256, \(\lambda=0.8\)).}
-\label{tab:topology_modular}
-\begin{tabular}{@{}lccc@{}}
-\toprule
-Topologie & \(\langle r\rangle\) & \(g_2^{\mathrm{plateau}}\) & \(C=d_A g_2^{\mathrm{plateau}}\) \\
-\midrule
-Chaîne 1D            & 0.594 & 0.004739 & 1.213 \\
-Grille \(3\times 6\) & 0.575 & 0.005541 & 1.419 \\
-ER (p\(\approx 0.176\)) & 0.528 & 0.006351 & 1.626 \\
-\bottomrule
-\end{tabular}
-\end{table}
+$$g_2(t) = \frac{1}{d_A^2}\left|\sum_{n=1}^{d_A} e^{-i t \tilde{\kappa}_n}\right|^2$$
 
-\subsection{Figures}
+Structure observée : **dip – ramp – plateau**
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.90\linewidth]{topology_C.png}
-\caption{\textbf{Constante modulaire \(C=d_A g_2^{\mathrm{plateau}}\) selon la topologie} (dA=256, \(\lambda=0.8\)).}
-\label{fig:topology_C}
-\end{figure}
+**Résultat central :** $g_2^{\mathrm{plateau}} \sim \frac{1}{d_A}$
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.90\linewidth]{topology_r.png}
-\caption{\textbf{Statistiques de niveaux via \(\langle r\rangle\)} (dA=256, \(\lambda=0.8\)).}
-\label{fig:topology_r}
-\end{figure}
+### 4.3 Constante modulaire topologique
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.92\linewidth]{topology_SFF.png}
-\caption{\textbf{Spectral Form Factor moyen} (unfolded) pour les trois topologies (dip--ramp--plateau).}
-\label{fig:topology_SFF}
-\end{figure}
+$$C = d_A \times g_2^{\mathrm{plateau}}$$
 
-\subsection{Interprétation}
+Le scaling $1/d_A$ est universel, mais le préfacteur $C$ dépend de la topologie :
 
-Le flot modulaire devient asymptotiquement ergodique (universalité RMT), mais la géométrie d'intrication ne disparaît pas :
-elle survit sous forme d'une modulation topologique du préfacteur \(C\). Cela fournit un mécanisme naturel, dans Bottom-Up,
-par lequel la structure spatiale émergente influence une dynamique temporelle relationnelle associée au sous-système.
+| Topologie | $\langle r\rangle$ | $g_2^{\mathrm{plateau}}$ | $C$ |
+|-----------|-------------------|-------------------------|-----|
+| Chaîne 1D | 0.594 | 0.004739 | 1.213 |
+| Grille $3\times 6$ | 0.575 | 0.005541 | 1.419 |
+| ER (p≈0.176) | 0.528 | 0.006351 | 1.626 |
 
-%=============================================================================
-\section{Espace Émergent : Géométrie Informationnelle}
-\label{sec:space_info}
-%=============================================================================
+**Interprétation :** le flot modulaire devient universellement chaotique, mais la géométrie d'intrication laisse une empreinte quantitative via $C$. La structure spatiale émergente influence le générateur temporel modulaire.
 
-\subsection{Information mutuelle et distance}
+### 4.4 Figures
 
-L'information mutuelle entre sites définit une proximité émergente :
-\begin{equation}
-I_\lambda(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij}),
-\qquad
-S(\rho) = -\mathrm{Tr}(\rho \log \rho).
-\end{equation}
+![Constante modulaire C selon la topologie](./figures/topology_C.png)
 
-Nous définissons une distance informationnelle :
-\begin{equation}
-d_{ij}(\lambda) =
--\log \left(\frac{I_\lambda(i:j)}{I_\lambda^{\max} + \epsilon}\right),
-\label{eq:distance}
-\end{equation}
-avec $\epsilon = 10^{-12}$ pour régulariser.
+![Statistiques de niveaux via ⟨r⟩](./figures/topology_r.png)
 
-\subsection{Embarquement (MDS) et erreur}
+![Spectral Form Factor moyen](./figures/topology_SFF.png)
 
-Pour chaque $\lambda$, on reconstruit un ensemble de points $x_i(\lambda) \in \mathbb{R}^d$ par MDS.
-L'erreur relative :
-\begin{equation}
-\epsilon_d(\lambda) =
-\sqrt{\frac{\sum_{i<j} \left(\|x_i - x_j\| - d_{ij}(\lambda)\right)^2}
-{\sum_{i<j} d_{ij}(\lambda)^2}}.
-\end{equation}
+---
 
-La \emph{dimension effective} est la plus petite dimension $d$ pour laquelle $\epsilon_d(\lambda)$ devient
-faible et stable (à incertitudes numériques près).
+## 5. Espace émergent : géométrie informationnelle
 
-%=============================================================================
-\section{Gravité Émergente : Test Thermodynamique de Jacobson}
-\label{sec:jacobson}
-%=============================================================================
+### 5.1 Information mutuelle et distance
 
-\subsection{Protocole}
+$$I_\lambda(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij}), \quad S(\rho) = -\mathrm{Tr}(\rho \log \rho)$$
+
+Distance informationnelle :
+
+$$d_{ij}(\lambda) = -\log \left(\frac{I_\lambda(i:j)}{I_\lambda^{\max} + \epsilon}\right), \quad \epsilon = 10^{-12}$$
+
+### 5.2 Embarquement (MDS) et erreur
+
+Pour chaque $\lambda$, on reconstruit des points $x_i(\lambda) \in \mathbb{R}^d$ par MDS :
+
+$$\epsilon_d(\lambda) = \sqrt{\frac{\sum_{i<j} (\|x_i - x_j\| - d_{ij}(\lambda))^2}{\sum_{i<j} d_{ij}(\lambda)^2}}$$
+
+La **dimension effective** est la plus petite dimension $d$ pour laquelle $\epsilon_d(\lambda)$ devient faible et stable.
+
+---
+
+## 6. Gravité émergente : test de Jacobson
+
+### 6.1 Protocole
 
 Pour chaque $\lambda$ :
-\begin{itemize}
-  \item entropie d'intrication $S_A(\lambda)$ d'une région $A$ ;
-  \item énergie $E(\lambda)=\bra{\Psi(\lambda)}H(\lambda)\ket{\Psi(\lambda)}$.
-\end{itemize}
+- Entropie d'intrication $S_A(\lambda)$ d'une région $A$
+- Énergie $E(\lambda)=\bra{\Psi(\lambda)}H(\lambda)\ket{\Psi(\lambda)}$
 
-Une température inverse effective est estimée par différence finie :
-\begin{equation}
-\beta(\lambda) \approx
-\frac{S_A(\lambda + \delta\lambda) - S_A(\lambda - \delta\lambda)}
-{E(\lambda + \delta\lambda) - E(\lambda - \delta\lambda)},
-\qquad \delta\lambda>0.
-\end{equation}
+Température inverse effective par différence finie :
 
-On teste alors $\delta S \simeq \beta\,\delta E$ comme relation variationnelle effective.
+$$\beta(\lambda) \approx \frac{S_A(\lambda + \delta\lambda) - S_A(\lambda - \delta\lambda)}{E(\lambda + \delta\lambda) - E(\lambda - \delta\lambda)}, \quad \delta\lambda > 0$$
 
-%=============================================================================
-\section{Géométrie Spectrale : Laplacien et Dimension Spectrale}
-\label{sec:spectral}
-%=============================================================================
+On teste $\delta S \simeq \beta\,\delta E$ comme relation variationnelle effective.
 
-Au-delà de l'embarquement (MDS), nous introduisons une mesure intrinsèque de dimension
-fondée sur le spectre du Laplacien du graphe d'intrication.
+---
 
-\subsection{Graphe d'intrication}
+## 7. Géométrie spectrale et dimension intrinsèque
 
-À partir des poids $w_{ij}=I_\lambda(i:j)$, on définit $W=[w_{ij}]$, $D_{ii}=\sum_j w_{ij}$,
-et le Laplacien combinatoire
-\begin{equation}
-L = D - W.
-\end{equation}
+### 7.1 Graphe d'intrication
 
-\subsection{Trace de chaleur et dimension spectrale}
+À partir des poids $w_{ij}=I_\lambda(i:j)$ :
+- $W=[w_{ij}]$, $D_{ii}=\sum_j w_{ij}$
+- Laplacien combinatoire $L = D - W$
 
-On définit la trace de chaleur :
-\begin{equation}
-\mathcal{Z}(\tau)=\mathrm{Tr}\,e^{-\tau L}=\sum_{\alpha=1}^{N} e^{-\tau \lambda_\alpha},
-\end{equation}
-où $\{\lambda_\alpha\}$ sont les valeurs propres de $L$.
-La dimension spectrale est :
-\begin{equation}
-d_s(\tau) = -2\,\frac{d\log \mathcal{Z}(\tau)}{d\log \tau}.
-\end{equation}
+### 7.2 Trace de chaleur et dimension spectrale
 
-\subsection{Plateau IR et dimension effective}
+Trace de chaleur : $\mathcal{Z}(\tau)=\mathrm{Tr}\,e^{-\tau L}=\sum_{\alpha=1}^{N} e^{-\tau \lambda_\alpha}$
 
-Pour $N=9$ et $N=16$, $d_s(\tau)$ présente typiquement un plateau IR sur une fenêtre $(\tau_1,\tau_2)$.
-Nous définissons
-\begin{equation}
-d_{\mathrm{IR}} \equiv \left\langle d_s(\tau)\right\rangle_{\tau\in[\tau_1,\tau_2]}.
-\end{equation}
-Numériquement, $d_{\mathrm{IR}}$ se situe typiquement dans l'intervalle $\sim 2.5$--$2.7$ selon $\lambda$,
-ce qui suggère une géométrie effective non-entière et renforce la lecture ``dimension émergente''.
+Dimension spectrale : $d_s(\tau) = -2\,\frac{d\log \mathcal{Z}(\tau)}{d\log \tau}$
 
-%=============================================================================
-\section{Courbure Discrète et Loi de Réponse Einstein-like}
-\label{sec:einstein_like}
-%=============================================================================
+### 7.3 Plateau IR et dimension effective
 
-Cette section introduit une courbure discrète (Ricci) et teste une loi de réponse locale liant
-variations d'une fonctionnelle de frontière (proxy d'aire) et variations de courbure.
+Pour $N=9$ et $N=16$, $d_s(\tau)$ présente un plateau IR :
 
-\subsection{Entropie de coupure comme fonctionnelle de frontière}
+$$d_{\mathrm{IR}} \equiv \left\langle d_s(\tau)\right\rangle_{\tau\in[\tau_1,\tau_2]} \approx 2.5-2.7$$
 
-Pour une région $A\subset V$, on définit un proxy d'entropie de frontière :
-\begin{equation}
-S_{\mathrm{cut}}(A)=\sum_{i\in A}\sum_{j\notin A} w_{ij}.
-\end{equation}
-Cette quantité est corrélée à l'entropie de von Neumann $S(\rho_A)$ tout en étant calculable
-directement à partir des poids du graphe.
+---
 
-\subsection{Courbure d'Ollivier--Ricci (Wasserstein-1 exact)}
+## 8. Courbure discrète et réponse Einstein-like
 
-On associe à chaque nœud $i$ une mesure locale $\mu_i$ sur $V$ :
-\begin{equation}
-\mu_i(j)=\frac{w_{ij}}{\sum_k w_{ik}}.
-\end{equation}
-Pour une arête $(i,j)$, la courbure d'Ollivier--Ricci est définie par
-\begin{equation}
-\kappa_{ij}=1-\frac{W_1(\mu_i,\mu_j)}{d(i,j)},
-\end{equation}
-où $W_1$ est la distance de Wasserstein-1 calculée par programmation linéaire
-(Annexe~\ref{app:W1LP}).
-La distance $d(i,j)$ peut être choisie comme distance géodésique de graphe
-(longueurs d'arêtes définies à partir de $w_{ij}$) ou distance de résistance via $L^+$.
+### 8.1 Entropie de coupure
 
-\subsection{Courbure régionale}
+$$S_{\mathrm{cut}}(A) = \sum_{i\in A}\sum_{j\notin A} w_{ij}$$
 
-Pour une région $A$, on définit une courbure moyenne :
-\begin{equation}
-\mathcal{R}(A)\equiv \frac{1}{|E(A)|}\sum_{(u,v)\in E(A)} \kappa_{uv},
-\end{equation}
-où $E(A)$ est l'ensemble des arêtes internes à la région.
+### 8.2 Courbure d'Ollivier–Ricci
 
-\subsection{Perturbations locales et source}
+Mesure locale : $\mu_i(j)=\frac{w_{ij}}{\sum_k w_{ik}}$
 
-On considère des perturbations locales des poids $w_{ij}\to w_{ij}+\delta w_{ij}$.
-Pour une région $A=B(i,R)$ (boule de rayon $R$ pour une métrique donnée), on définit une intensité de source :
-\begin{equation}
-\Delta M(A)=\sum_{u\in A}\sum_v |\delta w_{uv}|.
-\end{equation}
+Courbure d'une arête : $\kappa_{ij}=1-\frac{W_1(\mu_i,\mu_j)}{d(i,j)}$, où $W_1$ est la distance de Wasserstein-1
 
-\subsection{Équation d'état opérationnelle (réponse linéaire)}
+### 8.3 Courbure régionale
 
-Nous testons une relation de réponse locale de type équation d'état :
-\begin{equation}
-\Delta S_{\mathrm{cut}}(A)=a(R)\,\Delta\mathcal{R}(A)+b(R)\,\Delta M(A)+\varepsilon,
-\label{eq:operational_eos}
-\end{equation}
-où $\Delta$ désigne la différence avant/après perturbation, et $A=B(i,R)$.
+$$\mathcal{R}(A) \equiv \frac{1}{|E(A)|}\sum_{(u,v)\in E(A)} \kappa_{uv}$$
 
-La stabilité de $a(R),b(R)$ est évaluée via bootstrap (Annexe~\ref{app:bootstrap}).
+### 8.4 Équation d'état opérationnelle
 
-%=============================================================================
-\section{Résultats (I) : $N=9$ qubits — Preuve de Concept}
-\label{sec:N9}
-%=============================================================================
+Sous perturbation $\delta w_{ij}$ :
 
-Dans cette section, nous présentons les résultats sur la grille $3\times 3$ ($N=9$),
-qui sert de référence minimale entièrement calculable.
+$$\Delta S_{\mathrm{cut}}(A) = a(R)\,\Delta\mathcal{R}(A) + b(R)\,\Delta M(A) + \varepsilon$$
 
-\subsection{Transition dimensionnelle à $N=9$}
+où $\Delta M(A)=\sum_{u\in A}\sum_v |\delta w_{uv}|$.
 
-\begin{table}[h]
-\centering
-\caption{Erreur de reconstruction MDS $\epsilon_d(\lambda) \times 10^2$ (moyenne $\pm$ écart-type sur 10 initialisations).}
-\label{tab:dimensionN9}
-\begin{tabular}{@{}lcccc@{}}
-\toprule
-$\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio $\epsilon_{2D}/\epsilon_{3D}$ \\
-\midrule
-0.0 (local) & $5.9 \pm 0.3$ & $5.8 \pm 0.3$ & $5.7 \pm 0.4$ & $1.02 \pm 0.08$ \\
-0.2 & $4.2 \pm 0.4$ & $3.1 \pm 0.3$ & $3.0 \pm 0.4$ & $1.35 \pm 0.15$ \\
-0.4 & $2.8 \pm 0.5$ & $1.2 \pm 0.2$ & $1.1 \pm 0.3$ & $2.33 \pm 0.45$ \\
-0.6 & $1.5 \pm 0.4$ & $0.4 \pm 0.1$ & $0.4 \pm 0.1$ & $3.75 \pm 1.10$ \\
-0.8 & $0.8 \pm 0.2$ & $0.15 \pm 0.05$ & $0.14 \pm 0.06$ & $5.33 \pm 1.80$ \\
-1.0 (non-local) & $0.08 \pm 0.03$ & $0.01 \pm 0.005$ & $0.009 \pm 0.004$ & $8.00 \pm 3.50$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+---
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{fig1_dimension_emergente.png}
-\caption{
-\textbf{Émergence dimensionnelle induite par l'intrication (N=9).}
-Reconstructions MDS et erreurs relatives : un état local ($\lambda\simeq 0$) est compatible 2D,
-tandis qu'un état non-local ($\lambda\simeq 1$) exige un embarquement 3D pour réduire l'erreur.
+## 9. Résultats N=9 : preuve de concept
+
+### 9.1 Transition dimensionnelle
+
+| $\lambda$ | $\epsilon_{2D}$ | $\epsilon_{3D}$ | $\epsilon_{4D}$ | Ratio 2D/3D |
+|-----------|-----------------|-----------------|-----------------|--------------|
+| 0.0 (local) | $5.9 \pm 0.3$ | $5.8 \pm 0.3$ | $5.7 \pm 0.4$ | $1.02 \pm 0.08$ |
+| 0.2 | $4.2 \pm 0.4$ | $3.1 \pm 0.3$ | $3.0 \pm 0.4$ | $1.35 \pm 0.15$ |
+| 0.4 | $2.8 \pm 0.5$ | $1.2 \pm 0.2$ | $1.1 \pm 0.3$ | $2.33 \pm 0.45$ |
+| 0.6 | $1.5 \pm 0.4$ | $0.4 \pm 0.1$ | $0.4 \pm 0.1$ | $3.75 \pm 1.10$ |
+| 0.8 | $0.8 \pm 0.2$ | $0.15 \pm 0.05$ | $0.14 \pm 0.06$ | $5.33 \pm 1.80$ |
+| 1.0 (non-local) | $0.08 \pm 0.03$ | $0.01 \pm 0.005$ | $0.009 \pm 0.004$ | $8.00 \pm 3.50$ |
+
+![Émergence dimensionnelle N=9](./figures/fig1_dimension_emergente_N9.png)
+
+### 9.2 Signature ER=EPR
+
+| $\lambda$ | $I(0:8)$ | $d_{\text{topo}}$ | $d_{\text{bulk}}$ | Compression |
+|-----------|----------|-------------------|-------------------|-------------|
+| 0.0 | $0.009 \pm 0.001$ | 4 | $4.0 \pm 0.2$ | $1.0 \pm 0.1$ |
+| 0.5 | $0.45 \pm 0.05$ | 4 | $1.8 \pm 0.3$ | $2.2 \pm 0.4$ |
+| 1.0 | $1.28 \pm 0.02$ | 4 | $0.04 \pm 0.02$ | $100 \pm 50$ |
+
+![Signature ER=EPR N=9](./figures/fig2_er_epr_N9.png)
+
+### 9.3 Test de Jacobson
+
+![Test Jacobson N=9](./figures/fig3_jacobson_N9.png)
+
+---
+
+## 10. Résultats N=16 : validation intermédiaire
+
+### 10.1 Grille $4\times 4$
+
+![Grille N=16](./figures/fig4_grid_N16.png)
+
+### 10.2 Transition dimensionnelle
+
+![Transition dimensionnelle N=16](./figures/fig5_mds_N16.png)
+
+### 10.3 Signature ER=EPR
+
+![ER=EPR N=16](./figures/fig6_erepr_N16.png)
+
+### 10.4 Test de Jacobson
+
+![Test Jacobson N=16](./figures/fig7_jacobson_N16.png)
+
+---
+
+## 11. Détection d'horizon bottom-up (N=16)
+
+### 11.1 Principe
+
+À partir de la matrice $W_{ij}=I(i:j)$, nous construisons un graphe pondéré $A$ avec densité cible $\rho = 1/3$.
+
+Pour une région $A\subset V$ de taille fixée $|A|=N/2=8$, nous mesurons :
+- $S(A)$ : entropie de la région
+- $\mathrm{cut}(A) = \sum_{i\in A}\sum_{j\notin A} A_{ij}$
+- $\mathrm{internal}(A) = \sum_{i<j\in A} A_{ij}$
+- $\phi(A) = \frac{\mathrm{cut}(A)}{\min(\mathrm{vol}(A),\mathrm{vol}(\bar{A}))}$, avec $\mathrm{vol}(A)=\sum_{i\in A}\sum_j A_{ij}$
+
+Un **horizon-like bottleneck** correspond à une $\phi(A)$ faible et une cohésion interne élevée.
+
+### 11.2 Score BH-like
+
+$$\mathrm{Score}_{BH}(A) = w_S\, z(S(A)) - w_\phi\, z(\phi(A)) + w_{\mathrm{int}}\, z(\mathrm{internal}(A))$$
+
+où $z(\cdot)$ est un z-score calculé sur un pool de régions aléatoires.
+
+### 11.3 Région BH-like détectée
+
+$$A_{BH} = \{0,2,3,5,6,10,11,15\}$$
+
+| Métrique | Valeur |
+|----------|--------|
+| $S(A)$ | 7.1667 |
+| $\mathrm{cut}(A)$ | 3.2098 |
+| $\mathrm{internal}(A)$ | 5.0348 |
+| $\phi(A)$ | 0.3951 |
+| $\langle r\rangle(K_A)$ | 0.6041 |
+
+### 11.4 Percentiles vs 3000 régions aléatoires
+
+| Métrique | Percentile |
+|----------|------------|
+| $S(A)$ | 23.7% |
+| $\mathrm{cut}(A)$ | 1.4% |
+| $\mathrm{internal}(A)$ | 98.8% |
+| $\phi(A)$ | 2.7% |
+| $\langle r\rangle(K_A)$ | 62.0% |
+
+**Signature horizon-like :** $\phi$ très faible (bottleneck), internal extrême.
+
+![Percentiles](./figures/percentiles.png)
+
+### 11.5 HIE à taille fixée avec graines Louvain
+
+Nous générons 55 régions candidates $|A|=8$ via :
+1. Détection de communautés Louvain sur le graphe $A$
+2. Unions de communautés
+3. Raffinement par swaps Metropolis
+
+**Deux modes de classement :**
+
+| Mode | Pondération | Rang BH |
+|------|-------------|---------|
+| CLASSIC | équilibrée | 12/55 |
+| HORIZON-AWARE | $\phi$ pondéré fort | **2/55** |
+
+![Comparaison BH vs HIE](./figures/comparison_bh_hie8.png)
+
+### 11.6 Interprétation
+
+Ce test fournit une signature opérationnelle cohérente avec l'intuition holographique à taille finie : une région fortement intriquée peut être séparée du reste du graphe par une frontière informationnelle étroite (faible $\mathrm{cut}$ / faible $\phi$). Dans Bottom-Up, cela identifie des îlots d'intrication pouvant jouer le rôle de sous-systèmes thermodynamiques effectifs.
+
+---
+
+## 12. Ce que le projet établit
+
+✅ Une géométrie peut émerger d'un état quantique fini  
+✅ La dimension dépend de l'intrication  
+✅ ER=EPR est mesurable opérationnellement  
+✅ Une thermodynamique de l'intrication apparaît  
+✅ Le flot modulaire est chaotique (RMT)  
+✅ Le plateau SFF suit $1/d_A$  
+✅ La constante modulaire dépend de la topologie  
+✅ Un horizon-like bottleneck peut émerger bottom-up  
+
+---
+
+## 13. Limites
+
+❌ Limite continue $N \to \infty$ non démontrée  
+❌ Pas de dynamique relativiste complète  
+❌ Pas de dérivation des équations d'Einstein  
+❌ Pas encore de prédiction expérimentale  
+❌ Étude modulaire limitée à $|A|=8$ (autres tailles à explorer)
+
+---
+
+## 14. Organisation du dépôt
+## 14. Organisation du dépôt
+bottom-up-quantum-gravity/
+├── paper/ # Manuscrit au format PDF/TeX
+├── figures/ # Toutes les figures générées
+│ ├── fig1_dimension_emergente_N9.png
+│ ├── fig2_er_epr_N9.png
+│ ├── fig3_jacobson_N9.png
+│ ├── fig4_grid_N16.png
+│ ├── fig5_mds_N16.png
+│ ├── fig6_erepr_N16.png
+│ ├── fig7_jacobson_N16.png
+│ ├── topology_C.png
+│ ├── topology_r.png
+│ ├── topology_SFF.png
+│ ├── comparison_bh_hie8.png
+│ ├── rank_comparison.png
+│ └── percentiles.png
+├── scripts/ # Scripts Python exécutables
+│ └── bh_benchmark_louvain_N16.py
+├── code/ # Modules et librairies
+├── data/ # Données brutes et résultats
+│ └── examples/
+│ └── N16_horizon_aware/
+└── README.md
+
+text
+
+---
+
+## 15. Perspectives
+
+- Finite-size scaling $N \to 25+$
+- États aléatoires / critiques / topologiques
+- Connexion avec SYK
+- Étude multi-échelle (dimension spectrale)
+- Implémentation sur simulateur quantique
+- Analyse pour différentes tailles de région $|A|$
+
+---
+
+## 16. Citation
+
+```bibtex
+@misc{hamdad2026bottomup,
+  author = {Hamdad, Farid},
+  title = {Bottom-Up Quantum Gravity: Emergence of Space, Time and Gravity from Quantum Entanglement},
+  year = {2026},
+  howpublished = {GitHub repository},
+  url = {https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}
 }
-\label{fig:dimensionN9}
-\end{figure}
-
-\subsection{Signature ER=EPR (N=9)}
-
-\begin{table}[h]
-\centering
-\caption{Test ER=EPR (N=9) pour la paire de coins (0,8).}
-\label{tab:ereprN9}
-\begin{tabular}{@{}lcccc@{}}
-\toprule
-$\lambda$ & $I(0:8)$ & $d_{\text{topo}}$ & $d_{\text{bulk}}$ & Compression \\
-\midrule
-0.0 & $0.009 \pm 0.001$ & 4 & $4.0 \pm 0.2$ & $1.0 \pm 0.1$ \\
-0.5 & $0.45 \pm 0.05$ & 4 & $1.8 \pm 0.3$ & $2.2 \pm 0.4$ \\
-1.0 & $1.28 \pm 0.02$ & 4 & $0.04 \pm 0.02$ & $100 \pm 50$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{fig2_er_epr.png}
-\caption{
-\textbf{Signature géométrique de type ER=EPR (N=9).}
-La paire de sites topologiquement distante devient géométriquement proche dans l'espace reconstruit lorsque l'intrication non-locale augmente.
-Signature \emph{wormhole-like} au sens géométrique (système fini, pas de trou de ver dynamique).
-}
-\label{fig:ereprN9}
-\end{figure}
-
-\subsection{Test de Jacobson (N=9)}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{fig3_jacobson.png}
-\caption{
-\textbf{Relation thermodynamique de type Jacobson (N=9).}
-Relation $S(E)$ et test variationnel $\delta S \simeq \beta\,\delta E$.
-Résultat interprété comme une thermodynamique effective de l'intrication dans un système fini.
-}
-\label{fig:jacobsonN9}
-\end{figure}
-
-%=============================================================================
-\section{Résultats (II) : $N=16$ qubits — Validation Intermédiaire}
-\label{sec:N16}
-%=============================================================================
-
-L'objectif ici est de tester que les signatures observées à $N=9$ ne sont pas des artefacts
-de petite taille. Nous répétons le protocole sur une grille $4\times 4$ ($N=16$),
-ce qui réduit les effets de bord et augmente la distance topologique entre coins opposés.
-
-\subsection{Graphe $4\times 4$ et paires de coins}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.70\linewidth]{fig4_grid_N16.png}
-\caption{
-\textbf{Système $N=16$ (grille $4\times 4$) et coins utilisés pour le test ER=EPR.}
-La distance topologique entre coins opposés est $d_{\text{topo}}=6$.
-}
-\label{fig:grid16}
-\end{figure}
-
-\subsection{Transition dimensionnelle (MDS) à $N=16$}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{fig5_mds_N16.png}
-\caption{
-\textbf{Reconstruction géométrique MDS pour $N=16$.}
-Pour plusieurs valeurs de $\lambda$, la hiérarchie des erreurs montre qu'à faible non-localité
-les reconstructions 2D/3D sont comparables, tandis qu'à forte non-localité la reconstruction 3D devient nettement meilleure que 2D.
-Cela confirme la transition dimensionnelle observée à $N=9$ et en améliore la stabilité.
-}
-\label{fig:mds16}
-\end{figure}
-
-\subsection{Signature ER=EPR à $N=16$ : raccourci géodésique}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{fig6_erepr_N16.png}
-\caption{
-\textbf{Test ER=EPR pour $N=16$ (coins opposés 0--15).}
-(\textit{Gauche}) la distance géodésique émergente $d_{\text{bulk}}(0,15)$ décroît avec $\lambda$ alors que $d_{\text{topo}}=6$ reste fixe.
-(\textit{Centre}) la compression croît monotone et atteint des valeurs $\mathcal{O}(10)$ à forte non-localité.
-(\textit{Droite}) corrélation directe entre information mutuelle et proximité géométrique : la géométrie émergente est pilotée par l'intrication.
-}
-\label{fig:erepr16}
-\end{figure}
-
-\subsection{Relation de Jacobson à $N=16$}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{fig7_jacobson_N16.png}
-\caption{
-\textbf{Relation thermodynamique de type Jacobson pour $N=16$.}
-(\textit{Gauche}) la relation $S(E)$ est bien approximée par un ajustement linéaire sur l'intervalle exploré.
-(\textit{Droite}) la pente effective $\beta=dS/dE$ varie lentement avec $\lambda$ et reste stable,
-suggérant une thermodynamique effective robuste de l'intrication lorsque la taille du système augmente.
-}
-\label{fig:jacobson16}
-\end{figure}
-
-%=============================================================================
-\subsection{Détection d'horizon bottom-up (N=16) : région BH-like et candidats HIE guidés par Louvain}
-\label{sec:horizon_detection}
-%=============================================================================
-
-\paragraph{Graphe d'intrication à densité fixée.}
-À partir de la matrice \(W_{ij}=I(i:j)\), nous construisons un graphe pondéré \(A\) en imposant une densité cible \(\rho\)
-par seuillage au quantile (ici \(\rho=1/3\)). Ce choix fixe le nombre d'arêtes et facilite les comparaisons entre seeds.
-
-\paragraph{Métriques de région.}
-Pour une région \(A\subset V\) de taille fixée \(|A|=N/2\) (ici \(|A|=8\)), nous mesurons :
-\begin{align}
-S(A) &= S(\rho_A), \\
-\mathrm{cut}(A) &= \sum_{i\in A}\sum_{j\notin A} A_{ij}, \\
-\mathrm{internal}(A) &= \sum_{i<j\in A} A_{ij}, \\
-\phi(A) &= \frac{\mathrm{cut}(A)}{\min(\mathrm{vol}(A),\mathrm{vol}(\bar{A}))},
-\qquad
-\mathrm{vol}(A)=\sum_{i\in A}\sum_j A_{ij}.
-\end{align}
-Dans cette lecture, un \emph{horizon-like bottleneck} correspond à une \(\phi(A)\) faible et une cohésion interne élevée.
-
-\paragraph{Recherche BH-like (optimisation).}
-Nous maximisons un score normalisé par z-score (pool de régions aléatoires de même taille) :
-\begin{equation}
-\mathrm{Score}_{BH}(A)=
-w_S\, z(S(A)) - w_\phi\, z(\phi(A)) + w_{\mathrm{int}}\, z(\mathrm{internal}(A)).
-\label{eq:bh_score}
-\end{equation}
-L'optimisation combine échantillonnage aléatoire, hill-climb et acceptation Metropolis.
-
-\paragraph{Résultat BH-like et benchmark.}
-Sur \(N=16\) (seed représentative), nous obtenons une région candidate :
-\[
-A_{BH}=\{0,2,3,5,6,10,11,15\}.
-\]
-Les métriques et percentiles (comparées à \(3000\) régions aléatoires de taille 8) sont reportées dans les Tableaux~\ref{tab:bh_metrics_N16}
-et~\ref{tab:bh_percentiles_N16}. La signature horizon-like est nette : \(\phi\) est très faible (bottleneck)
-tandis que \(\mathrm{internal}\) est extrême.
-
-\begin{table}[h!]
-\centering
-\caption{Région BH-like détectée (N=16, \(|A|=8\), \(\rho=1/3\)) : métriques brutes.}
-\label{tab:bh_metrics_N16}
-\begin{tabular}{@{}lccccc@{}}
-\toprule
-Région \(A_{BH}\) & \(S(A)\) & \(\mathrm{cut}(A)\) & \(\mathrm{internal}(A)\) & \(\phi(A)\) & \(\langle r\rangle(K_A)\) \\
-\midrule
-\(\{0,2,3,5,6,10,11,15\}\) & 7.1667 & 3.2098 & 5.0348 & 0.3951 & 0.6041 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[h!]
-\centering
-\caption{Percentiles de la région BH-like vs \(3000\) régions aléatoires de taille \(|A|=8\) (N=16). Un bottleneck correspond à un percentile \(\phi\) faible.}
-\label{tab:bh_percentiles_N16}
-\begin{tabular}{@{}lccccc@{}}
-\toprule
-Mesure & \(S(A)\) & \(\mathrm{cut}(A)\) & \(\mathrm{internal}(A)\) & \(\phi(A)\) & \(\langle r\rangle(K_A)\) \\
-\midrule
-Percentile (\%) & 23.7 & 1.4 & 98.8 & 2.7 & 62.0 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{HIE à taille fixée et graines Louvain.}
-Nous construisons ensuite une liste de régions candidates \(|A|=8\) via une hiérarchie HIE,
-\emph{seedée} par des communautés détectées par Louvain sur le graphe \(A\) (puis raffinées par swaps Metropolis).
-Deux classements sont comparés :
-(i) \emph{classic} (pondérations équilibrées), et (ii) \emph{horizon-aware} (poids plus fort sur \(\phi\) et pénalité cut).
-
-\paragraph{Résultat-clé : horizon-aware.}
-Dans l'exemple représentatif, le rang de \(A_{BH}\) parmi les \(55\) candidats HIE passe de \(12/55\) (classic) à \(2/55\) (horizon-aware),
-montrant que la détection par communautés peut récupérer la région BH-like dès lors que le critère encode explicitement le bottleneck.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\linewidth]{comparison_bh_hie8.png}
-\caption{\textbf{Comparaison BH-like vs candidats HIE (N=16, \(|A|=8\)).}
-La région
+Contact : hamdadfarid54@gmail.com
