@@ -1,0 +1,208 @@
+\documentclass[11pt,a4paper]{article}
+
+% -------------------- Packages --------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+\setstretch{1.15}
+
+\title{Mathematical Foundations of Bottom-Up Quantum Geometry}
+\author{Farid Hamdad}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Postulate and Hilbert Space Structure}
+
+Let 
+\[
+\mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i
+\]
+be a finite-dimensional Hilbert space describing $N$ elementary quantum degrees of freedom.
+
+\textbf{Postulate.}  
+There exists a pure global quantum state
+\[
+\ket{\Psi} \in \mathcal{H}
+\]
+such that no background metric or spacetime structure is assumed a priori. 
+All geometric structure must be reconstructed from correlations internal to $\ket{\Psi}$.
+
+\section{Entanglement and Mutual Information}
+
+For any subsystem $A \subset \{1,\dots,N\}$, define the reduced density matrix
+
+\[
+\rho_A = \mathrm{Tr}_{\bar A} \left( \ket{\Psi}\bra{\Psi} \right).
+\]
+
+The von Neumann entropy is
+
+\[
+S(A) = - \mathrm{Tr}(\rho_A \log \rho_A).
+\]
+
+For two subsystems $i$ and $j$, define the mutual information
+
+\[
+I(i:j) = S(i) + S(j) - S(ij).
+\]
+
+Properties:
+
+\begin{itemize}
+\item $I(i:j) \ge 0$,
+\item $I(i:j) = 0$ iff $i$ and $j$ are uncorrelated,
+\item symmetric in $i,j$.
+\end{itemize}
+
+\section{Entanglement Graph Construction}
+
+Define a weighted graph
+
+\[
+G = (V,E,w)
+\]
+
+with:
+
+\begin{itemize}
+\item $V = \{1,\dots,N\}$,
+\item $w_{ij} = I(i:j)$,
+\item $w_{ii} = 0$.
+\end{itemize}
+
+Optionally, apply thresholding at fixed density $\rho$ to control connectivity.
+
+\section{Laplacian Operator}
+
+Let $W$ be the weighted adjacency matrix:
+
+\[
+W_{ij} = w_{ij}.
+\]
+
+Define the degree matrix
+
+\[
+D_{ii} = \sum_j W_{ij}.
+\]
+
+The combinatorial Laplacian is
+
+\[
+L = D - W.
+\]
+
+The normalized Laplacian is
+
+\[
+L_{\text{norm}} = I - D^{-1/2} W D^{-1/2}.
+\]
+
+$L$ is symmetric and positive semi-definite.
+
+\section{Heat Kernel and Spectral Dimension}
+
+Define the heat trace
+
+\[
+K(t) = \mathrm{Tr}\left( e^{-tL} \right)
+= \sum_{k=0}^{N-1} e^{-t\lambda_k},
+\]
+
+where $\lambda_k$ are eigenvalues of $L$.
+
+The spectral dimension is defined as
+
+\[
+d_s(t) = -2 \frac{d \log K(t)}{d \log t}.
+\]
+
+A plateau in $d_s(t)$ over a finite scale interval indicates an effective emergent dimension.
+
+\section{Geodesic Distance}
+
+Define effective edge length
+
+\[
+\ell_{ij} = \frac{1}{w_{ij}}.
+\]
+
+The geodesic distance between nodes $i$ and $j$ is
+
+\[
+d_{ij} = \min_{\gamma} \sum_{(k,l)\in\gamma} \ell_{kl}.
+\]
+
+This defines a metric on connected components.
+
+\section{Algebraic Connectivity}
+
+Let $\lambda_1$ denote the smallest non-zero eigenvalue of $L$.
+
+$\lambda_1 > 0$ iff the graph is connected.
+
+$\lambda_1$ measures global connectivity robustness.
+
+\section{Single Long-Range Edge Perturbation}
+
+Consider strengthening a single mutual-information edge $(0,8)$ via a parameter $\lambda$:
+
+\[
+w_{08} \rightarrow w_{08}(\lambda).
+\]
+
+We monitor:
+
+\begin{itemize}
+\item spectral dimension $d_s(\lambda)$,
+\item algebraic connectivity $\lambda_1(\lambda)$,
+\item reconstructed geodesic distance $d_{08}(\lambda)$.
+\end{itemize}
+
+Observed behavior:
+
+\begin{itemize}
+\item $\lambda_1$ increases monotonically,
+\item $d_{08}$ decreases sharply,
+\item $d_s$ increases continuously.
+\end{itemize}
+
+This demonstrates that localized changes in entanglement induce global spectral reorganization.
+
+\section{Validity Conditions}
+
+The following conditions are verified numerically:
+
+\begin{itemize}
+\item Largest connected component remains size $N$,
+\item Automatic plateau detection stable across seeds,
+\item Linear fit quality $R^2 > 0.95$,
+\item Results robust under density variation.
+\end{itemize}
+
+\section{Limitations}
+
+\begin{itemize}
+\item Finite-size systems ($N \le 16$),
+\item No proof of convergence as $N \to \infty$,
+\item No Lorentzian structure constructed.
+\end{itemize}
+
+\section{Conclusion}
+
+This framework provides a minimal construction in which geometric observables 
+(dimension, distance, connectivity) emerge from quantum entanglement structure alone,
+without assuming background spacetime geometry.
+
+\end{document}
