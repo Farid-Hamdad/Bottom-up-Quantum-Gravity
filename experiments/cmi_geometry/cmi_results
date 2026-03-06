@@ -1,0 +1,68 @@
+========================================================================
+BUp Geometry Test v3.4c — CMI(i:j|k) vs MI-triangle + clean nulls
+========================================================================
+n=16 layers=15 gates=15 lams=[0.0, 0.2, 0.4, 0.5, 0.7]
+densities=[0.333] qpos=0.2 qneg=0.2
+pairs_sample=4000 triplets_sample=4000 train_frac=0.3
+n_seeds=30 seed0=42 null=200
+score_mode=triangle_inv null_mode=shuffle_score plot=True save=True
+------------------------------------------------------------------------
+
+=== λ = 0.000 | density=0.3330 | score=triangle_inv | null=shuffle_score ===
+[01/30] seed=42  AUC=0.642 rho=0.343  p_rho=0.00498 p_auc=0.00498 z_rho=11.43 z_auc=8.94 (n_eval=2804, null_ok=200/200)
+[02/30] seed=43  AUC=0.640 rho=0.149  p_rho=0.00498 p_auc=0.00498 z_rho=4.73 z_auc=8.08 (n_eval=2826, null_ok=200/200)
+[03/30] seed=44  AUC=0.714 rho=0.335  p_rho=0.00498 p_auc=0.00498 z_rho=10.82 z_auc=11.44 (n_eval=2760, null_ok=200/200)
+[30/30] seed=71  AUC=0.622 rho=0.278  p_rho=0.00498 p_auc=0.00498 z_rho=8.97 z_auc=6.78 (n_eval=2776, null_ok=200/200)
+--- SUMMARY λ=0.000 density=0.3330 ---
+AUC:   0.692 ± 0.040 (n=30)
+rho:   0.312 ± 0.072 (n=30)
+p_rho: 0.00498 ± 8.67e-19 (n=30)
+p_auc: 0.00498 ± 8.67e-19 (n=30)
+
+=== λ = 0.200 | density=0.3330 | score=triangle_inv | null=shuffle_score ===
+[01/30] seed=42  AUC=0.727 rho=0.479  p_rho=0.00498 p_auc=0.00498 z_rho=15.90 z_auc=12.31 (n_eval=2804, null_ok=200/200)
+[02/30] seed=43  AUC=0.727 rho=0.387  p_rho=0.00498 p_auc=0.00498 z_rho=13.43 z_auc=14.01 (n_eval=2826, null_ok=200/200)
+[03/30] seed=44  AUC=0.718 rho=0.363  p_rho=0.00498 p_auc=0.00498 z_rho=12.75 z_auc=14.09 (n_eval=2760, null_ok=200/200)
+[30/30] seed=71  AUC=0.770 rho=0.449  p_rho=0.00498 p_auc=0.00498 z_rho=15.84 z_auc=16.89 (n_eval=2776, null_ok=200/200)
+--- SUMMARY λ=0.200 density=0.3330 ---
+AUC:   0.733 ± 0.033 (n=30)
+rho:   0.415 ± 0.062 (n=30)
+p_rho: 0.00498 ± 8.67e-19 (n=30)
+p_auc: 0.00498 ± 8.67e-19 (n=30)
+
+=== λ = 0.400 | density=0.3330 | score=triangle_inv | null=shuffle_score ===
+[01/30] seed=42  AUC=0.718 rho=0.380  p_rho=0.00498 p_auc=0.00498 z_rho=13.37 z_auc=12.81 (n_eval=2804, null_ok=200/200)
+[02/30] seed=43  AUC=0.759 rho=0.407  p_rho=0.00498 p_auc=0.00498 z_rho=13.82 z_auc=15.85 (n_eval=2826, null_ok=200/200)
+[03/30] seed=44  AUC=0.692 rho=0.324  p_rho=0.00498 p_auc=0.00498 z_rho=10.33 z_auc=11.41 (n_eval=2760, null_ok=200/200)
+[30/30] seed=71  AUC=0.694 rho=0.357  p_rho=0.00498 p_auc=0.00498 z_rho=12.72 z_auc=12.21 (n_eval=2776, null_ok=200/200)
+--- SUMMARY λ=0.400 density=0.3330 ---
+AUC:   0.711 ± 0.028 (n=30)
+rho:   0.370 ± 0.049 (n=30)
+p_rho: 0.00498 ± 8.67e-19 (n=30)
+p_auc: 0.00498 ± 8.67e-19 (n=30)
+
+=== λ = 0.500 | density=0.3330 | score=triangle_inv | null=shuffle_score ===
+[01/30] seed=42  AUC=0.771 rho=0.530  p_rho=0.00498 p_auc=0.00498 z_rho=17.58 z_auc=16.01 (n_eval=2804, null_ok=200/200)
+[02/30] seed=43  AUC=0.689 rho=0.340  p_rho=0.00498 p_auc=0.00498 z_rho=12.57 z_auc=11.80 (n_eval=2826, null_ok=200/200)
+[03/30] seed=44  AUC=0.718 rho=0.373  p_rho=0.00498 p_auc=0.00498 z_rho=12.46 z_auc=12.86 (n_eval=2760, null_ok=200/200)
+[30/30] seed=71  AUC=0.719 rho=0.408  p_rho=0.00498 p_auc=0.00498 z_rho=14.38 z_auc=13.74 (n_eval=2776, null_ok=200/200)
+--- SUMMARY λ=0.500 density=0.3330 ---
+AUC:   0.723 ± 0.040 (n=30)
+rho:   0.388 ± 0.065 (n=30)
+p_rho: 0.00498 ± 8.67e-19 (n=30)
+p_auc: 0.00498 ± 8.67e-19 (n=30)
+
+=== λ = 0.700 | density=0.3330 | score=triangle_inv | null=shuffle_score ===
+[01/30] seed=42  AUC=0.766 rho=0.464  p_rho=0.00498 p_auc=0.00498 z_rho=16.63 z_auc=16.70 (n_eval=2804, null_ok=200/200)
+[02/30] seed=43  AUC=0.736 rho=0.432  p_rho=0.00498 p_auc=0.00498 z_rho=14.24 z_auc=13.00 (n_eval=2826, null_ok=200/200)
+[03/30] seed=44  AUC=0.703 rho=0.320  p_rho=0.00498 p_auc=0.00498 z_rho=10.02 z_auc=11.15 (n_eval=2760, null_ok=200/200)
+[30/30] seed=71  AUC=0.727 rho=0.424  p_rho=0.00498 p_auc=0.00498 z_rho=13.53 z_auc=12.32 (n_eval=2776, null_ok=200/200)
+--- SUMMARY λ=0.700 density=0.3330 ---
+AUC:   0.733 ± 0.031 (n=30)
+rho:   0.418 ± 0.051 (n=30)
+p_rho: 0.00498 ± 8.67e-19 (n=30)
+p_auc: 0.00498 ± 8.67e-19 (n=30)
+
+Saved: results_v3_4c/batch_v3_4c_cmi_triangle_summary.json
+Saved plots to: results_v3_4c/
+(bottomup) dualcomputer@MacBook-Air-de-farid ~ % 
