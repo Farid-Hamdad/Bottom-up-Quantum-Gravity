@@ -1,0 +1,637 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{physics}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Gravité Quantique Bottom-Up\\
+Émergence de l'Espace, du Temps et de la Gravité depuis l'Intrication Quantique}
+
+\author{Farid Hamdad}
+
+\date{Février 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Nous proposons un cadre minimal dans lequel l'espace, le temps et la gravité émergent de la structure d'intrication d'un état quantique global fini, sans aucun arrière-plan spatio-temporel préalable.
+
+La géométrie est reconstruite à partir de l'information mutuelle entre sous-systèmes et projetée par multidimensional scaling. La dimension spatiale effective dépend de la structure d'intrication et transitionne entre différents régimes selon la localité des corrélations.
+
+Plusieurs signatures opérationnelles sont démontrées numériquement sur des systèmes de $N=9$ et $N=16$ qubits :
+
+\begin{itemize}
+\item temps relationnel via flot modulaire,
+\item géométrie émergente via reconstruction par distance informationnelle,
+\item gravité thermodynamique via une relation entropie-énergie de type Jacobson,
+\item géométrie intrinsèque via dimension spectrale,
+\item signatures ER=EPR de type trou de ver,
+\item dynamique modulaire chaotique caractérisée par la théorie des matrices aléatoires,
+\item goulots d'étranglement informationnels de type horizon dans les graphes d'intrication.
+\end{itemize}
+
+Nous identifions également une constante modulaire dépendante de la topologie
+\[
+C = d_A g_2^{\mathrm{plateau}}
+\]
+révélant que le spectre du Hamiltonien modulaire retient l'information géométrique sur la structure d'intrication sous-jacente.
+
+\end{abstract}
+
+% =====================================================================
+% PARTIE I : IDÉE CENTRALE ET POSTULAT
+% =====================================================================
+
+\section{Idée Centrale}
+
+\begin{quote}
+L'intrication est une structure géométrique.
+
+Ce que nous appelons espace est le motif collectif de ces corrélations.
+
+Ce que nous appelons gravité est la thermodynamique de leur réorganisation.
+\end{quote}
+
+L'approche Bottom-Up postule que l'espace-temps n'est pas fondamental mais émerge de la structure de corrélation interne des états quantiques.
+
+\section{Postulat Minimal}
+
+Nous supposons l'existence d'un état quantique global pur
+
+\[
+|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i
+\]
+
+défini sur $N$ degrés de liberté élémentaires.
+
+Aucune structure spatio-temporelle n'est supposée.
+
+Il n'y a
+
+\begin{itemize}
+\item pas de métrique
+\item pas de variété spatiale
+\item pas de temps externe
+\item pas de champ gravitationnel classique
+\end{itemize}
+
+Toutes les notions géométriques et dynamiques doivent émerger des corrélations au sein de $\ket{\Psi}$.
+
+\section{Systèmes Modèles}
+
+Nous générons des familles d'états
+
+\[
+|\Psi(\lambda)\rangle
+\]
+
+contrôlées par un paramètre de non-localité $\lambda$.
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Système & Structure & Dimension de Hilbert \\
+\midrule
+N=9 & grille $3\times3$ & $2^9=512$ \\
+N=16 & grille $4\times4$ & $2^{16}=65536$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% =====================================================================
+% PARTIE II : TEMPS ÉMERGENT ET CHAOS MODULAIRE
+% =====================================================================
+
+\section{Temps Émergent via Flot Modulaire}
+
+Pour un sous-système $A$
+
+\[
+\rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|
+\]
+
+le Hamiltonien modulaire est
+
+\[
+K_A = -\log\rho_A
+\]
+
+qui génère l'évolution modulaire
+
+\[
+O(\tau)=e^{iK_A\tau}Oe^{-iK_A\tau}.
+\]
+
+Ceci définit un temps relationnel analogue au mécanisme de Page–Wootters \cite{pagewootters}.
+
+\section{Chaos Modulaire}
+
+\subsection{Statistiques des gaps}
+
+Les valeurs propres de $K_A$ sont analysées via le ratio des gaps
+
+\[
+r_n=\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}.
+\]
+
+Valeurs typiques :
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Régime & $\langle r\rangle$ \\
+\midrule
+Poisson & 0.386 \\
+GOE & 0.536 \\
+GUE & 0.603 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Nous obtenons
+
+\[
+\langle r\rangle \approx 0.53-0.59
+\]
+
+indiquant une dynamique modulaire chaotique.
+
+\subsection{Facteur de Forme Spectral (SFF)}
+
+Le facteur de forme spectral
+
+\[
+g_2(t)=\frac{1}{d_A^2}\left|\sum_n e^{-it\tilde{\kappa}_n}\right|^2
+\]
+
+exhibe la structure chaotique universelle
+
+\[
+\text{dip} \rightarrow \text{rampe} \rightarrow \text{plateau}.
+\]
+
+Le plateau suit
+
+\[
+g_2^{\mathrm{plateau}}\sim\frac{1}{d_A}.
+\]
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/topology_SFF.png}
+\caption{Facteur de forme spectral montrant la structure dip-rampe-plateau.}
+\end{figure}
+
+\subsection{Constante Modulaire Topologique}
+
+Nous définissons
+
+\[
+C=d_A g_2^{\mathrm{plateau}}.
+\]
+
+Résultats pour $d_A=256$ :
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Topologie & $\langle r\rangle$ & $C$ \\
+\midrule
+Chaîne 1D & 0.594 & 1.21 \\
+Grille 2D & 0.575 & 1.42 \\
+Graphe ER & 0.528 & 1.63 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/topology_C.png}
+\caption{Constante modulaire topologique $C$ pour différentes topologies de graphe.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/topology_r.png}
+\caption{Statistiques des ratios de gaps confirmant l'universalité RMT.}
+\end{figure}
+
+Le scaling reste universel mais le préfacteur dépend de la topologie, indiquant que la dynamique modulaire encode l'information géométrique.
+
+% =====================================================================
+% PARTIE III : GÉOMÉTRIE ÉMERGENTE
+% =====================================================================
+
+\section{Géométrie Émergente}
+
+L'information mutuelle
+
+\[
+I(i:j)=S(\rho_i)+S(\rho_j)-S(\rho_{ij})
+\]
+
+définit la distance informationnelle
+
+\[
+d_{ij}=-\log\frac{I(i:j)}{I_{\max}+\epsilon}.
+\]
+
+Les points sont projetés par multidimensional scaling pour reconstruire la géométrie \cite{vanraamsdonk}.
+
+\section{Géométrie Spectrale}
+
+Nous construisons un graphe pondéré avec
+
+\[
+w_{ij}=I(i:j).
+\]
+
+Le Laplacien
+
+\[
+L=D-W
+\]
+
+définit la trace de chaleur
+
+\[
+Z(\tau)=Tr(e^{-\tau L}).
+\]
+
+La dimension spectrale
+
+\[
+d_s(\tau)=-2\frac{d\log Z}{d\log\tau}
+\]
+
+donne
+
+\[
+d_{IR}\approx2.5-2.7.
+\]
+
+\section{Gravité Thermodynamique}
+
+Nous testons une relation de type Jacobson \cite{jacobson}
+
+\[
+\delta S\approx \beta_{eff}\delta E.
+\]
+
+Les expériences numériques confirment une validité approximative à travers les variations de $\lambda$.
+
+\section{Courbure Discrète et Réponse Einstein-like}
+
+L'entropie de coupure
+
+\[
+S_{cut}(A)=\sum_{i\in A}\sum_{j\notin A}w_{ij}
+\]
+
+est reliée à la courbure d'Ollivier–Ricci mesurée sur le graphe d'intrication.
+
+Les perturbations satisfont une relation opérationnelle
+
+\[
+\Delta S_{cut}\approx a\Delta R+b\Delta M.
+\]
+
+% =====================================================================
+% PARTIE IV : RÉSULTATS NUMÉRIQUES
+% =====================================================================
+
+\section{Résultats pour N=9 : Preuve de Concept}
+
+\subsection{Transition dimensionnelle}
+
+Nous reconstruisons la géométrie en utilisant la distance informationnelle et le multidimensional scaling.
+
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio 2D/3D \\
+\midrule
+0.0 & $5.9 \pm 0.3$ & $5.8 \pm 0.3$ & $5.7 \pm 0.4$ & $1.02 \pm 0.08$ \\
+0.2 & $4.2 \pm 0.4$ & $3.1 \pm 0.3$ & $3.0 \pm 0.4$ & $1.35 \pm 0.15$ \\
+0.4 & $2.8 \pm 0.5$ & $1.2 \pm 0.2$ & $1.1 \pm 0.3$ & $2.33 \pm 0.45$ \\
+0.6 & $1.5 \pm 0.4$ & $0.4 \pm 0.1$ & $0.4 \pm 0.1$ & $3.75 \pm 1.10$ \\
+0.8 & $0.8 \pm 0.2$ & $0.15 \pm 0.05$ & $0.14 \pm 0.06$ & $5.33 \pm 1.80$ \\
+1.0 & $0.08 \pm 0.03$ & $0.01 \pm 0.005$ & $0.009 \pm 0.004$ & $8.00 \pm 3.50$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig1_dimension_emergente_N9.png}
+\caption{Reconstruction de la dimension spatiale émergente pour N=9.}
+\end{figure}
+
+\subsection{Signature ER=EPR}
+
+Suivant la conjecture ER=EPR \cite{maldacena}, nous testons si l'intrication non-locale crée des raccourcis géométriques.
+
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
+\midrule
+0.0 & $0.009 \pm 0.001$ & 4 & $4.0 \pm 0.2$ & $1.0 \pm 0.1$ \\
+0.5 & $0.45 \pm 0.05$ & 4 & $1.8 \pm 0.3$ & $2.2 \pm 0.4$ \\
+1.0 & $1.28 \pm 0.02$ & 4 & $0.04 \pm 0.02$ & $100 \pm 50$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig2_er_epr_N9.png}
+\caption{Effet de compression ER=EPR dans la géométrie émergente.}
+\end{figure}
+
+\subsection{Test de gravité thermodynamique}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig3_jacobson_N9.png}
+\caption{Relation entropie-énergie de type Jacobson pour N=9.}
+\end{figure}
+
+\section{Résultats pour N=16 : Validation Intermédiaire}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig4_grid_N16.png}
+\caption{Grille $4\times4$ sous-jacente utilisée dans les simulations.}
+\end{figure}
+
+\subsection{Reconstruction dimensionnelle}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig5_mds_N16.png}
+\caption{Reconstruction géométrique par multidimensional scaling pour N=16.}
+\end{figure}
+
+\subsection{Signature ER=EPR}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig6_erepr_N16.png}
+\caption{Formation de raccourcis ER=EPR dans la géométrie émergente.}
+\end{figure}
+
+\subsection{Test de gravité thermodynamique}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig7_jacobson_N16.png}
+\caption{Relation entropie-énergie de type Jacobson pour N=16.}
+\end{figure}
+
+% =====================================================================
+% PARTIE V : DÉTECTION D'HORIZON
+% =====================================================================
+
+\section{Détection d'Horizon Bottom-Up}
+
+Nous construisons un graphe d'intrication avec densité fixée
+
+\[
+\rho = 1/3.
+\]
+
+Les régions de taille $|A|=N/2=8$ sont évaluées via le score
+
+\[
+\mathrm{Score}_{BH}(A)
+= w_S \, z(S(A)) - w_\phi \, z(\phi(A)) + w_{\mathrm{int}} \, z(\mathrm{internal}(A)).
+\]
+
+où
+
+\begin{itemize}
+\item $S(A)$ est l'entropie de la région
+\item $\phi(A)$ est la conductance
+\item $\mathrm{internal}(A)$ est l'intrication interne
+\end{itemize}
+
+\subsection{Région de type horizon détectée}
+
+La région détectée est
+
+\[
+A_{BH}=\{0,2,3,5,6,10,11,15\}.
+\]
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Métrique & Valeur \\
+\midrule
+Entropie $S(A)$ & 7.1667 \\
+Coupure & 3.2098 \\
+Intrication interne & 5.0348 \\
+Conductance $\phi(A)$ & 0.3951 \\
+Ratio de gaps $\langle r\rangle(K_A)$ & 0.6041 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Comparaison par percentiles}
+
+Comparaison avec 3000 régions aléatoires de même taille :
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Métrique & Percentile \\
+\midrule
+Entropie $S$ & 23.7\% \\
+Coupure & 1.4\% \\
+Intrication interne & 98.8\% \\
+Conductance $\phi$ & 2.7\% \\
+Ratio de gaps $\langle r\rangle$ & 62.0\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Ceci confirme la présence d'un fort goulot d'étranglement informationnel : conductance extrêmement faible et intrication interne exceptionnellement élevée.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/percentiles.png}
+\caption{Comparaison par percentiles entre la région détectée et des régions aléatoires.}
+\end{figure}
+
+\subsection{Benchmark HIE à taille fixée avec initialisation Louvain}
+
+Des régions candidates de taille $|A|=8$ sont générées via :
+
+\begin{itemize}
+\item détection de communautés Louvain sur le graphe d'intrication
+\item unions de communautés
+\item swaps Metropolis locaux pour raffinement
+\end{itemize}
+
+Un total de 55 régions candidates sont générées et classées.
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Mode & Pondération & Rang de la région BH \\
+\midrule
+CLASSIC & poids équilibrés & 12 / 55 \\
+HORIZON-AWARE & forte pénalité de conductance & 2 / 55 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/comparison_bh_hie8.png}
+\caption{Comparaison entre la région BH et les régions candidates HIE.}
+\end{figure}
+
+\subsection{Interprétation}
+
+Ce test fournit une signature opérationnelle cohérente avec l'intuition holographique à taille finie : une région fortement intriquée peut être séparée du reste du graphe par une frontière informationnelle étroite (faible coupure / faible conductance). Dans Gravité Quantique Bottom-Up, ceci identifie des îlots d'intrication pouvant jouer le rôle de sous-systèmes thermodynamiques effectifs.
+
+% =====================================================================
+% PARTIE VI : STRUCTURE MULTIPARTITE
+% =====================================================================
+
+\section{Géométrie de l'Intrication Multipartite}
+
+L'information mutuelle conditionnelle
+
+\[
+\mathrm{CMI}(i:j|k)
+\]
+
+est prédite par le score triangulaire
+
+\[
+T(i,j|k)=I(i:j)-I(i:k)-I(j:k).
+\]
+
+Les expériences donnent
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+$\lambda$ & AUC & $\rho$ \\
+\midrule
+0.0 & 0.69 & 0.31 \\
+0.2 & 0.73 & 0.42 \\
+0.4 & 0.71 & 0.37 \\
+0.5 & 0.72 & 0.39 \\
+0.7 & 0.73 & 0.42 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+avec une significativité
+
+\[
+p < 5\times10^{-3}.
+\]
+
+Ceci démontre que les corrélations multipartites suivent une géométrie triangulaire encodée par les informations mutuelles par paires.
+
+% =====================================================================
+% PARTIE VII : SYNTHÈSE ET PERSPECTIVES
+% =====================================================================
+
+\section{Ce que le Cadre Établit}
+
+\begin{itemize}
+\item la géométrie peut émerger d'états quantiques finis
+\item la dimension spatiale dépend de la structure d'intrication
+\item la dynamique modulaire est chaotique avec des signatures RMT universelles
+\item la constante modulaire $C=d_A g_2^{\mathrm{plateau}}$ encode l'information topologique
+\item les signatures ER=EPR deviennent mesurables opérationnellement
+\item des régions de type horizon émergent via des goulots d'étranglement informationnels
+\item un algorithme de détection bottom-up identifie ces régions (rang 2/55 en mode horizon-aware)
+\item les corrélations multipartites obéissent à une géométrie triangulaire
+\item une relation de réponse discrète de type Einstein est vérifiée sous perturbations
+\end{itemize}
+
+\section{Limites}
+
+\begin{itemize}
+\item limite continue $N\rightarrow\infty$ non encore établie
+\item dynamique relativiste complète absente
+\item équations d'Einstein non dérivées des premiers principes
+\item tailles de système finies limitent les claims d'universalité
+\item étude modulaire limitée à $|A|=8$ (autres tailles à explorer)
+\end{itemize}
+
+\section{Perspectives}
+
+Les directions futures incluent
+
+\begin{itemize}
+\item scaling à taille finie vers $N>25$ (32, 36 qubits)
+\item connexions avec les modèles chaotiques de type SYK
+\item analyse de dimension spectrale multi-échelle
+\item états aléatoires vs critiques vs topologiques
+\item implémentations sur simulateur quantique
+\item prédictions expérimentales pour dispositifs quantiques de proximité
+\end{itemize}
+
+% =====================================================================
+% CONCLUSION
+% =====================================================================
+
+\section{Conclusion}
+
+La Gravité Quantique Bottom-Up propose que la géométrie spatio-temporelle peut émerger de la structure d'intrication des états quantiques sans aucun arrière-plan géométrique préalable.
+
+Même de petits systèmes quantiques ($N=9,16$) présentent de multiples signatures cohérentes :
+
+\begin{itemize}
+\item dimension émergente ajustable par la localité de l'intrication, transitionnant d'environ 2D pour l'intrication locale à des géométries effectives de dimension supérieure quand les corrélations non-locales dominent
+\item dynamique modulaire chaotique avec constante $C$ dépendante de la topologie, révélant que le spectre du Hamiltonien modulaire retient l'information géométrique
+\item raccourcis opérationnels ER=EPR où des qubits topologiquement distants deviennent géométriquement proches dans la métrique émergente
+\item goulots d'étranglement informationnels de type horizon détectables algorithmiquement, avec la région $\{0,2,3,5,6,10,11,15\}$ présentant une conductance extrêmement faible (2.7e percentile) et une intrication interne exceptionnellement élevée (98.8e percentile)
+\item structure triangulaire des corrélations multipartites encodée par les informations mutuelles par paires (AUC $\approx 0.73$, $p<5\times10^{-3}$)
+\item gravité thermodynamique approximative via une relation entropie-énergie de type Jacobson
+\item relation de réponse discrète de type Einstein sous perturbations
+\end{itemize}
+
+Ces résultats suggèrent que l'espace-temps pourrait être une description effective de la structure informationnelle des états quantiques, et que les phénomènes gravitationnels clés — y compris les horizons — admettent une origine purement informationnelle accessible à $N$ fini. L'identification d'une constante modulaire $C$ dépendante de la topologie fournit un pont concret entre structure d'intrication et géométrie émergente, tandis que l'algorithme de détection d'horizon bottom-up offre un outil opérationnel pour identifier des régions de type trou noir sans aucun input géométrique préalable.
+
+\begin{thebibliography}{9}
+
+\bibitem{jacobson}
+T. Jacobson,
+Thermodynamics of Spacetime,
+Phys. Rev. Lett. 75, 1260 (1995).
+
+\bibitem{vanraamsdonk}
+M. Van Raamsdonk,
+Building up spacetime with quantum entanglement,
+Gen. Relativ. Gravit. 42, 2323 (2010).
+
+\bibitem{maldacena}
+J. Maldacena, L. Susskind,
+Cool horizons for entangled black holes,
+Fortschritte der Physik 61, 781 (2013).
+
+\bibitem{pagewootters}
+D. Page, W. Wootters,
+Evolution without evolution,
+Phys. Rev. D 27, 2885 (1983).
+
+\end{thebibliography}
+
+\end{document}
