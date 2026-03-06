@@ -1,3 +1,4 @@
+
 \documentclass[11pt,a4paper]{article}
 
 % -------------------- Packages --------------------
@@ -21,188 +22,380 @@
 
 \maketitle
 
-\section{Postulate and Hilbert Space Structure}
+\section{Hilbert Space Postulate}
 
-Let 
+Let
+
 \[
 \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i
 \]
-be a finite-dimensional Hilbert space describing $N$ elementary quantum degrees of freedom.
 
-\textbf{Postulate.}  
-There exists a pure global quantum state
+be a finite-dimensional Hilbert space representing $N$ elementary quantum degrees of freedom.
+
+\textbf{Postulate.}
+
+There exists a global pure quantum state
+
 \[
 \ket{\Psi} \in \mathcal{H}
 \]
-such that no background metric or spacetime structure is assumed a priori. 
-All geometric structure must be reconstructed from correlations internal to $\ket{\Psi}$.
 
-\section{Entanglement and Mutual Information}
+such that no background spacetime geometry is assumed.  
+All geometric structures must emerge from correlations internal to $\ket{\Psi}$.
 
-For any subsystem $A \subset \{1,\dots,N\}$, define the reduced density matrix
+\section{Reduced Density Matrices}
+
+For any subsystem $A \subset \{1,\dots,N\}$ we define
 
 \[
-\rho_A = \mathrm{Tr}_{\bar A} \left( \ket{\Psi}\bra{\Psi} \right).
+\rho_A = \mathrm{Tr}_{\bar A}(\ket{\Psi}\bra{\Psi})
 \]
 
 The von Neumann entropy is
 
 \[
-S(A) = - \mathrm{Tr}(\rho_A \log \rho_A).
+S(A) = -\mathrm{Tr}(\rho_A \log \rho_A)
 \]
 
-For two subsystems $i$ and $j$, define the mutual information
+\section{Mutual Information}
+
+For two subsystems $i$ and $j$ we define
 
 \[
-I(i:j) = S(i) + S(j) - S(ij).
+I(i:j) = S(i) + S(j) - S(ij)
 \]
 
 Properties:
 
 \begin{itemize}
-\item $I(i:j) \ge 0$,
-\item $I(i:j) = 0$ iff $i$ and $j$ are uncorrelated,
-\item symmetric in $i,j$.
+\item $I(i:j) \ge 0$
+\item symmetric
+\item vanishes for uncorrelated systems
 \end{itemize}
 
-\section{Entanglement Graph Construction}
+\section{Conditional Mutual Information}
+
+For three subsystems
+
+\[
+\mathrm{CMI}(i:j|k)
+\]
+
+we define
+
+\[
+\mathrm{CMI}(i:j|k)
+=
+S(ik)+S(jk)-S(k)-S(ijk)
+\]
+
+CMI measures irreducible tripartite correlations.
+
+\section{Entanglement Graph}
 
 Define a weighted graph
 
 \[
-G = (V,E,w)
+G=(V,E,w)
 \]
 
-with:
+where
 
 \begin{itemize}
-\item $V = \{1,\dots,N\}$,
-\item $w_{ij} = I(i:j)$,
-\item $w_{ii} = 0$.
+\item $V=\{1,\dots,N\}$
+\item $w_{ij}=I(i:j)$
 \end{itemize}
 
-Optionally, apply thresholding at fixed density $\rho$ to control connectivity.
-
-\section{Laplacian Operator}
-
-Let $W$ be the weighted adjacency matrix:
+The adjacency matrix is
 
 \[
-W_{ij} = w_{ij}.
+W_{ij}=w_{ij}
 \]
 
-Define the degree matrix
+The degree matrix
 
 \[
-D_{ii} = \sum_j W_{ij}.
+D_{ii}=\sum_j W_{ij}
 \]
 
-The combinatorial Laplacian is
+\section{Graph Laplacian}
+
+The combinatorial Laplacian
 
 \[
-L = D - W.
+L=D-W
 \]
+
+is symmetric positive semi-definite.
 
 The normalized Laplacian is
 
 \[
-L_{\text{norm}} = I - D^{-1/2} W D^{-1/2}.
+L_{\text{norm}} = I - D^{-1/2}WD^{-1/2}
 \]
 
-$L$ is symmetric and positive semi-definite.
+\section{Heat Kernel}
 
-\section{Heat Kernel and Spectral Dimension}
-
-Define the heat trace
+Define
 
 \[
-K(t) = \mathrm{Tr}\left( e^{-tL} \right)
-= \sum_{k=0}^{N-1} e^{-t\lambda_k},
+K(t)=\mathrm{Tr}(e^{-tL})
 \]
 
-where $\lambda_k$ are eigenvalues of $L$.
-
-The spectral dimension is defined as
+with eigenvalues $\lambda_k$:
 
 \[
-d_s(t) = -2 \frac{d \log K(t)}{d \log t}.
+K(t)=\sum_k e^{-t\lambda_k}
 \]
 
-A plateau in $d_s(t)$ over a finite scale interval indicates an effective emergent dimension.
+\section{Spectral Dimension}
 
-\section{Geodesic Distance}
-
-Define effective edge length
+The spectral dimension is
 
 \[
-\ell_{ij} = \frac{1}{w_{ij}}.
+d_s(t)=-2\frac{d\log K(t)}{d\log t}
 \]
 
-The geodesic distance between nodes $i$ and $j$ is
+A plateau in $d_s(t)$ indicates emergent dimension.
+
+\section{Information Distance}
+
+Define
 
 \[
-d_{ij} = \min_{\gamma} \sum_{(k,l)\in\gamma} \ell_{kl}.
+d_{ij}=-\log\left(\frac{I(i:j)}{I_{\max}+\epsilon}\right)
 \]
 
-This defines a metric on connected components.
+with small regularization $\epsilon$.
 
-\section{Algebraic Connectivity}
+\section{Geometric Reconstruction}
 
-Let $\lambda_1$ denote the smallest non-zero eigenvalue of $L$.
-
-$\lambda_1 > 0$ iff the graph is connected.
-
-$\lambda_1$ measures global connectivity robustness.
-
-\section{Single Long-Range Edge Perturbation}
-
-Consider strengthening a single mutual-information edge $(0,8)$ via a parameter $\lambda$:
+Given the distance matrix $d_{ij}$, we reconstruct coordinates
 
 \[
-w_{08} \rightarrow w_{08}(\lambda).
+x_i \in \mathbb{R}^d
 \]
 
-We monitor:
+via multidimensional scaling (MDS).
 
-\begin{itemize}
-\item spectral dimension $d_s(\lambda)$,
-\item algebraic connectivity $\lambda_1(\lambda)$,
-\item reconstructed geodesic distance $d_{08}(\lambda)$.
-\end{itemize}
+The embedding error is
 
-Observed behavior:
+\[
+\epsilon_d =
+\sqrt{
+\frac{
+\sum_{i<j}(\|x_i-x_j\|-d_{ij})^2
+}{
+\sum_{i<j}d_{ij}^2
+}}
+\]
 
-\begin{itemize}
-\item $\lambda_1$ increases monotonically,
-\item $d_{08}$ decreases sharply,
-\item $d_s$ increases continuously.
-\end{itemize}
+The effective dimension is the minimal $d$ where $\epsilon_d$ stabilizes.
 
-This demonstrates that localized changes in entanglement induce global spectral reorganization.
+\section{Modular Hamiltonian}
 
-\section{Validity Conditions}
+For subsystem $A$:
 
-The following conditions are verified numerically:
+\[
+K_A = -\log \rho_A
+\]
 
-\begin{itemize}
-\item Largest connected component remains size $N$,
-\item Automatic plateau detection stable across seeds,
-\item Linear fit quality $R^2 > 0.95$,
-\item Results robust under density variation.
-\end{itemize}
+The modular flow is
+
+\[
+O(\tau) = e^{iK_A\tau} O e^{-iK_A\tau}
+\]
+
+\section{Spectral Statistics}
+
+Let $\kappa_n$ be eigenvalues of $K_A$.
+
+Define spacings
+
+\[
+\Delta_n = \kappa_{n+1}-\kappa_n
+\]
+
+Gap ratio
+
+\[
+r_n=
+\frac{\min(\Delta_n,\Delta_{n+1})}
+{\max(\Delta_n,\Delta_{n+1})}
+\]
+
+Mean gap ratio
+
+\[
+\langle r \rangle
+\]
+
+distinguishes Poisson vs chaotic spectra.
+
+\section{Spectral Form Factor}
+
+Define
+
+\[
+g_2(t)
+=
+\frac{1}{d_A^2}
+\left|
+\sum_{n=1}^{d_A}
+e^{-it\tilde{\kappa}_n}
+\right|^2
+\]
+
+The chaotic regime exhibits
+
+\[
+\text{dip} \rightarrow \text{ramp} \rightarrow \text{plateau}
+\]
+
+\section{Topological Modular Constant}
+
+Define
+
+\[
+C = d_A g_2^{\mathrm{plateau}}
+\]
+
+The universal scaling
+
+\[
+g_2^{\mathrm{plateau}} \sim \frac{1}{d_A}
+\]
+
+is topology independent, but $C$ depends on interaction topology.
+
+\section{Cut Entropy}
+
+For region $A$ define
+
+\[
+S_{cut}(A)
+=
+\sum_{i\in A}\sum_{j\notin A}w_{ij}
+\]
+
+This measures information flow across the boundary.
+
+\section{Ollivier–Ricci Curvature}
+
+Define probability distribution
+
+\[
+\mu_i(j)=\frac{w_{ij}}{\sum_k w_{ik}}
+\]
+
+The curvature of edge $(i,j)$ is
+
+\[
+\kappa_{ij}
+=
+1
+-
+\frac{W_1(\mu_i,\mu_j)}{d(i,j)}
+\]
+
+where $W_1$ is the Wasserstein distance.
+
+\section{Regional Curvature}
+
+For region $A$
+
+\[
+\mathcal{R}(A)
+=
+\frac{1}{|E(A)|}
+\sum_{(u,v)\in E(A)}
+\kappa_{uv}
+\]
+
+\section{Einstein-like Response}
+
+Under perturbations
+
+\[
+\delta w_{ij}
+\]
+
+we measure
+
+\[
+\Delta S_{cut}
+\]
+
+and
+
+\[
+\Delta \mathcal{R}
+\]
+
+Empirically we obtain
+
+\[
+\Delta S_{cut}
+=
+a\Delta \mathcal{R}
++
+b\Delta M
++
+\epsilon
+\]
+
+\section{Horizon Score}
+
+For region $A$
+
+\[
+Score_{BH}(A)
+=
+w_S z(S(A))
+-
+w_\phi z(\phi(A))
++
+w_{int}z(internal(A))
+\]
+
+where
+
+\[
+\phi(A)
+=
+\frac{cut(A)}{\min(vol(A),vol(\bar A))}
+\]
+
+\section{Triangular Information Geometry}
+
+Define
+
+\[
+T(i,j|k)
+=
+I(i:j)-I(i:k)-I(j:k)
+\]
+
+This score predicts
+
+\[
+\mathrm{CMI}(i:j|k)
+\]
+
+revealing triangular geometry in multipartite correlations.
 
 \section{Limitations}
 
 \begin{itemize}
-\item Finite-size systems ($N \le 16$),
-\item No proof of convergence as $N \to \infty$,
-\item No Lorentzian structure constructed.
+\item finite $N$
+\item absence of Lorentzian structure
+\item no continuum limit proof
 \end{itemize}
 
 \section{Conclusion}
 
-This framework provides a minimal construction in which geometric observables 
-(dimension, distance, connectivity) emerge from quantum entanglement structure alone,
-without assuming background spacetime geometry.
+Bottom-Up quantum geometry reconstructs geometric observables directly from quantum information quantities without assuming spacetime structure.
+
+Distance, dimension, curvature and horizon-like structures emerge from the entanglement graph of the quantum state.
 
 \end{document}
