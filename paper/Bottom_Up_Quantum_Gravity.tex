@@ -1,400 +1,637 @@
-# Bottom-Up Quantum Gravity
-### Une Théorie de l'Émergence Gravitationnelle
-### Espace, Temps et Gravité depuis l'Intrication Quantique
+\documentclass[11pt]{article}
 
-**Farid Hamdad — Février 2026**
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{physics}
+\usepackage{geometry}
 
-![Status](https://img.shields.io/badge/status-preprint--v1-blue)
-![System size](https://img.shields.io/badge/system%20size-N%3D9%2C%2016-green)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
+\geometry{margin=2.5cm}
 
----
+\title{Bottom-Up Quantum Gravity\\
+Emergence of Space, Time and Gravity from Quantum Entanglement}
 
-## 📌 Idée centrale
+\author{Farid Hamdad}
 
-> L'intrication est une structure géométrique.  
-> Ce que nous appelons espace est le motif collectif de ces corrélations.  
-> Ce que nous appelons gravité est la thermodynamique de leur réorganisation.
+\date{February 2026}
 
----
+\begin{document}
 
-## 📖 Résumé opérationnel
+\maketitle
 
-Nous présentons **Bottom-Up Quantum Gravity**, un cadre minimal où espace, temps et gravité émergent de l'intrication d'un état quantique global pur $\ket{\Psi}$ **sans géométrie préalable**.
+\begin{abstract}
 
-**Résultat central :** la dimension spatiale n'est pas postulée mais *mesurée* via reconstruction métrique. Des états à intrication principalement locale se reconstruisent en 2D, tandis que des états à intrication non-locale imposent une dimension effective plus élevée.
+We propose a minimal framework in which space, time and gravity emerge from the entanglement structure of a finite global quantum state without any prior spacetime background.
 
-Nous validons numériquement plusieurs signatures sur des systèmes finis :
-- **Temps relationnel** via flot modulaire
-- **Géométrie informationnelle** via information mutuelle et embarquement (MDS)
-- **Gravité thermodynamique effective** via test variationnel de type Jacobson
-- **Géométrie intrinsèque** via dimension spectrale $d_s(\tau)$ du Laplacien du graphe d'intrication
-- **Loi de réponse Einstein-like** au sens opérationnel (relation locale entre variations d'entropie de coupure, courbure discrète et intensité de perturbation)
-- **Test ER=EPR** : des paires topologiquement distantes deviennent géométriquement proches dans l'espace émergent lorsque l'intrication non-locale est renforcée
+Geometry is reconstructed from mutual information between subsystems and embedded using multidimensional scaling. The effective spatial dimension depends on the entanglement structure and transitions between different regimes depending on the locality of correlations.
 
-**Nouveau résultat :** l'analyse spectrale du Hamiltonien modulaire $K_A=-\log\rho_A$ révèle un régime chaotique de type RMT et un plateau du Spectral Form Factor vérifiant $g_2^{\mathrm{plateau}}\sim 1/d_A$, avec un préfacteur $C=d_A g_2^{\mathrm{plateau}}$ modulé par la topologie (chaîne 1D, grille 2D, graphe aléatoire). Les résultats sont établis sur $N=9$ qubits puis confirmés sur $N=16$, et complétés par l'étude modulaire à $d_A=256$.
+Several operational signatures are demonstrated numerically on systems of $N=9$ and $N=16$ qubits:
 
-Nous ajoutons enfin une **détection d'horizon bottom-up** (N=16) : une région BH-like de taille fixée $|A|=N/2$ présente un *bottleneck informationnel* (conductance faible) et une cohésion interne extrême, validé par benchmark vs régions aléatoires, et reproduit par une hiérarchie HIE initialisée par **communautés Louvain** (rang $2/55$ en mode horizon-aware).
+\begin{itemize}
+\item relational time via modular flow,
+\item emergent geometry via information distance reconstruction,
+\item thermodynamic gravity via a Jacobson-like entropy-energy relation,
+\item intrinsic geometry via spectral dimension,
+\item wormhole-like ER=EPR signatures,
+\item chaotic modular dynamics characterized by Random Matrix Theory,
+\item horizon-like information bottlenecks in entanglement graphs.
+\end{itemize}
 
----
+We further identify a topology-dependent modular constant
+\[
+C = d_A g_2^{\mathrm{plateau}}
+\]
+revealing that the modular Hamiltonian spectrum retains geometric information about the underlying entanglement structure.
 
-## 📋 Table des matières
+\end{abstract}
 
-- [1. Fondement : Postulat minimal](#1-fondement--postulat-minimal)
-- [2. Systèmes modèles et protocole numérique](#2-systèmes-modèles-et-protocole-numérique)
-- [3. Temps émergent : flot modulaire](#3-temps-émergent--flot-modulaire)
-- [4. Chaos modulaire et universalité RMT](#4-chaos-modulaire-et-universalité-rmt)
-- [5. Espace émergent : géométrie informationnelle](#5-espace-émergent--géométrie-informationnelle)
-- [6. Gravité émergente : test de Jacobson](#6-gravité-émergente--test-de-jacobson)
-- [7. Géométrie spectrale et dimension intrinsèque](#7-géométrie-spectrale-et-dimension-intrinsèque)
-- [8. Courbure discrète et réponse Einstein-like](#8-courbure-discrète-et-réponse-einstein-like)
-- [9. Résultats N=9 : preuve de concept](#9-résultats-n9--preuve-de-concept)
-- [10. Résultats N=16 : validation intermédiaire](#10-résultats-n16--validation-intermédiaire)
-- [11. Détection d'horizon bottom-up (N=16)](#11-détection-dhorizon-bottom-up-n16)
-- [12. Ce que le projet établit](#12-ce-que-le-projet-établit)
-- [13. Limites](#13-limites)
-- [14. Organisation du dépôt](#14-organisation-du-dépôt)
-- [15. Perspectives](#15-perspectives)
-- [16. Citation](#16-citation)
+% =====================================================================
+% PART I: CENTRAL IDEA AND POSTULATE
+% =====================================================================
 
----
+\section{Central Idea}
 
-## 1. Fondement : Postulat minimal
+\begin{quote}
+Entanglement is a geometric structure.
 
-Il existe un état quantique global pur
+What we call space is the collective pattern of these correlations.
 
-$$|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i$$
+What we call gravity is the thermodynamics of their reorganization.
+\end{quote}
 
-défini sur $N$ degrés de liberté élémentaires (qubits), **sans espace, sans temps, sans métrique préalable**.
+The Bottom-Up approach assumes that spacetime is not fundamental but emerges from the internal correlation structure of quantum states.
 
-**Ce qui est absent :**
-- Aucun espace-temps préexistant
-- Aucune métrique a priori
-- Aucune structure causale externe
-- Aucun champ classique fondamental
+\section{Minimal Postulate}
 
-L'état $\ket{\Psi}$ est **atemporel** : il n'évolue pas par rapport à un temps externe. Toute dynamique émerge de relations internes, i.e. d'observables de sous-systèmes et de corrélations entre eux.
+We assume the existence of a global pure quantum state
 
-L'approche est **bottom-up** : partir de $\ket{\Psi}$ et extraire des notions opératoires de temps, distance, dimension et gravité effective.
+\[
+|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i
+\]
 
----
+defined on $N$ elementary degrees of freedom.
 
-## 2. Systèmes modèles et protocole numérique
+No spacetime structure is assumed.
 
-Nous adoptons un protocole unique réutilisé à différentes tailles $N$ :
+There is
 
-1. Définir une famille d'états $\ket{\Psi(\lambda)}$ contrôlée par un paramètre de non-localité corrélationnelle $\lambda$
-2. Calculer l'information mutuelle $I(i:j)$
-3. Définir une distance informationnelle $d_{ij}$
-4. Reconstruire une géométrie par embarquement (MDS)
-5. Tester des signatures thermodynamiques (Jacobson) et géodésiques (ER=EPR)
-6. Extraire une dimension intrinsèque via la géométrie spectrale
-7. Tester une loi de réponse locale liant entropie de coupure et courbure discrète
-8. Analyser le flot modulaire via ses signatures spectrales (chaos RMT, SFF)
+\begin{itemize}
+\item no metric
+\item no spatial manifold
+\item no background time
+\item no classical gravitational field
+\end{itemize}
 
-### 2.1 Tailles étudiées
+All geometric and dynamical notions must emerge from correlations within $\ket{\Psi}$.
 
-| Taille | Description | Espace de Hilbert |
-|--------|-------------|-------------------|
-| N=9 | Grille $3\times 3$ | $2^9 = 512$ |
-| N=16 | Grille $4\times 4$ | $2^{16} = 65536$ |
+\section{Model Systems}
 
-### 2.2 Famille d'états paramétrée par $\lambda$
+We generate families of states
 
-$$|\Psi(\lambda)\rangle = \frac{1}{\mathcal{N}(\lambda)} \sum_{c=0}^{2^N-1} \alpha_c(\lambda) |c\rangle$$
+\[
+|\Psi(\lambda)\rangle
+\]
 
-- $\lambda=0$ : intrication dominée par la localité sur la grille
-- $\lambda \to 1$ : intrication renforcée entre sites topologiquement distants
-- $\lambda=0.5$ : mélange équilibré local/non-local
+controlled by a non-locality parameter $\lambda$.
 
-### 2.3 Hamiltonien de référence (tests thermodynamiques)
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+System & Structure & Hilbert dimension \\
+\midrule
+N=9 & $3\times3$ grid & $2^9=512$ \\
+N=16 & $4\times4$ grid & $2^{16}=65536$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-$$H(\lambda) = -J \sum_{\langle i,j \rangle} Z_i Z_j - h(\lambda) \sum_i X_i - \lambda J_{\text{nl}} \sum_{\text{coins}} X_i X_j$$
+% =====================================================================
+% PART II: EMERGENT TIME AND MODULAR CHAOS
+% =====================================================================
 
----
+\section{Emergent Time via Modular Flow}
 
-## 3. Temps émergent : flot modulaire
+For a subsystem $A$
 
-Pour toute région $A$ :
+\[
+\rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|
+\]
 
-$$\rho_A(\lambda) = \mathrm{Tr}_{\bar{A}} |\Psi(\lambda)\rangle\langle\Psi(\lambda)|, \quad K_A(\lambda) = -\log \rho_A(\lambda)$$
+the modular Hamiltonian is
 
-Le flot modulaire définit une évolution interne :
+\[
+K_A = -\log\rho_A
+\]
 
-$$\mathcal{O}(\tau) = e^{i K_A(\lambda)\tau} \mathcal{O} e^{-i K_A(\lambda)\tau}$$
+which generates modular evolution
 
-**Interprétation :** le temps est un paramètre opératoire déduit de l'état via l'intrication du sous-système.
+\[
+O(\tau)=e^{iK_A\tau}Oe^{-iK_A\tau}.
+\]
 
----
+This defines relational time analogous to the Page–Wootters mechanism \cite{pagewootters}.
 
-## 4. Chaos modulaire et universalité RMT
+\section{Modular Chaos}
 
-### 4.1 Ratio des gaps
+\subsection{Gap statistics}
 
-Soit $\{\kappa_n\}$ le spectre ordonné de $K_A$. On définit les espacements $\Delta_n=\kappa_{n+1}-\kappa_n$ et le ratio local :
+Eigenvalues of $K_A$ are analyzed through the gap ratio
 
-$$r_n = \frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}, \quad \langle r\rangle = \frac{1}{N_r}\sum_n r_n$$
+\[
+r_n=\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}.
+\]
 
-**Valeurs universelles :**
-- Poisson (intégrable) ≈ 0.386
-- GOE ≈ 0.536
-- GUE ≈ 0.603
+Typical values:
 
-**Résultat :** $\langle r \rangle \in [0.53, 0.59]$ → le flot modulaire devient chaotique (régime RMT)
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Regime & $\langle r\rangle$ \\
+\midrule
+Poisson & 0.386 \\
+GOE & 0.536 \\
+GUE & 0.603 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-### 4.2 Spectral Form Factor (SFF)
+We obtain
 
-$$g_2(t) = \frac{1}{d_A^2}\left|\sum_{n=1}^{d_A} e^{-i t \tilde{\kappa}_n}\right|^2$$
+\[
+\langle r\rangle \approx 0.53-0.59
+\]
 
-Structure observée : **dip – ramp – plateau**
+indicating chaotic modular dynamics.
 
-**Résultat central :** $g_2^{\mathrm{plateau}} \sim \frac{1}{d_A}$
+\subsection{Spectral Form Factor}
 
-### 4.3 Constante modulaire topologique
+The spectral form factor
 
-$$C = d_A \times g_2^{\mathrm{plateau}}$$
+\[
+g_2(t)=\frac{1}{d_A^2}\left|\sum_n e^{-it\tilde{\kappa}_n}\right|^2
+\]
 
-Le scaling $1/d_A$ est universel, mais le préfacteur $C$ dépend de la topologie :
+exhibits the universal chaotic structure
 
-| Topologie | $\langle r\rangle$ | $g_2^{\mathrm{plateau}}$ | $C$ |
-|-----------|-------------------|-------------------------|-----|
-| Chaîne 1D | 0.594 | 0.004739 | 1.213 |
-| Grille $3\times 6$ | 0.575 | 0.005541 | 1.419 |
-| ER (p≈0.176) | 0.528 | 0.006351 | 1.626 |
+\[
+\text{dip} \rightarrow \text{ramp} \rightarrow \text{plateau}.
+\]
 
-**Interprétation :** le flot modulaire devient universellement chaotique, mais la géométrie d'intrication laisse une empreinte quantitative via $C$. La structure spatiale émergente influence le générateur temporel modulaire.
+The plateau follows
 
-### 4.4 Figures
+\[
+g_2^{\mathrm{plateau}}\sim\frac{1}{d_A}.
+\]
 
-![Constante modulaire C selon la topologie](./figures/topology_C.png)
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/topology_SFF.png}
+\caption{Spectral Form Factor showing dip-ramp-plateau structure.}
+\end{figure}
 
-![Statistiques de niveaux via ⟨r⟩](./figures/topology_r.png)
+\subsection{Topological Modular Constant}
 
-![Spectral Form Factor moyen](./figures/topology_SFF.png)
+We define
 
----
+\[
+C=d_A g_2^{\mathrm{plateau}}.
+\]
 
-## 5. Espace émergent : géométrie informationnelle
+Results for $d_A=256$:
 
-### 5.1 Information mutuelle et distance
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Topology & $\langle r\rangle$ & $C$ \\
+\midrule
+1D chain & 0.594 & 1.21 \\
+2D grid & 0.575 & 1.42 \\
+ER graph & 0.528 & 1.63 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-$$I_\lambda(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij}), \quad S(\rho) = -\mathrm{Tr}(\rho \log \rho)$$
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/topology_C.png}
+\caption{Topological modular constant $C$ for different graph topologies.}
+\end{figure}
 
-Distance informationnelle :
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/topology_r.png}
+\caption{Gap ratio statistics confirming RMT universality.}
+\end{figure}
 
-$$d_{ij}(\lambda) = -\log \left(\frac{I_\lambda(i:j)}{I_\lambda^{\max} + \epsilon}\right), \quad \epsilon = 10^{-12}$$
+The scaling remains universal but the prefactor depends on topology, indicating that modular dynamics encodes geometric information.
 
-### 5.2 Embarquement (MDS) et erreur
+% =====================================================================
+% PART III: EMERGENT GEOMETRY
+% =====================================================================
 
-Pour chaque $\lambda$, on reconstruit des points $x_i(\lambda) \in \mathbb{R}^d$ par MDS :
+\section{Emergent Geometry}
 
-$$\epsilon_d(\lambda) = \sqrt{\frac{\sum_{i<j} (\|x_i - x_j\| - d_{ij}(\lambda))^2}{\sum_{i<j} d_{ij}(\lambda)^2}}$$
+Mutual information
 
-La **dimension effective** est la plus petite dimension $d$ pour laquelle $\epsilon_d(\lambda)$ devient faible et stable.
+\[
+I(i:j)=S(\rho_i)+S(\rho_j)-S(\rho_{ij})
+\]
 
----
+defines the information distance
 
-## 6. Gravité émergente : test de Jacobson
+\[
+d_{ij}=-\log\frac{I(i:j)}{I_{\max}+\epsilon}.
+\]
 
-### 6.1 Protocole
+Points are embedded using multidimensional scaling to reconstruct geometry \cite{vanraamsdonk}.
 
-Pour chaque $\lambda$ :
-- Entropie d'intrication $S_A(\lambda)$ d'une région $A$
-- Énergie $E(\lambda)=\bra{\Psi(\lambda)}H(\lambda)\ket{\Psi(\lambda)}$
+\section{Spectral Geometry}
 
-Température inverse effective par différence finie :
+We construct a weighted graph with
 
-$$\beta(\lambda) \approx \frac{S_A(\lambda + \delta\lambda) - S_A(\lambda - \delta\lambda)}{E(\lambda + \delta\lambda) - E(\lambda - \delta\lambda)}, \quad \delta\lambda > 0$$
+\[
+w_{ij}=I(i:j).
+\]
 
-On teste $\delta S \simeq \beta\,\delta E$ comme relation variationnelle effective.
+The Laplacian
 
----
+\[
+L=D-W
+\]
 
-## 7. Géométrie spectrale et dimension intrinsèque
+defines the heat trace
 
-### 7.1 Graphe d'intrication
+\[
+Z(\tau)=Tr(e^{-\tau L}).
+\]
 
-À partir des poids $w_{ij}=I_\lambda(i:j)$ :
-- $W=[w_{ij}]$, $D_{ii}=\sum_j w_{ij}$
-- Laplacien combinatoire $L = D - W$
+The spectral dimension
 
-### 7.2 Trace de chaleur et dimension spectrale
+\[
+d_s(\tau)=-2\frac{d\log Z}{d\log\tau}
+\]
 
-Trace de chaleur : $\mathcal{Z}(\tau)=\mathrm{Tr}\,e^{-\tau L}=\sum_{\alpha=1}^{N} e^{-\tau \lambda_\alpha}$
+yields
 
-Dimension spectrale : $d_s(\tau) = -2\,\frac{d\log \mathcal{Z}(\tau)}{d\log \tau}$
+\[
+d_{IR}\approx2.5-2.7.
+\]
 
-### 7.3 Plateau IR et dimension effective
+\section{Thermodynamic Gravity}
 
-Pour $N=9$ et $N=16$, $d_s(\tau)$ présente un plateau IR :
+We test a Jacobson-like relation \cite{jacobson}
 
-$$d_{\mathrm{IR}} \equiv \left\langle d_s(\tau)\right\rangle_{\tau\in[\tau_1,\tau_2]} \approx 2.5-2.7$$
+\[
+\delta S\approx \beta_{eff}\delta E.
+\]
 
----
+Numerical experiments confirm approximate validity across $\lambda$ variations.
 
-## 8. Courbure discrète et réponse Einstein-like
+\section{Discrete Curvature and Einstein-like Response}
 
-### 8.1 Entropie de coupure
+Cut entropy
 
-$$S_{\mathrm{cut}}(A) = \sum_{i\in A}\sum_{j\notin A} w_{ij}$$
+\[
+S_{cut}(A)=\sum_{i\in A}\sum_{j\notin A}w_{ij}
+\]
 
-### 8.2 Courbure d'Ollivier–Ricci
+is related to Ollivier–Ricci curvature measured on the entanglement graph.
 
-Mesure locale : $\mu_i(j)=\frac{w_{ij}}{\sum_k w_{ik}}$
+Perturbations satisfy an operational relation
 
-Courbure d'une arête : $\kappa_{ij}=1-\frac{W_1(\mu_i,\mu_j)}{d(i,j)}$, où $W_1$ est la distance de Wasserstein-1
+\[
+\Delta S_{cut}\approx a\Delta R+b\Delta M.
+\]
 
-### 8.3 Courbure régionale
+% =====================================================================
+% PART IV: NUMERICAL RESULTS
+% =====================================================================
 
-$$\mathcal{R}(A) \equiv \frac{1}{|E(A)|}\sum_{(u,v)\in E(A)} \kappa_{uv}$$
+\section{Results for N=9: Proof of Concept}
 
-### 8.4 Équation d'état opérationnelle
+\subsection{Dimensional transition}
 
-Sous perturbation $\delta w_{ij}$ :
+We reconstruct geometry using information distance and multidimensional scaling.
 
-$$\Delta S_{\mathrm{cut}}(A) = a(R)\,\Delta\mathcal{R}(A) + b(R)\,\Delta M(A) + \varepsilon$$
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio 2D/3D \\
+\midrule
+0.0 & $5.9 \pm 0.3$ & $5.8 \pm 0.3$ & $5.7 \pm 0.4$ & $1.02 \pm 0.08$ \\
+0.2 & $4.2 \pm 0.4$ & $3.1 \pm 0.3$ & $3.0 \pm 0.4$ & $1.35 \pm 0.15$ \\
+0.4 & $2.8 \pm 0.5$ & $1.2 \pm 0.2$ & $1.1 \pm 0.3$ & $2.33 \pm 0.45$ \\
+0.6 & $1.5 \pm 0.4$ & $0.4 \pm 0.1$ & $0.4 \pm 0.1$ & $3.75 \pm 1.10$ \\
+0.8 & $0.8 \pm 0.2$ & $0.15 \pm 0.05$ & $0.14 \pm 0.06$ & $5.33 \pm 1.80$ \\
+1.0 & $0.08 \pm 0.03$ & $0.01 \pm 0.005$ & $0.009 \pm 0.004$ & $8.00 \pm 3.50$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-où $\Delta M(A)=\sum_{u\in A}\sum_v |\delta w_{uv}|$.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig1_dimension_emergente_N9.png}
+\caption{Emergent spatial dimension reconstruction for N=9.}
+\end{figure}
 
----
+\subsection{ER=EPR signature}
 
-## 9. Résultats N=9 : preuve de concept
+Following the ER=EPR conjecture \cite{maldacena}, we test whether non-local entanglement creates geometric shortcuts.
 
-### 9.1 Transition dimensionnelle
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
+\midrule
+0.0 & $0.009 \pm 0.001$ & 4 & $4.0 \pm 0.2$ & $1.0 \pm 0.1$ \\
+0.5 & $0.45 \pm 0.05$ & 4 & $1.8 \pm 0.3$ & $2.2 \pm 0.4$ \\
+1.0 & $1.28 \pm 0.02$ & 4 & $0.04 \pm 0.02$ & $100 \pm 50$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-| $\lambda$ | $\epsilon_{2D}$ | $\epsilon_{3D}$ | $\epsilon_{4D}$ | Ratio 2D/3D |
-|-----------|-----------------|-----------------|-----------------|--------------|
-| 0.0 (local) | $5.9 \pm 0.3$ | $5.8 \pm 0.3$ | $5.7 \pm 0.4$ | $1.02 \pm 0.08$ |
-| 0.2 | $4.2 \pm 0.4$ | $3.1 \pm 0.3$ | $3.0 \pm 0.4$ | $1.35 \pm 0.15$ |
-| 0.4 | $2.8 \pm 0.5$ | $1.2 \pm 0.2$ | $1.1 \pm 0.3$ | $2.33 \pm 0.45$ |
-| 0.6 | $1.5 \pm 0.4$ | $0.4 \pm 0.1$ | $0.4 \pm 0.1$ | $3.75 \pm 1.10$ |
-| 0.8 | $0.8 \pm 0.2$ | $0.15 \pm 0.05$ | $0.14 \pm 0.06$ | $5.33 \pm 1.80$ |
-| 1.0 (non-local) | $0.08 \pm 0.03$ | $0.01 \pm 0.005$ | $0.009 \pm 0.004$ | $8.00 \pm 3.50$ |
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig2_er_epr_N9.png}
+\caption{ER=EPR compression effect in emergent geometry.}
+\end{figure}
 
-![Émergence dimensionnelle N=9](./figures/fig1_dimension_emergente_N9.png)
+\subsection{Thermodynamic gravity test}
 
-### 9.2 Signature ER=EPR
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig3_jacobson_N9.png}
+\caption{Jacobson-like entropy-energy relation for N=9.}
+\end{figure}
 
-| $\lambda$ | $I(0:8)$ | $d_{\text{topo}}$ | $d_{\text{bulk}}$ | Compression |
-|-----------|----------|-------------------|-------------------|-------------|
-| 0.0 | $0.009 \pm 0.001$ | 4 | $4.0 \pm 0.2$ | $1.0 \pm 0.1$ |
-| 0.5 | $0.45 \pm 0.05$ | 4 | $1.8 \pm 0.3$ | $2.2 \pm 0.4$ |
-| 1.0 | $1.28 \pm 0.02$ | 4 | $0.04 \pm 0.02$ | $100 \pm 50$ |
+\section{Results for N=16: Intermediate Validation}
 
-![Signature ER=EPR N=9](./figures/fig2_er_epr_N9.png)
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig4_grid_N16.png}
+\caption{Underlying $4\times4$ lattice used in the simulations.}
+\end{figure}
 
-### 9.3 Test de Jacobson
+\subsection{Dimensional reconstruction}
 
-![Test Jacobson N=9](./figures/fig3_jacobson_N9.png)
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig5_mds_N16.png}
+\caption{Geometry reconstruction via multidimensional scaling for N=16.}
+\end{figure}
 
----
+\subsection{ER=EPR signature}
 
-## 10. Résultats N=16 : validation intermédiaire
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig6_erepr_N16.png}
+\caption{ER=EPR shortcut formation in emergent geometry.}
+\end{figure}
 
-### 10.1 Grille $4\times 4$
+\subsection{Thermodynamic gravity test}
 
-![Grille N=16](./figures/fig4_grid_N16.png)
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig7_jacobson_N16.png}
+\caption{Jacobson-like entropy-energy relation for N=16.}
+\end{figure}
 
-### 10.2 Transition dimensionnelle
+% =====================================================================
+% PART V: HORIZON DETECTION
+% =====================================================================
 
-![Transition dimensionnelle N=16](./figures/fig5_mds_N16.png)
+\section{Bottom-Up Horizon Detection}
 
-### 10.3 Signature ER=EPR
+We construct an entanglement graph with fixed density
 
-![ER=EPR N=16](./figures/fig6_erepr_N16.png)
+\[
+\rho = 1/3.
+\]
 
-### 10.4 Test de Jacobson
+Regions of size $|A|=N/2=8$ are evaluated using the score
 
-![Test Jacobson N=16](./figures/fig7_jacobson_N16.png)
+\[
+\mathrm{Score}_{BH}(A)
+= w_S \, z(S(A)) - w_\phi \, z(\phi(A)) + w_{\mathrm{int}} \, z(\mathrm{internal}(A)).
+\]
 
----
+where
 
-## 11. Détection d'horizon bottom-up (N=16)
+\begin{itemize}
+\item $S(A)$ is the region entropy
+\item $\phi(A)$ is the conductance
+\item $\mathrm{internal}(A)$ is internal entanglement
+\end{itemize}
 
-### 11.1 Principe
+\subsection{Detected BH-like region}
 
-À partir de la matrice $W_{ij}=I(i:j)$, nous construisons un graphe pondéré $A$ avec densité cible $\rho = 1/3$.
+The detected region is
 
-Pour une région $A\subset V$ de taille fixée $|A|=N/2=8$, nous mesurons :
-- $S(A)$ : entropie de la région
-- $\mathrm{cut}(A) = \sum_{i\in A}\sum_{j\notin A} A_{ij}$
-- $\mathrm{internal}(A) = \sum_{i<j\in A} A_{ij}$
-- $\phi(A) = \frac{\mathrm{cut}(A)}{\min(\mathrm{vol}(A),\mathrm{vol}(\bar{A}))}$, avec $\mathrm{vol}(A)=\sum_{i\in A}\sum_j A_{ij}$
+\[
+A_{BH}=\{0,2,3,5,6,10,11,15\}.
+\]
 
-Un **horizon-like bottleneck** correspond à une $\phi(A)$ faible et une cohésion interne élevée.
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Metric & Value \\
+\midrule
+Entropy $S(A)$ & 7.1667 \\
+Cut & 3.2098 \\
+Internal entanglement & 5.0348 \\
+Conductance $\phi(A)$ & 0.3951 \\
+Gap ratio $\langle r\rangle(K_A)$ & 0.6041 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-### 11.2 Score BH-like
+\subsection{Percentile comparison}
 
-$$\mathrm{Score}_{BH}(A) = w_S\, z(S(A)) - w_\phi\, z(\phi(A)) + w_{\mathrm{int}}\, z(\mathrm{internal}(A))$$
+Comparison against 3000 random regions of same size:
 
-où $z(\cdot)$ est un z-score calculé sur un pool de régions aléatoires.
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Metric & Percentile \\
+\midrule
+Entropy $S$ & 23.7\% \\
+Cut & 1.4\% \\
+Internal entanglement & 98.8\% \\
+Conductance $\phi$ & 2.7\% \\
+Gap ratio $\langle r\rangle$ & 62.0\% \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-### 11.3 Région BH-like détectée
+This confirms the presence of a strong information bottleneck: extremely low conductance and exceptionally high internal entanglement.
 
-$$A_{BH} = \{0,2,3,5,6,10,11,15\}$$
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/percentiles.png}
+\caption{Percentile comparison between the detected region and random regions.}
+\end{figure}
 
-| Métrique | Valeur |
-|----------|--------|
-| $S(A)$ | 7.1667 |
-| $\mathrm{cut}(A)$ | 3.2098 |
-| $\mathrm{internal}(A)$ | 5.0348 |
-| $\phi(A)$ | 0.3951 |
-| $\langle r\rangle(K_A)$ | 0.6041 |
+\subsection{HIE fixed-size benchmark with Louvain seeding}
 
-### 11.4 Percentiles vs 3000 régions aléatoires
+Candidate regions of size $|A|=8$ are generated via:
 
-| Métrique | Percentile |
-|----------|------------|
-| $S(A)$ | 23.7% |
-| $\mathrm{cut}(A)$ | 1.4% |
-| $\mathrm{internal}(A)$ | 98.8% |
-| $\phi(A)$ | 2.7% |
-| $\langle r\rangle(K_A)$ | 62.0% |
+\begin{itemize}
+\item Louvain community detection on the entanglement graph
+\item unions of communities
+\item local Metropolis swaps for refinement
+\end{itemize}
 
-**Signature horizon-like :** $\phi$ très faible (bottleneck), internal extrême.
+A total of 55 candidate regions are generated and ranked.
 
-![Percentiles](./figures/percentiles.png)
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Mode & Weighting & Rank of BH region \\
+\midrule
+CLASSIC & balanced weights & 12 / 55 \\
+HORIZON-AWARE & strong conductance penalty & 2 / 55 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-### 11.5 HIE à taille fixée avec graines Louvain
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/comparison_bh_hie8.png}
+\caption{Comparison between BH region and HIE candidate regions.}
+\end{figure}
 
-Nous générons 55 régions candidates $|A|=8$ via :
-1. Détection de communautés Louvain sur le graphe $A$
-2. Unions de communautés
-3. Raffinement par swaps Metropolis
+\subsection{Interpretation}
 
-**Deux modes de classement :**
+This test provides an operational signature consistent with holographic intuition at finite size: a highly entangled region can be separated from the rest of the graph by a narrow informational boundary (low cut / low conductance). In Bottom-Up Quantum Gravity, this identifies entanglement islands that can act as effective thermodynamic subsystems.
 
-| Mode | Pondération | Rang BH |
-|------|-------------|---------|
-| CLASSIC | équilibrée | 12/55 |
-| HORIZON-AWARE | $\phi$ pondéré fort | **2/55** |
+% =====================================================================
+% PART VI: MULTIPARTITE STRUCTURE
+% =====================================================================
 
-![Comparaison BH vs HIE](./figures/comparison_bh_hie8.png)
+\section{Multipartite Entanglement Geometry}
 
-### 11.6 Interprétation
+Conditional mutual information
 
-Ce test fournit une signature opérationnelle cohérente avec l'intuition holographique à taille finie : une région fortement intriquée peut être séparée du reste du graphe par une frontière informationnelle étroite (faible $\mathrm{cut}$ / faible $\phi$). Dans Bottom-Up, cela identifie des îlots d'intrication pouvant jouer le rôle de sous-systèmes thermodynamiques effectifs.
+\[
+\mathrm{CMI}(i:j|k)
+\]
 
----
+is predicted from the triangular score
 
-## 12. Ce que le projet établit
+\[
+T(i,j|k)=I(i:j)-I(i:k)-I(j:k).
+\]
 
-✅ Une géométrie peut émerger d'un état quantique fini  
-✅ La dimension dépend de l'intrication  
-✅ ER=EPR est mesurable opérationnellement  
-✅ Une thermodynamique de l'intrication apparaît  
-✅ Le flot modulaire est chaotique (RMT)  
-✅ Le plateau SFF suit $1/d_A$  
-✅ La constante modulaire dépend de la topologie  
-✅ Un horizon-like bottleneck peut émerger bottom-up  
+Experiments yield
 
----
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+$\lambda$ & AUC & $\rho$ \\
+\midrule
+0.0 & 0.69 & 0.31 \\
+0.2 & 0.73 & 0.42 \\
+0.4 & 0.71 & 0.37 \\
+0.5 & 0.72 & 0.39 \\
+0.7 & 0.73 & 0.42 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-## 13. Limites
+with significance
 
-❌ Limite continue $N \to \infty$ non démontrée  
-❌ Pas de dynamique relativiste complète  
-❌ Pas de dérivation des équations d'Einstein  
-❌ Pas encore de prédiction expérimentale  
-❌ Étude modulaire limitée à $|A|=8$ (autres tailles à explorer)
+\[
+p < 5\times10^{-3}.
+\]
 
+This demonstrates that multipartite correlations follow a triangular geometry encoded by pairwise mutual informations.
+
+% =====================================================================
+% PART VII: SYNTHESIS AND OUTLOOK
+% =====================================================================
+
+\section{What the Framework Establishes}
+
+\begin{itemize}
+\item geometry can emerge from finite quantum states
+\item spatial dimension depends on entanglement structure
+\item modular dynamics is chaotic with universal RMT signatures
+\item the modular constant $C=d_A g_2^{\mathrm{plateau}}$ encodes topological information
+\item ER=EPR signatures become operationally measurable
+\item horizon-like regions emerge via information bottlenecks
+\item a bottom-up detection algorithm identifies such regions (rank 2/55 in horizon-aware mode)
+\item multipartite correlations obey triangular geometry
+\item a discrete Einstein-like response relation holds under perturbations
+\end{itemize}
+
+\section{Limitations}
+
+\begin{itemize}
+\item continuum limit $N\rightarrow\infty$ not yet established
+\item full relativistic dynamics absent
+\item Einstein equations not derived from first principles
+\item finite system sizes limit universality claims
+\item modular study limited to $|A|=8$ (other sizes to explore)
+\end{itemize}
+
+\section{Perspectives}
+
+Future directions include
+
+\begin{itemize}
+\item finite-size scaling toward $N>25$ (32, 36 qubits)
+\item connections with SYK-like chaotic models
+\item multi-scale spectral dimension analysis
+\item random vs critical vs topological states
+\item quantum simulator implementations
+\item experimental predictions for near-term quantum devices
+\end{itemize}
+
+% =====================================================================
+% CONCLUSION
+% =====================================================================
+
+\section{Conclusion}
+
+Bottom-Up Quantum Gravity proposes that spacetime geometry may emerge from the entanglement structure of quantum states without any prior geometric background.
+
+Even small quantum systems ($N=9,16$) display multiple consistent signatures:
+
+\begin{itemize}
+\item emergent dimension tunable by entanglement locality, transitioning from approximately 2D for local entanglement to higher-dimensional effective geometries when non-local correlations dominate
+\item chaotic modular dynamics with topology-dependent constant $C$, revealing that the modular Hamiltonian spectrum retains geometric information
+\item operational ER=EPR shortcuts where topologically distant qubits become geometrically close in the emergent metric
+\item horizon-like information bottlenecks detectable algorithmically, with the region $\{0,2,3,5,6,10,11,15\}$ exhibiting extremely low conductance (2.7th percentile) and exceptionally high internal entanglement (98.8th percentile)
+\item triangular structure of multipartite correlations encoded by pairwise mutual informations (AUC $\approx 0.73$, $p<5\times10^{-3}$)
+\item approximate thermodynamic gravity via a Jacobson-like entropy-energy relation
+\item discrete Einstein-like response relation under perturbations
+\end{itemize}
+
+These results suggest that spacetime may be an effective description of the information structure of quantum states, and that key gravitational phenomena — including horizons — admit a purely information-theoretic origin accessible at finite $N$. The identification of a topology-dependent modular constant $C$ provides a concrete bridge between entanglement structure and emergent geometry, while the bottom-up horizon detection algorithm offers an operational tool for identifying black-hole-like regions without any prior geometric input.
+
+\begin{thebibliography}{9}
+
+\bibitem{jacobson}
+T. Jacobson,
+Thermodynamics of Spacetime,
+Phys. Rev. Lett. 75, 1260 (1995).
+
+\bibitem{vanraamsdonk}
+M. Van Raamsdonk,
+Building up spacetime with quantum entanglement,
+Gen. Relativ. Gravit. 42, 2323 (2010).
+
+\bibitem{maldacena}
+J. Maldacena, L. Susskind,
+Cool horizons for entangled black holes,
+Fortschritte der Physik 61, 781 (2013).
+
+\bibitem{pagewootters}
+D. Page, W. Wootters,
+Evolution without evolution,
+Phys. Rev. D 27, 2885 (1983).
+
+\end{thebibliography}
+
+\end{document}
