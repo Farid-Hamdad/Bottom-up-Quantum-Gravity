@@ -1,28 +1,39 @@
-# bottom-up-quantum-gravity
+# Bottom-Up Quantum Gravity
+
 **Émergence de l'espace, du temps et de la gravité à partir de l'intrication quantique**
 
 Farid Hamdad — Février 2026
 
 ---
 
-## Idée centrale
+# Idée centrale
 
-> L'espace, le temps et la gravité ne sont pas fondamentaux.  
+> **L'espace, le temps et la gravité ne sont pas fondamentaux.**  
 > Ils émergent collectivement de la structure d'intrication d'un état quantique global fini.
+
+Dans cette approche :
+
+- l'intrication définit la connectivité
+- la géométrie émerge de la structure informationnelle
+- la gravité apparaît comme une thermodynamique de l'intrication
 
 ---
 
-## Pourquoi ce projet ?
+# Pourquoi ce projet ?
 
 La physique moderne décrit avec une précision remarquable :
 
-- la **physique quantique** (théories des champs, information quantique),
-- la **gravitation classique** (relativité générale, thermodynamique des trous noirs),
+- la physique quantique (théories des champs, information quantique)
+- la gravitation classique (relativité générale, thermodynamique des trous noirs)
 
 mais laisse ouverte une question fondamentale :
 
-> **Pourquoi l'espace-temps existe-t-il,  
-> et pourquoi la gravité possède-t-elle une structure géométrique et thermodynamique ?**
+**Pourquoi l'espace-temps existe-t-il ?**
+
+et pourquoi la gravité possède-t-elle à la fois une structure :
+
+- géométrique
+- thermodynamique ?
 
 Ce projet explore une hypothèse minimale :
 
@@ -31,313 +42,304 @@ Ce projet explore une hypothèse minimale :
 
 ---
 
-## 1. Fondement : Postulat minimal
+# 1. Postulat minimal
 
-Il existe un **état quantique global pur**
+Il existe un état quantique global pur
 
-$$
-|\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i
-$$
+Ψ ∈ ⊗ᵢ Hᵢ
 
-défini sur $N$ degrés de liberté élémentaires (qubits),  
-**sans espace, sans temps, sans métrique préalable**.
+défini sur **N degrés de liberté élémentaires (qubits)**
 
-Tout le reste — temps, espace, dimension, géométrie, gravité effective —  
-doit émerger exclusivement de la structure interne de l'intrication.
+sans :
+
+- espace
+- temps
+- métrique préalable
+
+Tout le reste doit émerger :
+
+- espace
+- temps
+- dimension
+- géométrie
+- gravité effective
 
 ---
 
-## 2. Méthodologie d'émergence
+# 2. Méthodologie d'émergence
 
-### 2.1 Émergence du temps : flot modulaire
+## 2.1 Émergence du temps — flot modulaire
 
-Pour un sous-système $A$ :
+Pour un sous-système A :
 
-$$
-\rho_A = \mathrm{Tr}_{\bar{A}} |\Psi\rangle\langle\Psi|
-$$
-$$
-K_A = -\log(\rho_A)
-$$
+ρA = Tr_{Ā} |Ψ⟩⟨Ψ|
 
-Le **flot modulaire** :
+KA = − log(ρA)
 
-$$
-\mathcal{O}(\tau) = e^{i K_A \tau} \mathcal{O} e^{-i K_A \tau}
-$$
+Le flot modulaire :
 
-définit une dynamique intrinsèque relationnelle (Page–Wootters).  
-Le temps devient une propriété informationnelle interne.
+O(τ) = e^{iKA τ} O e^{-iKA τ}
 
-### 2.2 Chaos modulaire (nouveau résultat)
+définit une **dynamique relationnelle intrinsèque**.
 
-Nous analysons le spectre de $K_A$.
+Lien conceptuel : **Page–Wootters mechanism**
 
-**Ratio des gaps**
+→ le temps devient une propriété informationnelle interne.
 
-$$
-\langle r \rangle = \left\langle \frac{\min(\Delta_n, \Delta_{n+1})}{\max(\Delta_n, \Delta_{n+1})} \right\rangle
-$$
+---
 
-Références universelles :
+## 2.2 Chaos modulaire (résultat)
 
-- Poisson (intégrable) ≈ 0.386
-- GOE ≈ 0.536
-- GUE ≈ 0.603
+On analyse le spectre du Hamiltonien modulaire KA.
 
-**Résultat :**
+Statistique des gaps :
 
-$$
-\langle r \rangle \in [0.53, 0.59]
-$$
+⟨r⟩ = ⟨ min(Δn, Δn+1) / max(Δn, Δn+1) ⟩
 
-➡ Le flot modulaire devient chaotique (régime Random Matrix Theory).
+Valeurs universelles :
 
-### 2.3 Spectral Form Factor (SFF)
+| régime | valeur |
+|------|------|
+| Poisson | ≈ 0.386 |
+| GOE | ≈ 0.536 |
+| GUE | ≈ 0.603 |
 
-$$
-g_2(t) = \frac{1}{d_A^2} \left| \sum_{n=1}^{d_A} e^{-it \tilde{\kappa}_n} \right|^2
-$$
+Résultat obtenu :
+
+⟨r⟩ ∈ [0.53 , 0.59]
+
+→ **signature de chaos quantique (Random Matrix Theory)**
+
+---
+
+## 2.3 Spectral Form Factor
+
+g₂(t) = (1 / d_A²) | Σ exp(-i t κ̃_n) |²
 
 Structure observée :
 
-- dip
-- ramp
-- plateau
+dip → ramp → plateau
 
-**Résultat central :**
+Scaling universel :
 
-$$
-g_2^{\mathrm{plateau}} \sim \frac{1}{d_A}
-$$
+g₂_plateau ~ 1 / d_A
 
-Scaling universel.
+---
 
-### 2.4 Constante modulaire topologique
+## 2.4 Constante modulaire topologique
 
 On définit :
 
-$$
-C = d_A \times g_2^{\mathrm{plateau}}
-$$
+C = d_A × g₂_plateau
 
-Le scaling $1/d_A$ est universel.  
-Mais le préfacteur $C$ **dépend de la topologie**.
+Résultats (d_A = 256)
 
-**Résultats (dA = 256, λ = 0.8)**
+| topologie | ⟨r⟩ | C |
+|------|------|------|
+| chaîne 1D | 0.594 | 1.21 |
+| grille 3×6 | 0.575 | 1.42 |
+| graphe ER | 0.528 | 1.63 |
 
-| Topologie   | ⟨r⟩   | C     |
-|-------------|-------|-------|
-| Chaîne 1D   | 0.594 | 1.21  |
-| Grille 3×6  | 0.575 | 1.42  |
-| Graphe ER   | 0.528 | 1.63  |
-
-**Figures**
-
-![Constante modulaire](figures/topology_C.png)
-![Statistiques de niveaux](figures/topology_r.png)
-![Spectral Form Factor](figures/topology_SFF.png)
-
-**Interprétation**
-
-Le flot modulaire devient universellement chaotique.  
-Mais la géométrie d'intrication laisse une empreinte quantitative via $C$.
-
-Autrement dit :
-
-> La structure spatiale émergente influence le générateur temporel modulaire.
+➡ La géométrie d'intrication influence la dynamique modulaire.
 
 ---
 
-## 3. Émergence de l'espace
+# 3. Émergence de l'espace
 
-### Reconstruction géométrique
+La géométrie est reconstruite à partir de l'information mutuelle.
 
-**Information mutuelle**
+I(i:j) = S(ρi) + S(ρj) − S(ρij)
 
-$$
-I(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij})
-$$
+Distance informationnelle :
 
-**Distance informationnelle**
+d_ij = − log( I(i:j) / I_max + ε )
 
-$$
-d_{ij} = -\log\left( \frac{I(i:j)}{I_{\max} + \epsilon} \right)
-$$
+Puis :
 
-MDS → points $x_i \in \mathbb{R}^d$
+MDS → points xi ∈ ℝᵈ
 
-**Dimension effective** = dimension minimale stabilisant l'erreur.
+La dimension émergente est la dimension minimale stabilisant l'erreur.
 
 ---
 
-## 4. Résultats principaux
+# 4. Résultats principaux
 
-### Dimension émergente
+## Dimension émergente
 
-| Configuration  | Intrication   | Dimension |
-|----------------|---------------|-----------|
-| N=9, λ≈0       | Locale        | d≈2       |
-| N=9, λ→1       | Non-locale    | d≈3       |
-| N=16, λ≈0      | Locale        | d≈2       |
-| N=16, λ→1      | Non-locale    | d≈3       |
-
-### ER = EPR mesurable
-
-Des qubits topologiquement distants deviennent géométriquement proches lorsque l'intrication non-locale augmente.
-
-Signature **wormhole-like discrète** (statique).
-
-### Gravité thermodynamique
-
-Test de type Jacobson :
-
-$$
-\delta S \simeq \beta_{\mathrm{eff}} \, \delta E
-$$
-
-Relation stable pour N=9 et N=16.
+| configuration | intrication | dimension |
+|------|------|------|
+| N=9 λ≈0 | locale | d≈2 |
+| N=9 λ→1 | non-locale | d≈3 |
+| N=16 λ≈0 | locale | d≈2 |
+| N=16 λ→1 | non-locale | d≈3 |
 
 ---
 
-## 5. Détection d'horizon bottom-up (N = 16)
+## ER = EPR opérationnel
 
-Nous introduisons un **benchmark de détection d'horizon émergent** basé uniquement sur la structure du graphe d'intrication.
+Des qubits éloignés topologiquement deviennent proches géométriquement lorsque l'intrication non-locale augmente.
 
-### 5.1 Principe
+→ signature wormhole-like discrète.
 
-1. Construction du graphe pondéré $W_{ij} = I(i:j)$
-2. Seuil par densité fixée ($\rho = 1/3$)
-3. Recherche d'une région de taille $k = N/2$ maximisant :
+---
 
-$$
-\text{Score}_{\mathrm{BH}} = w_S \, z(S) - w_\phi \, z(\phi) + w_{\mathrm{int}} \, z(\text{internal})
-$$
+## Gravité thermodynamique
 
-où :
-- $S$ = entropie de la région
-- $\phi$ = conductance (bottleneck)
+Test analogue à Jacobson :
+
+δS ≈ β_eff δE
+
+relation stable pour :
+
+N = 9  
+N = 16
+
+---
+
+# 5. Détection d'horizon bottom-up (N = 16)
+
+On introduit un benchmark basé sur le graphe d'intrication.
+
+Poids :
+
+W_ij = I(i:j)
+
+Seuil de densité :
+
+ρ = 1/3
+
+Score :
+
+Score_BH = w_S z(S) − w_ϕ z(ϕ) + w_int z(internal)
+
+où
+
+- S = entropie région
+- ϕ = conductance
 - internal = intrication interne
-- $z(\cdot)$ = score normalisé
 
-### 5.2 Région BH-like détectée
+---
+
+## Région BH-like détectée
+
 [0, 2, 3, 5, 6, 10, 11, 15]
 
-text
-
-| Quantité      | Valeur  |
-|---------------|---------|
-| Entropie S    | 7.1667  |
-| Cut           | 3.2098  |
-| Internal      | 5.0348  |
-| Conductance φ | 0.3951  |
-| Ratio r (RMT) | 0.6041  |
-
-### 5.3 Comparaison via HIE fixed-size + Louvain
-
-**55 régions candidates** générées via :
-- Louvain (détection de communautés)
-- Unions de communautés
-- Recherche locale par swaps (Metropolis)
-
-#### Classement
-
-| Mode            | Rang BH  |
-|-----------------|----------|
-| CLASSIC         | 12 / 55  |
-| HORIZON-AWARE   | 2 / 55   |
-
-Le mode **CLASSIC** détecte des communautés internes.  
-Le mode **HORIZON** détecte des bottlenecks entropiques.
-
-### 5.4 Percentiles vs régions aléatoires
-
-| Quantité | Percentile BH |
-|----------|---------------|
-| S        | 23.7 %        |
-| Cut      | 1.4 %         |
-| Internal | 98.8 %        |
-| φ        | 2.7 %         |
-| r        | 62.0 %        |
-
-**Signature :**
-- Intrication interne **très élevée**
-- Couplage extérieur **très faible**
-- Bottleneck informationnel **net**
-
-> **Un horizon-like peut émerger sans géométrie préalable.**
+| quantité | valeur |
+|------|------|
+| entropie | 7.1667 |
+| cut | 3.2098 |
+| internal | 5.0348 |
+| conductance | 0.3951 |
+| RMT ratio | 0.6041 |
 
 ---
 
-## 6. Ce que le projet établit
+## Signature
 
-✅ Une géométrie peut émerger d'un état quantique fini  
-✅ La dimension dépend de l'intrication  
-✅ ER=EPR est mesurable opérationnellement  
-✅ Une thermodynamique de l'intrication apparaît  
-✅ Le flot modulaire est chaotique (RMT)  
-✅ Le plateau SFF suit $1/d_A$  
-✅ La constante modulaire dépend de la topologie  
-✅ Un horizon-like bottleneck peut émerger bottom-up
+- intrication interne très élevée
+- couplage extérieur faible
+- bottleneck informationnel
+
+➡ **un horizon peut émerger sans géométrie préalable**
 
 ---
 
-## 7. Limites
+# 6. Géométrie multipartite de l'intrication (nouveau résultat)
 
-❌ Limite continue $N \to \infty$ non démontrée  
-❌ Pas de dynamique relativiste complète  
-❌ Pas de dérivation des équations d'Einstein  
-❌ Pas encore de prédiction expérimentale
+On étudie l'information mutuelle conditionnelle :
 
----
+CMI(i:j|k)
 
-## Organisation du dépôt
-bottom-up-quantum-gravity/
-├── paper/ # Manuscrit au format PDF/TeX
-├── figures/ # Toutes les figures générées
-│ ├── fig1_dimension_emergente_N9.png
-│ ├── fig2_er_epr_N9.png
-│ ├── fig3_jacobson_N9.png
-│ ├── fig4_grid_N16.png
-│ ├── fig5_mds_N16.png
-│ ├── fig6_erepr_N16.png
-│ ├── fig7_jacobson_N16.png
-│ ├── topology_C.png
-│ ├── topology_r.png
-│ ├── topology_SFF.png
-│ ├── comparison_bh_hie8.png
-│ ├── rank_comparison.png
-│ └── percentiles.png
-├── scripts/ # Scripts Python exécutables
-│ └── bh_benchmark_louvain_N16.py
-├── code/ # Modules et librairies
-├── data/ # Données brutes et résultats
-│ └── examples/
-│ └── N16_horizon_aware/
-└── README.md
+Score triangulaire :
 
-text
+T(i,j|k) = I(i:j) − I(i:k) − I(j:k)
+
+Résultats pour N=16 :
+
+| λ | AUC | ρ |
+|---|---|---|
+| 0.0 | 0.69 | 0.31 |
+| 0.2 | 0.73 | 0.42 |
+| 0.4 | 0.71 | 0.37 |
+| 0.5 | 0.72 | 0.39 |
+| 0.7 | 0.73 | 0.42 |
+
+Significativité :
+
+p < 5×10⁻³
+
+Conclusion :
+
+> La CMI est prédite par une **géométrie triangulaire de l'intrication**.
+
+La structure multipartite est donc encodée dans une géométrie d'ordre supérieur.
 
 ---
 
-## Perspectives
+# 7. Ce que le projet établit
 
-- Finite-size scaling $N \to 25+$
-- États aléatoires / critiques / topologiques
-- Connexion avec SYK
-- Étude multi-échelle (dimension spectrale)
-- Implémentation sur simulateur quantique
+✓ une géométrie peut émerger d'un état quantique fini  
+✓ la dimension dépend de l'intrication  
+✓ ER = EPR devient mesurable  
+✓ une thermodynamique de l'intrication apparaît  
+✓ le flot modulaire est chaotique  
+✓ le plateau SFF suit 1/d_A  
+✓ la constante modulaire dépend de la topologie  
+✓ un horizon informationnel peut émerger  
+✓ la CMI possède une structure géométrique triangulaire
 
 ---
 
-## Citation
+# 8. Limites
 
-```bibtex
+✗ limite continue N→∞ non démontrée  
+✗ pas de dynamique relativiste complète  
+✗ équations d'Einstein non dérivées  
+✗ pas encore de prédictions observationnelles
+
+---
+
+# Organisation du dépôt
+paper/
+Bottom-up_Quantum_Gravity.tex
+Bottom-up_Quantum_Gravity.pdf
+
+theory/
+theory_mathematics.tex
+
+figures/
+
+scripts/
+bh_benchmark_louvain_N16.py
+
+code/
+
+data/
+
+
+---
+
+# Perspectives
+
+- finite-size scaling N → 25+
+- états critiques / topologiques
+- connexion avec SYK
+- dimension spectrale multi-échelle
+- implémentation sur simulateurs quantiques
+
+---
+
+# Citation
+
 @misc{hamdad2026bottomup,
-  author = {Hamdad, Farid},
-  title = {Bottom-Up Quantum Gravity: Emergence of Space, Time and Gravity from Quantum Entanglement},
-  year = {2026},
-  howpublished = {GitHub repository},
-  url = {https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}
+author = {Hamdad, Farid},
+title = {Bottom-Up Quantum Gravity: Emergence of Space, Time and Gravity from Quantum Entanglement},
+year = {2026},
+howpublished = {GitHub repository},
+url = {https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}
 }
-contact : hamdadfarid54@gmail.com
+
+---
+
+contact  
+hamdadfarid54@gmail.com
