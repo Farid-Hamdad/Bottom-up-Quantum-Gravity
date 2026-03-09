@@ -1,345 +1,472 @@
+
 # Bottom-Up Quantum Gravity
 
-**Émergence de l'espace, du temps et de la gravité à partir de l'intrication quantique**
-
-Farid Hamdad — Février 2026
+**Émergence de l'espace, du temps et de la gravité à partir de l'intrication quantique**  
+**Farid Hamdad — Février 2026**
 
 ---
 
-# Idée centrale
+## Idée centrale
 
-> **L'espace, le temps et la gravité ne sont pas fondamentaux.**  
-> Ils émergent collectivement de la structure d'intrication d'un état quantique global fini.
+L'espace, le temps et la gravité ne sont pas fondamentaux.  
+Ils émergent collectivement de la structure d'intrication d'un état quantique global fini.
 
 Dans cette approche :
 
-- l'intrication définit la connectivité
-- la géométrie émerge de la structure informationnelle
-- la gravité apparaît comme une thermodynamique de l'intrication
+- l'intrication définit la connectivité,
+- la géométrie émerge de la structure informationnelle,
+- la gravité apparaît comme une thermodynamique — puis une courbure discrète — de l'intrication.
 
 ---
 
-# Pourquoi ce projet ?
+## Pourquoi ce projet ?
 
 La physique moderne décrit avec une précision remarquable :
 
-- la physique quantique (théories des champs, information quantique)
-- la gravitation classique (relativité générale, thermodynamique des trous noirs)
+- la physique quantique,
+- la gravitation classique,
 
 mais laisse ouverte une question fondamentale :
 
 **Pourquoi l'espace-temps existe-t-il ?**
 
-et pourquoi la gravité possède-t-elle à la fois une structure :
+et pourquoi la gravité possède-t-elle simultanément une structure :
 
-- géométrique
+- géométrique,
 - thermodynamique ?
 
 Ce projet explore une hypothèse minimale :
 
-> **L'espace-temps n'est pas le théâtre de la physique.  
-> Il est reconstruit à partir de l'intrication quantique.**
+> **L'espace-temps n'est pas le théâtre de la physique.**  
+> **Il est reconstruit à partir de l'intrication quantique.**
 
 ---
 
-# 1. Postulat minimal
+## 1. Postulat minimal
 
 Il existe un état quantique global pur
 
-Ψ ∈ ⊗ᵢ Hᵢ
+\[
+\Psi \in \bigotimes_i \mathcal{H}_i
+\]
 
-défini sur **N degrés de liberté élémentaires (qubits)**
+défini sur \(N\) degrés de liberté élémentaires (qubits),
 
 sans :
 
-- espace
-- temps
-- métrique préalable
+- espace préalable,
+- temps préalable,
+- métrique préalable.
 
 Tout le reste doit émerger :
 
-- espace
-- temps
-- dimension
-- géométrie
-- gravité effective
+- espace,
+- temps,
+- dimension,
+- géométrie,
+- gravité effective.
 
 ---
 
-# 2. Méthodologie d'émergence
+## 2. Méthodologie d'émergence
 
-## 2.1 Émergence du temps — flot modulaire
+### 2.1 Émergence du temps — flot modulaire
 
-Pour un sous-système A :
+Pour un sous-système \(A\) :
 
-ρA = Tr_{Ā} |Ψ⟩⟨Ψ|
+\[
+\rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|
+\]
 
-KA = − log(ρA)
+\[
+K_A = -\log(\rho_A)
+\]
 
-Le flot modulaire :
+Le flot modulaire
 
-O(τ) = e^{iKA τ} O e^{-iKA τ}
+\[
+O(\tau) = e^{iK_A\tau} O e^{-iK_A\tau}
+\]
 
-définit une **dynamique relationnelle intrinsèque**.
+définit une dynamique relationnelle intrinsèque.
 
-Lien conceptuel : **Page–Wootters mechanism**
+**Lien conceptuel :** mécanisme de Page–Wootters.
 
-→ le temps devient une propriété informationnelle interne.
+> Le temps devient une propriété informationnelle interne.
 
 ---
 
-## 2.2 Chaos modulaire (résultat)
+### 2.2 Chaos modulaire
 
-On analyse le spectre du Hamiltonien modulaire KA.
+On analyse le spectre du Hamiltonien modulaire \(K_A\).
 
 Statistique des gaps :
 
-⟨r⟩ = ⟨ min(Δn, Δn+1) / max(Δn, Δn+1) ⟩
+\[
+\langle r \rangle
+=
+\left\langle
+\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}
+\right\rangle
+\]
 
 Valeurs universelles :
 
-| régime | valeur |
-|------|------|
-| Poisson | ≈ 0.386 |
-| GOE | ≈ 0.536 |
-| GUE | ≈ 0.603 |
+| Régime | Valeur |
+|---|---:|
+| Poisson | \(\approx 0.386\) |
+| GOE | \(\approx 0.536\) |
+| GUE | \(\approx 0.603\) |
 
-Résultat obtenu :
+**Résultat obtenu :**
 
-⟨r⟩ ∈ [0.53 , 0.59]
+\[
+\langle r \rangle \in [0.53,\,0.59]
+\]
 
-→ **signature de chaos quantique (Random Matrix Theory)**
+> Signature compatible avec un chaos quantique de type Random Matrix Theory.
 
 ---
 
-## 2.3 Spectral Form Factor
+### 2.3 Spectral Form Factor
 
-g₂(t) = (1 / d_A²) | Σ exp(-i t κ̃_n) |²
+\[
+g_2(t) = \frac{1}{d_A^2}\left|\sum_n e^{-it\tilde{\kappa}_n}\right|^2
+\]
 
 Structure observée :
 
-dip → ramp → plateau
+- dip,
+- ramp,
+- plateau.
 
 Scaling universel :
 
-g₂_plateau ~ 1 / d_A
+\[
+g_{2,\mathrm{plateau}} \sim \frac{1}{d_A}
+\]
 
 ---
 
-## 2.4 Constante modulaire topologique
+### 2.4 Constante modulaire topologique
 
 On définit :
 
-C = d_A × g₂_plateau
+\[
+C = d_A \times g_{2,\mathrm{plateau}}
+\]
 
-Résultats (d_A = 256)
+Résultats typiques (\(d_A = 256\)) :
 
-| topologie | ⟨r⟩ | C |
-|------|------|------|
+| Topologie | \(\langle r \rangle\) | \(C\) |
+|---|---:|---:|
 | chaîne 1D | 0.594 | 1.21 |
 | grille 3×6 | 0.575 | 1.42 |
 | graphe ER | 0.528 | 1.63 |
 
-➡ La géométrie d'intrication influence la dynamique modulaire.
+> La géométrie d'intrication influence la dynamique modulaire.
 
 ---
 
-# 3. Émergence de l'espace
+## 3. Émergence de l'espace
 
-La géométrie est reconstruite à partir de l'information mutuelle.
+La géométrie est reconstruite à partir de l'information mutuelle :
 
-I(i:j) = S(ρi) + S(ρj) − S(ρij)
+\[
+I(i:j)=S(\rho_i)+S(\rho_j)-S(\rho_{ij})
+\]
 
 Distance informationnelle :
 
-d_ij = − log( I(i:j) / I_max + ε )
+\[
+d_{ij}=-\log\left(\frac{I(i:j)}{I_{\max}}+\varepsilon\right)
+\]
 
 Puis :
 
-MDS → points xi ∈ ℝᵈ
+- construction d'une matrice de distance,
+- reconstruction par **MDS**,
+- estimation de la dimension émergente.
 
-La dimension émergente est la dimension minimale stabilisant l'erreur.
-
----
-
-# 4. Résultats principaux
-
-## Dimension émergente
-
-| configuration | intrication | dimension |
-|------|------|------|
-| N=9 λ≈0 | locale | d≈2 |
-| N=9 λ→1 | non-locale | d≈3 |
-| N=16 λ≈0 | locale | d≈2 |
-| N=16 λ→1 | non-locale | d≈3 |
+La dimension effective est la plus petite dimension stabilisant l'erreur de reconstruction.
 
 ---
 
-## ER = EPR opérationnel
+## 4. Résultats principaux
+
+### 4.1 Dimension émergente
+
+| Configuration | Intrication dominante | Dimension |
+|---|---|---:|
+| \(N=9,\ \lambda \approx 0\) | locale | \(d \approx 2\) |
+| \(N=9,\ \lambda \to 1\) | non-locale | \(d \approx 3\) |
+| \(N=16,\ \lambda \approx 0\) | locale | \(d \approx 2\) |
+| \(N=16,\ \lambda \to 1\) | non-locale | \(d \approx 3\) |
+
+### 4.2 ER = EPR opérationnel
 
 Des qubits éloignés topologiquement deviennent proches géométriquement lorsque l'intrication non-locale augmente.
 
-→ signature wormhole-like discrète.
+> Signature discrète de type wormhole-like.
 
----
-
-## Gravité thermodynamique
+### 4.3 Gravité thermodynamique
 
 Test analogue à Jacobson :
 
-δS ≈ β_eff δE
+\[
+\delta S \approx \beta_{\mathrm{eff}}\delta E
+\]
 
-relation stable pour :
+Relation stable observée pour :
 
-N = 9  
-N = 16
+- \(N=9\)
+- \(N=16\)
 
 ---
 
-# 5. Détection d'horizon bottom-up (N = 16)
+## 5. Détection d'horizon bottom-up (\(N=16\))
 
 On introduit un benchmark basé sur le graphe d'intrication.
 
 Poids :
 
-W_ij = I(i:j)
+\[
+W_{ij}=I(i:j)
+\]
 
 Seuil de densité :
 
-ρ = 1/3
+\[
+\rho = \frac{1}{3}
+\]
 
 Score :
 
-Score_BH = w_S z(S) − w_ϕ z(ϕ) + w_int z(internal)
+\[
+\mathrm{Score}_{BH}
+=
+w_S z(S)-w_\phi z(\phi)+w_{\mathrm{int}} z(\mathrm{internal})
+\]
 
-où
+où :
 
-- S = entropie région
-- ϕ = conductance
-- internal = intrication interne
+- \(S\) = entropie de région,
+- \(\phi\) = conductance,
+- `internal` = intrication interne.
 
----
+### Région BH-like détectée
 
-## Région BH-like détectée
+\[
+[0,2,3,5,6,10,11,15]
+\]
 
-[0, 2, 3, 5, 6, 10, 11, 15]
-
-| quantité | valeur |
-|------|------|
+| Quantité | Valeur |
+|---|---:|
 | entropie | 7.1667 |
 | cut | 3.2098 |
 | internal | 5.0348 |
 | conductance | 0.3951 |
 | RMT ratio | 0.6041 |
 
----
+### Signature
 
-## Signature
+- intrication interne très élevée,
+- couplage extérieur faible,
+- bottleneck informationnel.
 
-- intrication interne très élevée
-- couplage extérieur faible
-- bottleneck informationnel
-
-➡ **un horizon peut émerger sans géométrie préalable**
+> Un horizon peut émerger sans géométrie préalable.
 
 ---
 
-# 6. Géométrie multipartite de l'intrication (nouveau résultat)
+## 6. Géométrie multipartite et limite du diagnostic triangulaire
 
-On étudie l'information mutuelle conditionnelle :
+Nous avons étudié la structure multipartite via l'information mutuelle conditionnelle :
 
-CMI(i:j|k)
+\[
+\mathrm{CMI}(i:j|k)
+\]
 
-Score triangulaire :
+et des descripteurs triangulaires de l'intrication.
 
-T(i,j|k) = I(i:j) − I(i:k) − I(j:k)
+### Résultat intermédiaire
 
-Résultats pour N=16 :
+Des corrélations significatives existent entre CMI et structures triangulaires locales de l'information mutuelle, ce qui indique qu'une part de la structure multipartite est bien encodée dans la géométrie relationnelle du graphe d'intrication.
 
-| λ | AUC | ρ |
-|---|---|---|
-| 0.0 | 0.69 | 0.31 |
-| 0.2 | 0.73 | 0.42 |
-| 0.4 | 0.71 | 0.37 |
-| 0.5 | 0.72 | 0.39 |
-| 0.7 | 0.73 | 0.42 |
+### Mais
 
-Significativité :
+Les tests de **courbure triangulaire** et d'**holonomie discrète** (v1–v4) n'ont **pas** fourni de signal robuste de courbure locale.
 
-p < 5×10⁻³
-
-Conclusion :
-
-> La CMI est prédite par une **géométrie triangulaire de l'intrication**.
-
-La structure multipartite est donc encodée dans une géométrie d'ordre supérieur.
+> **Conclusion actuelle :**  
+> la structure triangulaire est un bon descripteur géométrique local de la CMI,  
+> mais **pas** encore une mesure robuste de courbure gravitationnelle émergente.
 
 ---
 
-# 7. Ce que le projet établit
+## 7. Nouveau résultat : courbure discrète d'Ollivier–Ricci
 
-✓ une géométrie peut émerger d'un état quantique fini  
-✓ la dimension dépend de l'intrication  
-✓ ER = EPR devient mesurable  
-✓ une thermodynamique de l'intrication apparaît  
-✓ le flot modulaire est chaotique  
-✓ le plateau SFF suit 1/d_A  
-✓ la constante modulaire dépend de la topologie  
-✓ un horizon informationnel peut émerger  
-✓ la CMI possède une structure géométrique triangulaire
+Pour dépasser les limites du test triangulaire, nous avons introduit une courbure discrète de type **Ollivier–Ricci** sur le graphe d'intrication.
+
+### Objectif
+
+Tester directement si une perturbation informationnelle locale agit comme une source de courbure :
+
+\[
+\text{défaut informationnel local}
+\;\Longrightarrow\;
+\text{courbure géométrique émergente}
+\]
+
+### Protocole
+
+- graphe d'intrication reconstruit à partir de l'information mutuelle,
+- perturbation locale contrôlée sur une région source,
+- mesure de la variation de courbure :
+
+\[
+\Delta \kappa = \kappa_{\mathrm{pert}} - \kappa_{\mathrm{base}}
+\]
+
+- comparaison entre zone **proche** et **lointaine** :
+
+\[
+\Delta \kappa_{\mathrm{near-far}}
+=
+\Delta \kappa_{\mathrm{near}}
+-
+\Delta \kappa_{\mathrm{far}}
+\]
+
+### Résultat robuste
+
+Le mode le plus propre est le mode **`frozen_baseline`**, où la connectivité du graphe de référence est maintenue fixe.
+
+Batch multi-seeds (\(N=16\), 20 seeds, rayon \(r=1\), force \(s=0.6\)) :
+
+\[
+\Delta \kappa_{\mathrm{edge}} = 0.0758 \pm 0.0296
+\]
+
+avec :
+
+- fraction positive = **1.00**
+- \(p_{\mathrm{sign}} = 1.9\times10^{-6}\)
+
+et
+
+\[
+\Delta \kappa_{\mathrm{near-far}} = 0.0927 \pm 0.0799
+\]
+
+avec :
+
+- fraction positive = **0.95**
+- \(p_{\mathrm{sign}} = 4.0\times10^{-5}\)
+
+> Une perturbation informationnelle locale augmente la courbure moyenne,  
+> et cette augmentation est plus forte près de la source qu'à distance.
+
+### Loi de réponse en intensité
+
+Pour un défaut compact (\(r=1\)), la courbure moyenne croît avec la force \(s\) :
+
+| \(s\) | \(\Delta \kappa_{\mathrm{edge}}\) |
+|---:|---:|
+| 0.0 | 0.000 |
+| 0.2 | 0.010 |
+| 0.4 | 0.040 |
+| 0.6 | 0.076 |
+| 0.8 | 0.096 |
+| 1.0 | 0.109 |
+
+La localité suit aussi une croissance puis saturation :
+
+| \(s\) | \(\Delta \kappa_{\mathrm{near-far}}\) |
+|---:|---:|
+| 0.0 | 0.000 |
+| 0.2 | 0.031 |
+| 0.4 | 0.071 |
+| 0.6 | 0.093 |
+| 0.8 | 0.099 |
+| 1.0 | 0.095 |
+
+### Effet du rayon
+
+Le scan en rayon montre :
+
+- **rayon petit** : réponse plus localisée,
+- **rayon grand** : réponse plus diffuse.
+
+Autrement dit :
+
+> une source compacte courbe plus localement,  
+> une source étendue diffuse la déformation géométrique.
+
+### Forme effective
+
+Le meilleur ajustement n'est pas strictement linéaire mais **quadratique concave** :
+
+\[
+\Delta \kappa(s)\approx as^2+bs+c,\qquad a<0
+\]
+
+Cela suggère une croissance initiale suivie d'un tassement ou d'une saturation.
+
+### Conclusion physique
+
+C'est à ce stade le signal le plus net obtenu dans le projet en faveur d'un couplage :
+
+\[
+\text{matière informationnelle locale}
+\;\Longrightarrow\;
+\text{courbure discrète émergente}
+\]
 
 ---
 
-# 8. Limites
+## 8. Ce que le projet établit actuellement
 
-✗ limite continue N→∞ non démontrée  
-✗ pas de dynamique relativiste complète  
-✗ équations d'Einstein non dérivées  
-✗ pas encore de prédictions observationnelles
+- une géométrie peut émerger d'un état quantique fini,
+- la dimension émergente dépend de la structure d'intrication,
+- ER = EPR devient mesurable dans un cadre discret,
+- une thermodynamique de l'intrication apparaît,
+- le flot modulaire présente une signature chaotique,
+- le plateau du SFF suit le scaling \(1/d_A\),
+- la constante modulaire dépend de la topologie,
+- un horizon informationnel peut émerger,
+- la structure multipartite est partiellement encodée dans la géométrie relationnelle,
+- une perturbation informationnelle locale peut induire une **courbure d'Ollivier–Ricci** croissante et localisée.
 
 ---
 
-# Organisation du dépôt
+## 9. Limites actuelles
+
+- limite continue \(N\to\infty\) non démontrée,
+- pas de dynamique relativiste complète,
+- pas d'équation d'Einstein discrète dérivée,
+- pas encore de prédictions observationnelles directes,
+- la courbure triangulaire / holonomie discrète n'a pas donné de signal robuste,
+- le couplage matière-courbure est actuellement établi comme **preuve de concept numérique**, pas encore comme loi fondamentale dérivée.
+
+---
+
+## Organisation du dépôt
+
+```text
 paper/
-Bottom-up_Quantum_Gravity.tex
-Bottom-up_Quantum_Gravity.pdf
+  Bottom-up_Quantum_Gravity.tex
+  Bottom-up_Quantum_Gravity.pdf
 
 theory/
-theory_mathematics.tex
+  theory_mathematics.tex
 
 figures/
 
 scripts/
-bh_benchmark_louvain_N16.py
+  bh_benchmark_louvain_N16.py
+  bup_ollivier_ricci_local_response_v1_2.py
+  bup_ollivier_ricci_local_response_batch_v1_3.py
+  bup_ollivier_ricci_local_response_scan_v1_4.py
+  bup_ollivier_ricci_local_response_scan_radius_fit_v1_5.py
 
 code/
-
 data/
-
-
----
-
-# Perspectives
-
-- finite-size scaling N → 25+
-- états critiques / topologiques
-- connexion avec SYK
-- dimension spectrale multi-échelle
-- implémentation sur simulateurs quantiques
-
----
-
-# Citation
-
-@misc{hamdad2026bottomup,
-author = {Hamdad, Farid},
-title = {Bottom-Up Quantum Gravity: Emergence of Space, Time and Gravity from Quantum Entanglement},
-year = {2026},
-howpublished = {GitHub repository},
-url = {https://github.com/Farid-Hamdad/Bottom-Up-Quantum-Gravity}
-}
-
----
-
-contact  
-hamdadfarid54@gmail.com
