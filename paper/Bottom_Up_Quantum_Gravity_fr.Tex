@@ -1,5 +1,4 @@
 \documentclass[11pt]{article}
-
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -35,7 +34,8 @@ Plusieurs signatures opérationnelles sont démontrées numériquement sur des s
 \item géométrie intrinsèque via dimension spectrale,
 \item signatures ER=EPR de type trou de ver,
 \item dynamique modulaire chaotique caractérisée par la théorie des matrices aléatoires,
-\item goulots d'étranglement informationnels de type horizon dans les graphes d'intrication.
+\item goulots d'étranglement informationnels de type horizon dans les graphes d'intrication,
+\item réponse locale de la courbure discrète d'Ollivier--Ricci à une perturbation informationnelle.
 \end{itemize}
 
 Nous identifions également une constante modulaire dépendante de la topologie
@@ -43,6 +43,14 @@ Nous identifions également une constante modulaire dépendante de la topologie
 C = d_A g_2^{\mathrm{plateau}}
 \]
 révélant que le spectre du Hamiltonien modulaire retient l'information géométrique sur la structure d'intrication sous-jacente.
+
+Enfin, l'analyse par courbure d'Ollivier--Ricci fournit le signal le plus net obtenu jusqu'ici d'un couplage de type
+\[
+\text{défaut informationnel local}
+\;\Longrightarrow\;
+\text{courbure géométrique émergente},
+\]
+avec une réponse croissante à l'intensité de la perturbation et plus localisée pour les défauts compacts.
 
 \end{abstract}
 
@@ -130,7 +138,7 @@ qui génère l'évolution modulaire
 O(\tau)=e^{iK_A\tau}Oe^{-iK_A\tau}.
 \]
 
-Ceci définit un temps relationnel analogue au mécanisme de Page–Wootters \cite{pagewootters}.
+Ceci définit un temps relationnel analogue au mécanisme de Page--Wootters \cite{pagewootters}.
 
 \section{Chaos Modulaire}
 
@@ -288,21 +296,13 @@ Nous testons une relation de type Jacobson \cite{jacobson}
 
 Les expériences numériques confirment une validité approximative à travers les variations de $\lambda$.
 
-\section{Courbure Discrète et Réponse Einstein-like}
+\section{Courbure Discrète : stratégie de test}
 
-L'entropie de coupure
+Nous cherchons à déterminer si une perturbation informationnelle locale peut agir comme une source de courbure émergente.
 
-\[
-S_{cut}(A)=\sum_{i\in A}\sum_{j\notin A}w_{ij}
-\]
+Une première famille de tests basée sur des holonomies triangulaires discrètes et des observables locales de type boucle n'a pas fourni de signal robuste de courbure. Cette voie reste conceptuellement utile pour sonder la structure locale du graphe, mais elle n'a pas permis d'établir un couplage matière--courbure reproductible.
 
-est reliée à la courbure d'Ollivier–Ricci mesurée sur le graphe d'intrication.
-
-Les perturbations satisfont une relation opérationnelle
-
-\[
-\Delta S_{cut}\approx a\Delta R+b\Delta M.
-\]
+Nous avons donc introduit une mesure de courbure discrète plus stable : la courbure d'Ollivier--Ricci calculée sur le graphe d'intrication \cite{ollivier}.
 
 % =====================================================================
 % PARTIE IV : RÉSULTATS NUMÉRIQUES
@@ -517,7 +517,7 @@ L'information mutuelle conditionnelle
 \mathrm{CMI}(i:j|k)
 \]
 
-est prédite par le score triangulaire
+est comparée à un score triangulaire local
 
 \[
 T(i,j|k)=I(i:j)-I(i:k)-I(j:k).
@@ -545,10 +545,145 @@ avec une significativité
 p < 5\times10^{-3}.
 \]
 
-Ceci démontre que les corrélations multipartites suivent une géométrie triangulaire encodée par les informations mutuelles par paires.
+Ces résultats indiquent qu'une partie de la structure multipartite est bien encodée dans la géométrie relationnelle dérivée des corrélations par paires.
+
+Cependant, les tentatives ultérieures d'interpréter directement cette structure triangulaire comme une courbure locale robuste via des tests d'holonomie discrète n'ont pas donné de signal stable. Nous interprétons donc cette partie comme un succès de reconstruction géométrique locale de la CMI, mais non encore comme une preuve de courbure gravitationnelle émergente.
 
 % =====================================================================
-% PARTIE VII : SYNTHÈSE ET PERSPECTIVES
+% PARTIE VII : COURBURE D'OLLIVIER--RICCI
+% =====================================================================
+
+\section{Courbure Discrète d'Ollivier--Ricci}
+
+Afin de tester plus directement l'hypothèse ``matière informationnelle $\rightarrow$ courbure'', nous avons remplacé le diagnostic triangulaire de courbure par une mesure de transport sur le graphe d'intrication : la courbure d'Ollivier--Ricci.
+
+\subsection{Principe du test}
+
+À partir de la matrice d'information mutuelle, nous reconstruisons un graphe d'intrication à densité fixée. Une perturbation informationnelle locale est ensuite introduite dans une région source, ici $[5,6]$, avec un rayon $r$ et une intensité $s$ contrôlés.
+
+Nous définissons la variation de courbure moyenne
+
+\[
+\Delta \kappa = \kappa_{\mathrm{pert}}-\kappa_{\mathrm{base}},
+\]
+
+ainsi que l'observable de localité
+
+\[
+\Delta \kappa_{\mathrm{near-far}}
+=
+\Delta \kappa_{\mathrm{near}}
+-
+\Delta \kappa_{\mathrm{far}}.
+\]
+
+Une valeur positive de $\Delta \kappa_{\mathrm{near-far}}$ signifie que la réponse géométrique est plus forte près de la région perturbée qu'à distance.
+
+\subsection{Contrôle de la connectivité}
+
+La perturbation locale peut modifier non seulement la courbure, mais aussi la structure même du graphe reconstruit. Pour séparer ces deux effets, plusieurs modes de comparaison ont été testés. Le plus robuste est le mode \texttt{frozen\_baseline}, dans lequel la connectivité du graphe de référence est maintenue fixe tandis que la courbure est réévaluée après perturbation.
+
+Ce choix permet d'interpréter le signal observé comme une réponse intrinsèque de courbure, plutôt que comme un simple effet de réarrangement topologique.
+
+\subsection{Résultat multi-seeds à $r=1$, $s=0.6$}
+
+Sur un batch de 20 seeds pour $N=16$, le mode \texttt{frozen\_baseline} donne
+
+\[
+\Delta \kappa_{\mathrm{edge}} = 0.0758 \pm 0.0296,
+\]
+
+avec fraction positive $=1.00$, et
+
+\[
+\Delta \kappa_{\mathrm{near-far}} = 0.0927 \pm 0.0799,
+\]
+
+positif dans $95\%$ des seeds.
+
+Cela signifie qu'une perturbation informationnelle locale augmente la courbure moyenne du graphe, et que cette augmentation est en moyenne plus forte au voisinage de la source qu'à distance.
+
+\subsection{Loi de réponse en intensité}
+
+Nous avons ensuite effectué un scan en intensité
+\[
+s \in \{0.0,0.2,0.4,0.6,0.8,1.0\}
+\]
+pour un défaut compact ($r=1$), toujours dans le mode \texttt{frozen\_baseline}.
+
+La courbure moyenne suit la progression :
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+$s$ & $\Delta \kappa_{\mathrm{edge}}$ \\
+\midrule
+0.0 & 0.000 \\
+0.2 & 0.010 \\
+0.4 & 0.040 \\
+0.6 & 0.076 \\
+0.8 & 0.096 \\
+1.0 & 0.109 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+L'excès local suit également une croissance puis une saturation :
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+$s$ & $\Delta \kappa_{\mathrm{near-far}}$ \\
+\midrule
+0.0 & 0.000 \\
+0.2 & 0.031 \\
+0.4 & 0.071 \\
+0.6 & 0.093 \\
+0.8 & 0.099 \\
+1.0 & 0.095 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Le contrôle nul à $s=0$ est exactement vérifié, puis le signal croît régulièrement avec l'intensité de la perturbation.
+
+\subsection{Effet du rayon}
+
+Un scan conjoint en intensité et rayon montre que :
+
+\begin{itemize}
+\item pour un rayon petit, la réponse est plus localisée ;
+\item pour un rayon plus grand, la réponse globale reste positive mais devient plus diffuse ;
+\item l'observable $\Delta \kappa_{\mathrm{near-far}}$ est maximale pour les défauts compacts.
+\end{itemize}
+
+Autrement dit, une source compacte courbe plus localement, tandis qu'une source étendue répartit la déformation géométrique sur une région plus large du graphe.
+
+\subsection{Forme effective}
+
+Les ajustements effectués sur les scans en intensité montrent que le meilleur modèle effectif est quadratique concave :
+
+\[
+\Delta \kappa(s)\approx as^2+bs+c,
+\qquad a<0.
+\]
+
+La réponse n'est donc pas strictement linéaire : elle croît d'abord avec l'intensité de la perturbation, puis tend vers un tassement ou une saturation.
+
+\subsection{Interprétation}
+
+Ce résultat constitue le signal le plus net obtenu jusqu'ici dans le projet en faveur d'un couplage effectif
+
+\[
+\text{défaut informationnel local}
+\;\Longrightarrow\;
+\text{courbure géométrique émergente}.
+\]
+
+Il ne s'agit pas encore d'une équation d'Einstein discrète dérivée des premiers principes, mais d'une preuve de concept numérique claire montrant qu'une ``matière'' définie informationnellement peut agir comme source de courbure sur le graphe d'intrication.
+
+% =====================================================================
+% PARTIE VIII : SYNTHÈSE ET PERSPECTIVES
 % =====================================================================
 
 \section{Ce que le Cadre Établit}
@@ -561,8 +696,10 @@ Ceci démontre que les corrélations multipartites suivent une géométrie trian
 \item les signatures ER=EPR deviennent mesurables opérationnellement
 \item des régions de type horizon émergent via des goulots d'étranglement informationnels
 \item un algorithme de détection bottom-up identifie ces régions (rang 2/55 en mode horizon-aware)
-\item les corrélations multipartites obéissent à une géométrie triangulaire
-\item une relation de réponse discrète de type Einstein est vérifiée sous perturbations
+\item les corrélations multipartites présentent une structure géométrique triangulaire locale
+\item la courbure triangulaire / holonomie discrète n'a pas fourni de signal robuste
+\item une perturbation informationnelle locale induit une réponse positive de courbure d'Ollivier--Ricci
+\item cette réponse croît avec l'intensité de la perturbation et se localise davantage pour les défauts compacts
 \end{itemize}
 
 \section{Limites}
@@ -573,6 +710,7 @@ Ceci démontre que les corrélations multipartites suivent une géométrie trian
 \item équations d'Einstein non dérivées des premiers principes
 \item tailles de système finies limitent les claims d'universalité
 \item étude modulaire limitée à $|A|=8$ (autres tailles à explorer)
+\item le couplage matière--courbure est établi ici comme preuve de concept numérique, pas encore comme loi fondamentale dérivée
 \end{itemize}
 
 \section{Perspectives}
@@ -584,6 +722,8 @@ Les directions futures incluent
 \item connexions avec les modèles chaotiques de type SYK
 \item analyse de dimension spectrale multi-échelle
 \item états aléatoires vs critiques vs topologiques
+\item comparaison avec d'autres notions de courbure discrète
+\item dérivation d'une loi effective matière--courbure sur graphe
 \item implémentations sur simulateur quantique
 \item prédictions expérimentales pour dispositifs quantiques de proximité
 \end{itemize}
@@ -603,14 +743,17 @@ Même de petits systèmes quantiques ($N=9,16$) présentent de multiples signatu
 \item dynamique modulaire chaotique avec constante $C$ dépendante de la topologie, révélant que le spectre du Hamiltonien modulaire retient l'information géométrique
 \item raccourcis opérationnels ER=EPR où des qubits topologiquement distants deviennent géométriquement proches dans la métrique émergente
 \item goulots d'étranglement informationnels de type horizon détectables algorithmiquement, avec la région $\{0,2,3,5,6,10,11,15\}$ présentant une conductance extrêmement faible (2.7e percentile) et une intrication interne exceptionnellement élevée (98.8e percentile)
-\item structure triangulaire des corrélations multipartites encodée par les informations mutuelles par paires (AUC $\approx 0.73$, $p<5\times10^{-3}$)
+\item structure géométrique locale des corrélations multipartites encodée par les informations mutuelles par paires (AUC $\approx 0.73$, $p<5\times10^{-3}$)
+\item la courbure triangulaire discrète n'a pas donné de signal robuste
 \item gravité thermodynamique approximative via une relation entropie-énergie de type Jacobson
-\item relation de réponse discrète de type Einstein sous perturbations
+\item réponse locale de la courbure d'Ollivier--Ricci à une perturbation informationnelle, croissante avec l'intensité et plus localisée pour les défauts compacts
 \end{itemize}
 
-Ces résultats suggèrent que l'espace-temps pourrait être une description effective de la structure informationnelle des états quantiques, et que les phénomènes gravitationnels clés — y compris les horizons — admettent une origine purement informationnelle accessible à $N$ fini. L'identification d'une constante modulaire $C$ dépendante de la topologie fournit un pont concret entre structure d'intrication et géométrie émergente, tandis que l'algorithme de détection d'horizon bottom-up offre un outil opérationnel pour identifier des régions de type trou noir sans aucun input géométrique préalable.
+Ces résultats suggèrent que l'espace-temps pourrait être une description effective de la structure informationnelle des états quantiques, et que plusieurs phénomènes gravitationnels clés --- y compris les horizons et une réponse locale de courbure --- admettent une origine purement informationnelle accessible à $N$ fini. L'identification d'une constante modulaire $C$ dépendante de la topologie fournit un pont concret entre structure d'intrication et géométrie émergente, tandis que l'algorithme de détection d'horizon bottom-up offre un outil opérationnel pour identifier des régions de type trou noir sans aucun input géométrique préalable.
 
-\begin{thebibliography}{9}
+La courbure d'Ollivier--Ricci apparaît à ce stade comme le meilleur candidat discret pour quantifier le couplage matière--géométrie dans le cadre Bottom-Up. Elle remplace avantageusement les premiers diagnostics triangulaires de courbure, qui n'avaient pas fourni de signal suffisamment robuste.
+
+\begin{thebibliography}{99}
 
 \bibitem{jacobson}
 T. Jacobson,
@@ -631,6 +774,11 @@ Fortschritte der Physik 61, 781 (2013).
 D. Page, W. Wootters,
 Evolution without evolution,
 Phys. Rev. D 27, 2885 (1983).
+
+\bibitem{ollivier}
+Y. Ollivier,
+Ricci curvature of Markov chains on metric spaces,
+J. Funct. Anal. 256, 810--864 (2009).
 
 \end{thebibliography}
 
