@@ -1,5 +1,4 @@
 \documentclass[11pt]{article}
-
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -10,7 +9,7 @@
 \geometry{margin=2.5cm}
 
 \title{Bottom-Up Quantum Gravity\\
-Emergence of Space, Time and Gravity from Quantum Entanglement}
+Emergence of Space, Time, and Gravity from Quantum Entanglement}
 
 \author{Farid Hamdad}
 
@@ -22,32 +21,41 @@ Emergence of Space, Time and Gravity from Quantum Entanglement}
 
 \begin{abstract}
 
-We propose a minimal framework in which space, time and gravity emerge from the entanglement structure of a finite global quantum state without any prior spacetime background.
+We propose a minimal framework in which space, time, and gravity emerge from the entanglement structure of a finite global quantum state, without any prior spacetime background.
 
-Geometry is reconstructed from mutual information between subsystems and embedded using multidimensional scaling. The effective spatial dimension depends on the entanglement structure and transitions between different regimes depending on the locality of correlations.
+Geometry is reconstructed from the mutual information between subsystems and projected by multidimensional scaling. The effective spatial dimension depends on the entanglement structure and transitions between different regimes according to the locality of correlations.
 
 Several operational signatures are demonstrated numerically on systems of $N=9$ and $N=16$ qubits:
 
 \begin{itemize}
 \item relational time via modular flow,
-\item emergent geometry via information distance reconstruction,
-\item thermodynamic gravity via a Jacobson-like entropy-energy relation,
-\item intrinsic geometry via spectral dimension,
-\item wormhole-like ER=EPR signatures,
-\item chaotic modular dynamics characterized by Random Matrix Theory,
-\item horizon-like information bottlenecks in entanglement graphs.
+\item emergent geometry via reconstruction from informational distance,
+\item thermodynamic gravity through a Jacobson-like entropy--energy relation,
+\item intrinsic geometry through spectral dimension,
+\item ER=EPR wormhole-like signatures,
+\item chaotic modular dynamics characterized by random matrix theory,
+\item horizon-like informational bottlenecks in entanglement graphs,
+\item a local Ollivier--Ricci curvature response to an informational perturbation.
 \end{itemize}
 
-We further identify a topology-dependent modular constant
+We also identify a topology-dependent modular constant
 \[
 C = d_A g_2^{\mathrm{plateau}}
 \]
-revealing that the modular Hamiltonian spectrum retains geometric information about the underlying entanglement structure.
+revealing that the spectrum of the modular Hamiltonian retains geometric information about the underlying entanglement structure.
+
+Finally, the Ollivier--Ricci curvature analysis provides the clearest signal obtained so far of a coupling of the form
+\[
+\text{local informational defect}
+\;\Longrightarrow\;
+\text{emergent geometric curvature},
+\]
+with a response that grows with the perturbation strength and remains more localized for compact defects.
 
 \end{abstract}
 
 % =====================================================================
-% PART I: CENTRAL IDEA AND POSTULATE
+% PART I : CENTRAL IDEA AND MINIMAL POSTULATE
 % =====================================================================
 
 \section{Central Idea}
@@ -60,7 +68,7 @@ What we call space is the collective pattern of these correlations.
 What we call gravity is the thermodynamics of their reorganization.
 \end{quote}
 
-The Bottom-Up approach assumes that spacetime is not fundamental but emerges from the internal correlation structure of quantum states.
+The Bottom-Up approach posits that spacetime is not fundamental but emerges from the internal correlation structure of quantum states.
 
 \section{Minimal Postulate}
 
@@ -77,13 +85,13 @@ No spacetime structure is assumed.
 There is
 
 \begin{itemize}
-\item no metric
-\item no spatial manifold
-\item no background time
-\item no classical gravitational field
+\item no metric,
+\item no spatial manifold,
+\item no external time,
+\item no classical gravitational field.
 \end{itemize}
 
-All geometric and dynamical notions must emerge from correlations within $\ket{\Psi}$.
+All geometric and dynamical notions must emerge from the correlations inside $\ket{\Psi}$.
 
 \section{Model Systems}
 
@@ -93,26 +101,26 @@ We generate families of states
 |\Psi(\lambda)\rangle
 \]
 
-controlled by a non-locality parameter $\lambda$.
+controlled by a nonlocality parameter $\lambda$.
 
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
-System & Structure & Hilbert dimension \\
+System & Structure & Hilbert space dimension \\
 \midrule
-N=9 & $3\times3$ grid & $2^9=512$ \\
-N=16 & $4\times4$ grid & $2^{16}=65536$ \\
+$N=9$ & $3\times3$ grid & $2^9=512$ \\
+$N=16$ & $4\times4$ grid & $2^{16}=65536$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 % =====================================================================
-% PART II: EMERGENT TIME AND MODULAR CHAOS
+% PART II : EMERGENT TIME AND MODULAR CHAOS
 % =====================================================================
 
 \section{Emergent Time via Modular Flow}
 
-For a subsystem $A$
+For a subsystem $A$,
 
 \[
 \rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|
@@ -124,25 +132,25 @@ the modular Hamiltonian is
 K_A = -\log\rho_A
 \]
 
-which generates modular evolution
+which generates the modular evolution
 
 \[
 O(\tau)=e^{iK_A\tau}Oe^{-iK_A\tau}.
 \]
 
-This defines relational time analogous to the Page–Wootters mechanism \cite{pagewootters}.
+This defines a relational time analogous to the Page--Wootters mechanism \cite{pagewootters}.
 
 \section{Modular Chaos}
 
 \subsection{Gap statistics}
 
-Eigenvalues of $K_A$ are analyzed through the gap ratio
+The eigenvalues of $K_A$ are analyzed through the gap ratio
 
 \[
 r_n=\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}.
 \]
 
-Typical values:
+Typical values are:
 
 \begin{center}
 \begin{tabular}{cc}
@@ -164,7 +172,7 @@ We obtain
 
 indicating chaotic modular dynamics.
 
-\subsection{Spectral Form Factor}
+\subsection{Spectral Form Factor (SFF)}
 
 The spectral form factor
 
@@ -187,7 +195,7 @@ g_2^{\mathrm{plateau}}\sim\frac{1}{d_A}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/topology_SFF.png}
-\caption{Spectral Form Factor showing dip-ramp-plateau structure.}
+\caption{Spectral form factor showing the dip--ramp--plateau structure.}
 \end{figure}
 
 \subsection{Topological Modular Constant}
@@ -198,7 +206,7 @@ We define
 C=d_A g_2^{\mathrm{plateau}}.
 \]
 
-Results for $d_A=256$:
+Results for $d_A=256$ are:
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -221,34 +229,34 @@ ER graph & 0.528 & 1.63 \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/topology_r.png}
-\caption{Gap ratio statistics confirming RMT universality.}
+\caption{Gap-ratio statistics confirming RMT universality.}
 \end{figure}
 
-The scaling remains universal but the prefactor depends on topology, indicating that modular dynamics encodes geometric information.
+The scaling remains universal, but the prefactor depends on topology, indicating that modular dynamics encodes geometric information.
 
 % =====================================================================
-% PART III: EMERGENT GEOMETRY
+% PART III : EMERGENT GEOMETRY
 % =====================================================================
 
 \section{Emergent Geometry}
 
-Mutual information
+The mutual information
 
 \[
 I(i:j)=S(\rho_i)+S(\rho_j)-S(\rho_{ij})
 \]
 
-defines the information distance
+defines the informational distance
 
 \[
 d_{ij}=-\log\frac{I(i:j)}{I_{\max}+\epsilon}.
 \]
 
-Points are embedded using multidimensional scaling to reconstruct geometry \cite{vanraamsdonk}.
+The points are projected through multidimensional scaling to reconstruct the geometry \cite{vanraamsdonk}.
 
 \section{Spectral Geometry}
 
-We construct a weighted graph with
+We build a weighted graph with
 
 \[
 w_{ij}=I(i:j).
@@ -263,7 +271,7 @@ L=D-W
 defines the heat trace
 
 \[
-Z(\tau)=Tr(e^{-\tau L}).
+Z(\tau)=\mathrm{Tr}(e^{-\tau L}).
 \]
 
 The spectral dimension
@@ -275,7 +283,7 @@ d_s(\tau)=-2\frac{d\log Z}{d\log\tau}
 yields
 
 \[
-d_{IR}\approx2.5-2.7.
+d_{IR}\approx 2.5-2.7.
 \]
 
 \section{Thermodynamic Gravity}
@@ -283,36 +291,28 @@ d_{IR}\approx2.5-2.7.
 We test a Jacobson-like relation \cite{jacobson}
 
 \[
-\delta S\approx \beta_{eff}\delta E.
+\delta S\approx \beta_{\mathrm{eff}}\delta E.
 \]
 
-Numerical experiments confirm approximate validity across $\lambda$ variations.
+The numerical experiments support an approximate validity across variations in $\lambda$.
 
-\section{Discrete Curvature and Einstein-like Response}
+\section{Discrete Curvature: Test Strategy}
 
-Cut entropy
+We seek to determine whether a local informational perturbation can act as a source of emergent curvature.
 
-\[
-S_{cut}(A)=\sum_{i\in A}\sum_{j\notin A}w_{ij}
-\]
+A first family of tests based on discrete triangular holonomies and local loop-like observables did not yield a robust curvature signal. This direction remains conceptually useful for probing the local structure of the graph, but it did not establish a reproducible matter--curvature coupling.
 
-is related to Ollivier–Ricci curvature measured on the entanglement graph.
-
-Perturbations satisfy an operational relation
-
-\[
-\Delta S_{cut}\approx a\Delta R+b\Delta M.
-\]
+We therefore introduced a more stable notion of discrete curvature: Ollivier--Ricci curvature computed on the entanglement graph \cite{ollivier}.
 
 % =====================================================================
-% PART IV: NUMERICAL RESULTS
+% PART IV : NUMERICAL RESULTS
 % =====================================================================
 
-\section{Results for N=9: Proof of Concept}
+\section{Results for $N=9$: Proof of Concept}
 
 \subsection{Dimensional transition}
 
-We reconstruct geometry using information distance and multidimensional scaling.
+We reconstruct the geometry using informational distance and multidimensional scaling.
 
 \begin{center}
 \begin{tabular}{ccccc}
@@ -332,12 +332,12 @@ $\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio 2D/3D \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/fig1_dimension_emergente_N9.png}
-\caption{Emergent spatial dimension reconstruction for N=9.}
+\caption{Reconstruction of the emergent spatial dimension for $N=9$.}
 \end{figure}
 
 \subsection{ER=EPR signature}
 
-Following the ER=EPR conjecture \cite{maldacena}, we test whether non-local entanglement creates geometric shortcuts.
+Following the ER=EPR conjecture \cite{maldacena}, we test whether nonlocal entanglement creates geometric shortcuts.
 
 \begin{center}
 \begin{tabular}{ccccc}
@@ -354,7 +354,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/fig2_er_epr_N9.png}
-\caption{ER=EPR compression effect in emergent geometry.}
+\caption{ER=EPR compression effect in the emergent geometry.}
 \end{figure}
 
 \subsection{Thermodynamic gravity test}
@@ -362,15 +362,15 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/fig3_jacobson_N9.png}
-\caption{Jacobson-like entropy-energy relation for N=9.}
+\caption{Jacobson-like entropy--energy relation for $N=9$.}
 \end{figure}
 
-\section{Results for N=16: Intermediate Validation}
+\section{Results for $N=16$: Intermediate Validation}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/fig4_grid_N16.png}
-\caption{Underlying $4\times4$ lattice used in the simulations.}
+\caption{Underlying $4\times4$ grid used in the simulations.}
 \end{figure}
 
 \subsection{Dimensional reconstruction}
@@ -378,7 +378,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/fig5_mds_N16.png}
-\caption{Geometry reconstruction via multidimensional scaling for N=16.}
+\caption{Geometric reconstruction by multidimensional scaling for $N=16$.}
 \end{figure}
 
 \subsection{ER=EPR signature}
@@ -386,7 +386,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/fig6_erepr_N16.png}
-\caption{ER=EPR shortcut formation in emergent geometry.}
+\caption{Formation of ER=EPR shortcuts in the emergent geometry.}
 \end{figure}
 
 \subsection{Thermodynamic gravity test}
@@ -394,16 +394,16 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/fig7_jacobson_N16.png}
-\caption{Jacobson-like entropy-energy relation for N=16.}
+\caption{Jacobson-like entropy--energy relation for $N=16$.}
 \end{figure}
 
 % =====================================================================
-% PART V: HORIZON DETECTION
+% PART V : HORIZON DETECTION
 % =====================================================================
 
 \section{Bottom-Up Horizon Detection}
 
-We construct an entanglement graph with fixed density
+We construct an entanglement graph at fixed density
 
 \[
 \rho = 1/3.
@@ -419,12 +419,12 @@ Regions of size $|A|=N/2=8$ are evaluated using the score
 where
 
 \begin{itemize}
-\item $S(A)$ is the region entropy
-\item $\phi(A)$ is the conductance
-\item $\mathrm{internal}(A)$ is internal entanglement
+\item $S(A)$ is the region entropy,
+\item $\phi(A)$ is the conductance,
+\item $\mathrm{internal}(A)$ is the internal entanglement.
 \end{itemize}
 
-\subsection{Detected BH-like region}
+\subsection{Detected horizon-like region}
 
 The detected region is
 
@@ -448,7 +448,7 @@ Gap ratio $\langle r\rangle(K_A)$ & 0.6041 \\
 
 \subsection{Percentile comparison}
 
-Comparison against 3000 random regions of same size:
+Comparison with 3000 random regions of the same size:
 
 \begin{center}
 \begin{tabular}{cc}
@@ -464,7 +464,7 @@ Gap ratio $\langle r\rangle$ & 62.0\% \\
 \end{tabular}
 \end{center}
 
-This confirms the presence of a strong information bottleneck: extremely low conductance and exceptionally high internal entanglement.
+This confirms the presence of a strong informational bottleneck: extremely low conductance and exceptionally high internal entanglement.
 
 \begin{figure}[h]
 \centering
@@ -472,14 +472,14 @@ This confirms the presence of a strong information bottleneck: extremely low con
 \caption{Percentile comparison between the detected region and random regions.}
 \end{figure}
 
-\subsection{HIE fixed-size benchmark with Louvain seeding}
+\subsection{Fixed-size HIE benchmark with Louvain initialization}
 
 Candidate regions of size $|A|=8$ are generated via:
 
 \begin{itemize}
-\item Louvain community detection on the entanglement graph
-\item unions of communities
-\item local Metropolis swaps for refinement
+\item Louvain community detection on the entanglement graph,
+\item community unions,
+\item local Metropolis swaps for refinement.
 \end{itemize}
 
 A total of 55 candidate regions are generated and ranked.
@@ -487,7 +487,7 @@ A total of 55 candidate regions are generated and ranked.
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
-Mode & Weighting & Rank of BH region \\
+Mode & Weighting & Rank of the BH region \\
 \midrule
 CLASSIC & balanced weights & 12 / 55 \\
 HORIZON-AWARE & strong conductance penalty & 2 / 55 \\
@@ -498,32 +498,32 @@ HORIZON-AWARE & strong conductance penalty & 2 / 55 \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figures/comparison_bh_hie8.png}
-\caption{Comparison between BH region and HIE candidate regions.}
+\caption{Comparison between the BH region and HIE candidate regions.}
 \end{figure}
 
 \subsection{Interpretation}
 
-This test provides an operational signature consistent with holographic intuition at finite size: a highly entangled region can be separated from the rest of the graph by a narrow informational boundary (low cut / low conductance). In Bottom-Up Quantum Gravity, this identifies entanglement islands that can act as effective thermodynamic subsystems.
+This test provides an operational signature consistent with the holographic intuition at finite size: a strongly entangled region can be separated from the rest of the graph by a narrow informational boundary (low cut / low conductance). In Bottom-Up Quantum Gravity, this identifies entanglement islands that may act as effective thermodynamic subsystems.
 
 % =====================================================================
-% PART VI: MULTIPARTITE STRUCTURE
+% PART VI : MULTIPARTITE STRUCTURE
 % =====================================================================
 
 \section{Multipartite Entanglement Geometry}
 
-Conditional mutual information
+The conditional mutual information
 
 \[
 \mathrm{CMI}(i:j|k)
 \]
 
-is predicted from the triangular score
+is compared with a local triangular score
 
 \[
 T(i,j|k)=I(i:j)-I(i:k)-I(j:k).
 \]
 
-Experiments yield
+The experiments give
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -545,34 +545,172 @@ with significance
 p < 5\times10^{-3}.
 \]
 
-This demonstrates that multipartite correlations follow a triangular geometry encoded by pairwise mutual informations.
+These results indicate that part of the multipartite structure is indeed encoded in the relational geometry derived from pairwise correlations.
+
+However, later attempts to interpret this triangular structure directly as a robust local curvature through discrete holonomy tests did not yield a stable signal. We therefore interpret this part as a success of local geometric reconstruction of the CMI, but not yet as evidence of emergent gravitational curvature.
 
 % =====================================================================
-% PART VII: SYNTHESIS AND OUTLOOK
+% PART VII : OLLIVIER--RICCI CURVATURE
+% =====================================================================
+
+\section{Discrete Ollivier--Ricci Curvature}
+
+To test more directly the hypothesis ``informational matter $\rightarrow$ curvature,'' we replaced the triangular curvature diagnostic by a transport-based quantity on the entanglement graph: Ollivier--Ricci curvature.
+
+\subsection{Principle of the test}
+
+Starting from the mutual-information matrix, we reconstruct an entanglement graph at fixed density. A local informational perturbation is then introduced in a source region, here $[5,6]$, with controlled radius $r$ and intensity $s$.
+
+We define the variation of the mean curvature as
+
+\[
+\Delta \kappa = \kappa_{\mathrm{pert}}-\kappa_{\mathrm{base}},
+\]
+
+as well as the locality observable
+
+\[
+\Delta \kappa_{\mathrm{near-far}}
+=
+\Delta \kappa_{\mathrm{near}}
+-
+\Delta \kappa_{\mathrm{far}}.
+\]
+
+A positive value of $\Delta \kappa_{\mathrm{near-far}}$ means that the geometric response is stronger near the perturbed region than far away.
+
+\subsection{Connectivity control}
+
+A local perturbation may modify not only the curvature but also the very structure of the reconstructed graph. To separate these two effects, several comparison modes were tested. The most robust is the \texttt{frozen\_baseline} mode, in which the connectivity of the reference graph is kept fixed while the curvature is reevaluated after perturbation.
+
+This choice makes it possible to interpret the observed signal as an intrinsic curvature response, rather than as a mere topological rewiring effect.
+
+\subsection{Multi-seed result at $r=1$, $s=0.6$}
+
+On a batch of 20 seeds for $N=16$, the \texttt{frozen\_baseline} mode gives
+
+\[
+\Delta \kappa_{\mathrm{edge}} = 0.0758 \pm 0.0296,
+\]
+
+with positive fraction $=1.00$, and
+
+\[
+\Delta \kappa_{\mathrm{near-far}} = 0.0927 \pm 0.0799,
+\]
+
+positive in $95\%$ of the seeds.
+
+This means that a local informational perturbation increases the mean curvature of the graph, and that this increase is on average stronger in the vicinity of the source than at distance.
+
+\subsection{Response law in intensity}
+
+We then performed an intensity scan
+\[
+s \in \{0.0,0.2,0.4,0.6,0.8,1.0\}
+\]
+for a compact defect ($r=1$), again in the \texttt{frozen\_baseline} mode.
+
+The mean curvature follows the progression:
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+$s$ & $\Delta \kappa_{\mathrm{edge}}$ \\
+\midrule
+0.0 & 0.000 \\
+0.2 & 0.010 \\
+0.4 & 0.040 \\
+0.6 & 0.076 \\
+0.8 & 0.096 \\
+1.0 & 0.109 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The local excess also shows a growth followed by saturation:
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+$s$ & $\Delta \kappa_{\mathrm{near-far}}$ \\
+\midrule
+0.0 & 0.000 \\
+0.2 & 0.031 \\
+0.4 & 0.071 \\
+0.6 & 0.093 \\
+0.8 & 0.099 \\
+1.0 & 0.095 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The null control at $s=0$ is exactly satisfied, and the signal then grows regularly with perturbation strength.
+
+\subsection{Radius effect}
+
+A joint scan in intensity and radius shows that:
+
+\begin{itemize}
+\item for small radius, the response is more localized;
+\item for larger radius, the global response remains positive but becomes more diffuse;
+\item the observable $\Delta \kappa_{\mathrm{near-far}}$ is maximal for compact defects.
+\end{itemize}
+
+In other words, a compact source curves the geometry more locally, whereas an extended source spreads the geometric deformation over a wider region of the graph.
+
+\subsection{Effective form}
+
+Fits performed on the intensity scans show that the best effective model is a concave quadratic law:
+
+\[
+\Delta \kappa(s)\approx as^2+bs+c,
+\qquad a<0.
+\]
+
+The response is therefore not strictly linear: it first grows with the perturbation intensity and then begins to level off.
+
+\subsection{Physical interpretation}
+
+At this stage, Ollivier--Ricci curvature provides the strongest numerical signal obtained in the project in favor of a coupling of the form
+
+\[
+\text{local informational matter}
+\;\Longrightarrow\;
+\text{emergent discrete curvature}.
+\]
+
+This is not yet a derived discrete Einstein equation, but it is a controlled numerical proof of concept showing that compact informational defects behave as sources of localized geometric curvature on the entanglement graph.
+
+% =====================================================================
+% PART VIII : SYNTHESIS AND PERSPECTIVES
 % =====================================================================
 
 \section{What the Framework Establishes}
 
 \begin{itemize}
-\item geometry can emerge from finite quantum states
-\item spatial dimension depends on entanglement structure
-\item modular dynamics is chaotic with universal RMT signatures
-\item the modular constant $C=d_A g_2^{\mathrm{plateau}}$ encodes topological information
-\item ER=EPR signatures become operationally measurable
-\item horizon-like regions emerge via information bottlenecks
-\item a bottom-up detection algorithm identifies such regions (rank 2/55 in horizon-aware mode)
-\item multipartite correlations obey triangular geometry
-\item a discrete Einstein-like response relation holds under perturbations
+\item geometry can emerge from finite quantum states,
+\item the spatial dimension depends on the entanglement structure,
+\item modular dynamics is chaotic with universal RMT signatures,
+\item the modular constant $C=d_A g_2^{\mathrm{plateau}}$ encodes topological information,
+\item ER=EPR signatures become operationally measurable,
+\item horizon-like regions emerge through informational bottlenecks,
+\item a bottom-up detection algorithm identifies these regions (rank 2/55 in horizon-aware mode),
+\item multipartite correlations display a local triangular geometric structure,
+\item triangular curvature / discrete holonomy did not provide a robust signal,
+\item a local informational perturbation induces a positive Ollivier--Ricci curvature response,
+\item this response grows with perturbation strength and is more localized for compact defects.
 \end{itemize}
 
 \section{Limitations}
 
 \begin{itemize}
-\item continuum limit $N\rightarrow\infty$ not yet established
-\item full relativistic dynamics absent
-\item Einstein equations not derived from first principles
-\item finite system sizes limit universality claims
-\item modular study limited to $|A|=8$ (other sizes to explore)
+\item the continuous limit $N\rightarrow\infty$ is not yet established,
+\item a full relativistic dynamics is absent,
+\item Einstein's equations are not derived from first principles,
+\item finite system sizes limit universality claims,
+\item the modular study is restricted to $|A|=8$ (other sizes remain to be explored),
+\item the matter--curvature coupling is established here as a numerical proof of concept, not yet as a derived fundamental law.
 \end{itemize}
 
 \section{Perspectives}
@@ -580,12 +718,14 @@ This demonstrates that multipartite correlations follow a triangular geometry en
 Future directions include
 
 \begin{itemize}
-\item finite-size scaling toward $N>25$ (32, 36 qubits)
-\item connections with SYK-like chaotic models
-\item multi-scale spectral dimension analysis
-\item random vs critical vs topological states
-\item quantum simulator implementations
-\item experimental predictions for near-term quantum devices
+\item finite-size scaling toward $N>25$ (32, 36 qubits),
+\item connections with chaotic SYK-like models,
+\item multi-scale spectral-dimension analysis,
+\item random vs critical vs topological states,
+\item comparison with other notions of discrete curvature,
+\item derivation of an effective matter--curvature law on graphs,
+\item implementations on quantum simulators,
+\item experimental predictions for near-term quantum devices.
 \end{itemize}
 
 % =====================================================================
@@ -596,21 +736,24 @@ Future directions include
 
 Bottom-Up Quantum Gravity proposes that spacetime geometry may emerge from the entanglement structure of quantum states without any prior geometric background.
 
-Even small quantum systems ($N=9,16$) display multiple consistent signatures:
+Even small quantum systems ($N=9,16$) display multiple coherent signatures:
 
 \begin{itemize}
-\item emergent dimension tunable by entanglement locality, transitioning from approximately 2D for local entanglement to higher-dimensional effective geometries when non-local correlations dominate
-\item chaotic modular dynamics with topology-dependent constant $C$, revealing that the modular Hamiltonian spectrum retains geometric information
-\item operational ER=EPR shortcuts where topologically distant qubits become geometrically close in the emergent metric
-\item horizon-like information bottlenecks detectable algorithmically, with the region $\{0,2,3,5,6,10,11,15\}$ exhibiting extremely low conductance (2.7th percentile) and exceptionally high internal entanglement (98.8th percentile)
-\item triangular structure of multipartite correlations encoded by pairwise mutual informations (AUC $\approx 0.73$, $p<5\times10^{-3}$)
-\item approximate thermodynamic gravity via a Jacobson-like entropy-energy relation
-\item discrete Einstein-like response relation under perturbations
+\item an emergent dimension tunable by the locality of entanglement, transitioning from roughly 2D for local entanglement to higher-dimensional effective geometries when nonlocal correlations dominate,
+\item chaotic modular dynamics with a topology-dependent constant $C$, revealing that the spectrum of the modular Hamiltonian retains geometric information,
+\item operational ER=EPR shortcuts in which topologically distant qubits become geometrically close in the emergent metric,
+\item algorithmically detectable horizon-like informational bottlenecks, with the region $\{0,2,3,5,6,10,11,15\}$ exhibiting extremely low conductance (2.7th percentile) and exceptionally high internal entanglement (98.8th percentile),
+\item a local geometric structure of multipartite correlations encoded by pairwise mutual informations (AUC $\approx 0.73$, $p<5\times10^{-3}$),
+\item discrete triangular curvature did not yield a robust signal,
+\item approximate thermodynamic gravity through a Jacobson-like entropy--energy relation,
+\item a local Ollivier--Ricci curvature response to an informational perturbation, increasing with strength and more localized for compact defects.
 \end{itemize}
 
-These results suggest that spacetime may be an effective description of the information structure of quantum states, and that key gravitational phenomena — including horizons — admit a purely information-theoretic origin accessible at finite $N$. The identification of a topology-dependent modular constant $C$ provides a concrete bridge between entanglement structure and emergent geometry, while the bottom-up horizon detection algorithm offers an operational tool for identifying black-hole-like regions without any prior geometric input.
+These results suggest that spacetime may be an effective description of the informational structure of quantum states, and that several key gravitational phenomena --- including horizons and a local curvature response --- may admit a purely informational origin accessible at finite $N$. The identification of a topology-dependent modular constant $C$ provides a concrete bridge between entanglement structure and emergent geometry, while the bottom-up horizon detection algorithm offers an operational tool for identifying black-hole-like regions without any prior geometric input.
 
-\begin{thebibliography}{9}
+At this stage, Ollivier--Ricci curvature appears to be the best discrete candidate for quantifying the matter--geometry coupling in the Bottom-Up framework. It clearly improves on the first triangular curvature diagnostics, which did not provide a sufficiently robust signal.
+
+\begin{thebibliography}{99}
 
 \bibitem{jacobson}
 T. Jacobson,
@@ -631,6 +774,11 @@ Fortschritte der Physik 61, 781 (2013).
 D. Page, W. Wootters,
 Evolution without evolution,
 Phys. Rev. D 27, 2885 (1983).
+
+\bibitem{ollivier}
+Y. Ollivier,
+Ricci curvature of Markov chains on metric spaces,
+J. Funct. Anal. 256, 810--864 (2009).
 
 \end{thebibliography}
 
