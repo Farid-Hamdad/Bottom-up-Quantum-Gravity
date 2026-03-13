@@ -1,50 +1,36 @@
 
 # Bottom-Up Quantum Gravity
 
-**Émergence de l'espace, du temps et de la gravité à partir de l'intrication quantique**  
+**Émergence de l’espace, du temps et de la gravité à partir de l’intrication quantique**  
 **Farid Hamdad — Février 2026**
+
+---
+
+## Vue d’ensemble
+
+**Bottom-Up Quantum Gravity** explore une hypothèse minimale :
+
+> l’espace, le temps et la gravité ne sont pas fondamentaux ;  
+> ils émergent collectivement de la structure d’intrication d’un état quantique global fini.
+
+Dans cette approche :
+
+- l’intrication définit la connectivité,
+- la géométrie émerge de la structure informationnelle,
+- le temps apparaît via le flot modulaire,
+- la gravité peut être approchée comme une thermodynamique — puis comme une courbure discrète — de l’intrication.
+
+Le projet combine ainsi trois niveaux :
+
+- une base conceptuelle issue de l’information quantique,
+- des tests numériques sur systèmes finis,
+- une première extension phénoménologique vers les courbes de rotation galactiques (**SPARC**).
 
 ---
 
 ## Idée centrale
 
-L'espace, le temps et la gravité ne sont pas fondamentaux.  
-Ils émergent collectivement de la structure d'intrication d'un état quantique global fini.
-
-Dans cette approche :
-
-- l'intrication définit la connectivité,
-- la géométrie émerge de la structure informationnelle,
-- la gravité apparaît comme une thermodynamique — puis une courbure discrète — de l'intrication.
-
----
-
-## Pourquoi ce projet ?
-
-La physique moderne décrit avec une précision remarquable :
-
-- la physique quantique,
-- la gravitation classique,
-
-mais laisse ouverte une question fondamentale :
-
-**Pourquoi l'espace-temps existe-t-il ?**
-
-et pourquoi la gravité possède-t-elle simultanément une structure :
-
-- géométrique,
-- thermodynamique ?
-
-Ce projet explore une hypothèse minimale :
-
-> **L'espace-temps n'est pas le théâtre de la physique.**  
-> **Il est reconstruit à partir de l'intrication quantique.**
-
----
-
-## 1. Postulat minimal
-
-Il existe un état quantique global pur
+On part d’un état quantique global pur
 
 \[
 \Psi \in \bigotimes_i \mathcal{H}_i
@@ -58,21 +44,40 @@ sans :
 - temps préalable,
 - métrique préalable.
 
-Tout le reste doit émerger :
+L’objectif est alors de reconstruire, à partir des seules corrélations internes de l’état :
 
-- espace,
-- temps,
-- dimension,
-- géométrie,
-- gravité effective.
+- une notion d’espace,
+- une dynamique relationnelle,
+- une dimension effective,
+- une géométrie émergente,
+- et une réponse gravitationnelle effective.
 
 ---
 
-## 2. Méthodologie d'émergence
+## Pourquoi ce projet ?
 
-### 2.1 Émergence du temps — flot modulaire
+La physique moderne décrit avec succès :
 
-Pour un sous-système \(A\) :
+- la mécanique quantique,
+- la gravitation classique,
+
+mais laisse ouverte une question plus profonde :
+
+> **Pourquoi l’espace-temps existe-t-il ?**
+
+et pourquoi la gravité semble-t-elle posséder à la fois une nature :
+
+- géométrique,
+- thermodynamique,
+- informationnelle ?
+
+Le programme bottom-up testé ici consiste à ne pas postuler l’espace-temps, mais à chercher à le **reconstruire** à partir de l’intrication.
+
+---
+
+## 1. Temps émergent : flot modulaire
+
+Pour un sous-système \(A\),
 
 \[
 \rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|
@@ -85,22 +90,25 @@ K_A = -\log(\rho_A)
 Le flot modulaire
 
 \[
-O(\tau) = e^{iK_A\tau} O e^{-iK_A\tau}
+O(\tau)=e^{iK_A\tau} O e^{-iK_A\tau}
 \]
 
 définit une dynamique relationnelle intrinsèque.
 
-**Lien conceptuel :** mécanisme de Page–Wootters.
-
-> Le temps devient une propriété informationnelle interne.
+**Interprétation :**  
+le temps n’est plus un paramètre de fond, mais une propriété informationnelle interne du système.
 
 ---
 
-### 2.2 Chaos modulaire
+## 2. Diagnostics spectraux et chaos modulaire
 
-On analyse le spectre du Hamiltonien modulaire \(K_A\).
+Le spectre du Hamiltonien modulaire \(K_A\) est étudié à l’aide :
 
-Statistique des gaps :
+- des statistiques de gaps adjacents,
+- des diagnostics de type Random Matrix Theory,
+- du spectral form factor.
+
+La quantité
 
 \[
 \langle r \rangle
@@ -110,7 +118,9 @@ Statistique des gaps :
 \right\rangle
 \]
 
-Valeurs universelles :
+permet de comparer le spectre observé aux classes universelles connues.
+
+Valeurs de référence :
 
 | Régime | Valeur |
 |---|---:|
@@ -118,115 +128,98 @@ Valeurs universelles :
 | GOE | \(\approx 0.536\) |
 | GUE | \(\approx 0.603\) |
 
-**Résultat obtenu :**
+Résultats typiques obtenus dans le projet :
 
 \[
 \langle r \rangle \in [0.53,\,0.59]
 \]
 
-> Signature compatible avec un chaos quantique de type Random Matrix Theory.
+ce qui est compatible avec un régime de chaos modulaire non trivial.
 
----
-
-### 2.3 Spectral Form Factor
-
-\[
-g_2(t) = \frac{1}{d_A^2}\left|\sum_n e^{-it\tilde{\kappa}_n}\right|^2
-\]
-
-Structure observée :
+Le spectral form factor présente également la structure classique :
 
 - dip,
 - ramp,
-- plateau.
+- plateau,
 
-Scaling universel :
+avec un plateau suivant approximativement le scaling
 
 \[
-g_{2,\mathrm{plateau}} \sim \frac{1}{d_A}
+g_{2,\mathrm{plateau}} \sim \frac{1}{d_A}.
 \]
 
 ---
 
-### 2.4 Constante modulaire topologique
+## 3. Émergence de l’espace à partir de l’information mutuelle
 
-On définit :
-
-\[
-C = d_A \times g_{2,\mathrm{plateau}}
-\]
-
-Résultats typiques (\(d_A = 256\)) :
-
-| Topologie | \(\langle r \rangle\) | \(C\) |
-|---|---:|---:|
-| chaîne 1D | 0.594 | 1.21 |
-| grille 3×6 | 0.575 | 1.42 |
-| graphe ER | 0.528 | 1.63 |
-
-> La géométrie d'intrication influence la dynamique modulaire.
-
----
-
-## 3. Émergence de l'espace
-
-La géométrie est reconstruite à partir de l'information mutuelle :
+La géométrie est reconstruite à partir de l’information mutuelle
 
 \[
 I(i:j)=S(\rho_i)+S(\rho_j)-S(\rho_{ij})
 \]
 
-Distance informationnelle :
+et d’une distance informationnelle de type
 
 \[
-d_{ij}=-\log\left(\frac{I(i:j)}{I_{\max}}+\varepsilon\right)
+d_{ij}=-\log\left(\frac{I(i:j)}{I_{\max}}+\varepsilon\right).
 \]
 
-Puis :
+À partir de là, le projet construit :
 
-- construction d'une matrice de distance,
-- reconstruction par **MDS**,
-- estimation de la dimension émergente.
+- des matrices de distance,
+- des plongements géométriques par **MDS**,
+- des graphes d’intrication,
+- des estimations de dimension effective.
 
-La dimension effective est la plus petite dimension stabilisant l'erreur de reconstruction.
+L’idée centrale est la suivante :
+
+> la géométrie n’est pas imposée ;  
+> elle est reconstruite depuis la structure des corrélations.
 
 ---
 
-## 4. Résultats principaux
+## 4. Résultats internes principaux
 
 ### 4.1 Dimension émergente
 
-| Configuration | Intrication dominante | Dimension |
+Les expériences numériques montrent que la dimension effective dépend de la structure d’intrication.
+
+| Configuration | Intrication dominante | Dimension émergente |
 |---|---|---:|
 | \(N=9,\ \lambda \approx 0\) | locale | \(d \approx 2\) |
 | \(N=9,\ \lambda \to 1\) | non-locale | \(d \approx 3\) |
 | \(N=16,\ \lambda \approx 0\) | locale | \(d \approx 2\) |
 | \(N=16,\ \lambda \to 1\) | non-locale | \(d \approx 3\) |
 
-### 4.2 ER = EPR opérationnel
+Cela soutient l’idée que la dimension n’est pas un postulat, mais une grandeur émergente dépendant du motif d’intrication.
 
-Des qubits éloignés topologiquement deviennent proches géométriquement lorsque l'intrication non-locale augmente.
+---
 
-> Signature discrète de type wormhole-like.
+### 4.2 Signature opérationnelle ER = EPR
+
+Lorsque l’intrication non-locale augmente, des qubits éloignés topologiquement peuvent devenir proches dans la géométrie reconstruite.
+
+> C’est une signature discrète de type *wormhole-like*, compatible avec l’idée opérationnelle ER = EPR.
+
+---
 
 ### 4.3 Gravité thermodynamique
 
-Test analogue à Jacobson :
+Un test analogue à la relation de Jacobson
 
 \[
 \delta S \approx \beta_{\mathrm{eff}}\delta E
 \]
 
-Relation stable observée pour :
+présente une stabilité numérique sur des systèmes finis comme \(N=9\) et \(N=16\).
 
-- \(N=9\)
-- \(N=16\)
+L’interprétation actuelle est qu’une thermodynamique de l’intrication peut jouer le rôle de précurseur d’une dynamique gravitationnelle effective.
 
 ---
 
-## 5. Détection d'horizon bottom-up (\(N=16\))
+## 5. Horizon bottom-up (\(N=16\))
 
-On introduit un benchmark basé sur le graphe d'intrication.
+Un benchmark de détection de région de type horizon a été introduit sur le graphe d’intrication.
 
 Poids :
 
@@ -266,49 +259,47 @@ où :
 | cut | 3.2098 |
 | internal | 5.0348 |
 | conductance | 0.3951 |
-| RMT ratio | 0.6041 |
+| ratio RMT | 0.6041 |
 
-### Signature
+Cette région combine :
 
-- intrication interne très élevée,
-- couplage extérieur faible,
-- bottleneck informationnel.
+- une intrication interne élevée,
+- un couplage extérieur relativement faible,
+- un bottleneck informationnel.
 
-> Un horizon peut émerger sans géométrie préalable.
+> Une structure de type horizon peut donc émerger sans géométrie préalable.
 
 ---
 
-## 6. Géométrie multipartite et limite du diagnostic triangulaire
+## 6. Géométrie multipartite : résultat utile et limite actuelle
 
-Nous avons étudié la structure multipartite via l'information mutuelle conditionnelle :
+Le projet a étudié la structure multipartite via :
 
-\[
-\mathrm{CMI}(i:j|k)
-\]
-
-et des descripteurs triangulaires de l'intrication.
+- l’information mutuelle conditionnelle \(\mathrm{CMI}(i:j|k)\),
+- des descripteurs triangulaires locaux,
+- des tests de courbure triangulaire et d’holonomie discrète.
 
 ### Résultat intermédiaire
 
-Des corrélations significatives existent entre CMI et structures triangulaires locales de l'information mutuelle, ce qui indique qu'une part de la structure multipartite est bien encodée dans la géométrie relationnelle du graphe d'intrication.
+Une partie de la structure multipartite est bien corrélée à la géométrie relationnelle locale du graphe d’intrication.
 
-### Mais
+### Limite actuelle
 
-Les tests de **courbure triangulaire** et d'**holonomie discrète** (v1–v4) n'ont **pas** fourni de signal robuste de courbure locale.
+Les tests de courbure triangulaire et d’holonomie discrète (v1–v4) n’ont pas fourni de signal robuste de courbure gravitationnelle locale.
 
-> **Conclusion actuelle :**  
+> Conclusion provisoire :  
 > la structure triangulaire est un bon descripteur géométrique local de la CMI,  
-> mais **pas** encore une mesure robuste de courbure gravitationnelle émergente.
+> mais pas encore une mesure robuste de courbure émergente.
 
 ---
 
-## 7. Nouveau résultat : courbure discrète d'Ollivier–Ricci
+## 7. Nouveau résultat : courbure discrète d’Ollivier–Ricci
 
-Pour dépasser les limites du test triangulaire, nous avons introduit une courbure discrète de type **Ollivier–Ricci** sur le graphe d'intrication.
+Pour dépasser les limites des diagnostics triangulaires, le projet a introduit une courbure discrète de type **Ollivier–Ricci** sur le graphe d’intrication.
 
 ### Objectif
 
-Tester directement si une perturbation informationnelle locale agit comme une source de courbure :
+Tester si une perturbation informationnelle locale agit comme une source de courbure émergente :
 
 \[
 \text{défaut informationnel local}
@@ -318,15 +309,15 @@ Tester directement si une perturbation informationnelle locale agit comme une so
 
 ### Protocole
 
-- graphe d'intrication reconstruit à partir de l'information mutuelle,
+- reconstruction du graphe à partir de l’information mutuelle,
 - perturbation locale contrôlée sur une région source,
-- mesure de la variation de courbure :
+- mesure de
 
 \[
 \Delta \kappa = \kappa_{\mathrm{pert}} - \kappa_{\mathrm{base}}
 \]
 
-- comparaison entre zone **proche** et **lointaine** :
+- comparaison entre zone proche et zone lointaine :
 
 \[
 \Delta \kappa_{\mathrm{near-far}}
@@ -338,7 +329,7 @@ Tester directement si une perturbation informationnelle locale agit comme une so
 
 ### Résultat robuste
 
-Le mode le plus propre est le mode **`frozen_baseline`**, où la connectivité du graphe de référence est maintenue fixe.
+Le mode le plus propre est **`frozen_baseline`**, où la connectivité de référence est maintenue fixe.
 
 Batch multi-seeds (\(N=16\), 20 seeds, rayon \(r=1\), force \(s=0.6\)) :
 
@@ -362,12 +353,16 @@ avec :
 - fraction positive = **0.95**
 - \(p_{\mathrm{sign}} = 4.0\times10^{-5}\)
 
-> Une perturbation informationnelle locale augmente la courbure moyenne,  
-> et cette augmentation est plus forte près de la source qu'à distance.
+### Interprétation
+
+Une perturbation informationnelle locale :
+
+- augmente la courbure moyenne,
+- et cet effet est plus marqué près de la source qu’à distance.
 
 ### Loi de réponse en intensité
 
-Pour un défaut compact (\(r=1\)), la courbure moyenne croît avec la force \(s\) :
+Pour un défaut compact (\(r=1\)) :
 
 | \(s\) | \(\Delta \kappa_{\mathrm{edge}}\) |
 |---:|---:|
@@ -378,7 +373,7 @@ Pour un défaut compact (\(r=1\)), la courbure moyenne croît avec la force \(s\
 | 0.8 | 0.096 |
 | 1.0 | 0.109 |
 
-La localité suit aussi une croissance puis saturation :
+Indicateur de localité :
 
 | \(s\) | \(\Delta \kappa_{\mathrm{near-far}}\) |
 |---:|---:|
@@ -391,29 +386,15 @@ La localité suit aussi une croissance puis saturation :
 
 ### Effet du rayon
 
-Le scan en rayon montre :
+Le scan en rayon indique que :
 
-- **rayon petit** : réponse plus localisée,
-- **rayon grand** : réponse plus diffuse.
+- un rayon petit produit une réponse plus localisée,
+- un rayon grand diffuse davantage la déformation géométrique.
 
-Autrement dit :
+> Une source compacte courbe plus localement ;  
+> une source étendue diffuse la réponse géométrique.
 
-> une source compacte courbe plus localement,  
-> une source étendue diffuse la déformation géométrique.
-
-### Forme effective
-
-Le meilleur ajustement n'est pas strictement linéaire mais **quadratique concave** :
-
-\[
-\Delta \kappa(s)\approx as^2+bs+c,\qquad a<0
-\]
-
-Cela suggère une croissance initiale suivie d'un tassement ou d'une saturation.
-
-### Conclusion physique
-
-C'est à ce stade le signal le plus net obtenu dans le projet en faveur d'un couplage :
+À ce stade, c’est le signal le plus net obtenu dans le projet en faveur d’un couplage :
 
 \[
 \text{matière informationnelle locale}
@@ -423,29 +404,101 @@ C'est à ce stade le signal le plus net obtenu dans le projet en faveur d'un cou
 
 ---
 
-## 8. Ce que le projet établit actuellement
+## 8. Extension phénoménologique : résultats SPARC
 
-- une géométrie peut émerger d'un état quantique fini,
-- la dimension émergente dépend de la structure d'intrication,
-- ER = EPR devient mesurable dans un cadre discret,
-- une thermodynamique de l'intrication apparaît,
-- le flot modulaire présente une signature chaotique,
-- le plateau du SFF suit le scaling \(1/d_A\),
-- la constante modulaire dépend de la topologie,
-- un horizon informationnel peut émerger,
-- la structure multipartite est partiellement encodée dans la géométrie relationnelle,
-- une perturbation informationnelle locale peut induire une **courbure d'Ollivier–Ricci** croissante et localisée.
+Le projet ne se limite plus à des reconstructions géométriques internes sur petits systèmes quantiques.  
+Il commence aussi à tester si ses idées peuvent être prolongées vers des données astrophysiques réelles.
+
+Dans cette optique, une première étude a été menée sur l’échantillon **SPARC** de courbes de rotation galactiques.
+
+### Objectif
+
+Tester si une géométrie émergente effective peut fournir une lecture phénoménologique pertinente de la dynamique galactique.
+
+L’enjeu n’est pas encore de proposer une théorie observationnelle finale, mais de voir si le programme bottom-up peut relier :
+
+- dimension émergente,
+- réponse gravitationnelle effective,
+- dynamique de rotation des galaxies.
 
 ---
 
-## 9. Limites actuelles
+### 8.1 Résultat principal : séparation de phases effectives
 
-- limite continue \(N\to\infty\) non démontrée,
-- pas de dynamique relativiste complète,
-- pas d'équation d'Einstein discrète dérivée,
-- pas encore de prédictions observationnelles directes,
-- la courbure triangulaire / holonomie discrète n'a pas donné de signal robuste,
-- le couplage matière-courbure est actuellement établi comme **preuve de concept numérique**, pas encore comme loi fondamentale dérivée.
+L’analyse actuelle suggère qu’une description unique n’est pas la plus naturelle.  
+Le pipeline de diagramme de phase met en évidence **deux régimes effectifs** :
+
+| Régime galactique | Dimension effective optimale |
+|---|---:|
+| phase massive | \(d_{\min}=2.4871 \pm 0.0294\) |
+| phase naine | \(d_{\min}=2.2744 \pm 0.0341\) |
+
+Diagnostics actuels issus du pipeline :
+
+| Régime galactique | test \(\chi^2_{\mathrm{red}}\) |
+|---|---:|
+| phase massive | \(10.9353 \pm 12.6952\) |
+| phase naine | \(25.2842 \pm 25.8802\) |
+
+### 8.2 Lecture physique provisoire
+
+Ces résultats suggèrent que la réponse gravitationnelle effective pourrait dépendre du **régime galactique**, et qu’une géométrie émergente peut conduire à des **dimensions effectives différentes** selon les classes de galaxies.
+
+Dans l’état actuel du projet, cela se lit comme :
+
+- une indication contre une lecture strictement monophasique,
+- un soutien à une **géométrie émergente multi-régimes**,
+- une première ouverture phénoménologique du programme bottom-up au-delà des systèmes quantiques finis.
+
+### 8.3 Statut scientifique
+
+Cette partie SPARC doit être lue comme :
+
+- une **preuve de concept phénoménologique**,
+- un **test de cohérence empirique exploratoire**,
+- une étape vers une confrontation plus directe avec les observations.
+
+Elle ne constitue pas encore :
+
+- une théorie complète de la dynamique galactique,
+- un modèle observationnel entièrement contraint,
+- ni un remplacement des cadres standards d’ajustement astrophysique.
+
+En revanche, elle marque une étape importante :
+
+> le programme bottom-up ne reconstruit plus seulement une géométrie interne ;  
+> il commence à être confronté à des données astrophysiques réelles.
+
+---
+
+## 9. Ce que le projet établit actuellement
+
+À son stade actuel, le projet fournit des indices numériques en faveur des idées suivantes :
+
+- une géométrie peut émerger d’un état quantique fini,
+- la dimension émergente dépend de la structure d’intrication,
+- ER = EPR devient testable dans un cadre discret,
+- le flot modulaire fournit une dynamique interne non triviale,
+- les spectres modulaires présentent une signature chaotique,
+- le plateau du spectral form factor suit un scaling compatible avec \(1/d_A\),
+- une structure de type horizon peut émerger,
+- la structure multipartite est partiellement encodée dans la géométrie relationnelle,
+- une perturbation informationnelle locale peut induire une courbure discrète d’Ollivier–Ricci,
+- une première extension phénoménologique vers les galaxies SPARC suggère une description en **régimes effectifs distincts**.
+
+---
+
+## 10. Limites actuelles
+
+Le dépôt présente actuellement un programme de **preuve de concept numérique**.  
+Des limites importantes restent ouvertes :
+
+- la limite continue \(N \to \infty\) n’est pas établie,
+- il n’existe pas encore de dynamique relativiste complète,
+- aucune équation d’Einstein discrète n’a encore été dérivée,
+- la partie SPARC reste exploratoire,
+- la courbure triangulaire / holonomie discrète n’a pas donné de signal robuste,
+- le couplage matière–courbure est pour l’instant soutenu numériquement, pas encore dérivé de premiers principes.
 
 ---
 
@@ -468,5 +521,50 @@ scripts/
   bup_ollivier_ricci_local_response_scan_v1_4.py
   bup_ollivier_ricci_local_response_scan_radius_fit_v1_5.py
 
+experiments/
+  sparc/
+    results_phase_diagram/
+
 code/
 data/
+Résultats SPARC actuellement générés
+
+Le pipeline SPARC écrit notamment les fichiers suivants :
+
+experiments/sparc/results_phase_diagram/phase_diagram_summary.json
+experiments/sparc/results_phase_diagram/phase_table.csv
+experiments/sparc/results_phase_diagram/phase_diagram.png
+Ordre de lecture recommandé
+
+Pour découvrir le projet :
+
+README.md — vue d’ensemble
+
+paper/Bottom-up_Quantum_Gravity.tex — présentation conceptuelle
+
+theory/theory_mathematics.tex — base théorique plus formelle
+
+scripts/ — protocoles numériques
+
+experiments/ — résultats générés, en particulier SPARC
+
+Statut du projet
+
+Statut : recherche active / preuve de concept numérique
+
+Les axes actuels sont :
+
+consolider le couplage matière–courbure,
+
+améliorer les analyses de scaling,
+
+renforcer le lien entre dimension émergente et phénoménologie,
+
+étendre les tests observationnels autour des résultats SPARC.
+
+Auteur
+
+Farid Hamdad
+hamdadfarid54@gmail.com
+
+Projet indépendant de recherche sur la géométrie émergente, la structure d’intrication et la gravité quantique bottom-up.
