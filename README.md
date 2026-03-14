@@ -193,15 +193,11 @@ Les expériences numériques montrent que la dimension effective dépend de la s
 
 Cela soutient l’idée que la dimension n’est pas un postulat, mais une grandeur émergente dépendant du motif d’intrication.
 
----
-
 ### 4.2 Signature opérationnelle ER = EPR
 
 Lorsque l’intrication non-locale augmente, des qubits éloignés topologiquement peuvent devenir proches dans la géométrie reconstruite.
 
 > C’est une signature discrète de type *wormhole-like*, compatible avec l’idée opérationnelle ER = EPR.
-
----
 
 ### 4.3 Gravité thermodynamique
 
@@ -421,8 +417,6 @@ L’enjeu n’est pas encore de proposer une théorie observationnelle finale, m
 - réponse gravitationnelle effective,
 - dynamique de rotation des galaxies.
 
----
-
 ### 8.1 Résultat principal : séparation de phases effectives
 
 L’analyse actuelle suggère qu’une description unique n’est pas la plus naturelle.  
@@ -506,8 +500,9 @@ Des limites importantes restent ouvertes :
 
 ```text
 paper/
-  Bottom-up_Quantum_Gravity.tex
-  Bottom-up_Quantum_Gravity.pdf
+  Bottom_Up_Quantum_Gravity_en.tex
+  Bottom_Up_Quantum_Gravity_fr.tex
+  Bottom_Up_Quantum_Gravity.pdf
 
 theory/
   theory_mathematics.tex
@@ -522,49 +517,35 @@ scripts/
   bup_ollivier_ricci_local_response_scan_radius_fit_v1_5.py
 
 experiments/
+  cmi_geometry/
+  ollivier_ricci/
+    scripts/
+    results/
   sparc/
-    results_phase_diagram/
+    README.md
+    scripts/
+      sparc_historical_nonreproduced_v1_0.py
+      sparc_radius_baseline_v2_0.py
+      sparc_scaled_radius_bump_v3_0.py
+      sparc_scaled_radius_additive_v3_1.py
+      sparc_gbar_bump_v4_0.py
+      sparc_scaled_radius_subgroups_v3_2.py
+      sparc_massive_leave_one_out_v3_3.py
+      sparc_massive_oos_v3_4.py
+      sparc_empirical_dimension_inversion_v3_35.py
+      sparc_empirical_dimension_binned_v3_36.py
+      sparc_hierarchical_compacity_v3_5.py
+      sparc_hierarchical_compacity_oos_v3_5.py
+      sparc_dwarf_phase_v34.py
+      sparc_phase_diagram_builder_v1_0.py
+    results/
+      00_historical_nonreproduced/
+      10_real_sparc_baselines/
+      20_massive_phase/
+      30_empirical_dimension/
+      40_hierarchical_models/
+      50_dwarf_phase/
+      60_phase_diagram/
 
 code/
 data/
-Résultats SPARC actuellement générés
-
-Le pipeline SPARC écrit notamment les fichiers suivants :
-
-experiments/sparc/results_phase_diagram/phase_diagram_summary.json
-experiments/sparc/results_phase_diagram/phase_table.csv
-experiments/sparc/results_phase_diagram/phase_diagram.png
-Ordre de lecture recommandé
-
-Pour découvrir le projet :
-
-README.md — vue d’ensemble
-
-paper/Bottom-up_Quantum_Gravity.tex — présentation conceptuelle
-
-theory/theory_mathematics.tex — base théorique plus formelle
-
-scripts/ — protocoles numériques
-
-experiments/ — résultats générés, en particulier SPARC
-
-Statut du projet
-
-Statut : recherche active / preuve de concept numérique
-
-Les axes actuels sont :
-
-consolider le couplage matière–courbure,
-
-améliorer les analyses de scaling,
-
-renforcer le lien entre dimension émergente et phénoménologie,
-
-étendre les tests observationnels autour des résultats SPARC.
-
-Auteur
-
-Farid Hamdad
-hamdadfarid54@gmail.com
-
-Projet indépendant de recherche sur la géométrie émergente, la structure d’intrication et la gravité quantique bottom-up.
