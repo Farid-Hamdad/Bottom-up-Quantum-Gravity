@@ -1,0 +1,50 @@
+{
+  "model": "bup_optical_metric_lensing_v1_3",
+  "interpretation": "centralized localized effective acceleration ray-tracing",
+  "galaxy": "NGC3198",
+  "cosmology": {
+    "z_lens": 0.3,
+    "z_source": 1.0,
+    "H0": 70.0,
+    "omega_m": 0.3,
+    "D_l_Mpc": 918.7668228115481,
+    "D_s_Mpc": 1651.9144042851694,
+    "D_ls_Mpc": 1054.715969457663
+  },
+  "bup_profile": {
+    "delta_d": 0.5151258725550094,
+    "x0_original": 13.528495920985291,
+    "x_center_used": 3.0,
+    "sigma": 1.4363225103849342,
+    "x_ref": 1.0,
+    "d_min": 2.4848741274449906,
+    "lambda_bup": 1.0,
+    "weight_width": 0.5,
+    "x_center_cap": 3.0,
+    "r_cut_factor": 4.0,
+    "r_cut_kpc": 12.682278375757395
+  },
+  "numerics": {
+    "zmax_kpc": 881.5999999999999,
+    "nz": 3001,
+    "ratio_threshold_frac": 0.1
+  },
+  "diagnostics": {
+    "alpha_bary_max_arcsec": 0.20834474031126876,
+    "alpha_bup_max_arcsec": 0.23047010064183893,
+    "delta_alpha_max_arcsec": 0.027278723877847272,
+    "alpha_enhancement_max_raw": 1.1557174964361359,
+    "alpha_enhancement_mean_robust": 1.060421202021198,
+    "alpha_enhancement_median_robust": 1.0437706268246993,
+    "alpha_enhancement_max_robust": 1.1557174964361359,
+    "theta_window_min_arcsec": 0.07184057625969514,
+    "theta_window_max_arcsec": 9.896039379773004,
+    "thetaE_bary_arcsec": 0.07570895818061268,
+    "thetaE_bup_arcsec": 0.07693852769437053,
+    "R_alpha_bary_max_kpc": 5.78,
+    "R_alpha_bup_max_kpc": 6.1,
+    "R_delta_alpha_max_kpc": 8.04,
+    "R_ratio_max_kpc": 10.04,
+    "theta_ratio_max_arcsec": 2.253998080147935
+  }
+}
