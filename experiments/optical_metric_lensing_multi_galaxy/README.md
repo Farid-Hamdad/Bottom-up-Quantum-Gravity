@@ -1,121 +1,202 @@
+# Optical Metric Lensing — Multi-Galaxy BuP Test
 
-\subsection{Prototype de lentillage optique BuP centralisé}
+**Bottom-Up Quantum Gravity**  
+**Farid Hamdad — 2026**
 
-Afin d’aller au-delà des enveloppes phénoménologiques inverses et de rapprocher plus directement le programme Bottom-Up d’un observable de lentillage, nous avons introduit un prototype de réponse optique effective fondé sur le profil de dimension BuP calibré sur SPARC.
+---
 
-L’idée minimale est la suivante. Au lieu de modifier directement une densité projetée, on considère qu’un rayon lumineux se propage dans une réponse gravitationnelle effective dérivée du profil de dimension émergente. On définit d’abord un profil radial de dimension
-\begin{equation}
-d(r)=3-\delta_d \exp\!\left[-\frac{\ln^2(r/r_0)}{2\sigma^2}\right],
-\end{equation}
-puis un facteur géométrique associé
-\begin{equation}
+## Overview
+
+This experiment explores a new phenomenological branch of the Bottom-Up program:
+
+> instead of correcting lensing through a projected local density alone,  
+> light is propagated through an **effective BuP optical response** derived from the emergent dimension profile calibrated on SPARC.
+
+The goal is to test whether a **centralized optical BuP regime** can generate a controlled excess of gravitational deflection across several massive spiral galaxies.
+
+This branch should be read as:
+
+- a proof of concept for an optical extension of BuP,
+- an intermediate step between SPARC phenomenology and real lensing observables,
+- not yet a full first-principles derivation of an emergent optical metric.
+
+---
+
+## Minimal model
+
+We start from a radial BuP dimension profile
+
+\[
+d(r)=3-\delta_d \exp\!\left[-\frac{\ln^2(r/r_0)}{2\sigma^2}\right]
+\]
+
+and define the associated geometric factor
+
+\[
 f_d(r)=\left(\frac{r}{r_{\mathrm{ref}}}\right)^{3-d(r)}.
-\end{equation}
-Dans une première version optique, l’accélération effective est prise sous la forme
-\begin{equation}
-g_{\mathrm{eff}}(r)=g_{\mathrm{bary}}(r)\,f_d(r),
-\end{equation}
-et la déflexion est estimée par intégration le long de la ligne de visée,
-\begin{equation}
+\]
+
+A first optical response is built through an effective radial acceleration:
+
+\[
+g_{\mathrm{eff}}(r)=g_{\mathrm{bary}}(r)\,f_d(r).
+\]
+
+However, this raw version tends to generate an excess deflection that is too external.
+
+To control that behavior, a **centralized localized optical response** is introduced:
+
+\[
+g_{\mathrm{eff}}(r)=g_{\mathrm{bary}}(r)\Bigl[1+\lambda\,w_{\mathrm{tot}}(r)\,\bigl(f_d(r)-1\bigr)\Bigr],
+\]
+
+where \(w_{\mathrm{tot}}(r)\) combines:
+
+- a central localization term,
+- an outer exponential cutoff.
+
+The light deflection is then estimated through
+
+\[
 \alpha(R)\simeq \frac{2}{c^2}\int_{-\infty}^{+\infty} g_\perp(R,z)\,dz,
 \qquad
 g_\perp(R,z)=g_{\mathrm{eff}}(r)\frac{R}{r},
 \qquad
 r=\sqrt{R^2+z^2}.
-\end{equation}
-
-Les premières versions de ce schéma (v1.0--v1.1) produisent bien un excès de déflexion par rapport au cas baryonique pur, mais cet excès tend à être artificiellement porté par les grands rayons. Une étape décisive a donc consisté à introduire une \emph{localisation optique} de l’effet BuP. Dans la version centralisée retenue, l’accélération est remplacée par
-\begin{equation}
-g_{\mathrm{eff}}(r)=g_{\mathrm{bary}}(r)\Bigl[1+\lambda\,w_{\mathrm{tot}}(r)\,\bigl(f_d(r)-1\bigr)\Bigr],
-\end{equation}
-où \(w_{\mathrm{tot}}(r)\) est un poids radial combinant une localisation centrale et une coupure externe. Le centre effectif du poids est plafonné à une valeur
-\begin{equation}
-x_{\mathrm{center}}=\min(x_0,x_{\mathrm{cap}}),
-\end{equation}
-afin d’éviter que le maximum du bump SPARC, parfois situé trop loin dans le disque, ne déporte artificiellement la réponse optique vers l’extérieur.
-
-\subsubsection{Scan de phase sur NGC3198}
-
-Un premier scan a été effectué sur NGC3198 afin d’identifier un régime où l’effet BuP reste à la fois \emph{centralisé} et \emph{non négligeable}. Le scan portait sur les paramètres
-\[
-\lambda_{\mathrm{BuP}},\qquad \mathrm{width},\qquad x_{\mathrm{cap}},\qquad r_{\mathrm{cut}},
 \]
-avec 144 combinaisons testées.
 
-Le meilleur compromis trouvé est
-\begin{equation}
-(\lambda_{\mathrm{BuP}},\mathrm{width},x_{\mathrm{cap}},r_{\mathrm{cut}})
-=
-(3.0,\,0.8,\,4.0,\,5.0).
-\end{equation}
-Dans ce régime, NGC3198 présente :
-\begin{itemize}
-    \item un gain robuste moyen de déflexion d’environ \(1.36\),
-    \item une médiane robuste d’environ \(1.33\),
-    \item un excès maximal
-    \begin{equation}
-    \Delta\alpha_{\max}\simeq 0.122\ \mathrm{arcsec},
-    \end{equation}
-    \item et un pic de l’excès situé à
-    \begin{equation}
-    R_{\Delta\alpha,\max}\simeq 11\ \mathrm{kpc}.
-    \end{equation}
-\end{itemize}
+---
 
-Ce résultat est important pour deux raisons. D’une part, il montre qu’un effet BuP optique \emph{centralisé} n’est pas nécessairement faible. D’autre part, il montre qu’un simple recentrage du profil sans scan (version centralisée par défaut) sous-estime fortement l’amplitude du signal.
+## Version history
 
-\subsubsection{Test multi-galaxies sur spirales massives}
+### v1.0
+First optical proof of concept:
+- direct effective acceleration lensing,
+- real BuP excess,
+- but too cumulative at large radius.
 
-Le même régime
+### v1.1
+Improved diagnostics:
+- robust ratio,
+- cleaner radial interpretation,
+- confirms external-drift problem.
+
+### v1.2
+Localized optical response:
+- partial control of the outer tail,
+- effect still too extended.
+
+### v1.3
+Centralized optical response:
+- central cap on the active BuP region,
+- external exponential cutoff,
+- produces a much cleaner radial excess.
+
+### v1.3 scan
+Phase scan on **NGC3198** to identify a regime where the effect is:
+
+- centralized,
+- non-negligible,
+- and still physically interpretable.
+
+### multi-galaxy v1
+Application of the most promising optical regime to several spiral galaxies.
+
+---
+
+## Main current result
+
+The most promising centralized optical regime found in the current exploration is:
+
 \[
-(3.0,\,0.8,\,4.0,\,5.0)
+(\lambda,\mathrm{width},x_{\mathrm{cap}},r_{\mathrm{cut}})=(3.0,\ 0.8,\ 4.0,\ 5.0)
 \]
-a ensuite été appliqué sans réajustement à plusieurs galaxies spirales massives de l’échantillon SPARC. Les cas les plus significatifs obtenus sont :
 
-\begin{itemize}
-    \item \textbf{NGC3198} :
-    \(\Delta\alpha_{\max}\simeq 0.122\) arcsec,
-    gain robuste moyen \(\simeq 1.36\).
+This regime was first identified from the v1.3 scan on **NGC3198**, then applied without re-adjustment to several SPARC massive spirals.
 
-    \item \textbf{NGC5055} :
-    \(\Delta\alpha_{\max}\simeq 0.224\) arcsec,
-    gain robuste moyen \(\simeq 1.33\).
+It generates a **robust excess of lensing deflection** typically of order:
 
-    \item \textbf{NGC2841} :
-    \(\Delta\alpha_{\max}\simeq 0.521\) arcsec,
-    gain robuste moyen \(\simeq 1.39\).
+- **+30% to +50%** in robust mean enhancement,
+- with non-trivial but still reasonably centralized radial excess profiles.
 
-    \item \textbf{NGC7331} :
-    \(\Delta\alpha_{\max}\simeq 0.300\) arcsec,
-    gain robuste moyen \(\simeq 1.51\).
+---
 
-    \item \textbf{UGC02885} :
-    \(\Delta\alpha_{\max}\simeq 0.442\) arcsec,
-    gain robuste moyen \(\simeq 1.49\).
-\end{itemize}
+## Multi-galaxy results
 
-Dans l’ensemble, ce régime produit donc un excès de déflexion robuste de l’ordre de \textbf{30 à 50\%} sur plusieurs spirales massives, avec une structure radiale non triviale mais encore globalement centrée sur des rayons galactiques internes à intermédiaires. Les pics de \(\Delta\alpha\) se situent typiquement entre \(\sim 8\) et \(\sim 14\) kpc pour NGC3198, NGC5055, NGC2841 et NGC7331, tandis que UGC02885 présente un maximum plus externe.
+### Best centralized optical BuP regime tested
 
-\subsubsection{Interprétation provisoire}
+\[
+(\lambda,\mathrm{width},x_{\mathrm{cap}},r_{\mathrm{cut}})=(3.0,\ 0.8,\ 4.0,\ 5.0)
+\]
 
-Ce résultat constitue, à ce stade, l’indication la plus nette en faveur d’une \emph{branche optique BuP} distincte de la simple branche de densité locale. Il suggère qu’un même profil de dimension émergente, lorsqu’il est converti en réponse optique effective avec une localisation centrale appropriée, peut induire un excès de lentillage systématique sur une sous-classe de galaxies spirales massives.
+### Best galaxies obtained so far
 
-La lecture la plus prudente est la suivante :
-\begin{enumerate}
-    \item la branche purement locale, fondée sur une densité projetée corrigée point par point, reste insuffisante ;
-    \item une branche optique construite à partir de l’accélération effective BuP est plus prometteuse ;
-    \item il semble exister un \emph{régime optique BuP centralisé} quasi stable sur plusieurs spirales massives ;
-    \item cette stabilité pourrait refléter une dépendance par classe galactique, en cohérence avec la structure multi-régimes déjà suggérée par l’analyse SPARC des courbes de rotation.
-\end{enumerate}
+| Galaxy   | Robust mean enhancement | Robust median enhancement | \(\Delta \alpha_{\max}\) [arcsec] | \(R_{\Delta\alpha,\max}\) [kpc] | \(\Delta \theta_E\) [arcsec] |
+|----------|-------------------------|----------------------------|-----------------------------------|----------------------------------|------------------------------|
+| NGC3198  | 1.358 | 1.331 | 0.1224 | 11.04 | 0.0055 |
+| NGC5055  | 1.325 | 1.282 | 0.2243 | 8.62  | 0.0566 |
+| NGC2841  | 1.390 | 1.387 | 0.5205 | 11.27 | 0.2434 |
+| NGC7331  | 1.509 | 1.541 | 0.3000 | 13.94 | 0.0878 |
+| UGC02885 | 1.493 | 1.543 | 0.4420 | 31.20 | 0.0620 |
 
-\subsubsection{Limites}
+### Preliminary interpretation
 
-Ces résultats doivent être interprétés comme une \emph{preuve de concept optique} et non comme une théorie complète du lentillage. En particulier :
-\begin{itemize}
-    \item la métrique optique effective n’est pas encore dérivée de premiers principes à partir de l’intrication ;
-    \item la forme du poids radial \(w_{\mathrm{tot}}(r)\) reste phénoménologique ;
-    \item la comparaison a été effectuée sur un petit nombre de galaxies ;
-    \item l’extension aux lentilles fortes de type SLACS n’est pas encore établie.
-\end{itemize}
+These results suggest that a **centralized BuP optical regime** may be quasi-stable across a subclass of **massive spiral galaxies**.
 
-Malgré ces limites, cette étape est importante : elle montre qu’un cadre bottom-up fondé sur la dimension émergente peut produire un excès de déflexion optique contrôlé, centralisé, et potentiellement stable sur une classe astrophysique donnée.
+The most plausible current reading is:
+
+1. local projected-density corrections alone are insufficient,
+2. an effective optical BuP response is more promising,
+3. a centralized optical regime can produce a real and robust excess of deflection,
+4. this regime appears more naturally adapted to **massive spirals** than to all galaxy classes uniformly.
+
+---
+
+## Current interpretation
+
+At this stage, the optical-metric branch should be interpreted as a **phenomenological optical extension** of the SPARC BuP program.
+
+It does **not** yet establish:
+
+- a first-principles emergent metric tensor,
+- a full GR-equivalent lensing theory,
+- or a direct explanation of strong-lens samples such as SLACS.
+
+What it does establish is more modest but important:
+
+> a Bottom-Up dimension profile can be translated into a controlled optical response that produces a centralized and significant excess of gravitational deflection on a non-trivial set of galaxies.
+
+---
+
+## Limitations
+
+This branch remains exploratory.
+
+Important limitations include:
+
+- the optical response is not yet derived from entanglement first principles,
+- the radial weight \(w_{\mathrm{tot}}(r)\) is phenomenological,
+- only a small number of galaxies has been tested,
+- the link to real strong-lensing systems remains open,
+- one must still determine whether the same optical regime survives across broader galaxy classes.
+
+---
+
+## Directory structure
+
+Suggested structure:
+
+```text
+optical_metric_lensing_multi_galaxy/
+  README.md
+  scripts/
+    bup_optical_metric_lensing_v1.py
+    bup_optical_metric_lensing_v1_1.py
+    bup_optical_metric_lensing_v1_2.py
+    bup_optical_metric_lensing_v1_3.py
+    bup_optical_metric_lensing_v1_3_scan.py
+    bup_optical_metric_lensing_multi_galaxy_v1.py
+  results/
+    10_single_galaxy_ngc3198/
+    20_v1_3_scan_ngc3198/
+    30_multi_galaxy_regime_3_08_4_5/
