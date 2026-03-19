@@ -1,28 +1,33 @@
 {
+  "model": "bup_optical_metric_lensing_v1",
+  "interpretation": "effective acceleration ray-tracing",
   "galaxy": "NGC3198",
-  "geometry": {
-    "q_max": 0.95,
-    "q_min": 0.35,
-    "gamma": 0.8,
-    "q_eff_min": 0.599574786985889,
-    "q_eff_max": 0.9487705789696328
+  "cosmology": {
+    "z_lens": 0.3,
+    "z_source": 1.0,
+    "H0": 70.0,
+    "omega_m": 0.3,
+    "D_l_Mpc": 918.7668228115481,
+    "D_s_Mpc": 1651.9144042851694,
+    "D_ls_Mpc": 1054.715969457663
   },
-  "v2": {
-    "alpha_enhancement_max": 1.3199898756291861,
-    "kappa_bup_max": 0.29133538581018437,
-    "thetaE_bup_alpha": NaN,
-    "thetaE_bup_kappa": NaN
+  "bup_profile": {
+    "delta_d": 0.5151258725550094,
+    "x0": 13.528495920985291,
+    "sigma": 1.4363225103849342,
+    "x_ref": 1.0,
+    "d_min": 2.4848741274449906
   },
-  "v4": {
-    "alpha_enhancement_max": 1.0300166793090335,
-    "kappa_bup_max": 0.20187784068179326,
-    "thetaE_bup_alpha": NaN,
-    "thetaE_bup_kappa": NaN
+  "numerics": {
+    "zmax_kpc": 881.5999999999999,
+    "nz": 3001
   },
-  "v5": {
-    "alpha_enhancement_max": 1.3238906535331343,
-    "kappa_bup_max": 0.3016160592668178,
-    "thetaE_bup_alpha": NaN,
-    "thetaE_bup_kappa": NaN
+  "diagnostics": {
+    "alpha_bary_max_arcsec": 0.20834474031126876,
+    "alpha_bup_max_arcsec": 0.32906860602232124,
+    "alpha_enhancement_max": 1.5794428288935445,
+    "alpha_enhancement_mean": 2.2550046597091042,
+    "thetaE_bary_arcsec": 0.07570895818061268,
+    "thetaE_bup_arcsec": 0.08205404217428164
   }
 }
