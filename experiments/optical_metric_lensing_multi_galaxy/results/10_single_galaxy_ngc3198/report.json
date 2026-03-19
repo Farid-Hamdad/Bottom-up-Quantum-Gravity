@@ -1,0 +1,28 @@
+{
+  "galaxy": "NGC3198",
+  "geometry": {
+    "q_max": 0.95,
+    "q_min": 0.35,
+    "gamma": 0.8,
+    "q_eff_min": 0.599574786985889,
+    "q_eff_max": 0.9487705789696328
+  },
+  "v2": {
+    "alpha_enhancement_max": 1.3199898756291861,
+    "kappa_bup_max": 0.29133538581018437,
+    "thetaE_bup_alpha": NaN,
+    "thetaE_bup_kappa": NaN
+  },
+  "v4": {
+    "alpha_enhancement_max": 1.0300166793090335,
+    "kappa_bup_max": 0.20187784068179326,
+    "thetaE_bup_alpha": NaN,
+    "thetaE_bup_kappa": NaN
+  },
+  "v5": {
+    "alpha_enhancement_max": 1.3238906535331343,
+    "kappa_bup_max": 0.3016160592668178,
+    "thetaE_bup_alpha": NaN,
+    "thetaE_bup_kappa": NaN
+  }
+}
