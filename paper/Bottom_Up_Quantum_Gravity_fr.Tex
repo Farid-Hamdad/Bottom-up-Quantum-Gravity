@@ -7,6 +7,7 @@
 \usepackage{geometry}
 
 \geometry{margin=2.5cm}
+\graphicspath{{../figures/}}
 
 \title{Gravité Quantique Bottom-Up\\
 Émergence de l'Espace, du Temps et de la Gravité depuis l'Intrication Quantique}
@@ -59,6 +60,9 @@ d_{\min}^{\mathrm{massive}} = 2.4871 \pm 0.0294,
 \qquad
 d_{\min}^{\mathrm{dwarf}} = 2.2744 \pm 0.0341.
 \]
+
+Nous montrons en outre que l'échelle de transition effective $r_{\mathrm{trans}}$ n'est pas un paramètre arbitraire mais une observable corrélée à la structure baryonique et géométrique des galaxies. Une loi d'échelle multivariée globale, puis une séparation en régimes, conduisent à une prédiction falsifiable indépendante des courbes de rotation : la structure radiale de l'excès de lentillage diffère selon le régime galactique.
+
 Cette partie doit être interprétée comme une preuve de concept phénoménologique reliant la géométrie émergente bottom-up à des données astrophysiques réelles.
 
 \end{abstract}
@@ -203,7 +207,7 @@ g_2^{\mathrm{plateau}}\sim\frac{1}{d_A}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/topology_SFF.png}
+\includegraphics[width=0.7\textwidth]{topology_SFF.png}
 \caption{Facteur de forme spectral montrant la structure dip-rampe-plateau.}
 \end{figure}
 
@@ -231,13 +235,13 @@ Graphe ER & 0.528 & 1.63 \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/topology_C.png}
+\includegraphics[width=0.7\textwidth]{topology_C.png}
 \caption{Constante modulaire topologique $C$ pour différentes topologies de graphe.}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/topology_r.png}
+\includegraphics[width=0.7\textwidth]{topology_r.png}
 \caption{Statistiques des ratios de gaps confirmant l'universalité RMT.}
 \end{figure}
 
@@ -340,7 +344,7 @@ $\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio 2D/3D \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/fig1_dimension_emergente.png}
+\includegraphics[width=0.7\textwidth]{fig1_dimension_emergente.png}
 \caption{Reconstruction de la dimension spatiale émergente pour N=9.}
 \end{figure}
 
@@ -362,7 +366,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/fig2_er_epr.png}
+\includegraphics[width=0.7\textwidth]{fig2_er_epr.png}
 \caption{Effet de compression ER=EPR dans la géométrie émergente.}
 \end{figure}
 
@@ -370,7 +374,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/fig3_jacobson.png}
+\includegraphics[width=0.7\textwidth]{fig3_jacobson.png}
 \caption{Relation entropie-énergie de type Jacobson pour N=9.}
 \end{figure}
 
@@ -378,7 +382,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/fig4_grid_N16.png}
+\includegraphics[width=0.7\textwidth]{fig4_grid_N16.png}
 \caption{Grille $4\times4$ sous-jacente utilisée dans les simulations.}
 \end{figure}
 
@@ -386,7 +390,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/fig5_mds_N16.png}
+\includegraphics[width=0.7\textwidth]{fig5_mds_N16.png}
 \caption{Reconstruction géométrique par multidimensional scaling pour N=16.}
 \end{figure}
 
@@ -394,7 +398,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/fig6_erepr_N16.png}
+\includegraphics[width=0.7\textwidth]{fig6_erepr_N16.png}
 \caption{Formation de raccourcis ER=EPR dans la géométrie émergente.}
 \end{figure}
 
@@ -402,7 +406,7 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{../figures/fig7_jacobson_N16.png}
+\includegraphics[width=0.7\textwidth]{fig7_jacobson_N16.png}
 \caption{Relation entropie-énergie de type Jacobson pour N=16.}
 \end{figure}
 
@@ -683,7 +687,7 @@ Il ne s'agit pas encore d'une équation d'Einstein discrète dérivée des premi
 % PARTIE VIII : EXTENSION PHÉNOMÉNOLOGIQUE SPARC
 % =====================================================================
 
-\section{Extension Phénoménologique : Résultats SPARC}
+\section{Extension Phénoménologique : SPARC et structure en régimes}
 
 Jusqu'ici, le programme Bottom-Up a principalement établi des signatures internes de géométrie émergente sur des systèmes quantiques finis. Une question décisive est alors de savoir si cette structure effective peut être prolongée vers des données astrophysiques réelles.
 
@@ -766,7 +770,167 @@ n'est pas seulement pertinente au niveau des systèmes quantiques finis, mais po
 C'est en ce sens que les résultats SPARC constituent une avancée méthodologique importante : ils ouvrent la possibilité de tester la géométrie émergente bottom-up au-delà des seules signatures internes du modèle.
 
 % =====================================================================
-% PARTIE IX : SYNTHÈSE ET PERSPECTIVES
+% PARTIE IX : SCALING ET LENTILLAGE
+% =====================================================================
+
+\section{Scaling de l'échelle de transition et prédiction de lentillage}
+
+\subsection{Motivation}
+
+L'analyse précédente suggère l'existence de régimes effectifs distincts dans l'échantillon SPARC. Nous cherchons ici à aller plus loin en identifiant une structure d'échelle pour le paramètre de transition $r_{\mathrm{trans}}$, puis en testant si cette structure se propage à des observables indépendants tels que le lentillage.
+
+\subsection{Structure d'échelle de $r_{\mathrm{trans}}$}
+
+Nous montrons que $r_{\mathrm{trans}}$ n'est pas un paramètre libre arbitraire, mais une quantité corrélée à des observables galactiques.
+
+Une première loi univariée donne
+
+\[
+r_{\mathrm{trans}} \simeq -5.41 + 1.31\,r_{\max},
+\]
+
+avec un coefficient de détermination $R^2 \simeq 0.63$.
+
+Un modèle multivarié plus complet conduit à
+
+\[
+r_{\mathrm{trans}}
+=
+-14.06 + 5.39\,r_{\max}
+- 4.21\,r_{\mathrm{span}}
++ 0.80\,\frac{v_{b,\max}}{r_{\max}},
+\]
+
+avec
+
+\begin{itemize}
+\item $R^2 \simeq 0.687$
+\item $\mathrm{RMSE} \simeq 16.50$
+\end{itemize}
+
+Ce résultat indique que l'échelle de transition dépend à la fois de la taille globale du système et de sa compacité baryonique.
+
+\subsection{Robustesse}
+
+Une analyse bootstrap et train/test montre que les signes des coefficients sont stables, mais que la performance hors échantillon reste dispersée ($R^2_{\mathrm{test}} \sim 0.5$).
+
+Cela suggère qu'une loi unique globale n'est pas suffisante et motive une description en régimes.
+
+\subsection{Séparation en régimes}
+
+Un split basé sur la compacité baryonique révèle deux comportements distincts :
+
+\begin{itemize}
+\item régime LOW : dépendance forte à la structure interne
+\item régime HIGH : loi plus simple dominée par $r_{\max}$ et $v_{b,\max}$
+\end{itemize}
+
+Dans le régime HIGH, la loi effective devient
+
+\[
+r_{\mathrm{trans}} \simeq 2.44 + 0.46\,r_{\max} + 0.044\,v_{b,\max},
+\]
+
+avec $R^2 \simeq 0.50$.
+
+Cette simplification suggère une géométrie émergente plus rigide dans ce régime.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{lensing_regime_profiles.png}
+\caption{Profil moyen de l'excès de lentillage BuP selon le régime galactique.}
+\end{figure}
+
+\subsection{Prédiction de lentillage}
+
+À partir des profils ajustés, nous construisons un proxy de déflexion
+
+\[
+\alpha(R) \propto \frac{v(R)^2}{R}.
+\]
+
+Ce proxy correspond à l'échelle attendue à partir de la vitesse circulaire dans une approximation de lentille mince, et il est utilisé ici comme diagnostic de premier ordre de la réponse différentielle de lentillage.
+
+Nous définissons
+
+\[
+\Delta \alpha(R) = \alpha_{\mathrm{BuP}}(R) - \alpha_{\mathrm{bary}}(R).
+\]
+
+Pour chaque galaxie, nous extrayons la position du maximum
+
+\[
+x_{\mathrm{peak}} = \frac{R_{\mathrm{peak}}}{R_{\max}}.
+\]
+
+Sur 102 galaxies, nous obtenons :
+
+\begin{itemize}
+\item régime LOW : $x_{\mathrm{peak}} \approx 0.365$
+\item régime HIGH : $x_{\mathrm{peak}} \approx 0.498$
+\end{itemize}
+
+Donc
+
+\[
+x_{\mathrm{peak}}^{\mathrm{LOW}} < x_{\mathrm{peak}}^{\mathrm{HIGH}}.
+\]
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{lensing_peak_radius_boxplot.png}
+\caption{Distribution de $R_{\mathrm{peak}}/R_{\max}$ selon le régime galactique.}
+\end{figure}
+
+\subsection{Interprétation}
+
+Le cadre BuP prédit que :
+
+\begin{itemize}
+\item régime LOW : géométrie plus flexible, effet centralisé
+\item régime HIGH : géométrie plus étalée, effet distribué
+\end{itemize}
+
+Cela se traduit par :
+
+\begin{itemize}
+\item LOW : lentillage plus concentré
+\item HIGH : lentillage plus étendu
+\end{itemize}
+
+\subsection{Implication physique}
+
+Ce résultat constitue une prédiction falsifiable indépendante des courbes de rotation.
+
+À masse baryonique comparable, la structure radiale du lentillage dépend du régime galactique.
+
+\subsection{Comparaison avec les interprétations basées sur la matière noire}
+
+Le cadre BuP étudié ici diffère conceptuellement des modèles standards à halo sombre.
+
+Dans les approches de type $\Lambda$CDM, l'écart entre courbes baryoniques et dynamique observée est attribué à une composante supplémentaire de masse non lumineuse. Dans cette image, les courbes de rotation comme le lentillage sont principalement contrôlés par la distribution totale de masse effective, typiquement paramétrée par un halo sombre et sa concentration.
+
+À l'inverse, l'interprétation BuP n'attribue pas l'excès gravitationnel à une masse invisible additionnelle, mais à une modification de la géométrie émergente elle-même, encodée phénoménologiquement via une dimension effective et une échelle de transition $r_{\mathrm{trans}}$.
+
+Cela conduit à une logique de prédiction qualitativement différente. Dans BuP, la grandeur centrale n'est pas une masse de halo inférée, mais la réponse dépendante du régime de la géométrie émergente à la structure baryonique. Par conséquent, deux galaxies de contenu baryonique comparable ne sont pas contraintes de présenter la même structure radiale de l'excès de réponse si elles appartiennent à des régimes effectifs distincts.
+
+Les résultats sur le proxy de lentillage renforcent cette distinction. Nous trouvons que la position radiale normalisée du pic de l'excès de déflexion diffère systématiquement entre le régime LOW et le régime HIGH :
+\[
+\left(\frac{R_{\mathrm{peak}}}{R_{\max}}\right)_{\mathrm{LOW}}
+<
+\left(\frac{R_{\mathrm{peak}}}{R_{\max}}\right)_{\mathrm{HIGH}}.
+\]
+
+Cela suggère que, dans BuP, la morphologie radiale de l'excès de lentillage n'est pas déterminée uniquement par l'amplitude totale de la réponse gravitationnelle effective, mais aussi par le régime de géométrie émergente.
+
+Le point discriminant n'est donc pas seulement la possibilité de reproduire certaines courbes de rotation, mais la prédiction de profils de lentillage, de lois d'échelle et de dépendances en régime qui diffèrent systématiquement des attentes issues des modèles à halo sombre.
+
+\subsection{Synthèse}
+
+La séparation en régimes observée dans les courbes de rotation se propage à des observables de lentillage, renforçant l'interprétation d'une description effective multi-phase de la géométrie émergente.
+
+% =====================================================================
+% PARTIE X : SYNTHÈSE ET PERSPECTIVES
 % =====================================================================
 
 \section{Ce que le Cadre Établit}
@@ -785,6 +949,8 @@ C'est en ce sens que les résultats SPARC constituent une avancée méthodologiq
 \item cette réponse croît avec l'intensité de la perturbation et se localise davantage pour les défauts compacts
 \item une première extension phénoménologique vers les courbes de rotation SPARC suggère une description en régimes effectifs distincts
 \item la dimension émergente, d'abord reconstruite sur systèmes finis, acquiert un rôle potentiel d'observable phénoménologique à l'échelle galactique
+\item une loi d'échelle pour $r_{\mathrm{trans}}$ est identifiée, avec une séparation en deux régimes selon la compacité baryonique
+\item cette structure d'échelle se propage aux observables de lentillage, produisant une prédiction falsifiable indépendante des courbes de rotation
 \end{itemize}
 
 \section{Limites}
@@ -798,6 +964,7 @@ C'est en ce sens que les résultats SPARC constituent une avancée méthodologiq
 \item le couplage matière--courbure est établi ici comme preuve de concept numérique, pas encore comme loi fondamentale dérivée
 \item l'analyse SPARC reste exploratoire et ne constitue pas encore un modèle galactique complètement contraint
 \item les diagnostics en $\chi^2$ indiquent qu'un travail supplémentaire de calibration et de sélection de modèle reste nécessaire
+\item le lentillage est ici traité au niveau d'un proxy radial, et non encore d'une métrique optique relativiste complète
 \end{itemize}
 
 \section{Perspectives}
@@ -817,6 +984,8 @@ Les directions futures incluent
 \item test de lois effectives de type dimension variable selon le régime galactique
 \item confrontation avec d'autres observables astrophysiques : relations baryoniques, lentillage, profils de masse
 \item recherche d'une loi effective reliant directement dimension émergente et dynamique de rotation
+\item dérivation d'un pipeline complet $d(r)\rightarrow$ métrique optique effective $\rightarrow \alpha(R)$
+\item test observationnel des prédictions de lentillage sur les échantillons SLACS et futurs relevés (Euclid, Rubin)
 \end{itemize}
 
 % =====================================================================
@@ -839,6 +1008,8 @@ Même de petits systèmes quantiques ($N=9,16$) présentent de multiples signatu
 \item gravité thermodynamique approximative via une relation entropie-énergie de type Jacobson
 \item réponse locale de la courbure d'Ollivier--Ricci à une perturbation informationnelle, croissante avec l'intensité et plus localisée pour les défauts compacts
 \item première extension phénoménologique aux galaxies SPARC, suggérant que des régimes galactiques distincts peuvent correspondre à des dimensions effectives émergentes différentes
+\item identification d'une structure d'échelle pour $r_{\mathrm{trans}}$ et séparation en deux régimes selon la compacité baryonique
+\item propagation de cette dichotomie aux observables de lentillage, avec une prédiction falsifiable : $x_{\mathrm{peak}}^{\mathrm{LOW}} < x_{\mathrm{peak}}^{\mathrm{HIGH}}$
 \end{itemize}
 
 Ces résultats suggèrent que l'espace-temps pourrait être une description effective de la structure informationnelle des états quantiques, et que plusieurs phénomènes gravitationnels clés --- y compris les horizons et une réponse locale de courbure --- admettent une origine purement informationnelle accessible à $N$ fini. L'identification d'une constante modulaire $C$ dépendante de la topologie fournit un pont concret entre structure d'intrication et géométrie émergente, tandis que l'algorithme de détection d'horizon bottom-up offre un outil opérationnel pour identifier des régions de type trou noir sans aucun input géométrique préalable.
@@ -846,6 +1017,8 @@ Ces résultats suggèrent que l'espace-temps pourrait être une description effe
 Les résultats SPARC prolongent cette logique sur le versant phénoménologique. Sans constituer encore une théorie observationnelle complète, ils suggèrent qu'une géométrie émergente à dimension effective variable pourrait fournir un langage unificateur entre reconstruction bottom-up sur systèmes quantiques finis et dynamique galactique observée. En particulier, la séparation actuelle entre phase massive et phase naine ouvre la possibilité qu'une partie de la diversité des courbes de rotation soit interprétable en termes de régimes géométriques effectifs distincts.
 
 La courbure d'Ollivier--Ricci apparaît à ce stade comme le meilleur candidat discret pour quantifier le couplage matière--géométrie dans le cadre Bottom-Up. Elle remplace avantageusement les premiers diagnostics triangulaires de courbure, qui n'avaient pas fourni de signal suffisamment robuste.
+
+La prédiction de lentillage associée à la dichotomie de régimes offre désormais une voie de test observationnel indépendant, ouvrant la possibilité de confronter le cadre BuP aux données de lentillage fort et faible existantes et futures.
 
 \begin{thebibliography}{99}
 
