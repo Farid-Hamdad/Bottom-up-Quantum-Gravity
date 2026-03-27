@@ -98,14 +98,8 @@ Le spectre du Hamiltonien modulaire $K_A$ est étudié à l’aide :
 - des diagnostics de type Random Matrix Theory,
 - du spectral form factor.
 - 
-
-
 $$
-\langle r \rangle
-=
-\left\langle
-\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}
-\right\rangle
+\langle r \rangle = \left\langle \frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})} \right\rangle
 $$
 
 Valeurs de référence :
