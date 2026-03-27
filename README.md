@@ -324,3 +324,4 @@ results_bup_hybrid_multi_rmax_fixed/
 
 **Farid Hamdad**  
 Bottom-Up Quantum Gravity — 2026
+hamdadfarid54@gmail.com
