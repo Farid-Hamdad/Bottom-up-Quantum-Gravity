@@ -98,6 +98,8 @@ Le spectre du Hamiltonien modulaire $K_A$ est étudié à l’aide :
 - des diagnostics de type Random Matrix Theory,
 - du spectral form factor.
 - 
+
+
 $$
 \langle r \rangle
 =
