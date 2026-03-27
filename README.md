@@ -105,13 +105,6 @@ $$
 \frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}
 \right\rangle
 $$
-$$
-\langle r \rangle
-=
-\left\langle
-\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}
-\right\rangle
-$$
 
 Valeurs de référence :
 
