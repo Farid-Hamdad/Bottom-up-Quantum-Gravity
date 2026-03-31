@@ -1,102 +1,104 @@
-# BuP Vacuum — Effective Symmetry Selection
+# BuP Vacuum — Sélection de Symétrie Effective
 
-This experiment tests whether the ground state of a BuP-inspired Hamiltonian
-exhibits an emergent symmetry structure.
+Cette expérience vise à tester si l’état fondamental d’un Hamiltonien inspiré de BuP
+présente une structure de symétrie émergente.
 
-We consider an XXZ-type Hamiltonian with weak random local fields:
+On considère un Hamiltonien de type XXZ avec des champs locaux aléatoires faibles :
 
 H = -Jzz Σ ZiZj - Jxy Σ (XiXj + YiYj) + Σ hi · σi
 
-The goal is to determine whether the vacuum remains isotropic (SO(3)-like)
-or selects a preferred axis (U(1)-like).
+L’objectif est de déterminer si le vide reste isotrope (type SO(3))
+ou s’il sélectionne dynamiquement un axe privilégié (type U(1)).
 
 ---
 
-## Method
+## Méthode
 
-1. Compute the ground state |ψ₀⟩ of H
-2. Extract 2-qubit reduced density matrices
-3. Build correlation tensors T_ij = Tr(ρ_ij σ_a ⊗ σ_b)
-4. Project T_ij → SO(3) rotations via polar decomposition
-5. Map rotations → Lie algebra vectors
-6. Analyze alignment of these vectors:
+1. Calcul de l’état fondamental |ψ₀⟩ du Hamiltonien H
+2. Extraction des matrices de densité réduites à 2 qubits
+3. Construction des tenseurs de corrélation :
+   T_ij = Tr(ρ_ij σ_a ⊗ σ_b)
+4. Projection de T_ij vers SO(3) via décomposition polaire
+5. Conversion des rotations en vecteurs de l’algèbre de Lie
+6. Analyse de l’alignement de ces vecteurs :
 
-- strong alignment → U(1)-like
-- isotropic distribution → SO(3)-like
+* alignement fort → structure U(1)-like
+* distribution isotrope → structure SO(3)-like
 
 ---
 
 ## Observables
 
-- Order parameter (OP): mean alignment with dominant axis
-- Singular ratio: λ₁ / λ₂ (SVD of Lie vectors)
-- Angular dispersion σ
-- Fraction of aligned edges
+* Paramètre d’ordre (OP) : alignement moyen avec l’axe dominant
+* Ratio singulier : λ₁ / λ₂ (SVD des vecteurs de Lie)
+* Dispersion angulaire σ
+* Fraction d’arêtes alignées
 
-Classification:
+Critère de classification :
 
-- U(1)-like if ratio > 2.5 and σ < 0.4
-- otherwise SO(3)-like
-
----
-
-## Results
-
-### Robustness (h = 0.1)
-
-- U(1)-like in 95% of seeds
-- OP ≈ 0.97 (vs 0.62 random)
-- strong axis alignment
-
-### Disorder scan (h_scale)
-
-- stable U(1)-like regime for h ≲ 0.2
-- degradation starts around h ≈ 0.3
-- mostly lost for h ≥ 0.5
-
-### Anisotropy scan (Jzz / Jxy)
-
-- isotropic regime for Jzz/Jxy < 1
-- transition near Jzz/Jxy ≈ 1
-- robust U(1)-like for Jzz/Jxy ≥ 2
-
-### Random control
-
-- no U(1)-like detection
-- OP ≈ 0.62
-- confirms non-trivial structure
+* U(1)-like si ratio > 2.5 et σ < 0.4
+* sinon SO(3)-like
 
 ---
 
-## Interpretation
+## Résultats
 
-The BuP effective vacuum is not isotropic.
+### Robustesse (h = 0.1)
 
-It dynamically selects a preferred axis in a broad low-disorder regime,
-leading to an emergent U(1)-like symmetry.
+* U(1)-like dans 95 % des seeds
+* OP ≈ 0.97 (contre ≈ 0.62 pour des états aléatoires)
+* alignement fort et stable
 
-This effect:
+### Scan en désordre (h_scale)
 
-- is absent in random states
-- is controlled by XXZ anisotropy
-- is degraded by strong disorder
+* régime U(1)-like stable pour h ≲ 0.2
+* dégradation progressive à partir de h ≈ 0.3
+* régime majoritairement perdu pour h ≥ 0.5
+
+### Scan en anisotropie (Jzz / Jxy)
+
+* régime isotrope pour Jzz/Jxy < 1
+* transition autour de Jzz/Jxy ≈ 1
+* régime U(1)-like robuste pour Jzz/Jxy ≥ 2
+
+### Contrôle aléatoire
+
+* aucune détection de structure U(1)-like
+* OP ≈ 0.62
+* confirme que l’effet n’est pas trivial
 
 ---
 
-## Implications for BuP
+## Interprétation
 
-- The vacuum carries intrinsic structure (not neutral)
-- Entanglement geometry is anisotropic
-- A residual symmetry can emerge dynamically
-- The vacuum behaves as a structured medium
+Le vide effectif BuP n’est pas isotrope.
 
-This supports the idea that geometry and symmetry in BuP
-are not imposed but emerge from the entanglement structure.
+Dans un régime de faible désordre, il sélectionne dynamiquement un axe privilégié,
+ce qui correspond à une symétrie résiduelle de type U(1).
+
+Cet effet :
+
+* est absent pour des états aléatoires
+* dépend fortement de l’anisotropie XXZ
+* est détruit par un désordre trop fort
 
 ---
 
-## Files
+## Implications pour BuP
 
-- `bup_vacuum_v3_standalone.py`
-- `bup_vacuum_v3_results.csv`
-- `bup_vacuum_v3_summary.json`
+* Le vide possède une structure intrinsèque (il n’est pas neutre)
+* La géométrie d’intrication est anisotrope
+* Une symétrie résiduelle peut émerger dynamiquement
+* Le vide se comporte comme un milieu structuré
+
+Ce résultat soutient l’idée que, dans BuP,
+la géométrie et les symétries ne sont pas imposées,
+mais émergent de la structure d’intrication.
+
+---
+
+## Fichiers
+
+* `bup_vacuum_v3_standalone.py`
+* `bup_vacuum_v3_results.csv`
+* `bup_vacuum_v3_summary.json`
