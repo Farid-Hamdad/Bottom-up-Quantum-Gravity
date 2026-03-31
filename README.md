@@ -1,4 +1,3 @@
-
 # Bottom-Up Quantum Gravity
 
 **Émergence de l’espace, du temps et de la gravité à partir de l’intrication quantique**  
@@ -208,7 +207,108 @@ $$
 
 ---
 
-## 7. Extension SPARC
+## 7. Symétrie effective du vide BuP
+
+Un nouveau résultat explore la structure du **vide effectif** de BuP à partir d’un Hamiltonien de type XXZ avec champs locaux aléatoires faibles.
+
+Le système étudié est :
+
+$$
+H_{\mathrm{BuP}} = -J_{zz}\sum Z_i Z_{i+1} - J_{xy}\sum (X_iX_{i+1}+Y_iY_{i+1}) + \sum_i (h_i^x X_i + h_i^y Y_i + h_i^z Z_i)
+$$
+
+L’objectif n’est pas ici de postuler une symétrie de jauge fondamentale, mais de tester si le vide sélectionne dynamiquement une **symétrie résiduelle effective**.
+
+### Observables
+
+À partir de l’état fondamental, on extrait :
+
+- un graphe de rotations effectives,
+- les vecteurs de Lie associés,
+- un axe dominant éventuel,
+- un paramètre d’ordre angulaire,
+- un ratio singulier mesurant l’alignement.
+
+Critère numérique :
+
+- régime **U(1)-like** si les vecteurs de Lie sont fortement colinéaires,
+- régime **SO(3)-like** sinon.
+
+### Résultat principal
+
+Pour les paramètres :
+
+- $N=8$
+- $J_{zz}=2.0$
+- $J_{xy}=0.5$
+- $h=0.1$
+
+on observe :
+
+- **95 % des seeds** classés **U(1)-like**
+- paramètre d’ordre moyen :
+
+$$
+OP \approx 0.969
+$$
+
+contre :
+
+$$
+OP_{\mathrm{random}} \approx 0.619
+$$
+
+pour des états aléatoires de contrôle.
+
+### Scan en désordre
+
+Le scan en $h_{\mathrm{scale}}$ montre :
+
+- régime **U(1)-like** robuste pour $h \lesssim 0.2$
+- dégradation progressive vers $h \sim 0.3$
+- perte majoritaire du régime pour $h \gtrsim 0.5$
+
+### Scan en anisotropie
+
+Le scan en $J_{zz}/J_{xy}$ montre :
+
+- régime **SO(3)-like** pour faible anisotropie
+- transition vers **U(1)-like** autour de :
+
+$$
+J_{zz}/J_{xy} \approx 1
+$$
+
+- régime **U(1)-like** robuste pour :
+
+$$
+J_{zz}/J_{xy} \ge 2
+$$
+
+### Interprétation
+
+Ce résultat suggère que le vide effectif BuP :
+
+- n’est pas isotrope,
+- sélectionne dynamiquement un axe privilégié,
+- possède une structure résiduelle de type **U(1)-like**.
+
+Il ne s’agit pas ici d’une brisure spontanée stricte au sens standard des théories de champs, car les champs locaux cassent déjà explicitement la symétrie complète, mais d’une **sélection dynamique robuste d’un axe effectif**.
+
+### Implication pour BuP
+
+Ce résultat prolonge la chaîne conceptuelle du projet :
+
+- intrication → géométrie
+- intrication → courbure
+- intrication → dynamique modulaire
+- intrication → **symétrie effective du vide**
+
+Il suggère que le vide BuP doit être compris comme un **milieu structuré**, et non comme un simple état neutre ou isotrope.
+
+---
+
+## 8. Extension SPARC
 
 Le modèle est testé sur 175 galaxies SPARC.
 
@@ -219,7 +319,7 @@ Résultat :
 
 ---
 
-## 8. Structure en régimes
+## 9. Structure en régimes
 
 | Régime | $d_{\min}$ |
 |--------|-----------|
@@ -230,7 +330,7 @@ Structure émergente (non imposée).
 
 ---
 
-## 9. Bridge $d(r)$ → lentillage
+## 10. Bridge $d(r)$ → lentillage
 
 Pipeline complet :
 
@@ -249,7 +349,7 @@ Extraction :
 
 ---
 
-## 10. Prédiction de lentillage
+## 11. Prédiction de lentillage
 
 Résultat (102 galaxies) :
 
@@ -265,7 +365,7 @@ Résultat (102 galaxies) :
 
 ---
 
-## 11. Structure du dépôt
+## 12. Structure du dépôt
 
 
 experiments/
@@ -280,7 +380,7 @@ results_bup_hybrid_multi_rmax_fixed/
 
 ---
 
-## 12. Interprétation physique
+## 13. Interprétation physique
 
 > la matière modifie la structure informationnelle  
 > → modifie la géométrie  
@@ -288,7 +388,7 @@ results_bup_hybrid_multi_rmax_fixed/
 
 ---
 
-## 13. Limites
+## 14. Limites
 
 - modèle effectif
 - pas encore relativiste complet
@@ -297,7 +397,7 @@ results_bup_hybrid_multi_rmax_fixed/
 
 ---
 
-## 14. Perspectives
+## 15. Perspectives
 
 - lentillage relativiste complet  
 - confrontation observations  
@@ -306,13 +406,14 @@ results_bup_hybrid_multi_rmax_fixed/
 
 ---
 
-## 15. Statut
+## 16. Statut
 
 ✔ rotation curves  
 ✔ dimension émergente  
 ✔ régimes  
 ✔ lentillage  
 ✔ courbure  
+✔ symétrie effective du vide
 
 ---
 
