@@ -682,7 +682,140 @@ Ce résultat constitue le signal le plus net obtenu jusqu'ici dans le projet en 
 \]
 
 Il ne s'agit pas encore d'une équation d'Einstein discrète dérivée des premiers principes, mais d'une preuve de concept numérique claire montrant qu'une ``matière'' définie informationnellement peut agir comme source de courbure sur le graphe d'intrication.
+% =====================================================================
+% PARTIE VII BIS : SYMÉTRIE EFFECTIVE DU VIDE
+% =====================================================================
 
+\section{Symétrie effective du vide BuP}
+
+Jusqu'à présent, le programme Bottom-Up a permis d'établir des signatures cohérentes de géométrie émergente, de dynamique modulaire et de couplage matière--courbure au sein de graphes d'intrication.
+
+Nous explorons ici une question complémentaire : le vide effectif du modèle sélectionne-t-il une structure de symétrie résiduelle ?
+
+\subsection{Modèle effectif}
+
+Nous considérons un Hamiltonien de type XXZ avec champs locaux faibles :
+
+\[
+H_{\mathrm{BuP}} =
+- J_{zz}\sum Z_i Z_{i+1}
+- J_{xy}\sum (X_iX_{i+1}+Y_iY_{i+1})
++ \sum_i (h_i^x X_i + h_i^y Y_i + h_i^z Z_i).
+\]
+
+Ce modèle ne postule aucune symétrie de jauge a priori, mais permet de tester si une structure collective émerge dans le vide.
+
+\subsection{Observables}
+
+À partir de l'état fondamental, nous extrayons :
+
+\begin{itemize}
+\item un graphe de rotations effectives,
+\item les générateurs locaux associés,
+\item un axe dominant éventuel,
+\item un paramètre d'ordre angulaire,
+\item un ratio singulier mesurant l'alignement.
+\end{itemize}
+
+Nous définissons :
+
+\begin{itemize}
+\item régime \textbf{U(1)-like} : vecteurs fortement colinéaires,
+\item régime \textbf{SO(3)-like} : structure isotrope.
+\end{itemize}
+
+\subsection{Résultat principal}
+
+Pour les paramètres :
+
+\begin{itemize}
+\item $N=8$
+\item $J_{zz}=2.0$
+\item $J_{xy}=0.5$
+\item $h_{\mathrm{scale}}=0.1$
+\end{itemize}
+
+nous observons :
+
+\begin{itemize}
+\item $95\%$ des seeds classés \textbf{U(1)-like},
+\item paramètre d'ordre moyen
+\[
+OP \approx 0.969,
+\]
+contre
+\[
+OP_{\mathrm{random}} \approx 0.619
+\]
+pour des états aléatoires de contrôle.
+\end{itemize}
+
+\subsection{Dépendance au désordre}
+
+Un scan en intensité de champ montre :
+
+\begin{itemize}
+\item régime U(1)-like stable pour $h \lesssim 0.2$,
+\item transition progressive pour $h \sim 0.3$,
+\item perte de structure pour $h \gtrsim 0.5$.
+\end{itemize}
+
+\subsection{Dépendance en anisotropie}
+
+Le ratio $J_{zz}/J_{xy}$ contrôle la structure émergente :
+
+\begin{itemize}
+\item régime SO(3)-like pour faible anisotropie,
+\item transition autour de $J_{zz}/J_{xy} \approx 1$,
+\item régime U(1)-like robuste pour $J_{zz}/J_{xy} \ge 2$.
+\end{itemize}
+
+\subsection{Interprétation}
+
+Ce résultat suggère que le vide effectif BuP :
+
+\begin{itemize}
+\item n'est pas isotrope,
+\item sélectionne dynamiquement un axe privilégié,
+\item présente une structure résiduelle de type U(1)-like.
+\end{itemize}
+
+Il ne s'agit pas d'une brisure spontanée stricte au sens des théories de champs, les champs locaux introduisant déjà une anisotropie explicite, mais d'une \textbf{sélection dynamique robuste d'une symétrie effective}.
+
+\subsection{Portée pour le programme Bottom-Up}
+
+Ce résultat prolonge la chaîne conceptuelle :
+
+\[
+\text{intrication}
+\;\Longrightarrow\;
+\text{géométrie}
+\;\Longrightarrow\;
+\text{courbure}
+\;\Longrightarrow\;
+\text{dynamique}
+\;\Longrightarrow\;
+\text{symétrie effective}.
+\]
+
+Il suggère que le vide Bottom-Up doit être compris comme un milieu structuré, porteur d'une organisation interne non triviale.
+
+\subsection{Limites}
+
+\begin{itemize}
+\item système de taille finie ($N=8$),
+\item classification effective (non group-théorique rigoureuse),
+\item absence de dynamique de jauge complète.
+\end{itemize}
+
+\subsection{Perspectives}
+
+\begin{itemize}
+\item extension à plus grande taille ($N>16$),
+\item étude des transitions de phase,
+\item connexion avec des champs de jauge effectifs,
+\item intégration dans un cadre relativiste émergent.
+\end{itemize}
 % =====================================================================
 % PARTIE VIII : EXTENSION PHÉNOMÉNOLOGIQUE SPARC
 % =====================================================================
