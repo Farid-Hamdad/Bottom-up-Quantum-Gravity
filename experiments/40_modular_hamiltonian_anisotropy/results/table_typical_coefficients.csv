@@ -1,0 +1,2 @@
+state_kind,N,A_size,eta_micro,mean_abs_J_xx,mean_abs_J_yy,mean_abs_J_zz,mean_abs_J_cross,fit_r2,amplification,xxz_regime
+ground,12,6,1.5,0.424329034256204,0.4243290340339262,0.677505072292511,2.0475032925485351e-10,0.9999777629395242,1.064433521748114,xxz_like
