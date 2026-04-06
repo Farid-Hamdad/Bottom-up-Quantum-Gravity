@@ -1,424 +1,434 @@
-# Bottom-Up Quantum Gravity
+# Bottom-Up Quantum Gravity (BuP)
 
-**Émergence de l’espace, du temps et de la gravité à partir de l’intrication quantique**  
-**Farid Hamdad — Mars 2026**
-
----
-
-## Vue d’ensemble
-
-**Bottom-Up Quantum Gravity (BuP)** explore une hypothèse minimale :
-
-> l’espace, le temps et la gravité ne sont pas fondamentaux ;  
-> ils émergent collectivement de la structure d’intrication d’un état quantique global fini.
-
-Dans cette approche :
-
-- l’intrication définit la connectivité,
-- la géométrie émerge de la structure informationnelle,
-- le temps apparaît via le flot modulaire,
-- la gravité peut être interprétée comme une courbure effective de cette structure.
-
-Le projet combine :
-
-- une base conceptuelle issue de l’information quantique,
-- des simulations numériques sur systèmes finis,
-- une extension phénoménologique vers les galaxies (SPARC).
+**Emergence of space, time, and gravity from quantum entanglement**  
+Farid Hamdad — 2026
 
 ---
 
-## Idée centrale
+## Overview
 
-On part d’un état quantique global pur $|\Psi\rangle$ sans espace préexistant.
+**Bottom-Up Quantum Gravity (BuP)** investigates a minimal hypothesis:
 
-On définit une distance informationnelle :
+> Space, time, and gravity are not fundamental.  
+> They emerge collectively from the entanglement structure of a finite global quantum state.
+
+In this framework:
+
+- entanglement defines connectivity,
+- geometry emerges from informational structure,
+- time appears via modular flow,
+- gravity is interpreted as effective curvature of that structure.
+
+The project combines a conceptual foundation in quantum information,
+exact numerical simulations on finite systems, and phenomenological
+extension to galactic rotation curves (SPARC dataset).
+
+---
+
+## Core Idea
+
+Starting from a global pure quantum state $|\Psi\rangle$ with no
+pre-existing space, an informational distance is defined:
 
 $$
 d_{ij} = -\log\left(\frac{I(i:j)}{I_{\max} + \epsilon}\right)
 $$
 
-où $I(i:j)$ est l’information mutuelle.
+where $I(i:j)$ is the mutual information between subsystems $i$ and $j$.
 
-À partir de cette distance :
+From this distance, the framework reconstructs:
 
-- on reconstruit une géométrie,
-- on définit un Laplacien,
-- on extrait une **dimension spectrale $d_s(\tau)$**,
-- puis un profil radial effectif **$d(r)$**.
-
----
-
-## Résultat clé : dimension émergente
-
-Les simulations et les fits SPARC montrent que la dimension effective est **dépendante de l’échelle** :
-
-- $d \approx 3$ localement,
-- $d < 3$ à l’échelle galactique,
-- retour vers $d \approx 3$ à grande échelle.
-
-Ce comportement permet de reproduire :
-
-- les courbes de rotation,
-- un excès de lentillage,
-- sans introduire explicitement de composante de matière noire particulaire.
+- an entanglement graph and embedding,
+- a discrete Laplacian,
+- a spectral dimension $d_s(\tau)$,
+- an effective radial profile $d(r)$.
 
 ---
 
-## 1. Temps émergent : flot modulaire
+## Results Summary
 
-Pour un sous-système $A$,
-
-$$
-\rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|
-$$
-
-$$
-K_A = -\log(\rho_A)
-$$
-
-Le flot modulaire
-
-$$
-O(\tau)=e^{iK_A\tau} O e^{-iK_A\tau}
-$$
-
-définit une dynamique relationnelle intrinsèque.
-
-**Interprétation :**  
-le temps n’est plus un paramètre de fond, mais une propriété informationnelle interne du système.
+| Result | Status |
+|--------|--------|
+| Emergent rotation curves (SPARC, 175 galaxies) | strong numerical evidence |
+| Emergent dimension and regimes | robust |
+| Ollivier–Ricci curvature signal | statistically robust |
+| Modular chaos diagnostics | consistent with chaotic regime |
+| Lensing prediction | preliminary |
+| Effective vacuum symmetry (U(1)-like) | numerically observed |
+| Modular Hamiltonians as geometric probes | established numerically |
+| Vacuum uniqueness and axis alignment | observed |
 
 ---
 
-## 2. Diagnostics spectraux et chaos modulaire
+## 1. Emergent Time: Modular Flow
 
-Le spectre du Hamiltonien modulaire $K_A$ est étudié à l’aide :
+For a subsystem $A$ with reduced density matrix
+$\rho_A = \mathrm{Tr}_{\bar{A}} |\Psi\rangle\langle\Psi|$,
+the modular Hamiltonian is:
 
-- des statistiques de gaps adjacents,
-- des diagnostics de type Random Matrix Theory,
-- du spectral form factor.
-- 
+$$
+K_A = -\log \rho_A
+$$
+
+The modular flow
+
+$$
+O(\tau) = e^{iK_A\tau}\, O\, e^{-iK_A\tau}
+$$
+
+defines an intrinsic relational dynamics. Time is not a background
+parameter but an informational property of the system.
+
+---
+
+## 2. Modular Chaos Diagnostics
+
+The spectrum of $K_A$ is analyzed via:
+
+- adjacent gap ratio statistics,
+- Random Matrix Theory diagnostics,
+- spectral form factor.
+
 $$
 \langle r \rangle = \left\langle \frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})} \right\rangle
 $$
 
-Valeurs de référence :
+| Regime | Value |
+|--------|------:|
+| Poisson | 0.386 |
+| GOE | 0.536 |
+| GUE | 0.603 |
 
-| Régime | Valeur |
-|---|---:|
-| Poisson | $\approx 0.386$ |
-| GOE | $\approx 0.536$ |
-| GUE | $\approx 0.603$ |
-
-Résultats typiques :
-
-$$
-\langle r \rangle \in [0.53,\,0.59]
-$$
-
-compatible avec un régime chaotique.
+Numerical results give $\langle r \rangle \in [0.53, 0.59]$,
+consistent with a chaotic regime.
 
 ---
 
-## 3. Émergence de l’espace
+## 3. Emergent Space
 
-La géométrie est reconstruite via :
-
-$$
-I(i:j)=S(\rho_i)+S(\rho_j)-S(\rho_{ij})
-$$
+Geometry is reconstructed from mutual information:
 
 $$
-d_{ij}=-\log\left(\frac{I(i:j)}{I_{\max}}+\varepsilon\right)
+I(i:j) = S(\rho_i) + S(\rho_j) - S(\rho_{ij})
 $$
 
-Le projet construit :
+$$
+d_{ij} = -\log\left(\frac{I(i:j)}{I_{\max}} + \varepsilon\right)
+$$
 
-- graphes d’intrication,
-- plongements MDS,
-- dimension effective.
-
-> la géométrie n’est pas imposée ; elle est reconstruite.
+The geometry is not assumed — it is reconstructed from the
+entanglement structure of $|\Psi\rangle$.
 
 ---
 
-## 4. Résultats internes
+## 4. Ollivier–Ricci Discrete Curvature
 
-### Dimension émergente
-
-| Configuration | Dimension |
-|---|---:|
-| local | $\approx 2$ |
-| non-local | $\approx 3$ |
-
----
-
-### ER = EPR
-
-Des points éloignés deviennent proches → signature wormhole-like.
-
----
-
-### Gravité thermodynamique
+The discrete curvature signal is the most statistically robust
+numerical result of the project:
 
 $$
-\delta S \approx \beta_{\mathrm{eff}}\delta E
+\Delta\kappa_{\mathrm{edge}} \approx 0.0758
 $$
 
-relation numériquement stable.
-
----
-
-## 5. Horizon émergent ($N=16$)
-
-Détection d’une région type horizon :
-
-- entropie élevée
-- faible conductance
-- fort couplage interne
-
-→ structure de type horizon sans géométrie préalable.
-
----
-
-## 6. Courbure discrète d’Ollivier–Ricci
-
-Objectif :
-
-$$
-\text{défaut informationnel} \Rightarrow \text{courbure}
-$$
-
-Résultat robuste (multi-seeds) :
-
-$$
-\Delta \kappa_{\mathrm{edge}} \approx 0.0758
-$$
-
-- fraction positive = 1.00
+- positive fraction: 1.00 across all seeds
 - $p \sim 10^{-6}$
+- near-far effect: $\Delta\kappa_{\mathrm{near-far}} > 0$
 
-et effet localisé :
-
-$$
-\Delta \kappa_{\mathrm{near-far}} > 0
-$$
-
-👉 Ce résultat constitue à ce stade le signal numérique le plus robuste du projet.
+The informational deficit produces a detectable curvature signal
+without any geometric postulate.
 
 ---
 
-## 7. Symétrie effective du vide BuP
+## 5. Emergent Horizon ($N = 16$)
 
-Un nouveau résultat explore la structure du **vide effectif** de BuP à partir d’un Hamiltonien de type XXZ avec champs locaux aléatoires faibles.
+A horizon-like region is detected characterized by:
 
-Le système étudié est :
+- high entanglement entropy,
+- low conductance,
+- strong internal coupling.
 
-$$
-H_{\mathrm{BuP}} = -J_{zz}\sum Z_i Z_{i+1} - J_{xy}\sum (X_iX_{i+1}+Y_iY_{i+1}) + \sum_i (h_i^x X_i + h_i^y Y_i + h_i^z Z_i)
-$$
-
-L’objectif n’est pas ici de postuler une symétrie de jauge fondamentale, mais de tester si le vide sélectionne dynamiquement une **symétrie résiduelle effective**.
-
-### Observables
-
-À partir de l’état fondamental, on extrait :
-
-- un graphe de rotations effectives,
-- les vecteurs de Lie associés,
-- un axe dominant éventuel,
-- un paramètre d’ordre angulaire,
-- un ratio singulier mesurant l’alignement.
-
-Critère numérique :
-
-- régime **U(1)-like** si les vecteurs de Lie sont fortement colinéaires,
-- régime **SO(3)-like** sinon.
-
-### Résultat principal
-
-Pour les paramètres :
-
-- $N=8$
-- $J_{zz}=2.0$
-- $J_{xy}=0.5$
-- $h=0.1$
-
-on observe :
-
-- **95 % des seeds** classés **U(1)-like**
-- paramètre d’ordre moyen :
-
-$$
-OP \approx 0.969
-$$
-
-contre :
-
-$$
-OP_{\mathrm{random}} \approx 0.619
-$$
-
-pour des états aléatoires de contrôle.
-
-### Scan en désordre
-
-Le scan en $h_{\mathrm{scale}}$ montre :
-
-- régime **U(1)-like** robuste pour $h \lesssim 0.2$
-- dégradation progressive vers $h \sim 0.3$
-- perte majoritaire du régime pour $h \gtrsim 0.5$
-
-### Scan en anisotropie
-
-Le scan en $J_{zz}/J_{xy}$ montre :
-
-- régime **SO(3)-like** pour faible anisotropie
-- transition vers **U(1)-like** autour de :
-
-$$
-J_{zz}/J_{xy} \approx 1
-$$
-
-- régime **U(1)-like** robuste pour :
-
-$$
-J_{zz}/J_{xy} \ge 2
-$$
-
-### Interprétation
-
-Ce résultat suggère que le vide effectif BuP :
-
-- n’est pas isotrope,
-- sélectionne dynamiquement un axe privilégié,
-- possède une structure résiduelle de type **U(1)-like**.
-
-Il ne s’agit pas ici d’une brisure spontanée stricte au sens standard des théories de champs, car les champs locaux cassent déjà explicitement la symétrie complète, mais d’une **sélection dynamique robuste d’un axe effectif**.
-
-### Implication pour BuP
-
-Ce résultat prolonge la chaîne conceptuelle du projet :
-
-- intrication → géométrie
-- intrication → courbure
-- intrication → dynamique modulaire
-- intrication → **symétrie effective du vide**
-
-Il suggère que le vide BuP doit être compris comme un **milieu structuré**, et non comme un simple état neutre ou isotrope.
+This structure emerges without a pre-defined geometry.
 
 ---
 
-## 8. Extension SPARC
+## 6. Thermodynamic Gravity
 
-Le modèle est testé sur 175 galaxies SPARC.
+The relation
 
-Résultat :
+$$
+\delta S \approx \beta_{\mathrm{eff}}\,\delta E
+$$
 
-- massives : $d_{\min} \approx 2.49$
-- naines : $d_{\min} \approx 2.27$
-
----
-
-## 9. Structure en régimes
-
-| Régime | $d_{\min}$ |
-|--------|-----------|
-| HIGH   | $\sim 2.49$ |
-| LOW    | $\sim 2.27$ |
-
-Structure émergente (non imposée).
+is numerically stable across configurations, consistent with
+an emergent thermodynamic interpretation of gravity.
 
 ---
 
-## 10. Bridge $d(r)$ → lentillage
+## 7. SPARC Extension (175 galaxies)
 
-Pipeline complet :
+The BuP effective dimension model is tested against the SPARC
+rotation curve dataset.
 
+| Regime | $d_{\min}$ |
+|--------|----------:|
+| Massive galaxies (HIGH) | 2.49 |
+| Dwarf galaxies (LOW) | 2.27 |
 
-bup_v2_minimal_pipeline.py
-bup_step1_fit_sparc.py
-bup_regime_split.py
-bup_dr_to_lensing_bridge.py
-bup_lensing_regime_figure.py
+The regime structure is emergent, not imposed.
 
+**Connection to microscopic structure.**
 
-Extraction :
+The scale-dependent dimension $d(r)$ observed in SPARC
+can be interpreted as the large-scale manifestation of
+state-dependent interaction structures observed in modular Hamiltonians.
 
-- $\Delta \alpha(r)$
-- $R_{\text{peak}}$
+This suggests a continuous chain:
 
----
+$$
+\text{quantum entanglement}
+\;\rightarrow\; \text{modular structure}
+\;\rightarrow\; \text{interaction graph}
+\;\rightarrow\; \text{effective dimension } d(r).
+$$
 
-## 11. Prédiction de lentillage
-
-Résultat (102 galaxies) :
-
-- LOW : $x_{\text{peak}} \approx 0.365$
-- HIGH : $x_{\text{peak}} \approx 0.498$
-
-### Interprétation
-
-- LOW → lentillage centralisé  
-- HIGH → lentillage étendu  
-
-👉 Cette prédiction constitue un discriminant potentiel entre BuP et les modèles standard.
+The agreement with SPARC data therefore is consistent with 
+the microscopic mechanisms identified in this work.
 
 ---
 
-## 12. Structure du dépôt
+## 8. Lensing Prediction (102 galaxies)
 
+| Regime | $x_{\mathrm{peak}}$ |
+|--------|--------------------:|
+| LOW | 0.365 |
+| HIGH | 0.498 |
 
+- LOW regime: centralized lensing signal
+- HIGH regime: extended lensing signal
+
+This prediction constitutes a potential discriminant between
+BuP and standard dark matter models.
+
+---
+
+## 9. Effective Vacuum Symmetry
+
+The effective symmetry structure of the BuP vacuum is investigated
+using a ground state of an anisotropic Hamiltonian with weak
+local random fields:
+
+$$
+H_{\mathrm{BuP}} =
+-J_{zz}\sum_i Z_i Z_{i+1}
+-J_{xy}\sum_i (X_iX_{i+1}+Y_iY_{i+1})
++\sum_i (h_i^x X_i + h_i^y Y_i + h_i^z Z_i)
+$$
+
+**Method.** From the ground state, effective rotation matrices $R_{ij} \in SO(3)$
+are extracted via polar SVD decomposition of the Pauli correlation tensor.
+The Lie algebra generated by $\{\log R_{ij}\}$ is analyzed to classify
+the effective symmetry group.
+
+**Main result** ($N=8$, $J_{zz}=2.0$, $J_{xy}=0.5$, $h=0.1$):
+
+- 95% of disorder realizations classified as U(1)-like
+- mean order parameter $OP \approx 0.969$ vs $OP_{\mathrm{random}} \approx 0.619$
+
+**Scan over disorder** $h_{\mathrm{scale}}$:
+U(1)-like regime robust for $h \lesssim 0.2$,
+transition near $h \sim 0.3$,
+SO(3) regime recovered for $h \gtrsim 0.5$.
+
+**Scan over anisotropy** $J_{zz}/J_{xy}$:
+transition from SO(3)-like to U(1)-like near $J_{zz}/J_{xy} \approx 1$,
+U(1)-like robust for $J_{zz}/J_{xy} \geq 2$.
+
+**Interpretation.** This is not spontaneous symmetry breaking in the
+field-theoretic sense — the local fields already break full SO(3)
+explicitly. The result demonstrates robust effective axis selection:
+the BuP vacuum is a structured medium, not an isotropic neutral state.
+
+**kNN stability** ($k = 1, \ldots, 7$): U(1)-like signal
+is stable for all values of $k$, confirming it is an intrinsic
+property of the ground state rather than an artifact of the
+graph reconstruction.
+
+**Vacuum uniqueness**: the angular dispersion between vacuum axes
+across disorder realizations is $\Delta_{\mathrm{vide}} = 0.056$ rad
+(normalized: $0.072$, where $1$ corresponds to isotropic $S^2$).
+The vacuum axis aligns with the $J_{zz}$ anisotropy direction
+with $\langle|\cos z|\rangle = 0.999$.
+
+---
+
+## 10. Modular Hamiltonians as Geometric Probes
+
+**Paper:** `bup_modular_paper_v3.tex`
+
+The structure of modular Hamiltonians $K_A$ is investigated
+systematically across 180 numerical configurations
+($N \in \{8,10,12\}$, $|A| \in \{3,4,5,6\}$,
+$\eta_{\mathrm{micro}} \in \{1.0, 1.1, 1.25, 1.5, 2.0\}$,
+three state classes).
+
+**Derivation chain:**
+
+$$
+|\Psi\rangle
+\;\xrightarrow{\mathrm{Tr}_{\bar{A}}}\;
+\rho_A
+\;\xrightarrow{-\log}\;
+K_A
+\;\xrightarrow{\mathrm{fit}}\;
+H_{\mathrm{eff}}^{1+2}
+$$
+
+**Result 1 — Quasi-locality:**
+
+| State class | $\langle R^2 \rangle$ | $\sigma_{R^2}$ |
+|-------------|----------------------:|---------------:|
+| Ground | 0.9948 | 0.0099 |
+| Thermal | 0.9994 | 0.0011 |
+| Random | 0.9205 | 0.0741 |
+
+**Result 2 — State-dependent anisotropy amplification:**
+
+$$
+\mathcal{A} = \frac{\eta_{\mathrm{eff}}}{\eta_{\mathrm{micro}}}
+$$
+
+| State class | $\langle\mathcal{A}\rangle$ | $\sigma_{\mathcal{A}}$ |
+|-------------|----------------------------:|-----------------------:|
+| Ground | 1.048 | 0.114 |
+| Thermal | 1.107 | 0.125 |
+| Random | 0.805 | 0.392 |
+
+Structured states (ground, thermal) amplify microscopic anisotropy;
+random states suppress it. The hierarchy
+
+$$
+\mathcal{A}_{\mathrm{thermal}} \gtrsim \mathcal{A}_{\mathrm{ground}} > 1 > \mathcal{A}_{\mathrm{random}}
+$$
+
+is state-dependent: random states constructed from the same
+Hamiltonian show suppression, confirming that $K_A$ acts as a
+coherence-sensitive filter.
+
+**Result 3 — Monotonic amplification with $\eta_{\mathrm{micro}}$:**
+
+For ground states, $\mathcal{A}$ increases monotonically from
+$1.000$ at $\eta_{\mathrm{micro}} = 1.0$ to $1.144 \pm 0.190$
+at $\eta_{\mathrm{micro}} = 2.0$.
+
+**Implication for BuP.** This establishes a concrete numerical
+bridge between entanglement structure and emergent effective dynamics,
+replacing postulated Hamiltonians with operators derived from $|\Psi\rangle$.
+
+**Link to modular chaos.**
+
+The spectral properties of $K_A$ are consistent with chaotic behavior,
+with $\langle r \rangle \in [0.53, 0.59]$, matching GOE/GUE predictions.
+
+This establishes that modular Hamiltonians are not only quasi-local
+operators, but also are consistent with a universal chaotic class,
+reinforcing their interpretation as effective dynamical generators.
+
+**Geometric interpretation.**
+
+The extracted couplings $J_{ij}$ define an interaction graph,
+which can be interpreted as an emergent geometry.
+
+Locality of $K_A$ corresponds to short-range structure,
+while anisotropy encodes directional deformation.
+
+This provides a concrete realization of the BuP principle:
+
+$$
+\text{entanglement} \;\rightarrow\; \text{geometry} \;\rightarrow\; \text{effective dynamics.}
+$$
+
+---
+
+## 11. Repository Structure
+
+```
 experiments/
-10_single_galaxy_ngc3198/
-20_v1_3_scan_ngc3198/
-30_multi_galaxy_regime_3_08_4_5/
+    10_single_galaxy_ngc3198/       # Single galaxy fit (NGC 3198)
+    20_v1_3_scan_ngc3198/           # Parameter scan
+    30_multi_galaxy_regime_3_08_4_5/ # Multi-galaxy regime analysis
 
-derive_d_r/
-results_bup_hybrid_multi/
-results_bup_hybrid_multi_rmax_fixed/
+derive_d_r/                         # Effective dimension pipeline
+results_bup_hybrid_multi/           # Multi-galaxy results
+results_bup_hybrid_multi_rmax_fixed/ # Fixed r_max variant
 
+jauge/                              # Gauge structure and vacuum symmetry
+    bup_gauge_classification.py     # SO(3) group classification
+    bup_symmetry_scan.py            # Comparative mechanism scan
+    bup_vacuum_v3_standalone.py     # Vacuum effective symmetry (v3)
+    bup_knn_scan.py                 # kNN stability scan
+    bup_vacuum_uniqueness.py        # Vacuum uniqueness analysis
+    bup_spontaneous_breaking.py     # Explicit vs spontaneous breaking test
 
----
-
-## 13. Interprétation physique
-
-> la matière modifie la structure informationnelle  
-> → modifie la géométrie  
-> → produit la gravité
-
----
-
-## 14. Limites
-
-- modèle effectif
-- pas encore relativiste complet
-- lentillage via proxy
-- dépendance M/L
-
----
-
-## 15. Perspectives
-
-- lentillage relativiste complet  
-- confrontation observations  
-- cosmologie  
-- dynamique fondamentale  
+modular/                            # Modular Hamiltonian study
+    bup_modular_paper_v3.tex        # Paper (ready for submission)
+    aggregate_rows.csv              # Full numerical dataset (180 configs)
+    fig_amplification_by_state.png
+    fig_amplification_vs_eta.png
+    fig_fit_r2_by_state.png
+    fig_locality_vs_eta.png
+```
 
 ---
 
-## 16. Statut
+## 12. Physical Interpretation
 
-✔ rotation curves  
-✔ dimension émergente  
-✔ régimes  
-✔ lentillage  
-✔ courbure  
-✔ symétrie effective du vide
+Matter modifies the informational structure of $|\Psi\rangle$,
+which modifies the emergent geometry,
+which produces an effective gravitational effect.
+
+No dark matter particle is postulated.
+The gravitational excess may be interpreted as a geometric consequence of entanglement structure.
 
 ---
 
-## Auteur
+## 13. Limitations
+
+- Effective model, not a complete relativistic theory
+- Lensing via proxy observable, not full relativistic deflection
+- Mass-to-light ratio dependence in SPARC fits
+- Ground states of XXZ Hamiltonian used as BuP proxies —
+  states generated by BuP variational dynamics remain to be studied
+
+---
+
+## Unified Picture
+
+The BuP framework can be summarized as a single pipeline:
+
+- Entanglement defines connectivity
+- Connectivity defines geometry
+- Geometry defines effective dynamics
+- Effective dynamics reproduces gravitational phenomenology
+
+This work provides numerical evidence at each step of this chain,
+from quantum systems ($N \leq 16$ qubits) to astrophysical scales
+(175 SPARC galaxies).
+
+---
+
+## 14. Perspectives
+
+- Full relativistic lensing computation
+- Confrontation with weak lensing surveys
+- Cosmological extension
+- Fundamental BuP dynamics from variational principle
+- Connection between modular Hamiltonian structure and gauge fields
+
+---
+
+## Author
 
 **Farid Hamdad**  
-Bottom-Up Quantum Gravity — 2026
-hamdadfarid54@gmail.com
+Bottom-Up Quantum Gravity, 2026  
+hamdadfarid54@gmail.com  
+[github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity](https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity)
