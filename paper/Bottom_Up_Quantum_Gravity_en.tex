@@ -3,18 +3,17 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{hyperref}
 \usepackage{booktabs}
-\usepackage{physics}
 \usepackage{geometry}
 
 \geometry{margin=2.5cm}
 \graphicspath{{../figures/}}
 
-\title{Gravité Quantique Bottom-Up\\
-Émergence de l'Espace, du Temps et de la Gravité depuis l'Intrication Quantique}
+\title{Bottom-Up Quantum Gravity:\\
+Emergence of Space, Time, and Gravity from Quantum Entanglement}
 
 \author{Farid Hamdad}
 
-\date{Février 2026}
+\date{February 2026}
 
 \begin{document}
 
@@ -22,190 +21,219 @@
 
 \begin{abstract}
 
-Nous proposons un cadre minimal dans lequel l'espace, le temps et la gravité émergent de la structure d'intrication d'un état quantique global fini, sans aucun arrière-plan spatio-temporel préalable.
+We propose a minimal framework in which space, time, and gravity emerge
+from the entanglement structure of a finite global quantum state,
+without any pre-existing spacetime background.
 
-La géométrie est reconstruite à partir de l'information mutuelle entre sous-systèmes et projetée par multidimensional scaling. La dimension spatiale effective dépend de la structure d'intrication et transitionne entre différents régimes selon la localité des corrélations.
+Geometry is reconstructed from mutual information between subsystems
+and projected via multidimensional scaling. The effective spatial
+dimension depends on the entanglement structure and transitions between
+different regimes according to the locality of correlations.
 
-Plusieurs signatures opérationnelles sont démontrées numériquement sur des systèmes de $N=9$ et $N=16$ qubits, puis prolongées par une première exploration phénoménologique sur des galaxies de l'échantillon SPARC :
+Several operational signatures are demonstrated numerically on systems
+of $N=9$ and $N=16$ qubits, and further extended through a first
+phenomenological exploration on galaxies from the SPARC sample:
 
 \begin{itemize}
-\item temps relationnel via flot modulaire,
-\item géométrie émergente via reconstruction par distance informationnelle,
-\item gravité thermodynamique via une relation entropie-énergie de type Jacobson,
-\item géométrie intrinsèque via dimension spectrale,
-\item signatures ER=EPR de type trou de ver,
-\item dynamique modulaire chaotique caractérisée par la théorie des matrices aléatoires,
-\item goulots d'étranglement informationnels de type horizon dans les graphes d'intrication,
-\item réponse locale de la courbure discrète d'Ollivier--Ricci à une perturbation informationnelle,
-\item sélection robuste d'une symétrie effective de type U(1) dans le vide effectif,
-\item Hamiltoniens modulaires quasi-locaux comme sondes géométriques état-dépendantes,
-\item extension phénoménologique exploratoire aux courbes de rotation galactiques de l'échantillon SPARC via une dimension effective émergente.
+\item relational time via modular flow,
+\item emergent geometry via informational distance reconstruction,
+\item thermodynamic gravity via a Jacobson-type entropy-energy relation,
+\item intrinsic geometry via spectral dimension,
+\item wormhole-like ER=EPR signatures,
+\item chaotic modular dynamics characterized by random matrix theory,
+\item horizon-like informational bottlenecks in entanglement graphs,
+\item local response of discrete Ollivier--Ricci curvature to an
+      informational perturbation,
+\item robust selection of an effective U(1)-like symmetry in the
+      effective vacuum,
+\item quasi-local modular Hamiltonians as state-dependent geometric probes,
+\item exploratory phenomenological extension to galactic rotation curves
+      from the SPARC sample via an emergent effective dimension.
 \end{itemize}
 
-Nous identifions également une constante modulaire dépendante de la topologie
+We also identify a topology-dependent modular constant
 \[
-C = d_A g_2^{\mathrm{plateau}}
+C = d_A\, g_2^{\mathrm{plateau}}
 \]
-révélant que le spectre du Hamiltonien modulaire retient l'information géométrique sur la structure d'intrication sous-jacente.
+revealing that the modular Hamiltonian spectrum retains geometric
+information about the underlying entanglement structure.
 
-Enfin, l'analyse par courbure d'Ollivier--Ricci fournit le signal le plus net obtenu jusqu'ici d'un couplage de type
+The Ollivier--Ricci curvature analysis provides the clearest numerical
+signal obtained so far for a coupling of the form
 \[
-\text{défaut informationnel local}
+\text{local informational defect}
 \;\Longrightarrow\;
-\text{courbure géométrique émergente},
+\text{emergent geometric curvature},
 \]
-avec une réponse croissante à l'intensité de la perturbation et plus localisée pour les défauts compacts.
+with a response that grows with perturbation intensity and is more
+localized for compact defects.
 
-Une première extension phénoménologique à l'échantillon galactique SPARC suggère qu'une description en phase unique n'est pas la plus naturelle : les ajustements actuels pointent vers des régimes effectifs distincts, avec une dimension optimale
+A first phenomenological extension to the SPARC galactic sample
+suggests that a single-phase description is not the most natural:
+current fits point toward distinct effective regimes, with optimal
+dimensions
 \[
 d_{\min}^{\mathrm{massive}} = 2.4871 \pm 0.0294,
 \qquad
 d_{\min}^{\mathrm{dwarf}} = 2.2744 \pm 0.0341.
 \]
 
-Nous montrons en outre que l'échelle de transition effective $r_{\mathrm{trans}}$ n'est pas un paramètre arbitraire mais une observable corrélée à la structure baryonique et géométrique des galaxies. Une loi d'échelle multivariée globale, puis une séparation en régimes, conduisent à une prédiction falsifiable indépendante des courbes de rotation : la structure radiale de l'excès de lentillage diffère selon le régime galactique.
+We further show that the effective transition scale $r_{\mathrm{trans}}$
+is not an arbitrary parameter but an observable correlated with the
+baryonic and geometric structure of galaxies. A global multivariate
+scaling law, followed by regime separation, leads to a falsifiable
+prediction independent of rotation curves: the radial structure of
+the lensing excess differs between galactic regimes.
 
-Cette partie doit être interprétée comme une preuve de concept phénoménologique reliant la géométrie émergente bottom-up à des données astrophysiques réelles.
+This part should be interpreted as a phenomenological proof of concept
+linking bottom-up emergent geometry to real astrophysical data.
 
 \end{abstract}
 
 % =====================================================================
-% PARTIE I : IDÉE CENTRALE ET POSTULAT
+% PART I: CENTRAL IDEA AND POSTULATE
 % =====================================================================
 
-\section{Idée Centrale}
+\section{Central Idea}
 
 \begin{quote}
-L'intrication est une structure géométrique.
+Entanglement is a geometric structure.
 
-Ce que nous appelons espace est le motif collectif de ces corrélations.
+What we call space is the collective pattern of these correlations.
 
-Ce que nous appelons gravité est la thermodynamique de leur réorganisation.
+What we call gravity is the thermodynamics of their reorganization.
 \end{quote}
 
-L'approche Bottom-Up postule que l'espace-temps n'est pas fondamental mais émerge de la structure de corrélation interne des états quantiques.
+The Bottom-Up approach postulates that spacetime is not fundamental
+but emerges from the internal correlation structure of quantum states.
 
-\section{Postulat Minimal}
+\section{Minimal Postulate}
 
-Nous supposons l'existence d'un état quantique global pur
+We assume the existence of a global pure quantum state
 
 \[
 |\Psi\rangle \in \mathcal{H} = \bigotimes_{i=1}^{N} \mathcal{H}_i
 \]
 
-défini sur $N$ degrés de liberté élémentaires.
+defined over $N$ elementary degrees of freedom.
 
-Aucune structure spatio-temporelle n'est supposée.
-
-Il n'y a
+No spacetime structure is assumed. There is:
 
 \begin{itemize}
-\item pas de métrique
-\item pas de variété spatiale
-\item pas de temps externe
-\item pas de champ gravitationnel classique
+\item no metric,
+\item no spatial manifold,
+\item no external time,
+\item no classical gravitational field.
 \end{itemize}
 
-Toutes les notions géométriques et dynamiques doivent émerger des corrélations au sein de $|\Psi\rangle$.
+All geometric and dynamical notions must emerge from the correlations
+within $|\Psi\rangle$.
 
 \medskip
-\noindent\textbf{Positionnement BuP.}
-Within the Bottom-Up (BuP) framework developed in this work, no background geometry, no effective Hamiltonian, and no gauge structure is postulated. Instead, geometry, dynamics, and symmetry are all derived directly from the entanglement structure of a finite quantum state $|\Psi\rangle$. This distinguishes BuP from approaches such as AdS/CFT or tensor networks, where an ambient geometry or a bulk Hamiltonian is assumed at the outset.
+\noindent\textbf{BuP positioning.}
+Within the Bottom-Up (BuP) framework developed in this work,
+no background geometry, no effective Hamiltonian, and no gauge
+structure is postulated. Instead, geometry, dynamics, and symmetry
+are all derived directly from the entanglement structure of a finite
+quantum state $|\Psi\rangle$. This distinguishes BuP from approaches
+such as AdS/CFT or tensor networks, where an ambient geometry or
+a bulk Hamiltonian is assumed at the outset.
 
-\section{Systèmes Modèles}
+\section{Model Systems}
 
-Nous générons des familles d'états
+We generate families of states
 
 \[
 |\Psi(\lambda)\rangle
 \]
 
-contrôlées par un paramètre de non-localité $\lambda$.
+controlled by a non-locality parameter $\lambda$.
 
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
-Système & Structure & Dimension de Hilbert \\
+System & Structure & Hilbert space dimension \\
 \midrule
-N=9 & grille $3\times3$ & $2^9=512$ \\
-N=16 & grille $4\times4$ & $2^{16}=65536$ \\
+N=9  & $3\times3$ grid & $2^9=512$ \\
+N=16 & $4\times4$ grid & $2^{16}=65536$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 % =====================================================================
-% PARTIE II : TEMPS ÉMERGENT ET CHAOS MODULAIRE
+% PART II: EMERGENT TIME AND MODULAR CHAOS
 % =====================================================================
 
-\section{Temps Émergent via Flot Modulaire}
+\section{Emergent Time via Modular Flow}
 
-Pour un sous-système $A$
-
-\[
-\rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|
-\]
-
-le Hamiltonien modulaire est
+For a subsystem $A$,
 
 \[
-K_A = -\log\rho_A
+\rho_A = \mathrm{Tr}_{\bar A} |\Psi\rangle\langle\Psi|,
 \]
 
-qui génère l'évolution modulaire
+the modular Hamiltonian is
 
 \[
-O(\tau)=e^{iK_A\tau}Oe^{-iK_A\tau}.
+K_A = -\log\rho_A,
 \]
 
-Ceci définit un temps relationnel analogue au mécanisme de Page--Wootters \cite{pagewootters}.
+which generates the modular evolution
 
-\section{Chaos Modulaire}
+\[
+O(\tau)=e^{iK_A\tau}\,O\,e^{-iK_A\tau}.
+\]
 
-\subsection{Statistiques des gaps}
+This defines a relational time analogous to the Page--Wootters
+mechanism \cite{pagewootters}.
 
-Les valeurs propres de $K_A$ sont analysées via le ratio des gaps
+\section{Modular Chaos}
+
+\subsection{Gap ratio statistics}
+
+The eigenvalues of $K_A$ are analyzed via the adjacent gap ratio
 
 \[
 r_n=\frac{\min(\Delta_n,\Delta_{n+1})}{\max(\Delta_n,\Delta_{n+1})}.
 \]
 
-Valeurs typiques :
+Reference values:
 
 \begin{center}
 \begin{tabular}{cc}
 \toprule
-Régime & $\langle r\rangle$ \\
+Regime & $\langle r\rangle$ \\
 \midrule
 Poisson & 0.386 \\
-GOE & 0.536 \\
-GUE & 0.603 \\
+GOE    & 0.536 \\
+GUE    & 0.603 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Nous obtenons
+We obtain
 
 \[
-\langle r\rangle \approx 0.53-0.59
+\langle r\rangle \approx 0.53\text{--}0.59,
 \]
 
-indiquant une dynamique modulaire chaotique, compatible avec les prédictions GOE/GUE.
+indicating chaotic modular dynamics, consistent with GOE/GUE predictions.
 
-\subsection{Facteur de Forme Spectral (SFF)}
+\subsection{Spectral Form Factor (SFF)}
 
-Le facteur de forme spectral
+The spectral form factor
 
 \[
 g_2(t)=\frac{1}{d_A^2}\left|\sum_n e^{-it\tilde{\kappa}_n}\right|^2
 \]
 
-exhibe la structure chaotique universelle
+exhibits the universal chaotic structure
 
 \[
-\text{dip} \rightarrow \text{rampe} \rightarrow \text{plateau}.
+\text{dip} \rightarrow \text{ramp} \rightarrow \text{plateau}.
 \]
 
-Le plateau suit
+The plateau scales as
 
 \[
 g_2^{\mathrm{plateau}}\sim\frac{1}{d_A}.
@@ -214,27 +242,27 @@ g_2^{\mathrm{plateau}}\sim\frac{1}{d_A}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{topology_SFF.png}
-\caption{Facteur de forme spectral montrant la structure dip-rampe-plateau.}
+\caption{Spectral form factor showing the dip-ramp-plateau structure.}
 \end{figure}
 
-\subsection{Constante Modulaire Topologique}
+\subsection{Topological Modular Constant}
 
-Nous définissons
+We define
 
 \[
-C=d_A g_2^{\mathrm{plateau}}.
+C=d_A\, g_2^{\mathrm{plateau}}.
 \]
 
-Résultats pour $d_A=256$ :
+Results for $d_A=256$:
 
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
-Topologie & $\langle r\rangle$ & $C$ \\
+Topology & $\langle r\rangle$ & $C$ \\
 \midrule
-Chaîne 1D & 0.594 & 1.21 \\
-Grille 2D & 0.575 & 1.42 \\
-Graphe ER & 0.528 & 1.63 \\
+1D chain  & 0.594 & 1.21 \\
+2D grid   & 0.575 & 1.42 \\
+ER graph  & 0.528 & 1.63 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -242,96 +270,107 @@ Graphe ER & 0.528 & 1.63 \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{topology_C.png}
-\caption{Constante modulaire topologique $C$ pour différentes topologies de graphe.}
+\caption{Topological modular constant $C$ for different graph topologies.}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{topology_r.png}
-\caption{Statistiques des ratios de gaps confirmant l'universalité RMT.}
+\caption{Gap ratio statistics confirming RMT universality.}
 \end{figure}
 
-Le scaling reste universel mais le préfacteur dépend de la topologie, indiquant que la dynamique modulaire encode l'information géométrique.
+The scaling remains universal but the prefactor depends on topology,
+indicating that modular dynamics encodes geometric information.
 
 % =====================================================================
-% PARTIE III : GÉOMÉTRIE ÉMERGENTE
+% PART III: EMERGENT GEOMETRY
 % =====================================================================
 
-\section{Géométrie Émergente}
+\section{Emergent Geometry}
 
-L'information mutuelle
+The mutual information
 
 \[
 I(i:j)=S(\rho_i)+S(\rho_j)-S(\rho_{ij})
 \]
 
-définit la distance informationnelle
+defines the informational distance
 
 \[
 d_{ij}=-\log\frac{I(i:j)}{I_{\max}+\epsilon}.
 \]
 
-Les points sont projetés par multidimensional scaling pour reconstruire la géométrie \cite{vanraamsdonk}.
+Points are projected via multidimensional scaling to reconstruct
+geometry \cite{vanraamsdonk}.
 
-\section{Géométrie Spectrale}
+\section{Spectral Geometry}
 
-Nous construisons un graphe pondéré avec
+We construct a weighted graph with
 
 \[
 w_{ij}=I(i:j).
 \]
 
-Le Laplacien
+The Laplacian
 
 \[
 L=D-W
 \]
 
-définit la trace de chaleur
+defines the heat trace
 
 \[
-Z(\tau)=Tr(e^{-\tau L}).
+Z(\tau)=\mathrm{Tr}(e^{-\tau L}).
 \]
 
-La dimension spectrale
+The spectral dimension
 
 \[
 d_s(\tau)=-2\frac{d\log Z}{d\log\tau}
 \]
 
-donne
+gives
 
 \[
-d_{IR}\approx2.5-2.7.
+d_{IR}\approx2.5\text{--}2.7.
 \]
 
-\section{Gravité Thermodynamique}
+\section{Thermodynamic Gravity}
 
-Nous testons une relation de type Jacobson \cite{jacobson}
+We test a Jacobson-type relation \cite{jacobson}
 
 \[
-\delta S\approx \beta_{eff}\delta E.
+\delta S\approx \beta_{\mathrm{eff}}\,\delta E.
 \]
 
-Les expériences numériques confirment une validité approximative à travers les variations de $\lambda$.
+Numerical experiments confirm approximate validity across variations
+of $\lambda$.
 
-\section{Courbure Discrète : stratégie de test}
+\section{Discrete Curvature: Testing Strategy}
 
-Nous cherchons à déterminer si une perturbation informationnelle locale peut agir comme une source de courbure émergente.
+We seek to determine whether a local informational perturbation can
+act as a source of emergent curvature.
 
-Une première famille de tests basée sur des holonomies triangulaires discrètes et des observables locales de type boucle n'a pas fourni de signal robuste de courbure. Cette voie reste conceptuellement utile pour sonder la structure locale du graphe, mais elle n'a pas permis d'établir un couplage matière--courbure reproductible.
+A first family of tests based on discrete triangular holonomies and
+local loop-type observables did not yield a robust curvature signal.
+This approach remains conceptually useful for probing the local graph
+structure, but failed to establish a reproducible matter--curvature
+coupling.
 
-Nous avons donc introduit une mesure de courbure discrète plus stable : la courbure d'Ollivier--Ricci calculée sur le graphe d'intrication \cite{ollivier}.
+We therefore introduced a more stable discrete curvature measure:
+the Ollivier--Ricci curvature computed on the entanglement
+graph \cite{ollivier}.
 
 % =====================================================================
-% PARTIE IV : RÉSULTATS NUMÉRIQUES
+% PART IV: NUMERICAL RESULTS
 % =====================================================================
 
-\section{Résultats pour N=9 : Preuve de Concept}
+\section{Results for N=9: Proof of Concept}
 
-\subsection{Transition dimensionnelle}
+\subsection{Dimensional transition}
 
-Nous reconstruisons la géométrie en utilisant la distance informationnelle et le multidimensional scaling.
+We reconstruct the geometry using the informational distance and
+multidimensional scaling.
 
 \begin{center}
 \begin{tabular}{ccccc}
@@ -351,21 +390,22 @@ $\lambda$ & $\epsilon_{2D}$ & $\epsilon_{3D}$ & $\epsilon_{4D}$ & Ratio 2D/3D \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{fig1_dimension_emergente.png}
-\caption{Reconstruction de la dimension spatiale émergente pour N=9.}
+\caption{Reconstruction of the emergent spatial dimension for N=9.}
 \end{figure}
 
-\subsection{Signature ER=EPR}
+\subsection{ER=EPR signature}
 
-Suivant la conjecture ER=EPR \cite{maldacena}, nous testons si l'intrication non-locale crée des raccourcis géométriques.
+Following the ER=EPR conjecture \cite{maldacena}, we test whether
+non-local entanglement creates geometric shortcuts.
 
 \begin{center}
 \begin{tabular}{ccccc}
 \toprule
-$\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
+$\lambda$ & $I(0:8)$ & $d_{\mathrm{topo}}$ & $d_{\mathrm{bulk}}$ & Compression \\
 \midrule
-0.0 & $0.009 \pm 0.001$ & 4 & $4.0 \pm 0.2$ & $1.0 \pm 0.1$ \\
-0.5 & $0.45 \pm 0.05$ & 4 & $1.8 \pm 0.3$ & $2.2 \pm 0.4$ \\
-1.0 & $1.28 \pm 0.02$ & 4 & $0.04 \pm 0.02$ & $100 \pm 50$ \\
+0.0 & $0.009 \pm 0.001$ & 4 & $4.0 \pm 0.2$  & $1.0 \pm 0.1$ \\
+0.5 & $0.45 \pm 0.05$  & 4 & $1.8 \pm 0.3$  & $2.2 \pm 0.4$ \\
+1.0 & $1.28 \pm 0.02$  & 4 & $0.04 \pm 0.02$ & $100 \pm 50$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -373,79 +413,79 @@ $\lambda$ & $I(0:8)$ & $d_{topo}$ & $d_{bulk}$ & Compression \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{fig2_er_epr.png}
-\caption{Effet de compression ER=EPR dans la géométrie émergente.}
+\caption{ER=EPR compression effect in the emergent geometry.}
 \end{figure}
 
-\subsection{Test de gravité thermodynamique}
+\subsection{Thermodynamic gravity test}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{fig3_jacobson.png}
-\caption{Relation entropie-énergie de type Jacobson pour N=9.}
+\caption{Jacobson-type entropy-energy relation for N=9.}
 \end{figure}
 
-\section{Résultats pour N=16 : Validation Intermédiaire}
+\section{Results for N=16: Intermediate Validation}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{fig4_grid_N16.png}
-\caption{Grille $4\times4$ sous-jacente utilisée dans les simulations.}
+\caption{Underlying $4\times4$ grid used in simulations.}
 \end{figure}
 
-\subsection{Reconstruction dimensionnelle}
+\subsection{Dimensional reconstruction}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{fig5_mds_N16.png}
-\caption{Reconstruction géométrique par multidimensional scaling pour N=16.}
+\caption{Geometric reconstruction via multidimensional scaling for N=16.}
 \end{figure}
 
-\subsection{Signature ER=EPR}
+\subsection{ER=EPR signature}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{fig6_erepr_N16.png}
-\caption{Formation de raccourcis ER=EPR dans la géométrie émergente.}
+\caption{Formation of ER=EPR shortcuts in the emergent geometry.}
 \end{figure}
 
-\subsection{Test de gravité thermodynamique}
+\subsection{Thermodynamic gravity test}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{fig7_jacobson_N16.png}
-\caption{Relation entropie-énergie de type Jacobson pour N=16.}
+\caption{Jacobson-type entropy-energy relation for N=16.}
 \end{figure}
 
 % =====================================================================
-% PARTIE V : DÉTECTION D'HORIZON
+% PART V: HORIZON DETECTION
 % =====================================================================
 
-\section{Détection d'Horizon Bottom-Up}
+\section{Bottom-Up Horizon Detection}
 
-Nous construisons un graphe d'intrication avec densité fixée
+We construct an entanglement graph with fixed density
 
 \[
 \rho = 1/3.
 \]
 
-Les régions de taille $|A|=N/2=8$ sont évaluées via le score
+Regions of size $|A|=N/2=8$ are scored via
 
 \[
 \mathrm{Score}_{BH}(A)
-= w_S \, z(S(A)) - w_\phi \, z(\phi(A)) + w_{\mathrm{int}} \, z(\mathrm{internal}(A)).
+= w_S\, z(S(A)) - w_\phi\, z(\phi(A)) + w_{\mathrm{int}}\, z(\mathrm{internal}(A)),
 \]
 
-où
+where
 
 \begin{itemize}
-\item $S(A)$ est l'entropie de la région
-\item $\phi(A)$ est la conductance
-\item $\mathrm{internal}(A)$ est l'intrication interne
+\item $S(A)$ is the region entropy,
+\item $\phi(A)$ is the conductance,
+\item $\mathrm{internal}(A)$ is the internal entanglement.
 \end{itemize}
 
-\subsection{Région de type horizon détectée}
+\subsection{Detected horizon-like region}
 
-La région détectée est
+The detected region is
 
 \[
 A_{BH}=\{0,2,3,5,6,10,11,15\}.
@@ -454,83 +494,89 @@ A_{BH}=\{0,2,3,5,6,10,11,15\}.
 \begin{center}
 \begin{tabular}{cc}
 \toprule
-Métrique & Valeur \\
+Metric & Value \\
 \midrule
-Entropie $S(A)$ & 7.1667 \\
-Coupure & 3.2098 \\
-Intrication interne & 5.0348 \\
-Conductance $\phi(A)$ & 0.3951 \\
-Ratio de gaps $\langle r\rangle(K_A)$ & 0.6041 \\
+Entropy $S(A)$          & 7.1667 \\
+Cut                     & 3.2098 \\
+Internal entanglement   & 5.0348 \\
+Conductance $\phi(A)$  & 0.3951 \\
+Gap ratio $\langle r\rangle(K_A)$ & 0.6041 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\subsection{Comparaison par percentiles}
+\subsection{Percentile comparison}
 
-Comparaison avec 3000 régions aléatoires de même taille :
+Comparison against 3000 random regions of the same size:
 
 \begin{center}
 \begin{tabular}{cc}
 \toprule
-Métrique & Percentile \\
+Metric & Percentile \\
 \midrule
-Entropie $S$ & 23.7\% \\
-Coupure & 1.4\% \\
-Intrication interne & 98.8\% \\
+Entropy $S$        & 23.7\% \\
+Cut                & 1.4\% \\
+Internal entanglement & 98.8\% \\
 Conductance $\phi$ & 2.7\% \\
-Ratio de gaps $\langle r\rangle$ & 62.0\% \\
+Gap ratio $\langle r\rangle$ & 62.0\% \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Ceci confirme la présence d'un fort goulot d'étranglement informationnel : conductance extrêmement faible et intrication interne exceptionnellement élevée.
+This confirms a strong informational bottleneck: extremely low
+conductance and exceptionally high internal entanglement.
 
-\subsection{Benchmark HIE à taille fixée avec initialisation Louvain}
+\subsection{Fixed-size HIE benchmark with Louvain initialization}
 
-Des régions candidates de taille $|A|=8$ sont générées via :
+Candidate regions of size $|A|=8$ are generated via:
 
 \begin{itemize}
-\item détection de communautés Louvain sur le graphe d'intrication
-\item unions de communautés
-\item swaps Metropolis locaux pour raffinement
+\item Louvain community detection on the entanglement graph,
+\item community unions,
+\item local Metropolis swaps for refinement.
 \end{itemize}
 
-Un total de 55 régions candidates sont générées et classées.
+A total of 55 candidate regions are generated and ranked.
 
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
-Mode & Pondération & Rang de la région BH \\
+Mode & Weighting & Rank of BH region \\
 \midrule
-CLASSIC & poids équilibrés & 12 / 55 \\
-HORIZON-AWARE & forte pénalité de conductance & 2 / 55 \\
+CLASSIC & balanced weights & 12 / 55 \\
+HORIZON-AWARE & strong conductance penalty & 2 / 55 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\subsection{Interprétation}
+\subsection{Interpretation}
 
-Ce test fournit une signature opérationnelle cohérente avec l'intuition holographique à taille finie : une région fortement intriquée peut être séparée du reste du graphe par une frontière informationnelle étroite (faible coupure / faible conductance). Dans Gravité Quantique Bottom-Up, ceci identifie des îlots d'intrication pouvant jouer le rôle de sous-systèmes thermodynamiques effectifs.
+This test provides an operational signature consistent with
+finite-size holographic intuition: a strongly entangled region can
+be separated from the rest of the graph by a narrow informational
+boundary (low cut / low conductance). In Bottom-Up Quantum Gravity,
+this identifies entanglement islands that can play the role of
+effective thermodynamic subsystems.
 
 % =====================================================================
-% PARTIE VI : STRUCTURE MULTIPARTITE
+% PART VI: MULTIPARTITE STRUCTURE
 % =====================================================================
 
-\section{Géométrie de l'Intrication Multipartite}
+\section{Multipartite Entanglement Geometry}
 
-L'information mutuelle conditionnelle
+The conditional mutual information
 
 \[
 \mathrm{CMI}(i:j|k)
 \]
 
-est comparée à un score triangulaire local
+is compared to a local triangular score
 
 \[
 T(i,j|k)=I(i:j)-I(i:k)-I(j:k).
 \]
 
-Les expériences donnent
+Experiments give:
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -546,35 +592,47 @@ $\lambda$ & AUC & $\rho$ \\
 \end{tabular}
 \end{center}
 
-avec une significativité
+with statistical significance
 
 \[
 p < 5\times10^{-3}.
 \]
 
-Ces résultats indiquent qu'une partie de la structure multipartite est bien encodée dans la géométrie relationnelle dérivée des corrélations par paires.
+These results indicate that part of the multipartite structure is
+well encoded in the relational geometry derived from pairwise
+correlations.
 
-Cependant, les tentatives ultérieures d'interpréter directement cette structure triangulaire comme une courbure locale robuste via des tests d'holonomie discrète n'ont pas donné de signal stable. Nous interprétons donc cette partie comme un succès de reconstruction géométrique locale de la CMI, mais non encore comme une preuve de courbure gravitationnelle émergente.
+However, subsequent attempts to interpret this triangular structure
+directly as robust local curvature via discrete holonomy tests did
+not yield a stable signal. We therefore interpret this part as a
+successful local geometric reconstruction of CMI, but not yet as
+evidence of emergent gravitational curvature.
 
 % =====================================================================
-% PARTIE VII : COURBURE D'OLLIVIER--RICCI
+% PART VII: OLLIVIER--RICCI CURVATURE
 % =====================================================================
 
-\section{Courbure Discrète d'Ollivier--Ricci}
+\section{Discrete Ollivier--Ricci Curvature}
 
-Afin de tester plus directement l'hypothèse ``matière informationnelle $\rightarrow$ courbure'', nous avons remplacé le diagnostic triangulaire de courbure par une mesure de transport sur le graphe d'intrication : la courbure d'Ollivier--Ricci.
+To test more directly the hypothesis
+``informational matter $\rightarrow$ curvature'',
+we replaced the triangular curvature diagnostic by a transport
+measure on the entanglement graph: the Ollivier--Ricci curvature.
 
-\subsection{Principe du test}
+\subsection{Test principle}
 
-À partir de la matrice d'information mutuelle, nous reconstruisons un graphe d'intrication à densité fixée. Une perturbation informationnelle locale est ensuite introduite dans une région source, ici $[5,6]$, avec un rayon $r$ et une intensité $s$ contrôlés.
+From the mutual information matrix, we reconstruct a fixed-density
+entanglement graph. A local informational perturbation is then
+introduced in a source region $[5,6]$, with controlled radius $r$
+and intensity $s$.
 
-Nous définissons la variation de courbure moyenne
+We define the mean curvature variation
 
 \[
 \Delta \kappa = \kappa_{\mathrm{pert}}-\kappa_{\mathrm{base}},
 \]
 
-ainsi que l'observable de localité
+and the locality observable
 
 \[
 \Delta \kappa_{\mathrm{near-far}}
@@ -584,41 +642,51 @@ ainsi que l'observable de localité
 \Delta \kappa_{\mathrm{far}}.
 \]
 
-Une valeur positive de $\Delta \kappa_{\mathrm{near-far}}$ signifie que la réponse géométrique est plus forte près de la région perturbée qu'à distance.
+A positive value of $\Delta \kappa_{\mathrm{near-far}}$ means that
+the geometric response is stronger near the perturbed region than
+at distance.
 
-\subsection{Contrôle de la connectivité}
+\subsection{Connectivity control}
 
-La perturbation locale peut modifier non seulement la courbure, mais aussi la structure même du graphe reconstruit. Pour séparer ces deux effets, plusieurs modes de comparaison ont été testés. Le plus robuste est le mode \texttt{frozen\_baseline}, dans lequel la connectivité du graphe de référence est maintenue fixe tandis que la courbure est réévaluée après perturbation.
+The local perturbation may modify not only the curvature but also
+the graph topology itself. To separate these two effects, several
+comparison modes were tested. The most robust is the
+\texttt{frozen\_baseline} mode, in which the reference graph
+connectivity is held fixed while curvature is re-evaluated after
+perturbation. This allows the observed signal to be interpreted as
+an intrinsic curvature response rather than a mere topological
+rearrangement effect.
 
-Ce choix permet d'interpréter le signal observé comme une réponse intrinsèque de courbure, plutôt que comme un simple effet de réarrangement topologique.
+\subsection{Multi-seed result at $r=1$, $s=0.6$}
 
-\subsection{Résultat multi-seeds à $r=1$, $s=0.6$}
-
-Sur un batch de 20 seeds pour $N=16$, le mode \texttt{frozen\_baseline} donne
+Over a batch of 20 seeds for $N=16$, the \texttt{frozen\_baseline}
+mode gives
 
 \[
 \Delta \kappa_{\mathrm{edge}} = 0.0758 \pm 0.0296,
 \]
 
-avec fraction positive $=1.00$, et
+with positive fraction $=1.00$, and
 
 \[
 \Delta \kappa_{\mathrm{near-far}} = 0.0927 \pm 0.0799,
 \]
 
-positif dans $95\%$ des seeds.
+positive in $95\%$ of seeds.
 
-Cela signifie qu'une perturbation informationnelle locale augmente la courbure moyenne du graphe, et que cette augmentation est en moyenne plus forte au voisinage de la source qu'à distance.
+A local informational perturbation thus increases the mean graph
+curvature, and this increase is on average stronger near the source
+than at distance.
 
-\subsection{Loi de réponse en intensité}
+\subsection{Intensity response law}
 
-Nous avons ensuite effectué un scan en intensité
+We performed an intensity scan
 \[
 s \in \{0.0,0.2,0.4,0.6,0.8,1.0\}
 \]
-pour un défaut compact ($r=1$), toujours dans le mode \texttt{frozen\_baseline}.
+for a compact defect ($r=1$), still in \texttt{frozen\_baseline} mode.
 
-La courbure moyenne suit la progression :
+Mean curvature progression:
 
 \begin{center}
 \begin{tabular}{cc}
@@ -635,7 +703,7 @@ $s$ & $\Delta \kappa_{\mathrm{edge}}$ \\
 \end{tabular}
 \end{center}
 
-L'excès local suit également une croissance puis une saturation :
+The local excess also shows growth followed by saturation:
 
 \begin{center}
 \begin{tabular}{cc}
@@ -652,115 +720,142 @@ $s$ & $\Delta \kappa_{\mathrm{near-far}}$ \\
 \end{tabular}
 \end{center}
 
-Le contrôle nul à $s=0$ est exactement vérifié, puis le signal croît régulièrement avec l'intensité de la perturbation.
+The null control at $s=0$ is exactly verified; the signal then grows
+regularly with perturbation intensity.
 
-\subsection{Effet du rayon}
+\subsection{Radius effect}
 
-Un scan conjoint en intensité et rayon montre que :
+A joint scan over intensity and radius shows that:
 
 \begin{itemize}
-\item pour un rayon petit, la réponse est plus localisée ;
-\item pour un rayon plus grand, la réponse globale reste positive mais devient plus diffuse ;
-\item l'observable $\Delta \kappa_{\mathrm{near-far}}$ est maximale pour les défauts compacts.
+\item for a small radius, the response is more localized;
+\item for a larger radius, the global response remains positive
+      but becomes more diffuse;
+\item the observable $\Delta \kappa_{\mathrm{near-far}}$ is maximal
+      for compact defects.
 \end{itemize}
 
-Autrement dit, une source compacte courbe plus localement, tandis qu'une source étendue répartit la déformation géométrique sur une région plus large du graphe.
+A compact source thus curves more locally, while an extended source
+distributes the geometric deformation over a larger region of the graph.
 
-\subsection{Forme effective}
+\subsection{Effective form}
 
-Les ajustements effectués sur les scans en intensité montrent que le meilleur modèle effectif est quadratique concave :
+Fits on the intensity scans show that the best effective model is
+a concave quadratic:
 
 \[
 \Delta \kappa(s)\approx as^2+bs+c,
 \qquad a<0.
 \]
 
-La réponse n'est donc pas strictement linéaire : elle croît d'abord avec l'intensité de la perturbation, puis tend vers un tassement ou une saturation.
+The response is therefore not strictly linear: it first grows with
+perturbation intensity, then tends toward saturation.
 
-\subsection{Interprétation}
+\subsection{Interpretation}
 
-Ce résultat constitue le signal le plus net obtenu jusqu'ici dans le projet en faveur d'un couplage effectif
+This result constitutes the clearest signal obtained so far in the
+project for an effective coupling
 
 \[
-\text{défaut informationnel local}
+\text{local informational defect}
 \;\Longrightarrow\;
-\text{courbure géométrique émergente}.
+\text{emergent geometric curvature}.
 \]
 
-Il ne s'agit pas encore d'une équation d'Einstein discrète dérivée des premiers principes, mais d'une preuve de concept numérique claire montrant qu'une ``matière'' définie informationnellement peut agir comme source de courbure sur le graphe d'intrication.
+This is not yet a discrete Einstein equation derived from first
+principles, but a clear numerical proof of concept showing that
+informationally-defined ``matter'' can act as a source of curvature
+on the entanglement graph.
 
 % =====================================================================
-% PARTIE VII BIS : SYMÉTRIE EFFECTIVE DU VIDE
+% PART VII BIS: EFFECTIVE VACUUM SYMMETRY
 % =====================================================================
 
-\section{Symétrie effective du vide BuP}
+\section{Effective Vacuum Symmetry in BuP}
 
-Jusqu'à présent, le programme Bottom-Up a permis d'établir des signatures cohérentes de géométrie émergente, de dynamique modulaire et de couplage matière--courbure au sein de graphes d'intrication.
+The Bottom-Up program has so far established consistent signatures
+of emergent geometry, modular dynamics, and matter--curvature coupling
+within entanglement graphs. We investigate here a complementary
+question: does the effective vacuum of the model select a residual
+symmetry structure?
 
-Nous explorons ici une question complémentaire : le vide effectif du modèle sélectionne-t-il une structure de symétrie résiduelle ?
+\subsection{Effective model}
 
-\subsection{Modèle effectif}
-
-Nous considérons un Hamiltonien de type XXZ avec champs locaux faibles :
+We consider an XXZ-type Hamiltonian with weak local random fields:
 
 \[
 H_{\mathrm{BuP}} =
-- J_{zz}\sum Z_i Z_{i+1}
-- J_{xy}\sum (X_iX_{i+1}+Y_iY_{i+1})
+- J_{zz}\sum_i Z_i Z_{i+1}
+- J_{xy}\sum_i (X_iX_{i+1}+Y_iY_{i+1})
 + \sum_i (h_i^x X_i + h_i^y Y_i + h_i^z Z_i).
 \]
 
-Ce modèle ne postule aucune symétrie de jauge a priori, mais permet de tester si une structure collective émerge dans le vide. On note que l'anisotropie $J_{zz} \neq J_{xy}$ brise explicitement la symétrie $SO(3)$ au niveau du Hamiltonien ; l'objectif n'est donc pas de montrer une brisure spontanée au sens des théories de champs, mais de tester si une symétrie résiduelle effective robuste est sélectionnée dans l'état fondamental.
+This model postulates no gauge symmetry a priori, but allows us to
+test whether a collective structure emerges in the vacuum.
+We note that the anisotropy $J_{zz} \neq J_{xy}$ already breaks $SO(3)$
+explicitly at the Hamiltonian level; the objective is therefore not
+to demonstrate spontaneous symmetry breaking in the field-theoretic
+sense, but to test whether a robust effective residual symmetry
+is selected in the ground state.
 
-\subsection{Connexion de jauge discrète}
+\subsection{Discrete gauge connection}
 
-À partir de l'état fondamental, nous extrayons le tenseur de corrélation de Pauli entre paires de qubits :
+From the ground state, we extract the Pauli correlation tensor
+between qubit pairs:
 
 \[
 C_{ij}^{ab} = \langle \sigma_a^i \otimes \sigma_b^j \rangle, \quad a,b \in \{x,y,z\}.
 \]
 
-La décomposition polaire SVD de $C_{ij}$ (matrice $3\times3$) donne :
+The polar SVD decomposition of $C_{ij}$ (a $3\times3$ matrix) gives:
 
 \[
 C_{ij} = S_{ij} \cdot R_{ij}, \quad R_{ij} \in SO(3).
 \]
 
-La partie rotationnelle $R_{ij}$ définit une connexion de jauge discrète sur le graphe de qubits. L'algèbre de Lie engendrée par $\{\log R_{ij}\}$ est analysée via SVD pour classifier la symétrie effective.
+The rotational part $R_{ij}$ defines a discrete gauge connection
+on the qubit graph. The Lie algebra generated by $\{\log R_{ij}\}$
+is analyzed via SVD to classify the effective symmetry.
 
 \subsection{Observables}
 
-Nous mesurons :
+We measure:
 
 \begin{itemize}
-\item le paramètre d'ordre angulaire $OP = \langle |\cos\theta_{ij}| \rangle$ où $\theta_{ij}$ est l'angle entre chaque vecteur de Lie et l'axe dominant $\hat{n}$,
-\item le ratio singulier $\mathrm{ratio}_s = s_1 / s_2$ (valeurs singulières de la matrice des vecteurs de Lie),
-\item la dispersion angulaire $\sigma_\theta$.
+\item the angular order parameter $OP = \langle |\cos\theta_{ij}| \rangle$,
+      where $\theta_{ij}$ is the angle between each Lie vector and
+      the dominant axis $\hat{n}$,
+\item the singular ratio $\mathrm{ratio}_s = s_1 / s_2$
+      (singular values of the Lie vector matrix),
+\item the angular dispersion $\sigma_\theta$.
 \end{itemize}
 
-Critère de classification :
+Classification criterion:
 \begin{itemize}
-\item régime \textbf{U(1)-like} : $\mathrm{ratio}_s > 2.5$ et $\sigma_\theta < 0.4$ rad,
-\item régime \textbf{SO(3)-like} : sinon.
+\item \textbf{U(1)-like} regime: $\mathrm{ratio}_s > 2.5$ and
+      $\sigma_\theta < 0.4$ rad,
+\item \textbf{SO(3)-like} regime: otherwise.
 \end{itemize}
 
-\subsection{Résultat principal}
+\subsection{Main result}
 
-Pour les paramètres $N=8$, $J_{zz}=2.0$, $J_{xy}=0.5$, $h_{\mathrm{scale}}=0.1$ :
+For parameters $N=8$, $J_{zz}=2.0$, $J_{xy}=0.5$, $h_{\mathrm{scale}}=0.1$:
 
 \begin{itemize}
-\item $95\%$ des réalisations du désordre classées \textbf{U(1)-like},
-\item paramètre d'ordre moyen $OP \approx 0.969$ contre $OP_{\mathrm{aléatoire}} \approx 0.619$ pour des états de contrôle.
+\item $95\%$ of disorder realizations classified as \textbf{U(1)-like},
+\item mean order parameter $OP \approx 0.969$ versus
+      $OP_{\mathrm{random}} \approx 0.619$ for control random states.
 \end{itemize}
 
-\subsection{Stabilité vis-à-vis du graphe kNN}
+\subsection{Stability with respect to the kNN graph}
 
-Un scan sur le paramètre $k \in \{1,2,\ldots,7\}$ du graphe kNN utilisé pour la reconstruction confirme la robustesse du signal :
+A scan over the kNN parameter $k \in \{1,2,\ldots,7\}$
+confirms the robustness of the signal:
 
 \begin{center}
 \begin{tabular}{cccc}
 \toprule
-$k$ & Arêtes & $OP$ & U(1)-like \\
+$k$ & Edges & $OP$ & U(1)-like \\
 \midrule
 1 & 5  & 0.950 & 75\% \\
 2 & 9  & 0.955 & 85\% \\
@@ -773,89 +868,120 @@ $k$ & Arêtes & $OP$ & U(1)-like \\
 \end{tabular}
 \end{center}
 
-Les états aléatoires de contrôle donnent $0\%$ de classification U(1)-like pour tout $k$. Ce résultat établit que la symétrie effective est une propriété intrinsèque de l'état fondamental $|\psi_0\rangle$, et non un artefact de la reconstruction du graphe.
+Random control states yield $0\%$ U(1)-like classification for all $k$.
+This establishes that the effective symmetry is an intrinsic property
+of the ground state $|\psi_0\rangle$, not an artifact of graph
+reconstruction.
 
-\subsection{Unicité du vide}
+\subsection{Vacuum uniqueness}
 
-L'axe dominant $\hat{n}$ est extrait pour chaque réalisation du désordre. La dispersion angulaire entre vides est mesurée par :
-
-\[
-\Delta_{\mathrm{vide}} = \langle \mathrm{angle}(\hat{n}_i, \hat{n}_j) \rangle_{i \neq j}.
-\]
-
-Résultats ($N=8$, $h=0.1$, 30 seeds) :
-
-\begin{itemize}
-\item $\Delta_{\mathrm{vide}} = 0.056$ rad (normalisé : $0.072$, où $1$ correspond à $S^2$ isotrope),
-\item alignement $\langle |\cos z| \rangle = 0.999$ : l'axe $\hat{n}$ pointe quasi-parfaitement dans la direction de l'anisotropie $J_{zz}$,
-\item transition nette observée à $J_{zz}/J_{xy} \approx 1$ : en dessous, vide dégénéré ($\Delta_{\mathrm{norm}} > 1$) ; au-dessus, vide unique.
-\end{itemize}
-
-Le vide effectif est donc unique et orienté : il sélectionne la direction de l'anisotropie microscopique.
-
-\subsection{Test brisure spontanée vs explicite}
-
-Pour distinguer une sélection d'axe due à l'anisotropie explicite du Hamiltonien d'une éventuelle brisure spontanée, nous avons effectué le test suivant :
+The dominant axis $\hat{n}$ is extracted for each disorder realization.
+The angular dispersion between vacua is measured by:
 
 \[
-H(\varepsilon) = H_{\mathrm{iso}} + \varepsilon \cdot H_{\mathrm{break}}(\hat{n}_{\mathrm{break}} \text{ aléatoire}),
+\Delta_{\mathrm{vac}} = \langle \mathrm{angle}(\hat{n}_i, \hat{n}_j) \rangle_{i \neq j}.
 \]
 
-où $H_{\mathrm{iso}}$ est le Hamiltonien de Heisenberg isotrope ($SO(3)$ exact) et $\hat{n}_{\mathrm{break}}$ est une direction de brisure aléatoire différente à chaque réalisation.
-
-Résultat : $\mathrm{angle}(\hat{n}, \hat{n}_{\mathrm{break}}) = 0$ pour tout $\varepsilon \in [0.001, 1.0]$, confirmant que la sélection d'axe est de nature \textbf{explicite} et non spontanée. Ce résultat est honnête et attendu : l'anisotropie $J_{zz} > J_{xy}$ brise déjà $SO(3)$ au niveau du Hamiltonien.
-
-La claim correcte est donc : \textit{la connexion de jauge BuP constitue un observable géométrique sensible à la symétrie du vide, quelle que soit l'origine de cette symétrie}.
-
-\subsection{Dépendance au désordre et à l'anisotropie}
-
-Scan en $h_{\mathrm{scale}}$ :
+Results ($N=8$, $h=0.1$, 30 seeds):
 
 \begin{itemize}
-\item régime U(1)-like stable pour $h \lesssim 0.2$,
-\item transition progressive pour $h \sim 0.3$,
-\item perte de structure pour $h \gtrsim 0.5$.
+\item $\Delta_{\mathrm{vac}} = 0.056$ rad (normalized: $0.072$, where
+      $1$ corresponds to isotropic $S^2$),
+\item alignment $\langle |\cos z| \rangle = 0.999$: the axis $\hat{n}$
+      points quasi-perfectly in the $J_{zz}$ anisotropy direction,
+\item sharp transition observed at $J_{zz}/J_{xy} \approx 1$:
+      below, the vacuum is degenerate ($\Delta_{\mathrm{norm}} > 1$);
+      above, it is unique.
 \end{itemize}
 
-Scan en $J_{zz}/J_{xy}$ :
+The effective vacuum is therefore unique and oriented: it selects
+the direction of microscopic anisotropy.
 
-\begin{itemize}
-\item régime SO(3)-like pour $J_{zz}/J_{xy} < 1$,
-\item transition autour de $J_{zz}/J_{xy} \approx 1$,
-\item régime U(1)-like robuste pour $J_{zz}/J_{xy} \geq 2$.
-\end{itemize}
+\subsection{Spontaneous vs explicit symmetry breaking test}
 
-\subsection{Interprétation}
-
-La connexion de jauge discrète $R_{ij} \in SO(3)$, extraite par décomposition SVD polaire du tenseur de corrélation de Pauli, constitue un observable géométrique fidèle à la structure de symétrie du vide. Dans un vide anisotrope ($J_{zz} > J_{xy}$), une symétrie résiduelle effective U(1) émerge dans la connexion discrète avec un paramètre d'ordre $OP \approx 0.97$. Cette émergence est robuste vis-à-vis du paramètre de reconstruction $k$ et présente une transition contrôlée vers SO(3) pour $J_{zz}/J_{xy} \lesssim 1$ ou $h \gtrsim 0.5$.
-
-\subsection{Portée pour le programme Bottom-Up}
-
-Ce résultat prolonge la chaîne conceptuelle :
+To distinguish axis selection due to explicit Hamiltonian anisotropy
+from a potential spontaneous breaking, we performed the following test:
 
 \[
-\text{intrication}
-\;\Longrightarrow\;
-\text{géométrie}
-\;\Longrightarrow\;
-\text{courbure}
-\;\Longrightarrow\;
-\text{dynamique}
-\;\Longrightarrow\;
-\text{symétrie effective du vide}.
+H(\varepsilon) = H_{\mathrm{iso}} + \varepsilon \cdot H_{\mathrm{break}}(\hat{n}_{\mathrm{break}} \text{ random}),
 \]
 
-Il suggère que le vide Bottom-Up doit être compris comme un milieu structuré, porteur d'une organisation interne non triviale encodée dans la connexion de jauge émergente.
+where $H_{\mathrm{iso}}$ is the isotropic Heisenberg Hamiltonian
+(exact $SO(3)$) and $\hat{n}_{\mathrm{break}}$ is a random breaking
+direction, different for each realization.
+
+Result: $\mathrm{angle}(\hat{n}, \hat{n}_{\mathrm{break}}) = 0$ for
+all $\varepsilon \in [0.001, 1.0]$, confirming that the axis selection
+is of \textbf{explicit} rather than spontaneous nature. This result is
+honest and expected: the anisotropy $J_{zz} > J_{xy}$ already breaks
+$SO(3)$ at the Hamiltonian level.
+
+The correct claim is therefore: \textit{the BuP gauge connection
+constitutes a geometric observable sensitive to vacuum symmetry,
+regardless of whether that symmetry is explicit or spontaneous.}
+
+\subsection{Dependence on disorder and anisotropy}
+
+Scan over $h_{\mathrm{scale}}$:
+
+\begin{itemize}
+\item U(1)-like regime stable for $h \lesssim 0.2$,
+\item progressive transition for $h \sim 0.3$,
+\item loss of structure for $h \gtrsim 0.5$.
+\end{itemize}
+
+Scan over $J_{zz}/J_{xy}$:
+
+\begin{itemize}
+\item SO(3)-like regime for $J_{zz}/J_{xy} < 1$,
+\item transition near $J_{zz}/J_{xy} \approx 1$,
+\item robust U(1)-like regime for $J_{zz}/J_{xy} \geq 2$.
+\end{itemize}
+
+\subsection{Interpretation}
+
+The discrete gauge connection $R_{ij} \in SO(3)$, extracted via
+polar SVD decomposition of the Pauli correlation tensor, constitutes
+a geometric observable faithful to the vacuum symmetry structure.
+In an anisotropic vacuum ($J_{zz} > J_{xy}$), a U(1)-like effective
+residual symmetry emerges in the discrete connection with order
+parameter $OP \approx 0.97$. This emergence is robust with respect
+to the reconstruction parameter $k$ and exhibits a controlled
+transition toward SO(3) for $J_{zz}/J_{xy} \lesssim 1$ or
+$h \gtrsim 0.5$.
+
+\subsection{Implications for the Bottom-Up program}
+
+This result extends the conceptual chain:
+
+\[
+\text{entanglement}
+\;\Longrightarrow\;
+\text{geometry}
+\;\Longrightarrow\;
+\text{curvature}
+\;\Longrightarrow\;
+\text{dynamics}
+\;\Longrightarrow\;
+\text{effective vacuum symmetry}.
+\]
+
+It suggests that the BuP vacuum should be understood as a structured
+medium, carrying a non-trivial internal organization encoded in the
+emergent gauge connection.
 
 % =====================================================================
-% PARTIE VII TER : HAMILTONIENS MODULAIRES COMME SONDES GÉOMÉTRIQUES
+% PART VII TER: MODULAR HAMILTONIANS AS GEOMETRIC PROBES
 % =====================================================================
 
-\section{Hamiltoniens Modulaires comme Sondes Géométriques}
+\section{Modular Hamiltonians as Geometric Probes}
 
-\subsection{Motivation et chaîne de dérivation}
+\subsection{Motivation and derivation chain}
 
-Dans le cadre BuP, un Hamiltonien effectif pour la dynamique d'un sous-système ne peut être postulé --- il doit être dérivé de l'état quantique global. Le Hamiltonien modulaire $K_A = -\log\rho_A$ fournit exactement cette dérivation, via la chaîne :
+In the BuP framework, an effective Hamiltonian for subsystem dynamics
+cannot be postulated --- it must be derived from the global quantum
+state. The modular Hamiltonian $K_A = -\log\rho_A$ provides exactly
+this derivation, via the chain:
 
 \[
 |\Psi\rangle
@@ -867,20 +993,24 @@ K_A
 H_{\mathrm{eff}}^{1+2}.
 \]
 
-Cette section présente une étude systématique de la structure de $K_A$ sur 180 configurations numériques ($N \in \{8,10,12\}$, $|A| \in \{3,4,5,6\}$, $\eta_{\mathrm{micro}} \in \{1.0, 1.1, 1.25, 1.5, 2.0\}$, trois classes d'états).
+This section presents a systematic study of $K_A$ over 180 numerical
+configurations ($N \in \{8,10,12\}$, $|A| \in \{3,4,5,6\}$,
+$\eta_{\mathrm{micro}} \in \{1.0, 1.1, 1.25, 1.5, 2.0\}$,
+three state classes).
 
-\subsection{Modèle et fit}
+\subsection{Model and fit}
 
-Nous considérons des chaînes de spin-$\tfrac{1}{2}$ avec anisotropie XXZ :
+We consider spin-$\tfrac{1}{2}$ chains with XXZ anisotropy:
 
 \[
 H = \sum_{\langle i,j\rangle}
-\left( J_{xy}(\sigma_i^x\sigma_j^x + \sigma_i^y\sigma_j^y) + J_z\,\sigma_i^z\sigma_j^z \right),
+\left( J_{xy}(\sigma_i^x\sigma_j^x + \sigma_i^y\sigma_j^y)
++ J_z\,\sigma_i^z\sigma_j^z \right),
 \]
 
-avec $J_{xy}=1$ fixé et $J_z \in \{1.0, 1.1, 1.25, 1.5, 2.0\}$.
+with $J_{xy}=1$ fixed and $J_z \in \{1.0, 1.1, 1.25, 1.5, 2.0\}$.
 
-Nous projetons $K_A$ sur la base de Pauli à 1+2 corps :
+We project $K_A$ onto the 1+2-body Pauli basis:
 
 \[
 K_A^{\mathrm{fit}} =
@@ -888,30 +1018,33 @@ K_A^{\mathrm{fit}} =
 + \sum_{i<j}\sum_{\alpha} J_{ij}^{\alpha\alpha}\,\sigma_i^\alpha\sigma_j^\alpha.
 \]
 
-La qualité du fit est mesurée par $R^2$.
+Fit quality is measured by $R^2$.
 
-\subsection{Résultat 1 : quasi-localité universelle}
+\subsection{Result 1: Universal quasi-locality}
 
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
-Classe d'état & $\langle R^2\rangle$ & $\sigma_{R^2}$ & $n$ \\
+State class & $\langle R^2\rangle$ & $\sigma_{R^2}$ & $n$ \\
 \midrule
-Fondamental & 0.9948 & 0.0099 & 60 \\
-Thermique   & 0.9994 & 0.0011 & 60 \\
-Aléatoire   & 0.9205 & 0.0741 & 60 \\
+Ground  & 0.9948 & 0.0099 & 60 \\
+Thermal & 0.9994 & 0.0011 & 60 \\
+Random  & 0.9205 & 0.0741 & 60 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Les états structurés (fondamental, thermique) sont quasi-parfaitement capturés par l'expansion 1+2 corps. Les états aléatoires présentent une qualité de fit plus faible et plus variable, indiquant un contenu à 3 corps non négligeable.
+Structured states (ground, thermal) are near-perfectly captured
+by the 1+2-body expansion. Random states show lower and more variable
+fit quality, indicating non-negligible three-body content.
 
-\subsection{Résultat 2 : amplification état-dépendante de l'anisotropie}
+\subsection{Result 2: State-dependent anisotropy amplification}
 
-Nous définissons l'anisotropie effective et le facteur d'amplification :
+We define the effective anisotropy and amplification factor:
 
 \[
-\eta_{\mathrm{eff}} = \frac{\langle |J^{zz}|\rangle}{\tfrac{1}{2}(\langle |J^{xx}|\rangle + \langle |J^{yy}|\rangle)},
+\eta_{\mathrm{eff}} = \frac{\langle |J^{zz}|\rangle}
+{\tfrac{1}{2}(\langle |J^{xx}|\rangle + \langle |J^{yy}|\rangle)},
 \qquad
 \mathcal{A} = \frac{\eta_{\mathrm{eff}}}{\eta_{\mathrm{micro}}}.
 \]
@@ -919,31 +1052,37 @@ Nous définissons l'anisotropie effective et le facteur d'amplification :
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
-Classe d'état & $\langle\mathcal{A}\rangle$ & $\sigma_{\mathcal{A}}$ & $n$ \\
+State class & $\langle\mathcal{A}\rangle$ & $\sigma_{\mathcal{A}}$ & $n$ \\
 \midrule
-Fondamental & 1.048 & 0.114 & 60 \\
-Thermique   & 1.107 & 0.125 & 60 \\
-Aléatoire   & 0.805 & 0.392 & 60 \\
+Ground  & 1.048 & 0.114 & 60 \\
+Thermal & 1.107 & 0.125 & 60 \\
+Random  & 0.805 & 0.392 & 60 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-La hiérarchie
+The hierarchy
 
 \[
-\mathcal{A}_{\mathrm{thermique}} \gtrsim \mathcal{A}_{\mathrm{fondamental}} > 1 > \mathcal{A}_{\mathrm{aléatoire}}
+\mathcal{A}_{\mathrm{thermal}} \gtrsim \mathcal{A}_{\mathrm{ground}} > 1 > \mathcal{A}_{\mathrm{random}}
 \]
 
-est état-dépendante : des états aléatoires construits à partir du même Hamiltonien suppriment l'anisotropie. Le Hamiltonien modulaire agit donc comme un filtre sensible à la cohérence de l'intrication. L'amplification légèrement supérieure des états thermiques par rapport aux états fondamentaux doit être interprétée avec prudence et pourrait refléter des effets de mélange statistique.
+is state-dependent: random states constructed from the same Hamiltonian
+suppress anisotropy. The modular Hamiltonian thus acts as a
+coherence-sensitive filter. The slightly larger amplification observed
+in thermal states compared to ground states should be interpreted
+with caution, as it may arise from statistical mixing effects rather
+than increased structural coherence.
 
-\subsection{Résultat 3 : monotonie de l'amplification}
+\subsection{Result 3: Monotonic amplification}
 
-Pour les états fondamentaux, $\mathcal{A}$ croît monotoniquement avec $\eta_{\mathrm{micro}}$ :
+For ground states, $\mathcal{A}$ grows monotonically with
+$\eta_{\mathrm{micro}}$:
 
 \begin{center}
 \begin{tabular}{lcc}
 \toprule
-$\eta_{\mathrm{micro}}$ & $\mathcal{A}_{\mathrm{fondamental}}$ & $\sigma$ \\
+$\eta_{\mathrm{micro}}$ & $\mathcal{A}_{\mathrm{ground}}$ & $\sigma$ \\
 \midrule
 1.00 & 1.000 & 0.000 \\
 1.10 & 1.009 & 0.024 \\
@@ -954,170 +1093,209 @@ $\eta_{\mathrm{micro}}$ & $\mathcal{A}_{\mathrm{fondamental}}$ & $\sigma$ \\
 \end{tabular}
 \end{center}
 
-Les états aléatoires ne présentent aucune tendance reproductible (la variance dépasse le signal à toutes les valeurs de $\eta_{\mathrm{micro}}$).
+Random states show no reproducible trend (variance exceeds signal at
+all values of $\eta_{\mathrm{micro}}$).
 
-\subsection{Lien avec le chaos modulaire}
+\subsection{Link to modular chaos}
 
-Les propriétés spectrales de $K_A$ sont compatibles avec un comportement chaotique, avec $\langle r \rangle \in [0.53, 0.59]$, correspondant aux prédictions GOE/GUE. Ceci établit que les Hamiltoniens modulaires sont non seulement des opérateurs quasi-locaux, mais appartiennent également à une classe chaotique universelle, renforçant leur interprétation comme générateurs effectifs de dynamique.
+The spectral properties of $K_A$ are consistent with chaotic behavior,
+with $\langle r \rangle \in [0.53, 0.59]$, matching GOE/GUE predictions.
+This establishes that modular Hamiltonians are not only quasi-local
+operators, but also belong to a universal chaotic class, reinforcing
+their interpretation as effective dynamical generators.
 
-\subsection{Localité de la réponse modulaire}
+\subsection{Locality of the modular response}
 
-Nous perturbons le système par $\delta H = \varepsilon\,\sigma_2^z$ ($\varepsilon = 0.2$) et mesurons la réponse des couplages ajustés en fonction de la distance à la perturbation :
+We perturb the system by $\delta H = \varepsilon\,\sigma_2^z$
+($\varepsilon = 0.2$) and measure the response of fitted couplings
+as a function of distance from the perturbation:
 
 \[
-\mathrm{Loc} = \left\|K_A^{(r=0)}\right\|_F - \left\langle \left\|K_A^{(r>0)}\right\|_F \right\rangle.
+\mathrm{Loc} = \left\|K_A^{(r=0)}\right\|_F
+- \left\langle \left\|K_A^{(r>0)}\right\|_F \right\rangle.
 \]
 
 \begin{center}
 \begin{tabular}{lcc}
 \toprule
-Classe d'état & $\langle\mathrm{Loc}\rangle$ & $\sigma_{\mathrm{Loc}}$ \\
+State class & $\langle\mathrm{Loc}\rangle$ & $\sigma_{\mathrm{Loc}}$ \\
 \midrule
-Fondamental & $+3.5 \times 10^{-3}$ & $5.8 \times 10^{-3}$ \\
-Thermique   & $+4.0 \times 10^{-3}$ & $3.8 \times 10^{-3}$ \\
-Aléatoire   & $-2.8 \times 10^{-3}$ & $2.1 \times 10^{-2}$ \\
+Ground  & $+3.5 \times 10^{-3}$ & $5.8 \times 10^{-3}$ \\
+Thermal & $+4.0 \times 10^{-3}$ & $3.8 \times 10^{-3}$ \\
+Random  & $-2.8 \times 10^{-3}$ & $2.1 \times 10^{-2}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Les états structurés présentent un score de localité positif stable. Les états aléatoires ne présentent pas de pattern de localisation systématique (la variance dépasse le signal).
+Structured states show a stable positive locality score. Random states
+show no systematic localization pattern (variance exceeds signal).
 
-\subsection{Interprétation géométrique}
+\subsection{Geometric interpretation}
 
-Les couplages $J_{ij}$ extraits du fit définissent un graphe d'interaction qui peut être interprété comme une géométrie émergente. La localité de $K_A$ correspond à une structure à courte portée, tandis que l'anisotropie encode une déformation directionnelle.
+The couplings $J_{ij}$ extracted from the fit define an interaction
+graph that can be interpreted as an emergent geometry. Locality of
+$K_A$ corresponds to short-range structure, while anisotropy encodes
+directional deformation.
 
 \medskip
-The modular Hamiltonian $K_A$ thus provides a concrete operational bridge between entanglement structure and effective interaction geometry. Rather than being postulated, the effective couplings $J_{ij}$ emerge from $K_A$ itself --- they are a derived consequence of $|\Psi\rangle$, not an input. This is the operational realization of the BuP principle:
+The modular Hamiltonian $K_A$ thus provides a concrete operational
+bridge between entanglement structure and effective interaction
+geometry. Rather than being postulated, the effective couplings
+$J_{ij}$ emerge from $K_A$ itself --- they are a derived consequence
+of $|\Psi\rangle$, not an input. This is the operational realization
+of the BuP principle:
 
 \[
-|\Psi\rangle \;\rightarrow\; \rho_A \;\rightarrow\; K_A \;\rightarrow\; \{J_{ij}\} \;\rightarrow\; \text{géométrie effective.}
+|\Psi\rangle \;\rightarrow\; \rho_A \;\rightarrow\; K_A
+\;\rightarrow\; \{J_{ij}\} \;\rightarrow\; \text{effective geometry.}
 \]
 
-\subsection{Connexion à l'échelle galactique}
+\subsection{Connection to galactic scales}
 
-In the BuP framework, the scale-dependent dimension $d(r)$ extracted from galactic rotation curves can be interpreted as a coarse-grained manifestation of the same entanglement structure probed microscopically by $K_A$. The state-dependent anisotropy amplification observed in modular Hamiltonians --- stronger in structured (low-entropy) states, suppressed in random states --- is the microscopic counterpart of the regime-dependent effective dimension observed in SPARC galaxies.
+In the BuP framework, the scale-dependent dimension $d(r)$ extracted
+from galactic rotation curves can be interpreted as a coarse-grained
+manifestation of the same entanglement structure probed
+microscopically by $K_A$. The state-dependent anisotropy
+amplification observed in modular Hamiltonians --- stronger in
+structured (low-entropy) states, suppressed in random states ---
+is the microscopic counterpart of the regime-dependent effective
+dimension observed in SPARC galaxies.
 
-This suggests a continuous derivation chain from quantum to astrophysical scales :
+This suggests a continuous derivation chain from quantum to
+astrophysical scales:
 
 \[
-\text{intrication quantique}
+\text{quantum entanglement}
 \;\rightarrow\; K_A \;\rightarrow\; \{J_{ij}\}
-\;\rightarrow\; \text{graphe d'interaction}
+\;\rightarrow\; \text{interaction graph}
 \;\rightarrow\; d(r)
-\;\rightarrow\; \text{courbes de rotation.}
+\;\rightarrow\; \text{rotation curves.}
 \]
 
-L'accord avec les données SPARC fournit donc un support indirect pour les mécanismes microscopiques identifiés dans cette section, et établit $K_A$ comme le chaînon manquant entre la physique quantique des sous-systèmes et la phénoménologie galactique du cadre BuP.
+Agreement with SPARC data therefore provides indirect support for
+the microscopic mechanisms identified in this section, and establishes
+$K_A$ as the missing link between the quantum physics of subsystems
+and the galactic phenomenology of the BuP framework.
 
 % =====================================================================
-% PARTIE VIII : EXTENSION PHÉNOMÉNOLOGIQUE SPARC
+% PART VIII: SPARC PHENOMENOLOGICAL EXTENSION
 % =====================================================================
 
-\section{Extension Phénoménologique : SPARC et structure en régimes}
+\section{Phenomenological Extension: SPARC and Regime Structure}
 
-Jusqu'ici, le programme Bottom-Up a principalement établi des signatures internes de géométrie émergente sur des systèmes quantiques finis. Une question décisive est alors de savoir si cette structure effective peut être prolongée vers des données astrophysiques réelles.
+The Bottom-Up program has so far established internal signatures of
+emergent geometry on finite quantum systems. A decisive question is
+whether this effective structure can be extended to real astrophysical
+data.
 
-Dans cette optique, nous avons entrepris une première étude phénoménologique sur l'échantillon SPARC de courbes de rotation galactiques \cite{sparc}. L'objectif n'est pas encore de proposer une théorie observationnelle finale, mais de tester si la notion de géométrie émergente effective peut fournir un cadre descriptif cohérent pour la dynamique galactique.
+We undertook a first phenomenological study on the SPARC sample of
+galactic rotation curves \cite{sparc}. The goal is not yet to propose
+a final observational theory, but to test whether emergent effective
+geometry can provide a coherent descriptive framework for galactic
+dynamics.
 
-\subsection{Objectif}
+\subsection{Objective}
 
-Le but de cette analyse est de construire un pont entre :
+The aim is to construct a bridge between:
 
 \begin{itemize}
-\item géométrie émergente issue de l'intrication,
-\item dimension effective,
-\item réponse gravitationnelle à grande échelle,
-\item données observationnelles de rotation galactique.
+\item emergent geometry from entanglement,
+\item effective dimension,
+\item gravitational response at large scale,
+\item observational rotation curve data.
 \end{itemize}
 
-Autrement dit, il s'agit d'examiner si le programme bottom-up, initialement formulé sur des systèmes quantiques finis, peut déjà produire une lecture phénoménologique non triviale des courbes de rotation.
+\subsection{Main result: separation into effective phases}
 
-\subsection{Résultat principal : séparation en phases effectives}
+The most striking current result is that a strictly single-phase
+description does not appear optimal. The phase diagram pipeline
+instead suggests the existence of distinct effective regimes.
 
-Le résultat actuel le plus marquant est qu'une description strictement monophasique ne semble pas optimale. Le pipeline de diagramme de phase suggère au contraire l'existence de régimes effectifs distincts.
-
-Les meilleurs ajustements obtenus donnent :
+Best fits give:
 
 \begin{center}
 \begin{tabular}{ccc}
 \toprule
-Régime galactique & $d_{\min}$ & test $\chi^2_{\mathrm{red}}$ \\
+Galactic regime & $d_{\min}$ & $\chi^2_{\mathrm{red}}$ \\
 \midrule
-phase massive & $2.4871 \pm 0.0294$ & $10.9353 \pm 12.6952$ \\
-phase naine & $2.2744 \pm 0.0341$ & $25.2842 \pm 25.8802$ \\
+massive phase & $2.4871 \pm 0.0294$ & $10.9353 \pm 12.6952$ \\
+dwarf phase   & $2.2744 \pm 0.0341$ & $25.2842 \pm 25.8802$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Ces valeurs indiquent que la réponse gravitationnelle effective pourrait dépendre du régime galactique, et qu'une géométrie émergente décrite par une dimension unique universelle n'est pas, à ce stade, la lecture la plus naturelle des données.
+These values indicate that the effective gravitational response may
+depend on the galactic regime, and that a single universal dimension
+is not, at this stage, the most natural reading of the data.
 
-\subsection{Interprétation physique provisoire}
-
-L'interprétation actuelle est la suivante :
-
-\begin{itemize}
-\item les galaxies massives et les galaxies naines pourraient explorer des régimes géométriques effectifs différents ;
-\item la dimension émergente, introduite initialement comme observable interne de reconstruction géométrique, acquiert ici une signification phénoménologique ;
-\item le cadre bottom-up commence ainsi à dépasser le statut de modèle interne sur petits systèmes pour entrer dans une phase de confrontation exploratoire avec les observations.
-\end{itemize}
-
-Cette lecture reste volontairement prudente : il s'agit d'un test de cohérence empirique, non d'une validation définitive d'un modèle galactique complet.
-
-\subsection{Statut scientifique}
-
-La partie SPARC doit être comprise comme une preuve de concept phénoménologique.
-
-Elle ne constitue pas encore :
+\subsection{Provisional physical interpretation}
 
 \begin{itemize}
-\item une théorie finale de la dynamique des galaxies,
-\item un pipeline observationnel entièrement contraint,
-\item ni une alternative mature aux modèles standards de fit astrophysique.
+\item Massive and dwarf galaxies may explore different effective
+      geometric regimes.
+\item The emergent dimension, initially introduced as an internal
+      geometric reconstruction observable, acquires a phenomenological
+      significance here.
+\item The bottom-up framework thus begins to move beyond the status
+      of an internal model on small systems, entering a phase of
+      exploratory confrontation with observations.
 \end{itemize}
 
-En revanche, elle représente une étape importante pour le programme Bottom-Up : la géométrie émergente n'est plus seulement reconstruite de manière interne, mais commence à être mise à l'épreuve sur des données astrophysiques réelles.
+This reading remains deliberately cautious: this is an empirical
+consistency test, not a definitive validation of a complete galactic
+model.
 
-\subsection{Portée pour le programme Bottom-Up}
+\subsection{Scientific status}
 
-Cette extension suggère que la chaîne conceptuelle
+The SPARC part should be understood as a phenomenological proof of
+concept. It does not yet constitute:
+
+\begin{itemize}
+\item a final theory of galactic dynamics,
+\item a fully constrained observational pipeline,
+\item nor a mature alternative to standard astrophysical fit models.
+\end{itemize}
+
+\subsection{Implications for the Bottom-Up program}
+
+This extension suggests that the conceptual chain
 
 \[
-\text{intrication}
+\text{entanglement}
 \;\Longrightarrow\;
-\text{géométrie émergente}
+\text{emergent geometry}
 \;\Longrightarrow\;
-\text{dimension effective}
+\text{effective dimension}
 \;\Longrightarrow\;
-\text{réponse gravitationnelle}
+\text{gravitational response}
 \]
 
-n'est pas seulement pertinente au niveau des systèmes quantiques finis, mais pourrait aussi admettre une traduction phénoménologique à l'échelle galactique.
-
-C'est en ce sens que les résultats SPARC constituent une avancée méthodologique importante : ils ouvrent la possibilité de tester la géométrie émergente bottom-up au-delà des seules signatures internes du modèle.
+is not only relevant at the finite quantum system level, but may
+also admit a phenomenological translation at galactic scales.
 
 % =====================================================================
-% PARTIE IX : SCALING ET LENTILLAGE
+% PART IX: SCALING AND LENSING
 % =====================================================================
 
-\section{Scaling de l'échelle de transition et prédiction de lentillage}
+\section{Transition Scale Scaling and Lensing Prediction}
 
 \subsection{Motivation}
 
-L'analyse précédente suggère l'existence de régimes effectifs distincts dans l'échantillon SPARC. Nous cherchons ici à aller plus loin en identifiant une structure d'échelle pour le paramètre de transition $r_{\mathrm{trans}}$, puis en testant si cette structure se propage à des observables indépendants tels que le lentillage.
+We seek to identify a scaling structure for the transition parameter
+$r_{\mathrm{trans}}$ and test whether this structure propagates to
+independent observables such as lensing.
 
-\subsection{Structure d'échelle de $r_{\mathrm{trans}}$}
+\subsection{Scaling structure of $r_{\mathrm{trans}}$}
 
-Nous montrons que $r_{\mathrm{trans}}$ n'est pas un paramètre libre arbitraire, mais une quantité corrélée à des observables galactiques.
-
-Une première loi univariée donne
+A first univariate law gives
 
 \[
 r_{\mathrm{trans}} \simeq -5.41 + 1.31\,r_{\max},
 \]
 
-avec un coefficient de détermination $R^2 \simeq 0.63$.
+with $R^2 \simeq 0.63$.
 
-Un modèle multivarié plus complet conduit à
+A more complete multivariate model gives
 
 \[
 r_{\mathrm{trans}}
@@ -1127,74 +1305,68 @@ r_{\mathrm{trans}}
 + 0.80\,\frac{v_{b,\max}}{r_{\max}},
 \]
 
-avec
+with $R^2 \simeq 0.687$ and $\mathrm{RMSE} \simeq 16.50$.
+
+The transition scale thus depends on both the overall system size
+and its baryonic compactness.
+
+\subsection{Robustness}
+
+Bootstrap and train/test analysis shows that coefficient signs are
+stable, but out-of-sample performance remains scattered
+($R^2_{\mathrm{test}} \sim 0.5$). This motivates a regime-based
+description.
+
+\subsection{Regime separation}
+
+A split based on baryonic compactness reveals two distinct behaviors:
 
 \begin{itemize}
-\item $R^2 \simeq 0.687$
-\item $\mathrm{RMSE} \simeq 16.50$
+\item LOW regime: strong dependence on internal structure,
+\item HIGH regime: simpler law dominated by $r_{\max}$ and $v_{b,\max}$.
 \end{itemize}
 
-Ce résultat indique que l'échelle de transition dépend à la fois de la taille globale du système et de sa compacité baryonique.
-
-\subsection{Robustesse}
-
-Une analyse bootstrap et train/test montre que les signes des coefficients sont stables, mais que la performance hors échantillon reste dispersée ($R^2_{\mathrm{test}} \sim 0.5$).
-
-Cela suggère qu'une loi unique globale n'est pas suffisante et motive une description en régimes.
-
-\subsection{Séparation en régimes}
-
-Un split basé sur la compacité baryonique révèle deux comportements distincts :
-
-\begin{itemize}
-\item régime LOW : dépendance forte à la structure interne
-\item régime HIGH : loi plus simple dominée par $r_{\max}$ et $v_{b,\max}$
-\end{itemize}
-
-Dans le régime HIGH, la loi effective devient
+In the HIGH regime, the effective law becomes
 
 \[
 r_{\mathrm{trans}} \simeq 2.44 + 0.46\,r_{\max} + 0.044\,v_{b,\max},
 \]
 
-avec $R^2 \simeq 0.50$.
-
-Cette simplification suggère une géométrie émergente plus rigide dans ce régime.
+with $R^2 \simeq 0.50$, suggesting a more rigid emergent geometry
+in this regime.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{lensing_regime_profiles.png}
-\caption{Profil moyen de l'excès de lentillage BuP selon le régime galactique.}
+\caption{Mean BuP lensing excess profile by galactic regime.}
 \end{figure}
 
-\subsection{Prédiction de lentillage}
+\subsection{Lensing prediction}
 
-À partir des profils ajustés, nous construisons un proxy de déflexion
+From the fitted profiles, we construct a deflection proxy
 
 \[
-\alpha(R) \propto \frac{v(R)^2}{R}.
+\alpha(R) \propto \frac{v(R)^2}{R},
 \]
 
-Nous définissons
+and define
 
 \[
 \Delta \alpha(R) = \alpha_{\mathrm{BuP}}(R) - \alpha_{\mathrm{bary}}(R).
 \]
 
-Pour chaque galaxie, nous extrayons la position du maximum
+For each galaxy, we extract the peak position
 
 \[
 x_{\mathrm{peak}} = \frac{R_{\mathrm{peak}}}{R_{\max}}.
 \]
 
-Sur 102 galaxies, nous obtenons :
+Over 102 galaxies:
 
 \begin{itemize}
-\item régime LOW : $x_{\mathrm{peak}} \approx 0.365$
-\item régime HIGH : $x_{\mathrm{peak}} \approx 0.498$
+\item LOW regime: $x_{\mathrm{peak}} \approx 0.365$
+\item HIGH regime: $x_{\mathrm{peak}} \approx 0.498$
 \end{itemize}
-
-Donc
 
 \[
 x_{\mathrm{peak}}^{\mathrm{LOW}} < x_{\mathrm{peak}}^{\mathrm{HIGH}}.
@@ -1203,27 +1375,35 @@ x_{\mathrm{peak}}^{\mathrm{LOW}} < x_{\mathrm{peak}}^{\mathrm{HIGH}}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{lensing_peak_radius_boxplot.png}
-\caption{Distribution de $R_{\mathrm{peak}}/R_{\max}$ selon le régime galactique.}
+\caption{Distribution of $R_{\mathrm{peak}}/R_{\max}$ by galactic regime.}
 \end{figure}
 
-\subsection{Interprétation}
+\subsection{Interpretation}
 
-Le cadre BuP prédit que :
+The BuP framework predicts:
 
 \begin{itemize}
-\item régime LOW : géométrie plus flexible, effet centralisé
-\item régime HIGH : géométrie plus étalée, effet distribué
+\item LOW regime: more flexible geometry, centralized effect,
+\item HIGH regime: more extended geometry, distributed effect.
 \end{itemize}
 
-\subsection{Implication physique}
+\subsection{Physical implication}
 
-Ce résultat constitue une prédiction falsifiable indépendante des courbes de rotation. À masse baryonique comparable, la structure radiale du lentillage dépend du régime galactique.
+This constitutes a falsifiable prediction independent of rotation
+curves. At comparable baryonic mass, the radial structure of the
+lensing signal depends on the galactic regime.
 
-\subsection{Comparaison avec les interprétations basées sur la matière noire}
+\subsection{Comparison with dark matter interpretations}
 
-Le cadre BuP étudié ici diffère conceptuellement des modèles standards à halo sombre. L'excès gravitationnel n'est pas attribué à une masse invisible additionnelle, mais à une modification de la géométrie émergente elle-même, encodée phénoménologiquement via une dimension effective et une échelle de transition $r_{\mathrm{trans}}$.
+The BuP framework differs conceptually from standard dark halo models.
+The gravitational excess is not attributed to an additional invisible
+mass component, but to a modification of the emergent geometry itself,
+encoded phenomenologically via an effective dimension and a transition
+scale $r_{\mathrm{trans}}$.
 
-Les résultats sur le proxy de lentillage renforcent cette distinction. Nous trouvons que la position radiale normalisée du pic de l'excès de déflexion diffère systématiquement entre les deux régimes :
+The lensing proxy results reinforce this distinction. The normalized
+radial position of the deflection excess peak differs systematically
+between regimes:
 
 \[
 \left(\frac{R_{\mathrm{peak}}}{R_{\max}}\right)_{\mathrm{LOW}}
@@ -1231,69 +1411,82 @@ Les résultats sur le proxy de lentillage renforcent cette distinction. Nous tro
 \left(\frac{R_{\mathrm{peak}}}{R_{\max}}\right)_{\mathrm{HIGH}}.
 \]
 
-Le point discriminant n'est donc pas seulement la possibilité de reproduire certaines courbes de rotation, mais la prédiction de profils de lentillage qui diffèrent systématiquement des attentes issues des modèles à halo sombre.
+The discriminating feature is not only the ability to reproduce
+rotation curves, but the prediction of lensing profiles that differ
+systematically from dark halo model expectations.
 
-\subsection{Synthèse}
+\subsection{Summary}
 
-La séparation en régimes observée dans les courbes de rotation se propage à des observables de lentillage, renforçant l'interprétation d'une description effective multi-phase de la géométrie émergente.
+The regime separation observed in rotation curves propagates to
+lensing observables, reinforcing the interpretation of an effective
+multi-phase description of emergent geometry.
 
 % =====================================================================
-% PARTIE X : SYNTHÈSE ET PERSPECTIVES
+% PART X: SYNTHESIS AND PERSPECTIVES
 % =====================================================================
 
-\section{Ce que le Cadre Établit}
+\section{What the Framework Establishes}
 
 \begin{itemize}
-\item la géométrie peut émerger d'états quantiques finis,
-\item la dimension spatiale dépend de la structure d'intrication,
-\item la dynamique modulaire est chaotique avec des signatures RMT universelles,
-\item la constante modulaire $C=d_A g_2^{\mathrm{plateau}}$ encode l'information topologique,
-\item les signatures ER=EPR deviennent mesurables opérationnellement,
-\item des régions de type horizon émergent via des goulots d'étranglement informationnels,
-\item un algorithme de détection bottom-up identifie ces régions (rang 2/55 en mode horizon-aware),
-\item les corrélations multipartites présentent une structure géométrique triangulaire locale,
-\item une perturbation informationnelle locale induit une réponse positive de courbure d'Ollivier--Ricci,
-\item cette réponse croît avec l'intensité de la perturbation et se localise davantage pour les défauts compacts,
-\item la connexion de jauge discrète $R_{ij} \in SO(3)$ est un observable géométrique sensible à la symétrie du vide,
-\item une symétrie résiduelle effective U(1)-like est observée numériquement dans le vide anisotrope,
-\item cette sélection d'axe est robuste vis-à-vis du paramètre kNN ($k=1..7$) et du niveau de désordre ($h \lesssim 0.2$),
-\item le vide est unique : dispersion angulaire $\Delta_{\mathrm{vide}} = 0.056$ rad (normalisé : $0.072$),
-\item les Hamiltoniens modulaires sont quasi-locaux ($R^2 \geq 0.99$ pour les états structurés) et amplifient l'anisotropie microscopique de façon état-dépendante,
-\item une première extension phénoménologique vers les courbes de rotation SPARC suggère une description en régimes effectifs distincts,
-\item la dimension émergente acquiert un rôle potentiel d'observable phénoménologique à l'échelle galactique,
-\item une loi d'échelle pour $r_{\mathrm{trans}}$ est identifiée, avec une séparation en deux régimes selon la compacité baryonique,
-\item cette structure d'échelle se propage aux observables de lentillage, produisant une prédiction falsifiable.
+\item geometry can emerge from finite quantum states,
+\item spatial dimension depends on entanglement structure,
+\item modular dynamics is chaotic with universal RMT signatures,
+\item the modular constant $C=d_A g_2^{\mathrm{plateau}}$ encodes topological information,
+\item ER=EPR signatures become operationally measurable,
+\item horizon-like regions emerge via informational bottlenecks,
+\item a bottom-up detection algorithm identifies these regions (rank 2/55 in horizon-aware mode),
+\item multipartite correlations exhibit local triangular geometric structure,
+\item a local informational perturbation induces a positive Ollivier--Ricci curvature response,
+\item this response grows with perturbation intensity and is more localized for compact defects,
+\item the discrete gauge connection $R_{ij} \in SO(3)$ is a geometric observable sensitive to vacuum symmetry,
+\item a U(1)-like effective residual symmetry is numerically observed in the anisotropic vacuum,
+\item this axis selection is robust with respect to the kNN parameter ($k=1..7$) and disorder level ($h \lesssim 0.2$),
+\item the vacuum is unique: angular dispersion $\Delta_{\mathrm{vac}} = 0.056$ rad (normalized: $0.072$),
+\item modular Hamiltonians are quasi-local ($R^2 \geq 0.99$ for structured states) and amplify microscopic anisotropy in a state-dependent manner,
+\item a first phenomenological extension to SPARC rotation curves suggests a description in terms of distinct effective regimes,
+\item the emergent dimension acquires a potential role as a phenomenological observable at galactic scales,
+\item a scaling law for $r_{\mathrm{trans}}$ is identified, with separation into two regimes by baryonic compactness,
+\item this scaling structure propagates to lensing observables, producing a falsifiable prediction.
 \end{itemize}
 
-\section{Limites}
+\section{Limitations}
 
 \begin{itemize}
-\item limite continue $N\rightarrow\infty$ non encore établie,
-\item dynamique relativiste complète absente,
-\item équations d'Einstein non dérivées des premiers principes,
-\item tailles de système finies limitent les claims d'universalité,
-\item la symétrie U(1)-like effective résulte d'une brisure explicite et non spontanée,
-\item le couplage matière--courbure est établi comme preuve de concept numérique, pas encore comme loi fondamentale dérivée,
-\item l'analyse SPARC reste exploratoire et ne constitue pas encore un modèle galactique complètement contraint,
-\item les diagnostics en $\chi^2$ indiquent qu'un travail supplémentaire de calibration et de sélection de modèle reste nécessaire,
-\item le lentillage est traité au niveau d'un proxy radial, et non encore d'une métrique optique relativiste complète.
+\item the continuum limit $N\rightarrow\infty$ is not yet established,
+\item a complete relativistic dynamics is absent,
+\item Einstein equations are not derived from first principles,
+\item finite system sizes limit universality claims,
+\item the effective U(1)-like symmetry results from explicit rather
+      than spontaneous breaking,
+\item the matter--curvature coupling is established as a numerical
+      proof of concept, not yet as a derived fundamental law,
+\item the SPARC analysis remains exploratory and does not yet
+      constitute a fully constrained galactic model,
+\item $\chi^2$ diagnostics indicate that further calibration and
+      model selection work is needed,
+\item lensing is treated at the level of a radial proxy, not yet
+      a full relativistic optical metric.
 \end{itemize}
 
 \section{Perspectives}
 
-Les directions futures incluent
+Future directions include:
 
 \begin{itemize}
-\item scaling à taille finie vers $N>25$ (32, 36 qubits),
-\item connexions avec les modèles chaotiques de type SYK,
-\item analyse de dimension spectrale multi-échelle,
-\item dérivation d'une loi effective matière--courbure sur graphe,
-\item implémentations sur simulateur quantique,
-\item raffinement du diagramme de phase galactique sur l'échantillon SPARC,
-\item confrontation avec d'autres observables astrophysiques : relations baryoniques, lentillage, profils de masse,
-\item dérivation d'un pipeline complet $d(r)\rightarrow$ métrique optique effective $\rightarrow \alpha(R)$,
-\item test observationnel des prédictions de lentillage sur les échantillons SLACS et futurs relevés (Euclid, Rubin),
-\item extension de l'étude des Hamiltoniens modulaires à des états construits à partir de la dynamique variationnelle BuP.
+\item finite-size scaling toward $N>25$ (32, 36 qubits),
+\item connections with SYK-type chaotic models,
+\item multi-scale spectral dimension analysis,
+\item derivation of an effective matter--curvature law on graph,
+\item quantum simulator implementations,
+\item refinement of the galactic phase diagram on the SPARC sample,
+\item confrontation with other astrophysical observables:
+      baryonic relations, lensing, mass profiles,
+\item derivation of a complete pipeline
+      $d(r)\rightarrow$ effective optical metric $\rightarrow \alpha(R)$,
+\item observational test of lensing predictions on SLACS and
+      future survey data (Euclid, Rubin),
+\item extension of the modular Hamiltonian study to states
+      constructed from BuP variational dynamics.
 \end{itemize}
 
 % =====================================================================
@@ -1302,73 +1495,110 @@ Les directions futures incluent
 
 \section{Conclusion}
 
-La Gravité Quantique Bottom-Up propose que la géométrie spatio-temporelle peut émerger de la structure d'intrication des états quantiques sans aucun arrière-plan géométrique préalable.
+Bottom-Up Quantum Gravity proposes that spacetime geometry can emerge
+from the entanglement structure of quantum states without any
+pre-existing geometric background.
 
-Même de petits systèmes quantiques ($N=9,16$) présentent de multiples signatures cohérentes :
+Even small quantum systems ($N=9,16$) exhibit multiple consistent
+signatures:
 
 \begin{itemize}
-\item dimension émergente ajustable par la localité de l'intrication,
-\item dynamique modulaire chaotique avec constante $C$ dépendante de la topologie,
-\item raccourcis opérationnels ER=EPR,
-\item goulots d'étranglement informationnels de type horizon détectables algorithmiquement,
-\item gravité thermodynamique approximative via une relation entropie-énergie de type Jacobson,
-\item réponse locale de la courbure d'Ollivier--Ricci à une perturbation informationnelle,
-\item première extension phénoménologique aux galaxies SPARC,
-\item identification d'une structure d'échelle pour $r_{\mathrm{trans}}$ et séparation en deux régimes,
-\item prédiction falsifiable sur les observables de lentillage.
+\item emergent dimension tunable by entanglement locality,
+\item chaotic modular dynamics with topology-dependent constant $C$,
+\item operational ER=EPR shortcuts,
+\item algorithmically detectable horizon-like informational bottlenecks,
+\item approximate thermodynamic gravity via a Jacobson-type
+      entropy-energy relation,
+\item local Ollivier--Ricci curvature response to an informational
+      perturbation,
+\item first phenomenological extension to SPARC galaxies,
+\item identification of a scaling structure for $r_{\mathrm{trans}}$
+      and separation into two regimes,
+\item falsifiable prediction on lensing observables.
 \end{itemize}
 
 \bigskip
 
-Un résultat complémentaire important concerne la structure interne du vide effectif du modèle Bottom-Up. Nos analyses montrent que ce vide ne se comporte pas comme un milieu isotrope trivial, mais comme un milieu structuré dont les propriétés dépendent de l'anisotropie des interactions et du niveau de désordre local. En particulier, nous observons la sélection robuste d'une symétrie effective de type U(1), associée à la sélection d'une direction privilégiée dans l'espace des générateurs locaux de la connexion de jauge émergente.
+A complementary important result concerns the internal structure of
+the effective BuP vacuum. Our analyses show that this vacuum does not
+behave as a trivial isotropic medium, but as a structured medium
+whose properties depend on interaction anisotropy and the level of
+local disorder. In particular, we observe the robust selection of a
+U(1)-like effective symmetry, associated with the selection of a
+privileged direction in the space of local generators of the emergent
+gauge connection.
 
-Cette symétrie résiduelle n'est pas le résultat d'une brisure spontanée au sens des théories de champs --- les champs locaux et l'anisotropie $J_{zz} \neq J_{xy}$ brisent explicitement $SO(3)$ au niveau du Hamiltonien. Elle résulte d'une \textbf{sélection robuste d'un axe effectif} par l'état fondamental, dont la robustesse vis-à-vis des choix de reconstruction du graphe (paramètre $k \in \{1,\ldots,7\}$ des graphes kNN) indique qu'il s'agit d'une propriété intrinsèque de l'état, et non d'un artefact numérique. La transition contrôlée vers SO(3) est observée autour de $J_{zz}/J_{xy} \approx 1$ et $h \approx 0.3$.
+This residual symmetry is not the result of spontaneous breaking in
+the field-theoretic sense --- local fields and the anisotropy
+$J_{zz} \neq J_{xy}$ already break $SO(3)$ explicitly at the
+Hamiltonian level. It results from a \textbf{robust effective axis
+selection} by the ground state, whose robustness with respect to
+graph reconstruction choices (kNN parameter $k \in \{1,\ldots,7\}$)
+indicates that it is an intrinsic property of the state, and not a
+numerical artifact. The controlled transition toward SO(3) is observed
+around $J_{zz}/J_{xy} \approx 1$ and $h \approx 0.3$.
 
-Cette émergence est contrôlée par deux paramètres : le rapport d'anisotropie $J_{zz}/J_{xy}$ et l'amplitude du désordre local $h$. Une transition nette est observée autour de $J_{zz}/J_{xy} \approx 1$ et $h \approx 0.3$, au-delà desquels la symétrie effective redevient SO(3).
+This emergence is controlled by two parameters: the anisotropy ratio
+$J_{zz}/J_{xy}$ and the local disorder amplitude $h$. A sharp
+transition is observed around $J_{zz}/J_{xy} \approx 1$ and
+$h \approx 0.3$, beyond which the effective symmetry reverts to SO(3).
 
-Par ailleurs, l'étude systématique des Hamiltoniens modulaires établit que $K_A$ est quasi-local ($R^2 \geq 0.99$ pour les états structurés) et amplifie l'anisotropie microscopique de façon état-dépendante ($\mathcal{A}_{\mathrm{fondamental}} = 1.048 \pm 0.114$), confirmant leur rôle de sondes géométriques de la structure d'intrication.
+The systematic study of modular Hamiltonians further establishes that
+$K_A$ is quasi-local ($R^2 \geq 0.99$ for structured states) and
+amplifies microscopic anisotropy in a state-dependent manner
+($\mathcal{A}_{\mathrm{ground}} = 1.048 \pm 0.114$), confirming
+their role as geometric probes of entanglement structure. The
+modular Hamiltonian provides a concrete operational bridge: rather
+than postulating effective couplings, the BuP framework derives them
+directly from $|\Psi\rangle$ through the chain
+$|\Psi\rangle \to \rho_A \to K_A \to \{J_{ij}\}$.
 
-Ainsi, le programme Bottom-Up ne conduit pas seulement à une géométrie et une gravité émergentes, mais également à des structures de symétrie effectives et à des Hamiltoniens effectifs dérivés --- ouvrant la voie à une compréhension unifiée où géométrie, dynamique et symétrie émergent conjointement de l'organisation informationnelle des états quantiques.
+Thus, the Bottom-Up program does not only lead to emergent geometry
+and gravity, but also to effective symmetry structures and derived
+effective Hamiltonians --- opening the way toward a unified
+understanding where geometry, dynamics, and symmetry emerge jointly
+from the informational organization of quantum states.
 
 \begin{thebibliography}{99}
 
 \bibitem{jacobson}
 T. Jacobson,
 Thermodynamics of Spacetime,
-Phys. Rev. Lett. 75, 1260 (1995).
+Phys.\ Rev.\ Lett.\ \textbf{75}, 1260 (1995).
 
 \bibitem{vanraamsdonk}
 M. Van Raamsdonk,
 Building up spacetime with quantum entanglement,
-Gen. Relativ. Gravit. 42, 2323 (2010).
+Gen.\ Relativ.\ Gravit.\ \textbf{42}, 2323 (2010).
 
 \bibitem{maldacena}
-J. Maldacena, L. Susskind,
+J. Maldacena and L. Susskind,
 Cool horizons for entangled black holes,
-Fortschritte der Physik 61, 781 (2013).
+Fortschritte der Physik \textbf{61}, 781 (2013).
 
 \bibitem{pagewootters}
-D. Page, W. Wootters,
+D. Page and W. Wootters,
 Evolution without evolution,
-Phys. Rev. D 27, 2885 (1983).
+Phys.\ Rev.\ D \textbf{27}, 2885 (1983).
 
 \bibitem{ollivier}
 Y. Ollivier,
 Ricci curvature of Markov chains on metric spaces,
-J. Funct. Anal. 256, 810--864 (2009).
+J.\ Funct.\ Anal.\ \textbf{256}, 810--864 (2009).
 
 \bibitem{sparc}
-F. Lelli, S. S. McGaugh, J. M. Schombert,
-SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves,
-Astron. J. 152, 157 (2016).
+F. Lelli, S.~S. McGaugh, and J.~M. Schombert,
+SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry
+and Accurate Rotation Curves,
+Astron.\ J.\ \textbf{152}, 157 (2016).
 
 \bibitem{Bisognano1975}
-J.~J.~Bisognano and E.~H.~Wichmann,
+J.~J. Bisognano and E.~H. Wichmann,
 On the duality condition for a Hermitian scalar field,
 J.~Math.~Phys.\ \textbf{16}, 985 (1975).
 
 \bibitem{Peschel2003}
-I.~Peschel,
+I. Peschel,
 Calculation of reduced density matrices from correlation functions,
 J.~Phys.~A \textbf{36}, L205 (2003).
 
