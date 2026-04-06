@@ -1,0 +1,43 @@
+{
+  "n_cases": 180,
+  "n_list": [
+    8,
+    10,
+    12
+  ],
+  "subsystem_sizes": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "jxy_list": [
+    1.0
+  ],
+  "jz_list": [
+    1.0,
+    1.1,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "state_kinds": [
+    "ground",
+    "thermal",
+    "random"
+  ],
+  "beta": 2.0,
+  "periodic": true,
+  "perturb_site": 2,
+  "perturb_strength": 0.2,
+  "mean_fit_r2_baseline": 0.9715565505895989,
+  "mean_fit_r2_perturbed": 0.9718933271515336,
+  "mean_locality_score": 0.0015501941323780377,
+  "fraction_compact_locality": 0.0,
+  "regimes_baseline": [
+    "generic_anisotropic",
+    "heisenberg_like",
+    "xxz_like"
+  ],
+  "mean_amplification_baseline": 0.9866612646137134
+}
