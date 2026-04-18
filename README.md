@@ -57,6 +57,7 @@ From this distance, the framework reconstructs:
 | Effective vacuum symmetry (U(1)-like) | numerically observed |
 | Modular Hamiltonians as geometric probes | established numerically |
 | Vacuum uniqueness and axis alignment | observed |
+| Stable microscopic emergent dimension $d_s \approx 2.61 \pm 0.03$ | robust on $N=6$–$16$ |
 
 ---
 
@@ -314,7 +315,7 @@ is state-dependent: random states constructed from the same
 Hamiltonian show suppression, confirming that $K_A$ acts as a
 coherence-sensitive filter.
 
-**Result 3 — Monotonic amplification with $\eta_{\mathrm{micro}}$:**
+**Result 3 — Monotonic amplification with $\eta_{\mathrm{micro}}$:***
 
 For ground states, $\mathcal{A}$ increases monotonically from
 $1.000$ at $\eta_{\mathrm{micro}} = 1.0$ to $1.144 \pm 0.190$
@@ -353,25 +354,26 @@ $$
 
 ```
 experiments/
-    10_single_galaxy_ngc3198/       # Single galaxy fit (NGC 3198)
-    20_v1_3_scan_ngc3198/           # Parameter scan
-    30_multi_galaxy_regime_3_08_4_5/ # Multi-galaxy regime analysis
+    10_single_galaxy_ngc3198/         # Single galaxy fit (NGC 3198)
+    20_v1_3_scan_ngc3198/             # Parameter scan
+    30_multi_galaxy_regime_3_08_4_5/  # Multi-galaxy regime analysis
+    40_micro_dimension_coherence/     # Stable emergent dimension on N=6–16
 
-derive_d_r/                         # Effective dimension pipeline
-results_bup_hybrid_multi/           # Multi-galaxy results
-results_bup_hybrid_multi_rmax_fixed/ # Fixed r_max variant
+derive_d_r/                           # Effective dimension pipeline
+results_bup_hybrid_multi/             # Multi-galaxy results
+results_bup_hybrid_multi_rmax_fixed/  # Fixed r_max variant
 
-jauge/                              # Gauge structure and vacuum symmetry
-    bup_gauge_classification.py     # SO(3) group classification
-    bup_symmetry_scan.py            # Comparative mechanism scan
-    bup_vacuum_v3_standalone.py     # Vacuum effective symmetry (v3)
-    bup_knn_scan.py                 # kNN stability scan
-    bup_vacuum_uniqueness.py        # Vacuum uniqueness analysis
-    bup_spontaneous_breaking.py     # Explicit vs spontaneous breaking test
+jauge/                                # Gauge structure and vacuum symmetry
+    bup_gauge_classification.py       # SO(3) group classification
+    bup_symmetry_scan.py              # Comparative mechanism scan
+    bup_vacuum_v3_standalone.py       # Vacuum effective symmetry (v3)
+    bup_knn_scan.py                   # kNN stability scan
+    bup_vacuum_uniqueness.py          # Vacuum uniqueness analysis
+    bup_spontaneous_breaking.py       # Explicit vs spontaneous breaking test
 
-modular/                            # Modular Hamiltonian study
-    bup_modular_paper_v3.tex        # Paper (ready for submission)
-    aggregate_rows.csv              # Full numerical dataset (180 configs)
+modular/                              # Modular Hamiltonian study
+    bup_modular_paper_v3.tex          # Paper (ready for submission)
+    aggregate_rows.csv                # Full numerical dataset (180 configs)
     fig_amplification_by_state.png
     fig_amplification_vs_eta.png
     fig_fit_r2_by_state.png
@@ -423,6 +425,45 @@ from quantum systems ($N \leq 16$ qubits) to astrophysical scales
 - Cosmological extension
 - Fundamental BuP dynamics from variational principle
 - Connection between modular Hamiltonian structure and gauge fields
+
+---
+
+## 15. Stable emergent dimension across microscopic, galactic, and cosmological scales
+
+A dedicated multi-size scan on structured BuP states for
+$N = 6, 8, 9, 12, 16$ shows that the effective microscopic
+dimension extracted from the entanglement-range estimator remains
+remarkably stable:
+
+$$
+d_s(\lambda, N) \approx 2.61 \pm 0.03.
+$$
+
+Two robust facts emerge from the raw data:
+
+- **stability in non-local coupling**: $d_s$ varies only weakly with the
+  non-local parameter $\lambda \in [0,1]$;
+- **stability in system size**: the same plateau persists from
+  $N=6$ to $N=16$, with no evidence for a strong finite-size drift
+  in the raw measurements.
+
+This raw plateau is directly consistent with the galactic SPARC
+inference $d_{\mathrm{eff}} = 2.644 \pm 0.295$, and remains compatible
+with the cosmological late-time window preferred by DESI + Pantheon+.
+The overlap therefore extends from qubit-scale simulations to galactic
+and cosmological phenomenology over many orders of magnitude.
+
+The corresponding experiment, scripts, raw scan, exploratory FSS output,
+summary table, and figure are stored in:
+
+- `experiments/40_micro_dimension_coherence/`
+
+**Important note.**
+The finite-size-scaling extrapolation stored in the exploratory
+`fss_extrapolated.csv` file is not used as the primary conclusion.
+In the current data regime, the raw measurements are substantially
+more stable and physically meaningful than the fitted $N \to \infty$
+extrapolation.
 
 ---
 
