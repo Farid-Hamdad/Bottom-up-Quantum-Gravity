@@ -2,15 +2,12 @@
 
 **Emergence of space, time, and gravity from quantum entanglement**  
 Farid Hamdad — 2026
-## 📄 Publication
 
-This work is available on HAL:
-
-👉 https://hal.science/hal-05590614v1
-
-**Title:** Constraints on an Emergent Cosmological Dimension from CMB and Structure Formation  
-**Author:** Farid Hamdad
----
+publication
+F. Hamdad, "Contraintes cosmologiques sur une dimension spatiale émergente :
+dimension variable, énergie noire et σ8 dans le cadre Bottom-Up Quantum Gravity",
+HAL preprint hal-05590614v1 (2026).
+https://hal.science/hal-05590614v1
 
 ## Overview
 
