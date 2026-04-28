@@ -1,174 +1,241 @@
-# BuP Cosmology — Emergent Spatial Dimension
+# Bottom-Up Quantum Gravity (BuP) — Paper 2  
+## Contraintes cosmologiques sur une dimension spatiale émergente
 
-**Paper:** Cosmological constraints on an emergent spatial dimension: variable dimension, dark energy and σ₈ in the Bottom-Up Quantum Gravity framework
+## Résultat principal
 
-**Author:** Farid Hamdad  
-**HAL:** [hal-05590614v1](https://hal.science/hal-05590614v1) (April 2026)  
-**GitHub:** [Farid-Hamdad/Bottom-up-Quantum-Gravity](https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity)
+Ce travail constitue le socle cosmologique du programme BuP (Bottom-Up Quantum Gravity).
 
----
+Nous montrons qu’une dimension spatiale émergente variable peut expliquer simultanément :
 
-## Results
+- l’accélération cosmique tardive
+- la tension sur σ₈
+- la cohérence avec les contraintes CMB
+- les observations BAO (DESI 2024)
+- les supernovæ Pantheon+
 
-| Observable | BuP | Data | Tension |
-|---|---:|---|---|
-| r_drag (BAO) | unchanged | DESI 2024 | < 1σ ✓ |
-| σ₈ | 0.772 | KiDS: 0.766 ± 0.020 | +0.3σ ✓ |
-| d(z=0) | 2.40 | SPARC: 2.644 ± 0.295 | +0.8σ ✓ |
-| ΔBIC | −3.71 | DESI + Pantheon+ | signal ✓ |
-| CMB (θs) | unchanged | Planck 2018 | < 0.1σ ✓ |
-| H₀ | 63.7 | Planck: 67.4 ± 0.5 | 3.7σ ⚠ |
-| t₀ (age) | 14.3 Gyr | ΛCDM: 13.8 Gyr | +500 Myr |
+sans introduire de nouvelle matière noire ni de champ scalaire supplémentaire.
 
----
+Le couplage gravitationnel effectif est modifié géométriquement par :
 
-## BuP Constants
+G_eff(z) = 2 / (d(z) − 1) · G
 
-```text
-DC = 3.059842935509462   # critical dimension
-α  = 1.78                # fixed by microscopic simulations (N = 6–16)
-```
+où d(z) est la dimension spatiale effective émergente.
 
 ---
 
-## Structure
+## Mécanisme physique
 
-```
-bup_cosmology/
-├── paper2_background-dimension/
-│   ├── README.md  
-│   ├── main.tex                    ← Full LaTeX article (EN)
-│   ├── fig1_camb_scan.pdf          ← Figure 1: CAMB scan (σ₈, r_drag, θs)
-│   ├── fig2_models_coherence.pdf   ← Figure 2: d(z), w(z), multi-scale
-│   └── fig3_sigma8_geff.pdf        ← Figure 3: G_eff(z) and σ₈ scan
-│
-└── scripts/
-    ├── bup_paper2_final.py         ← BAO+SN fit, Paper 2 model X(z)
-    ├── bup_sigma8_final.py         ← σ₈ via coherent G_eff ODE
-    ├── bup_camb_geff_patch.py      ← CAMB G_eff patch + instructions
-    ├── bup_geff_module.f90         ← Fortran module for CAMB
-    └── bup_propagator.py           ← Gravitational propagator on BuP graph
-```
+### Univers primordial (haut redshift)
+
+Lorsque :
+
+d ≈ DC > 3
+
+on obtient :
+
+G_eff < G
+
+ce qui produit une légère suppression de la croissance précoce des structures.
+
+Cela permet de préserver la cohérence avec la physique standard du fond diffus cosmologique (CMB).
 
 ---
 
-## Quickstart
+### Univers tardif (bas redshift)
+
+Lorsque :
+
+d < 3
+
+on obtient :
+
+G_eff > G
+
+ce qui renforce le regroupement tardif de la matière et modifie l’expansion cosmique.
+
+---
+
+## Résultat principal sur σ₈
+
+L’intégration complète de la croissance cosmologique depuis :
+
+z ≈ 1000 → z = 0
+
+donne :
+
+σ₈ = 0.772
+
+en excellent accord avec :
+
+- KiDS-1000 : 0.766 ± 0.020
+- DES Y3 : 0.776 ± 0.017
+
+sans paramètre libre supplémentaire.
+
+La légère sur-dimensionnalité primordiale :
+
+DC = 3.0598 > 3
+
+fournit ainsi une explication géométrique unifiée reliant :
+
+- énergie noire émergente
+- croissance des structures
+- lentillage faible
+- BAO
+- CMB
+- formation précoce des galaxies massives
+
+---
+
+## Modèle à dimension variable tardive
+
+Le modèle repose sur :
+
+X(z) = X₀ · (1 + z)^β
+
+variable intermédiaire effective
+
+et
+
+d(z) = DC − Δd / (1 + X(z)^α)
+
+profil de dimension émergente
+
+avec :
+
+α = 1.78
+
+fixé par les simulations microscopiques BuP  
+(et non ajusté cosmologiquement)
+
+---
+
+## Meilleur ajustement cosmologique  
+### DESI 2024 + Pantheon+
+
+Paramètres obtenus :
+
+X₀ = 0.537  
+β = 2.000  
+Δd = 0.878
+
+H₀ = 63.67 km/s/Mpc  
+Ωm = 0.3448
+
+Critères statistiques :
+
+ΔAIC = −6.23  
+ΔBIC = −3.71
+
+par rapport à ΛCDM.
+
+---
+
+## Scripts principaux
+
+### Ajustement BAO + SN
 
 ```bash
-conda create -n bottomup python=3.11
-conda activate bottomup
-pip install numpy scipy matplotlib camb
-
-# Paper 2 — BAO + SN fit
 python scripts/bup_paper2_final.py
 
-# Paper 3 — σ₈ with coherent G_eff
+→ fit complet du modèle cosmologique
+
+Calcul cohérent de σ₈
 python scripts/bup_sigma8_final.py
 
-# CAMB G_eff patch (requires CAMB source)
-python scripts/bup_camb_geff_patch.py --full
-```
+→ résolution complète de la tension σ₈ via G_eff(z)
 
----
+Patch CAMB
+python scripts/bup_camb_geff_patch.py
 
-## Physical Mechanism
+→ modification cohérente de CAMB pour intégrer G_eff(z)
 
-The key result is geometric. The critical dimension **DC = 3.0598 > 3** plays a triple role:
+Module Fortran CAMB
+scripts/bup_geff_module.f90
 
-**1. CMB preserved**  
-`d(z → ∞) → DC` ensures standard recombination physics and preserves the CMB angular scale.
+→ implémentation directe dans CAMB
 
-**2. Modified gravitational coupling**  
-`G_eff(z) = 2 / (d(z) − 1) · G`
+Propagateur gravitationnel microscopique
 
-- At high redshift: `d ≈ DC > 3` → `G_eff < G` → slight suppression of early structure growth  
-- At low redshift: `d < 3` → `G_eff > G` → enhanced late-time clustering
+(travail en cours)
 
-**3. σ₈ resolved**  
-Growth integrated from z ≈ 1000 to z = 0 gives:
-
-```
-σ₈ = 0.772
-```
-
-consistent with KiDS-1000 (0.766 ± 0.020) and DES Y3 (0.776 ± 0.017), without additional free parameters.
-
-The slight over-dimensionality of the primordial Universe (**DC > 3**) provides a unified geometric explanation for late-time acceleration, suppressed structure growth, and preserved CMB physics — linking emergent quantum geometry to BAO, CMB, weak lensing, galaxy rotation curves, and early galaxy formation.
-
----
-
-## Model (Paper 2)
-
-```
-X(z) = X₀ · (1 + z)^β              effective intermediate variable
-d(z) = DC − Δd / (1 + X(z)^α)      emergent dimension profile
-α    = 1.78                          fixed by BuP simulations (not a free parameter)
-```
-
-**Best-fit (DESI 2024 + Pantheon+):**
-
-```
-X₀ = 0.537    β  = 2.000    Δd = 0.878
-H₀ = 63.67    Ωm = 0.3448
-ΔAIC = −6.23  ΔBIC = −3.71
-```
-
----
-
-## Gravitational Propagator (Paper 3 — preliminary)
-
-```bash
 python scripts/bup_propagator.py --N 12 16 --lambda-n 6 --n-repeat 2
-```
 
-Tests whether `G(r) ~ r^{−(d_s−2)}` on the entanglement graph.
+Test de la loi :
 
-**Current result:** γ ≈ 0 for N ≤ 16 — insufficient system size.  
-Reliable measurement likely requires N ≥ 100.
+G(r) ~ r^{−(d_s−2)}
 
----
+sur le graphe d’intrication.
 
-## JWST Prediction
+Résultat actuel :
 
-BuP predicts a slightly older Universe:
+γ ≈ 0 pour N ≤ 16
 
-```
-t₀ ≈ 14.3 Gyr   (vs. ΛCDM: 13.8 Gyr)
-```
+→ taille de système insuffisante
 
-This follows directly from H₀ ≈ 63.7 km/s/Mpc and Ωm = 0.3448, providing approximately **~500 Myr** of additional cosmic time for structure formation at z > 10.
+Une mesure fiable nécessitera probablement :
 
-Combined with the modified gravitational coupling `G_eff(z) = 2/(d(z)−1)·G`, BuP predicts:
+N ≥ 100
 
-- Slight suppression of very early growth (high z, d > 3, G_eff < G)
-- Enhanced late-time clustering (low z, d < 3, G_eff > G)
+Figures principales
+Figure 1
 
-The net effect allows both sufficient time for early massive galaxy formation and enhanced clustering without excessive σ₈.
+Exclusion des modèles à dimension constante
+et scan CAMB complet :
 
-This may help alleviate tensions raised by recent JWST observations (JADES, CEERS) concerning unexpectedly massive galaxies at very high redshift.
+σ₈
+r_drag
+θs
+Figure 2
 
-> **This should be understood as a qualitative and testable prediction**, not as a claimed explanation of all JWST observations. It arises from two independent mechanisms: (1) older Universe due to lower H₀, and (2) modified growth history from variable d(z).
+Cohérence multi-échelle :
 
----
+d(z)
+w(z)
+transition géométrique
+compatibilité galactique et cosmologique
+Figure 3
 
-## Citation
+Résolution de σ₈ :
 
-```bibtex
+évolution de G_eff(z)
+suppression précoce de croissance
+scan complet de σ₈
+Article complet
+
+Le fichier LaTeX complet est disponible ici :
+
+paper2_background_dimension/main.tex
+
+avec toutes les figures, tableaux et bibliographie.
+
+Prépublication HAL
+
+Disponible sur HAL :
+
+https://hal.science/hal-05590614v1
+
+Titre :
+
+Contraintes cosmologiques sur une dimension spatiale émergente :
+dimension variable, énergie noire et σ₈ dans le cadre Bottom-Up Quantum Gravity
+
+Citation recommandée
 @misc{hamdad2026bup,
   author  = {Farid Hamdad},
-  title   = {Cosmological constraints on an emergent spatial dimension:
-             variable dimension, dark energy and $\sigma_8$
-             in the Bottom-Up Quantum Gravity framework},
+  title   = {Contraintes cosmologiques sur une dimension spatiale émergente :
+             dimension variable, énergie noire et σ₈
+             dans le cadre Bottom-Up Quantum Gravity},
   year    = {2026},
-  note    = {HAL preprint hal-05590614v1},
+  note    = {Prépublication HAL hal-05590614v1},
   url     = {https://hal.science/hal-05590614v1}
 }
-```
+Suite du programme
 
----
+Ce Paper 2 constitue la base de :
 
-## Related
+Paper 3 → résolution géométrique cohérente de la tension σ₈
+Paper 4 → effondrement non-linéaire local et excès JWST
+Paper 5 → dérivation des équations d’Einstein effectives
 
-- **Main branch** — BuP microscopic simulations (N = 6–16 qubits, FSS, entanglement)
-- **Paper** — Full LaTeX source in `paper/main.tex`
-- **HAL** — https://hal.science/hal-05590614v1
+dans le cadre général de la gravité quantique Bottom-Up.
