@@ -34,8 +34,9 @@ DC = 3.059842935509462   # critical dimension
 ## Structure
 
 ```
-cosmology/
-├── paper/
+bup_cosmology/
+├── paper2_background-dimension/
+│   ├── README.md  
 │   ├── main.tex                    ← Full LaTeX article (EN)
 │   ├── fig1_camb_scan.pdf          ← Figure 1: CAMB scan (σ₈, r_drag, θs)
 │   ├── fig2_models_coherence.pdf   ← Figure 2: d(z), w(z), multi-scale
