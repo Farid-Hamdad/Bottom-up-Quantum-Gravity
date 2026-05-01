@@ -51,6 +51,8 @@ Compatibilité σ₈ : ⟨δ⟩ = 0 → ⟨d_local⟩ = d_bg → σ₈ intact
 paper/
 ├── main_fr.tex                  ← Article complet (FR)
 ├── fig_epsilon_fss.pdf          ← FSS ε(N=9→20)
+
+figures
 └── fig_jwst_halo_excess.pdf     ← δ_c, G_eff_local, excès halos vs JWST
 
 scripts/
