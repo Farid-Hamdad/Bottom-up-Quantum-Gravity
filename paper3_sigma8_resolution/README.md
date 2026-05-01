@@ -50,7 +50,8 @@ Une description quantitative de l'excès JWST nécessite l'introduction d'inhomo
 ```
 paper/
 ├── main_fr.tex              ← Article complet (version française)
-├── main_en.tex              ← Article complet (version anglaise)
+
+figures
 └── fig3_sigma8_geff.pdf     ← Figure : G_eff(z) et scan σ₈
 
 scripts/
