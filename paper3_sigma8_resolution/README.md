@@ -34,6 +34,8 @@ G_eff(z) = 2/(d(z)−1)·G applied coherently to both background and perturbatio
 paper/
 ├── main_fr.tex          ← Article complet (FR)
 ├── main_en.tex          ← Article complet (EN)
+
+figures
 └── fig3_sigma8_geff.pdf ← Figure : G_eff(z) et scan σ₈
 
 scripts/
