@@ -1,68 +1,107 @@
-# BuP Paper 3 — Geometric Resolution of the σ₈ Tension
+# BuP Paper 3 — Résolution géométrique de la tension σ₈
 
-**Title FR:** Résolution géométrique de la tension σ₈ par une dimension cosmologique émergente
+**Titre :** Résolution géométrique de la tension σ₈ par une dimension cosmologique émergente
 
-**Title EN:** Geometric Resolution of the σ₈ Tension from an Emergent Cosmological Dimension
-
-**Author:** Farid Hamdad
-**ORCID:** [your ORCID]
-**Year:** 2026
+**Auteur :** Farid Hamdad
+**ORCID :** [votre ORCID]
+**Année :** 2026
 
 ---
 
-## Key Result
+## Résultat central
 
-σ₈ = 0.772, consistent with KiDS-1000 at +0.3σ, without additional free parameters.
+σ₈ = 0.772, cohérent avec KiDS-1000 à +0.3σ, sans paramètre libre supplémentaire.
 
-| Model | σ₈ | KiDS tension | Verdict |
+| Modèle | σ₈ | Tension KiDS | Verdict |
 |---|---|---|---|
 | ΛCDM (Planck 2018) | 0.811 | +2.3σ | Tension |
-| BuP — background only | 0.861 | +4.7σ | Artefact |
-| BuP — coherent G_eff (this work) | **0.772** | +0.3σ | ✓ |
+| BuP — fond seul | 0.861 | +4.7σ | Artefact |
+| BuP — G_eff cohérent (ce travail) | **0.772** | +0.3σ | ✓ |
 
-## Physical Mechanism
+---
 
-G_eff(z) = 2/(d(z)−1)·G applied coherently to both background and perturbations.
+## Mécanisme physique
 
-- High z: d → DC = 3.0598 > 3 → G_eff ≈ 0.97G → slight growth suppression (~99% of history)
-- Low z: d < 3 → G_eff > G → enhanced clustering (~1% of history)
-- Net: σ₈ = 0.772 ✓
+G_eff(z) = 2/(d(z)−1)·G appliqué de façon cohérente à la fois à l'expansion du fond et à la croissance linéaire des perturbations.
+
+- Haut z : d → DC = 3.0598 > 3 → G_eff ≈ 0.97G → légère suppression de croissance (~99% de l'histoire cosmique)
+- Bas z : d < 3 → G_eff > G → renforcement du regroupement tardif (~1% de l'histoire)
+- Résultat net : σ₈ = 0.772 ✓
+
+La valeur précédente σ₈ ≈ 0.86 était un artefact du traitement incohérent (fond seul modifié). Une fois G_eff(z) inclus dans les perturbations, la tension disparaît.
+
+---
+
+## Prédiction JWST
+
+BuP prédit un Univers légèrement plus vieux :
+
+```
+t₀ = 14.24 Gyr  (vs 13.80 Gyr en ΛCDM)
+Δt ≈ +430 Myr disponibles à z > 10
+```
+
+Une description quantitative de l'excès JWST nécessite l'introduction d'inhomogénéités locales d(z,δ), développées dans Paper 4.
+
+---
 
 ## Structure
 
 ```
 paper/
-├── main_fr.tex          ← Article complet (FR)
-├── main_en.tex          ← Article complet (EN)
-
-figures
-└── fig3_sigma8_geff.pdf ← Figure : G_eff(z) et scan σ₈
+├── main_fr.tex              ← Article complet (version française)
+├── main_en.tex              ← Article complet (version anglaise)
+└── fig3_sigma8_geff.pdf     ← Figure : G_eff(z) et scan σ₈
 
 scripts/
-├── bup_sigma8_final.py      ← Calcul σ₈ via ODE croissance linéaire
+├── bup_sigma8_final.py      ← Calcul σ₈ via ODE de croissance linéaire
 ├── bup_paper2_final.py      ← Ajustement BAO+SN, modèle X(z)
 ├── bup_camb_geff_patch.py   ← Patch CAMB avec G_eff(z)
 └── bup_geff_module.f90      ← Module Fortran pour CAMB
 ```
 
-## Quickstart
+---
+
+## Démarrage rapide
 
 ```bash
 pip install numpy scipy matplotlib
+
+# Calcul de σ₈ avec G_eff cohérent
 python scripts/bup_sigma8_final.py
+
+# Ajustement BAO+SN
+python scripts/bup_paper2_final.py
 ```
 
-## BuP Constants
+---
+
+## Constantes BuP
 
 ```
-DC    = 3.059842935509462
-alpha = 1.78  (fixed by microscopic simulations N=6–16)
+DC    = 3.059842935509462   # dimension critique
+alpha = 1.78                # fixé par simulations microscopiques N=6–16
 X0    = 0.537,  beta = 2.000,  Delta_d = 0.878
 H0    = 63.67 km/s/Mpc,  Omega_m = 0.3448
+sigma8 = 0.772
 ```
 
-## Related
+---
 
-- **Paper 1/2** — HAL: [hal-05590614v1](https://hal.science/hal-05590614v1)
-- **Paper 4** — Local dimensional reduction, JWST prediction
-- **GitHub** — branch `cosmology`
+## Cohérence multi-échelle
+
+| Échelle | d_eff | Source |
+|---|---|---|
+| Simulations BuP (N=6–16) | 2.61 ± 0.03 | Simulations microscopiques |
+| Galactique (SPARC, 175 galaxies) | 2.644 ± 0.295 | Courbes de rotation |
+| Cosmologique (DESI+Pantheon+) | 2.40–2.71 | BAO + supernovæ |
+
+Cohérence sur douze ordres de grandeur en échelle — non imposée.
+
+---
+
+## Liens
+
+- **Paper 2** — HAL : [hal-05590614v1](https://hal.science/hal-05590614v1)
+- **Paper 4** — Réduction dimensionnelle locale, prédiction JWST
+- **GitHub** — branche `cosmology`
