@@ -1,1 +1,417 @@
-toto
+
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{bm}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+\newcommand{\DC}{D_C}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Geff}{G_{\rm eff}}
+\newcommand{\sig}{\sigma_8}
+\newcommand{\LCDM}{\Lambda\mathrm{CDM}}
+\newcommand{\BuP}{\textsc{BuP}}
+\newcommand{\camb}{\textsc{camb}}
+
+% ─────────────────────────────────────────────────────────────
+\title{
+  \textbf{Résolution géométrique de la tension~$\sigma_8$\\
+  par une dimension cosmologique émergente}
+}
+
+\author{Farid Hamdad}
+
+\affil{
+  Cadre Bottom-Up Quantum Gravity (\BuP)\\
+  \small\url{https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity}
+}
+
+\date{2026}
+% ─────────────────────────────────────────────────────────────
+
+\begin{document}
+
+\maketitle
+
+% ─────────────────────────────────────────────────────────────
+\begin{abstract}
+Nous montrons que la tension~$\sig$ peut être naturellement atténuée
+par une dimension spatiale effective dépendant du temps, dans le cadre
+de la gravité quantique bottom-up (\BuP)~\cite{hamdad2026bup}.
+La dimension cosmologique évolue selon un profil tardif~$d(z)$
+contraint par les données BAO et supernovæ~\cite{desi2024,pantheon},
+tout en préservant la physique CMB standard via la dimension critique
+asymptotique $\DC = 3.0598 > 3$.
+Le couplage gravitationnel effectif
+$\Geff(z) = \frac{2}{d(z)-1}\,G$
+doit affecter de façon cohérente à la fois l'expansion du fond
+et la croissance linéaire des perturbations.
+La légère sur-dimensionnalité primordiale ($\DC > 3$) produit une
+faible suppression de la croissance des structures à haut redshift
+($\Geff < G$), tandis que le regroupement à bas redshift est renforcé
+lorsque $d(z) < 3$.
+L'intégration complète de l'histoire de croissance depuis la
+recombinaison jusqu'à aujourd'hui donne
+$\sig = 0.772$,
+en accord avec les contraintes de lentillage faible de KiDS-1000~\cite{kids2021}
+et DES~Y3~\cite{des2022}, sans introduire de paramètres libres
+supplémentaires.
+Cela résout l'excès apparent de~$\sig$ obtenu lorsque seule l'évolution
+du fond est modifiée, et fournit un mécanisme purement géométrique reliant
+la géométrie quantique émergente à la formation des grandes structures.
+\end{abstract}
+
+% ─────────────────────────────────────────────────────────────
+\section{Introduction}
+% ─────────────────────────────────────────────────────────────
+
+L'une des principales tensions de la cosmologie moderne concerne
+l'amplitude des fluctuations de matière, quantifiée par le
+paramètre~$\sig$.
+Les observations CMB Planck dans le cadre~$\LCDM$ standard
+favorisent $\sig \simeq 0.811$~\cite{planck2018}, tandis que les
+relevés de lentillage faible comme KiDS-1000
+($0.766 \pm 0.020$)~\cite{kids2021} et DES~Y3
+($0.776 \pm 0.017$)~\cite{des2022} préfèrent des valeurs
+systématiquement plus basses.
+Cette discordance de $2$--$3\sigma$ constitue la tension~$\sig$.
+
+Dans le cadre \BuP, la géométrie de l'espace-temps n'est pas
+fondamentale mais émerge de la structure globale de l'intrication
+quantique~\cite{hamdad2026bup}. La dimension spatiale effective est
+donc dynamique et peut dévier de la valeur standard $d = 3$.
+
+Des travaux précédents~\cite{hamdad2026bup} ont montré que :
+\begin{itemize}
+  \item une dimension constante $d \neq 3$ est doublement exclue par
+        les contraintes CMB et BAO ($r_{\rm drag}$ chute de~15\%,
+        $\sig$ augmente de~62\% pour $d = 2.65$) ;
+  \item une dimension variable tardive~$d(z)$ améliore l'ajustement
+        aux données DESI~2024 et Pantheon+
+        ($\Delta\mathrm{AIC} = -6.23$, $\Delta\mathrm{BIC} = -3.71$) ;
+  \item la valeur présente $d(z=0) \sim 2.4$ est cohérente avec les
+        courbes de rotation galactiques SPARC.
+\end{itemize}
+
+Cependant, modifier seulement l'expansion du fond en conservant la
+croissance des perturbations standard conduit à $\sig \sim 0.86$,
+aggravant la tension observationnelle.
+Dans ce papier, nous montrons que c'est un artefact d'un traitement
+incohérent. Une fois que~$\Geff(z)$ est appliqué de façon cohérente
+à la croissance des perturbations, la tension disparaît.
+
+% ─────────────────────────────────────────────────────────────
+\section{Dimension cosmologique émergente}
+% ─────────────────────────────────────────────────────────────
+
+La dimension cosmologique effective est modélisée
+comme~\cite{hamdad2026bup}
+\begin{equation}
+  d(z) = \DC - \frac{\Delta d}{1 + X(z)^\alpha},
+  \qquad
+  X(z) = X_0\,(1+z)^\beta,
+  \label{eq:dz}
+\end{equation}
+où $X(z)$ est une variable effective de granulation grossière encodant
+l'approche vers la dimension critique.
+
+L'exposant $\alpha = 1.78$ n'est pas un paramètre cosmologique libre :
+il est fixé de façon indépendante par l'analyse de taille finie (FSS)
+de la dimension spectrale sur les graphes d'intrication BuP pour
+$N = 6$--$16$ qubits~\cite{hamdad2026bup}.
+Les paramètres cosmologiques meilleur ajustement sur DESI~2024 + Pantheon+ sont
+\begin{equation}
+  X_0 = 0.537, \quad \beta = 2.000, \quad \Delta d = 0.878,
+  \quad H_0 = 63.67\;\mathrm{km/s/Mpc}, \quad \Omega_m = 0.3448.
+\end{equation}
+Cela donne $d(z=0) \simeq 2.40$ et
+$d(z\to\infty) \to \DC = 3.0598$,
+préservant la physique de recombinaison standard.
+
+% ─────────────────────────────────────────────────────────────
+\section{Couplage gravitationnel effectif}
+% ─────────────────────────────────────────────────────────────
+
+Le cadre \BuP\ prédit un couplage gravitationnel modifié
+géométriquement par la dimension émergente :
+\begin{equation}
+  \Geff(z) = \frac{2}{d(z)-1}\,G.
+  \label{eq:geff}
+\end{equation}
+Cette relation doit s'appliquer de façon cohérente à la fois à
+l'expansion du fond et à la croissance linéaire des perturbations.
+
+\subsection*{Régime à haut redshift}
+
+Aux temps primordiaux, $d(z) \to \DC > 3$, donc $\Geff < G$.
+Pour le modèle meilleur ajustement, $\Geff(z \gg 1) \simeq 0.971\,G$, produisant
+une légère suppression persistante de la croissance des structures
+sur la majeure partie de l'histoire cosmique
+(${\sim}99\%$ du temps depuis la recombinaison).
+
+\subsection*{Régime à bas redshift}
+
+Aux temps tardifs, $d(z) < 3$, donc $\Geff > G$.
+Aujourd'hui, $d(0) \simeq 2.40$ donne $\Geff(0) \simeq 1.43\,G$,
+renforçant le regroupement de matière tardif.
+Ce renforcement n'agit que sur ${\sim}1\%$ de l'histoire de
+croissance totale.
+
+La compétition entre ces deux régimes est illustrée dans la
+Figure~\ref{fig:geff}.
+
+% ─────────────────────────────────────────────────────────────
+\section{Croissance linéaire et $\sigma_8$}
+% ─────────────────────────────────────────────────────────────
+
+Nous résolvons l'équation de croissance linéaire
+\begin{equation}
+  D''(a)
+  + \left(\frac{3}{a} + \frac{d\ln E}{da}\right) D'(a)
+  = \frac{3\Omega_m}{2\,a^5\,E(a)^2}\,\frac{\Geff(z)}{G}\,D(a),
+  \label{eq:growth}
+\end{equation}
+de $a = 10^{-3}$ ($z \sim 1000$) jusqu'à aujourd'hui, avec
+$E(z) = H(z)/H_0$ et $\Geff/G$ donné par l'Éq.~(\ref{eq:geff}).
+Conditions initiales : $D = a$, $D' = 1$ en $a = 10^{-3}$ (régime
+matière-dominé). Normalisation : $\sig = 0.8114 \times
+D_{\rm BuP}/D_{\LCDM}$.
+
+La valeur obtenue est
+\begin{equation}
+  \boxed{\sig = 0.7716}
+\end{equation}
+à comparer avec
+$\sig^{\rm KiDS} = 0.766 \pm 0.020$~\cite{kids2021}
+et
+$\sig^{\rm DES} = 0.776 \pm 0.017$~\cite{des2022}.
+La prédiction BuP est pleinement cohérente avec les deux relevés.
+
+La robustesse de ce résultat est démontrée dans la
+Figure~\ref{fig:geff} (panneau droit), qui montre~$\sig$ en fonction
+de $d(z=0)$ sur toute la gamme physique $\Delta d \in [0.3, 0.9]$.
+Toutes les valeurs restent dans~$1\sigma$ de KiDS-1000.
+
+% ─────────────────────────────────────────────────────────────
+\section{Résultats}
+% ─────────────────────────────────────────────────────────────
+
+\begin{table}[htbp]
+\centering
+\caption{Comparaison des prédictions de croissance des structures pour
+différents traitements du modèle \BuP. La tension KiDS est calculée
+comme $(\sig - 0.766)/0.020$.}
+\label{tab:sigma8}
+\smallskip
+\begin{tabular}{lccc}
+\toprule
+Modèle & $\sig$ & Tension (KiDS) & Résultat \\
+\midrule
+$\LCDM$ (Planck~2018) & 0.811 & $+2.3\sigma$ & Tension \\
+\BuP\ --- fond seul & 0.861 & $+4.7\sigma$ & Artefact \\
+\BuP\ --- $\Geff$ cohérent (ce travail) & \textbf{0.772}
+  & $+0.3\sigma$ & Cohérent \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La valeur précédente $\sig \sim 0.86$ n'était pas une prédiction
+authentique du modèle, mais la conséquence d'une approximation
+incohérente où seul le fond était modifié.
+Une fois $\Geff(z)$ inclus dans la croissance des perturbations,
+la tension disparaît.
+
+Cela établit que la légère sur-dimensionnalité primordiale $\DC > 3$
+n'est pas une correction mineure, mais le mécanisme physique central
+du modèle.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig3_sigma8_geff}
+  \caption{\textit{Gauche} : profil de $\Geff(z)/G$ pour le modèle
+    \BuP\ (meilleur ajustement). La région bleue indique l'inhibition à haut~$z$
+    ($\Geff < G$, dominante sur ${\sim}99\%$ de l'histoire cosmique) ;
+    la région rouge le renforcement à bas~$z$ ($\Geff > G$).
+    \textit{Droite} : $\sig$ en fonction de $d(z=0)$, avec traitement
+    cohérent de~$\Geff$. Les bandes colorées montrent les contraintes
+    KiDS-1000 ($\pm 2\sigma$) et DES~Y3 ($\pm 2\sigma$).
+    Toutes les valeurs dans la gamme physique
+    $\Delta d \in [0.3, 0.9]$ sont cohérentes avec les deux relevés.}
+  \label{fig:geff}
+\end{figure}
+
+% ─────────────────────────────────────────────────────────────
+\section{Discussion}
+% ─────────────────────────────────────────────────────────────
+
+Le résultat le plus important est que le même mécanisme géométrique
+satisfait simultanément :
+\begin{itemize}
+  \item la préservation du CMB ($d \to \DC$ à haut~$z$,
+        $\theta_s$ inchangé) ;
+  \item l'amélioration des ajustements BAO + supernovæ
+        ($\Delta\mathrm{AIC} = -6.23$ par rapport à~$\LCDM$) ;
+  \item la cohérence avec les courbes de rotation galactiques SPARC
+        ($d(z=0) \approx 2.40$, dans~$0.8\sigma$ de SPARC) ;
+  \item la résolution de la tension~$\sig$
+        ($+0.3\sigma$ par rapport à KiDS-1000).
+\end{itemize}
+Très peu de modèles de gravité modifiée satisfont les quatre conditions
+simultanément sans large liberté paramétrique supplémentaire.
+
+\paragraph{Tension $H_0$ et prédiction JWST.}
+La valeur best-fit $H_0 \simeq 63.7$~km/s/Mpc reste inférieure à
+Planck ($67.4 \pm 0.5$), une tension partagée avec tous les modèles
+d'énergie sombre dynamique contraints sur BAO+SNe.
+Elle n'est pas spécifique à \BuP~\cite{tensions2025}.
+
+Une conséquence directe de cette valeur de~$H_0$ est que \BuP\ prédit
+un Univers légèrement plus vieux :
+\begin{equation}
+  t_0 = 14.24\;\text{Gyr}
+  \quad
+  \text{(contre } 13.80\;\text{Gyr en } \LCDM\text{)},
+\end{equation}
+soit environ $430$~Myr supplémentaires disponibles pour la formation
+des structures à $z > 10$.
+Combiné au couplage gravitationnel renforcé $\Geff > G$ aux temps tardifs,
+Combiné au couplage gravitationnel renforcé $\Geff > G$ aux temps tardifs,
+\BuP\ suggère une contribution possible à l'excès de galaxies massives
+observé par JWST~\cite{jwst2023}. Toutefois, une description quantitative
+nécessite l'introduction d'inhomogénéités locales $d(z,\delta)$,
+étudiées dans un travail séparé~\cite{hamdad2026p4}.
+
+
+
+La résolution simultanée des tensions~$H_0$ et~$\sig$ nécessite
+probablement soit une modification de la physique de recombinaison,
+soit un couplage dépendant de l'échelle $\Geff(z, k)$.
+
+
+\paragraph{Évaluation quantitative de la prédiction JWST.}
+Une analyse numérique dédiée précise la prédiction qualitative ci-dessus.
+À $z > 7$, la différence d'âge entre \BuP\ et $\LCDM$ n'est que
+$\Delta t \simeq +6$--$9$~Myr, insuffisant pour accélérer significativement
+la formation des galaxies via le mécanisme de fond seul. De plus,
+$\Geff \simeq 0.971\,G < G$ pour $z > 2$, produisant une légère
+suppression de la croissance moyenne des structures. Le $d(z)$ de fond
+seul ne prédit donc pas un fort excès de galaxies massives à $z > 7$.
+
+Ce résultat motive une extension naturelle~: une dimension localement
+réduite dans les surdensités, $d(z,\delta) = d_{\rm bg}(z) - \eps\,\delta$,
+qui accélère l'effondrement dans les pics proto-galactiques rares tout
+en préservant le $\sig = 0.772$ global. Ce mécanisme est développé dans
+le Paper~4 compagnon~\cite{hamdad2026p4}, où une mesure microscopique
+directe sur des graphes d'intrication \BuP\ à $N=9$--$20$ qubits donne
+$\eps_{\rm micro}(N=20) = 0.0065$ (IC~68\% $[0.0024, 0.010]$),
+remarquablement proche de la valeur calibrée JWST $\eps_{\rm JWST} = 0.011$.
+
+\paragraph{Limites.}
+Le calcul actuel utilise l'ODE de croissance linéaire exacte plutôt
+qu'une implémentation Boltzmann complète.
+Une implémentation Boltzmann complète via \camb/\textsc{class}
+incluant l'ensemble du secteur des perturbations constitue la
+prochaine étape naturelle de ce programme.
+Le résultat $\sig = 0.772$ doit donc être compris comme une estimation
+robuste en attente de cette confirmation.
+
+% ─────────────────────────────────────────────────────────────
+\section{Conclusion}
+% ─────────────────────────────────────────────────────────────
+
+Nous avons montré que la tension~$\sig$ est résolue géométriquement
+par une dimension cosmologique émergente.
+Le résultat central est $\DC = 3.0598 > 3$, qui implique :
+\begin{itemize}
+  \item la physique CMB standard aux temps primordiaux
+        ($\Geff \to G$ à haut~$z$) ;
+  \item une légère suppression de la croissance primordiale des
+        structures ($\Geff \simeq 0.971\,G$ sur ${\sim}99\%$ de
+        l'histoire cosmique) ;
+  \item un renforcement du regroupement tardif
+        ($\Geff \simeq 1.43\,G$ aujourd'hui) ;
+  \item la prédiction finale $\sig = 0.772$, cohérente avec
+        KiDS-1000 et DES~Y3 à~$0.3\sigma$.
+\end{itemize}
+
+Une légère sur-dimensionnalité primordiale de l'Univers pourrait
+fournir une explication géométrique unifiée pour l'énergie sombre,
+la suppression de la croissance des structures, et l'émergence
+de la gravité effective elle-même.
+
+% ─────────────────────────────────────────────────────────────
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+
+\bibitem{hamdad2026bup}
+F.~Hamdad,
+\textit{Contraintes cosmologiques sur une dimension spatiale émergente :
+dimension variable, énergie noire et $\sigma_8$ dans le cadre
+Bottom-Up Quantum Gravity},
+Prépublication HAL hal-05590614v1 (2026),
+\url{https://hal.science/hal-05590614v1}.
+
+\bibitem{desi2024}
+DESI Collaboration,
+\textit{DESI 2024 VI : Cosmological Constraints from Baryon Acoustic
+Oscillations},
+arXiv:2404.03002 (2024).
+
+\bibitem{pantheon}
+D.~Brout \textit{et al.},
+\textit{The Pantheon+ Analysis: Cosmological Constraints},
+Astrophys.\ J.\ \textbf{938}, 110 (2022).
+
+\bibitem{kids2021}
+KiDS Collaboration (M.~Asgari \textit{et al.}),
+\textit{KiDS-1000 Cosmology: Cosmic shear constraints and comparison
+between two point statistics},
+Astron.\ Astrophys.\ \textbf{645}, A104 (2021).
+
+\bibitem{des2022}
+DES Collaboration,
+\textit{Dark Energy Survey Year 3 results: Cosmological constraints
+from galaxy clustering and weak lensing},
+Phys.\ Rev.\ D \textbf{105}, 023520 (2022).
+
+\bibitem{planck2018}
+Planck Collaboration,
+\textit{Planck 2018 results VI. Cosmological parameters},
+Astron.\ Astrophys.\ \textbf{641}, A6 (2020).
+
+\bibitem{tensions2025}
+E.~Di~Valentino \textit{et al.},
+\textit{Cosmological tensions in 2025},
+Nature Astronomy (2026).
+
+\bibitem{jwst2023}
+L.~Labbe \textit{et al.},
+\textit{A population of red candidate massive galaxies $\sim$600~Myr
+after the Big Bang},
+Nature \textbf{616}, 266 (2023).
+
+\bibitem{hamdad2026p4}
+F.~Hamdad,
+\textit{Nonlinear Collapse from Local Dimensional Reduction in
+Bottom-Up Quantum Gravity: A Microscopic Origin for the JWST
+Massive Galaxy Excess},
+HAL preprint (2026).
+
+\end{thebibliography}
+
+\end{document}
