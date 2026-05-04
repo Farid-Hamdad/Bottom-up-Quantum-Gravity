@@ -110,43 +110,6 @@ results/
 ├── results_einstein_corr_N20_k3_v2/
 ├── results_einstein_corr_N20_k5_v2/
 └── results_einstein_corr_N20_k7_v2/
-Travaux liés
-Paper 2 — Dimension cosmologique variable et contraintes BAO/SNe : HAL hal-05590614v1
-
-Paper 3 — Croissance linéaire cohérente et 
-σ
-8
-=
-0.772
-σ 
-8
-​
- =0.772
-
-Paper 4 — Réduction dimensionnelle locale 
-d
-(
-z
-,
-δ
-)
-d(z,δ) et galaxies massives JWST
-
-Paper 6 — Formulation pure BuP : 
-δ
-S
-B
-u
-P
-/
-δ
-W
-=
-0
-δS 
-BuP
-​
- /δW=0
 
 Citation
 bibtex
