@@ -5,69 +5,100 @@
 
 ---
 
-## Résumé simple (ce qu’on a fait)
+## Résumé simple
 
-En physique actuelle, l’équation d’Einstein (la gravité) est postulée sans explication.
+En relativité générale, l’équation d’Einstein relie la courbure de l’espace-temps au contenu matériel de l’Univers.
 
-**BuP** propose que l’espace-temps et la gravité **émergent** d’un réseau d’intrication quantique.
+Le programme **Bottom-Up Quantum Gravity (BuP)** propose une autre lecture : l’espace-temps et la gravité ne sont pas fondamentaux, mais **émergent d’un réseau d’intrication quantique**.
 
-Papers 2, 3 et 4 ont montré que cette idée fonctionne sur des cas particuliers :
-- **Paper 2** : l’Univers a une dimension variable → explique l’accélération sans énergie noire.
-- **Paper 3** : la gravité change avec le temps → résout la tension σ₈.
-- **Paper 4** : dans les régions denses, la dimension est plus petite → explique l’excès de galaxies JWST.
+Les travaux précédents du programme ont exploré trois régimes :
 
-**Paper 5** rassemble tout cela dans **une seule équation** qui étend celle d’Einstein :
-- La géométrie est remplacée par une métrique émergente.
-- La force de la gravité dépend d’un nombre local (la dimension spectrale d_s).
-- On ajoute un terme qui dépend des variations spatiales de d_s.
+- **Paper 2** : une dimension cosmologique variable \(d_{\rm bg}(z)\) permet de rendre compte de l’accélération tardive sans fluide d’énergie noire ajouté.
+- **Paper 3** : le couplage gravitationnel effectif \(G_{\rm eff}(z)\) modifie la croissance linéaire et donne \(\sigma_8=0.772\).
+- **Paper 4** : dans les régions denses, la dimension locale est plus faible, ce qui accélère l’effondrement des halos rares et fournit une piste pour l’excès JWST.
 
-**On a testé numériquement** cette équation sur des petits réseaux d’intrication (jusqu’à N=20 qubits) :
-- On a calculé une courbure discrète.
-- On a calculé le tenseur effectif construit à partir de d_s.
-- On a regardé si les deux sont corrélés.
+**Paper 5** rassemble ces résultats dans une équation effective unique :
 
-**Résultat :** la corrélation est très forte (jusqu’à 0.995), et le signe est toujours positif.  
-C’est la **première validation numérique** d’une équation d’Einstein émergente sur un vrai réseau quantique.
+- la métrique est une métrique émergente \(g_{\mu\nu}^{\rm ent}\) ;
+- la force de gravité dépend de la dimension spectrale locale \(d_s\) ;
+- un terme géométrique effectif dépend des gradients et variations de \(d_s\).
+
+Nous avons également effectué un test numérique interne sur des réseaux d’intrication finis jusqu’à \(N=20\) :
+
+- construction d’une courbure discrète ;
+- construction d’un proxy de tenseur effectif à partir de \(d_s\) ;
+- mesure de leur corrélation.
+
+Le résultat montre une corrélation monotone robuste entre la courbure émergente et les variations locales de la dimension spectrale. C’est un premier test numérique interne de cohérence pour l’équation d’Einstein effective BuP.
 
 ---
 
 ## Équation centrale
 
 $$
-G_{\mu\nu}[g_{\rm ent}] = 8\pi G_{\rm eff}(d_s) T_{\mu\nu}^{\rm matter} + 8\pi G T_{\mu\nu}^{\rm ent}[d_s]
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi G_{\rm eff}(d_s) T_{\mu\nu}^{\rm matter}
++
+8\pi G T_{\mu\nu}^{\rm ent}[d_s]
 $$
 
 avec
 
 $$
-G_{\rm eff}(d_s) = \frac{2}{d_s-1} G
+G_{\rm eff}(d_s)
+=
+\frac{2}{d_s-1}G
 $$
 
 et
 
 $$
-T_{\mu\nu}^{\rm ent}[d_s] = \alpha\Big(\nabla_\mu d_s\nabla_\nu d_s - \frac12 g_{\mu\nu}(\nabla d_s)^2\Big) + \beta\Big(\nabla_\mu\nabla\nu d_s - g_{\mu\nu}\Box d_s\Big).
+T_{\mu\nu}^{\rm ent}[d_s]
+=
+\alpha\left(
+\nabla_\mu d_s\nabla_\nu d_s
+-
+\frac12 g_{\mu\nu}^{\rm ent}(\nabla d_s)^2
+\right)
++
+\beta\left(
+\nabla_\mu\nabla_\nu d_s
+-
+g_{\mu\nu}^{\rm ent}\Box d_s
+\right).
 $$
 
-Aucune constante cosmologique n’est postulée.  
-L’accélération tardive vient de la dimension variable \(d_{\rm bg}(z) < 3\).
+Aucune constante cosmologique \(\Lambda\) n’est postulée.  
+Aucun fluide d’énergie sombre n’est ajouté.  
+L’accélération tardive est interprétée comme une conséquence géométrique de la dimension effective variable \(d_{\rm bg}(z)<3\).
 
 ---
 
 ## Test numérique de cohérence interne
 
-On compare des proxys discrets de courbure et de tenseur effectif sur des graphes d’intrication BuP (\(N = 9,12,16,20\)).
+Nous comparons des proxys discrets de courbure et de tenseur effectif sur des graphes d’intrication BuP :
 
-Relation la plus stable pour \(N=20\), pour \(k = 3,5,7\) :
+\[
+N=9,12,16,20.
+\]
+
+La relation la plus stable pour \(N=20\), testée sur \(k=3,5,7\), est :
 
 $$
-G_{ij}^{\rm proxy} = -\kappa_{ij} + \frac12 R_{\rm edge}
+G_{ij}^{\rm proxy}
+=
+-\kappa_{ij}
++
+\frac12 R_{\rm edge}.
 $$
 
 Ce proxy de courbure est corrélé avec des proxys spectraux construits à partir de :
 
 $$
-(\nabla d_s)^2,\qquad \Delta d_s
+(\nabla d_s)^2,
+\qquad
+\Delta d_s.
 $$
 
 | \(k\) | Proxy spectral dominant | \(\langle r \rangle\) | \(\langle\rho\rangle\) | Signe Spearman |
@@ -78,7 +109,7 @@ $$
 
 Le signe de la corrélation de Spearman est **positif dans 100% des matrices MI testées** pour toutes les valeurs de \(k\).
 
-Ceci constitue un premier test numérique de cohérence interne pour l’équation effective proposée.
+Ce résultat ne constitue pas une preuve complète de l’équation tensorielle continue, mais il soutient numériquement l’idée centrale : la courbure émergente du graphe est liée aux variations locales de la dimension spectrale.
 
 ---
 
@@ -86,11 +117,11 @@ Ceci constitue un premier test numérique de cohérence interne pour l’équati
 
 ```text
 paper/
-└── main_fr.tex                         ← Manuscrit complet (français, avec section numérique)
+└── main_fr.tex                          ← Manuscrit complet en français avec section numérique
 
 figures/
-├── fig_best_G_vs_T_N20.png              ← Meilleure corrélation courbure / tenseur
-└── fig_top10_stability_N20.png          ← Stabilité des proxys
+├── fig_best_G_vs_T_N20.png               ← Meilleure corrélation courbure / tenseur
+└── fig_top10_stability_N20.png           ← Stabilité des proxys
 
 scripts/
 ├── bup_einstein_tensor_correlation_v1.py
@@ -102,3 +133,13 @@ results/
 ├── results_einstein_corr_N20_k3_v2/
 ├── results_einstein_corr_N20_k5_v2/
 └── results_einstein_corr_N20_k7_v2/
+
+Travaux liés
+Paper 2 — Dimension cosmologique variable et contraintes BAO/SNe : HAL hal-05590614v1
+Paper 3 — Croissance linéaire cohérente et σ8=0.772
+Paper 4 — Réduction dimensionnelle locale d(z,δ) et galaxies massives JWST
+Paper 6 — Formulation pure BuP : δS
+BuP
+	​
+
+/δW=0
