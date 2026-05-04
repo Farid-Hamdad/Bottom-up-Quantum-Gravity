@@ -123,4 +123,8 @@ citation
   year    = {2026},
   note    = {Document interne BuP},
   url     = {https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity}
-}
+
+Liens
+GitHub : Farid-Hamdad/Bottom-up-Quantum-Gravity
+Paper 2 (HAL) : hal-05590614v1
+Paper 5 (source) : paper/main_fr.tex
