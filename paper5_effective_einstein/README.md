@@ -1,4 +1,3 @@
-markdown
 # BuP Paper 5 — Équation d'Einstein effective émergente
 
 **Auteur :** Farid Hamdad  
@@ -16,7 +15,7 @@ Les travaux précédents du programme ont exploré trois régimes :
 
 - **Paper 2** : une dimension cosmologique variable \(d_{bg}(z)\) permet de rendre compte de l’accélération tardive sans fluide d’énergie noire ajouté.
 - **Paper 3** : le couplage gravitationnel effectif \(G_{eff}(z)\) modifie la croissance linéaire et donne \(\sigma_8 = 0.772\).
-- **Paper 4** : dans les régions denses, la dimension locale est plus faible, ce qui accélère l’effondrement des halos rares et fournit une piste pour l’excès JWST.
+- **Paper 4** : dans les régions denses, la dimension locale est plus faible \(d(z,\delta) = d_{bg}(z) - \varepsilon\delta\), ce qui accélère l’effondrement des halos rares et fournit une piste pour l’excès JWST.
 
 **Paper 5** rassemble ces résultats dans une équation effective unique :
 
@@ -111,18 +110,3 @@ results/
 ├── results_einstein_corr_N20_k5_v2/
 └── results_einstein_corr_N20_k7_v2/
 
-Citation
-bibtex
-@misc{hamdad2026paper5,
-  author  = {Farid Hamdad},
-  title   = {BuP Paper 5 — Équation d'Einstein effective émergente},
-  year    = {2026},
-  note    = {Document interne BuP},
-  url     = {https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity}
-}
-Liens
-GitHub : Farid-Hamdad/Bottom-up-Quantum-Gravity
-
-Paper 2 (HAL) : hal-05590614v1
-
-Paper 5 (source) : paper/main_fr.tex
