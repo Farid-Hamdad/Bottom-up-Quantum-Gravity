@@ -110,3 +110,17 @@ results/
 ├── results_einstein_corr_N20_k5_v2/
 └── results_einstein_corr_N20_k7_v2/
 
+Travaux liés
+Paper 2 — Dimension cosmologique variable et contraintes BAO/SNe : HAL hal-05590614v1
+Paper 3 — Croissance linéaire cohérente et σ8=0.772
+Paper 4 — Réduction dimensionnelle locale d(z,δ) et galaxies massives JWST
+Paper 6 — Formulation pure BuP : δSBuP/δW=0
+
+citation
+@misc{hamdad2026paper5,
+  author  = {Farid Hamdad},
+  title   = {BuP Paper 5 — Équation d'Einstein effective émergente},
+  year    = {2026},
+  note    = {Document interne BuP},
+  url     = {https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity}
+}
