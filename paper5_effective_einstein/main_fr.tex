@@ -1,1 +1,1322 @@
 
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{bm}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+\newcommand{\DC}{D_C}
+\newcommand{\Geff}{G_{\rm eff}}
+\newcommand{\sig}{\sigma_8}
+\newcommand{\LCDM}{\Lambda\mathrm{CDM}}
+\newcommand{\BuP}{\textsc{BuP}}
+\newcommand{\camb}{\textsc{camb}}
+\newcommand{\ent}{\rm ent}
+
+\title{
+  \textbf{\'Equation d'Einstein effective \'emergente\\
+  dans la Gravit\'e Quantique Bottom-Up (\BuP)}
+}
+
+\author{Farid Hamdad}
+
+\affil{
+  Cadre Bottom-Up Quantum Gravity (\BuP)\\
+  \small\url{https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity}
+}
+
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+% ─────────────────────────────────────────────────────────────
+\begin{abstract}
+Dans \BuP, la relativit\'e g\'en\'erale n'est pas postul\'ee comme une dynamique fondamentale
+de l'espace-temps ; elle appara\^{\i}t comme la limite continue et thermodynamique de la
+r\'eponse du r\'eseau d'intrication aux variations locales d'information mutuelle.
+
+Nous proposons une \'equation d'Einstein effective \'emergente,
+\[
+G_{\mu\nu}[g^{\ent}]
+=
+8\pi\Geff(d_s)\,T_{\mu\nu}^{\rm matter}
++
+8\pi G\,T_{\mu\nu}^{\ent}[d_s],
+\]
+o\`u $g^{\ent}_{\mu\nu}$ est la m\'etrique \'emergente issue de la distance d'intrication,
+$d_s$ la dimension spectrale locale,
+\[
+\Geff(d_s)=\frac{2}{d_s-1}G,
+\]
+et $T_{\mu\nu}^{\ent}[d_s]$ un tenseur effectif construit \`a partir des gradients et
+variations de la dimension spectrale.
+
+Aucune constante cosmologique $\Lambda$ n'est postul\'ee. Aucune composante d'\'energie
+sombre n'est ajout\'ee. L'acc\'el\'eration tardive de l'Univers est interpr\'et\'ee comme
+une cons\'equence g\'eom\'etrique de l'\'evolution de la dimension spatiale effective
+$d_{\rm bg}(z) < 3$ dans le r\'egime cosmologique homog\`ene.
+
+Cette \'equation g\'en\'eralise les r\'esultats cosmologiques ant\'erieurs du programme
+\BuP\ : elle reproduit la dynamique homog\`ene $d_{\rm bg}(z)$, la r\'esolution de la
+tension $\sigma_8$, et la r\'eduction dimensionnelle locale dans les surdensit\'es
+proto-galactiques. Sa limite $d_s\rightarrow 3$, $\nabla_\mu d_s\rightarrow 0$ redonne
+la relativit\'e g\'en\'erale standard.
+\end{abstract}
+
+% ─────────────────────────────────────────────────────────────
+\section{Introduction}
+% ─────────────────────────────────────────────────────────────
+
+Les travaux pr\'ec\'edents du programme Bottom-Up Quantum Gravity (\BuP) ont \'etabli
+qu'une g\'eom\'etrie effective peut \^etre reconstruite \`a partir de la structure
+d'intrication d'un \'etat quantique global~\cite{hamdad2026bup}. Dans ce cadre, la
+distance, la dimension effective et le couplage gravitationnel ne sont pas postul\'es
+comme des donn\'ees fondamentales : ils \'emergent du r\'eseau d'information mutuelle
+entre sous-syst\`emes quantiques.
+
+Trois r\'egimes compl\'ementaires ont d\'ej\`a \'et\'e explor\'es.
+
+\textbf{Fond cosmologique \`a dimension variable.}
+Une dimension homog\`ene $d_{\rm bg}(z)$, variable au cours du temps cosmologique,
+permet de d\'ecrire l'\'evolution tardive de la g\'eom\'etrie effective. Ce mod\`ele,
+contraint par les donn\'ees BAO et supernovæ, am\'eliore l'ajustement par rapport
+\`a $\LCDM$ tout en pr\'eservant la physique du CMB par sa valeur critique asymptotique
+\[
+d_{\rm bg}(z\to\infty)=\DC\simeq 3.0598.
+\]
+
+\textbf{Croissance lin\'eaire et tension $\sigma_8$.}
+Le couplage gravitationnel effectif
+\[
+\Geff(z)=\frac{2}{d_{\rm bg}(z)-1}G,
+\]
+appliqu\'e de fa\c{c}on coh\'erente \`a l'expansion du fond et aux perturbations
+lin\'eaires, conduit \`a $\sig\simeq 0.772$, en accord avec les contraintes de
+lentillage faible, sans param\`etre suppl\'ementaire~\cite{hamdad2026p3}.
+
+\textbf{R\'egime non lin\'eaire et observations JWST.}
+L'extension locale
+\[
+d_{\rm local}(z,\delta)=d_{\rm bg}(z)-\varepsilon\delta
+\]
+d\'ecrit une r\'eduction de la dimension spectrale dans les r\'egions surdenses.
+Ce m\'ecanisme, dont l'existence microscopique est v\'erifi\'ee sur des graphes
+d'intrication finis (\(\varepsilon_{\rm micro}(N=20)=0.0065\)),
+acc\'el\`ere l'effondrement des halos massifs \`a haut redshift et fournit une
+explication semi-quantitative de l'exc\`es de galaxies massives observ\'e par
+JWST~\cite{hamdad2026p4}.
+
+Ces r\'esultats sugg\`erent une image unifi\'ee : la gravitation macroscopique
+serait la r\'eponse g\'eom\'etrique effective du r\'eseau d'intrication aux
+variations locales de connectivit\'e informationnelle.
+
+Cependant, une \'etape conceptuelle essentielle manquait encore : formuler
+l'\'equation dynamique qui relie la courbure \'emergente aux sources mat\'erielles
+et informationnelles. Dans la relativit\'e g\'en\'erale, cette relation est donn\'ee
+par les \'equations d'Einstein,
+\[
+G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G\,T_{\mu\nu}.
+\]
+Dans \BuP, l'objectif n'est pas de postuler cette \'equation comme fondamentale,
+mais de montrer qu'une forme effective de type Einstein appara\^{\i}t dans la
+limite continue du graphe d'intrication.
+
+\textbf{Objectif de ce travail.}
+Nous proposons une \'equation d'Einstein effective \'emergente,
+\[
+G_{\mu\nu}[g^{\ent}]
+=
+8\pi\Geff(d_s)\,T_{\mu\nu}^{\rm matter}
++
+8\pi G\,T_{\mu\nu}^{\ent}[d_s],
+\]
+o\`u $g^{\ent}_{\mu\nu}$ est la m\'etrique reconstruite depuis la distance
+d'intrication, $d_s(x)$ la dimension spectrale locale, et
+$\Geff(d_s)=\frac{2}{d_s-1}G$.
+
+Dans \BuP, la relativit\'e g\'en\'erale n'est pas postul\'ee comme une dynamique
+fondamentale de l'espace-temps ; elle appara\^{\i}t comme la limite continue et
+thermodynamique de la r\'eponse du r\'eseau d'intrication aux variations locales
+d'information mutuelle.
+
+Cette \'equation g\'en\'eralise les r\'esultats ant\'erieurs :
+\begin{itemize}
+  \item dans la limite homog\`ene, elle redonne la cosmologie \`a dimension variable ;
+  \item dans le r\'egime lin\'eaire, elle reproduit la r\'esolution de la tension $\sig$ ;
+  \item dans les r\'egions surdenses, elle retrouve le m\'ecanisme local de r\'eduction
+        dimensionnelle.
+\end{itemize}
+Sa limite $d_s\to 3$, $\nabla_\mu d_s\to 0$ redonne la relativit\'e g\'en\'erale standard.
+
+\textbf{Structure du papier.}
+La Section~\ref{sec:metric} rappelle la construction de la m\'etrique \'emergente
+$g_{\mu\nu}^{\ent}$ \`a partir de la matrice d'information mutuelle.
+La Section~\ref{sec:curvature} introduit la courbure effective et la dimension
+spectrale locale $d_s(x)$.
+La Section~\ref{sec:closure} justifie la fermeture effective depuis le r\'eseau
+d'intrication.
+La Section~\ref{sec:einstein} pr\'esente l'\'equation d'Einstein effective \BuP,
+son tenseur d'intrication, sa conservation covariante et ses limites physiques.
+La Section~\ref{sec:discussion} discute les perspectives observationnelles et
+num\'eriques.
+La Section~\ref{sec:conclusion} conclut.
+
+% ─────────────────────────────────────────────────────────────
+\section{M\'etrique \'emergente d'intrication}
+\label{sec:metric}
+% ─────────────────────────────────────────────────────────────
+
+Dans \BuP, la distance spatiale n'est pas une donn\'ee primitive. Elle est
+reconstruite \`a partir de la structure d'intrication d'un \'etat quantique global.
+Le point de d\'epart est la matrice d'information mutuelle
+\[
+W_{ij}=I(i:j),
+\]
+o\`u $I(i:j)$ mesure la corr\'elation informationnelle entre deux sous-syst\`emes
+$i$ et $j$.
+
+L'id\'ee physique centrale est simple : deux degr\'es de libert\'e fortement intriqu\'es
+doivent \^etre proches dans la g\'eom\'etrie \'emergente, tandis que deux degr\'es de
+libert\'e faiblement corr\'el\'es doivent \^etre \'eloign\'es. On introduit donc une
+longueur effective d'ar\^ete
+\[
+\ell_{ij}
+=
+\ell_0
+\left[
+-\log\!\left(
+\frac{I(i:j)+\epsilon_I}{I_{\max}+\epsilon_I}
+\right)
+\right],
+\]
+o\`u $\ell_0$ est une \'echelle fondamentale de longueur, par exemple une longueur
+de Planck effective. La quantit\'e $I_{\max}$ d\'esigne une \'echelle de normalisation
+de l'information mutuelle, que l'on peut prendre comme le maximum
+$\max_{i,j}I(i:j)$, ou plus prudemment comme une moyenne robuste sur les paires
+effectivement connect\'ees du graphe. Le param\`etre $\epsilon_I$ est un r\'egulateur
+positif.
+
+Le r\^ole de $\epsilon_I$ est uniquement technique : il \'evite les divergences lorsque
+$I(i:j)\rightarrow0$. On choisit $\epsilon_I \ll I(i:j)$ pour toutes les paires
+effectivement connect\'ees du graphe. Ainsi, le choix pr\'ecis de $\epsilon_I$
+n'affecte pas les distances entre paires non triviales ; il ne r\'egularise que les
+liens d'information n\'egligeable.
+
+Cette d\'efinition poss\`ede trois propri\'et\'es importantes :
+\[
+I(i:j)\simeq I_{\max}
+\quad\Longrightarrow\quad
+\ell_{ij}\simeq 0,
+\]
+\[
+I(i:j)\ll I_{\max}
+\quad\Longrightarrow\quad
+\ell_{ij}\gg \ell_0,
+\]
+et
+\[
+I(i:j)\rightarrow 0
+\quad\Longrightarrow\quad
+\ell_{ij}\rightarrow \infty
+\]
+dans la limite $\epsilon_I\rightarrow0$. Ainsi, la g\'eom\'etrie \'emergente encode
+directement la hi\'erarchie des corr\'elations quantiques.
+
+La distance entre deux n\oe{}uds du r\'eseau d'intrication est d\'efinie comme la
+distance g\'eod\'esique discr\`ete
+\[
+d_{ij}^{\rm ent}
+=
+\min_{\gamma:i\rightarrow j}
+\sum_{(a,b)\in\gamma}
+\ell_{ab},
+\]
+o\`u $\gamma$ parcourt tous les chemins reliant $i$ \`a $j$ dans le graphe pond\'er\'e.
+Cette d\'efinition transforme la matrice d'information mutuelle en une structure
+m\'etrique discr\`ete.
+
+Dans la limite o\`u le nombre de degr\'es de libert\'e devient grand et o\`u la densit\'e
+effective de n\oe{}uds reste suffisamment r\'eguli\`ere, on suppose que le graphe
+d'intrication admet une limite continue au sens des r\'eseaux al\'eatoires
+g\'eom\'etriques~\cite{penrose2003}. La distance discr\`ete converge alors vers la
+distance g\'eod\'esique d'une m\'etrique effective $g_{\mu\nu}^{\rm ent}$ :
+\[
+d_{ij}^{\rm ent}
+\longrightarrow
+d_{g_{\rm ent}}(x_i,x_j),
+\]
+avec
+\[
+d_{g_{\rm ent}}(x_i,x_j)
+=
+\inf_{\gamma}
+\int_{\gamma}
+\sqrt{
+g_{\mu\nu}^{\rm ent}(x)\,
+dx^\mu dx^\nu
+}.
+\]
+
+Les coordonn\'ees locales $x_i^\mu$ ne sont pas suppos\'ees donn\'ees a priori. Elles
+peuvent \^etre reconstruites \`a partir de la matrice des distances $d_{ij}^{\rm ent}$
+par des m\'ethodes de plongement spectral, de multidimensional scaling, ou de
+plongement isom\'etrique local. La m\'etrique $g_{\mu\nu}^{\rm ent}$ est donc d\'efinie
+op\'erationnellement comme la m\'etrique continue dont les distances g\'eod\'esiques
+reproduisent, \`a grande \'echelle, les distances du graphe d'intrication.
+
+Dans un voisinage suffisamment petit autour d'un point $x$, on approxime la
+distance \'emergente par
+\[
+d_{ij}^{2}
+\simeq
+g_{\mu\nu}^{\rm ent}(x)
+\Delta x_{ij}^{\mu}
+\Delta x_{ij}^{\nu},
+\]
+o\`u $\Delta x_{ij}^{\mu}=x_i^\mu-x_j^\mu$. La m\'etrique locale est alors obtenue
+par r\'egression locale des distances g\'eod\'esiques du graphe.
+
+Cette construction justifie l'interpr\'etation de $g_{\mu\nu}^{\rm ent}$ comme
+m\'etrique \'emergente. Les fluctuations locales de l'information mutuelle induisent
+des fluctuations de longueur,
+\[
+\delta I(i:j)
+\quad\Longrightarrow\quad
+\delta \ell_{ij},
+\]
+puis des fluctuations de la m\'etrique effective,
+\[
+\delta \ell_{ij}
+\quad\Longrightarrow\quad
+\delta g_{\mu\nu}^{\rm ent}.
+\]
+
+Au premier ordre, une variation relative de l'information mutuelle donne
+\[
+\delta \ell_{ij}
+=
+-\ell_0
+\frac{\delta I(i:j)}{I(i:j)+\epsilon_I}.
+\]
+Ainsi, une augmentation locale d'intrication raccourcit les distances \'emergentes,
+tandis qu'une diminution locale d'intrication les allonge. Cette relation constitue
+le m\'ecanisme g\'eom\'etrique \'el\'ementaire par lequel les variations d'intrication
+produisent une courbure effective.
+
+Dans la th\'eorie effective continue, ces variations microscopiques ne sont pas
+d\'ecrites directement par $\delta I(i:j)$, mais par des observables g\'eom\'etriques
+d\'eriv\'ees, en particulier la dimension spectrale locale $d_s(x)$. Autrement dit,
+la variation d'intrication est m\'edi\'ee, dans la description effective, par les
+variations spatiales et temporelles de $d_s(x)$.
+
+La m\'etrique \'emergente peut \'egalement \^etre reli\'ee au Laplacien d'intrication
+\[
+L=D-W,
+\qquad
+D_{ii}=\sum_j W_{ij}.
+\]
+Lorsque la densit\'e de n\oe{}uds tend vers l'infini et que la limite continue existe,
+le Laplacien discret converge vers le Laplace-Beltrami associ\'e \`a $g_{\mu\nu}^{\rm ent}$ :
+\[
+L
+\;\longrightarrow\;
+-\Delta_{g_{\rm ent}}
+=
+-\frac{1}{\sqrt{|g_{\rm ent}|}}
+\partial_\mu
+\!\left(
+\sqrt{|g_{\rm ent}|}
+g_{\rm ent}^{\mu\nu}
+\partial_\nu
+\right).
+\]
+Cette identification fournit un second crit\`ere de reconstruction : la m\'etrique
+effective doit reproduire non seulement les distances g\'eod\'esiques, mais aussi les
+propri\'et\'es spectrales du Laplacien d'intrication.
+
+La dimension spectrale locale est alors d\'efinie par le noyau de chaleur
+\[
+P_x(\tau)
+=
+\left(e^{-\tau L}\right)_{xx},
+\]
+et
+\[
+d_s(x)
+=
+-2\frac{d\log P_x(\tau)}{d\log\tau}.
+\]
+Dans la limite continue, cette quantit\'e mesure la dimension effective explor\'ee
+par la diffusion sur la g\'eom\'etrie $g_{\mu\nu}^{\rm ent}$.
+
+La coh\'erence entre la distance \'emergente, le Laplacien d'intrication et la dimension
+spectrale impose donc le sch\'ema suivant :
+\[
+I(i:j)
+\quad\Longrightarrow\quad
+\ell_{ij}
+\quad\Longrightarrow\quad
+d_{ij}^{\rm ent}
+\quad\Longrightarrow\quad
+g_{\mu\nu}^{\rm ent}
+\quad\Longrightarrow\quad
+d_s(x).
+\]
+
+Cette cha\^{\i}ne est le c\oe{}ur g\'eom\'etrique de \BuP. Elle montre que la m\'etrique
+effective n'est pas une variable ind\'ependante : elle est une repr\'esentation continue
+de la structure d'intrication sous-jacente. Par cons\'equent, le champ $d_s(x)$ n'est
+pas une mati\`ere exotique ajout\'ee \`a la th\'eorie, mais la manifestation continue
+des propri\'et\'es spectrales du r\'eseau d'intrication. Toute dynamique de l'information
+mutuelle induit donc une dynamique de la m\'etrique \'emergente et de la dimension
+spectrale.
+
+% ─────────────────────────────────────────────────────────────
+\section{Courbure effective et dimension spectrale}
+\label{sec:curvature}
+% ─────────────────────────────────────────────────────────────
+
+La section pr\'ec\'edente d\'efinit la m\'etrique \'emergente $g_{\mu\nu}^{\rm ent}$
+\`a partir des distances reconstruites sur le graphe d'intrication. Il reste maintenant
+\`a d\'efinir la notion de courbure associ\'ee \`a cette g\'eom\'etrie. Dans \BuP, la
+courbure n'est pas introduite comme une propri\'et\'e fondamentale de l'espace-temps :
+elle appara\^{\i}t comme une mesure de l'inhomog\'en\'eit\'e de la connectivit\'e
+informationnelle.
+
+Le point de d\'epart est de nouveau le Laplacien d'intrication
+\[
+L = D-W,
+\qquad
+D_{ii}=\sum_j W_{ij},
+\qquad
+W_{ij}=I(i:j).
+\]
+Ce Laplacien encode \`a la fois la connectivit\'e locale, les propri\'et\'es de diffusion
+et la structure spectrale du r\'eseau. Dans la limite continue, il converge vers
+le Laplace-Beltrami associ\'e \`a la m\'etrique \'emergente :
+\[
+L\longrightarrow -\Delta_{g_{\rm ent}}.
+\]
+La g\'eom\'etrie effective peut donc \^etre sond\'ee par le noyau de chaleur
+\[
+K(x,x';\tau)
+=
+\left(e^{-\tau L}\right)_{x x'}.
+\]
+
+La trace diagonale du noyau de chaleur
+\[
+P_x(\tau)=K(x,x;\tau)
+\]
+mesure le retour local d'une diffusion fictive au point $x$ apr\`es un temps de
+diffusion $\tau$. Elle d\'efinit la dimension spectrale locale :
+\[
+d_s(x,\tau)
+=
+-2\frac{d\log P_x(\tau)}{d\log\tau}.
+\]
+Lorsque la pente est approximativement constante sur une fen\^etre de diffusion, on
+d\'efinit
+\[
+d_s(x)
+\simeq
+\left\langle
+d_s(x,\tau)
+\right\rangle_{\tau\in[\tau_{\min},\tau_{\max}]}.
+\]
+Dans les simulations \BuP\ actuellement accessibles, une fen\^etre typique
+$\tau\in[0.01,50]$ donne une pente logarithmique suffisamment stable pour extraire
+une dimension spectrale effective.
+
+Cette d\'efinition est importante car elle ne suppose pas l'existence pr\'ealable
+d'une dimension enti\`ere. Elle mesure directement la dimension effective explor\'ee
+par la diffusion sur le graphe d'intrication. Une r\'egion fortement connect\'ee peut
+donc pr\'esenter une dimension spectrale diff\'erente de la dimension topologique
+apparente.
+
+Dans une vari\'et\'e riemannienne continue de dimension $d$, le d\'eveloppement
+asymptotique du noyau de chaleur est
+\[
+K(x,x;\tau)
+\simeq
+\frac{1}{(4\pi\tau)^{d/2}}
+\left[
+1+\frac{\tau}{6}R(x)+\mathcal{O}(\tau^2)
+\right],
+\]
+o\`u $R(x)$ est le scalaire de courbure. Cette relation montre que les corrections
+\`a la diffusion locale encodent directement la courbure.
+
+Par analogie, dans \BuP, les \'ecarts du noyau de chaleur du graphe d'intrication
+par rapport \`a une diffusion homog\`ene d\'efinissent une courbure effective. On peut
+introduire un scalaire de courbure spectral
+\[
+R_{\rm ent}(x)
+\sim
+6\,
+\frac{1}{\tau}
+\left[
+(4\pi\tau)^{d_s(x)/2}P_x(\tau)-1
+\right],
+\]
+dans une fen\^etre de diffusion o\`u $d_s(x)$ varie lentement. Cette expression est
+inspir\'ee du d\'eveloppement asymptotique du noyau de chaleur sur une vari\'et\'e,
+o\`u elle est exacte \`a l'ordre lin\'eaire en $\tau$. Dans \BuP, elle sert de
+d\'efinition op\'erationnelle de $R_{\rm ent}(x)$ sur une fen\^etre de diffusion o\`u
+$d_s(x)$ est stable. Elle ne doit donc pas \^etre interpr\'et\'ee comme une \'egalit\'e
+microscopique exacte, mais comme une prescription effective pour extraire une
+courbure moyenne \`a partir du noyau de chaleur.
+
+Une autre mesure naturelle de la courbure discr\`ete est la courbure d'Ollivier-Ricci
+du graphe pond\'er\'e~\cite{ollivier2009}. Pour une ar\^ete $(i,j)$, elle est d\'efinie par
+\[
+\kappa_{ij}
+=
+1
+-
+\frac{W_1(m_i,m_j)}{d_{ij}^{\rm ent}},
+\]
+o\`u $W_1(m_i,m_j)$ est la distance de Wasserstein entre les mesures de voisinage
+$m_i$ et $m_j$, et $d_{ij}^{\rm ent}$ la distance \'emergente entre les deux n\oe{}uds.
+La mesure $m_i$ peut \^etre choisie comme la distribution de masse pond\'er\'ee sur le
+voisinage de $i$,
+\[
+m_i(j)
+=
+\frac{W_{ij}}{\sum_k W_{ik}},
+\]
+ou, dans une approximation plus simple, comme une mesure uniforme sur les voisins
+effectifs de $i$.
+
+Dans la limite continue, la courbure d'Ollivier-Ricci le long d'une direction $v^\mu$
+converge vers une contraction du tenseur de Ricci :
+\[
+\kappa_{ij}
+\longrightarrow
+R_{\mu\nu}^{\rm ent}v^\mu v^\nu.
+\]
+Cette relation fournit le pont entre la courbure discr\`ete du graphe d'intrication
+et la courbure tensorielle de la m\'etrique \'emergente.
+
+On dispose donc de deux diagnostics compl\'ementaires :
+\[
+P_x(\tau)
+\quad\Longrightarrow\quad
+d_s(x),\,R_{\rm ent}(x),
+\]
+et
+\[
+\kappa_{ij}
+\quad\Longrightarrow\quad
+R_{\mu\nu}^{\rm ent}.
+\]
+Le premier mesure la courbure moyenne via la diffusion locale ; le second mesure
+la courbure directionnelle via le transport optimal sur le graphe. Leur coh\'erence
+dans la limite continue constitue une condition forte pour l'\'emergence d'une
+g\'eom\'etrie riemannienne effective.
+
+Dans \BuP, la dimension spectrale $d_s(x)$ joue alors un r\^ole particulier. Elle
+n'est pas seulement un diagnostic de dimension : elle devient une observable
+g\'eom\'etrique locale contr\^olant la force gravitationnelle effective. Les r\'esultats
+cosmologiques pr\'ec\'edents sugg\`erent la relation
+\[
+\Geff(d_s)
+=
+\frac{2}{d_s-1}G.
+\]
+Ainsi, une variation locale de $d_s$ modifie directement la r\'eponse gravitationnelle :
+\[
+\delta d_s(x)
+\quad\Longrightarrow\quad
+\delta\Geff(x).
+\]
+
+Au premier ordre,
+\[
+\frac{\delta\Geff}{\Geff}
+=
+-\frac{\delta d_s}{d_s-1}.
+\]
+Une diminution locale de la dimension spectrale augmente donc le couplage gravitationnel
+effectif, tandis qu'une augmentation de $d_s$ le diminue. Ce m\'ecanisme relie
+directement les fluctuations spectrales du graphe d'intrication \`a la dynamique
+gravitationnelle \'emergente.
+
+La cha\^{\i}ne g\'eom\'etrique compl\`ete devient alors
+\[
+\begin{aligned}
+I(i:j)
+&\quad\Longrightarrow\quad
+L
+\quad\Longrightarrow\quad
+P_x(\tau)
+\quad\Longrightarrow\quad
+d_s(x)
+\\
+&\quad\Longrightarrow\quad
+\Geff(d_s)
+\quad\Longrightarrow\quad
+\text{r\'eponse gravitationnelle}.
+\end{aligned}
+\]
+
+Cette relation est le pont essentiel entre la g\'eom\'etrie d'intrication microscopique
+et l'\'equation d'Einstein effective propos\'ee dans la section suivante.
+
+% ─────────────────────────────────────────────────────────────
+\section{Justification effective depuis le r\'eseau d'intrication}
+\label{sec:closure}
+% ─────────────────────────────────────────────────────────────
+
+Nous montrons maintenant comment l'\'equation effective propos\'ee dans la section
+suivante peut \^etre justifi\'ee \`a partir de la r\'eponse continue du r\'eseau
+d'intrication. Cette justification n'a pas la pr\'etention d'\^etre une d\'erivation
+microscopique compl\`ete ; elle \'etablit une fermeture effective minimale, coh\'erente
+avec les propri\'et\'es g\'eom\'etriques et spectrales du r\'eseau.
+
+\subsection{R\'eponse de la m\'etrique aux variations d'intrication}
+
+Le point de d\'epart est le graphe pond\'er\'e $W_{ij}=I(i:j)$.
+Une perturbation locale de l'\'etat quantique modifie les corr\'elations,
+\[
+I(i:j)\to I(i:j)+\delta I(i:j),
+\]
+et induit donc une variation des longueurs :
+\[
+\delta\ell_{ij}=-\ell_0\frac{\delta I(i:j)}{I(i:j)+\epsilon_I}+\mathcal{O}(\delta I^2).
+\]
+Dans la limite continue, les longueurs $\ell_{ij}$ d\'efinissent une m\'etrique effective
+$g_{\mu\nu}^{\rm ent}$. Ainsi, une variation locale d'intrication produit une variation
+de m\'etrique :
+\[
+\delta I(i:j)
+\;\Longrightarrow\;
+\delta\ell_{ij}
+\;\Longrightarrow\;
+\delta g_{\mu\nu}^{\rm ent}.
+\]
+La r\'eponse de la courbure \'emergente est alors donn\'ee, au premier ordre, par
+\[
+\delta G_{\mu\nu}[g^{\rm ent}]=D_{\mu\nu}^{\alpha\beta}\,\delta g_{\alpha\beta}^{\rm ent},
+\]
+o\`u $D_{\mu\nu}^{\alpha\beta}$ d\'esigne l'op\'erateur lin\'earis\'e d'Einstein autour
+de la g\'eom\'etrie effective de fond.
+
+\subsection{R\'eponse de la dimension spectrale}
+
+La m\^eme perturbation de l'intrication modifie le Laplacien $L=D-W$, puis le
+noyau de chaleur $P_x(\tau)=\left(e^{-\tau L}\right)_{xx}$, et donc la dimension
+spectrale locale :
+\[
+\delta I(i:j)
+\;\Longrightarrow\;
+\delta L
+\;\Longrightarrow\;
+\delta P_x(\tau)
+\;\Longrightarrow\;
+\delta d_s(x).
+\]
+La dimension spectrale est donc l'observable continue qui encode la r\'eponse spectrale
+du r\'eseau \`a une perturbation informationnelle. Les r\'esultats cosmologiques \BuP\
+indiquent que la r\'eponse gravitationnelle locale est contr\^ol\'ee par
+$\Geff(d_s)=\frac{2}{d_s-1}G$, d'o\`u au premier ordre
+$\delta\Geff/\Geff=-\delta d_s/(d_s-1)$.
+
+\subsection{Fermeture effective minimale}
+
+La dynamique effective doit donc relier la courbure continue $G_{\mu\nu}[g^{\rm ent}]$
+aux sources qui modifient la structure d'intrication. Ces sources ont deux origines.
+
+\textit{Mati\`ere ordinaire.} Elle modifie localement l'\'etat quantique et donc
+la connectivit\'e informationnelle du r\'eseau. Sa contribution appara\^{\i}t sous la forme
+$\Geff(d_s)T_{\mu\nu}^{\rm matter}$, o\`u le couplage est modul\'e par la dimension
+spectrale locale.
+
+\textit{Gradients de dimension spectrale.} M\^eme en l'absence de source mat\'erielle
+explicite, les gradients et variations de $d_s(x)$ contribuent \`a la courbure effective.
+\`A l'ordre local minimal, la source g\'eom\'etrique construite \`a partir de $d_s$ doit
+contenir les invariants covariants de plus bas ordre en nombre de d\'eriv\'ees :
+$\nabla_\mu d_s\nabla_\nu d_s$ et $\nabla_\mu\nabla_\nu d_s$.
+Ces termes d\'efinissent le tenseur effectif d'intrication $T_{\mu\nu}^{\ent}[d_s]$.
+
+La forme effective minimale compatible avec la covariance et la localit\'e \`a grande
+\'echelle est donc
+\[
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi\Geff(d_s)\,T_{\mu\nu}^{\rm matter}
++
+8\pi G\,T_{\mu\nu}^{\ent}[d_s].
+\]
+Cette \'equation n'est pas postul\'ee comme une loi microscopique exacte du r\'eseau.
+Elle est la \textbf{fermeture continue minimale} de la cha\^{\i}ne
+\[
+\delta I\to\delta\ell\to\delta g_{\mu\nu}^{\rm ent}\to\delta G_{\mu\nu},
+\qquad
+\delta I\to\delta L\to\delta d_s\to\delta\Geff.
+\]
+Elle exprime que la relativit\'e g\'en\'erale \'emerge comme la r\'eponse
+thermodynamique et continue du r\'eseau d'intrication aux variations locales
+d'information mutuelle.
+
+% ─────────────────────────────────────────────────────────────
+\section{\'Equation d'Einstein effective \BuP}
+\label{sec:einstein}
+% ─────────────────────────────────────────────────────────────
+
+Les sections pr\'ec\'edentes ont construit les deux objets g\'eom\'etriques
+n\'ecessaires : la m\'etrique \'emergente $g_{\mu\nu}^{\rm ent}$, issue de la distance
+d'intrication, et la dimension spectrale locale $d_s(x)$, issue du noyau de chaleur
+du Laplacien d'intrication. Nous pr\'esentons maintenant l'\'equation de champ
+effective et ses principales limites physiques.
+
+Dans toute cette section, $\nabla_\mu$ d\'esigne la d\'eriv\'ee covariante associ\'ee
+\`a la m\'etrique \'emergente $g_{\mu\nu}^{\rm ent}$.
+
+\subsection{\'Equation centrale}
+
+\[
+\boxed{
+G_{\mu\nu}\!\left[g^{\rm ent}\right]
+=
+8\pi\Geff(d_s)\,
+T_{\mu\nu}^{\rm matter}
++
+8\pi G\,
+T_{\mu\nu}^{\ent}[d_s]
+}
+\]
+o\`u
+\[
+\Geff(d_s)
+=
+\frac{2}{d_s-1}G.
+\]
+
+\subsection{Interpr\'etation des termes}
+
+Le terme $8\pi\Geff(d_s)T_{\mu\nu}^{\rm matter}$ d\'ecrit la r\'eponse de la
+g\'eom\'etrie \'emergente \`a la mati\`ere ordinaire, avec un couplage gravitationnel
+modul\'e par la dimension spectrale locale.
+
+Le terme $T_{\mu\nu}^{\ent}[d_s]$ ne repr\'esente pas une nouvelle composante
+mat\'erielle. Il s'agit d'une \'ecriture effective des corrections g\'eom\'etriques
+induites par les gradients et variations locales de la dimension spectrale.
+
+\subsection{Tenseur effectif d'intrication}
+
+\`A l'ordre effectif minimal compatible avec la covariance, la localit\'e effective et
+l'invariance par renversement des coordonn\'ees spatiales, on peut \'ecrire
+\[
+T_{\mu\nu}^{\ent}[d_s]
+=
+\alpha
+\!\left(
+\nabla_\mu d_s\nabla_\nu d_s
+-
+\frac12 g_{\mu\nu}^{\rm ent}(\nabla d_s)^2
+\right)
++
+\beta
+\!\left(
+\nabla_\mu\nabla_\nu d_s
+-
+g_{\mu\nu}^{\rm ent}\Box d_s
+\right).
+\]
+
+Le premier terme mesure l'\'energie effective associ\'ee aux gradients de dimension
+spectrale. Il devient important lorsque $d_s(x)$ varie spatialement, par exemple dans
+les r\'egions surdenses ou dans les zones de forte variation informationnelle.
+
+Le second terme encode la r\'eponse de la g\'eom\'etrie aux variations secondes de
+la dimension spectrale. Il joue le r\^ole d'un terme de rigidit\'e informationnelle :
+il p\'enalise les variations rapides de $d_s$ et contr\^ole la fa\c{c}on dont la dimension
+spectrale se lisse \`a grande \'echelle.
+
+Les constantes $\alpha$ et $\beta$ ne sont pas introduites comme de nouveaux
+param\`etres cosmologiques libres dans ce travail. Elles doivent \^etre d\'etermin\'ees,
+en principe, par les fluctuations spectrales du Laplacien d'intrication dans les
+simulations \BuP, ou contraintes ph\'enom\'enologiquement dans des applications
+ult\'erieures.
+
+\subsection{Conservation covariante et identit\'e de Bianchi}
+
+La forme pr\'ec\'edente de $T_{\mu\nu}^{\ent}$ n'est cependant pas arbitraire :
+elle doit \^etre compatible avec la conservation covariante impos\'ee par l'identit\'e
+de Bianchi. Cette contrainte fixe la mani\`ere dont les variations de $d_s$ \'echangent
+effectivement de l'\'energie-impulsion avec le secteur mati\`ere.
+
+L'identit\'e de Bianchi impose $\nabla^\mu G_{\mu\nu}[g^{\rm ent}]=0$.
+Par cons\'equent, le membre de droite de l'\'equation effective doit \^etre conserv\'e :
+\[
+\nabla^\mu
+\left[
+\Geff(d_s)\,T_{\mu\nu}^{\rm matter}
++
+G\,T_{\mu\nu}^{\ent}[d_s]
+\right]
+=
+0.
+\]
+
+Lorsque $d_s$ varie dans l'espace-temps, le couplage $\Geff(d_s)$ varie \'egalement,
+et il peut exister un \'echange effectif entre le secteur mati\`ere et le secteur
+g\'eom\'etrique d'intrication. On peut \'ecrire
+\[
+\nabla^\mu T_{\mu\nu}^{\rm matter}=Q_\nu,
+\]
+\[
+\nabla^\mu T_{\mu\nu}^{\ent}
+=
+-\frac{1}{G}\,T_{\mu\nu}^{\rm matter}\,\nabla^\mu\Geff
+-
+\frac{\Geff}{G}\,Q_\nu,
+\]
+o\`u $Q_\nu$ d\'ecrit un \'echange effectif de quantit\'e d'\'energie-impulsion entre la
+mati\`ere et la g\'eom\'etrie informationnelle.
+
+Dans la limite o\`u $d_s$ est constant, on a $\nabla_\mu\Geff(d_s)=0$. Si l'on impose
+alors $Q_\nu=0$, on retrouve la conservation usuelle :
+$\nabla^\mu T_{\mu\nu}^{\rm matter}=0$ et $\nabla^\mu T_{\mu\nu}^{\ent}=0$.
+
+\subsection{Limite relativit\'e g\'en\'erale}
+
+La relativit\'e g\'en\'erale standard doit \^etre retrouv\'ee lorsque la g\'eom\'etrie
+d'intrication devient homog\`ene et faiblement variable. Cette limite est d\'efinie par
+\[
+d_s(x)\rightarrow 3,
+\qquad
+\nabla_\mu d_s\rightarrow0,
+\qquad
+\nabla_\mu\nabla_\nu d_s\rightarrow0.
+\]
+Dans cette limite, $\Geff(d_s)\rightarrow G$ et $T_{\mu\nu}^{\ent}\rightarrow 0$.
+L'\'equation de champ devient alors
+\[
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi G\,T_{\mu\nu}^{\rm matter}.
+\]
+On retrouve la forme standard des \'equations d'Einstein, sans constante cosmologique
+fondamentale ni composante d'\'energie sombre ajout\'ee.
+
+\BuP\ ne remplace pas la relativit\'e g\'en\'erale dans les r\'egimes o\`u la dimension
+spectrale est constante et proche de trois. La relativit\'e g\'en\'erale appara\^{\i}t
+comme la limite homog\`ene, continue et thermodynamique d'une g\'eom\'etrie d'intrication
+plus fondamentale.
+
+\subsection{Limite cosmologique homog\`ene}
+
+Dans la limite homog\`ene, l'\'equation effective \BuP\ contient comme cas particulier
+l'\'equation de Friedmann modifi\'ee utilis\'ee dans les travaux cosmologiques
+pr\'ec\'edents. En effet, lorsque
+\[
+d_s(x)\rightarrow d_{\rm bg}(z),
+\]
+la m\'etrique \'emergente prend la forme FLRW et le couplage gravitationnel devient
+\[
+\Geff(z)=\frac{2}{d_{\rm bg}(z)-1}G.
+\]
+Les composantes homog\`enes de l'\'equation effective donnent alors
+\[
+H^2(z)
+=
+\frac{8\pi G}{d_{\rm bg}(z)\left[d_{\rm bg}(z)-1\right]}
+\rho_{\rm total}(z)
++
+\Delta_{\rm ent}(z),
+\]
+o\`u $\Delta_{\rm ent}(z)$ regroupe les contributions temporelles issues de
+$T_{\mu\nu}^{\ent}[d_s]$, c'est-\`a-dire les termes contenant $\dot d_{\rm bg}$
+et $\ddot d_{\rm bg}$.
+
+Dans la limite quasi-stationnaire, o\`u l'\'evolution de $d_{\rm bg}(z)$ est lente
+sur l'\'echelle de Hubble, ces contributions peuvent \^etre n\'eglig\'ees ou absorb\'ees
+dans la d\'efinition effective du fond cosmologique. On retrouve alors
+\[
+H^2(z)
+=
+\frac{8\pi G}{d_{\rm bg}(z)\left[d_{\rm bg}(z)-1\right]}
+\rho_{\rm total}(z),
+\]
+qui est pr\'ecis\'ement l'\'equation de Friedmann modifi\'ee utilis\'ee dans le
+mod\`ele cosmologique homog\`ene \BuP~\cite{hamdad2026bup}.
+
+Cette \'equation a \'et\'e confront\'ee aux donn\'ees BAO et supernovæ dans les travaux
+pr\'ec\'edents du programme \BuP. Le meilleur ajustement donne une dimension actuelle
+$d_{\rm bg}(0)\simeq 2.40$, avec une am\'elioration statistique par rapport \`a $\LCDM$,
+$\Delta{\rm BIC}=-3.71$.
+L'acc\'el\'eration tardive n'est donc pas introduite par une constante cosmologique ou par
+un fluide d'\'energie sombre : elle d\'ecoule de la dynamique g\'eom\'etrique de la
+dimension effective lorsque $d_{\rm bg}(z)<3$ \`a bas redshift.
+
+Le passage de $d_{\rm bg}>3$ \`a haut redshift vers $d_{\rm bg}<3$ \`a bas redshift
+modifie simultan\'ement l'expansion du fond et la force gravitationnelle effective.
+Ainsi, la limite homog\`ene de l'\'equation effective reproduit le r\'esultat principal
+du mod\`ele cosmologique \BuP, tandis que les limites perturbative et locale reproduisent
+respectivement les r\'esultats sur $\sig$ et l'effondrement non lin\'eaire des halos rares.
+
+\subsection{Interpr\'etation sans secteur sombre}
+
+Dans cette formulation, aucun secteur sombre fondamental n'est introduit. Il n'y a ni
+constante cosmologique ind\'ependante, ni fluide d'\'energie sombre ajout\'e \`a la main.
+L'acc\'el\'eration tardive est interpr\'et\'ee comme une cons\'equence g\'eom\'etrique
+de l'\'evolution de la dimension spatiale effective $d_{\rm bg}(z)$.
+
+Dans les travaux pr\'ec\'edents, l'expression \og\'energie noire\fg\ \'etait utilis\'ee
+comme raccourci ph\'enom\'enologique pour d\'esigner l'acc\'el\'eration cosmique effective.
+Dans le pr\'esent article, nous adoptons l'interpr\'etation g\'eom\'etrique stricte :
+aucun fluide d'\'energie sombre fondamental n'est introduit.
+
+La m\^eme fonction $d_{\rm bg}(z)$ agit simultan\'ement sur deux aspects de la
+dynamique cosmologique. D'une part, elle modifie l'expansion du fond \`a travers
+l'\'equation de Friedmann effective. D'autre part, elle modifie la force gravitationnelle
+effective via $\Geff(z)=\frac{2}{d_{\rm bg}(z)-1}G$.
+
+Ainsi, l'acc\'el\'eration tardive et la croissance modifi\'ee des structures ne sont pas
+deux ph\'enom\`enes ind\'ependants : elles sont deux manifestations d'un seul m\'ecanisme
+g\'eom\'etrique, \`a savoir la variation de la dimension effective de l'Univers.
+
+\begin{table}[htbp]
+\centering
+\caption{Interpr\'etation g\'eom\'etrique des r\'egimes cosmologiques \BuP.}
+\label{tab:regimes}
+\smallskip
+\begin{tabular}{lll}
+\toprule
+ & Haut redshift & Bas redshift \\
+\midrule
+Dimension effective $d_{\rm bg}$ & $\simeq 3.06>3$ & $\simeq 2.40<3$ \\
+Couplage effectif $\Geff$ & $\simeq 0.97\,G$ & $\simeq 1.43\,G$ \\
+Expansion & d\'ec\'el\'er\'ee & acc\'el\'er\'ee \\
+Structures & croissance ralentie & collapse renforc\'e \\
+Observable & $\sig$ r\'eduit & JWST / halos rares \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Limite locale inhomog\`ene}
+
+Dans une r\'egion surdense, la dimension spectrale locale re\c{c}oit une correction
+informationnelle :
+\[
+d_s(x)
+\simeq
+d_{\rm bg}(z)-\varepsilon\delta(x).
+\]
+Le couplage gravitationnel local devient
+\[
+\Geff^{\rm local}
+=
+\frac{2}{d_{\rm bg}(z)-\varepsilon\delta-1}G.
+\]
+Au premier ordre en $\varepsilon\delta$,
+\[
+\frac{\Geff^{\rm local}}{\Geff^{\rm bg}}
+\simeq
+1+
+\frac{\varepsilon\delta}{d_{\rm bg}(z)-1}.
+\]
+Ainsi, dans les r\'egions surdenses $(\delta>0)$, on obtient
+$\Geff^{\rm local}>\Geff^{\rm bg}$.
+
+Cette limite reproduit le m\'ecanisme d'effondrement non lin\'eaire local utilis\'e
+pour d\'ecrire l'exc\`es de halos massifs \`a haut redshift~\cite{hamdad2026p4}.
+
+
+% ─────────────────────────────────────────────────────────────
+\section{Test numérique interne : corr\'elation courbure--dimension spectrale}
+\label{sec:numerical-test}
+% ─────────────────────────────────────────────────────────────
+
+L'\'equation effective propos\'ee dans ce travail repose sur l'id\'ee que la
+courbure \'emergente du graphe d'intrication est contr\^ol\'ee par les variations
+locales de la dimension spectrale. Afin de tester cette relation au niveau discret,
+nous avons construit un premier test num\'erique interne comparant un proxy de
+courbure \'emergente \`a un proxy du tenseur spectral $T_{\mu\nu}^{\ent}[d_s]$.
+
+Le point de d\'epart est une famille de matrices d'information mutuelle
+$W_{ij}=I(i:j)$, g\'en\'er\'ees pour plusieurs tailles de r\'eseau
+($N=9, 12, 16, 20$) et plusieurs valeurs du param\`etre de
+non-localit\'e $\lambda$. Pour chaque matrice, nous construisons un graphe local
+par $k$-plus proches voisins, les longueurs d'ar\^ete d'intrication
+\[
+\ell_{ij}
+=
+-\ell_0\log\!\left(
+\frac{W_{ij}+\epsilon_I}{W_{\max}+\epsilon_I}
+\right),
+\]
+puis la courbure discr\`ete d'Ollivier-Ricci $\kappa_{ij}$~\cite{ollivier2009}.
+
+\`A partir de la courbure d'ar\^ete, nous d\'efinissons une courbure scalaire locale
+moyenne $R_{\rm edge}$, puis plusieurs conventions discr\`etes pour un proxy du
+tenseur d'Einstein \'emergent. Le scan num\'erique montre que la convention la
+plus stable est
+\[
+G_{ij}^{\rm proxy}
+=
+-\kappa_{ij}
++
+\frac{1}{2}\,R_{\rm edge}.
+\]
+
+En parall\`ele, la dimension spectrale locale $d_s(i)$ est extraite du noyau de
+chaleur du Laplacien d'intrication. Nous construisons ensuite des proxys discrets
+du tenseur spectral \`a partir des deux ingr\'edients
+\[
+(\nabla_{ij}d_s)^2
+\qquad\text{et}\qquad
+\Delta d_s,
+\]
+qui correspondent respectivement aux deux structures pr\'esentes dans
+\[
+T_{\mu\nu}^{\ent}[d_s]
+=
+\alpha
+\!\left(
+\nabla_\mu d_s\nabla_\nu d_s
+-
+\tfrac12 g_{\mu\nu}^{\rm ent}(\nabla d_s)^2
+\right)
++
+\beta
+\!\left(
+\nabla_\mu\nabla_\nu d_s
+-
+g_{\mu\nu}^{\rm ent}\Box d_s
+\right).
+\]
+
+\subsection{R\'esultat sur $N=9, 12, 16$}
+
+Sur l'ensemble des matrices $N=9, 12, 16$, le scan identifie une relation
+dominante entre l'oppos\'e de la courbure scalaire d'ar\^ete et le laplacien
+discret de la dimension spectrale~: $-R_{\rm edge}\sim\Delta d_s$.
+La meilleure combinaison stable donne une corr\'elation de Pearson moyenne
+$\langle r\rangle = 0.751$, avec une m\'ediane ${\rm med}(r)=0.892$, et une
+corr\'elation de Spearman $\langle \rho\rangle=0.786$, avec un signe positif
+dans $100\%$ des matrices test\'ees.
+
+\subsection{R\'esultat sur $N=20$}
+
+Pour les matrices $N=20$, la meilleure relation stable est
+$G_{ij}^{\rm proxy}=-\kappa_{ij}+\frac{1}{2}R_{\rm edge}$,
+corr\'el\'ee \`a un proxy spectral de la forme
+$T_{ij}^{\rm proxy}=(\nabla_{ij}d_s)^2+|\Delta d_s|$,
+donnant $\langle r\rangle=0.558$, ${\rm med}(r)=0.995$,
+$\langle\rho\rangle=0.566$, avec un signe de Spearman positif dans
+$100\%$ des matrices.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.78\textwidth]{fig_best_G_vs_T_N20}
+  \caption{Corr\'elation entre le proxy de courbure \'emergente
+  $G_{ij}^{\rm proxy}=-\kappa_{ij}+\frac{1}{2}R_{\rm edge}$
+  et le proxy spectral $T_{ij}^{\rm proxy}$ construit \`a partir de
+  $(\nabla d_s)^2$ et $\Delta d_s$, pour les matrices $N=20$.}
+  \label{fig:G-T-corr}
+\end{figure}
+
+\subsection{Robustesse en \'echelle locale $k$}
+
+Nous avons test\'e la stabilit\'e du signal en variant l'\'echelle locale du
+graphe avec $k=3, 5, 7$.
+
+\begin{table}[htbp]
+\centering
+\caption{Robustesse du test $G_{ij}^{\rm proxy}$--$T_{ij}^{\rm proxy}$
+pour $N=20$.}
+\label{tab:einstein-corr-k}
+\smallskip
+\begin{tabular}{p{1cm}p{4.5cm}p{2cm}p{2cm}p{3cm}}
+\toprule
+$k$ & Proxy spectral dominant
+    & $\langle r\rangle$
+    & $\langle\rho\rangle$
+    & Signe Spearman pos. \\
+\midrule
+3 & $(\nabla d_s)^2+|\Delta d_s|$ & 0.707 & 0.598 & 100\% \\
+5 & $(\nabla d_s)^2+|\Delta d_s|$ & 0.558 & 0.566 & 100\% \\
+7 & $(\nabla d_s)^2-\Delta d_s$   & 0.995 & 0.417 & 100\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.90\textwidth]{fig_top10_stability_N20}
+  \caption{Classement des combinaisons de proxys $G_{ij}^{\rm proxy}$ et
+  $T_{ij}^{\rm proxy}$. Les meilleures combinaisons sont syst\'ematiquement
+  construites \`a partir de la convention $-\kappa_{ij}+\frac{1}{2}R_{\rm edge}$
+  et des variations locales de $d_s$.}
+  \label{fig:proxy-ranking}
+\end{figure}
+
+La convention de courbure $G_{ij}^{\rm proxy}=-\kappa_{ij}+\frac{1}{2}R_{\rm edge}$
+est stable pour toutes les valeurs de $k$ test\'ees. Les meilleurs proxys spectraux
+sont syst\'ematiquement construits \`a partir de $(\nabla_{ij}d_s)^2$ et $\Delta d_s$.
+Ce r\'esultat ne constitue pas encore une d\'erivation compl\`ete de l'\'equation
+tensorielle continue, mais il fournit un premier test num\'erique interne de
+coh\'erence : les proxys discrets de courbure \'emergente sont monotoniquement
+corr\'el\'es aux proxys construits \`a partir des variations locales de $d_s$.
+Cela soutient directement la structure propos\'ee pour $T_{\mu\nu}^{\ent}[d_s]$.
+
+% ─────────────────────────────────────────────────────────────
+\section{Discussion et perspectives}
+\label{sec:discussion}
+% ─────────────────────────────────────────────────────────────
+
+L'\'equation effective propos\'ee dans ce travail fournit un cadre g\'eom\'etrique unique
+permettant de relier les diff\'erents r\'esultats cosmologiques obtenus dans le
+programme \BuP. Son int\'er\^et principal est de montrer que les corrections introduites
+pr\'ec\'edemment ne sont pas des prescriptions ind\'ependantes, mais peuvent \^etre
+interpr\'et\'ees comme des limites particulières d'une m\^eme dynamique \'emergente.
+
+\subsection{Unification des r\'egimes \BuP}
+
+Paper 5 n'ajoute pas un nouveau mod\`ele : il unifie les trois r\'egimes d\'ej\`a obtenus.
+
+\begin{table}[htbp]
+\centering
+\caption{Les trois r\'egimes cosmologiques pr\'ec\'edents comme limites de l'\'equation
+effective \BuP.}
+\label{tab:unification}
+\smallskip
+\begin{tabular}{p{2.4cm}p{2.5cm}p{3.4cm}p{4.6cm}}
+\toprule
+Travail & R\'egime & Relation cl\'e & Interpr\'etation dans Paper 5 \\
+\midrule
+\cite{hamdad2026bup} &
+Homog\`ene &
+$d_s\rightarrow d_{\rm bg}(z)$ &
+Limite FLRW de l'\'equation effective \\[4pt]
+\cite{hamdad2026p3} &
+Lin\'eaire &
+$\Geff(z)=2G/[d_{\rm bg}(z)-1]$ &
+Couplage gravitationnel modul\'e par $d_s$ \\[4pt]
+\cite{hamdad2026p4} &
+Non lin\'eaire local &
+$d_s=d_{\rm bg}-\varepsilon\delta$ &
+Correction inhomog\`ene de la dimension spectrale \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Dans la limite homog\`ene, la dimension spectrale devient $d_s(x)\rightarrow d_{\rm bg}(z)$.
+L'\'equation effective se r\'eduit \`a une dynamique de fond dans laquelle $\Geff(z)$
+d\'epend de la dimension \'emergente. Cette limite correspond au mod\`ele cosmologique
+\`a dimension variable contraint par les donn\'ees BAO, supernovæ et CMB.
+
+Dans le r\'egime lin\'eaire, la m\^eme d\'ependance de $\Geff$ \`a $d_s$ modifie la
+croissance des perturbations. Lorsque $d_{\rm bg}(z)\rightarrow\DC>3$ \`a haut redshift,
+on obtient $\Geff<G$, ce qui produit une l\'eg\`ere suppression de la croissance des
+structures et permet de retrouver $\sig\simeq0.772$.
+
+Enfin, dans les r\'egions localement surdenses, la dimension spectrale re\c{c}oit une
+correction $d_s\simeq d_{\rm bg}(z)-\varepsilon\delta(x)$, augmentant le couplage
+local $\Geff^{\rm local}>\Geff^{\rm bg}$ et acc\'el\'erant l'effondrement des pics
+rares. Le r\'egime non lin\'eaire utilis\'e pour interpr\'eter l'exc\`es JWST appara\^{\i}t
+donc comme une limite locale de la m\^eme \'equation effective.
+
+La dimension de fond contr\^ole la moyenne cosmologique ; la dimension locale contr\^ole
+les fluctuations rares. Cette s\'eparation explique pourquoi la r\'esolution de la
+tension $\sig$ peut coexister avec un exc\`es de structures massives \`a haut redshift.
+
+\subsection{Diff\'erence avec les th\'eories scalaire-tenseur}
+
+La forme du tenseur d'intrication $T_{\mu\nu}^{\ent}[d_s]$ ressemble formellement
+\`a celle d'un secteur scalaire effectif. Cependant, l'interpr\'etation physique est
+diff\'erente. Dans une th\'eorie scalaire-tenseur classique, le champ scalaire est
+introduit comme un degr\'e de libert\'e fondamental suppl\'ementaire. Dans \BuP,
+$d_s(x)$ n'est pas ajout\'e \`a la th\'eorie : il est d\'efini \`a partir du spectre
+du Laplacien d'intrication. Il s'agit donc d'une observable g\'eom\'etrique \'emergente,
+non d'une nouvelle mati\`ere exotique.
+
+\subsection{Limites actuelles}
+
+La pr\'esente formulation reste effective. Les constantes $\alpha$ et $\beta$ doivent
+encore \^etre d\'etermin\'ees depuis les simulations \BuP\ \`a grande taille. La limite
+continue du graphe d'intrication reste une conjecture. La compatibilit\'e avec les
+tests locaux de la relativit\'e g\'en\'erale (syst\`eme solaire, pulsars binaires,
+ondes gravitationnelles) doit \^etre quantifi\'ee.
+
+\subsection{Pr\'edictions observationnelles}
+
+(i) \textit{Amas de galaxies} : $\Geff^{\rm local}>\Geff^{\rm bg}$ dans les r\'egions
+denses pourrait affecter les comptages d'amas \`a $z\sim1$--$2$ (Euclid, eROSITA, LSST).
+
+(ii) \textit{Lentillage gravitationnel} : les profils de lentillage pourraient recevoir
+des corrections li\'ees aux gradients de $d_s$.
+
+(iii) \textit{Formation pr\'ecoce des galaxies} : le m\'ecanisme $d_s=d_{\rm bg}-\varepsilon\delta$
+pr\'evoit un effet pr\'ef\'erentiel sur la queue rare, testable avec Roman Space Telescope
+et Euclid.
+
+(iv) \textit{Ondes gravitationnelles} : $T_{\mu\nu}^{\ent}$ pourrait induire des
+corrections \`a la propagation des perturbations m\'etriques cosmologiques.
+
+\subsection{Programme num\'erique}
+
+Le test d\'ecisif consistera \`a reconstruire num\'eriquement depuis un \'etat \BuP\ :
+\[
+W_{ij}\to\ell_{ij}\to d_{ij}^{\rm ent}\to g_{\mu\nu}^{\rm ent}\to R_{\mu\nu}^{\rm ent},
+\]
+puis \`a v\'erifier la relation effective
+$G_{\mu\nu}[g^{\rm ent}]\sim 8\pi\Geff(d_s)T_{\mu\nu}^{\rm matter}+8\pi GT_{\mu\nu}^{\ent}$.
+
+% ─────────────────────────────────────────────────────────────
+\section{Conclusion}
+\label{sec:conclusion}
+% ─────────────────────────────────────────────────────────────
+
+Nous avons propos\'e une \'equation d'Einstein effective \'emergente dans le cadre
+\BuP. Le point de d\'epart est que la g\'eom\'etrie n'est pas postul\'ee comme
+fondamentale : elle est reconstruite \`a partir de la structure d'intrication
+d'un \'etat quantique global.
+
+La cha\^{\i}ne g\'eom\'etrique centrale est
+\[
+I(i:j)
+\rightarrow
+\ell_{ij}
+\rightarrow
+d_{ij}^{\rm ent}
+\rightarrow
+g_{\mu\nu}^{\rm ent}
+\rightarrow
+d_s(x)
+\rightarrow
+\Geff(d_s).
+\]
+Elle relie directement l'information mutuelle microscopique \`a la m\'etrique \'emergente,
+\`a la dimension spectrale locale et au couplage gravitationnel effectif.
+
+L'\'equation propos\'ee est
+\[
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi\Geff(d_s)\,T_{\mu\nu}^{\rm matter}
++
+8\pi G\,T_{\mu\nu}^{\ent}[d_s],
+\]
+avec
+\[
+\Geff(d_s)=\frac{2}{d_s-1}G,
+\quad
+T_{\mu\nu}^{\ent}[d_s]
+=\alpha\!\left(\nabla_\mu d_s\nabla_\nu d_s-\tfrac12 g_{\mu\nu}^{\rm ent}(\nabla d_s)^2\right)
++\beta\!\left(\nabla_\mu\nabla_\nu d_s-g_{\mu\nu}^{\rm ent}\Box d_s\right).
+\]
+
+Aucune constante cosmologique $\Lambda$ n'est postul\'ee. L'acc\'el\'eration tardive
+est une cons\'equence g\'eom\'etrique de $d_{\rm bg}(z)<3$.
+
+Cette \'equation poss\`ede trois limites physiques importantes.
+
+Premi\`erement, lorsque $d_s(x)\rightarrow 3$, $\nabla_\mu d_s\rightarrow0$, elle
+redonne la relativit\'e g\'en\'erale standard sans constante cosmologique fondamentale.
+
+Deuxi\`emement, dans la limite homog\`ene $d_s(x)\rightarrow d_{\rm bg}(z)$, elle
+reproduit la cosmologie \`a dimension variable et le couplage
+$\Geff(z)=\frac{2}{d_{\rm bg}(z)-1}G$.
+
+Troisi\`emement, dans les r\'egions surdenses $d_s(x)\simeq d_{\rm bg}(z)-\varepsilon\delta(x)$,
+elle redonne le m\'ecanisme local d'amplification gravitationnelle utilis\'e pour
+expliquer l'effondrement pr\'ecoce des halos rares.
+
+Ainsi, les r\'esultats cosmologiques pr\'ec\'edents du programme \BuP\ apparaissent
+comme des limites particulières d'une m\^eme structure g\'eom\'etrique. La relativit\'e
+g\'en\'erale n'est pas abandonn\'ee : elle \'emerge comme la limite continue, homog\`ene
+et thermodynamique d'un r\'eseau d'intrication quantique plus fondamental.
+
+Dans cette formulation, les effets g\'en\'eralement attribu\'es \`a l'\'energie sombre
+sont r\'einterpr\'et\'es comme des effets de g\'eom\'etrie \'emergente, et non comme
+une nouvelle composante du contenu \'energ\'etique de l'Univers. Les prochaines \'etapes
+consisteront \`a d\'eterminer les constantes effectives $\alpha$ et $\beta$ \`a partir
+des simulations \BuP, \`a tester la limite newtonienne, et \`a confronter les
+pr\'edictions aux donn\'ees de lentillage, d'amas de galaxies et de formation pr\'ecoce
+des structures.
+
+% ─────────────────────────────────────────────────────────────
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+
+\bibitem{hamdad2026bup}
+F.~Hamdad,
+\textit{Contraintes cosmologiques sur une dimension spatiale \'emergente :
+dimension variable, \'energie noire et $\sigma_8$ dans le cadre
+Bottom-Up Quantum Gravity},
+Pr\'epublication HAL hal-05590614v1 (2026),
+\url{https://hal.science/hal-05590614v1}.
+
+\bibitem{hamdad2026p3}
+F.~Hamdad,
+\textit{R\'esolution g\'eom\'etrique de la tension $\sigma_8$ par une
+dimension cosmologique \'emergente},
+Pr\'epublication (2026).
+
+\bibitem{hamdad2026p4}
+F.~Hamdad,
+\textit{Effondrement non-lin\'eaire par r\'eduction dimensionnelle locale
+dans la Gravit\'e Quantique Bottom-Up},
+Pr\'epublication (2026).
+
+\bibitem{jacobson1995}
+T.~Jacobson,
+\textit{Thermodynamics of spacetime: the Einstein equation of state},
+Phys.\ Rev.\ Lett.\ \textbf{75}, 1260 (1995).
+
+\bibitem{ollivier2009}
+Y.~Ollivier,
+\textit{Ricci curvature of Markov chains on metric spaces},
+J.\ Funct.\ Anal.\ \textbf{256}, 810--864 (2009).
+
+\bibitem{ambjorn2005}
+J.~Ambjorn, J.~Jurkiewicz, R.~Loll,
+\textit{Spectral dimension of the universe},
+Phys.\ Rev.\ Lett.\ \textbf{95}, 171301 (2005).
+
+\bibitem{penrose2003}
+M.~Penrose,
+\textit{Random Geometric Graphs},
+Oxford University Press (2003).
+
+\bibitem{planck2018}
+Planck Collaboration,
+\textit{Planck 2018 results VI. Cosmological parameters},
+Astron.\ Astrophys.\ \textbf{641}, A6 (2020).
+
+\bibitem{desi2024}
+DESI Collaboration,
+\textit{DESI 2024 VI: Cosmological Constraints from Baryon Acoustic
+Oscillations},
+arXiv:2404.03002 (2024).
+
+\bibitem{labbe2023}
+I.~Labb\'e \textit{et al.},
+\textit{A population of red candidate massive galaxies $\sim$600~Myr
+after the Big Bang},
+Nature \textbf{616}, 266 (2023).
+
+\end{thebibliography}
+
+\end{document}
