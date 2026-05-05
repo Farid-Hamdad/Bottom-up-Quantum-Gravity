@@ -1,0 +1,42 @@
+{
+  "config": {
+    "mi_files": "results_mi_N20_full/*.csv",
+    "k": 5,
+    "tau_min": 0.01,
+    "tau_max": 50.0,
+    "n_tau": 24,
+    "eps": 1e-12
+  },
+  "n_files_ok": 8,
+  "n_edges_total": 492,
+  "best_global": {
+    "G_proxy": "G_minus_kappa_plus_halfR",
+    "T_proxy": "T_grad2_plus_abslap",
+    "n": 492,
+    "pearson_r": 0.06962661585940454,
+    "pearson_p": 0.12299174139645803,
+    "spearman_r": 0.49403819955090694,
+    "spearman_p": 1.2235682204818495e-31,
+    "score_mean_r": 0.2818324077051557,
+    "abs_pearson": 0.06962661585940454,
+    "abs_spearman": 0.49403819955090694
+  },
+  "best_stable": {
+    "G_proxy": "G_minus_kappa_plus_halfR",
+    "T_proxy": "T_grad2_plus_abslap",
+    "n_files": 8,
+    "pearson_mean": 0.5575401566550009,
+    "pearson_median": 0.9946803435849025,
+    "pearson_frac_pos": 0.625,
+    "spearman_mean": 0.5657755969524716,
+    "spearman_median": 0.5873056334925586,
+    "spearman_frac_pos": 1.0,
+    "score": 0.6763254326712334
+  },
+  "interpretation": {
+    "best_global": "Meilleure corr\u00e9lation sur toutes les ar\u00eates empil\u00e9es.",
+    "best_stable": "Meilleure combinaison stable en moyenne/m\u00e9diane sur les fichiers.",
+    "positive_stability": "Un score stable positif sugg\u00e8re une convention G/T coh\u00e9rente.",
+    "negative_or_mixed": "Un signe instable indique proxy discret ou convention \u00e0 raffiner."
+  }
+}
