@@ -12,22 +12,19 @@
 Paper 5 a formulé l'équation d'Einstein effective de BuP :
 
 $$
-G_{\mu\nu}[g^{\rm ent}]
-=
-8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
-+
-8\pi G T_{\mu\nu}^{\rm ent}[d_s].
+G_{\mu\nu}[g^{\rm ent}] = 8\pi G_{\rm eff}(d_s) T_{\mu\nu}^{\rm matter} + 8\pi G T_{\mu\nu}^{\rm ent}[d_s].
+$$
 
 Paper 6 propose l'équation pure BuP sous-jacente :
 
 $$
-\mathcal{F}_{ij}[W]=0,
+\mathcal{F}_{ij}[W] = 0,
 $$
 
 où
 
 $$
-W_{ij}=I(i:j)
+W_{ij} = I(i:j)
 $$
 
 est le réseau d'information mutuelle.
@@ -77,13 +74,13 @@ $$
 On injecte une excitation localisée :
 
 $$
-W_{ij}=W_{ij}^{(0)}+\delta W_{ij}^{\rm loc}.
+W_{ij} = W_{ij}^{(0)} + \delta W_{ij}^{\rm loc}.
 $$
 
 Le proxy de matière est :
 
 $$
-T_{ij}^{\rm matter,proxy}=(\delta W_{ij})^2.
+T_{ij}^{\rm matter,proxy} = (\delta W_{ij})^2.
 $$
 
 Le paramètre d'ordre est :
@@ -98,10 +95,10 @@ T_{ij}^{\rm matter,proxy},
 \right).
 $$
 
-Pour \(N=20\), le scan fin donne :
+Pour \(N = 20\), le scan fin donne :
 
 $$
-\lambda_c(N=20)\simeq0.593.
+\lambda_c(N=20) \simeq 0.593.
 $$
 
 Ce seuil est interprété comme une estimation de taille finie d'un seuil critique de localité :
