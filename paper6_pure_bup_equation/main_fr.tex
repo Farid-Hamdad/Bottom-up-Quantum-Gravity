@@ -43,8 +43,8 @@
 % Title
 % ─────────────────────────────────────────────────────────────
 \title{
-\textbf{Équation pure BuP : matière, localité et seuil critique d'intrication}\\[0.5em]
-\large Matière et géométrie comme phases émergentes du réseau d'information mutuelle
+\textbf{Équation pure BuP : de l'intrication à l'équation d'Einstein effective}\\[0.5em]
+\large Géométrie, dimension spectrale et matière comme limites du réseau \(W_{ij}\)
 }
 
 \author{
@@ -63,31 +63,54 @@ Farid Hamdad\\
 \begin{abstract}
 % ─────────────────────────────────────────────────────────────
 
-Les travaux précédents du programme Bottom-Up Quantum Gravity (BuP) ont proposé que la distance, la métrique effective, la dimension spectrale et le couplage gravitationnel émergent du réseau d'information mutuelle
+Les travaux précédents du programme Bottom-Up Quantum Gravity (BuP) ont proposé que la distance, la métrique effective, la dimension spectrale et le couplage gravitationnel émergent d'un réseau d'information mutuelle
 \[
 W_{ij}=I(i:j)
 \]
-associé à un état quantique global. Paper~5 a formulé une équation d'Einstein effective dans laquelle la géométrie émergente répond aux variations locales de la dimension spectrale. Cependant, cette formulation conservait encore un tenseur énergie-impulsion de matière \(T_{\mu\nu}^{\rm matter}\) introduit comme source effective.
-
-Le présent papier explore l'étape suivante : une formulation pure BuP dans laquelle la matière n'est plus postulée, mais apparaît comme une excitation localisée du réseau d'intrication. Nous proposons une équation fondamentale conjecturale
+associé à un état quantique global. Paper~5 a formulé une équation d'Einstein effective émergente,
 \[
-\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0,
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
++
+8\pi G\,T_{\mu\nu}^{\rm ent}[d_s],
 \]
-dont les limites continues doivent produire à la fois la géométrie émergente et les sources matérielles effectives.
+où la métrique \(g_{\mu\nu}^{\rm ent}\), la dimension spectrale \(d_s\) et le couplage \(G_{\rm eff}(d_s)\) sont reconstruits à partir du réseau d'intrication.
 
-Nous testons numériquement cette idée en injectant une perturbation localisée
+Le présent papier propose l'étape conceptuelle suivante : une formulation pure BuP dans laquelle l'équation fondamentale ne porte pas sur une métrique préexistante, mais directement sur le réseau \(W_{ij}\). Nous écrivons cette équation sous la forme générale
 \[
-W_{ij}=W_{ij}^{(0)}+\delta W_{ij}^{\rm loc}
+\boxed{
+\mathcal{F}_{ij}[W]=0
+}
 \]
-dans des graphes d'information mutuelle, puis en comparant le proxy de matière
+ou, de manière variationnelle,
+\[
+\boxed{
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
+}
+\]
+Dans cette formulation, l'équation d'Einstein effective de Paper~5 doit apparaître comme une limite continue et coarse-grainée de la dynamique du réseau.
+
+La matière n'est alors plus introduite comme une source fondamentale. Elle est interprétée comme une excitation localisée du réseau,
+\[
+W_{ij}=W_{ij}^{(0)}+\delta W_{ij}^{\rm loc},
+\]
+dont le tenseur énergie-impulsion effectif doit émerger après coarse-graining :
+\[
+T_{\mu\nu}^{\rm matter}
+=
+\mathcal{T}_{\mu\nu}[\delta W^{\rm loc}].
+\]
+
+Nous présentons également un premier test numérique de cohérence. En injectant une perturbation localisée dans des graphes \(W_{ij}\), nous définissons un proxy de matière
 \[
 T_{ij}^{\rm matter,proxy}=(\delta W_{ij})^2
 \]
-à la réponse de courbure induite
+et mesurons sa corrélation avec la réponse de courbure induite
 \[
 |\delta G_{ij}^{\rm proxy}|.
 \]
-Nous définissons un candidat paramètre d'ordre
+L'observable
 \[
 \mathcal{O}_{\rm matter}(\lambda)
 =
@@ -95,15 +118,13 @@ Nous définissons un candidat paramètre d'ordre
 \left(
 T_{ij}^{\rm matter,proxy},
 |\delta G_{ij}^{\rm proxy}|
-\right).
+\right)
 \]
-Pour \(N=20\), cette observable change brutalement de signe autour de
+présente, pour \(N=20\), un changement de signe autour de
 \[
-\lambda_c(N=20)\simeq0.599.
+\lambda_c(N=20)\simeq0.593.
 \]
-Une analyse de taille finie préliminaire pour \(N=9,12,16,20\) indique que la transition n'est pas résolue aux petites tailles, mais émerge progressivement avec \(N\).
-
-Nous interprétons ce résultat comme un seuil critique candidat de localité/matière : en dessous de \(\lambda_c\), les excitations localisées se comportent comme des sources géométriques effectives ; au-dessus, elles perdent leur cohérence géométrique locale. Cette étude ne constitue pas encore une dérivation complète de la matière, mais fournit un premier test numérique interne de l'idée que la matière peut émerger comme excitation stable d'une phase locale du réseau d'intrication.
+Ce résultat suggère l'existence d'une fenêtre de localité dans laquelle les excitations du réseau peuvent être interprétées comme sources matérielles effectives. Il ne constitue pas encore une dérivation complète de la matière, mais fournit un premier test numérique interne de la cohérence du cadre pur BuP.
 
 \end{abstract}
 
@@ -113,20 +134,20 @@ Nous interprétons ce résultat comme un seuil critique candidat de localité/ma
 \section{Introduction}
 % ─────────────────────────────────────────────────────────────
 
-Le programme Bottom-Up Quantum Gravity (BuP) repose sur une hypothèse centrale : l'espace, la géométrie et la gravitation ne sont pas des structures fondamentales, mais émergent de la structure d'intrication d'un état quantique global. Le point de départ n'est donc pas une variété différentiable munie d'une métrique, mais un réseau d'information mutuelle
+Le programme Bottom-Up Quantum Gravity (BuP) repose sur l'idée que l'espace-temps n'est pas une structure fondamentale. La géométrie, la dimension effective et la gravitation émergent de la structure d'intrication d'un état quantique global. L'objet de départ n'est donc pas une variété différentiable munie d'une métrique, mais une matrice d'information mutuelle
 \[
 W_{ij}=I(i:j),
 \]
 où \(I(i:j)\) mesure la corrélation informationnelle entre deux sous-systèmes quantiques.
 
-Les travaux précédents ont progressivement développé cette idée. Une distance d'intrication a été définie à partir des poids \(W_{ij}\), puis utilisée pour reconstruire une métrique émergente \(g_{\mu\nu}^{\rm ent}\). Le Laplacien du graphe d'intrication a ensuite permis de définir une dimension spectrale locale \(d_s(x)\), et les variations de cette dimension ont été reliées à un couplage gravitationnel effectif
+Les travaux antérieurs du programme BuP ont montré comment reconstruire plusieurs objets géométriques à partir de \(W_{ij}\). Une distance d'intrication permet d'obtenir une métrique effective \(g_{\mu\nu}^{\rm ent}\). Le Laplacien du graphe d'intrication permet de définir une dimension spectrale locale \(d_s(x)\). Enfin, cette dimension spectrale détermine un couplage gravitationnel effectif
 \[
 G_{\rm eff}(d_s)
 =
 \frac{2}{d_s-1}G.
 \]
 
-Paper~5 a franchi une étape supplémentaire en proposant une équation d'Einstein effective émergente,
+Paper~5 a proposé une équation d'Einstein effective BuP :
 \[
 G_{\mu\nu}[g^{\rm ent}]
 =
@@ -134,84 +155,58 @@ G_{\mu\nu}[g^{\rm ent}]
 +
 8\pi G\,T_{\mu\nu}^{\rm ent}[d_s].
 \]
-Dans cette équation, la métrique, la dimension spectrale et le couplage gravitationnel émergent du réseau d'intrication. Le terme
-\[
-T_{\mu\nu}^{\rm ent}[d_s]
-\]
-encode la réponse géométrique associée aux gradients et aux variations secondes de \(d_s\).
+Cette équation représente une étape importante : elle relie la courbure émergente à la matière ordinaire et aux variations de la dimension spectrale.
 
-Cette formulation reste cependant partiellement effective. Le tenseur
+Cependant, Paper~5 reste semi-émergent. La géométrie émerge bien de \(W_{ij}\), mais le tenseur
 \[
 T_{\mu\nu}^{\rm matter}
 \]
-y est encore introduit comme une source de matière. Une formulation pleinement Bottom-Up devrait aller plus loin : la matière elle-même doit émerger du réseau d'intrication, au même titre que la géométrie.
+reste encore introduit comme source effective.
 
-Le présent papier propose cette étape. L'idée centrale est simple :
-
+Le but du présent papier est de proposer l'étape suivante : une équation pure BuP dans laquelle ni la métrique ni la matière ne sont fondamentales. L'objet fondamental est le réseau \(W_{ij}\), et l'équation fondamentale doit être une équation sur ce réseau :
 \[
 \boxed{
-\text{la matière n'est pas ajoutée au réseau ; elle est une excitation stable du réseau.}
+\mathcal{F}_{ij}[W]=0.
 }
 \]
 
-Autrement dit, une configuration de matière doit pouvoir être représentée comme une perturbation localisée
+L'équation d'Einstein effective de Paper~5 doit alors apparaître comme une limite continue :
 \[
-W_{ij}
+\mathcal{F}_{ij}[W]=0
+\quad\Longrightarrow\quad
+G_{\mu\nu}[g^{\rm ent}]
 =
-W_{ij}^{(0)}
+8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
 +
+8\pi G T_{\mu\nu}^{\rm ent}[d_s].
+\]
+
+Dans cette perspective, la matière doit elle aussi être reconstruite à partir du réseau. Une excitation localisée
+\[
 \delta W_{ij}^{\rm loc}
 \]
-autour d'une configuration de vide \(W_{ij}^{(0)}\). Si cette perturbation est localisée, stable, transportable et géométriquement active, alors elle peut être interprétée comme une source matérielle effective après coarse-graining.
-
-Le but de ce travail n'est pas encore de dériver explicitement les équations de Dirac, Maxwell ou Yang--Mills depuis le réseau \(W_{ij}\). L'objectif est plus modeste mais plus fondamental : formuler un cadre dans lequel la matière devient une propriété émergente du même substrat informationnel que la géométrie, puis tester numériquement si une excitation localisée de \(W_{ij}\) produit effectivement une réponse de courbure.
-
-Nous proposons une équation pure BuP sous la forme variationnelle
+peut produire, après coarse-graining, une source effective :
 \[
-\boxed{
-\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
-}
-\]
-Dans cette formulation, ni la métrique ni le tenseur de matière ne sont fondamentaux. Les deux doivent apparaître comme des limites continues ou coarse-grainées d'une unique dynamique informationnelle.
-
-La contribution numérique principale de ce papier est la définition et la mesure d'un candidat paramètre d'ordre
-\[
-\mathcal{O}_{\rm matter}(\lambda)
+T_{\mu\nu}^{\rm matter}
 =
-\rho_{\rm Spearman}
-\left(
-T_{ij}^{\rm matter,proxy},
-|\delta G_{ij}^{\rm proxy}|
-\right),
+\mathcal{T}_{\mu\nu}[\delta W^{\rm loc}].
 \]
-où
-\[
-T_{ij}^{\rm matter,proxy}=(\delta W_{ij})^2
-\]
-et
-\[
-G_{ij}^{\rm proxy}
-=
--\kappa_{ij}
-+
-\frac12R_{\rm edge}.
-\]
-Cette observable mesure si une excitation localisée du réseau agit comme une source géométrique effective.
 
-Nous montrons que, pour \(N=20\), \(\mathcal{O}_{\rm matter}(\lambda)\) change brutalement de signe autour de
-\[
-\lambda_c(N=20)\simeq0.599.
-\]
-Pour \(\lambda<\lambda_c\), l'excitation localisée produit une réponse de courbure positivement corrélée. Pour \(\lambda>\lambda_c\), la réponse devient anti-corrélée. Cette transition est indépendante du signe de la perturbation injectée, ce qui suggère qu'elle est une propriété globale du régime d'intrication, et non un artefact de l'excitation.
+Le présent papier a donc trois objectifs :
+\begin{enumerate}
+  \item formuler l'équation pure BuP comme équation sur \(W_{ij}\) ;
+  \item montrer comment l'équation effective de Paper~5 peut émerger dans une limite continue ;
+  \item fournir un premier test numérique indiquant que les excitations localisées du réseau peuvent agir comme sources géométriques dans une fenêtre de localité.
+\end{enumerate}
 
-La structure du papier est la suivante. La Section~\ref{sec:paper5} rappelle le lien avec Paper~5. La Section~\ref{sec:pure-postulate} présente le postulat pur BuP. La Section~\ref{sec:action} introduit une action informationnelle conjecturale \(S_{\rm BuP}[W]\). La Section~\ref{sec:matter-excitations} décrit la matière comme excitation stable du réseau. La Section~\ref{sec:continuum-limits} discute les limites continues vers la géométrie et la matière. La Section~\ref{sec:numerical-program} présente le programme numérique. Les Sections~\ref{sec:results} et~\ref{sec:fss} exposent les résultats numériques et l'analyse de taille finie. La Section~\ref{sec:discussion} discute l'interprétation physique, notamment en termes de localité et de décohérence géométrique. La Section~\ref{sec:conclusion} conclut.
+Le résultat numérique \(\lambda_c(N=20)\simeq0.593\) n'est donc pas le cœur de la théorie. Il constitue un test de cohérence : il montre que le réseau ne supporte des sources matérielles effectives que dans un régime local.
 
 % ─────────────────────────────────────────────────────────────
-\section{Lien avec Paper 5 : de la géométrie dynamique à la matière émergente}
+\section{Rappel : équation effective de Paper 5}
 \label{sec:paper5}
 % ─────────────────────────────────────────────────────────────
 
-Paper~5 a proposé une équation d'Einstein effective émergente :
+Paper~5 a introduit l'équation effective
 \[
 G_{\mu\nu}[g^{\rm ent}]
 =
@@ -219,7 +214,15 @@ G_{\mu\nu}[g^{\rm ent}]
 +
 8\pi G\,T_{\mu\nu}^{\rm ent}[d_s].
 \]
-Le tenseur d'intrication y est donné sous la forme
+
+Le couplage effectif est
+\[
+G_{\rm eff}(d_s)
+=
+\frac{2}{d_s-1}G.
+\]
+
+Le tenseur d'intrication est construit à partir des variations locales de la dimension spectrale :
 \[
 T_{\mu\nu}^{\rm ent}[d_s]
 =
@@ -238,288 +241,249 @@ g_{\mu\nu}^{\rm ent}\Box d_s
 \right).
 \]
 
-Un test numérique interne a montré qu'un proxy discret de courbure émergente
+Le rôle de Paper~5 est donc de donner une équation géométrique effective. Le rôle de Paper~6 est différent : il consiste à chercher l'équation plus fondamentale dont Paper~5 serait la limite continue.
+
+Cette équation plus fondamentale ne doit pas être écrite en fonction de \(g_{\mu\nu}\), car la métrique est émergente. Elle doit être écrite directement en fonction du réseau d'intrication :
 \[
-G_{ij}^{\rm proxy}
+W_{ij}=I(i:j).
+\]
+
+% ─────────────────────────────────────────────────────────────
+\section{Objet fondamental : le réseau d'intrication}
+\label{sec:network}
+% ─────────────────────────────────────────────────────────────
+
+L'objet fondamental de BuP est la matrice
+\[
+W_{ij}=I(i:j).
+\]
+
+À partir de cette matrice, on construit une longueur d'arête informationnelle :
+\[
+\ell_{ij}
 =
--\kappa_{ij}
-+
-\frac12R_{\rm edge}
+-\ell_0
+\log
+\left(
+\frac{W_{ij}+\epsilon_I}{W_{\max}+\epsilon_I}
+\right).
 \]
-est corrélé à des proxys spectraux construits à partir des variations locales de \(d_s\), notamment
+
+La distance d'intrication entre deux nœuds est la longueur minimale sur le graphe :
 \[
-(\nabla d_s)^2
-\qquad\text{et}\qquad
-\Delta d_s.
+d_{ij}^{\rm ent}
+=
+\min_{\gamma:i\rightarrow j}
+\sum_{(a,b)\in\gamma}
+\ell_{ab}.
 \]
-Ce résultat fournit une première cohérence numérique entre courbure émergente et tenseur spectral.
 
-Le présent papier utilise ce résultat comme base. Si le graphe d'intrication permet déjà de reconstruire une réponse géométrique de type Einstein, alors on peut poser la question suivante :
-
+Dans la limite continue, cette distance définit une métrique émergente :
 \[
-\boxed{
-\text{une excitation localisée de } W_{ij} \text{ peut-elle jouer le rôle de source matérielle ?}
-}
+d_{ij}^{\rm ent}
+\longrightarrow
+d_{g_{\rm ent}}(x_i,x_j),
+\]
+et donc
+\[
+g_{\mu\nu}^{\rm ent}(x).
 \]
 
-Autrement dit, Paper~5 traite la partie
+Le Laplacien du graphe est
+\[
+L=D-W,
+\qquad
+D_{ii}=\sum_j W_{ij}.
+\]
+Dans la limite continue, il doit converger vers un opérateur de type Laplace--Beltrami :
+\[
+L
+\longrightarrow
+-\Delta_{g_{\rm ent}}.
+\]
+
+La dimension spectrale locale est définie par le noyau de chaleur :
+\[
+P_x(\tau)
+=
+\left(e^{-\tau L}\right)_{xx},
+\]
+\[
+d_s(x)
+=
+-2\frac{d\log P_x(\tau)}{d\log \tau}.
+\]
+
+La chaîne d'émergence géométrique est donc :
 \[
 W_{ij}
 \longrightarrow
-g_{\mu\nu}^{\rm ent},
-d_s(x),
-G_{\mu\nu}^{\rm ent}.
+d_{ij}^{\rm ent}
+\longrightarrow
+g_{\mu\nu}^{\rm ent}
+\longrightarrow
+d_s(x)
+\longrightarrow
+G_{\mu\nu}[g^{\rm ent}].
 \]
-Paper~6 explore la partie complémentaire :
+
+Paper~6 ajoute une seconde branche :
 \[
 \delta W_{ij}^{\rm loc}
 \longrightarrow
 T_{\mu\nu}^{\rm matter}.
 \]
 
-La transition conceptuelle est donc :
-\[
-\text{géométrie émergente}
-\quad\longrightarrow\quad
-\text{matière émergente}.
-\]
-
 % ─────────────────────────────────────────────────────────────
-\section{Postulat pur BuP}
-\label{sec:pure-postulate}
+\section{Équation pure BuP}
+\label{sec:pure-equation}
 % ─────────────────────────────────────────────────────────────
 
-Le postulat pur BuP peut être formulé ainsi :
+L'équation fondamentale de BuP pur est une équation sur le réseau :
 \[
 \boxed{
-\text{aucune géométrie, aucune matière et aucun champ ne sont fondamentaux.}
+\mathcal{F}_{ij}[W]=0.
 }
 \]
 
-Le seul objet fondamental est l'état quantique global et la structure d'intrication qu'il induit. Cette structure est représentée par la matrice
-\[
-W_{ij}=I(i:j).
-\]
+Cette équation exprime une condition de cohérence informationnelle. Elle doit sélectionner les réseaux capables de produire simultanément :
+\begin{itemize}
+  \item une géométrie émergente quasi locale ;
+  \item une dimension spectrale stable ;
+  \item une courbure effective ;
+  \item des excitations localisées interprétables comme matière.
+\end{itemize}
 
-En relativité générale, l'équation
+Une écriture variationnelle possible est :
 \[
-G_{\mu\nu}=8\pi G T_{\mu\nu}
-\]
-sépare deux secteurs : la géométrie à gauche, la matière à droite. Dans une formulation pure BuP, cette séparation ne peut pas être fondamentale. Les deux membres doivent apparaître comme des descriptions effectives du même réseau d'intrication.
-
-La chaîne d'émergence attendue est :
-\[
-W_{ij}
-\quad\Longrightarrow\quad
-\begin{cases}
-g_{\mu\nu}^{\rm ent},\\
-d_s(x),\\
-G_{\rm eff}(d_s),\\
-T_{\mu\nu}^{\rm matter},\\
-\text{champs effectifs}.
-\end{cases}
-\]
-
-Les trois premiers objets ont déjà été étudiés dans les travaux précédents. Le présent papier se concentre sur le quatrième : l'émergence du tenseur de matière.
-
-On note
-\[
-W_{ij}^{(0)}
-\]
-une configuration de vide du réseau. Une excitation localisée est une perturbation
-\[
-W_{ij}
-=
-W_{ij}^{(0)}
-+
-\delta W_{ij}^{\rm loc}.
-\]
-Une telle excitation peut être interprétée comme matière si elle est localisée, stable, transportable et si elle produit une réponse géométrique locale.
-
-Dans cette perspective, le tenseur énergie-impulsion n'est pas ajouté au réseau. Il devient une fonctionnelle coarse-grainée des excitations :
-\[
-T_{\mu\nu}^{\rm matter}
-=
-\mathcal{T}_{\mu\nu}[\delta W^{\rm loc}].
-\]
-
-L'équation pure BuP s'écrit donc sous la forme
-\[
+\boxed{
 \frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
+}
 \]
-Les équations de la géométrie et celles de la matière doivent émerger comme limites continues de cette équation unique.
 
-% ─────────────────────────────────────────────────────────────
-\section{Action informationnelle du réseau}
-\label{sec:action}
-% ─────────────────────────────────────────────────────────────
-
-Pour donner un contenu dynamique à l'équation pure BuP, il faut spécifier une action effective définie sur le réseau d'intrication. Une forme minimale conjecturale est
+L'action \(S_{\rm BuP}[W]\) n'est pas encore fixée de manière unique. Une forme générale peut être écrite :
 \[
 S_{\rm BuP}[W]
 =
-S_{\rm spec}[L]
+S_{\rm spec}[L(W)]
 +
-S_{\rm curv}[W]
+S_{\rm geom}[W]
 +
 S_{\rm loc}[W]
 +
-S_{\rm topo}[W],
+S_{\rm norm}[W]
++
+S_{\rm exc}[W].
 \]
-où
-\[
-L=D-W,
-\qquad
-D_{ii}=\sum_j W_{ij}
-\]
-est le Laplacien du graphe.
 
-Le terme spectral
+Le terme spectral contrôle le spectre du Laplacien :
 \[
-S_{\rm spec}[L]
+S_{\rm spec}[W]
 =
-{\rm Tr}\,f(L)
+\alpha
+\int_{\tau_{\min}}^{\tau_{\max}}
+d\tau\,\omega(\tau)
+\left[
+d_s(\tau;W)-d_\star
+\right]^2.
 \]
-contrôle le spectre du Laplacien, donc la diffusion sur le graphe et la dimension spectrale.
 
-Le terme de courbure discrète peut être écrit sous la forme
+Le terme géométrique encode une version discrète de la courbure de type Einstein :
 \[
-S_{\rm curv}[W]
+S_{\rm geom}[W]
 =
+\beta
 \sum_{(i,j)}
-W_{ij}\kappa_{ij},
+W_{ij}
+\left(
+-\kappa_{ij}
++
+\frac12R_{\rm edge}
+\right).
 \]
-où \(\kappa_{ij}\) est la courbure d'Ollivier--Ricci de l'arête \((i,j)\).
 
-Le terme de localité pénalise les connexions fortement non locales dans la géométrie émergente :
+Le terme de localité pénalise les connexions trop non locales :
 \[
 S_{\rm loc}[W]
 =
-\lambda_{\rm loc}
+\gamma
 \sum_{i,j}
 W_{ij}
 \left(d_{ij}^{\rm ent}[W]\right)^2.
 \]
-Ce terme exprime la tension centrale de BuP : assez d'intrication est nécessaire pour produire une géométrie connectée, mais trop d'intrication non locale détruit la notion de proximité spatiale.
 
-Enfin, le terme topologique
+Le terme de normalisation fixe la quantité totale d'intrication :
 \[
-S_{\rm topo}[W]
-\]
-doit permettre l'existence d'excitations stables protégées par des invariants spectraux ou topologiques. Une forme possible est
-\[
-S_{\rm topo}[W]
+S_{\rm norm}[W]
 =
-\sum_{\gamma}
-c_\gamma \Phi_\gamma[W],
+\mu
+\left(
+\sum_{i<j}W_{ij}
+-
+W_{\rm tot}
+\right)^2.
 \]
-où \(\gamma\) parcourt certains cycles du graphe.
 
-L'équation d'Euler--Lagrange du réseau est alors
+Enfin, le terme d'excitation contrôle les modes localisés :
 \[
-\frac{\delta S_{\rm spec}}{\delta W_{ij}}
-+
-\frac{\delta S_{\rm curv}}{\delta W_{ij}}
-+
-\frac{\delta S_{\rm loc}}{\delta W_{ij}}
-+
-\frac{\delta S_{\rm topo}}{\delta W_{ij}}
+S_{\rm exc}[W]
 =
-0.
+S_{\rm mass}[\delta W]
++
+S_{\rm shape}[\delta W]
++
+S_{\rm topo}[\delta W].
 \]
 
-Cette équation n'est ni une équation pour une métrique fondamentale, ni une équation pour un champ de matière fondamental. C'est une équation de cohérence informationnelle du réseau.
+Dans le présent papier, cette action n'est pas utilisée pour générer les matrices numériques. Elle joue le rôle de cadre théorique. Les tests numériques présentés plus loin utilisent des matrices \(W_{ij}\) déjà générées, puis perturbées localement. Une détermination dynamique de \(W_{ij}\) par minimisation de \(S_{\rm BuP}\) est laissée à des travaux futurs.
 
 % ─────────────────────────────────────────────────────────────
-\section{Matière comme excitation stable du réseau}
-\label{sec:matter-excitations}
+\section{Limite continue : récupération de l'équation effective}
+\label{sec:continuum}
 % ─────────────────────────────────────────────────────────────
 
-Dans une formulation pure BuP, la matière apparaît comme une classe particulière de perturbations localisées du réseau :
+La condition pure
+\[
+\mathcal{F}_{ij}[W]=0
+\]
+doit reproduire Paper~5 dans une limite continue.
+
+On considère une configuration régulière \(W^{(0)}\), puis une perturbation lente :
 \[
 W_{ij}
 =
 W_{ij}^{(0)}
 +
-\delta W_{ij}^{\rm loc}.
+\delta W_{ij}.
 \]
 
-Pour qu'une telle perturbation soit interprétable comme matière, elle doit satisfaire plusieurs conditions.
-
-\paragraph{Localisation.}
-La perturbation doit être concentrée dans une région finie de la géométrie émergente :
+Cette perturbation induit
 \[
-\delta W_{ij}^{\rm loc}\simeq0
-\]
-lorsque les nœuds \(i,j\) sont éloignés de la région excitée.
-
-\paragraph{Stabilité.}
-Elle doit persister sous une dynamique effective du réseau, par exemple une descente de gradient sur \(S_{\rm BuP}[W]\).
-
-\paragraph{Transport.}
-Elle doit pouvoir se déplacer dans la géométrie émergente tout en conservant son identité.
-
-\paragraph{Charge ou invariant.}
-Elle doit porter une quantité conservée ou quasi conservée :
-\[
-Q[\delta W^{\rm loc}].
-\]
-
-\paragraph{Réponse géométrique.}
-Elle doit modifier localement la dimension spectrale, la courbure ou la métrique émergente.
-
-Dans la limite continue, une famille d'excitations localisées peut être décrite par des champs effectifs :
-\[
-\delta W_{ij}^{(a)}
+\delta W
 \longrightarrow
-\phi_a(x).
-\]
-Les champs de matière ne sont donc pas fondamentaux. Ils sont des variables collectives décrivant des modes stables du réseau.
-
-Le tenseur énergie-impulsion effectif est alors écrit formellement :
-\[
-T_{\mu\nu}^{\rm matter}
-=
-\mathcal{T}_{\mu\nu}[\delta W^{\rm loc}].
-\]
-Une approximation schématique est
-\[
-T_{\mu\nu}^{\rm matter}
-\sim
-\left\langle
-\delta W^{\rm loc}\delta W^{\rm loc}
-\right\rangle_{\rm coarse}.
-\]
-
-% ─────────────────────────────────────────────────────────────
-\section{Limites continues : géométrie et matière}
-\label{sec:continuum-limits}
-% ─────────────────────────────────────────────────────────────
-
-La formulation pure BuP doit reproduire la physique effective dans plusieurs limites.
-
-Dans la limite géométrique, les distances d'intrication
-\[
-d_{ij}^{\rm ent}
-\]
-définissent une métrique continue
-\[
-g_{\mu\nu}^{\rm ent}(x).
-\]
-Le Laplacien du graphe converge vers un opérateur de type Laplace--Beltrami :
-\[
-L
+\delta g_{\mu\nu}^{\rm ent},
+\qquad
+\delta W
 \longrightarrow
--\Delta_{g_{\rm ent}}.
-\]
-La dimension spectrale locale devient
-\[
-d_s(x)
-=
--2\frac{d\log P_x(\tau)}{d\log\tau}.
+\delta d_s.
 \]
 
-Dans la limite gravitationnelle, les variations lentes du réseau produisent une équation effective :
+Après coarse-graining, la variation de l'action pure BuP doit prendre la forme
+\[
+\delta S_{\rm BuP}
+\longrightarrow
+\int d^dx\sqrt{|g_{\rm ent}|}
+\,
+\mathcal{E}^{\mu\nu}_{\rm ent}
+\delta g_{\mu\nu}^{\rm ent}.
+\]
+
+La stationnarité implique alors
+\[
+\mathcal{E}^{\mu\nu}_{\rm ent}=0.
+\]
+
+L'hypothèse centrale de Paper~6 est que cette équation se réécrit, dans la limite continue, sous la forme effective de Paper~5 :
 \[
 G_{\mu\nu}[g^{\rm ent}]
 =
@@ -528,42 +492,116 @@ G_{\mu\nu}[g^{\rm ent}]
 8\pi G T_{\mu\nu}^{\rm ent}[d_s].
 \]
 
-Dans la limite de matière, les perturbations localisées
-\[
-\delta W^{\rm loc}
-\]
-deviennent des champs effectifs :
-\[
-\delta W^{\rm loc}
-\longrightarrow
-\phi_a(x)
-\longrightarrow
-T_{\mu\nu}^{\rm matter}.
-\]
+Dans cette équation :
+\begin{itemize}
+  \item \(G_{\mu\nu}[g^{\rm ent}]\) provient de la partie géométrique de la limite continue ;
+  \item \(G_{\rm eff}(d_s)\) provient de la dépendance du couplage à la dimension spectrale ;
+  \item \(T_{\mu\nu}^{\rm ent}[d_s]\) provient des gradients et variations de \(d_s\) ;
+  \item \(T_{\mu\nu}^{\rm matter}\) provient des excitations localisées du réseau.
+\end{itemize}
 
-Le programme unifié est donc :
+Ainsi, Paper~5 devient la limite effective de Paper~6 :
 \[
-\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0
+\boxed{
+\mathcal{F}_{ij}[W]=0
 \quad\Longrightarrow\quad
-\begin{cases}
-W_{ij}\rightarrow g_{\mu\nu}^{\rm ent}
-\rightarrow G_{\mu\nu}[g^{\rm ent}],\\[4pt]
-W_{ij}\rightarrow d_s(x)
-\rightarrow G_{\rm eff}(d_s),\\[4pt]
-\delta W^{\rm loc}\rightarrow T_{\mu\nu}^{\rm matter}.
-\end{cases}
+\text{équation d'Einstein effective BuP}.
+}
 \]
 
 % ─────────────────────────────────────────────────────────────
-\section{Programme numérique}
-\label{sec:numerical-program}
+\section{Origine émergente de la matière}
+\label{sec:matter}
 % ─────────────────────────────────────────────────────────────
 
-Le test numérique central consiste à partir d'une matrice de fond
+Dans une formulation pure, la matière ne doit pas être ajoutée au réseau. Elle doit apparaître comme une excitation de \(W_{ij}\).
+
+On écrit :
 \[
+W_{ij}
+=
 W_{ij}^{(0)}
++
+\delta W_{ij}^{\rm loc}.
 \]
-et à injecter une perturbation localisée :
+
+Dans les simulations de ce papier, \(W^{(0)}\) désigne la matrice d'information mutuelle non perturbée, générée pour une valeur donnée de \(\lambda\). Elle n'est pas encore obtenue par minimisation de \(S_{\rm BuP}[W]\).
+
+Une excitation localisée peut être interprétée comme source matérielle effective si elle satisfait plusieurs critères :
+\begin{itemize}
+  \item localisation dans la géométrie émergente ;
+  \item réponse géométrique mesurable ;
+  \item stabilité temporelle ;
+  \item propagation ;
+  \item charge ou invariant informationnel.
+\end{itemize}
+
+Le présent papier ne teste que le deuxième critère : la réponse géométrique instantanée. La stabilité temporelle, la propagation et les charges sont laissées à des travaux futurs.
+
+Le tenseur de matière émergent est formellement écrit :
+\[
+T_{\mu\nu}^{\rm matter}
+=
+\mathcal{T}_{\mu\nu}[\delta W^{\rm loc}].
+\]
+
+Dans les tests numériques, nous utilisons le proxy discret minimal :
+\[
+T_{ij}^{\rm matter,proxy}
+=
+(\delta W_{ij})^2.
+\]
+
+Ce proxy ne décrit pas encore une matière complète. Il mesure seulement l'intensité informationnelle locale de la perturbation.
+
+% ─────────────────────────────────────────────────────────────
+\section{Structure interne des excitations}
+\label{sec:internal-structure}
+% ─────────────────────────────────────────────────────────────
+
+Des tests exploratoires de relaxation d'une action candidate (contraignant la masse
+et le rayon de l'excitation, version préliminaire dite \(S_{\rm BuP}^{(v2)}\)) suggèrent
+que la masse et le rayon d'une excitation ne suffisent pas à caractériser son
+comportement géométrique. Dans ces runs exploratoires, la masse informationnelle
+\(M_{\rm exc}\) et le rayon \(R_{\rm exc}\) peuvent rester presque constants,
+tandis que la corrélation matière-courbure \(\mathcal{O}_{\rm matter}\) varie
+significativement.
+
+Cela indique que la structure interne de \(\delta W^{\rm loc}\) joue un rôle physique.
+Une excitation ne doit donc pas être caractérisée uniquement par sa masse et sa taille,
+mais aussi par des invariants internes.
+
+Parmi les candidats naturels, on peut citer :
+\[
+M_4
+=
+\sum_i r_i^4\rho_i^{\rm exc},
+\]
+des invariants spectraux du Laplacien restreint au sous-graphe excité,
+\[
+{\rm Spec}(L_{\rm exc}),
+\]
+ou encore des invariants topologiques tels que les cycles du sous-graphe excité.
+
+Cette observation suggère que différentes « espèces » de matière pourraient
+correspondre à différentes classes topologiques ou spectrales de l'excitation,
+et non seulement à des valeurs différentes de masse.
+
+Dans un développement ultérieur du programme BuP, différentes classes stables
+de ces invariants pourraient jouer le rôle d'espèces de matière effectives.
+Nous ne prétendons pas identifier ici les particules du modèle standard.
+Le résultat suggère seulement que la matière émergente dans BuP pourrait posséder
+une structure interne non triviale, condition nécessaire pour espérer classifier
+ultérieurement des excitations analogues aux particules.
+
+% ─────────────────────────────────────────────────────────────
+\section{Premier test numérique : fenêtre de localité des excitations}
+\label{sec:numerical}
+% ─────────────────────────────────────────────────────────────
+
+Le test numérique vise à vérifier si une perturbation localisée du réseau produit une réponse géométrique de type source.
+
+On injecte :
 \[
 W_{ij}
 =
@@ -571,30 +609,17 @@ W_{ij}^{(0)}
 +
 A f_i f_j,
 \]
-où
+avec
 \[
 f_i
 =
-\exp\left[
+\exp
+\left[
 -\frac{d_{\rm ent}^2(i,i_0)}{2\sigma^2}
 \right].
 \]
 
-On définit une densité d'excitation nodale :
-\[
-\rho_i^{\rm exc}
-=
-\sum_j
-|W_{ij}-W_{ij}^{(0)}|.
-\]
-On définit également un proxy de matière sur les arêtes :
-\[
-T_{ij}^{\rm matter,proxy}
-=
-(\delta W_{ij})^2.
-\]
-
-La réponse géométrique est mesurée par la variation du proxy d'Einstein discret :
+La réponse de courbure est mesurée par
 \[
 \delta G_{ij}^{\rm proxy}
 =
@@ -602,16 +627,16 @@ G_{ij}^{\rm proxy}[W]
 -
 G_{ij}^{\rm proxy}[W^{(0)}],
 \]
-avec
+où
 \[
 G_{ij}^{\rm proxy}
 =
 -\kappa_{ij}
 +
-\frac12R_{\rm edge}.
+\frac12 R_{\rm edge}.
 \]
 
-L'observable principale est
+Nous définissons l'observable :
 \[
 \mathcal{O}_{\rm matter}(\lambda)
 =
@@ -624,65 +649,41 @@ T_{ij}^{\rm matter,proxy},
 
 Si
 \[
-\mathcal{O}_{\rm matter}(\lambda)>0,
+\mathcal{O}_{\rm matter}>0,
 \]
-l'excitation localisée agit comme une source géométrique effective. Si
+la perturbation agit comme une source géométrique effective. Si
 \[
-\mathcal{O}_{\rm matter}(\lambda)<0,
+\mathcal{O}_{\rm matter}<0,
 \]
-la réponse devient anti-corrélée et l'interprétation en source matérielle locale échoue.
+la réponse devient anti-corrélée : l'interprétation comme source locale échoue.
 
-% ─────────────────────────────────────────────────────────────
-\section{Résultats numériques : seuil critique de localité/matière}
-\label{sec:results}
-% ─────────────────────────────────────────────────────────────
-
-Nous avons d'abord scanné l'observable \(\mathcal{O}_{\rm matter}(\lambda)\) pour des graphes \(N=20\). Un scan large avait initialement indiqué un changement de signe entre \(\lambda=0.57\) et \(\lambda=0.71\). Un scan fin autour de cette région affine fortement l'estimation.
-
-Les deux modes d'excitation, positif et négatif, donnent le même bracket :
+Pour \(N=20\), un scan fin donne :
 \[
-0.58<\lambda_c<0.60.
+0.58<\lambda_c<0.60,
 \]
-Par interpolation linéaire, on obtient :
+avec
 \[
 \lambda_c^{(+)}
-\simeq0.5932,
-\qquad
+\simeq
 \lambda_c^{(-)}
-\simeq0.5932.
+\simeq
+0.5932.
 \]
-Nous retenons donc :
+
+Nous retenons :
 \[
 \boxed{
-\lambda_c(N=20)\simeq0.599
+\lambda_c(N=20)\simeq0.593.
 }
 \]
-comme estimation de taille finie, en tenant compte des scans large et fin.
 
-La transition est abrupte. L'observable d'ordre passe d'une valeur positive d'environ
-\[
-\mathcal{O}_{\rm matter}\sim+0.66
-\]
-à \(\lambda=0.58\), à une valeur négative d'environ
-\[
-\mathcal{O}_{\rm matter}\sim-0.34
-\]
-à \(\lambda=0.60\). Le saut est donc de l'ordre de
-\[
-\Delta \mathcal{O}_{\rm matter}\sim1
-\]
-sur un intervalle
-\[
-\Delta\lambda=0.02.
-\]
-
-Le fait que les modes positif et négatif donnent le même seuil montre que la transition ne dépend pas du signe de la perturbation. Elle est donc interprétée comme une propriété du régime global du réseau.
+Ce seuil n'est pas présenté comme une constante fondamentale. Il est interprété comme une estimation de taille finie d'un seuil de localité : en dessous de \(\lambda_c\), le réseau supporte des excitations interprétables comme sources ; au-dessus, la réponse perd sa cohérence locale.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{../figures/fig_lambda_c_fine_positive.png}
 \caption{
-Scan fin du candidat paramètre d'ordre matière/localité pour \(N=20\), mode positif. L'observable \(\mathcal{O}_{\rm matter}(\lambda)\) change brutalement de signe entre \(\lambda=0.58\) et \(\lambda=0.60\), donnant une estimation interpolée \(\lambda_c\simeq0.5932\). La transition sépare un régime local où l'excitation agit comme source géométrique effective d'un régime non local où la réponse devient anti-corrélée.
+Scan fin de \(\mathcal{O}_{\rm matter}(\lambda)\) pour \(N=20\), mode positif. Le changement de signe entre \(\lambda=0.58\) et \(\lambda=0.60\) indique un seuil critique candidat \(\lambda_c(N=20)\simeq0.593\).
 }
 \label{fig:lambda-c-positive}
 \end{figure}
@@ -691,7 +692,7 @@ Scan fin du candidat paramètre d'ordre matière/localité pour \(N=20\), mode p
 \centering
 \includegraphics[width=0.95\textwidth]{../figures/fig_lambda_c_fine_negative.png}
 \caption{
-Même scan critique pour le mode négatif. Le seuil obtenu est compatible avec celui du mode positif, ce qui indique que \(\lambda_c\) est une propriété du régime informationnel du graphe et non du signe de l'excitation injectée.
+Même scan pour le mode négatif. Le seuil obtenu est compatible avec le mode positif, ce qui indique que la transition est une propriété du régime global du réseau.
 }
 \label{fig:lambda-c-negative}
 \end{figure}
@@ -701,108 +702,75 @@ Même scan critique pour le mode négatif. Le seuil obtenu est compatible avec c
 \label{sec:fss}
 % ─────────────────────────────────────────────────────────────
 
-Afin de tester si le changement de signe est un artefact de taille finie, nous avons répété le scan de
-\[
-\mathcal{O}_{\rm matter}(\lambda)
-\]
-pour
+Nous avons répété le scan de \(\mathcal{O}_{\rm matter}\) pour
 \[
 N=9,12,16,20.
 \]
 
-La Figure~\ref{fig:fss-lambda-c} montre que la transition n'est pas résolue aux petites tailles. Pour \(N=9\), l'observable reste presque plate autour de
-\[
-\mathcal{O}_{\rm matter}\simeq0.4.
-\]
-Pour \(N=12\), elle reste positive mais commence à décroître à grand \(\lambda\). Pour \(N=16\), la décroissance devient plus visible, sans produire de changement de signe. Enfin, pour \(N=20\), un crossing net apparaît autour de
-\[
-\lambda_c(N=20)\simeq0.599.
-\]
+Pour \(N=9\), l'observable reste presque plate et positive. Pour \(N=12\), elle reste positive mais commence à décroître. Pour \(N=16\), la décroissance devient plus nette, sans crossing. Pour \(N=20\), un changement de signe net apparaît.
 
-Cette progression avec \(N\) suggère que la transition matière/localité est arrondie aux petites tailles et devient résolue lorsque la taille du graphe est suffisante. Nous interprétons donc \(\lambda_c(N=20)\) comme une estimation de taille finie d'un seuil critique candidat, et non encore comme une constante universelle.
+Cette évolution suggère que la transition matière/localité est arrondie aux petites tailles et devient résolue à taille suffisante.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\textwidth]{../figures/fig_FSS_lambda_c.png}
 \caption{
-Analyse de taille finie préliminaire du candidat paramètre d'ordre
-\(\mathcal{O}_{\rm matter}(\lambda)\) pour \(N=9,12,16,20\).
-Pour \(N=9\), l'observable reste presque plate et positive. Pour \(N=12\) et \(N=16\), elle décroît progressivement avec \(\lambda\), sans crossing. Pour \(N=20\), un changement de signe net apparaît autour de \(\lambda_c(N=20)\simeq0.599\). Cette évolution suggère que la transition matière/localité devient résolue seulement à taille suffisamment grande.
+Analyse de taille finie préliminaire pour \(N=9,12,16,20\). Le crossing n'est visible qu'à \(N=20\), ce qui suggère une transition arrondie aux petites tailles.
 }
 \label{fig:fss-lambda-c}
 \end{figure}
 
 % ─────────────────────────────────────────────────────────────
-\section{Interprétation : localité, matière et décohérence géométrique}
+\section{Discussion}
 \label{sec:discussion}
 % ─────────────────────────────────────────────────────────────
 
-Les résultats numériques suggèrent que \(\lambda\) agit comme un candidat paramètre de contrôle de la phase informationnelle du réseau. Lorsque
+Le point principal de Paper~6 est la formulation de l'équation pure BuP :
 \[
-\lambda<\lambda_c,
-\]
-le réseau supporte des excitations localisées qui produisent une réponse de courbure positivement corrélée. Dans ce régime, les excitations peuvent être interprétées comme des sources matérielles effectives.
-
-Lorsque
-\[
-\lambda>\lambda_c,
-\]
-la réponse devient anti-corrélée. L'excitation est encore présente dans \(W_{ij}\), mais elle ne se traduit plus par une réponse géométrique locale positive. Cela suggère une perte de cohérence géométrique locale.
-
-Il est donc naturel d'interpréter \(\lambda_c\) comme un seuil de transition localité/décohérence. En dessous du seuil, la perturbation reste géométriquement cohérente. Au-dessus, elle devient dispersée ou réorganisée à l'échelle du réseau, et ne peut plus être interprétée comme source matérielle locale.
-
-Cette lecture est plus naturelle que l'interprétation en antimatière. Les tests d'excitations positives et négatives montrent en effet que le changement de signe de \(\mathcal{O}_{\rm matter}\) ne dépend pas du signe de \(\delta W\). Les deux modes donnent le même seuil. Il s'agit donc d'une propriété du régime global du graphe, non d'un mode conjugué simple.
-
-La conclusion conceptuelle est :
-\[
-\boxed{
-\text{la matière émergente nécessite une phase locale du réseau d'intrication.}
-}
+\mathcal{F}_{ij}[W]=0.
 \]
 
-Cela donne une condition nouvelle à la formulation pure BuP. Il ne suffit pas qu'un réseau soit intriqué pour produire de la matière effective. Il doit être dans une phase où les excitations localisées restent géométriquement cohérentes.
+Cette équation est plus fondamentale que l'équation effective de Paper~5, car elle porte directement sur le réseau d'intrication. Dans cette perspective, la métrique, la dimension spectrale, la courbure et la matière sont des variables émergentes.
+
+Le résultat numérique sur \(\lambda_c\) ne constitue pas une dérivation complète de la matière. Il montre plutôt qu'il existe une condition de localité : une excitation localisée de \(W_{ij}\) ne se comporte comme source géométrique que dans un certain régime du réseau.
+
+Il est donc naturel d'interpréter \(\lambda\) comme un paramètre de contrôle de la phase informationnelle. Lorsque \(\lambda<\lambda_c\), la réponse est cohérente avec une source localisée. Lorsque \(\lambda>\lambda_c\), la réponse devient anti-corrélée. Nous parlons ici de perte de cohérence locale, et non de décohérence quantique au sens standard.
+
+Les tests exploratoires sur la relaxation de \(S_{\rm BuP}\) suggèrent en outre que la stabilité d'une excitation ne dépend pas seulement de sa masse et de son rayon. La structure interne de \(\delta W^{\rm loc}\) pourrait jouer un rôle essentiel dans la classification future des excitations de matière.
+
+La suite naturelle du programme est de construire explicitement \(S_{\rm BuP}[W]\), de générer \(W^{(0)}\) comme solution variationnelle, puis de tester la stabilité, la propagation et les invariants internes des excitations.
 
 % ─────────────────────────────────────────────────────────────
 \section{Limites et perspectives}
 % ─────────────────────────────────────────────────────────────
 
-Cette étude reste préliminaire. Plusieurs limites doivent être soulignées.
+Cette formulation reste préliminaire.
 
-Premièrement, le seuil
+Premièrement, l'action \(S_{\rm BuP}[W]\) n'est pas encore fixée de manière unique. Elle est introduite comme cadre théorique.
+
+Deuxièmement, les simulations actuelles ne résolvent pas encore
 \[
-\lambda_c(N=20)\simeq0.599
+\frac{\delta S_{\rm BuP}}{\delta W_{ij}}=0.
 \]
-est une estimation de taille finie. Des simulations à \(N>20\) seront nécessaires pour déterminer si
+Elles utilisent des matrices \(W_{ij}\) générées indépendamment, puis perturbées localement.
+
+Troisièmement, la stabilité temporelle des excitations n'est pas encore testée.
+
+Quatrièmement, le seuil
 \[
-\lambda_c(N)
+\lambda_c(N=20)\simeq0.593
 \]
-converge vers une valeur limite.
+reste une estimation de taille finie.
 
-Deuxièmement, le proxy de matière utilisé ici,
-\[
-T_{ij}^{\rm matter,proxy}=(\delta W_{ij})^2,
-\]
-est volontairement minimal. Il mesure l'énergie informationnelle locale de la perturbation, mais ne capture pas encore des propriétés plus riches comme les charges, les phases ou les structures topologiques.
-
-Troisièmement, la dynamique de stabilité temporelle n'est pas encore simulée. Le présent papier teste la réponse géométrique instantanée à une excitation localisée. Une étape ultérieure devra introduire une évolution effective du réseau :
-\[
-\frac{dW_{ij}}{dt_{\rm eff}}
-=
--\eta
-\frac{\delta S_{\rm BuP}}{\delta W_{ij}},
-\]
-puis vérifier la stabilité, la propagation et la conservation d'invariants.
-
-Quatrièmement, les liens avec les équations de champ connues restent à construire. Ce papier ne dérive pas encore les équations de Dirac, Maxwell ou Yang--Mills. Il établit seulement une première condition numérique pour que des excitations du réseau puissent être interprétées comme sources matérielles effectives.
-
-Les perspectives immédiates sont donc :
+Les prochaines étapes sont :
 \begin{enumerate}
-  \item tester \(N>20\) lorsque le coût numérique le permettra ;
-  \item raffiner l'analyse de taille finie ;
-  \item tester d'autres profils d'excitation ;
-  \item introduire des perturbations topologiques ou orientées ;
-  \item définir des charges informationnelles conservées ;
-  \item simuler la dynamique temporelle des excitations.
+  \item définir une action BuP explicite ;
+  \item générer les états \(W^{(0)}\) par minimisation de cette action ;
+  \item tester la stabilité temporelle des excitations ;
+  \item étudier leur propagation ;
+  \item rechercher des charges ou invariants informationnels ;
+  \item classifier les excitations par invariants spectraux et topologiques ;
+  \item tester la convergence de \(\lambda_c(N)\) pour des tailles plus grandes.
 \end{enumerate}
 
 % ─────────────────────────────────────────────────────────────
@@ -810,41 +778,43 @@ Les perspectives immédiates sont donc :
 \label{sec:conclusion}
 % ─────────────────────────────────────────────────────────────
 
-Ce papier propose une étape vers une formulation pure BuP, dans laquelle la matière et la géométrie émergent du même réseau d'intrication. L'équation fondamentale conjecturale est
+Paper~5 a proposé l'équation d'Einstein effective BuP :
 \[
-\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
-\]
-
-Dans cette formulation, l'équation d'Einstein effective de Paper~5 n'est pas fondamentale. Elle apparaît comme une limite continue et coarse-grainée de la dynamique du réseau. De même, le tenseur énergie-impulsion de la matière n'est pas postulé : il doit émerger d'excitations localisées de \(W_{ij}\).
-
-Le résultat numérique principal est la définition d'un candidat paramètre d'ordre
-\[
-\mathcal{O}_{\rm matter}(\lambda)
+G_{\mu\nu}[g^{\rm ent}]
 =
-\rho_{\rm Spearman}
-\left(
-T_{ij}^{\rm matter,proxy},
-|\delta G_{ij}^{\rm proxy}|
-\right),
+8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
++
+8\pi G T_{\mu\nu}^{\rm ent}[d_s].
 \]
-qui mesure si une excitation localisée agit comme source géométrique effective.
 
-Pour \(N=20\), cette observable change brutalement de signe autour de
-\[
-\lambda_c(N=20)\simeq0.599.
-\]
-Une analyse de taille finie préliminaire montre que la transition n'est pas visible à \(N=9\), reste arrondie à \(N=12\) et \(N=16\), puis devient résolue à \(N=20\).
-
-Nous interprétons ce seuil comme un candidat seuil critique de localité/matière. En dessous de \(\lambda_c\), le réseau supporte des excitations localisées interprétables comme matière effective. Au-dessus, la réponse devient anti-corrélée, suggérant une perte de cohérence géométrique locale.
-
-Ainsi, Paper~6 propose la thèse suivante :
+Paper~6 propose l'équation sous-jacente :
 \[
 \boxed{
-\text{la matière est une excitation stable d'une phase locale du réseau d'intrication.}
+\mathcal{F}_{ij}[W]=0.
 }
 \]
 
-Cette thèse reste à confirmer par des simulations plus grandes et par une dynamique explicite du réseau. Néanmoins, les résultats présentés ici fournissent un premier test numérique interne de l'idée que la matière, comme la géométrie, peut émerger du substrat informationnel BuP.
+Dans cette formulation pure, la géométrie et la matière ne sont pas fondamentales. Elles émergent du même réseau d'intrication \(W_{ij}\).
+
+La limite continue de \(\mathcal{F}_{ij}[W]=0\) doit reproduire l'équation effective de Paper~5. Les excitations localisées du réseau doivent, après coarse-graining, produire le tenseur de matière effectif :
+\[
+T_{\mu\nu}^{\rm matter}
+=
+\mathcal{T}_{\mu\nu}[\delta W^{\rm loc}].
+\]
+
+Le test numérique présenté ici fournit un premier indice de cohérence : il existe, à \(N=20\), une fenêtre de localité séparée par
+\[
+\lambda_c(N=20)\simeq0.593,
+\]
+dans laquelle les perturbations localisées se comportent comme sources géométriques effectives.
+
+Ainsi, la thèse centrale de Paper~6 est :
+\[
+\boxed{
+\text{l'équation d'Einstein effective et la matière émergent comme limites d'une équation pure sur } W_{ij}.
+}
+\]
 
 % ─────────────────────────────────────────────────────────────
 \begin{thebibliography}{9}
