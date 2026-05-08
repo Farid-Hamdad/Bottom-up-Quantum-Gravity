@@ -41,7 +41,7 @@ $$
 \frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}} = 0,
 $$
 
-où \( S_{\rm BuP}[W] \) est une action conjecturale (termes spectraux, de courbure, de localité, topologiques). Sa forme exacte n'est pas encore fixée et fait partie du programme futur.
+où $S_{\rm BuP}[W]$ est une action conjecturale (termes spectraux, de courbure, de localité, topologiques). Sa forme exacte n'est pas encore fixée et fait partie du programme futur.
 
 ---
 
@@ -86,16 +86,10 @@ $$
 Le paramètre d'ordre est :
 
 $$
-\mathcal{O}_{\rm matter}(\lambda)
-=
-\rho_{\rm Spearman}
-\left(
-T_{ij}^{\rm matter,proxy},
-|\delta G_{ij}^{\rm proxy}|
-\right).
+\mathcal{O}_{\rm matter}(\lambda) = \rho_{\rm Spearman} \left( T_{ij}^{\rm matter,proxy}, |\delta G_{ij}^{\rm proxy}| \right).
 $$
 
-Pour \(N = 20\), le scan fin donne :
+Pour $N = 20$, le scan fin donne :
 
 $$
 \lambda_c(N=20) \simeq 0.593.
@@ -103,8 +97,8 @@ $$
 
 Ce seuil est interprété comme une estimation de taille finie d'un seuil critique de localité :
 
-- Pour \( \lambda < \lambda_c \), l'excitation localisée agit comme une source positive de courbure, c'est-à-dire comme un proxy de matière effective.
-- Pour \( \lambda > \lambda_c \), la réponse devient anti-corrélée, indiquant une perte de cohérence locale.
+- Pour $\lambda < \lambda_c$, l'excitation localisée agit comme une source positive de courbure, c'est-à-dire comme un proxy de matière effective.
+- Pour $\lambda > \lambda_c$, la réponse devient anti-corrélée, indiquant une perte de cohérence locale.
 
 Ainsi, dans ce test, les excitations interprétables comme sources matérielles effectives n'apparaissent que dans la **phase locale** du réseau d'intrication.
 
@@ -112,7 +106,7 @@ Ainsi, dans ce test, les excitations interprétables comme sources matérielles 
 
 ## Aperçu exploratoire de la relaxation d'action
 
-La relaxation préliminaire d'une action candidate \( S_{\rm BuP}^{(v2)} \) est présentée comme un prototype exploratoire, non comme une validation complète de l'action pure BuP. Cette relaxation préliminaire (qui conserve la masse et le rayon de l'excitation) montre que la cohérence géométrique \( \mathcal{O}_{\rm matter} \) diminue même lorsque la masse et le rayon sont fixés. Cela indique que la stabilité de la matière nécessite non seulement une localisation, mais aussi une **cohérence interne**, peut-être protégée par des invariants topologiques ou spectraux.
+La relaxation préliminaire d'une action candidate $S_{\rm BuP}^{(v2)}$ est présentée comme un prototype exploratoire, non comme une validation complète de l'action pure BuP. Cette relaxation préliminaire (qui conserve la masse et le rayon de l'excitation) montre que la cohérence géométrique $\mathcal{O}_{\rm matter}$ diminue même lorsque la masse et le rayon sont fixés. Cela indique que la stabilité de la matière nécessite non seulement une localisation, mais aussi une **cohérence interne**, peut-être protégée par des invariants topologiques ou spectraux.
 
 ---
 
