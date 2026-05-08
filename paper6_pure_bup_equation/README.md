@@ -17,7 +17,6 @@ G_{\mu\nu}[g^{\rm ent}]
 8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
 +
 8\pi G T_{\mu\nu}^{\rm ent}[d_s].
-$$
 
 Paper 6 propose l'équation pure BuP sous-jacente :
 
