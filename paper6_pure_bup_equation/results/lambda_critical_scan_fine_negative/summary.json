@@ -1,1 +1,51 @@
 
+{
+  "titre": "BuP Paper 6 — Scan fin du seuil critique de localité, mode négatif",
+  "description": "Ce fichier résume le scan fin de l'observable d'ordre matière/localité pour des excitations localisées négatives du réseau d'intrication.",
+  "papier": "Paper 6 — Équation pure BuP : de l'intrication à l'équation d'Einstein effective",
+  "mode_excitation": "negative",
+  "objet_testé": "Perturbation localisée négative du réseau d'information mutuelle W_ij",
+  "definition_observable": {
+    "nom": "O_matter(lambda)",
+    "formule": "rho_Spearman(T_ij^matter,proxy, |delta G_ij^proxy|)",
+    "proxy_matiere": "T_ij^matter,proxy = (delta W_ij)^2",
+    "proxy_courbure": "G_ij^proxy = -kappa_ij + 1/2 R_edge",
+    "interpretation": "O_matter > 0 indique qu'une excitation localisée agit comme source géométrique effective ; O_matter < 0 indique une réponse anti-corrélée."
+  },
+  "configuration": {
+    "N": 20,
+    "k_local": 5,
+    "sigma_excitation": 1.0,
+    "amplitude_excitation": -0.15,
+    "fenetre_tau": [0.01, 50.0],
+    "type_scan": "scan fin autour du changement de signe"
+  },
+  "resultat_principal": {
+    "lambda_c_estime": 0.5932,
+    "bracket": [0.58, 0.60],
+    "comparaison_mode_positif": "Le mode négatif donne le même bracket et la même estimation du seuil critique que le mode positif.",
+    "robustesse": "Le changement de signe ne dépend pas du signe de la perturbation injectée."
+  },
+  "interpretation_physique": {
+    "phase_locale": "Pour lambda < lambda_c, l'excitation localisée reste compatible avec une source géométrique effective.",
+    "phase_non_locale": "Pour lambda > lambda_c, la réponse devient anti-corrélée, indiquant une perte de cohérence locale.",
+    "absence_mode_antimatiere_simple": "Le fait que les modes positif et négatif donnent le même seuil suggère que la transition n'est pas un effet de signe de type antimatière, mais une propriété globale du régime du réseau.",
+    "statut_du_seuil": "lambda_c(N=20) est interprété comme une estimation de taille finie d'un seuil critique de localité."
+  },
+  "lien_avec_paper6": {
+    "role": "test de robustesse",
+    "message": "Ce scan confirme que le seuil lambda_c est une propriété du régime informationnel du réseau, et non un artefact du signe de l'excitation.",
+    "relation_equation_pure": "Il renforce l'idée que l'équation pure BuP F_ij[W] = 0 doit sélectionner des phases du réseau capables ou non de supporter des excitations matérielles locales."
+  },
+  "fichiers_associes": {
+    "scan_detaille": "lambda_critical_scan.csv",
+    "resume_par_lambda": "lambda_critical_summary_by_lambda.csv",
+    "figure_principale": "fig_order_parameter_vs_lambda.png"
+  },
+  "limites": [
+    "Résultat obtenu à taille finie N=20.",
+    "La convergence de lambda_c(N) pour N plus grand reste à tester.",
+    "Le proxy de matière utilisé reste minimal.",
+    "La dynamique complète des excitations n'est pas encore simulée."
+  ]
+}
