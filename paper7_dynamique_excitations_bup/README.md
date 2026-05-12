@@ -8,56 +8,15 @@
 
 ## Idée centrale
 
-Paper 6 a proposé l’équation pure BuP :
+Paper 7 étudie la dynamique d'une excitation locale du réseau d'intrication sous relaxation d'une action candidate :
 
 \[
-\mathcal{F}_{ij}[W]=0,
+S_{\rm BuP}[W].
 \]
 
-ou sous forme variationnelle :
+L'objectif est de comprendre si une excitation localisée \(\delta W^{\rm loc}\) peut se comporter comme une source géométrique stable, métastable ou non-source.
 
-\[
-\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
-\]
-
-Paper 7 étudie la dynamique induite par une action candidate \(S_{\rm BuP}[W]\).  
-L’objectif est de comprendre comment une excitation localisée du réseau d’intrication évolue sous relaxation variationnelle.
-
-Une excitation localisée est écrite :
-
-\[
-W_{ij}
-=
-W_{ij}^{(0)}
-+
-\delta W_{ij}^{\rm loc}.
-\]
-
-Le point central du papier est que le caractère “source de matière” d’une excitation n’est pas automatiquement conservé : il dépend de la dynamique de relaxation de \(S_{\rm BuP}\).
-
----
-
-## Observable matière-courbure
-
-Le proxy de matière est :
-
-\[
-T_{ij}^{\rm matter,proxy}
-=
-(\delta W_{ij})^2.
-\]
-
-Le proxy géométrique est :
-
-\[
-G_{ij}^{\rm proxy}
-=
--\kappa_{ij}
-+
-\frac12 R_{\rm edge}.
-\]
-
-L’observable principale est :
+L'observable principale est :
 
 \[
 \mathcal{O}_{\rm matter}
@@ -66,175 +25,106 @@ L’observable principale est :
 \left(
 T_{ij}^{\rm matter,proxy},
 |\delta G_{ij}^{\rm proxy}|
-\right).
+\right),
 \]
 
-Interprétation :
+où :
 
-- \( \mathcal{O}_{\rm matter} > 0 \) : l’excitation agit comme une source géométrique effective ;
-- \( \mathcal{O}_{\rm matter} < 0 \) : la réponse devient anti-corrélée, donc l’excitation perd son caractère source-like.
+\[
+T_{ij}^{\rm matter,proxy}
+=
+(\delta W_{ij}^{\rm loc})^2.
+\]
 
 ---
 
 ## Résultat principal
 
-Le scan en \(\lambda\) révèle une dynamique non triviale sous relaxation de \(S_{\rm BuP}\).
-
-Trois régimes apparaissent :
+Pour \(N=20\), le système présente trois régimes :
 
 \[
-\lambda_{\rm init}
-\simeq
-0.265,
+\lambda_{\rm init}\simeq0.265,
 \]
 
 \[
-\lambda_{\rm meta}
-\simeq
-0.876,
+\lambda_{\rm meta}\simeq0.876,
 \]
 
 \[
-\lambda_{\rm late}
-\simeq
-0.280.
+\lambda_{\rm late}\simeq0.280.
 \]
 
-### Interprétation
-
-| Régime | Valeur | Interprétation |
-|---|---:|---|
-| Initial | \( \lambda_{\rm init}\simeq0.265 \) | crossing juste après injection |
-| Métastable | \( \lambda_{\rm meta}\simeq0.876 \) | plateau source-like observé entre 10 et 20 pas |
-| Tardif | \( \lambda_{\rm late}\simeq0.280 \) | régime non-source stable de 40 à 320 pas |
-
-Ce résultat suggère que les excitations BuP peuvent passer par un régime métastable source-like avant de relaxer vers un régime tardif non-source.
+Le régime autour de \(\lambda_{\rm meta}\simeq0.876\) apparaît pour des temps de relaxation intermédiaires, entre 10 et 20 pas. Le régime tardif autour de \(\lambda_{\rm late}\simeq0.280\) apparaît à partir de 40 pas et reste stable jusqu'à 320 pas.
 
 ---
 
-## Résultat temporel
+## Interprétation
 
-La dépendance au nombre de pas de relaxation donne :
+La relaxation de \(S_{\rm BuP}\) révèle une structure de paysage variationnel :
 
-| Steps | Crossing final | Lecture |
+- un état source-like métastable ;
+- un régime tardif non-source ;
+- une dépendance forte au temps de relaxation ;
+- une dépendance non triviale à la taille \(N\).
+
+La matière émergente peut donc être interprétée comme une excitation source-like métastable du réseau d'intrication.
+
+---
+
+## Scan en temps de relaxation
+
+| Steps | Crossing final | Interprétation |
 |---:|---:|---|
-| 5 | \(0.215\) | régime transitoire court |
-| 10–20 | \(0.876\) | plateau métastable source-like |
-| 40–320 | \(0.280\) | régime tardif non-source |
-
-Le régime tardif :
-
-\[
-\lambda_{\rm late}
-=
-0.2800098754
-\]
-
-reste stable pour :
-
-\[
-40,\;80,\;120,\;160,\;320
-\]
-
-pas de relaxation.
+| 5 | 0.215 | régime transitoire court |
+| 10 | 0.876 | plateau métastable |
+| 20 | 0.876 | plateau métastable confirmé |
+| 40 | 0.280 | régime tardif |
+| 80 | 0.280 | régime tardif stable |
+| 120 | 0.280 | régime tardif stable |
+| 160 | 0.280 | régime tardif stable |
+| 320 | 0.280 | régime tardif stable |
 
 ---
 
-## Interprétation physique prudente
+## Scan en taille finie
 
-Les résultats suggèrent que la matière émergente BuP pourrait être comprise comme une phase métastable du réseau d’intrication.
-
-Une particule BuP ne serait pas simplement une perturbation locale de \(W_{ij}\), mais un défaut métastable du réseau :
-
-\[
-\text{particule BuP}
-=
-\text{excitation localisée source-like métastable}.
-\]
-
-Dans cette lecture :
-
-- une excitation source-like correspond à une phase de matière effective ;
-- une relaxation longue peut conduire vers un régime non-source ;
-- la stabilité d’une particule nécessiterait une protection interne : topologique, spectrale ou symétrique.
-
-Cette interprétation reste programmatique. Le temps de relaxation numérique n’est pas encore identifié au temps physique cosmologique.
+| \(N\) | Steps | \(\lambda_{\rm init}\) | \(\lambda_{\rm final}\) | Interprétation |
+|---:|---:|---:|---:|---|
+| 15 | 20 | 0.042 | 0.042 | pas de dynamique visible |
+| 15 | 160 | 0.042 | 0.042 | pas de dynamique visible |
+| 18 | 20 | 0.522 | 0.478 | régime précritique |
+| 18 | 160 | 0.522 | 0.478 | régime précritique stable |
+| 20 | 20 | 0.265 | 0.876 | plateau métastable source-like |
+| 20 | 160 | 0.265 | 0.280 | régime tardif non-source |
+| 22 | 20 | none | 0.359 | phase source-like initialement dominante |
+| 22 | 160 | none | 0.360 | seuil dynamique stable |
+| 24 | 20 | 0.427 | none | phase source-like globale après relaxation |
+| 24 | 160 | 0.427 | 0.521 | sélection tardive |
 
 ---
 
-## Action candidate
+## Conclusion courte
 
-L’action utilisée dans ce papier est une action effective candidate :
-
-\[
-S_{\rm BuP}[W]
-=
-S_{\rm spec}
-+
-S_{\rm geom}
-+
-S_{\rm loc}
-+
-S_{\rm norm}
-+
-S_{\rm exc}.
-\]
-
-Elle contient :
-
-- un terme spectral \(S_{\rm spec}\), contrôlant \(d_s\) ;
-- un terme géométrique \(S_{\rm geom}\), basé sur \(G_{ij}^{\rm proxy}\) ;
-- un terme de localité \(S_{\rm loc}\), basé sur \(d_{ij}^{\rm ent}\) ;
-- un terme de normalisation \(S_{\rm norm}\) ;
-- un terme d’excitation \(S_{\rm exc}\).
-
-Cette action n’est pas encore l’action finale de BuP. Elle sert ici à explorer la dynamique variationnelle des excitations.
+Paper 7 montre que les excitations BuP ne sont pas simplement des perturbations statiques de \(W_{ij}\). Elles possèdent une dynamique interne, des phases métastables et des effets de taille finie. Une particule BuP peut être vue comme un défaut source-like métastable du réseau d'intrication.
 
 ---
 
-## Robustesse
-
-Le plateau métastable autour de :
-
-\[
-\lambda_{\rm meta}
-\simeq
-0.876
-\]
-
-est robuste dans les scans effectués sur les coefficients :
-
-\[
-\gamma=0.005,\;0.01,\;0.02,\;0.05,
-\]
-
-\[
-\beta=0.02,\;0.05,\;0.1,\;0.2,\;0.5,
-\]
-
-\[
-m_{\rm exc}=0,\;0.01,\;0.05,\;0.1,\;0.2.
-\]
-
-Cette robustesse est observée dans le protocole numérique utilisé. Elle ne doit pas encore être interprétée comme une universalité fondamentale.
-
----
-
-## Structure du dossier
+## Structure
 
 ```text
 paper7_variational_dynamics/
 ├── README.md
 ├── paper/
 │   └── main_fr.tex
-├── figures/
-│   ├── fig_phase_scan_lambda.png
-│   ├── fig_delta_O_lambda.png
-│   ├── fig_internal_observables_lambda.png
-│   └── fig_crossing_vs_steps.png
 ├── scripts/
-│   └── bup_paper7_phase_scan_v1.py
-└── results/
-    ├── paper7_phase_scan_summary.csv
-    ├── paper7_steps_summary.csv
-    └── summary.json
+│   ├── bup_paper7_phase_scan_v1.py
+│   └── bup_generate_mi_matrices.py
+├── results/
+│   ├── paper7_phase_scan_summary.csv
+│   ├── paper7_steps_summary.csv
+│   ├── paper7_finite_size_summary.csv
+│   └── summary.json
+└── figures/
+    ├── fig_phase_scan_lambda.png
+    ├── fig_crossing_vs_steps.png
+    └── fig_finite_size_crossings.png
