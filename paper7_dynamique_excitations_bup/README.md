@@ -89,9 +89,9 @@ La matière émergente peut donc être interprétée comme une excitation source
 | 18 | 160 | 0.522 | 0.478 | régime précritique stable |
 | 20 | 20 | 0.265 | 0.876 | plateau métastable source-like |
 | 20 | 160 | 0.265 | 0.280 | régime tardif non-source |
-| 22 | 20 | none | 0.359 | phase source-like initialement dominante |
-| 22 | 160 | none | 0.360 | seuil dynamique stable |
-| 24 | 20 | 0.427 | none | phase source-like globale après relaxation |
+| 22 | 20 | — | 0.359 | phase source-like initialement dominante |
+| 22 | 160 | — | 0.360 | seuil dynamique stable |
+| 24 | 20 | 0.427 | — | phase source-like globale après relaxation |
 | 24 | 160 | 0.427 | 0.521 | sélection tardive |
 
 ---
