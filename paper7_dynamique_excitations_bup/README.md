@@ -3,69 +3,62 @@
 **Titre FR :** Dynamique variationnelle des excitations BuP : métastabilité, phases internes et relaxation de la matière émergente  
 **Titre EN :** Variational Dynamics of BuP Excitations: Metastability, Internal Phases and Relaxation of Emergent Matter  
 **Auteur :** Farid Hamdad  
-**Année :** 2026
+**Année :** 2026  
+
 ---
 
 ## Idée centrale
 
 Paper 7 étudie la dynamique d'une excitation locale du réseau d'intrication sous relaxation d'une action candidate :
 
-\[
+$$
 S_{\rm BuP}[W].
-\]
+$$
 
-L'objectif est de comprendre si une excitation localisée \(\delta W^{\rm loc}\) peut se comporter comme une source géométrique stable, métastable ou non-source.
+L'objectif est de comprendre si une excitation localisée $\delta W^{\rm loc}$ peut se comporter comme une source géométrique stable, métastable ou non-source.
 
 L'observable principale est :
 
-\[
-\mathcal{O}_{\rm matter}
-=
-\rho_{\rm Spearman}
-\left(
-T_{ij}^{\rm matter,proxy},
-|\delta G_{ij}^{\rm proxy}|
-\right),
-\]
+$$
+\mathcal{O}_{\rm matter} = \rho_{\rm Spearman} \left( T_{ij}^{\rm matter,proxy}, |\delta G_{ij}^{\rm proxy}| \right),
+$$
 
 où :
 
-\[
-T_{ij}^{\rm matter,proxy}
-=
-(\delta W_{ij}^{\rm loc})^2.
-\]
+$$
+T_{ij}^{\rm matter,proxy} = (\delta W_{ij}^{\rm loc})^2.
+$$
 
 ---
 
 ## Résultat principal
 
-Pour \(N=20\), le système présente trois régimes :
+Pour $N = 20$, le système présente trois régimes :
 
-\[
-\lambda_{\rm init}\simeq0.265,
-\]
+$$
+\lambda_{\rm init} \simeq 0.265,
+$$
 
-\[
-\lambda_{\rm meta}\simeq0.876,
-\]
+$$
+\lambda_{\rm meta} \simeq 0.876,
+$$
 
-\[
-\lambda_{\rm late}\simeq0.280.
-\]
+$$
+\lambda_{\rm late} \simeq 0.280.
+$$
 
-Le régime autour de \(\lambda_{\rm meta}\simeq0.876\) apparaît pour des temps de relaxation intermédiaires, entre 10 et 20 pas. Le régime tardif autour de \(\lambda_{\rm late}\simeq0.280\) apparaît à partir de 40 pas et reste stable jusqu'à 320 pas.
+Le régime autour de $\lambda_{\rm meta} \simeq 0.876$ apparaît pour des temps de relaxation intermédiaires, entre 10 et 20 pas. Le régime tardif autour de $\lambda_{\rm late} \simeq 0.280$ apparaît à partir de 40 pas et reste stable jusqu'à 320 pas.
 
 ---
 
 ## Interprétation
 
-La relaxation de \(S_{\rm BuP}\) révèle une structure de paysage variationnel :
+La relaxation de $S_{\rm BuP}$ révèle une structure de paysage variationnel :
 
-- un état source-like métastable ;
-- un régime tardif non-source ;
+- un état source-like **métastable** ;
+- un régime tardif **non-source** ;
 - une dépendance forte au temps de relaxation ;
-- une dépendance non triviale à la taille \(N\).
+- une dépendance non triviale à la taille $N$.
 
 La matière émergente peut donc être interprétée comme une excitation source-like métastable du réseau d'intrication.
 
@@ -74,7 +67,7 @@ La matière émergente peut donc être interprétée comme une excitation source
 ## Scan en temps de relaxation
 
 | Steps | Crossing final | Interprétation |
-|---:|---:|---|
+|------:|---------------:|----------------|
 | 5 | 0.215 | régime transitoire court |
 | 10 | 0.876 | plateau métastable |
 | 20 | 0.876 | plateau métastable confirmé |
@@ -88,8 +81,8 @@ La matière émergente peut donc être interprétée comme une excitation source
 
 ## Scan en taille finie
 
-| \(N\) | Steps | \(\lambda_{\rm init}\) | \(\lambda_{\rm final}\) | Interprétation |
-|---:|---:|---:|---:|---|
+| $N$ | Steps | $\lambda_{\rm init}$ | $\lambda_{\rm final}$ | Interprétation |
+|----:|------:|---------------------:|----------------------:|----------------|
 | 15 | 20 | 0.042 | 0.042 | pas de dynamique visible |
 | 15 | 160 | 0.042 | 0.042 | pas de dynamique visible |
 | 18 | 20 | 0.522 | 0.478 | régime précritique |
@@ -105,7 +98,7 @@ La matière émergente peut donc être interprétée comme une excitation source
 
 ## Conclusion courte
 
-Paper 7 montre que les excitations BuP ne sont pas simplement des perturbations statiques de \(W_{ij}\). Elles possèdent une dynamique interne, des phases métastables et des effets de taille finie. Une particule BuP peut être vue comme un défaut source-like métastable du réseau d'intrication.
+Paper 7 montre que les excitations BuP ne sont pas simplement des perturbations statiques de $W_{ij}$. Elles possèdent une dynamique interne, des phases métastables et des effets de taille finie. Une particule BuP peut être vue comme un défaut source-like métastable du réseau d'intrication.
 
 ---
 
