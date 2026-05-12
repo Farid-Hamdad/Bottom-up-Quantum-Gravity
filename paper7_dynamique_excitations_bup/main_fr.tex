@@ -1,0 +1,929 @@
+\documentclass[11pt,a4paper]{article}
+
+% ─────────────────────────────────────────────────────────────
+% Packages
+% ─────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% ─────────────────────────────────────────────────────────────
+% Macros
+% ─────────────────────────────────────────────────────────────
+\newcommand{\bup}{\mathrm{BuP}}
+\newcommand{\ent}{\mathrm{ent}}
+\newcommand{\matter}{\mathrm{matter}}
+\newcommand{\eff}{\mathrm{eff}}
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\proxy}{\mathrm{proxy}}
+\newcommand{\Omat}{\mathcal{O}_{\rm matter}}
+\newcommand{\SbuP}{S_{\rm BuP}}
+\newcommand{\W}{W_{ij}}
+
+% ─────────────────────────────────────────────────────────────
+% Title
+% ─────────────────────────────────────────────────────────────
+\title{
+\textbf{Dynamique variationnelle des excitations BuP}\\[0.5em]
+\large Métastabilité, phases internes et relaxation de la matière émergente}
+\author{
+Farid Hamdad\\
+\small Independent Researcher\\
+\small Bottom-Up Quantum Gravity Program
+}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+% ─────────────────────────────────────────────────────────────
+\begin{abstract}
+% ─────────────────────────────────────────────────────────────
+
+Paper~6 a proposé une formulation pure du programme Bottom-Up Quantum Gravity
+(BuP) sous la forme d'une équation fondamentale sur le réseau d'information
+mutuelle,
+\[
+\mathcal{F}_{ij}[W]=0,
+\]
+ou, de manière variationnelle,
+\[
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
+\]
+Dans cette formulation, la géométrie, la dimension spectrale et la matière ne
+sont pas fondamentales : elles doivent émerger du réseau d'intrication
+\[
+W_{ij}=I(i:j).
+\]
+
+Le présent papier explore la dynamique induite par une action candidate
+\(S_{\rm BuP}[W]\). Nous étudions comment une excitation localisée du réseau,
+\[
+W_{ij}=W_{ij}^{(0)}+\delta W_{ij}^{\rm loc},
+\]
+évolue sous relaxation variationnelle. Le caractère source d'une excitation
+est mesuré par l'observable
+\[
+\mathcal{O}_{\rm matter}
+=
+\rho_{\rm Spearman}
+\left(
+T_{ij}^{\rm matter,proxy},
+|\delta G_{ij}^{\rm proxy}|
+\right),
+\]
+où
+\[
+T_{ij}^{\rm matter,proxy}=(\delta W_{ij})^2
+\]
+et
+\[
+G_{ij}^{\rm proxy}
+=
+-\kappa_{ij}+\frac12R_{\rm edge}.
+\]
+
+Le résultat principal est que \(\mathcal{O}_{\rm matter}\) n'est pas conservée
+sous relaxation. Le seuil initial source/non-source est situé autour de
+\[
+\lambda_{\rm init}\simeq0.265.
+\]
+Après une relaxation intermédiaire de \(10\) à \(20\) pas, un plateau
+métastable apparaît autour de
+\[
+\lambda_{\rm meta}\simeq0.876.
+\]
+Pour des relaxations plus longues, de \(40\) à \(320\) pas, le système rejoint
+un régime tardif stable autour de
+\[
+\lambda_{\rm late}\simeq0.280.
+\]
+Un scan en taille finie (\(N=15,18,20,22,24\)) montre que cette dynamique
+varie fortement avec \(N\) : elle est absente à \(N=15\), précritique à \(N=18\),
+maximale à \(N=20\), puis devient plus globalement source à \(N=22\) et
+\(N=24\).
+
+Ces résultats suggèrent que les excitations BuP ne sont pas simplement des
+perturbations localisées de \(W_{ij}\), mais des phases dynamiques internes du
+réseau. Une excitation source peut être métastable, puis relaxer vers un
+régime non-source. Cette observation ouvre une voie vers une interprétation de
+la matière comme défaut métastable du réseau d'intrication, sans toutefois
+identifier encore les particules du Modèle Standard.
+
+\end{abstract}
+
+\tableofcontents
+
+% ─────────────────────────────────────────────────────────────
+\section{Introduction}
+% ─────────────────────────────────────────────────────────────
+
+Le programme Bottom-Up Quantum Gravity (BuP) repose sur l'idée que l'espace, la
+géométrie et la gravitation ne sont pas fondamentaux. Ils émergent de la structure
+d'intrication d'un état quantique global. L'objet de base est une matrice
+d'information mutuelle,
+\[
+W_{ij}=I(i:j),
+\]
+à partir de laquelle on reconstruit une distance d'intrication, une métrique
+effective \(g_{\mu\nu}^{\rm ent}\), une dimension spectrale locale \(d_s(x)\) et
+un couplage gravitationnel effectif.
+
+Paper~5 a formulé une équation d'Einstein effective émergente,
+\[
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
++
+8\pi G T_{\mu\nu}^{\rm ent}[d_s].
+\]
+Paper~6 a proposé une étape plus fondamentale :
+\[
+\mathcal{F}_{ij}[W]=0,
+\]
+ou encore
+\[
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
+\]
+Dans cette formulation, la matière ne doit pas être ajoutée au réseau comme une
+source externe. Elle doit émerger comme une excitation localisée de \(W_{ij}\).
+
+Le présent papier explore la dynamique de ces excitations sous relaxation d'une
+action candidate \(S_{\rm BuP}[W]\). La question centrale est :
+
+\[
+\boxed{
+\text{Une excitation source reste-t-elle source sous relaxation de }S_{\rm BuP} ?
+}
+\]
+
+La réponse numérique obtenue ici est non triviale. L'excitation ne conserve pas
+nécessairement son caractère source. Elle peut changer de phase interne,
+passer par un régime métastable, puis rejoindre un régime tardif non-source.
+
+L'objectif de Paper~7 est donc de montrer que la matière émergente dans BuP ne
+doit pas être comprise uniquement comme une bosse locale de \(\delta W\), mais
+comme une phase dynamique de cette excitation dans le paysage variationnel de
+\(S_{\rm BuP}\).
+
+% ─────────────────────────────────────────────────────────────
+\section{Rappel de Paper 6 : équation pure BuP}
+% ─────────────────────────────────────────────────────────────
+
+Paper~6 a introduit l'idée que l'équation fondamentale de BuP doit porter
+directement sur le réseau d'information mutuelle :
+\[
+\mathcal{F}_{ij}[W]=0.
+\]
+
+Une écriture variationnelle possible est :
+\[
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
+\]
+
+Dans cette perspective, l'équation d'Einstein effective de Paper~5 doit apparaître
+comme une limite continue :
+\[
+\mathcal{F}_{ij}[W]=0
+\quad
+\Longrightarrow
+\quad
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
++
+8\pi G T_{\mu\nu}^{\rm ent}[d_s].
+\]
+
+La chaîne d'émergence géométrique est :
+\[
+W_{ij}
+\longrightarrow
+d_{ij}^{\rm ent}
+\longrightarrow
+g_{\mu\nu}^{\rm ent}
+\longrightarrow
+d_s(x)
+\longrightarrow
+G_{\mu\nu}[g^{\rm ent}].
+\]
+
+La matière doit émerger d'une branche complémentaire :
+\[
+\delta W_{ij}^{\rm loc}
+\longrightarrow
+T_{\mu\nu}^{\rm matter}.
+\]
+
+Paper~7 se concentre précisément sur cette deuxième branche : la dynamique de
+\(\delta W^{\rm loc}\).
+
+% ─────────────────────────────────────────────────────────────
+\section{Action candidate \(S_{\rm BuP}[W]\)}
+% ─────────────────────────────────────────────────────────────
+
+Nous considérons une action candidate de la forme générale :
+\[
+S_{\rm BuP}[W]
+=
+S_{\rm spec}[W]
++
+S_{\rm geom}[W]
++
+S_{\rm loc}[W]
++
+S_{\rm norm}[W]
++
+S_{\rm exc}[W].
+\]
+
+Le terme spectral contrôle la dimension spectrale :
+\[
+S_{\rm spec}[W]
+=
+\alpha
+\left[
+d_s(W)-d_\star
+\right]^2.
+\]
+
+Le terme géométrique contrôle un proxy discret de courbure :
+\[
+S_{\rm geom}[W]
+=
+\beta
+\left\langle
+\left(G_{ij}^{\rm proxy}\right)^2
+\right\rangle_{(i,j)}.
+\]
+
+Le terme de localité pénalise les connexions fortes à grande distance
+d'intrication :
+\[
+S_{\rm loc}[W]
+=
+\gamma
+\left\langle
+W_{ij}\left(d_{ij}^{\rm ent}\right)^2
+\right\rangle_{(i,j)}.
+\]
+
+Le terme de normalisation contrôle la masse totale d'intrication :
+\[
+S_{\rm norm}[W]
+=
+\mu
+\left(
+\frac{\sum_{i<j}W_{ij}-\sum_{i<j}W^{(0)}_{ij}}
+{\sum_{i<j}W^{(0)}_{ij}}
+\right)^2.
+\]
+
+Enfin, le terme d'excitation contrôle les déformations localisées :
+\[
+S_{\rm exc}[W]
+=
+m_{\rm exc}
+\left[
+\left\langle
+(\delta W_{ij})^2
+\right\rangle
++
+\eta_{\rm grad}
+S_{\rm smooth}[\delta W]
+\right].
+\]
+
+Dans les simulations de ce papier, \(S_{\rm BuP}\) est utilisée comme action
+candidate effective. Elle ne constitue pas encore l'action finale de BuP. Son
+rôle est de fournir un protocole variationnel permettant d'étudier la relaxation
+des excitations localisées.
+
+% ─────────────────────────────────────────────────────────────
+\section{Excitations localisées et observable matière-courbure}
+% ─────────────────────────────────────────────────────────────
+
+Une excitation localisée est construite sous la forme :
+\[
+W_{ij}
+=
+W_{ij}^{(0)}
++
+\delta W_{ij}^{\rm loc}.
+\]
+
+Dans le protocole numérique, on injecte une perturbation gaussienne localisée :
+\[
+\delta W_{ij}^{\rm loc}
+=
+A f_i f_j,
+\]
+avec
+\[
+f_i
+=
+\exp
+\left[
+-\frac{d_{\rm ent}^2(i,i_0)}{2\sigma^2}
+\right].
+\]
+
+Le proxy discret de matière est :
+\[
+T_{ij}^{\rm matter,proxy}
+=
+(\delta W_{ij})^2.
+\]
+
+La réponse géométrique est mesurée par :
+\[
+\delta G_{ij}^{\rm proxy}
+=
+G_{ij}^{\rm proxy}[W]
+-
+G_{ij}^{\rm proxy}[W^{(0)}],
+\]
+où
+\[
+G_{ij}^{\rm proxy}
+=
+-\kappa_{ij}
++
+\frac12R_{\rm edge}.
+\]
+
+L'observable principale est :
+\[
+\mathcal{O}_{\rm matter}
+=
+\rho_{\rm Spearman}
+\left(
+T_{ij}^{\rm matter,proxy},
+|\delta G_{ij}^{\rm proxy}|
+\right).
+\]
+
+Si
+\[
+\mathcal{O}_{\rm matter}>0,
+\]
+l'excitation est interprétable comme source géométrique effective.
+Si
+\[
+\mathcal{O}_{\rm matter}<0,
+\]
+la réponse devient anti-corrélée : l'excitation perd son caractère source.
+
+% ─────────────────────────────────────────────────────────────
+\section{Protocole numérique}
+% ─────────────────────────────────────────────────────────────
+
+Le protocole utilisé est le suivant :
+
+\begin{enumerate}
+  \item charger une matrice d'information mutuelle \(W^{(0)}(\lambda)\) ;
+  \item construire le graphe \(k\)-NN associé ;
+  \item calculer les distances d'intrication, la dimension spectrale et le proxy \(G_{ij}^{\rm proxy}\) ;
+  \item injecter une excitation localisée \(\delta W^{\rm loc}\) ;
+  \item mesurer \(\mathcal{O}_{\rm matter}^{\rm init}\) ;
+  \item relaxer \(W\) selon une descente de \(S_{\rm BuP}\) ;
+  \item mesurer \(\mathcal{O}_{\rm matter}^{\rm final}\) ;
+  \item classifier le régime dynamique.
+\end{enumerate}
+
+La relaxation est réalisée sous la forme :
+\[
+W(t+1)
+=
+W(t)
+-
+\eta
+\frac{\nabla_W S_{\rm BuP}}{\|\nabla_W S_{\rm BuP}\|}.
+\]
+
+Une procédure de line-search est utilisée pour n'accepter que les pas qui
+diminuent l'action :
+\[
+S_{\rm BuP}[W(t+1)]
+\leq
+S_{\rm BuP}[W(t)].
+\]
+
+La dimension cible \(d_\star\) est prise en mode automatique :
+\[
+d_\star=d_s(W^{(0)}).
+\]
+Cela évite de forcer les petits graphes \(N=20\) vers une dimension cible
+incompatible avec leur régime spectral effectif.
+
+% ─────────────────────────────────────────────────────────────
+\section{Résultat principal : transformation de phase sous relaxation}
+% ─────────────────────────────────────────────────────────────
+
+Nous définissons quatre classes dynamiques :
+
+\[
+(+,+):\quad
+\mathcal{O}_{\rm init}>0,\quad
+\mathcal{O}_{\rm final}>0,
+\]
+correspondant à une source stable.
+
+\[
+(+,-):\quad
+\mathcal{O}_{\rm init}>0,\quad
+\mathcal{O}_{\rm final}<0,
+\]
+correspondant à une source qui perd sa cohérence.
+
+\[
+(-,+):\quad
+\mathcal{O}_{\rm init}<0,\quad
+\mathcal{O}_{\rm final}>0,
+\]
+correspondant à une source qui émerge après relaxation.
+
+\[
+(-,-):\quad
+\mathcal{O}_{\rm init}<0,\quad
+\mathcal{O}_{\rm final}<0,
+\]
+correspondant à un régime non-source.
+
+Dans le scan de référence à \(20\) pas de relaxation, on obtient :
+\[
+\lambda_{\rm init}\simeq0.265,
+\]
+pour le seuil initial, et
+\[
+\lambda_{\rm final}\simeq0.876,
+\]
+pour le seuil final.
+
+Les résultats montrent que plusieurs excitations initialement source
+deviennent anti-corrélées après relaxation. C'est le cas des régimes
+\[
+\lambda=0.29,\quad0.43,\quad0.57.
+\]
+Ces régimes sont donc classés comme \emph{source décohérée}.
+
+Cela montre que le caractère source d'une excitation n'est pas seulement
+une propriété statique de l'injection initiale. Il dépend de la dynamique
+variationnelle de \(S_{\rm BuP}\).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{../figures/fig_phase_scan_lambda.png}
+\caption{
+Évolution de \(\mathcal{O}_{\rm matter}\) avant et après relaxation de
+\(S_{\rm BuP}\). Le seuil initial se situe autour de
+\(\lambda_{\rm init}\simeq0.265\), tandis que le seuil final à relaxation
+intermédiaire se situe autour de \(\lambda_{\rm final}\simeq0.876\).
+}
+\label{fig:phase-scan}
+\end{figure}
+
+% ─────────────────────────────────────────────────────────────
+\section{Dépendance au temps de relaxation}
+% ─────────────────────────────────────────────────────────────
+
+Nous avons étudié la dépendance au nombre de pas de relaxation pour le cas
+\(N=20\). Le seuil initial reste constant :
+\[
+\lambda_{\rm init}\simeq0.265.
+\]
+
+En revanche, le seuil final dépend fortement du temps de relaxation.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c}
+\toprule
+Nombre de pas & Seuil final & Interprétation \\
+\midrule
+5 & \(0.215\) & régime transitoire court \\
+10--20 & \(0.876\) & plateau métastable source \\
+40--320 & \(0.280\) & régime tardif non-source \\
+\bottomrule
+\end{tabular}
+\caption{
+Évolution du seuil source/non-source en fonction du nombre de pas de
+relaxation pour \(N=20\). Le plateau intermédiaire autour de \(0.876\) est
+interprété comme un régime métastable source. Le régime autour de \(0.280\)
+persiste jusqu'à \(320\) pas et constitue un attracteur tardif candidat.
+}
+\label{tab:steps-crossing}
+\end{table}
+
+La structure observée est donc :
+\[
+\lambda_{\rm init}\simeq0.265,
+\]
+\[
+\lambda_{\rm meta}\simeq0.876,
+\]
+\[
+\lambda_{\rm late}\simeq0.280.
+\]
+
+Le régime \(\lambda_{\rm meta}\simeq0.876\) apparaît pour des temps
+intermédiaires, entre \(10\) et \(20\) pas. Le régime
+\(\lambda_{\rm late}\simeq0.280\) apparaît à partir de \(40\) pas et reste stable
+jusqu'à \(320\) pas.
+
+Cette séparation suggère que la relaxation de \(S_{\rm BuP}[W]\) ne produit pas
+une évolution monotone simple. Elle révèle au moins deux régimes dynamiques :
+un plateau métastable source et un régime tardif non-source.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{../figures/fig_crossing_vs_steps.png}
+\caption{
+Évolution du seuil final en fonction du nombre de pas de relaxation.
+Le régime intermédiaire autour de \(0.876\) correspond à un plateau métastable,
+tandis que le régime tardif autour de \(0.280\) reste stable jusqu'à \(320\)
+pas.
+}
+\label{fig:crossing-steps}
+\end{figure}
+
+% ─────────────────────────────────────────────────────────────
+\section{Tendance en taille finie et transition de phase en \(N\)}
+% ─────────────────────────────────────────────────────────────
+
+Nous avons ensuite testé la dépendance en taille du réseau pour
+\[
+N=15,\;18,\;20,\;22,\;24.
+\]
+Le but est de vérifier si la dynamique métastable observée à \(N=20\) est déjà
+présente dans des réseaux plus petits, et comment elle évolue lorsque \(N\)
+augmente.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c c l}
+\toprule
+\(N\) & Steps & \(\lambda_{\rm init}\) & \(\lambda_{\rm final}\) & Interprétation \\
+\midrule
+15 & 20  & \(0.042\) & \(0.042\) & pas de dynamique visible \\
+15 & 160 & \(0.042\) & \(0.042\) & pas de dynamique visible \\
+18 & 20  & \(0.522\) & \(0.478\) & régime précritique \\
+18 & 160 & \(0.522\) & \(0.478\) & régime précritique stable \\
+20 & 20  & \(0.265\) & \(0.876\) & plateau métastable fort \\
+20 & 160 & \(0.265\) & \(0.280\) & régime tardif non-source \\
+22 & 20  & — & \(0.359\) & source initial dominant \\
+22 & 160 & — & \(0.360\) & seuil dynamique stable \\
+24 & 20  & \(0.427\) & — & phase source globale \\
+24 & 160 & \(0.427\) & \(0.521\) & sélection tardive \\
+\bottomrule
+\end{tabular}
+\caption{
+Tendance en taille finie des seuils source/non-source.
+Le symbole « — » indique l’absence de seuil initial (\(\mathcal{O}_{\rm init}>0\)
+sur toute la grille testée) ou l’absence de seuil final (\(\mathcal{O}_{\rm final}>0\)
+sur toute la grille). La dynamique est absente à \(N=15\), précritique à \(N=18\),
+fortement métastable à \(N=20\), puis devient plus globalement source à \(N=22\)
+et \(N=24\). Le cas \(N=24\) montre une phase source complète à \(20\) pas,
+suivie d'une sélection tardive à \(160\) pas.
+}
+\label{tab:finite-size}
+\end{table}
+
+La comparaison montre une structure non monotone mais cohérente.
+
+À \(N=15\), la relaxation ne modifie pas le seuil :
+\[
+\lambda_{\rm init}
+=
+\lambda_{\rm final}
+\simeq0.042.
+\]
+La dynamique interne des excitations n'est donc pas encore visible.
+
+À \(N=18\), une dynamique précritique apparaît :
+\[
+\lambda_{\rm init}\simeq0.522,
+\qquad
+\lambda_{\rm final}\simeq0.478.
+\]
+Le seuil est modifié par la relaxation, mais il reste stable entre \(20\) et
+\(160\) pas. Le plateau métastable observé à \(N=20\) n'est pas encore présent.
+
+À \(N=20\), le système présente la structure la plus riche :
+\[
+\lambda_{\rm final}(20)\simeq0.876,
+\]
+puis
+\[
+\lambda_{\rm final}(160)\simeq0.280.
+\]
+Nous interprétons ce cas comme un régime critique ou quasi-critique où la
+métastabilité source devient clairement visible. La forte séparation entre
+le plateau métastable et le régime tardif, ainsi que la sensibilité au temps
+de relaxation, plaident en faveur de ce caractère critique.
+
+À \(N=22\), le seuil initial disparaît car
+\[
+\mathcal{O}_{\rm matter}^{\rm init}>0
+\]
+sur toute la grille de \(\lambda\) testée. Les excitations injectées sont donc
+source sur toute la plage explorée. Après relaxation, un seuil dynamique
+stable apparaît autour de
+\[
+\lambda_{\rm final}^{N=22}\simeq0.36.
+\]
+
+À \(N=24\), la relaxation intermédiaire rend toutes les excitations source :
+\[
+\lambda_{\rm final}(20)=\text{—}\ (\mathcal{O}_{\rm final}>0\ \text{partout}).
+\]
+À relaxation longue, un seuil réapparaît :
+\[
+\lambda_{\rm final}(160)\simeq0.521.
+\]
+
+Ces résultats suggèrent que la matière effective devient une propriété
+collective du réseau lorsque \(N\) augmente. Le cas \(N=20\) semble marquer une
+région critique de taille finie, tandis que \(N=22\) et \(N=24\) indiquent une
+phase plus globalement source.
+
+Nous n'interprétons pas encore cette tendance comme une limite asymptotique
+\(N\to\infty\). Les données montrent une dépendance non monotone en \(N\), qui
+devra être explorée par des tailles supplémentaires.
+
+% ─────────────────────────────────────────────────────────────
+\section{Robustesse vis-à-vis des coefficients de l'action}
+% ─────────────────────────────────────────────────────────────
+
+Nous avons testé la dépendance du seuil final aux coefficients de l'action
+candidate \(S_{\rm BuP}\).
+
+Le seuil métastable obtenu à \(10\) à \(20\) pas reste stable lorsque l'on varie
+séparément :
+\[
+\gamma=0.005,\;0.01,\;0.02,\;0.05,
+\]
+\[
+\beta=0.02,\;0.05,\;0.1,\;0.2,\;0.5,
+\]
+et
+\[
+m_{\rm exc}=0,\;0.01,\;0.05,\;0.1,\;0.2.
+\]
+
+Dans tous ces scans, le seuil final reste proche de :
+\[
+\lambda_{\rm final}\simeq0.876.
+\]
+
+Cette robustesse suggère que le plateau métastable n'est pas un artefact d'un
+réglage fin des coefficients de l'action. Il semble plutôt refléter une propriété
+de la famille de réseaux \(W_{ij}(\lambda)\) sous relaxation variationnelle.
+
+Cette conclusion doit toutefois être nuancée : le protocole utilise un gradient
+normalisé et une line-search, ce qui peut réduire la sensibilité aux coefficients.
+La robustesse observée doit donc être comprise comme une robustesse dans le
+protocole numérique considéré, et non comme une preuve d'universalité absolue.
+
+% ─────────────────────────────────────────────────────────────
+\section{Structure interne des excitations}
+% ─────────────────────────────────────────────────────────────
+
+Les simulations montrent que la masse informationnelle et le rayon d'une
+excitation ne suffisent pas à déterminer son comportement géométrique.
+
+Dans plusieurs runs, on observe :
+\[
+M_{\rm exc}^{\rm init}
+\simeq
+M_{\rm exc}^{\rm final},
+\]
+\[
+R_{\rm exc}^{\rm init}
+\simeq
+R_{\rm exc}^{\rm final},
+\]
+tandis que :
+\[
+\mathcal{O}_{\rm matter}^{\rm init}
+\neq
+\mathcal{O}_{\rm matter}^{\rm final}.
+\]
+
+Cela signifie que l'excitation peut conserver sa masse et sa taille tout en
+changeant sa cohérence géométrique interne. La nature d'une excitation BuP ne
+dépend donc pas seulement de quantités globales comme \(M_{\rm exc}\) ou
+\(R_{\rm exc}\), mais aussi de sa structure interne.
+
+Les candidats naturels pour caractériser cette structure sont :
+\[
+{\rm Spec}(L_{\rm exc}),
+\]
+le spectre du Laplacien local de l'excitation,
+\[
+M_4
+=
+\sum_i r_i^4\rho_i^{\rm exc},
+\]
+un moment de forme,
+ou encore des invariants topologiques tels que les cycles excités du sous-graphe
+porteur de \(\delta W^{\rm loc}\).
+
+Dans une version plus complète de BuP, une particule pourrait correspondre à une
+classe stable de ces invariants internes.
+
+% ─────────────────────────────────────────────────────────────
+\section{Discussion : matière métastable}
+% ─────────────────────────────────────────────────────────────
+
+Les résultats de Paper~7 suggèrent une lecture programmatique :
+
+\[
+\boxed{
+\text{la matière BuP pourrait être une phase métastable de l'intrication.}
+}
+\]
+
+Dans cette perspective, une particule n'est pas un objet fondamental ajouté au
+réseau. Elle est un défaut organisé de \(W_{ij}\), capable de produire une
+réponse géométrique source pendant un temps effectif fini.
+
+Une durée de vie effective peut être définie par :
+\[
+\tau_{\rm life}
+=
+\min
+\left\{
+t:
+\mathcal{O}_{\rm matter}(t)\leq0
+\right\}.
+\]
+
+Une excitation est interprétable comme particule effective tant que :
+\[
+\mathcal{O}_{\rm matter}(t)>0.
+\]
+
+La stabilité d'une particule BuP pourrait alors résulter de trois mécanismes :
+
+\begin{enumerate}
+  \item une barrière d'action élevée dans \(S_{\rm BuP}\) ;
+  \item une protection topologique ou spectrale ;
+  \item une symétrie interne empêchant la relaxation vers le régime non-source.
+\end{enumerate}
+
+Cette interprétation reste spéculative. Les pas de relaxation utilisés ici ne
+sont pas encore identifiés au temps physique. Ils doivent être compris comme un
+temps effectif de relaxation du réseau. Le lien avec le temps cosmologique ou le
+temps émergent BuP reste à établir.
+
+Néanmoins, les résultats montrent que le caractère source de la matière
+émergente n'est pas trivialement stable. Il dépend de la trajectoire de
+relaxation dans le paysage de \(S_{\rm BuP}\).
+
+% ─────────────────────────────────────────────────────────────
+\section{Limites et perspectives}
+% ─────────────────────────────────────────────────────────────
+
+Cette étude reste préliminaire.
+
+Premièrement, l'action \(S_{\rm BuP}\) utilisée ici est une action candidate.
+Elle n'est pas encore dérivée de principes premiers.
+
+Deuxièmement, les matrices \(W_{ij}\) utilisées ne sont pas générées comme
+solutions exactes de
+\[
+\frac{\delta S_{\rm BuP}}{\delta W_{ij}}=0.
+\]
+Elles proviennent d'une famille de matrices MI déjà construites, puis relaxées.
+
+Troisièmement, le temps de relaxation n'est pas encore identifié au temps
+physique.
+
+Quatrièmement, les excitations injectées sont des perturbations gaussiennes
+simples. Des excitations topologiques, orientées ou complexes devront être
+testées.
+
+Les perspectives immédiates sont :
+
+\begin{enumerate}
+  \item tester plusieurs centres d'excitation ;
+  \item tester plusieurs amplitudes et largeurs \(\sigma\) ;
+  \item introduire des invariants topologiques de boucle ;
+  \item ajouter un terme de protection \(S_{\rm protect}\) dans l'action ;
+  \item tester si une excitation peut rester source jusqu'à \(320\) pas ou plus ;
+  \item construire un diagramme de phase \((\lambda,t)\) complet.
+\end{enumerate}
+
+% ─────────────────────────────────────────────────────────────
+\section{Conclusion}
+% ─────────────────────────────────────────────────────────────
+
+Paper~7 explore la dynamique variationnelle des excitations BuP sous relaxation
+d'une action candidate \(S_{\rm BuP}[W]\). Cette dynamique est une manière
+d’explorer le paysage de l’équation pure \(\mathcal{F}_{ij}[W]=0\) (Paper~6).
+
+Le résultat principal est que le caractère source d'une excitation
+localisée n'est pas conservé automatiquement. L'observable
+\[
+\mathcal{O}_{\rm matter}
+=
+\rho_{\rm Spearman}
+\left(
+T_{ij}^{\rm matter,proxy},
+|\delta G_{ij}^{\rm proxy}|
+\right)
+\]
+évolue sous relaxation et révèle plusieurs régimes dynamiques.
+
+Pour \(N=20\), nous identifions :
+\[
+\lambda_{\rm init}\simeq0.265,
+\]
+comme seuil initial,
+\[
+\lambda_{\rm meta}\simeq0.876,
+\]
+comme plateau métastable source,
+et
+\[
+\lambda_{\rm late}\simeq0.280,
+\]
+comme régime tardif non-source, stable jusqu'à \(320\) pas.
+
+Le scan en taille finie montre que cette dynamique dépend fortement de \(N\).
+À \(N=15\), elle est absente. À \(N=18\), un régime précritique apparaît. À
+\(N=20\), la métastabilité source est maximale. À \(N=22\) et \(N=24\),
+les excitations deviennent plus globalement source, avec des seuils
+dynamiques tardifs.
+
+Ces résultats suggèrent que la matière émergente dans BuP ne doit pas être
+comprise seulement comme une excitation localisée de \(W_{ij}\), mais comme une
+phase dynamique interne de cette excitation dans le paysage variationnel de
+\(S_{\rm BuP}\).
+
+La conclusion conceptuelle prudente est :
+\[
+\boxed{
+\text{une particule BuP pourrait correspondre à un défaut métastable source du réseau d'intrication.}
+}
+\]
+
+Sa stabilité demanderait alors un mécanisme de protection : barrière d'action,
+invariant topologique, invariant spectral ou symétrie interne. Sans protection,
+une excitation source peut relaxer vers un régime tardif non-source.
+
+Le présent papier ne prétend pas identifier les particules du Modèle Standard.
+Il établit plutôt un résultat intermédiaire : les excitations BuP possèdent une
+dynamique interne non triviale sous relaxation de \(S_{\rm BuP}\), avec
+métastabilité, régimes tardifs et effets de taille finie.
+
+% ─────────────────────────────────────────────────────────────
+\begin{thebibliography}{9}
+% ─────────────────────────────────────────────────────────────
+
+\bibitem{hamdad-paper5}
+F.~Hamdad,
+\textit{Équation d'Einstein effective émergente dans la Gravité Quantique Bottom-Up},
+BuP Paper 5, GitHub repository, 2026.
+
+\bibitem{hamdad-paper6}
+F.~Hamdad,
+\textit{Équation pure BuP : de l'intrication à l'équation d'Einstein effective},
+BuP Paper 6, GitHub repository, 2026.
+
+\bibitem{ollivier}
+Y.~Ollivier,
+\textit{Ricci curvature of Markov chains on metric spaces},
+Journal of Functional Analysis, 256, 810--864, 2009.
+
+\bibitem{spectral-dimension}
+D.~Benedetti,
+\textit{Fractal properties of quantum spacetime},
+Physical Review Letters, 102, 111303, 2009.
+
+\end{thebibliography}
+
+\end{document}
