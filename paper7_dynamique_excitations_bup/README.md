@@ -121,3 +121,22 @@ paper7_variational_dynamics/
     ├── fig_phase_scan_lambda.png
     ├── fig_crossing_vs_steps.png
     └── fig_finite_size_crossings.png
+
+Citation
+bibtex
+@misc{hamdad2026paper7,
+  author  = {Farid Hamdad},
+  title   = {Dynamique variationnelle des excitations BuP :
+             métastabilité, phases internes et relaxation de la matière émergente},
+  year    = {2026},
+  note    = {BuP Paper 7},
+  url     = {https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity}
+}
+Liens
+GitHub : Farid-Hamdad/Bottom-up-Quantum-Gravity
+
+Paper 5 : paper5_effective_einstein/
+
+Paper 6 : paper6_pure_bup_equation/
+
+Paper 7 (source) : paper7_variational_dynamics/paper/main_fr.tex
