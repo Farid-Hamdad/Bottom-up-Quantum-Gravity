@@ -1,0 +1,11 @@
+N,steps,crossing_init,crossing_final,interpretation,source_file
+15,20,0.04216470588235294,0.04216470588235294,no_visible_dynamics,results_paper7_N15_steps_20/summary.json
+15,160,0.04216470588235294,0.04216470588235294,no_visible_dynamics,results_paper7_N15_steps_160/summary.json
+18,20,0.5215452489888986,0.47840742785902113,precritical_regime,results_paper7_N18_steps_20/summary.json
+18,160,0.5215452489888986,0.47840742785902113,precritical_stable,results_paper7_N18_steps_160/summary.json
+20,20,0.26476708045867525,0.8759731543624161,metastable_source_like_plateau,results_paper7_steps_20/summary.json
+20,160,0.26476708045867525,0.2800098754420057,late_non_source_regime,results_paper7_steps_160/summary.json
+22,20,,0.35911066940916714,dominant_source_like_initial_phase,results_paper7_N22_steps_20/summary.json
+22,160,,0.3598128799423245,stable_dynamic_threshold,results_paper7_N22_steps_160/summary.json
+24,20,0.4274144970355382,,global_source_like_after_relaxation,results_paper7_N24_steps_20/summary.json
+24,160,0.4274144970355382,0.5205958787846663,late_selection_regime,results_paper7_N24_steps_160/summary.json
