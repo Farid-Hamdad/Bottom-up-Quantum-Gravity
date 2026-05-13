@@ -1,0 +1,8 @@
+test,source_or_proxy,best_sigma,omega,chi,psi,beta,gamma,spearman_abs_deltaR,pvalue_abs_deltaR,rel_L2,improvement_factor,interpretation
+curvature,T00,0.05,,,,,,0.195,0.409,,,density_only_insufficient
+curvature,T00_minus_half_Taa,0.15,-0.5,,,,,0.526,0.017,,,fluid_source_improves_response
+curvature,T00_minus_half_Taa_plus_half_Tgrad,0.15,-0.5,0.5,,,,0.612,0.00413,,,internal_stress_improves_response
+curvature,T00_minus_half_Taa_plus_half_Tgrad_plus_flux,0.15,-0.5,0.5,1.0,,,0.741,0.0001837,,,flux_component_gives_best_response
+conservation,matter_only,,,,,,,,,1.000,1.0,not_conserved_isolated
+conservation,delta_ds_proxy,0.15,,,,,,,,0.668,1.50,weak_entanglement_compensation
+conservation,delta_ds_plus_deltaR_plus_lapR,0.01,,,,,1.0,0.5,,,0.380,2.63,partial_matter_entanglement_compensation
