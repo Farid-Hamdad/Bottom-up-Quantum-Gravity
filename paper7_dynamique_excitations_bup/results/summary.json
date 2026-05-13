@@ -1,0 +1,39 @@
+{
+  "title": "Paper 7 phase scan under S_BuP relaxation",
+  "description": "This scan tracks how localized BuP excitations change phase under relaxation of a candidate action.",
+  "observable": "O_matter = Spearman(T_matter_proxy, |delta G_proxy|)",
+  "interpretation": {
+    "++": "source remains source after relaxation",
+    "+-": "source decoheres or changes internal phase",
+    "-+": "source-like behavior emerges after relaxation",
+    "--": "non-source regime"
+  },
+  "config": {
+    "mi_dir": "results_mi_N20_full/",
+    "output_dir": "results_paper7_phase_scan_v1",
+    "k": 5,
+    "tau_min": 0.01,
+    "tau_max": 50.0,
+    "tau_points": 20,
+    "d_star": "auto",
+    "alpha": 1.0,
+    "beta": 0.1,
+    "gamma": 0.01,
+    "mu": 0.0,
+    "m_exc": 0.05,
+    "eta_grad": 0.1,
+    "steps": 20,
+    "eta_relax": 0.001,
+    "fd_eps": 0.0001,
+    "grad_normalize": true,
+    "grad_positive_only": false,
+    "amp": 0.15,
+    "sigma": 1.0,
+    "center": -1,
+    "line_search": true,
+    "clip_max": 0.0
+  },
+  "crossing_init": 0.26476708045867525,
+  "crossing_final": 0.8759731543624161,
+  "n_points": 8
+}
