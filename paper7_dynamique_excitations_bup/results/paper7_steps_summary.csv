@@ -1,32 +1,10 @@
-cat > papers/paper7_dynamique_excitations_bup/results/summary.json << 'EOF'
-{
-  "title": "BuP Paper 7 — Étude de la dynamique des excitations du réseau d’intrication BuP",
-  "description": "Phase scan under S_BuP relaxation for N=20, steps=20.",
-  "command": "python3 scripts/bup_paper7_phase_scan_v1.py --mi-dir results_mi_N20_full/ --output-dir results_paper7_phase_scan_v1 --steps 20 --k 5 --d-star auto --alpha 1.0 --beta 0.1 --gamma 0.01 --mu 0.0 --m-exc 0.05 --eta-relax 0.001 --tau-min 0.01 --tau-max 50 --tau-points 20 --line-search",
-  "config": {
-    "N": 20,
-    "steps": 20,
-    "k": 5,
-    "d_star": "auto",
-    "alpha": 1.0,
-    "beta": 0.1,
-    "gamma": 0.01,
-    "mu": 0.0,
-    "m_exc": 0.05,
-    "eta_relax": 0.001,
-    "tau_min": 0.01,
-    "tau_max": 50,
-    "tau_points": 20,
-    "line_search": true,
-    "lambda_grid": [0.00, 0.14, 0.29, 0.43, 0.57, 0.71, 0.86, 1.00]
-  },
-  "crossing_init": 0.26476708045867525,
-  "crossing_final": 0.8759731543624161,
-  "main_result": "For N=20 and steps=20, relaxation selects a metastable source-like threshold around lambda ≈ 0.876.",
-  "files": {
-    "phase_scan": "paper7_phase_scan_summary.csv",
-    "steps_summary": "paper7_steps_summary.csv",
-    "finite_size_summary": "paper7_finite_size_summary.csv"
-  }
-}
-EOF
+steps,crossing_init,crossing_final,interpretation,source_file
+5,0.26476708045867525,0.21497157245536488,short_transient,results_paper7_steps_5/summary.json
+10,0.26476708045867525,0.8759731543624161,metastable_source_like_plateau,results_paper7_steps_10/summary.json
+20,0.26476708045867525,0.8759731543624161,metastable_source_like_plateau,results_paper7_steps_20/summary.json
+40,0.26476708045867525,0.2800098754420057,late_non_source_regime,results_paper7_steps_40/summary.json
+80,0.26476708045867525,0.2800098754420057,late_non_source_regime,results_paper7_steps_80/summary.json
+120,0.26476708045867525,0.2800098754420057,late_non_source_regime,results_paper7_steps_120/summary.json
+160,0.26476708045867525,0.2800098754420057,late_non_source_regime,results_paper7_steps_160/summary.json
+240,0.26476708045867525,0.2800098754420057,late_non_source_regime,results_paper7_steps_240/summary.json
+320,0.26476708045867525,0.2800098754420057,late_non_source_regime,results_paper7_steps_320/summary.json
