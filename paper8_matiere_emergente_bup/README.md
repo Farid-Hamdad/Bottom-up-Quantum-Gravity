@@ -28,6 +28,10 @@ Le résultat principal est que la densité d’énergie $T_{00}$ seule est posit
 ## Densité minimale
 
 $$
+\sum_i T_{00}^{\rm matter,cand}(i) = \sum_{i &lt; j} (\delta W_{ij}^{\rm loc})^2.
+$$
+
+$$
 T_{00}^{\rm matter,cand}(i) = \frac12 \sum_j (\delta W_{ij}^{\rm loc})^2.
 $$
 
