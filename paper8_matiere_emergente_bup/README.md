@@ -43,10 +43,6 @@ $$
 \sum_i T_{00}^{\rm matter,cand}(i) = \sum_{i &lt; j} (\delta W_{ij}^{\rm loc})^2.
 $$
 
-$$
-\sum_i T_{00}^{\rm matter,cand}(i) = \sum_{i<j} (\delta W_{ij}^{\rm loc})^2.
-$$
-
 ---
 
 ## Source complète testée
