@@ -16,8 +16,8 @@
 \geometry{margin=2.5cm}
 
 \title{
-\textbf{Source tensorielle émergente de la matière}\\[0.4em]
-\large De l'excitation locale \(\delta W^{\rm loc}\) à une source matière BuP candidate
+\textbf{De l'excitation d'intrication à la matière émergente}\\[0.4em]
+\large Construction d'une source tensorielle BuP candidate
 }
 
 \author{
@@ -52,18 +52,20 @@ T_{00}^{\rm matter,cand}(i)
 Cette quantité est positive, correctement normalisée et localisée. Cependant,
 elle ne suffit pas à prédire la réponse géométrique locale. Nous introduisons
 alors successivement une trace spatiale isotrope \(T_{aa}\), un terme de
-contrainte interne \(T_{\rm grad}\), puis une composante de flux \(T_{0a}\).
+contrainte interne \(T_{\rm grad}\), puis une composante de flux \(F\).
 
 La meilleure source candidate testée est
 \[
 S_{\rm flux}
 =
 T_{00}
--\frac12T_{aa}
+-\frac12 T_{aa}
 +
-\frac12T_{\rm grad}
+\frac12 T_{\rm grad}
 +
-\|T_{0a}\|.
+F,
+\qquad
+F\equiv\|T_{0a}\|.
 \]
 Elle atteint
 \[
@@ -167,7 +169,7 @@ T_{00}^{\rm matter,cand}(i)
 
 Le facteur \(1/2\) évite le double comptage des arêtes :
 \[
-\sum_iT_{00}^{\rm matter,cand}(i)
+\sum_i T_{00}^{\rm matter,cand}(i)
 =
 \sum_{i<j}
 (\delta W_{ij}^{\rm loc})^2.
@@ -180,15 +182,19 @@ T_{00}^{\rm matter,cand}(i)\ge0.
 
 \section{Composantes tensorielles}
 
-À partir d'un embedding de la géométrie émergente, on définit
+À partir d'un embedding de la géométrie émergente (obtenu par
+multidimensional scaling), on définit les coordonnées locales \(x_i^a\) et la
+direction effective normalisée sur l'arête \((i,j)\) :
 \[
 v_{ij}^a
 =
-\frac{x_j^a-x_i^a}{d_{ij}^{\rm ent}+\epsilon}.
+\frac{x_j^a - x_i^a}{d_{ij}^{\rm ent} + \epsilon},
 \]
+où \(\epsilon\) est un petit régulateur évitant les divisions par zéro.
 
 \subsection{Trace spatiale isotrope}
 
+La trace spatiale, analogue à une pression isotrope, est définie par
 \[
 T_{aa}(i)
 =
@@ -197,22 +203,32 @@ T_{aa}(i)
 (\delta W_{ij}^{\rm loc})^2
 \|v_{ij}\|^2.
 \]
+Le facteur \(1/2\) est une convention de normalisation, choisie pour que
+les coefficients \(\omega, \chi, \psi\) soient de l'ordre de l'unité dans
+le protocole normalisé.
 
-\subsection{Contrainte interne}
+\subsection{Contrainte interne (gradient)}
 
+Pour capturer la « rugosité » ou la structure interne de l'excitation,
+nous introduisons un terme qui pénalise les variations spatiales de la
+densité d'énergie :
 \[
 T_{\rm grad}(i)
 =
 \sum_j
 A_{ij}
 \left(
-T_{00}(i)-T_{00}(j)
-\right)^2.
+T_{00}(j) - T_{00}(i)
+\right)^2,
 \]
+où \(A_{ij}\) désigne l'adjacence du graphe \(k\)-NN (éventuellement pondérée
+par les poids d'intrication). Ce terme est élevé lorsque la densité d'énergie
+change rapidement d'un nœud à l'autre.
 
-\subsection{Flux}
+\subsection{Flux informationnel}
 
-Le flux informationnel est
+Le flux, analogue à la composante \(T_{0a}\) du tenseur énergie-impulsion,
+est défini par
 \[
 \vec f(i)
 =
@@ -222,19 +238,20 @@ Le flux informationnel est
 \]
 et sa norme est
 \[
-F(i)=\|\vec f(i)\|.
+F(i) = \|\vec f(i)\|.
 \]
 
-Ce terme représente la composante \(T_{0a}\) de la source tensorielle candidate.
+Dans les tableaux et formules, nous notons symboliquement
+\(F(i) \equiv \|T_{0a}(i)\|\).
 
 \section{Sources testées}
 
-Nous testons une hiérarchie de sources.
+Nous testons une hiérarchie de sources, de la plus simple à la plus complète.
 
 \subsection{Densité seule}
 
 \[
-S_0(i)=T_{00}(i).
+S_0(i) = T_{00}(i).
 \]
 
 \subsection{Source fluide}
@@ -247,9 +264,9 @@ T_{00}(i)
 \omega T_{aa}(i).
 \]
 
-Le meilleur poids effectif trouvé est :
+Le meilleur poids effectif trouvé par scan est :
 \[
-\omega=-0.5.
+\omega = -0.5.
 \]
 
 \subsection{Source avec contrainte interne}
@@ -258,13 +275,14 @@ Le meilleur poids effectif trouvé est :
 S_{\rm full}(i)
 =
 T_{00}(i)
--\frac12T_{aa}(i)
+-\frac12 T_{aa}(i)
 +
-\chi T_{\rm grad}(i),
+\chi T_{\rm grad}(i).
 \]
-avec meilleur poids normalisé :
+
+Le meilleur poids normalisé est :
 \[
-\chi=0.5.
+\chi = 0.5.
 \]
 
 \subsection{Source avec flux}
@@ -273,16 +291,16 @@ avec meilleur poids normalisé :
 S_{\rm flux}(i)
 =
 T_{00}(i)
--\frac12T_{aa}(i)
+-\frac12 T_{aa}(i)
 +
-\frac12T_{\rm grad}(i)
+\frac12 T_{\rm grad}(i)
 +
 \psi F(i).
 \]
 
 Le meilleur poids normalisé est :
 \[
-\psi=1.0.
+\psi = 1.0.
 \]
 
 Ainsi, la meilleure source testée est :
@@ -291,11 +309,13 @@ Ainsi, la meilleure source testée est :
 S_{\rm flux}
 =
 T_{00}
--\frac12T_{aa}
+-\frac12 T_{aa}
 +
-\frac12T_{\rm grad}
+\frac12 T_{\rm grad}
 +
-\|T_{0a}\|.
+F,
+\qquad
+F\equiv\|T_{0a}\|.
 }
 \]
 
@@ -303,25 +323,27 @@ T_{00}
 
 Les tests principaux utilisent :
 \[
-N=20,
+N = 20,
 \qquad
-\lambda=0.57,
+\lambda = 0.57,
 \qquad
-k=5,
+k = 5,
 \qquad
-A=0.15.
+A = 0.15.
 \]
 
-La réponse géométrique est :
+La réponse géométrique est la variation de courbure nodale :
 \[
 \delta R_i
 =
-R_i[W^{(0)}+\delta W]
+R_i[W^{(0)} + \delta W]
 -
-R_i[W^{(0)}].
+R_i[W^{(0)}],
 \]
+où \(R_i\) est un proxy de courbure scalaire discret (construit à partir
+de la courbure d'Ollivier-Ricci).
 
-Le critère principal est :
+Le critère principal est la corrélation de Spearman :
 \[
 \rho_{\rm Spearman}
 \left(
@@ -334,22 +356,22 @@ S(i),
 
 Le test de positivité donne :
 \[
-T_{00}^{\rm matter,cand}(i)>0
+T_{00}^{\rm matter,cand}(i) > 0
 \]
 pour tous les nœuds.
 
 La normalisation est vérifiée à précision machine :
 \[
-\sum_iT_{00}(i)
+\sum_i T_{00}(i)
 =
-\sum_{i<j}(\delta W_{ij})^2.
+\sum_{i<j} (\delta W_{ij})^2.
 \]
 
 Le scan en largeur \(\sigma\) montre que \(T_{00}\) est radialement décroissant
-avec la distance d'intrication au centre. Pour \(\sigma=0.01\), le participation
-ratio est proche de \(2\), indiquant une excitation compacte. Pour des valeurs
-plus grandes de \(\sigma\), l'excitation devient plus étendue tout en restant
-localisée géométriquement.
+avec la distance d'intrication au centre. Pour \(\sigma = 0.01\), le
+participation ratio (une mesure de localisation) est proche de \(2\),
+indiquant une excitation compacte. Pour des valeurs plus grandes de \(\sigma\),
+l'excitation devient plus étendue tout en restant localisée géométriquement.
 
 \section{Résultats : corrélation avec la courbure}
 
@@ -357,48 +379,48 @@ La densité seule est insuffisante :
 \[
 T_{00}
 \quad\Rightarrow\quad
-\rho_{\rm Spearman}\simeq0.195,
+\rho_{\rm Spearman} \simeq 0.195,
 \qquad
-p\simeq0.409.
+p \simeq 0.409.
 \]
 
 L'ajout de la trace spatiale améliore le résultat :
 \[
-T_{00}-\frac12T_{aa}
+T_{00} - \frac12 T_{aa}
 \quad\Rightarrow\quad
-\rho_{\rm Spearman}\simeq0.526,
+\rho_{\rm Spearman} \simeq 0.526,
 \qquad
-p\simeq0.017.
+p \simeq 0.017.
 \]
 
 L'ajout de la contrainte interne donne :
 \[
-T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}
+T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad}
 \quad\Rightarrow\quad
-\rho_{\rm Spearman}\simeq0.612,
+\rho_{\rm Spearman} \simeq 0.612,
 \qquad
-p\simeq0.00413.
+p \simeq 0.00413.
 \]
 
 Enfin, l'ajout du flux donne :
 \[
-T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}+\|T_{0a}\|
+T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad} + F
 \quad\Rightarrow\quad
-\rho_{\rm Spearman}\simeq0.741,
+\rho_{\rm Spearman} \simeq 0.741,
 \qquad
-p\simeq1.84\times10^{-4}.
+p \simeq 1.84 \times 10^{-4}.
 \]
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{l c c c}
 \toprule
-Source testée & Paramètres & Spearman avec \(|\delta R|\) & \(p\)-value \\
+Source testée & Meilleurs paramètres & Spearman avec \(|\delta R|\) & \(p\)-value \\
 \midrule
-\(T_{00}\) & \(\sigma=0.05\) & \(0.195\) & \(0.409\) \\
-\(T_{00}-\frac12T_{aa}\) & \(\sigma=0.15\) & \(0.526\) & \(0.017\) \\
-\(T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}\) & \(\sigma=0.15\) & \(0.612\) & \(0.00413\) \\
-\(T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}+\|T_{0a}\|\) & \(\sigma=0.15\) & \(0.741\) & \(1.84\times10^{-4}\) \\
+\(T_{00}\) & \(\sigma = 0.05\) & \(0.195\) & \(0.409\) \\
+\(T_{00} - \frac12 T_{aa}\) & \(\sigma = 0.15\) & \(0.526\) & \(0.017\) \\
+\(T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad}\) & \(\sigma = 0.15\) & \(0.612\) & \(0.00413\) \\
+\(T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad} + F\) & \(\sigma = 0.15\) & \(0.741\) & \(1.84 \times 10^{-4}\) \\
 \bottomrule
 \end{tabular}
 \caption{
@@ -412,13 +434,13 @@ fortement la corrélation avec la réponse de courbure.
 
 Un tenseur énergie-impulsion physique conservé vérifie :
 \[
-\nabla_\mu T^{\mu\nu}=0.
+\nabla_\mu T^{\mu\nu} = 0.
 \]
 
 Cependant, dans BuP, la matière n'est pas un secteur fondamental isolé. Elle est
 une excitation du réseau d'intrication. Il n'est donc pas nécessaire que
 \[
-\nabla_\mu T_{\rm matter}^{\mu\nu}=0
+\nabla_\mu T_{\rm matter}^{\mu\nu} = 0
 \]
 soit vérifiée séparément.
 
@@ -426,20 +448,18 @@ L'équation effective complète impose plutôt :
 \[
 \nabla^\mu
 \left[
-G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
+G_{\rm eff}(d_s) T_{\mu\nu}^{\rm matter}
 +
 G T_{\mu\nu}^{\rm ent}
 \right]
-=
-0.
+= 0.
 \]
 
 Nous interprétons donc la non-conservation isolée de la source matière candidate
 comme un courant d'échange :
 \[
 \nabla_\mu T_{\rm matter}^{\mu\nu}
-=
--J_{\rm exchange}^{\nu}.
+= - J_{\rm exchange}^{\nu}.
 \]
 
 \section{Test de compensation totale}
@@ -456,36 +476,38 @@ entropico-géométrique :
 \gamma\,\Delta\delta R.
 \]
 
-Le flux associé est :
+Le flux associé est (version simplifiée d'une divergence discrète) :
 \[
 \vec f_{\rm ent}(i)
 =
 -\sum_j A_{ij}
 \left(
-\phi_{\rm ent}(j)-\phi_{\rm ent}(i)
+\phi_{\rm ent}(j) - \phi_{\rm ent}(i)
 \right)
 \vec v_{ij}.
 \]
 
-Le but est de réduire :
+Le but est de réduire la norme \(L^2\) de la divergence totale :
 \[
+\mathcal{D}(\alpha)
+=
 \left\|
 \mathrm{div}
 \left(
 \vec f_{\rm matter}
 +
-\alpha\vec f_{\rm ent}
+\alpha \vec f_{\rm ent}
 \right)
 \right\|_2.
 \]
 
 Le meilleur résultat est obtenu pour :
 \[
-\sigma=0.01,
+\sigma = 0.01,
 \qquad
-\beta=1.0,
+\beta = 1.0,
 \qquad
-\gamma=0.5,
+\gamma = 0.5,
 \]
 soit :
 \[
@@ -495,20 +517,20 @@ soit :
 +
 \delta R
 +
-\frac12\Delta\delta R.
+\frac12 \Delta\delta R.
 \]
 
 On obtient :
 \[
 \|\mathrm{div}\,\vec f_{\rm matter}\|_2
 =
-1.62\times10^{-5},
+1.62 \times 10^{-5},
 \]
 et :
 \[
 \|\mathrm{div}\,\vec f_{\rm total}\|_2
 =
-6.18\times10^{-6}.
+6.18 \times 10^{-6}.
 \]
 
 Le résidu relatif est :
@@ -534,8 +556,8 @@ La divergence est donc réduite d'un facteur :
 Test & Meilleur cas & Résidu relatif \(L^2\) & Interprétation \\
 \midrule
 Matière seule & -- & \(1.000\) & non conservée isolément \\
-Compensation \(\delta d_s\) & \(\sigma=0.15\) & \(0.668\) & faible compensation \\
-Compensation \(\delta d_s+\beta\delta R+\gamma\Delta\delta R\) & \(\sigma=0.01\) & \(0.380\) & compensation partielle sérieuse \\
+Compensation \(\delta d_s\) seul & \(\sigma = 0.15\) & \(0.668\) & faible compensation \\
+Compensation \(\delta d_s + \beta\delta R + \gamma\Delta\delta R\) & \(\sigma = 0.01\) & \(0.380\) & compensation partielle sérieuse \\
 \bottomrule
 \end{tabular}
 \caption{
@@ -567,7 +589,9 @@ flux géométrique. Les coefficients numériques obtenus sont effectifs et
 dépendent du protocole de normalisation.
 
 Il faudra tester d'autres valeurs de \(N\), \(\lambda\), \(k\), amplitudes et
-formes d'excitation.
+formes d'excitation. Une analyse plus fine du tenseur d'intrication complet
+(qui devrait inclure gradients et variations de \(d_s\) de manière covariante)
+est laissée à des travaux futurs.
 
 \section{Conclusion}
 
@@ -585,21 +609,23 @@ La meilleure source testée est :
 S_{\rm flux}
 =
 T_{00}
--\frac12T_{aa}
+-\frac12 T_{aa}
 +
-\frac12T_{\rm grad}
+\frac12 T_{\rm grad}
 +
-\|T_{0a}\|.
+F,
+\qquad
+F\equiv\|T_{0a}\|.
 }
 \]
 
 Elle atteint :
 \[
-\rho_{\rm Spearman}(S_{\rm flux},|\delta R|)
+\rho_{\rm Spearman}(S_{\rm flux}, |\delta R|)
 =
 0.741,
 \qquad
-p=1.84\times10^{-4}.
+p = 1.84 \times 10^{-4}.
 \]
 
 La source n'est pas conservée isolément, mais sa divergence est partiellement
@@ -615,13 +641,28 @@ T_{\rm matter}^{\mu\nu}
 +
 T_{\rm ent}^{\mu\nu}
 \right)
-\simeq0
+\simeq 0
 }
 \]
 
 reste l'objectif central de la suite du programme.
 
 \begin{thebibliography}{9}
+
+\bibitem{hamdad-paper2}
+F.~Hamdad,
+\textit{Cosmological constraints on an emergent spatial dimension in Bottom-Up Quantum Gravity},
+BuP Paper 2, HAL hal-05590614v1, 2026.
+
+\bibitem{hamdad-paper3}
+F.~Hamdad,
+\textit{Coherent effective gravitational coupling and the \(\sigma_8\) tension in Bottom-Up Quantum Gravity},
+BuP Paper 3, 2026.
+
+\bibitem{hamdad-paper4}
+F.~Hamdad,
+\textit{Local dimensional reduction and early massive galaxies in Bottom-Up Quantum Gravity},
+BuP Paper 4, 2026.
 
 \bibitem{hamdad-paper5}
 F.~Hamdad,
@@ -635,7 +676,7 @@ BuP Paper 6, 2026.
 
 \bibitem{hamdad-paper7}
 F.~Hamdad,
-\textit{Dynamique variationnelle des excitations BuP},
+\textit{Étude de la dynamique des excitations du réseau d'intrication BuP},
 BuP Paper 7, 2026.
 
 \bibitem{ollivier}
