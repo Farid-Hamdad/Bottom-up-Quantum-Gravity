@@ -1,1 +1,648 @@
-titi
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+\geometry{margin=2.5cm}
+
+\title{
+\textbf{Source tensorielle émergente de la matière}\\[0.4em]
+\large De l'excitation locale \(\delta W^{\rm loc}\) à une source matière BuP candidate
+}
+
+\author{
+Farid Hamdad\\
+\small Bottom-Up Quantum Gravity Program
+}
+
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Dans le programme Bottom-Up Quantum Gravity, la matière ne doit pas être
+introduite comme une source externe ajoutée à la géométrie. Elle doit émerger
+du réseau d'intrication lui-même. Le présent papier construit et teste une
+source tensorielle candidate à partir d'une perturbation locale du réseau
+d'information mutuelle,
+\[
+W_{ij}=W_{ij}^{(0)}+\delta W_{ij}^{\rm loc}.
+\]
+
+Nous définissons d'abord une densité d'énergie informationnelle,
+\[
+T_{00}^{\rm matter,cand}(i)
+=
+\frac12
+\sum_j(\delta W_{ij}^{\rm loc})^2.
+\]
+Cette quantité est positive, correctement normalisée et localisée. Cependant,
+elle ne suffit pas à prédire la réponse géométrique locale. Nous introduisons
+alors successivement une trace spatiale isotrope \(T_{aa}\), un terme de
+contrainte interne \(T_{\rm grad}\), puis une composante de flux \(T_{0a}\).
+
+La meilleure source candidate testée est
+\[
+S_{\rm flux}
+=
+T_{00}
+-\frac12T_{aa}
++
+\frac12T_{\rm grad}
++
+\|T_{0a}\|.
+\]
+Elle atteint
+\[
+\rho_{\rm Spearman}(S_{\rm flux},|\delta R|)
+=
+0.741,
+\qquad
+p=1.84\times10^{-4}.
+\]
+
+Nous montrons également que la source matière candidate n'est pas conservée
+isolément. Cette non-conservation n'est pas interprétée comme un échec, mais
+comme une signature d'échange entre matière émergente et fond d'intrication.
+Un flux d'intrication construit à partir de
+\[
+\phi_{\rm ent}
+=
+\delta d_s+\delta R+\frac12\Delta\delta R
+\]
+réduit le résidu de divergence d'un facteur \(2.63\). Ainsi, Paper~8 construit
+une source tensorielle matière candidate fortement corrélée à la courbure et
+partiellement compensée par le champ d'intrication.
+
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Dans la formulation effective de BuP, la géométrie émergente est reconstruite à
+partir du réseau d'information mutuelle
+\[
+W_{ij}=I(i:j).
+\]
+Paper~5 a introduit une équation d'Einstein effective contenant un tenseur de
+matière,
+\[
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
++
+8\pi G T_{\mu\nu}^{\rm ent}[d_s].
+\]
+
+Paper~6 a proposé une équation pure BuP,
+\[
+\mathcal{F}_{ij}[W]=0,
+\]
+et Paper~7 a étudié la dynamique variationnelle des excitations localisées
+\(\delta W^{\rm loc}\).
+
+Le présent papier franchit l'étape suivante :
+\[
+\delta W^{\rm loc}
+\longrightarrow
+T_{\mu\nu}^{\rm matter,cand}.
+\]
+
+Nous insistons sur le terme \emph{candidate}. La conservation covariante
+complète n'est pas démontrée d'emblée. Nous construisons une source tensorielle
+effective, nous testons sa positivité, sa localisation, sa corrélation avec la
+courbure et son échange avec le fond d'intrication.
+
+\section{Excitation locale du réseau}
+
+On considère un réseau de référence \(W^{(0)}\), puis une perturbation locale :
+\[
+W_{ij}
+=
+W_{ij}^{(0)}
++
+\delta W_{ij}^{\rm loc}.
+\]
+
+Dans les simulations, l'excitation est injectée sous forme gaussienne en
+distance d'intrication :
+\[
+\delta W_{ij}^{\rm loc}
+=
+A f_i f_j,
+\]
+avec
+\[
+f_i
+=
+\exp\left(
+-\frac{d_{\rm ent}^2(i,i_0)}{2\sigma^2}
+\right).
+\]
+
+\section{Densité d'énergie informationnelle}
+
+La densité minimale est définie par
+\[
+T_{00}^{\rm matter,cand}(i)
+=
+\frac12
+\sum_j
+(\delta W_{ij}^{\rm loc})^2.
+\]
+
+Le facteur \(1/2\) évite le double comptage des arêtes :
+\[
+\sum_iT_{00}^{\rm matter,cand}(i)
+=
+\sum_{i<j}
+(\delta W_{ij}^{\rm loc})^2.
+\]
+
+Cette densité est positive par construction :
+\[
+T_{00}^{\rm matter,cand}(i)\ge0.
+\]
+
+\section{Composantes tensorielles}
+
+À partir d'un embedding de la géométrie émergente, on définit
+\[
+v_{ij}^a
+=
+\frac{x_j^a-x_i^a}{d_{ij}^{\rm ent}+\epsilon}.
+\]
+
+\subsection{Trace spatiale isotrope}
+
+\[
+T_{aa}(i)
+=
+\frac12
+\sum_j
+(\delta W_{ij}^{\rm loc})^2
+\|v_{ij}\|^2.
+\]
+
+\subsection{Contrainte interne}
+
+\[
+T_{\rm grad}(i)
+=
+\sum_j
+A_{ij}
+\left(
+T_{00}(i)-T_{00}(j)
+\right)^2.
+\]
+
+\subsection{Flux}
+
+Le flux informationnel est
+\[
+\vec f(i)
+=
+\sum_j
+(\delta W_{ij}^{\rm loc})^2
+\vec v_{ij},
+\]
+et sa norme est
+\[
+F(i)=\|\vec f(i)\|.
+\]
+
+Ce terme représente la composante \(T_{0a}\) de la source tensorielle candidate.
+
+\section{Sources testées}
+
+Nous testons une hiérarchie de sources.
+
+\subsection{Densité seule}
+
+\[
+S_0(i)=T_{00}(i).
+\]
+
+\subsection{Source fluide}
+
+\[
+S_{\rm fluid}(i)
+=
+T_{00}(i)
++
+\omega T_{aa}(i).
+\]
+
+Le meilleur poids effectif trouvé est :
+\[
+\omega=-0.5.
+\]
+
+\subsection{Source avec contrainte interne}
+
+\[
+S_{\rm full}(i)
+=
+T_{00}(i)
+-\frac12T_{aa}(i)
++
+\chi T_{\rm grad}(i),
+\]
+avec meilleur poids normalisé :
+\[
+\chi=0.5.
+\]
+
+\subsection{Source avec flux}
+
+\[
+S_{\rm flux}(i)
+=
+T_{00}(i)
+-\frac12T_{aa}(i)
++
+\frac12T_{\rm grad}(i)
++
+\psi F(i).
+\]
+
+Le meilleur poids normalisé est :
+\[
+\psi=1.0.
+\]
+
+Ainsi, la meilleure source testée est :
+\[
+\boxed{
+S_{\rm flux}
+=
+T_{00}
+-\frac12T_{aa}
++
+\frac12T_{\rm grad}
++
+\|T_{0a}\|.
+}
+\]
+
+\section{Protocole numérique}
+
+Les tests principaux utilisent :
+\[
+N=20,
+\qquad
+\lambda=0.57,
+\qquad
+k=5,
+\qquad
+A=0.15.
+\]
+
+La réponse géométrique est :
+\[
+\delta R_i
+=
+R_i[W^{(0)}+\delta W]
+-
+R_i[W^{(0)}].
+\]
+
+Le critère principal est :
+\[
+\rho_{\rm Spearman}
+\left(
+S(i),
+|\delta R_i|
+\right).
+\]
+
+\section{Résultats : positivité et localisation}
+
+Le test de positivité donne :
+\[
+T_{00}^{\rm matter,cand}(i)>0
+\]
+pour tous les nœuds.
+
+La normalisation est vérifiée à précision machine :
+\[
+\sum_iT_{00}(i)
+=
+\sum_{i<j}(\delta W_{ij})^2.
+\]
+
+Le scan en largeur \(\sigma\) montre que \(T_{00}\) est radialement décroissant
+avec la distance d'intrication au centre. Pour \(\sigma=0.01\), le participation
+ratio est proche de \(2\), indiquant une excitation compacte. Pour des valeurs
+plus grandes de \(\sigma\), l'excitation devient plus étendue tout en restant
+localisée géométriquement.
+
+\section{Résultats : corrélation avec la courbure}
+
+La densité seule est insuffisante :
+\[
+T_{00}
+\quad\Rightarrow\quad
+\rho_{\rm Spearman}\simeq0.195,
+\qquad
+p\simeq0.409.
+\]
+
+L'ajout de la trace spatiale améliore le résultat :
+\[
+T_{00}-\frac12T_{aa}
+\quad\Rightarrow\quad
+\rho_{\rm Spearman}\simeq0.526,
+\qquad
+p\simeq0.017.
+\]
+
+L'ajout de la contrainte interne donne :
+\[
+T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}
+\quad\Rightarrow\quad
+\rho_{\rm Spearman}\simeq0.612,
+\qquad
+p\simeq0.00413.
+\]
+
+Enfin, l'ajout du flux donne :
+\[
+T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}+\|T_{0a}\|
+\quad\Rightarrow\quad
+\rho_{\rm Spearman}\simeq0.741,
+\qquad
+p\simeq1.84\times10^{-4}.
+\]
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l c c c}
+\toprule
+Source testée & Paramètres & Spearman avec \(|\delta R|\) & \(p\)-value \\
+\midrule
+\(T_{00}\) & \(\sigma=0.05\) & \(0.195\) & \(0.409\) \\
+\(T_{00}-\frac12T_{aa}\) & \(\sigma=0.15\) & \(0.526\) & \(0.017\) \\
+\(T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}\) & \(\sigma=0.15\) & \(0.612\) & \(0.00413\) \\
+\(T_{00}-\frac12T_{aa}+\frac12T_{\rm grad}+\|T_{0a}\|\) & \(\sigma=0.15\) & \(0.741\) & \(1.84\times10^{-4}\) \\
+\bottomrule
+\end{tabular}
+\caption{
+Amélioration progressive de la source tensorielle candidate. La densité seule
+est insuffisante ; les composantes spatiales, internes et de flux améliorent
+fortement la corrélation avec la réponse de courbure.
+}
+\end{table}
+
+\section{Conservation et échange matière--intrication}
+
+Un tenseur énergie-impulsion physique conservé vérifie :
+\[
+\nabla_\mu T^{\mu\nu}=0.
+\]
+
+Cependant, dans BuP, la matière n'est pas un secteur fondamental isolé. Elle est
+une excitation du réseau d'intrication. Il n'est donc pas nécessaire que
+\[
+\nabla_\mu T_{\rm matter}^{\mu\nu}=0
+\]
+soit vérifiée séparément.
+
+L'équation effective complète impose plutôt :
+\[
+\nabla^\mu
+\left[
+G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
++
+G T_{\mu\nu}^{\rm ent}
+\right]
+=
+0.
+\]
+
+Nous interprétons donc la non-conservation isolée de la source matière candidate
+comme un courant d'échange :
+\[
+\nabla_\mu T_{\rm matter}^{\mu\nu}
+=
+-J_{\rm exchange}^{\nu}.
+\]
+
+\section{Test de compensation totale}
+
+Nous construisons un flux d'intrication à partir d'un champ
+entropico-géométrique :
+\[
+\phi_{\rm ent}
+=
+\delta d_s
++
+\beta\,\delta R
++
+\gamma\,\Delta\delta R.
+\]
+
+Le flux associé est :
+\[
+\vec f_{\rm ent}(i)
+=
+-\sum_j A_{ij}
+\left(
+\phi_{\rm ent}(j)-\phi_{\rm ent}(i)
+\right)
+\vec v_{ij}.
+\]
+
+Le but est de réduire :
+\[
+\left\|
+\mathrm{div}
+\left(
+\vec f_{\rm matter}
++
+\alpha\vec f_{\rm ent}
+\right)
+\right\|_2.
+\]
+
+Le meilleur résultat est obtenu pour :
+\[
+\sigma=0.01,
+\qquad
+\beta=1.0,
+\qquad
+\gamma=0.5,
+\]
+soit :
+\[
+\phi_{\rm ent}
+=
+\delta d_s
++
+\delta R
++
+\frac12\Delta\delta R.
+\]
+
+On obtient :
+\[
+\|\mathrm{div}\,\vec f_{\rm matter}\|_2
+=
+1.62\times10^{-5},
+\]
+et :
+\[
+\|\mathrm{div}\,\vec f_{\rm total}\|_2
+=
+6.18\times10^{-6}.
+\]
+
+Le résidu relatif est :
+\[
+\frac{
+\|\mathrm{div}\,\vec f_{\rm total}\|_2
+}{
+\|\mathrm{div}\,\vec f_{\rm matter}\|_2
+}
+=
+0.380.
+\]
+
+La divergence est donc réduite d'un facteur :
+\[
+2.63.
+\]
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l c c c}
+\toprule
+Test & Meilleur cas & Résidu relatif \(L^2\) & Interprétation \\
+\midrule
+Matière seule & -- & \(1.000\) & non conservée isolément \\
+Compensation \(\delta d_s\) & \(\sigma=0.15\) & \(0.668\) & faible compensation \\
+Compensation \(\delta d_s+\beta\delta R+\gamma\Delta\delta R\) & \(\sigma=0.01\) & \(0.380\) & compensation partielle sérieuse \\
+\bottomrule
+\end{tabular}
+\caption{
+Test de conservation totale matière--intrication. La source matière candidate
+n'est pas conservée isolément, mais un flux d'intrication géométrique réduit la
+divergence d'un facteur \(2.63\).
+}
+\end{table}
+
+\section{Discussion}
+
+Le résultat principal est double.
+
+Premièrement, \(\delta W^{\rm loc}\) permet de construire une source tensorielle
+candidate fortement corrélée à la réponse de courbure locale. La densité seule
+ne suffit pas ; la pression isotrope, la contrainte interne et le flux sont
+nécessaires.
+
+Deuxièmement, la source matière candidate n'est pas conservée isolément. Cette
+non-conservation devient une signature d'émergence : la matière échange avec le
+fond d'intrication. La compensation partielle par un flux construit à partir de
+\(\delta d_s\), \(\delta R\) et \(\Delta\delta R\) soutient cette interprétation.
+
+\section{Limites}
+
+La conservation totale n'est pas encore démontrée exactement. Le tenseur
+d'intrication \(T_{\mu\nu}^{\rm ent}\) n'est représenté ici que par un proxy de
+flux géométrique. Les coefficients numériques obtenus sont effectifs et
+dépendent du protocole de normalisation.
+
+Il faudra tester d'autres valeurs de \(N\), \(\lambda\), \(k\), amplitudes et
+formes d'excitation.
+
+\section{Conclusion}
+
+Paper~8 construit une source tensorielle matière candidate à partir d'une
+excitation locale du réseau d'intrication :
+\[
+\delta W^{\rm loc}
+\longrightarrow
+T_{\mu\nu}^{\rm matter,cand}.
+\]
+
+La meilleure source testée est :
+\[
+\boxed{
+S_{\rm flux}
+=
+T_{00}
+-\frac12T_{aa}
++
+\frac12T_{\rm grad}
++
+\|T_{0a}\|.
+}
+\]
+
+Elle atteint :
+\[
+\rho_{\rm Spearman}(S_{\rm flux},|\delta R|)
+=
+0.741,
+\qquad
+p=1.84\times10^{-4}.
+\]
+
+La source n'est pas conservée isolément, mais sa divergence est partiellement
+compensée par un flux d'intrication. Ce résultat transforme une faiblesse
+apparente en signature d'émergence : la matière BuP n'est pas un secteur fermé,
+mais une excitation échangeant avec le fond géométrique informationnel.
+
+\[
+\boxed{
+\nabla_\mu
+\left(
+T_{\rm matter}^{\mu\nu}
++
+T_{\rm ent}^{\mu\nu}
+\right)
+\simeq0
+}
+\]
+
+reste l'objectif central de la suite du programme.
+
+\begin{thebibliography}{9}
+
+\bibitem{hamdad-paper5}
+F.~Hamdad,
+\textit{Équation d'Einstein effective émergente dans la Gravité Quantique Bottom-Up},
+BuP Paper 5, 2026.
+
+\bibitem{hamdad-paper6}
+F.~Hamdad,
+\textit{Équation pure BuP : de l'intrication à l'équation d'Einstein effective},
+BuP Paper 6, 2026.
+
+\bibitem{hamdad-paper7}
+F.~Hamdad,
+\textit{Dynamique variationnelle des excitations BuP},
+BuP Paper 7, 2026.
+
+\bibitem{ollivier}
+Y.~Ollivier,
+\textit{Ricci curvature of Markov chains on metric spaces},
+Journal of Functional Analysis, 256, 810--864, 2009.
+
+\end{thebibliography}
+
+\end{document}
