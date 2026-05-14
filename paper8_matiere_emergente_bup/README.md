@@ -28,10 +28,6 @@ Le résultat principal est que la densité d’énergie $T_{00}$ seule est posit
 ## Densité minimale
 
 $$
-\sum_i T_{00}^{\rm matter,cand}(i) = \sum_{i &lt; j} (\delta W_{ij}^{\rm loc})^2.
-$$
-
-$$
 T_{00}^{\rm matter,cand}(i) = \frac12 \sum_j (\delta W_{ij}^{\rm loc})^2.
 $$
 
@@ -44,7 +40,7 @@ $$
 et :
 
 $$
-\sum_i T_{00}^{\rm matter,cand}(i) = \sum_{i &lt; j} (\delta W_{ij}^{\rm loc})^2.
+\sum_i T_{00}^{\rm matter,cand}(i) = \sum_{i<j} (\delta W_{ij}^{\rm loc})^2.
 $$
 
 ---
@@ -149,6 +145,7 @@ paper8_matiere_emergente_bup/
     ├── fig_flux_response.png
     ├── fig_total_conservation.png
     └── fig_best_source_vs_deltaR.png
+
 Citation
 bibtex
 @misc{hamdad2026paper8,
