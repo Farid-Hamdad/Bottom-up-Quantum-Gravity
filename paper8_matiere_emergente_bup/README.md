@@ -59,12 +59,12 @@ Les coefficients sont des poids effectifs dans un protocole normalisé. Ils ne d
 
 ## Hiérarchie des résultats
 
-| Source testée | Meilleurs paramètres | Spearman avec $|\delta R|$ | $p$-value | Lecture |
-|---|---:|---:|---:|:---|
-| $T_{00}$ | $\sigma=0.05$ | 0.195 | 0.409 | densité seule insuffisante |
-| $T_{00} - \frac12 T_{aa}$ | $\sigma=0.15$ | 0.526 | 0.017 | source fluide effective |
-| $T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad}$ | $\sigma=0.15$ | 0.612 | 0.00413 | contrainte interne utile |
-| $T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad} + \|T_{0a}\|$ | $\sigma=0.15$ | 0.741 | $1.84 \times 10^{-4}$ | meilleure source complète |
+| Source testée | Meilleurs paramètres | Spearman avec $ \vert\delta R\vert $ | $p$-value | Lecture |
+|:---|:---:|:---:|:---:|:---|
+| $T_{00}$ | $\sigma = 0.05$ | 0.195 | 0.409 | densité seule insuffisante |
+| $T_{00} - \frac12 T_{aa}$ | $\sigma = 0.15$ | 0.526 | 0.017 | source fluide effective |
+| $T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad}$ | $\sigma = 0.15$ | 0.612 | 0.00413 | contrainte interne utile |
+| $T_{00} - \frac12 T_{aa} + \frac12 T_{\rm grad} + \vert T_{0a} \vert$ | $\sigma = 0.15$ | 0.741 | $1.84 \times 10^{-4}$ | meilleure source complète |
 
 ---
 
