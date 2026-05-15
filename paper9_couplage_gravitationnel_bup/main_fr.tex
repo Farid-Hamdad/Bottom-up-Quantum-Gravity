@@ -1,1 +1,509 @@
-titi
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+\geometry{margin=2.5cm}
+
+\title{
+\textbf{Couplage gravitationnel de la matière émergente}\\[0.4em]
+\large De \(S_{\rm flux}\) au potentiel effectif BuP
+}
+
+\author{
+Farid Hamdad\\
+\small Bottom-Up Quantum Gravity Program
+}
+
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Paper~8 a construit une source tensorielle matière candidate à partir d'une
+excitation locale du réseau d'intrication BuP. Cette source,
+\[
+S_{\rm flux}
+=
+T_{00}
+-\frac12T_{aa}
++
+\frac12T_{\rm grad}
++
+\|T_{0a}\|,
+\]
+combine densité informationnelle, pression effective, contrainte interne et
+flux d'intrication.
+
+Le présent papier couple cette source à une limite faible de l'équation
+d'Einstein effective BuP. Sur le graphe d'intrication, nous résolvons une
+équation de Poisson discrète :
+\[
+L_{\rm ent}\Phi_{\rm BuP}
+=
+S_{\rm flux}.
+\]
+Nous testons ensuite si le potentiel obtenu \(\Phi_{\rm BuP}\) prédit la
+réponse de courbure nodale \(|\delta R|\).
+
+Pour \(N=20\), \(\lambda=0.57\), \(k=5\) et \(\sigma=0.15\), nous obtenons
+\[
+\rho_{\rm Spearman}(S_{\rm flux},|\delta R|)
+=
+0.741,
+\qquad
+p=1.84\times10^{-4},
+\]
+et, après résolution de Poisson,
+\[
+\rho_{\rm Spearman}(\Phi_{\rm BuP},|\delta R|)
+=
+0.738,
+\qquad
+p=2.01\times10^{-4}.
+\]
+Le potentiel effectif conserve donc presque toute l'information géométrique
+portée par la source.
+
+Ce résultat fournit un premier couplage physique entre la matière émergente
+et la géométrie effective dans BuP.
+
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Les papiers précédents ont construit progressivement une chaîne d'émergence.
+
+Paper~7 a montré que les excitations du réseau d'intrication possèdent une
+dynamique interne et peuvent former des régimes source-like métastables.
+
+Paper~8 a ensuite construit une source tensorielle matière candidate :
+\[
+\delta W^{\rm loc}
+\longrightarrow
+S_{\rm flux}.
+\]
+
+La question de Paper~9 est maintenant :
+
+\[
+\boxed{
+\text{cette source génère-t-elle un potentiel gravitationnel effectif ?}
+}
+\]
+
+Nous testons donc la chaîne :
+\[
+\delta W^{\rm loc}
+\longrightarrow
+S_{\rm flux}
+\longrightarrow
+\Phi_{\rm BuP}
+\longrightarrow
+|\delta R|.
+\]
+
+\section{Rappel : source tensorielle issue de Paper 8}
+
+Paper~8 a montré que la densité seule \(T_{00}\) est insuffisante pour prédire
+la réponse géométrique. La meilleure source testée est :
+\[
+S_{\rm flux}
+=
+T_{00}
+-\frac12T_{aa}
++
+\frac12T_{\rm grad}
++
+\|T_{0a}\|.
+\]
+
+Les composantes sont :
+
+\[
+T_{00}(i)
+=
+\frac12
+\sum_j
+(\delta W_{ij}^{\rm loc})^2,
+\]
+
+\[
+T_{aa}(i)
+=
+\frac12
+\sum_j
+(\delta W_{ij}^{\rm loc})^2
+\|v_{ij}\|^2,
+\]
+
+\[
+T_{\rm grad}(i)
+=
+\sum_j
+A_{ij}
+\left(
+T_{00}(j)-T_{00}(i)
+\right)^2,
+\]
+
+et :
+
+\[
+\vec f(i)
+=
+\sum_j
+(\delta W_{ij}^{\rm loc})^2
+\vec v_{ij},
+\qquad
+\|T_{0a}\|\equiv \|\vec f(i)\|.
+\]
+
+Ainsi, la source gravitationnelle effective ne dépend pas seulement d'une
+densité scalaire, mais d'une structure tensorielle informationnelle.
+
+\section{Limite faible et équation de Poisson discrète}
+
+L'équation effective introduite dans Paper~5 est :
+\[
+G_{\mu\nu}[g^{\rm ent}]
+=
+8\pi G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
++
+8\pi G T_{\mu\nu}^{\rm ent}[d_s].
+\]
+
+Dans une limite faible, quasi-newtonienne, on cherche un potentiel effectif
+\(\Phi_{\rm BuP}\) tel que :
+\[
+L_{\rm ent}\Phi_{\rm BuP}
+=
+\mathcal{N}S_{\rm flux}.
+\]
+
+Dans les tests numériques, la constante \(\mathcal{N}\) est absorbée dans la
+normalisation de la source. Nous résolvons donc :
+\[
+L_{\rm ent}\Phi_{\rm BuP}
+=
+S_{\rm flux}.
+\]
+
+Le Laplacien \(L_{\rm ent}\) est le Laplacien combinatoire du graphe
+d'intrication. Comme il possède un mode zéro, la source est recentrée et une
+régularisation faible est utilisée pour résoudre le système.
+
+\section{Observables testées}
+
+Nous comparons trois quantités à la réponse de courbure :
+
+\[
+S_{\rm flux},
+\qquad
+\Phi_{\rm BuP},
+\qquad
+|\nabla\Phi_{\rm BuP}|.
+\]
+
+La réponse géométrique est :
+\[
+|\delta R_i|
+=
+|R_i[W^{(0)}+\delta W]-R_i[W^{(0)}]|.
+\]
+
+Le critère principal est :
+\[
+\rho_{\rm Spearman}
+\left(
+\Phi_{\rm BuP},
+|\delta R|
+\right).
+\]
+
+\section{Protocole numérique}
+
+Le cas principal utilise :
+\[
+N=20,
+\qquad
+\lambda=0.57,
+\qquad
+k=5,
+\qquad
+A=0.15,
+\qquad
+\sigma=0.15.
+\]
+
+Les poids de la source sont repris de Paper~8 :
+\[
+\omega=-0.5,
+\qquad
+\chi=0.5,
+\qquad
+\psi=1.0.
+\]
+
+La source normalisée est donc :
+\[
+S_{\rm flux}
+=
+T_{00}
+-\frac12T_{aa}
++
+\frac12T_{\rm grad}
++
+\|T_{0a}\|.
+\]
+
+\section{Résultat principal}
+
+Pour \(\sigma=0.15\), nous obtenons :
+\[
+\rho_{\rm Spearman}(S_{\rm flux},|\delta R|)
+=
+0.741,
+\qquad
+p=1.84\times10^{-4}.
+\]
+
+Après résolution de :
+\[
+L_{\rm ent}\Phi_{\rm BuP}
+=
+S_{\rm flux},
+\]
+le potentiel obtenu vérifie :
+\[
+\rho_{\rm Spearman}(\Phi_{\rm BuP},|\delta R|)
+=
+0.738,
+\qquad
+p=2.01\times10^{-4}.
+\]
+
+Ainsi, le passage par l'équation de Poisson discrète conserve presque toute
+l'information géométrique portée par la source.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l c c}
+\toprule
+Quantité testée contre \(|\delta R|\) & Spearman & \(p\)-value \\
+\midrule
+\(S_{\rm flux}\) & \(0.741\) & \(1.84\times10^{-4}\) \\
+\(S_{\rm poisson}\) & \(0.741\) & \(1.84\times10^{-4}\) \\
+\(\Phi_{\rm BuP}\) & \(0.738\) & \(2.01\times10^{-4}\) \\
+\(|\Phi_{\rm BuP}|\) & \(-0.069\) & \(0.772\) \\
+\(|\nabla\Phi_{\rm BuP}|\) & \(-0.582\) & \(0.00710\) \\
+\bottomrule
+\end{tabular}
+\caption{
+Couplage de la source émergente à une équation de Poisson discrète. Le potentiel
+\(\Phi_{\rm BuP}\) reste fortement corrélé à la réponse de courbure.
+}
+\end{table}
+
+\section{Scan en largeur de l'excitation}
+
+Nous scannons ensuite :
+\[
+\sigma
+=
+0.01,\;0.02,\;0.05,\;0.08,\;0.10,\;0.15.
+\]
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c l}
+\toprule
+\(\sigma\) & \(S_{\rm flux}\) vs \(|\delta R|\) & \(\Phi_{\rm BuP}\) vs \(|\delta R|\) & Lecture \\
+\midrule
+\(0.01\) & \(0.504\) & \(0.498\) & signal modéré \\
+\(0.02\) & \(0.473\) & \(0.479\) & signal modéré \\
+\(0.05\) & \(0.148\) & \(0.115\) & non significatif \\
+\(0.08\) & \(0.176\) & \(0.157\) & non significatif \\
+\(0.10\) & \(0.122\) & \(0.199\) & non significatif \\
+\(0.15\) & \(0.741\) & \(0.738\) & meilleur régime \\
+\bottomrule
+\end{tabular}
+\caption{
+Scan en largeur d'excitation. Le meilleur couplage gravitationnel est obtenu
+pour \(\sigma=0.15\).
+}
+\end{table}
+
+Le résultat indique que le couplage gravitationnel optimal n'est pas obtenu pour
+l'excitation la plus compacte, mais pour une excitation plus étendue. Cela
+suggère que la gravité émergente BuP est un phénomène collectif du réseau
+d'intrication.
+
+\section{Structure du gradient}
+
+Le gradient du potentiel vérifie au meilleur point :
+\[
+\rho_{\rm Spearman}(|\nabla\Phi_{\rm BuP}|,|\delta R|)
+=
+-0.582,
+\qquad
+p=0.00710.
+\]
+
+Cette anti-corrélation suggère que \(|\nabla\Phi_{\rm BuP}|\) ne trace pas le
+pic central de courbure, mais plutôt une structure périphérique ou de bord
+autour de l'excitation.
+
+Le potentiel lui-même est donc le meilleur prédicteur direct de la réponse de
+courbure, tandis que le gradient semble porter une information spatiale
+complémentaire.
+
+\section{Prédictions observables}
+
+Paper~9 conduit à plusieurs prédictions.
+
+\subsection{Potentiel effectif}
+
+Une excitation locale d'intrication doit générer un potentiel effectif
+\[
+\Phi_{\rm BuP}
+\]
+corrélé à la réponse de courbure.
+
+\subsection{Gravité tensorielle}
+
+La gravité émergente BuP ne dépend pas seulement de \(T_{00}\), mais de la
+structure complète :
+\[
+T_{00},
+\qquad
+T_{aa},
+\qquad
+T_{\rm grad},
+\qquad
+T_{0a}.
+\]
+
+Deux excitations ayant la même énergie informationnelle totale peuvent donc
+produire des réponses gravitationnelles différentes si leurs flux ou contraintes
+internes diffèrent.
+
+\subsection{Largeur optimale}
+
+Le couplage gravitationnel est maximal pour une excitation étendue :
+\[
+\sigma=0.15.
+\]
+Cela suggère que la gravité BuP est une réponse collective du réseau.
+
+\subsection{Applications futures}
+
+Le potentiel \(\Phi_{\rm BuP}\) pourra être utilisé pour construire :
+
+\[
+a_{\rm BuP}(r)=|\nabla\Phi_{\rm BuP}(r)|,
+\]
+
+des profils de rotation :
+
+\[
+v^2(r)\sim r\,\partial_r\Phi_{\rm BuP},
+\]
+
+ou des profils de lentille :
+
+\[
+\alpha_{\rm BuP}(r)\propto \nabla_\perp\Phi_{\rm BuP}.
+\]
+
+\section{Discussion}
+
+Le résultat central de Paper~9 est que la source tensorielle de Paper~8 ne se
+contente pas d'être corrélée directement à la courbure. Lorsqu'elle est
+propagée par une équation de Poisson discrète sur le graphe d'intrication, elle
+génère un potentiel effectif qui reste fortement corrélé à la réponse
+géométrique.
+
+Cela suggère l'existence d'une dynamique gravitationnelle effective interne au
+réseau BuP :
+\[
+\text{source tensorielle}
+\longrightarrow
+\text{potentiel}
+\longrightarrow
+\text{courbure}.
+\]
+
+\section{Limites}
+
+Cette étude reste un test numérique minimal. Le potentiel est construit par une
+équation de Poisson discrète, et non encore par une résolution complète de
+l'équation d'Einstein effective.
+
+La normalisation physique de \(G_{\rm eff}(d_s)\), le rôle complet de
+\(T_{\mu\nu}^{\rm ent}\), les effets de taille \(N\), et la comparaison avec des
+observables astrophysiques réelles sont laissés à des travaux futurs.
+
+\section{Conclusion}
+
+Paper~9 couple la source matière émergente de Paper~8 à une équation de Poisson
+discrète sur le graphe d'intrication :
+\[
+L_{\rm ent}\Phi_{\rm BuP}
+=
+S_{\rm flux}.
+\]
+
+Le résultat principal est :
+\[
+\rho_{\rm Spearman}(\Phi_{\rm BuP},|\delta R|)
+=
+0.738,
+\qquad
+p=2.01\times10^{-4}.
+\]
+
+Ainsi, le potentiel effectif BuP prédit fortement la réponse de courbure. Ce
+résultat constitue une première prédiction gravitationnelle issue de la matière
+émergente BuP.
+
+\begin{thebibliography}{9}
+
+\bibitem{hamdad-paper5}
+F.~Hamdad,
+\textit{Équation d'Einstein effective émergente dans la Gravité Quantique Bottom-Up},
+BuP Paper 5, 2026.
+
+\bibitem{hamdad-paper7}
+F.~Hamdad,
+\textit{Étude de la dynamique des excitations du réseau d'intrication BuP},
+BuP Paper 7, 2026.
+
+\bibitem{hamdad-paper8}
+F.~Hamdad,
+\textit{De l'excitation d'intrication à la matière émergente},
+BuP Paper 8, 2026.
+
+\bibitem{ollivier}
+Y.~Ollivier,
+\textit{Ricci curvature of Markov chains on metric spaces},
+Journal of Functional Analysis, 256, 810--864, 2009.
+
+\end{thebibliography}
+
+\end{document}
