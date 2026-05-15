@@ -1,1 +1,3 @@
-vvv
+label,lambda,N,k,amp,sigma,center,omega,chi,psi,normalize_components,S_flux_spearman_abs_deltaR,S_flux_spearman_p,Phi_spearman_abs_deltaR,Phi_spearman_p,absPhi_spearman_abs_deltaR,absPhi_spearman_p,a_norm_spearman_abs_deltaR,a_norm_spearman_p
+MI_N20_lam0.57,0.57,20,5,0.15,0.15,12,-0.5,0.5,1.0,True,0.7413533834586465,0.00018373904000045947,0.7383458646616541,0.0002014294307883675,-0.06917293233082707,0.771985426525941,-0.5819548872180451,0.007104437545100437
+
