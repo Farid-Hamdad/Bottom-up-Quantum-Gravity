@@ -354,6 +354,132 @@ l'excitation la plus compacte, mais pour une excitation plus étendue. Cela
 suggère que la gravité émergente BuP est un phénomène collectif du réseau
 d'intrication.
 
+\section{Stabilité au shift et à la normalisation de la source}
+
+Une objection méthodologique possible concerne le remplacement de la source
+brute \(S_{\rm flux}\) par une source positive ou normalisée. En effet, dans le
+protocole numérique, on peut définir trois variantes :
+\[
+S_{\rm raw}=S_{\rm flux},
+\]
+\[
+S_{\rm shift}
+=
+S_{\rm flux}
+-
+\min_i S_{\rm flux}(i),
+\]
+et
+\[
+S_{\rm norm}
+=
+\frac{
+S_{\rm shift}
+}{
+\sum_i S_{\rm shift}(i)
+}.
+\]
+
+Nous avons donc répété le test de Poisson avec ces trois sources, en utilisant
+la matrice MI réelle \(MI\_N20\_lam0.57\) et une réponse de courbure nodale
+calculée par courbure d'Ollivier-Ricci. Pour chaque valeur de largeur
+\[
+\sigma
+=
+0.01,\;0.02,\;0.05,\;0.08,\;0.10,\;0.15,
+\]
+nous avons résolu :
+\[
+\Phi_{\rm raw}
+=
+L_{\rm ent}^{+}S_{\rm raw},
+\qquad
+\Phi_{\rm shift}
+=
+L_{\rm ent}^{+}S_{\rm shift},
+\qquad
+\Phi_{\rm norm}
+=
+L_{\rm ent}^{+}S_{\rm norm}.
+\]
+
+Le résultat est :
+\[
+\Delta\rho_{\rm shift}
+=
+\left|
+\rho(\Phi_{\rm shift},|\delta R|)
+-
+\rho(\Phi_{\rm raw},|\delta R|)
+\right|
+=
+0,
+\]
+et
+\[
+\Delta\rho_{\rm norm}
+=
+\left|
+\rho(\Phi_{\rm norm},|\delta R|)
+-
+\rho(\Phi_{\rm raw},|\delta R|)
+\right|
+=
+0,
+\]
+pour toutes les valeurs de \(\sigma\) testées.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{c c c c c}
+\toprule
+\(\sigma\) & \(\rho(\Phi_{\rm raw},|\delta R|)\) & \(\rho(\Phi_{\rm shift},|\delta R|)\) & \(\rho(\Phi_{\rm norm},|\delta R|)\) & \(\Delta\rho\) \\
+\midrule
+\(0.01\) & \(0.498\) & \(0.498\) & \(0.498\) & \(0.000\) \\
+\(0.02\) & \(0.479\) & \(0.479\) & \(0.479\) & \(0.000\) \\
+\(0.05\) & \(0.115\) & \(0.115\) & \(0.115\) & \(0.000\) \\
+\(0.08\) & \(0.157\) & \(0.157\) & \(0.157\) & \(0.000\) \\
+\(0.10\) & \(0.199\) & \(0.199\) & \(0.199\) & \(0.000\) \\
+\(0.15\) & \(0.738\) & \(0.738\) & \(0.738\) & \(0.000\) \\
+\bottomrule
+\end{tabular}
+\caption{
+Stabilité du potentiel effectif sous shift et normalisation de la source.
+Les trois variantes \(S_{\rm raw}\), \(S_{\rm shift}\) et \(S_{\rm norm}\)
+donnent exactement les mêmes corrélations entre le potentiel de Poisson et la
+réponse de courbure d'Ollivier-Ricci.
+}
+\end{table}
+
+Ce résultat est attendu mathématiquement. Le Laplacien du graphe vérifie
+\[
+L_{\rm ent}\mathbf{1}=0.
+\]
+Ainsi, ajouter une constante à la source,
+\[
+S\longrightarrow S+c\mathbf{1},
+\]
+ne modifie pas le potentiel physique après projection par la pseudo-inverse :
+\[
+L_{\rm ent}^{+}(S+c\mathbf{1})
+=
+L_{\rm ent}^{+}S.
+\]
+
+La normalisation globale ne change pas non plus les corrélations de Spearman,
+car elle multiplie le potentiel par un facteur positif. Le signal observé ne
+provient donc ni du shift ni de la normalisation, mais de la partie non
+constante de \(S_{\rm flux}\) propagée par \(L_{\rm ent}^{+}\).
+
+Ce test renforce l'interprétation physique de Paper~9 :
+\[
+\Phi_{\rm BuP}
+=
+L_{\rm ent}^{+}S_{\rm flux}
+\]
+est la quantité pertinente, et \(L_{\rm ent}^{+}\) apparaît comme un candidat
+naturel au propagateur gravitationnel discret du réseau d'intrication.
+
 \section{Structure du gradient}
 
 Le gradient du potentiel vérifie au meilleur point :
@@ -449,6 +575,28 @@ réseau BuP :
 \text{courbure}.
 \]
 
+Le test de stabilité au shift montre que ce résultat ne dépend pas d'un choix
+arbitraire de positivité ou de normalisation de la source. Les sources
+\(S_{\rm raw}\), \(S_{\rm shift}\) et \(S_{\rm norm}\) produisent les mêmes
+corrélations entre \(\Phi_{\rm BuP}\) et \(|\delta R|\). Cela confirme que la
+structure physique pertinente est portée par la projection de \(S_{\rm flux}\)
+sur l'image du Laplacien, c'est-à-dire par
+\[
+\Phi_{\rm BuP}
+=
+L_{\rm ent}^{+}S_{\rm flux}.
+\]
+
+En ce sens, Paper~9 suggère que la gravité BuP est une réponse de Green du
+réseau d'intrication à une source tensorielle informationnelle :
+\[
+\Phi_i^{\rm BuP}
+=
+\sum_j
+(L_{\rm ent}^{+})_{ij}
+S_{\rm flux}(j).
+\]
+
 \section{Limites}
 
 Cette étude reste un test numérique minimal. Le potentiel est construit par une
@@ -478,9 +626,25 @@ Le résultat principal est :
 p=2.01\times10^{-4}.
 \]
 
-Ainsi, le potentiel effectif BuP prédit fortement la réponse de courbure. Ce
-résultat constitue une première prédiction gravitationnelle issue de la matière
-émergente BuP.
+Ainsi, le potentiel effectif BuP prédit fortement la réponse de courbure. Le
+test de stabilité au shift montre en outre que ce résultat ne dépend ni du
+décalage de la source ni de sa normalisation globale :
+\[
+\Delta\rho_{\rm shift}
+=
+\Delta\rho_{\rm norm}
+=
+0.
+\]
+
+Ce résultat constitue une première prédiction gravitationnelle issue de la
+matière émergente BuP. Il suggère que la gravité effective de BuP est propagée
+par la fonction de Green du graphe d'intrication,
+\[
+G_{ij}^{\rm ent}
+=
+(L_{\rm ent}^{+})_{ij}.
+\]
 
 \begin{thebibliography}{9}
 
