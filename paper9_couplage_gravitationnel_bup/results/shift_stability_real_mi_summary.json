@@ -1,0 +1,40 @@
+"title": "BuP Paper 9 \u2014 Shift stability test on real MI + Ollivier-Ricci",
+  "description": "Tests whether S_flux shift and normalization affect the Poisson potential correlations.",
+  "mi_file": "results_mi_N20_full/MI_N20_lam0.57.csv",
+  "label": "MI_N20_lam0.57",
+  "lambda": 0.57,
+  "N": 20,
+  "k": 5,
+  "amp": 0.15,
+  "sigma_list": [
+    0.01,
+    0.02,
+    0.05,
+    0.08,
+    0.1,
+    0.15
+  ],
+  "omega": -0.5,
+  "chi": 0.5,
+  "psi": 1.0,
+  "normalize_components": true,
+  "definition": {
+    "S_raw": "S_flux",
+    "S_shift": "S_flux - min(S_flux)",
+    "S_norm": "S_shift / sum(S_shift)",
+    "poisson": "Phi = L_ent^+ S",
+    "curvature": "|delta R| from Ollivier-Ricci node curvature"
+  },
+  "results": {
+    "max_delta_rho_shift": 0.0,
+    "max_delta_rho_norm": 0.0,
+    "shift_stable_all_005": true,
+    "shift_stable_all_010": true,
+    "norm_stable_all_005": true,
+    "norm_stable_all_010": true
+  },
+  "files": {
+    "summary_csv": "shift_stability_real_mi_summary.csv",
+    "fig_correlations": "figures/fig_shift_stability_real_mi_correlations.png",
+    "fig_delta_rho": "figures/fig_shift_stability_real_mi_delta_rho.png",
+    "fig_phi_difference": "figures/fig_shift_stability_real_mi_phi_difference.png"
