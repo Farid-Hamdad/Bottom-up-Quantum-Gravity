@@ -120,31 +120,23 @@ Cela suggère que la gravité émergente BuP est un phénomène collectif du ré
 Une objection possible concerne le remplacement de la source brute par une source positive ou normalisée. Nous avons donc testé trois variantes :
 
 $$
-S_{\rm raw}=S_{\rm flux},
+S_{raw} = S_{flux},
 $$
 
 $$
-S_{\rm shift}
-=
-S_{\rm flux}
--
-\min_i S_{\rm flux}(i),
+S_{shift} = S_{flux} - \min_i S_{flux}(i),
 $$
 
 et
 
 $$
-S_{\rm norm}
-=
-\frac{S_{\rm shift}}{\sum_i S_{\rm shift}(i)}.
+S_{norm} = \frac{S_{shift}}{\sum_i S_{shift}(i)}.
 $$
 
 Pour chaque variante, nous résolvons :
 
 $$
-\Phi
-=
-L_{\rm ent}^{+}S.
+\Phi = L_{ent}^{+} S.
 $$
 
 Le test est effectué sur la matrice MI réelle `MI_N20_lam0.57.csv`, avec une réponse de courbure nodale issue de la courbure d’Ollivier-Ricci.
@@ -152,37 +144,27 @@ Le test est effectué sur la matrice MI réelle `MI_N20_lam0.57.csv`, avec une r
 **Résultat :**
 
 $$
-\max_{\sigma} \Delta\rho_{\rm shift} = 0,
-\qquad
-\max_{\sigma} \Delta\rho_{\rm norm} = 0.
+\max_{\sigma} \Delta\rho_{shift} = 0,\qquad \max_{\sigma} \Delta\rho_{norm} = 0.
 $$
 
 Autrement dit :
 
 $$
-\rho(\Phi_{\rm raw},|\delta R|)
-=
-\rho(\Phi_{\rm shift},|\delta R|)
-=
-\rho(\Phi_{\rm norm},|\delta R|)
+\rho(\Phi_{raw},|\delta R|) = \rho(\Phi_{shift},|\delta R|) = \rho(\Phi_{norm},|\delta R|)
 $$
 
 pour toutes les valeurs de largeur testées.
 
-Ce résultat confirme que le signal gravitationnel ne vient pas du shift ou de la normalisation de la source. Il vient de la projection de la partie non constante de \(S_{\rm flux}\) par la pseudo-inverse du Laplacien :
+Ce résultat confirme que le signal gravitationnel ne vient pas du shift ou de la normalisation de la source. Il vient de la projection de la partie non constante de \(S_{flux}\) par la pseudo-inverse du Laplacien :
 
 $$
-\Phi_{\rm BuP}
-=
-L_{\rm ent}^{+}S_{\rm flux}.
+\Phi_{BuP} = L_{ent}^{+} S_{flux}.
 $$
 
 Cela renforce l’interprétation suivante :
 
 $$
-G_{ij}^{\rm ent}
-=
-(L_{\rm ent}^{+})_{ij}
+G_{ij}^{ent} = (L_{ent}^{+})_{ij}
 $$
 
 est un candidat naturel au propagateur gravitationnel discret du graphe d’intrication.
@@ -200,11 +182,7 @@ $$
 Cela établit un premier pont physique entre :
 
 $$
-\text{matière émergente}
-\longrightarrow
-\text{potentiel gravitationnel}
-\longrightarrow
-\text{courbure émergente}.
+\text{matière émergente} \longrightarrow \text{potentiel gravitationnel} \longrightarrow \text{courbure émergente}.
 $$
 
 Paper 9 montre que BuP ne produit pas seulement une corrélation locale entre source et courbure : la source peut être propagée par un opérateur de Poisson sur le graphe, comme dans une limite gravitationnelle effective.
@@ -253,7 +231,6 @@ paper9_couplage_gravitationnel_bup/
     ├── fig_shift_stability_real_mi_correlations.png
     ├── fig_shift_stability_real_mi_delta_rho.png
     └── fig_shift_stability_real_mi_phi_difference.png
-
 Citation
 bibtex
 @misc{hamdad2026paper9,
