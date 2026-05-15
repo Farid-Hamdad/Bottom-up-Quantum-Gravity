@@ -238,9 +238,9 @@ paper9_couplage_gravitationnel_bup/
 │   ├── README.md
 │   ├── paper9_sigma_scan_summary.csv
 │   ├── paper9_poisson_summary.csv
+│   ├── summary.json
 │   ├── shift_stability_real_mi_summary.csv
-│   ├── shift_stability_real_mi_summary.json
-│   └── summary.json
+│   └── shift_stability_real_mi_summary.json
 └── figures/
     ├── fig_sigma_scan_correlations.png
     ├── fig_sigma_scan_phi.png
@@ -272,6 +272,3 @@ Paper 6 : paper6_pure_bup_equation/
 Paper 7 : paper7_variational_dynamics/
 Paper 8 : paper8_matiere_emergente_bup/
 Paper 9 (source) : paper9_couplage_gravitationnel_bup/paper/main_fr.tex
-
-
-
