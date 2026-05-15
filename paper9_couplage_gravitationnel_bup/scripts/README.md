@@ -5,16 +5,10 @@ Ce dossier contient le script utilisé dans le **BuP Paper 9 — Couplage gravit
 L’objectif est de tester le passage physique suivant :
 
 $$
-\delta W^{\rm loc}
-\longrightarrow
-S_{\rm flux}
-\longrightarrow
-\Phi_{\rm BuP}
-\longrightarrow
-|\delta R|.
+\delta W^{loc} \longrightarrow S_{flux} \longrightarrow \Phi_{BuP} \longrightarrow |\delta R|.
 $$
 
-Paper 8 a construit la source matière candidate $S_{\rm flux}$. Paper 9 teste si cette source peut générer un potentiel gravitationnel effectif $\Phi_{\rm BuP}$ via une équation de Poisson discrète sur le graphe d’intrication.
+Paper 8 a construit la source matière candidate \( S_{flux} \). Paper 9 teste si cette source peut générer un potentiel gravitationnel effectif \( \Phi_{BuP} \) via une équation de Poisson discrète sur le graphe d’intrication.
 
 ---
 
@@ -24,44 +18,31 @@ Paper 8 a construit la source matière candidate $S_{\rm flux}$. Paper 9 teste s
 
 Ce script :
 
-1. charge une matrice d’information mutuelle $W_{ij}=I(i:j)$ ;
-2. construit le graphe d’intrication $k$-NN ;
-3. injecte une excitation locale $\delta W^{\rm loc}$ ;
+1. charge une matrice d’information mutuelle \( W_{ij} = I(i:j) \) ;
+2. construit le graphe d’intrication \( k \)-NN ;
+3. injecte une excitation locale \( \delta W^{loc} \) ;
 4. reconstruit la source matière candidate de Paper 8 :
 
 $$
-S_{\rm flux}
-=
-T_{00}
--\frac{1}{2}T_{aa}
-+\frac{1}{2}T_{\rm grad}
-+\|T_{0a}\| ;
+S_{flux} = T_{00} - \frac{1}{2} T_{aa} + \frac{1}{2} T_{grad} + \|T_{0a}\| ;
 $$
 
 5. résout l’équation de Poisson discrète :
 
 $$
-L_{\rm ent}\Phi_{\rm BuP}
-=
-S_{\rm flux} ;
+L_{ent} \Phi_{BuP} = S_{flux} ;
 $$
 
 6. calcule le gradient effectif :
 
 $$
-|\nabla\Phi_{\rm BuP}| ;
+|\nabla \Phi_{BuP}| ;
 $$
 
-7. compare $S_{\rm flux}$, $\Phi_{\rm BuP}$ et $|\nabla\Phi_{\rm BuP}|$ à la réponse de courbure nodale :
+7. compare \( S_{flux} \), \( \Phi_{BuP} \) et \( |\nabla \Phi_{BuP}| \) à la réponse de courbure nodale :
 
 $$
-|\delta R_i|
-=
-\left|
-R_i[W^{(0)}+\delta W]
--
-R_i[W^{(0)}]
-\right|.
+|\delta R_i| = \left| R_i[W^{(0)} + \delta W] - R_i[W^{(0)}] \right|.
 $$
 
 ---
