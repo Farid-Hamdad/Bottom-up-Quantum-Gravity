@@ -1,0 +1,69 @@
+{
+  "title": "BuP Paper 10 \u2014 MI generator scan for target spectral dimension",
+  "description": "Generates MI-like matrices and scans (N, dim, lambda, k) for d_s close to target.",
+  "target_ds": 3.0,
+  "parameters": {
+    "output_dir": "papers/paper10_limite_newtonienne_propagateur/results/mi_ds_check_N800_lam030_k12_seed1",
+    "N_list": [
+      800
+    ],
+    "dim_list": [
+      3
+    ],
+    "lambda_list": [
+      0.3
+    ],
+    "k_list": [
+      12
+    ],
+    "seed_list": [
+      1
+    ],
+    "target_ds": 3.0,
+    "power": 1.0,
+    "noise": 0.0,
+    "background": 0.0,
+    "periodic": true,
+    "point_mode": "cube",
+    "normalized_laplacian": false,
+    "tau_min": 0.01,
+    "tau_max": 100.0,
+    "tau_points": 100,
+    "eig_k": 600,
+    "dense_threshold": 500,
+    "save_all_mi": true,
+    "save_if_error_below": 0.15
+  },
+  "best_candidates": [
+    {
+      "N": 800,
+      "dim_ambient": 3,
+      "lambda": 0.3,
+      "k": 12,
+      "seed": 1,
+      "power": 1.0,
+      "noise": 0.0,
+      "background": 0.0,
+      "periodic": true,
+      "point_mode": "cube",
+      "normalized_laplacian": false,
+      "d_s_eff": 2.888807796338937,
+      "target_ds": 3.0,
+      "abs_error_to_target": 0.11119220366106308,
+      "edges": 5440,
+      "mean_degree": 9.475246285794102,
+      "min_degree": 7.368125625942408,
+      "max_degree": 16.954110540406827,
+      "evals_used": 600,
+      "lambda_0": 5.703499608178111e-16,
+      "lambda_1": 0.6572166406414408,
+      "lambda_max_used": 11.30505857985764,
+      "mi_file": "papers/paper10_limite_newtonienne_propagateur/results/mi_ds_check_N800_lam030_k12_seed1/mi_matrices/MI_N800_d3_lam0p3_k12_seed1.csv"
+    }
+  ],
+  "files": {
+    "scan_csv": "ds_scan_summary.csv",
+    "mi_matrices_dir": "mi_matrices/",
+    "figures_dir": "figures/"
+  }
+}
