@@ -13,52 +13,35 @@ Paper 10 étudie le propagateur gravitationnel discret associé au graphe d’in
 
 À partir du Laplacien d’intrication
 
-\[
+$$
 L_{\rm ent},
-\]
+$$
 
 on définit la réponse à une source ponctuelle par :
 
-\[
-L_{\rm ent}\Phi
-=
-\delta_{i_0}
--
-\frac{1}{N}.
-\]
+$$
+L_{\rm ent} \Phi = \delta_{i_0} - \frac{1}{N}.
+$$
 
 La solution est :
 
-\[
-\Phi
-=
-L_{\rm ent}^{+}
-\left(
-\delta_{i_0}
--
-\frac{1}{N}
-\right),
-\]
+$$
+\Phi = L_{\rm ent}^{+} \left( \delta_{i_0} - \frac{1}{N} \right),
+$$
 
-où \(L_{\rm ent}^{+}\) est la pseudo-inverse de Moore--Penrose du Laplacien.
+où \( L_{\rm ent}^{+} \) est la pseudo-inverse de Moore–Penrose du Laplacien.
 
 L’objectif est de tester si, lorsque la dimension spectrale du graphe est proche de trois,
 
-\[
-d_s\simeq3,
-\]
+$$
+d_s \simeq 3,
+$$
 
 le propagateur possède une loi quasi-newtonienne :
 
-\[
-\Phi(r)
-\simeq
-C
-+
-A r^{-\alpha},
-\qquad
-\alpha\simeq1.
-\]
+$$
+\Phi(r) \simeq C + A r^{-\alpha}, \qquad \alpha \simeq 1.
+$$
 
 ---
 
@@ -66,81 +49,60 @@ A r^{-\alpha},
 
 Le résultat principal est obtenu sur une matrice MI géométrique :
 
-\[
-N=800,
-\qquad
-k=12,
-\qquad
-\lambda=0.3.
-\]
+$$
+N = 800,\qquad k = 12,\qquad \lambda = 0.3.
+$$
 
 Pour la réalisation `seed0`, la dimension spectrale mesurée par noyau de chaleur est :
 
-\[
-d_s=2.964.
-\]
+$$
+d_s = 2.964.
+$$
 
 La relation spectrale attendue serait :
 
-\[
-\alpha_{\rm pred}=d_s-2=0.964.
-\]
+$$
+\alpha_{\rm pred} = d_s - 2 = 0.964.
+$$
 
 Dans la fenêtre intermédiaire :
 
-\[
-r/r_{\max}\in[0.15,0.50],
-\]
+$$
+r/r_{\max} \in [0.15,\ 0.50],
+$$
 
-le fit inter-centres du potentiel ponctuel donne, pour le filtre strict \(R^2>0.85\),
+le fit inter-centres du potentiel ponctuel donne, pour le filtre strict (\( R^2 > 0.85 \)),
 
-\[
-\alpha_{\rm med}=1.1046,
-\]
+$$
+\alpha_{\rm med} = 1.1046,
+$$
 
-avec \(109/150\) centres valides.
+avec \( 109 / 150 \) centres valides.
 
 Deux vérifications sur la même matrice donnent :
 
-\[
-\alpha_{\rm med}=1.1547
-\]
-
-avec \(300\) centres, et
-
-\[
-\alpha_{\rm med}=1.2022
-\]
-
-avec un autre seed de sélection des centres.
+- \( \alpha_{\rm med} = 1.1547 \) avec 300 centres,  
+- \( \alpha_{\rm med} = 1.2022 \) avec un autre seed de sélection des centres.
 
 Une seconde réalisation indépendante de la matrice MI (`matrix seed1`) donne :
 
-\[
-d_s=2.970,
-\qquad
-\alpha_{\rm pred}=0.970,
-\]
+$$
+d_s = 2.970,\qquad \alpha_{\rm pred} = 0.970,
+$$
 
 et, dans la même fenêtre :
 
-\[
-\alpha_{\rm med}=1.2597
-\quad
-(R^2>0.85).
-\]
+$$
+\alpha_{\rm med} = 1.2597 \quad (R^2 > 0.85).
+$$
 
 Le résultat robuste est donc :
 
-\[
-\boxed{
-d_s\simeq3
-\quad\Longrightarrow\quad
-\alpha\simeq1.1-1.3.
-}
-\]
+$$
+\boxed{ d_s \simeq 3 \;\Longrightarrow\; \alpha \simeq 1.1\text{--}1.3. }
+$$
 
-Cela établit une fenêtre quasi-newtonienne du propagateur d’intrication.
+Cela établit une **fenêtre quasi-newtonienne** du propagateur d’intrication.
 
 ---
 
@@ -148,33 +110,21 @@ Cela établit une fenêtre quasi-newtonienne du propagateur d’intrication.
 
 Dans la gravité newtonienne continue, le potentiel gravitationnel vérifie :
 
-\[
-\Phi(r)\sim \frac{1}{r}.
-\]
+$$
+\Phi(r) \sim \frac{1}{r}.
+$$
 
 Dans BuP, cette loi n’est pas imposée. Elle doit émerger du spectre du graphe d’intrication.
 
-Paper 10 montre que :
+Paper 10 montre que \( L_{\rm ent}^{+} \) se comporte comme un propagateur de Green discret et qu’une loi proche de \( 1/r \) apparaît lorsque le graphe atteint un régime spectral quasi‑tridimensionnel.
 
-\[
-L_{\rm ent}^{+}
-\]
-
-se comporte comme un propagateur de Green discret et qu’une loi proche de \(1/r\) apparaît lorsque le graphe atteint un régime spectral quasi tridimensionnel.
-
-La loi newtonienne exacte
-
-\[
-\alpha=1
-\]
-
-doit être comprise comme une limite idéale continue. Sur un graphe fini, l’exposant effectif peut différer de \(1\), à cause :
+La loi newtonienne exacte (\( \alpha = 1 \)) doit être comprise comme une **limite idéale continue**. Sur un graphe fini, l’exposant effectif peut différer de 1, à cause :
 
 - de la taille finie ;
 - de la discrétisation ;
 - de l’hétérogénéité du graphe ;
 - du choix de la fenêtre de fit ;
-- de la dimension spectrale effective \(d_s\).
+- de la dimension spectrale effective \( d_s \).
 
 ---
 
@@ -182,25 +132,15 @@ doit être comprise comme une limite idéale continue. Sur un graphe fini, l’e
 
 Paper 10 établit la chaîne :
 
-\[
-\text{matrice MI}
-\longrightarrow
-L_{\rm ent}
-\longrightarrow
-L_{\rm ent}^{+}
-\longrightarrow
-\Phi(r)
-\longrightarrow
-\alpha.
-\]
+$$
+\text{matrice MI} \longrightarrow L_{\rm ent} \longrightarrow L_{\rm ent}^{+} \longrightarrow \Phi(r) \longrightarrow \alpha.
+$$
 
 Le résultat non trivial est que la limite newtonienne n’est pas postulée : elle apparaît comme une fenêtre effective du propagateur d’intrication.
 
-\[
-\boxed{
-\text{Newton émerge comme approximation lorsque } d_s\simeq3.
-}
-\]
+$$
+\boxed{ \text{Newton émerge comme approximation lorsque } d_s \simeq 3. }
+$$
 
 ---
 
@@ -212,73 +152,61 @@ Sur des grilles géométriques contrôlées, la réponse ponctuelle du Laplacien
 
 Exemple :
 
-\[
-3D,\ L=11:
-\qquad
-\alpha=1.152,
-\qquad
-R^2=0.996.
-\]
+$$
+\text{3D},\ L = 11: \qquad \alpha = 1.152,\qquad R^2 = 0.996.
+$$
 
-Ce test valide le protocole point-source.
+Ce test valide le protocole point‑source.
 
-### 2. Matrice MI quasi-3D — seed0
+### 2. Matrice MI quasi‑3D — seed0
 
-Pour la matrice MI \(N=800,\lambda=0.3,k=12\) :
+Pour la matrice MI (\( N = 800, \lambda = 0.3, k = 12 \)) :
 
-\[
-d_s=2.964,
-\qquad
-d_s-2=0.964.
-\]
+$$
+d_s = 2.964,\qquad d_s - 2 = 0.964.
+$$
 
 Fenêtre retenue :
 
-\[
-r/r_{\max}\in[0.15,0.50].
-\]
+$$
+r/r_{\max} \in [0.15,\ 0.50].
+$$
 
 Résultat principal :
 
-\[
-\alpha_{\rm med}=1.1046
-\quad
-(R^2>0.85).
-\]
+$$
+\alpha_{\rm med} = 1.1046 \quad (R^2 > 0.85).
+$$
 
 Vérifications :
 
 | Test | Centres | Seed centres | \(R^2\) | \(\alpha_{\rm med}\) |
-|---|---:|---:|---:|---:|
-| principal | 150 | 0 | \(>0.85\) | 1.1046 |
-| plus de centres | 300 | 0 | \(>0.85\) | 1.1547 |
-| autre seed centres | 150 | 1 | \(>0.85\) | 1.2022 |
+|------|---------|--------------|---------|----------------------|
+| principal | 150 | 0 | >0.85 | 1.1046 |
+| plus de centres | 300 | 0 | >0.85 | 1.1547 |
+| autre seed centres | 150 | 1 | >0.85 | 1.2022 |
 
-### 3. Matrice MI quasi-3D — matrix seed1
+### 3. Matrice MI quasi‑3D — matrix seed1
 
 Une deuxième réalisation de la matrice MI donne :
 
-\[
-d_s=2.970,
-\qquad
-d_s-2=0.970.
-\]
+$$
+d_s = 2.970,\qquad d_s - 2 = 0.970.
+$$
 
 Dans la même fenêtre :
 
-\[
-r/r_{\max}\in[0.15,0.50],
-\]
+$$
+r/r_{\max} \in [0.15,\ 0.50],
+$$
 
 on obtient :
 
-\[
-\alpha_{\rm med}=1.2597
-\quad
-(R^2>0.85).
-\]
+$$
+\alpha_{\rm med} = 1.2597 \quad (R^2 > 0.85).
+$$
 
-Cela confirme que le régime quasi-newtonien ne dépend pas d’une unique réalisation de la matrice MI.
+Cela confirme que le régime quasi‑newtonien ne dépend pas d’une unique réalisation de la matrice MI.
 
 ---
 
@@ -286,17 +214,15 @@ Cela confirme que le régime quasi-newtonien ne dépend pas d’une unique réal
 
 Paper 10 ne démontre pas encore une limite newtonienne exacte. Il établit plus précisément :
 
-\[
-\boxed{
-\text{une fenêtre quasi-newtonienne robuste du propagateur d’intrication.}
-}
-\]
+$$
+\boxed{ \text{une fenêtre quasi‑newtonienne robuste du propagateur d’intrication.} }
+$$
 
-La suite naturelle est Paper 11 :
+La suite naturelle est **Paper 11** :
 
-- démontrer analytiquement la relation asymptotique \(\alpha\simeq d_s-2\) ;
-- étudier la convergence grand \(N\) ;
-- relier la correction \(\alpha-1\) à la dimension critique cosmologique BuP ;
+- démontrer analytiquement la relation asymptotique \( \alpha \simeq d_s - 2 \) ;
+- étudier la convergence grand \( N \) ;
+- relier la correction \( \alpha - 1 \) à la dimension critique cosmologique BuP ;
 - tester les conséquences sur les courbes de rotation et la cosmologie.
 
 ---
@@ -326,3 +252,23 @@ paper10_limite_newtonienne_propagateur/
 │   └── mi_N800_alpha_window_020_060/
 └── figures/
     └── README.md
+
+    Citation
+bibtex
+@misc{hamdad2026paper10,
+  author  = {Farid Hamdad},
+  title   = {Limite quasi-newtonienne du propagateur d'intrication :
+             fonction de Green discrète, dimension spectrale et corrections BuP},
+  year    = {2026},
+  note    = {BuP Paper 10},
+  url     = {https://github.com/Farid-Hamdad/Bottom-up-Quantum-Gravity}
+}
+Liens
+GitHub : Farid-Hamdad/Bottom-up-Quantum-Gravity
+
+Paper 5 : paper5_effective_einstein/
+Paper 6 : paper6_pure_bup_equation/
+Paper 7 : paper7_variational_dynamics/
+Paper 8 : paper8_matiere_emergente_bup/
+Paper 9 : paper9_couplage_gravitationnel_bup/
+Paper 10 (source) : paper10_limite_newtonienne_propagateur/paper/main_fr.tex
