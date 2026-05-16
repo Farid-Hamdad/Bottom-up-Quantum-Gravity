@@ -1,1 +1,789 @@
-titi
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{physics}
+
+\geometry{margin=2.5cm}
+
+\title{
+\textbf{BuP Paper 10 -- Limite quasi-newtonienne du propagateur d'intrication}\\
+\large Fonction de Green discrète, dimension spectrale et corrections BuP
+}
+
+\author{Farid Hamdad}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dans le programme Bottom-Up Quantum Gravity (BuP), la géométrie et la gravité
+émergent de la structure d'intrication d'un état quantique fini. Les articles
+précédents ont introduit un graphe d'information mutuelle, un Laplacien
+d'intrication \(L_{\rm ent}\), une dimension spectrale effective \(d_s\), ainsi
+qu'une source tensorielle candidate de matière émergente.
+
+Le présent article étudie la pseudo-inverse du Laplacien,
+\[
+L_{\rm ent}^{+},
+\]
+comme propagateur gravitationnel discret. Nous testons la réponse à une source
+ponctuelle,
+\[
+L_{\rm ent}\Phi
+=
+\delta_{i_0}
+-
+\frac{1}{N},
+\]
+et analysons le profil radial du potentiel effectif,
+\[
+\Phi(r)
+\simeq
+C
++
+A r^{-\alpha}.
+\]
+
+Nous montrons d'abord, sur des graphes géométriques contrôlés, que le protocole
+point-source permet d'extraire une loi de Green en dimension trois. Nous
+construisons ensuite des matrices d'information mutuelle géométriques avec
+\(N=800\), \(\lambda=0.3\), \(k=12\), dont la dimension spectrale mesurée par
+noyau de chaleur est proche de trois.
+
+Pour la réalisation principale, nous obtenons
+\[
+d_s=2.964,
+\qquad
+\alpha_{\rm pred}=d_s-2=0.964.
+\]
+Dans la fenêtre intermédiaire
+\[
+r/r_{\max}\in[0.15,0.50],
+\]
+le fit inter-centres du propagateur donne
+\[
+\alpha_{\rm med}=1.1046
+\]
+pour le filtre strict \(R^2>0.85\). Des vérifications avec davantage de centres
+et un autre seed de sélection donnent respectivement
+\[
+\alpha_{\rm med}=1.1547
+\quad \text{et} \quad
+\alpha_{\rm med}=1.2022.
+\]
+Une seconde réalisation indépendante de la matrice MI donne
+\[
+d_s=2.970,
+\qquad
+\alpha_{\rm med}=1.2597.
+\]
+
+Ces résultats établissent l'existence d'une fenêtre quasi-newtonienne du
+propagateur d'intrication. La loi de Newton \(1/r\) n'est pas imposée dans BuP :
+elle apparaît comme une limite effective lorsque le graphe atteint un régime
+spectral proche de trois dimensions, avec des corrections discrètes et
+spectrales mesurables.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Le programme BuP repose sur l'hypothèse que la géométrie n'est pas fondamentale.
+Elle émerge d'une structure d'intrication encodée par une matrice d'information
+mutuelle,
+\[
+W_{ij}=I(i:j).
+\]
+À partir de cette matrice, on reconstruit un graphe pondéré, puis un Laplacien
+d'intrication,
+\[
+L_{\rm ent}.
+\]
+
+Les travaux précédents ont montré que ce Laplacien permet de définir une
+dimension spectrale effective,
+\[
+d_s(\tau)
+=
+-2
+\frac{d\log Z(\tau)}{d\log \tau},
+\qquad
+Z(\tau)=\Tr e^{-\tau L_{\rm ent}},
+\]
+et que les excitations locales du graphe peuvent être interprétées comme des
+sources candidates de matière.
+
+Le problème étudié ici est le suivant : si \(L_{\rm ent}\) joue le rôle d'un
+opérateur géométrique discret, alors sa pseudo-inverse
+\[
+L_{\rm ent}^{+}
+\]
+doit jouer le rôle d'un propagateur de Green. Dans une géométrie continue
+tridimensionnelle, la fonction de Green du Laplacien donne le potentiel
+newtonien,
+\[
+\Phi(r)\sim \frac{1}{r}.
+\]
+La question centrale devient donc :
+\[
+\boxed{
+\text{la loi newtonienne peut-elle émerger du propagateur }L_{\rm ent}^{+}?
+}
+\]
+
+\section{Propagateur d'intrication}
+
+\subsection{Définition}
+
+Soit un graphe d'intrication pondéré par une matrice \(W_{ij}\). Le Laplacien
+combinatoire associé est
+\[
+L_{\rm ent}
+=
+D-W,
+\]
+où
+\[
+D_{ii}
+=
+\sum_j W_{ij}.
+\]
+
+La pseudo-inverse de Moore--Penrose de ce Laplacien est notée
+\[
+L_{\rm ent}^{+}.
+\]
+
+Comme le Laplacien possède un mode nul constant,
+\[
+L_{\rm ent}\mathbf{1}=0,
+\]
+la réponse à une source ponctuelle doit être rendue compatible avec la
+condition de moyenne nulle. Nous résolvons donc :
+\[
+L_{\rm ent}\Phi
+=
+\delta_{i_0}
+-
+\frac{1}{N}\mathbf{1}.
+\]
+
+La solution est
+\[
+\Phi
+=
+L_{\rm ent}^{+}
+\left(
+\delta_{i_0}
+-
+\frac{1}{N}\mathbf{1}
+\right).
+\]
+
+\subsection{Profil radial}
+
+Pour un centre \(i_0\), on définit une distance d'intrication \(r(i_0,j)\), puis
+on ajuste le potentiel par :
+\[
+\Phi(r)
+=
+C
++
+A r^{-\alpha}.
+\]
+
+L'exposant \(\alpha\) caractérise la loi effective du propagateur.
+
+Dans une limite tridimensionnelle continue, on attend :
+\[
+\alpha\simeq1.
+\]
+
+Plus généralement, une loi spectrale naturelle est :
+\[
+\alpha
+\simeq
+d_s-2.
+\]
+
+Cette relation est exacte pour le Laplacien continu dans des géométries
+régulières. Sur un graphe fini et irrégulier, elle doit être comprise comme une
+relation asymptotique à tester numériquement.
+
+\section{Calibration sur graphes géométriques contrôlés}
+
+\subsection{Motivation}
+
+Avant de tester des matrices d'information mutuelle BuP, il faut vérifier que
+le protocole point-source est capable de retrouver une loi de Green correcte
+sur des graphes géométriques connus.
+
+Nous considérons des grilles 1D, 2D et 3D. Pour chaque graphe, nous résolvons :
+\[
+L\Phi
+=
+\delta_{i_0}
+-
+\frac{1}{N}.
+\]
+
+Le profil est ensuite ajusté par :
+\[
+\Phi(r)=C+A r^{-\alpha}.
+\]
+
+\subsection{Résultats}
+
+Les tests sur grilles contrôlées montrent que la réponse ponctuelle produit une
+loi de puissance propre en dimension trois.
+
+Par exemple, pour la grille 3D \(L=11\), on obtient :
+\[
+\alpha=1.152,
+\qquad
+R^2=0.996.
+\]
+
+Pour \(L=13\), le fit reste extrêmement propre :
+\[
+\alpha=1.330,
+\qquad
+R^2=0.9998.
+\]
+
+Ces résultats montrent que le protocole point-source extrait bien une loi de
+Green discrète. La valeur exacte de \(\alpha\) dépend de la taille finie, des
+bords, de la fenêtre de fit et de la discrétisation.
+
+\subsection{Conclusion de la calibration}
+
+Le protocole retenu n'est pas la moyenne globale de toutes les entrées de
+\(L^+\). Cette moyenne mélange les signes, les effets de bord et les paires non
+équivalentes.
+
+Le bon protocole physique est la réponse à une source ponctuelle :
+\[
+L\Phi=\delta_{i_0}-\frac{1}{N}.
+\]
+
+Cette réponse fournit une fonction de Green discrète exploitable.
+
+\section{Comparaison du modèle newtonien et du modèle libre}
+
+\subsection{Deux modèles}
+
+Sur les graphes 3D contrôlés, nous comparons deux modèles.
+
+Le modèle newtonien fixé :
+\[
+\Phi_{\rm Newt}(r)
+=
+C+\frac{A}{r}.
+\]
+
+Le modèle à exposant libre :
+\[
+\Phi_{\rm free}(r)
+=
+C+A r^{-\alpha}.
+\]
+
+La comparaison utilise \(R^2\), AIC et BIC.
+
+\subsection{Interprétation}
+
+Le modèle newtonien donne généralement un excellent ajustement, mais le modèle
+libre est parfois préféré. Cela indique que le propagateur discret possède une
+loi quasi-newtonienne, avec des corrections de réseau mesurables.
+
+La conclusion n'est donc pas :
+\[
+\alpha=1
+\quad
+\text{exactement}.
+\]
+
+La conclusion correcte est :
+\[
+\boxed{
+\alpha\simeq1
+\quad
+\text{dans une fenêtre intermédiaire.}
+}
+\]
+
+\section{Construction d'une matrice MI quasi tridimensionnelle}
+
+\subsection{Génération}
+
+Nous générons des matrices MI géométriques de la forme :
+\[
+W_{ij}
+=
+\exp\left[
+-
+\left(
+\frac{r_{ij}}{\lambda}
+\right)^p
+\right],
+\]
+où \(r_{ij}\) est une distance dans un espace ambiant 3D.
+
+À partir de \(W_{ij}\), nous construisons un graphe \(k\)-NN et mesurons la
+dimension spectrale par noyau de chaleur :
+\[
+Z(\tau)=\Tr e^{-\tau L_{\rm ent}},
+\]
+\[
+d_s(\tau)
+=
+-2
+\frac{d\log Z(\tau)}{d\log\tau}.
+\]
+
+\subsection{Candidat principal}
+
+Le candidat principal utilise :
+\[
+N=800,
+\qquad
+\lambda=0.3,
+\qquad
+k=12.
+\]
+
+Pour la réalisation \(seed=0\), la dimension spectrale mesurée est :
+\[
+d_s=2.964.
+\]
+
+La relation spectrale attendue donne :
+\[
+\alpha_{\rm pred}
+=
+d_s-2
+=
+0.964.
+\]
+
+Ce graphe est donc très proche d'un régime spectral tridimensionnel.
+
+\subsection{Deuxième réalisation}
+
+Pour une seconde réalisation indépendante de la matrice MI, avec \(seed=1\),
+nous obtenons :
+\[
+d_s=2.970,
+\qquad
+\alpha_{\rm pred}=0.970.
+\]
+
+Cela confirme que le régime quasi tridimensionnel ne dépend pas d'une unique
+réalisation de la matrice.
+
+\section{Test du propagateur sur matrice MI quasi-3D}
+
+\subsection{Protocole}
+
+Pour la matrice MI \(N=800,\lambda=0.3,k=12\), nous résolvons le problème
+point-source :
+\[
+L_{\rm ent}\Phi_{i_0}
+=
+\delta_{i_0}
+-
+\frac{1}{N}.
+\]
+
+Le calcul est répété sur un sous-échantillon de centres \(i_0\). Pour chaque
+centre, on ajuste :
+\[
+\Phi_{i_0}(r)
+=
+C
++
+A r^{-\alpha_{i_0}}.
+\]
+
+Les centres sont ensuite filtrés par qualité de fit :
+\[
+R^2>0.70
+\]
+et
+\[
+R^2>0.85.
+\]
+
+\subsection{Importance de la fenêtre de fit}
+
+Nous testons plusieurs fenêtres radiales normalisées :
+\[
+r/r_{\max}\in[0.10,0.40],
+\]
+\[
+r/r_{\max}\in[0.15,0.50],
+\]
+\[
+r/r_{\max}\in[0.20,0.60].
+\]
+
+Les résultats montrent que la fenêtre courte \([0.10,0.40]\) reste trop proche
+du régime UV et donne un exposant sous-newtonien :
+\[
+\alpha_{\rm med}=0.5333
+\quad
+(R^2>0.85).
+\]
+
+La fenêtre centrale \([0.15,0.50]\) donne le meilleur accord avec la limite
+quasi-newtonienne :
+\[
+\alpha_{\rm med}=1.1046
+\quad
+(R^2>0.85).
+\]
+
+La fenêtre plus large \([0.20,0.60]\) donne :
+\[
+\alpha_{\rm med}=1.1397
+\quad
+(R^2>0.85).
+\]
+
+\subsection{Résultat principal}
+
+Dans la fenêtre centrale :
+\[
+r/r_{\max}\in[0.15,0.50],
+\]
+avec \(150\) centres et le filtre strict \(R^2>0.85\), on obtient :
+\[
+n=109,
+\]
+\[
+\alpha_{\rm med}=1.1046,
+\]
+\[
+\alpha_{\rm mean}=1.1500,
+\]
+\[
+\sigma_\alpha=0.3285,
+\]
+\[
+\Delta
+=
+\alpha_{\rm med}
+-
+(d_s-2)
+=
+0.1406.
+\]
+
+Ce résultat est proche de :
+\[
+\alpha_{\rm pred}=0.964.
+\]
+
+Il est aussi proche de la loi newtonienne :
+\[
+\alpha=1.
+\]
+
+\section{Tests de robustesse}
+
+\subsection{Davantage de centres}
+
+Nous répétons le test principal avec \(300\) centres, même fenêtre
+\([0.15,0.50]\), même matrice MI.
+
+Pour \(R^2>0.85\), nous obtenons :
+\[
+n=202,
+\]
+\[
+\alpha_{\rm med}=1.1547,
+\]
+\[
+\Delta=0.1906.
+\]
+
+\subsection{Autre seed de sélection des centres}
+
+Nous répétons le test principal avec \(150\) centres mais un autre seed de
+sélection.
+
+Pour \(R^2>0.85\), nous obtenons :
+\[
+n=102,
+\]
+\[
+\alpha_{\rm med}=1.2022,
+\]
+\[
+\Delta=0.2381.
+\]
+
+\subsection{Autre seed de matrice MI}
+
+Nous générons une deuxième réalisation indépendante de la matrice MI avec les
+mêmes paramètres :
+\[
+N=800,
+\qquad
+\lambda=0.3,
+\qquad
+k=12,
+\]
+mais avec \(seed=1\).
+
+Cette réalisation donne :
+\[
+d_s=2.970,
+\qquad
+d_s-2=0.970.
+\]
+
+Dans la même fenêtre \([0.15,0.50]\), pour \(R^2>0.85\), nous obtenons :
+\[
+n=104,
+\]
+\[
+\alpha_{\rm med}=1.2597,
+\]
+\[
+\Delta=0.2893.
+\]
+
+\subsection{Conclusion des tests}
+
+Les tests donnent :
+\[
+\alpha_{\rm med}
+\simeq
+1.10-1.26.
+\]
+
+La valeur exacte varie selon l'échantillon de centres et la réalisation de la
+matrice MI, mais le régime reste quasi-newtonien.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+Test & Fenêtre & Centres & Source & Filtre & \(\alpha_{\rm med}\) \\
+\midrule
+Principal & [0.15,0.50] & 150 & matrix seed0 & \(R^2>0.85\) & 1.1046 \\
+Plus de centres & [0.15,0.50] & 300 & matrix seed0 & \(R^2>0.85\) & 1.1547 \\
+Autre seed centres & [0.15,0.50] & 150 & matrix seed0 & \(R^2>0.85\) & 1.2022 \\
+Autre matrice MI & [0.15,0.50] & 150 & matrix seed1 & \(R^2>0.85\) & 1.2597 \\
+\bottomrule
+\end{tabular}
+\caption{Robustesse de l'exposant quasi-newtonien sur les matrices MI \(N=800\).}
+\end{table}
+
+\section{Interprétation physique}
+
+\subsection{Newton comme limite effective}
+
+La loi de Newton :
+\[
+\Phi(r)
+\sim
+\frac{1}{r}
+\]
+est une loi idéale du Laplacien continu en dimension trois.
+
+Dans BuP, on ne part pas d'un espace continu. On part d'un graphe fini issu
+d'une structure d'intrication. La loi newtonienne ne doit donc pas être imposée
+à la main. Elle doit émerger dans une fenêtre d'échelle.
+
+Les résultats de ce papier montrent que, lorsque :
+\[
+d_s\simeq3,
+\]
+le propagateur d'intrication possède effectivement une fenêtre où :
+\[
+\alpha\simeq1.
+\]
+
+\subsection{Correction BuP}
+
+L'exposant mesuré n'est pas exactement :
+\[
+\alpha=1.
+\]
+
+Il est plutôt :
+\[
+\alpha_{\rm med}\simeq1.1-1.3.
+\]
+
+Cette déviation peut être interprétée comme une correction de graphe fini,
+liée à :
+
+\begin{itemize}
+\item la dimension spectrale effective \(d_s\),
+\item la taille finie \(N\),
+\item l'hétérogénéité locale,
+\item la fenêtre de fit,
+\item la discrétisation du propagateur.
+\end{itemize}
+
+Ainsi, Paper 10 ne prétend pas démontrer Newton exact. Il établit :
+\[
+\boxed{
+\text{une fenêtre quasi-newtonienne robuste du propagateur }L_{\rm ent}^{+}.
+}
+\]
+
+\section{Lien avec la dimension critique cosmologique}
+
+Dans les travaux cosmologiques BuP, une dimension critique proche de
+\[
+D_C\simeq3.06
+\]
+a été identifiée.
+
+Si la relation asymptotique
+\[
+\alpha\simeq d_s-2
+\]
+s'applique dans la limite continue, alors :
+\[
+\alpha_{\rm BuP}
+\simeq
+D_C-2
+\simeq
+1.06.
+\]
+
+Cette valeur est proche des exposants mesurés dans la fenêtre quasi-newtonienne :
+\[
+\alpha_{\rm med}\simeq1.10-1.26.
+\]
+
+Nous n'interprétons pas encore cette correspondance comme une preuve. Nous la
+présentons comme une conjecture testable :
+\[
+\boxed{
+\alpha_\infty
+\simeq
+D_C-2.
+}
+\]
+
+Cette conjecture relierait directement :
+
+\[
+\text{dimension spectrale cosmologique}
+\longrightarrow
+\text{loi gravitationnelle effective}.
+\]
+
+\section{Limites}
+
+Les résultats restent numériques et doivent être consolidés.
+
+Les principales limites sont :
+
+\begin{enumerate}
+\item La relation \(\alpha=d_s-2\) n'est pas encore démontrée analytiquement sur
+graphe discret général.
+\item La valeur de \(\alpha\) dépend de la fenêtre de fit.
+\item La matrice MI utilisée est une matrice géométrique contrôlée, non encore
+une matrice MI quantique complète issue d'un état \(\ket{\Psi}\).
+\item Les effets de taille finie restent importants.
+\item Le passage aux observations astrophysiques nécessite un modèle dynamique
+complet.
+\end{enumerate}
+
+\section{Perspectives}
+
+Paper 11 devra viser trois objectifs.
+
+Premièrement, fournir une démonstration analytique reliant :
+\[
+K(\tau,x,x)
+\sim
+\tau^{-d_s/2}
+\]
+à :
+\[
+L^{+}(r)
+\sim
+r^{-(d_s-2)}.
+\]
+
+Deuxièmement, tester la convergence grand \(N\) :
+\[
+\alpha(N)
+\to
+d_s(N)-2.
+\]
+
+Troisièmement, relier la correction :
+\[
+\alpha-1
+\]
+aux observables galactiques et cosmologiques.
+
+\section{Conclusion}
+
+Nous avons montré que la pseudo-inverse du Laplacien d'intrication,
+\[
+L_{\rm ent}^{+},
+\]
+se comporte comme un propagateur de Green discret.
+
+Sur des graphes contrôlés, le protocole point-source extrait une loi de
+puissance en dimension trois. Sur des matrices MI géométriques quasi
+tridimensionnelles avec :
+\[
+N=800,
+\qquad
+k=12,
+\qquad
+\lambda=0.3,
+\qquad
+d_s\simeq2.96-2.97,
+\]
+nous obtenons dans la fenêtre intermédiaire :
+\[
+r/r_{\max}\in[0.15,0.50],
+\]
+des exposants médians :
+\[
+\alpha_{\rm med}\simeq1.10-1.26
+\quad
+(R^2>0.85).
+\]
+
+Ainsi, la loi newtonienne n'est pas postulée dans BuP. Elle apparaît comme une
+approximation effective du propagateur d'intrication lorsque le graphe atteint
+un régime spectral proche de trois dimensions.
+
+Le résultat central de Paper 10 est donc :
+\[
+\boxed{
+d_s\simeq3
+\quad
+\Longrightarrow
+\quad
+L_{\rm ent}^{+}
+\text{ possède une fenêtre quasi-newtonienne.}
+}
+\]
+
+\end{document}
