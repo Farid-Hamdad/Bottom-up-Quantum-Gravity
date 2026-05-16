@@ -1,0 +1,2 @@
+N,dim_ambient,lambda,k,seed,power,noise,background,periodic,point_mode,normalized_laplacian,d_s_eff,target_ds,abs_error_to_target,edges,mean_degree,min_degree,max_degree,evals_used,lambda_0,lambda_1,lambda_max_used,mi_file
+800,3,0.3,12,1,1.0,0.0,0.0,True,cube,False,2.888807796338937,3.0,0.11119220366106308,5440,9.475246285794102,7.368125625942408,16.954110540406827,600,5.703499608178111e-16,0.6572166406414408,11.30505857985764,papers/paper10_limite_newtonienne_propagateur/results/mi_ds_check_N800_lam030_k12_seed1/mi_matrices/MI_N800_d3_lam0p3_k12_seed1.csv
