@@ -55,6 +55,11 @@ Paper 11 a dérivé l'exposant du propagateur effectif BuP :
 
 $$
 \boxed{
+\alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4
+}
+
+$$
+\boxed{
 \alpha_{\rm eff}
 =
 \frac{2d_s}{d_w} + d_w - 4.
