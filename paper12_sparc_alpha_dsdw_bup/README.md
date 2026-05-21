@@ -232,6 +232,7 @@ python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
   --dr-fixed 2.5 --rt-mode alpha_crossing \
   --eta-correction rt --eta-gamma 0.75 --eta-alpha-threshold 8.0 \
   --output-dir results/NGC5055_v3_4_corrected
+
 Scan par meilleure fenêtre (batch)
 bash
 cd ~/bottomup/energie_noir
