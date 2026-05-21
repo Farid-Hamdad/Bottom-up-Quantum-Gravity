@@ -1,0 +1,471 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{physics}
+
+\geometry{margin=2.5cm}
+
+\title{
+Paper 12 --- SPARC Rotation Curves from Local Entanglement Profiles\\
+\large Bottom-Up Quantum Gravity
+}
+
+\author{Farid Hamdad}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We test the effective propagator law derived in Paper 11 of the Bottom-Up
+Quantum Gravity (BuP) program on SPARC galactic rotation curves. In BuP,
+gravity is not introduced as a fundamental force or as a dark matter halo, but
+emerges from the entanglement structure of a finite quantum state. Paper 11
+showed that the effective power-law exponent of the entanglement propagator is
+controlled not only by the spectral dimension \(d_s\), but by the pair
+\((d_s,d_w)\), where \(d_w\) is the walk dimension:
+\[
+\alpha_{\rm eff}
+=
+\frac{2d_s}{d_w}+d_w-4.
+\]
+Paper 12 applies this relation to baryonic SPARC disks by constructing local
+entanglement graphs, measuring radial profiles \(d_s(r)\), \(d_w(r)\), deriving
+\(\alpha_{\rm eff}(r)\), and projecting the result into a correction to the
+circular velocity.
+
+The v3.4 corrected model improves 17 out of 18 galaxies in an extended
+best-window sample, with 8 galaxies reaching \(\chi^2_{\rm red}<5\). Including
+the targeted NGC5055 compacity correction yields an effective 19-galaxy
+classification with 18 improved galaxies, 8 galaxies below
+\(\chi^2_{\rm red}<5\), and 12 below \(\chi^2_{\rm red}<10\). The results do
+not yet constitute a final universal SPARC model. Instead, they show that
+galaxies split into classes of entanglement profiles: regular transitions,
+extended disks, internally complex systems, and diffuse early sub-Newtonian
+regimes.
+\end{abstract}
+
+\section{Introduction}
+
+The SPARC rotation-curve problem is usually formulated as a discrepancy between
+the observed circular velocity \(V_{\rm obs}(r)\) and the baryonic prediction
+\(V_{\rm bar}(r)\). In standard dark-matter phenomenology, the missing
+contribution is modeled by a halo. In the Bottom-Up Quantum Gravity approach,
+the additional effective contribution is instead interpreted as a geometric
+response of the entanglement structure.
+
+The central idea of BuP is that geometry is not fundamental. An entanglement
+matrix \(W_{ij}\) defines a graph, the graph defines a Laplacian
+\(L_{\rm ent}\), and the pseudo-inverse or propagator of this Laplacian defines
+an effective gravitational response. The relevant chain is
+\[
+W_{ij}
+\rightarrow
+L_{\rm ent}
+\rightarrow
+(d_s,d_w)
+\rightarrow
+\alpha_{\rm eff}
+\rightarrow
+\Phi(r)
+\rightarrow
+V(r).
+\]
+
+Earlier SPARC studies in the BuP program used a scalar effective dimension
+\(d(r)\). These runs already indicated that SPARC galaxies are not described by
+a single universal regime. The old profiles \(d_{\rm emp}(r)\) and
+\(d_{\rm fit}(r)\) separated galaxies into groups such as
+\texttt{spiral\_massive}, \texttt{spiral\_intermediate}, and
+\texttt{dwarf\_gas}. Paper 12 reformulates this empirical separation in terms
+of local entanglement profiles:
+\[
+d(r)
+\quad\longrightarrow\quad
+(d_s(r),d_w(r))
+\quad\longrightarrow\quad
+\alpha_{\rm eff}(r).
+\]
+
+\section{Link with Paper 11}
+
+Paper 11 established the key theoretical input of the present work. For a graph
+whose heat kernel is characterized by a spectral dimension \(d_s\) and a walk
+dimension \(d_w\), the effective propagator exponent is not simply
+\(d_s-2\). The BuP effective exponent is
+\[
+\boxed{
+\alpha_{\rm eff}
+=
+\frac{2d_s}{d_w}+d_w-4.
+}
+\]
+
+When \(d_w=2\), the Brownian limit is recovered:
+\[
+\alpha_{\rm eff}=d_s-2.
+\]
+In the cosmological quasi-three-dimensional regime, this relation approaches a
+nearly Newtonian exponent. However, Paper 12 emphasizes that galaxies need not
+live in the same entanglement regime as the large-scale cosmological graph. A
+galactic disk can generate its own local pair \((d_s(r),d_w(r))\), and hence a
+radially dependent exponent \(\alpha_{\rm eff}(r)\).
+
+This is the conceptual bridge between Paper 11 and Paper 12:
+\[
+\boxed{
+\text{Paper 11 derives the propagator law; Paper 12 tests it on SPARC.}
+}
+\]
+
+\section{Baryonic entanglement graph}
+
+For each galaxy, the observed baryonic disk is converted into a two-dimensional
+set of graph nodes. The graph is weighted by a baryonic correlation scale
+\(\lambda_{\rm corr}\), a local connectivity \(k\), and the baryonic mass
+distribution inferred from the SPARC rotation decomposition.
+
+The default graph parameters used in the present tests are
+\[
+N_{\rm nodes}=600,
+\qquad
+k=12,
+\qquad
+\lambda_{\rm corr}=3.0\,{\rm kpc}.
+\]
+
+From the resulting graph, local windows are selected in radius. For each radial
+window, we compute:
+\[
+d_s(r)
+\]
+from heat-kernel scaling, and
+\[
+d_w(r)
+\]
+from mean-square displacement scaling. These define
+\[
+\alpha_{\rm eff}(r)
+=
+\frac{2d_s(r)}{d_w(r)}
++
+d_w(r)
+-
+4.
+\]
+
+\section{Projection to rotation curves}
+
+The present version does not yet compute the full non-local propagator for the
+galaxy. Instead, it uses the profile \(\alpha_{\rm eff}(r)\) to determine the
+onset of an external BuP contribution to \(V^2\). The velocity model is
+\[
+V^2_{\rm model}(r)
+=
+V^2_{\rm bar}(r)
++
+A\,S(r),
+\]
+where
+\[
+S(r)
+=
+\frac{1}{1+\exp[-(r-r_t)/\Delta r]}.
+\]
+
+The transition radius \(r_t\) is not chosen freely in the v3.3/v3.4 models. It
+is derived from the local profile \(\alpha_{\rm eff}(r)\). The relative trigger
+is
+\[
+\alpha_{\rm eff}(r_t)
+=
+q\,\alpha_{\max},
+\qquad
+q=0.97.
+\]
+
+The transition width is fixed to
+\[
+\Delta r=2.5\,{\rm kpc}.
+\]
+
+\section{v3.4 corrections}
+
+The v3.4 version adds two corrections motivated by earlier SPARC runs.
+
+\subsection{Adaptive local extraction window}
+
+A fixed radial window is not optimal for all galaxies. Extended regular disks
+can require a larger local extraction scale to stabilize
+\((d_s,d_w,\alpha_{\rm eff})\). We therefore scan
+\[
+w\in\{5,8,10\}\,{\rm kpc}
+\]
+and select the best local extraction window for the class analysis. This is not
+a dynamical halo parameter; it is an extraction scale for the local entanglement
+profile.
+
+\subsection{Compacity correction}
+
+For galaxies with internally complex baryonic structure, the profile
+\(\alpha_{\rm eff}(r)\) can develop a high central peak. The old hierarchical
+SPARC runs already indicated that such galaxies require a compacity correction.
+We define
+\[
+\eta
+=
+\frac{v_{b,\max}-v_{b,\rm med}}{v_{b,\rm med}}.
+\]
+
+For high-peak profiles,
+\[
+\alpha_{\max}>8,
+\]
+we correct the transition radius by
+\[
+\boxed{
+r_t^{\rm corr}
+=
+r_t^{(0)}(1-0.75\eta).
+}
+\]
+
+This correction advances the BuP transition in compact or internally complex
+systems.
+
+\section{Canonical cases}
+
+\subsection{NGC3198: regular transition}
+
+NGC3198 is the canonical Paper 12 case. With
+\[
+w=5\,{\rm kpc},
+\qquad
+q=0.97,
+\]
+the profile gives
+\[
+\alpha_{\max}=4.965,
+\qquad
+\alpha_{\rm med}=0.369,
+\]
+and
+\[
+r_t=5.18\,{\rm kpc}.
+\]
+The resulting fit is
+\[
+\chi^2_{\rm red}=0.994,
+\]
+compared with
+\[
+\chi^2_{\rm red,bar}=759.05.
+\]
+
+\subsection{NGC2841: extended standard disk}
+
+Earlier BuP runs described NGC2841 as a standard stable galaxy. A fixed
+\(w=5\,{\rm kpc}\) window in Paper 12 v3.3 degraded the fit:
+\[
+\chi^2_{\rm red}=42.0.
+\]
+Using a larger extraction window,
+\[
+w=10\,{\rm kpc},
+\]
+regularizes the local profile:
+\[
+\alpha_{\max}=1.87,
+\qquad
+\alpha_{\rm med}=0.62,
+\]
+and yields
+\[
+\chi^2_{\rm red}=4.59.
+\]
+This shows that NGC2841 is not intrinsically complex; it requires a local
+window adapted to its radial extension.
+
+\subsection{NGC5055: compacity-corrected complex galaxy}
+
+NGC5055 is the clearest complex case. With \(w=5\,{\rm kpc}\), its local
+profile contains a high peak:
+\[
+\alpha_{\max}=12.60.
+\]
+Without compacity correction, the transition is too late:
+\[
+r_t^{(0)}=16.35\,{\rm kpc},
+\qquad
+\chi^2_{\rm red}=111.3.
+\]
+The baryonic compacity is
+\[
+\eta=0.337.
+\]
+Applying
+\[
+r_t^{\rm corr}=r_t^{(0)}(1-0.75\eta)
+\]
+gives
+\[
+r_t^{\rm corr}=12.22\,{\rm kpc},
+\]
+and reduces the fit to
+\[
+\chi^2_{\rm red}=5.53.
+\]
+
+Wider windows erase the high-\(\alpha\) peak and prevent the compacity
+correction from activating. Therefore the peak is interpreted as a physical
+signature of internal complexity, not as numerical noise.
+
+\subsection{NGC2403: diffuse early sub-Newtonian regime}
+
+NGC2403 remains the main resistant case. Earlier BuP versions already gave
+elevated values \(\chi^2_{\rm red}\sim 11-15\), indicating that this galaxy is
+not a new failure mode of Paper 12. In the present language, its profile is
+strongly sub-Newtonian almost from the center:
+\[
+\alpha_{\rm med}=0.0818,
+\qquad
+r_t=0.52\,{\rm kpc}.
+\]
+A single external sigmoid is therefore not appropriate. NGC2403 defines a
+third regime: diffuse early sub-Newtonian transition, probably requiring a
+non-sigmoidal or multi-scale projection.
+
+\section{Extended sample}
+
+The v3.4 best-window scan was run on an extended sample of 18 galaxies. The
+summary is:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+\toprule
+Metric & Value \\
+\midrule
+Number of galaxies & 18 \\
+Improved vs baryon-only & 17 \\
+\(\chi^2_{\rm red}<2\) & 4 \\
+\(\chi^2_{\rm red}<5\) & 8 \\
+\(\chi^2_{\rm red}<10\) & 11 \\
+Median \(\chi^2_{\rm red}\) & 6.80 \\
+Mean \(\chi^2_{\rm red}\) & 14.10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The best cases are:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Galaxy & \(w\) (kpc) & \(\alpha_{\max}\) & \(\chi^2_{\rm red}\) \\
+\midrule
+NGC3198 & 5 & 4.97 & 0.994 \\
+NGC3769 & 5 & 5.37 & 1.08 \\
+NGC5005 & 10 & 0.82 & 1.43 \\
+NGC3521 & 10 & 1.70 & 1.82 \\
+NGC7793 & 8 & 2.15 & 2.55 \\
+NGC2998 & 8 & 4.85 & 2.62 \\
+NGC0024 & 10 & 1.42 & 3.95 \\
+NGC2841 & 10 & 1.87 & 4.59 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Including the targeted NGC5055 compacity-corrected result gives an effective
+19-galaxy classification:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+\toprule
+Metric & Value \\
+\midrule
+Number of galaxies & 19 \\
+Improved vs baryon-only & 18 \\
+\(\chi^2_{\rm red}<2\) & 4 \\
+\(\chi^2_{\rm red}<5\) & 8 \\
+\(\chi^2_{\rm red}<10\) & 12 \\
+Median \(\chi^2_{\rm red}\) & 6.61 \\
+Mean \(\chi^2_{\rm red}\) & 13.65 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Classification}
+
+The results suggest four BuP regimes.
+
+\subsection{Class I-A: regular transition}
+
+These galaxies are well described by a short local extraction window and a
+regular relative trigger. NGC3198 is the canonical example.
+
+\subsection{Class I-B: extended standard disks}
+
+These galaxies are standard BuP systems but require a larger local extraction
+window. NGC2841 is the canonical example.
+
+\subsection{Class II: internally complex systems}
+
+These galaxies require a structural or compacity correction. NGC5055 is the
+canonical example. The high \(\alpha_{\max}\) peak signals internal complexity,
+and the transition radius must be advanced by the \(\eta\) correction.
+
+\subsection{Class III: diffuse early sub-Newtonian systems}
+
+These galaxies cannot be described by a single external sigmoid. NGC2403 is
+the canonical example. Future versions must replace the sigmoid by a diffuse
+or multi-scale projection.
+
+\section{Discussion}
+
+Paper 12 does not claim that the present v3.4 model is a final universal
+description of SPARC. Its main contribution is more fundamental: it shows that
+the effective propagator law from Paper 11 has observable consequences in
+galactic rotation curves, and that SPARC galaxies organize into classes of
+local entanglement profiles.
+
+This also explains why earlier BuP runs found good fits for some galaxies and
+failures for others. The failures are not arbitrary. They correspond to
+different regimes of \((d_s(r),d_w(r),\alpha_{\rm eff}(r))\), requiring
+different projections.
+
+\section{Conclusion}
+
+Paper 11 derived the BuP effective propagator exponent
+\[
+\alpha_{\rm eff}
+=
+\frac{2d_s}{d_w}+d_w-4.
+\]
+Paper 12 applied this exponent to SPARC rotation curves by measuring local
+entanglement profiles in baryonic graphs. The v3.4 results show that the method
+improves almost all tested galaxies and gives good fits for a significant
+subsample.
+
+The main conclusion is:
+\[
+\boxed{
+\text{SPARC galaxies are organized by classes of entanglement profiles.}
+}
+\]
+
+The next step is to replace the single sigmoid projection by class-dependent
+non-local propagator reconstructions, especially for diffuse systems such as
+NGC2403.
+
+\end{document}
