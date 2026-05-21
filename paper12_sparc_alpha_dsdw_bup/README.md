@@ -1,212 +1,511 @@
-# Paper 12 — Test SPARC de la loi de propagateur effectif BuP
+# Paper 12 — SPARC as an observational test of BuP entanglement geometry
 
-## Titre
+## Title
 
-**Courbes de rotation SPARC à partir des profils d'intrication locale en Gravité Quantique Bottom-Up**
+**SPARC rotation curves from local entanglement profiles in Bottom-Up Quantum Gravity**
 
-## Idée centrale
+## Foundational principle
 
-Paper 12 applique la loi de propagateur effectif dérivée dans Paper 11 aux courbes de rotation galactiques de l'échantillon SPARC.
+Bottom-Up Quantum Gravity starts from a single postulate:
 
-La chaîne théorique est :
+\[
+\boxed{
+\text{entanglement is primary.}
+}
+\]
 
-$$
+Space, time, matter and gravity are not assumed as fundamental objects. They
+emerge from the structure of a global quantum entanglement state.
+
+In this framework, matter is localized entanglement. Therefore the observed
+baryonic surface density of a galaxy,
+
+\[
+\Sigma(R),
+\]
+
+is interpreted as the macroscopic projection of a local entanglement density.
+
+Paper 12 is the first galactic-scale numerical test of this chain:
+
+\[
+\text{entanglement}
+\rightarrow
+\text{geometry}
+\rightarrow
+\text{localized matter}
+\rightarrow
+\Sigma(R)
+\rightarrow
 W_{ij}
 \rightarrow
 L_{\rm ent}
 \rightarrow
-(d_s(r), d_w(r))
+(d_s(r),d_w(r))
 \rightarrow
 \alpha_{\rm eff}(r)
 \rightarrow
-\Phi_{\rm BuP}(r)
-\rightarrow
 V(r).
-$$
+\]
 
-Paper 11 a montré que l'exposant du propagateur effectif n'est pas contrôlé uniquement par la dimension spectrale $d_s$, mais par la paire $(d_s, d_w)$ :
+This is not a dark-matter-like fitting model. It is a numerical application of
+the BuP emergence chain to real SPARC galaxies.
 
-$$
+## Link with Paper 11
+
+Paper 11 derived the effective BuP propagator exponent:
+
+\[
 \boxed{
 \alpha_{\rm eff}
 =
-\frac{2d_s}{d_w} + d_w - 4
+\frac{2d_s}{d_w}+d_w-4.
 }
-$$
+\]
 
-Paper 12 teste cette relation sur les courbes de rotation SPARC en :
+Here:
 
-1. construisant un graphe d'intrication baryonique pour chaque galaxie,
-2. mesurant les profils locaux $(d_s(r), d_w(r))$,
-3. dérivant $\alpha_{\rm eff}(r)$,
-4. projetant le résultat en une contribution à la vitesse circulaire.
+- \(d_s\) is the local spectral dimension of the entanglement graph;
+- \(d_w\) is the local walk dimension;
+- \(\alpha_{\rm eff}\) controls the effective power-law behavior of the BuP
+  propagator.
 
-## Résumé des résultats
+In the Brownian limit \(d_w=2\),
 
-Le modèle corrigé v3.4 améliore **17/18 galaxies** dans un échantillon étendu par meilleure fenêtre, avec **8/18** atteignant $\chi^2_{\rm red} < 5$. En incluant l'analyse ciblée avec correction de compacité pour NGC5055, on obtient **18/19 galaxies améliorées**.
+\[
+\alpha_{\rm eff}=d_s-2.
+\]
 
-Le résultat principal n'est pas un ajustement universel de type halo, mais une **classification des galaxies SPARC en régimes de profils d'intrication** :
+Newtonian gravity appears as a special regime. It is not an axiom of BuP.
 
-| Classe | Signification | Exemple |
-|--------|---------------|---------|
-| **I-A** | transition externe régulière | NGC3198 |
-| **I-B** | disque étendu standard, fenêtre locale plus large | NGC2841 |
-| **II** | structure interne complexe, correction de compacité | NGC5055 |
-| **III** | régime sous-newtonien précoce diffus | NGC2403 |
+Paper 12 applies the Paper 11 law to galaxies by constructing a baryonic
+entanglement graph from \(\Sigma(R)\), measuring \(d_s(r)\) and \(d_w(r)\), and
+using the resulting \(\alpha_{\rm eff}(r)\) to organize the gravitational
+response.
 
-## Interprétation physique
+## Main equation
 
-BuP n'assume pas de halo de matière noire universel. Au lieu de cela, chaque configuration baryonique induit une géométrie d'intrication effective. La réponse gravitationnelle dépend de la structure locale de ce graphe.
+The local BuP exponent is
 
-En ce sens, les galaxies ne sont pas forcées dans un régime universel unique. Elles se répartissent en **classes de profils d'intrication**.
+\[
+\boxed{
+\alpha_{\rm eff}(r)
+=
+\frac{2d_s(r)}{d_w(r)}
++
+d_w(r)
+-
+4.
+}
+\]
 
-Les précédentes analyses SPARC suggéraient déjà une telle séparation à travers les profils empiriques $d_{\rm emp}(r)$ et $d_{\rm fit}(r)$. Paper 12 reformule cette séparation en termes de dimensions d'intrication locale :
+The velocity model used in the current numerical projection is
 
-$$
-d(r)
-\quad\longrightarrow\quad
-(d_s(r), d_w(r))
-\quad\longrightarrow\quad
+\[
+V^2_{\rm model}(r)
+=
+V^2_{\rm bar}(r)
++
+A\,S(r),
+\]
+
+with
+
+\[
+S(r)
+=
+\frac{1}{1+\exp[-(r-r_t)/\Delta r]}.
+\]
+
+In v3.3/v3.4, the transition radius \(r_t\) is not chosen freely. It is derived
+from the local entanglement profile through
+
+\[
+\alpha_{\rm eff}(r_t)
+=
+q\,\alpha_{\max},
+\qquad
+q=0.97.
+\]
+
+The transition width is fixed to
+
+\[
+\Delta r=2.5\,{\rm kpc}.
+\]
+
+## v3.4 corrections
+
+The v3.4 version introduces two corrections motivated by previous SPARC runs.
+
+### 1. Local extraction scale
+
+The radial window used to extract the local entanglement dimensions is scanned:
+
+\[
+w\in\{5,8,10\}\ {\rm kpc}.
+\]
+
+This is not a halo parameter. It is the scale at which the local graph geometry
+is measured.
+
+The best-window scan shows that different galaxies prefer different local
+entanglement extraction scales.
+
+### 2. Compacity correction
+
+For internally complex galaxies, the local \(\alpha_{\rm eff}(r)\) profile can
+develop a high peak. The previous BuP SPARC runs already showed that such cases
+need a compacity correction.
+
+We define
+
+\[
+\eta=
+\frac{v_{b,\max}-v_{b,\rm med}}{v_{b,\rm med}}.
+\]
+
+For high-peak profiles,
+
+\[
+\alpha_{\max}>8,
+\]
+
+the transition radius is corrected as
+
+\[
+\boxed{
+r_t^{\rm corr}
+=
+r_t^{(0)}(1-0.75\eta).
+}
+\]
+
+This advances the BuP transition in compact or internally complex systems.
+
+## Results: extended best-window sample
+
+The v3.4 best-window scan was run on 18 galaxies.
+
+| Metric | Value |
+|---|---:|
+| Number of galaxies | 18 |
+| Improved vs baryon-only | 17 / 18 |
+| \(\chi^2_{\rm red}<2\) | 4 / 18 |
+| \(\chi^2_{\rm red}<5\) | 8 / 18 |
+| \(\chi^2_{\rm red}<10\) | 11 / 18 |
+| Median \(\chi^2_{\rm red}\) | 6.80 |
+| Mean \(\chi^2_{\rm red}\) | 14.10 |
+
+Adding the targeted NGC5055 compacity-corrected run gives an effective
+19-galaxy summary:
+
+| Metric | Value |
+|---|---:|
+| Number of galaxies | 19 |
+| Improved vs baryon-only | 18 / 19 |
+| \(\chi^2_{\rm red}<2\) | 4 / 19 |
+| \(\chi^2_{\rm red}<5\) | 8 / 19 |
+| \(\chi^2_{\rm red}<10\) | 12 / 19 |
+| Median \(\chi^2_{\rm red}\) | 6.61 |
+| Mean \(\chi^2_{\rm red}\) | 13.65 |
+
+## Best-window results
+
+| Galaxy | \(w\) kpc | \(\alpha_{\rm med}\) | \(\alpha_{\max}\) | \(r_t\) kpc | \(\chi^2_{\rm red}\) |
+|---|---:|---:|---:|---:|---:|
+| NGC3198 | 5 | 0.369 | 4.965 | 5.184 | 0.994 |
+| NGC3769 | 5 | 0.071 | 5.373 | 7.034 | 1.082 |
+| NGC5005 | 10 | 0.785 | 0.822 | 1.526 | 1.425 |
+| NGC3521 | 10 | 1.028 | 1.701 | 0.860 | 1.825 |
+| NGC7793 | 8 | 2.146 | 2.146 | 3.990 | 2.550 |
+| NGC2998 | 8 | 0.215 | 4.847 | 0.985 | 2.616 |
+| NGC0024 | 10 | 1.364 | 1.424 | 1.326 | 3.949 |
+| NGC2841 | 10 | 0.620 | 1.871 | 5.517 | 4.586 |
+| NGC4085 | 5 | 1.319 | 1.343 | 5.495 | 6.608 |
+| NGC0300 | 8 | 1.014 | 1.141 | 1.385 | 7.000 |
+| NGC1003 | 5 | 0.126 | 3.807 | 5.529 | 9.431 |
+| NGC6946 | 10 | 0.761 | 1.445 | 0.617 | 12.345 |
+| NGC0055 | 10 | 0.766 | 1.024 | 1.518 | 13.895 |
+| NGC2366 | 10 | 2.285 | 2.285 | 3.090 | 14.359 |
+| NGC7331 | 5 | -0.018 | 4.437 | 7.637 | 16.348 |
+| NGC4389 | 5 | 1.693 | 1.693 | 3.095 | 16.768 |
+| NGC0247 | 10 | 0.880 | 1.301 | 1.321 | 22.275 |
+| NGC2403 | 5 | 0.082 | 5.313 | 0.517 | 115.805 |
+
+## Key galaxies
+
+### NGC3198 — canonical regular transition
+
+NGC3198 is the cleanest Paper 12 case.
+
+\[
+w=5\,{\rm kpc},
+\qquad
+q=0.97,
+\qquad
+\chi^2_{\rm red}=0.994.
+\]
+
+It demonstrates that a transition radius derived from
+\(\alpha_{\rm eff}(r)\) can reproduce a SPARC rotation curve with near-unit
+reduced chi-square.
+
+### NGC2841 — standard extended disk
+
+Previous BuP runs already showed that NGC2841 belongs to a stable standard
+regime. Paper 12 v3.3 initially failed because the fixed local window was too
+small.
+
+Using
+
+\[
+w=10\,{\rm kpc}
+\]
+
+gives
+
+\[
+\chi^2_{\rm red}=4.586.
+\]
+
+This shows that NGC2841 is not intrinsically complex; it requires a larger
+local entanglement extraction scale.
+
+### NGC5055 — internally complex system
+
+NGC5055 is the clearest compacity case. With \(w=5\), the profile contains a
+high peak:
+
+\[
+\alpha_{\max}=12.60.
+\]
+
+This activates the compacity correction:
+
+\[
+r_t^{\rm corr}=r_t^{(0)}(1-0.75\eta).
+\]
+
+For NGC5055:
+
+\[
+\eta=0.337,
+\qquad
+r_t^{(0)}=16.35\,{\rm kpc},
+\qquad
+r_t^{\rm corr}=12.22\,{\rm kpc},
+\]
+
+and
+
+\[
+\chi^2_{\rm red}=5.526.
+\]
+
+Wider windows erase the high-\(\alpha\) peak and degrade the fit. The peak is
+therefore interpreted as a physical signature of internal complexity, not as
+numerical noise.
+
+### NGC2403 — diffuse early sub-Newtonian regime
+
+NGC2403 remains the main resistant case. Earlier BuP runs already showed that
+this galaxy is difficult.
+
+In Paper 12, its profile is already strongly sub-Newtonian near the center:
+
+\[
+\alpha_{\rm med}=0.0818,
+\qquad
+r_t=0.517\,{\rm kpc}.
+\]
+
+A single external sigmoid is not appropriate. NGC2403 defines a third regime:
+diffuse early sub-Newtonian systems, requiring a non-sigmoidal or multi-scale
+projection.
+
+## Classification
+
+The results suggest four BuP regimes:
+
+| Class | Meaning | Example |
+|---|---|---|
+| I-A | regular external transition | NGC3198 |
+| I-B | extended standard disk, larger local window | NGC2841 |
+| II | internally complex system, compacity correction | NGC5055 |
+| III | diffuse early sub-Newtonian regime | NGC2403 |
+
+## Scientific meaning
+
+Paper 12 does not claim that the present v3.4 projection is the final universal
+SPARC model.
+
+The deeper result is:
+
+\[
+\boxed{
+\text{SPARC galaxies organize into classes of entanglement profiles.}
+}
+\]
+
+The previous SPARC runs already suggested several dynamical regimes through
+empirical \(d(r)\) profiles. Paper 12 reformulates these regimes in terms of
+local entanglement dimensions:
+
+\[
+(d_s(r),d_w(r))
+\rightarrow
 \alpha_{\rm eff}(r).
-$$
+\]
 
-## Modèle v3.4
+The main conclusion is:
 
-Le modèle corrigé v3.4 combine :
+\[
+\boxed{
+\text{Paper 11 derives the BuP propagator law; Paper 12 shows that this law
+organizes galactic rotation curves.}
+}
+\]
 
-1. une fenêtre d'extraction locale $w \in \{5, 8, 10\}$ kpc,
-2. un critère de transition relatif
-   $$
-   \alpha_c = 0.97 \, \alpha_{\max},
-   $$
-3. une correction de compacité pour les profils très piqués :
-   $$
-   r_t^{\rm corr} = r_t^{(0)} (1 - 0.75\eta),
-   $$
-   où
-   $$
-   \eta = \frac{v_{b,\max} - v_{b,\rm med}}{v_{b,\rm med}}.
-   $$
+# Results — Paper 12 SPARC alpha(d_s,d_w) test
 
-Le modèle utilise :
+This folder contains the numerical results for Paper 12.
 
-$$
-\alpha_{\rm eff}(r) = \frac{2d_s(r)}{d_w(r)} + d_w(r) - 4.
-$$
+## Main files
 
-Le rayon de transition est dérivé de :
+| File / Folder | Description |
+|---|---|
+| `paper12_unified_sparc_classification.csv` | Fusion of old SPARC \(d(r)\) runs with Paper 12 alpha-profile results |
+| `paper12_unified_sparc_classification.md` | Markdown version of the unified classification |
+| `classe1_extended_window_scan_best_summary.csv` | Best-window v3.4 scan on 18 galaxies |
+| `NGC5055_v3_4_window_scan_eta_summary.csv` | Dedicated v3.4 compacity scan for NGC5055 |
+| `NGC3198_v3_3_q097_dr2p5/` | Canonical NGC3198 relative-trigger result |
+| `NGC2841_v3_4_corrected/` | Adaptive-window correction for NGC2841 |
+| `NGC5055_v3_4_corrected/` | Compacity-corrected result for NGC5055 |
 
-$$
-\alpha_{\rm eff}(r_t) = q \alpha_{\max}, \qquad q = 0.97.
-$$
+## v3.4 best-window sample
 
-## Résultats détaillés
+The best-window scan uses
 
-### Scan v3.4 par meilleure fenêtre (18 galaxies)
+\[
+w\in\{5,8,10\}\ {\rm kpc},
+\qquad
+q=0.97,
+\qquad
+\Delta r=2.5\,{\rm kpc}.
+\]
 
-Le scan par meilleure fenêtre utilise :
+It gives:
 
-$$
-w \in \{5, 8, 10\}\ \text{kpc},\qquad q = 0.97,\qquad \Delta r = 2.5\ \text{kpc}.
-$$
+| Metric | Value |
+|---|---:|
+| Galaxies | 18 |
+| Improved vs baryon-only | 17 |
+| \(\chi^2_{\rm red}<2\) | 4 |
+| \(\chi^2_{\rm red}<5\) | 8 |
+| \(\chi^2_{\rm red}<10\) | 11 |
+| Median \(\chi^2_{\rm red}\) | 6.80 |
+| Mean \(\chi^2_{\rm red}\) | 14.10 |
 
-| Métrique | Valeur |
-|----------|--------|
-| Nombre de galaxies | 18 |
-| Amélioration vs baryons seuls | 17 / 18 |
-| $\chi^2_{\rm red} < 2$ | 4 / 18 |
-| $\chi^2_{\rm red} < 5$ | 8 / 18 |
-| $\chi^2_{\rm red} < 10$ | 11 / 18 |
-| Médiane $\chi^2_{\rm red}$ | 6.80 |
-| Moyenne $\chi^2_{\rm red}$ | 14.10 |
+## Targeted NGC5055 result
 
-### Avec ajout de NGC5055 corrigé (19 galaxies)
+NGC5055 requires the compacity correction:
 
-| Métrique | Valeur |
-|----------|--------|
-| Nombre de galaxies | 19 |
-| Amélioration vs baryons seuls | 18 / 19 |
-| $\chi^2_{\rm red} < 2$ | 4 / 19 |
-| $\chi^2_{\rm red} < 5$ | 8 / 19 |
-| $\chi^2_{\rm red} < 10$ | 12 / 19 |
-| Médiane $\chi^2_{\rm red}$ | 6.61 |
-| Moyenne $\chi^2_{\rm red}$ | 13.65 |
+\[
+r_t^{\rm corr}=r_t^{(0)}(1-0.75\eta).
+\]
 
-### Galaxies clés
+The best result is:
 
-| Galaxie | Interprétation | Correction | $\chi^2_{\rm red}$ |
-|---------|----------------|------------|--------------------|
-| NGC3198 | transition régulière canonique | $w=5$, $q=0.97$ | 0.994 |
-| NGC2841 | disque étendu standard | $w=10$ | 4.586 |
-| NGC5055 | système complexe (barre/bulbe) | $r_t$ corrigé par $\eta$ | 5.526 |
-| NGC2403 | régime sous-newtonien précoce diffus | non résolu par sigmoïde simple | 115.8 |
-
-### Résultat ciblé pour NGC5055
-
-NGC5055 nécessite la correction de compacité :
-
-$$
-r_t^{\rm corr} = r_t^{(0)} (1 - 0.75\eta).
-$$
-
-Meilleur résultat obtenu :
-
-| Fenêtre | $\alpha_{\max}$ | $\eta$ | $r_t$ (kpc) | $\chi^2_{\rm red}$ |
-|---------|----------------|--------|-------------|--------------------|
+| Window | \(\alpha_{\max}\) | \(\eta\) | \(r_t\) | \(\chi^2_{\rm red}\) |
+|---:|---:|---:|---:|---:|
 | 5 kpc | 12.60 | 0.337 | 12.22 | 5.526 |
 
-Les fenêtres plus larges effacent le pic de $\alpha_{\max}$ et suppriment la correction $\eta$, ce qui dégrade l'ajustement. Par conséquent, pour NGC5055, le pic élevé de $\alpha_{\max}$ est interprété comme un **signal physique de complexité interne**, et non comme du bruit numérique.
+Wider windows erase the \(\alpha_{\max}\) peak and suppress the \(\eta\)
+correction, degrading the fit.
 
-## Statut scientifique
+## Effective 19-galaxy summary
 
-Paper 12 n'est **pas** présenté comme un modèle SPARC universel définitif. C'est une **preuve** que la loi de propagateur effectif issue de Paper 11 a un contenu observationnel et que les courbes de rotation galactiques peuvent être organisées par des profils d'intrication locale.
+Combining the 18-galaxy best-window sample with the targeted NGC5055 run gives:
 
-La conclusion la plus forte est :
+| Metric | Value |
+|---|---:|
+| Galaxies | 19 |
+| Improved vs baryon-only | 18 |
+| \(\chi^2_{\rm red}<2\) | 4 |
+| \(\chi^2_{\rm red}<5\) | 8 |
+| \(\chi^2_{\rm red}<10\) | 12 |
+| Median \(\chi^2_{\rm red}\) | 6.61 |
+| Mean \(\chi^2_{\rm red}\) | 13.65 |
 
-$$
-\boxed{
-\text{Les galaxies SPARC se divisent en classes de profils d'intrication.}
-}
-$$
+## Interpretation
 
-La prochaine étape consiste à remplacer la projection sigmoïde externe unique par des projections dépendantes de la classe ou multi-échelles, en particulier pour les systèmes diffus comme NGC2403.
+The results support four regimes:
 
----
-
-# Résultats — Fichiers
-
-Ce dossier contient les résultats numériques pour Paper 12.
-
-## Fichiers de résultats principaux
-
-| Fichier / Dossier | Description |
-|---|---|
-| `paper12_unified_sparc_classification.csv` | Table unifiée fusionnant les anciennes analyses SPARC $d(r)$ avec les résultats de profils alpha de Paper 12 |
-| `paper12_unified_sparc_classification.md` | Version lisible en Markdown de la classification unifiée |
-| `classe1_extended_window_scan_best_summary.csv` | Scan v3.4 par meilleure fenêtre sur 18 galaxies |
-| `NGC5055_v3_4_window_scan_eta_summary.csv` | Scan de compacité v3.4 dédié pour NGC5055 |
-| `NGC3198_v3_3_q097_dr2p5/` | Résultat canonique de NGC3198 avec déclenchement relatif |
-| `NGC2841_v3_4_corrected/` | Correction par fenêtre adaptative pour NGC2841 |
-| `NGC5055_v3_4_corrected/` | Résultat corrigé par compacité pour NGC5055 |
-
----
+| Class | Meaning | Example |
+|---|---|---|
+| I-A | regular external transition | NGC3198 |
+| I-B | standard extended disk | NGC2841 |
+| II | internally complex system requiring \(\eta\) | NGC5055 |
+| III | diffuse early sub-Newtonian system | NGC2403 |
 
 # Scripts — Paper 12
 
-## Scripts principaux
+## Main scripts
 
-| Script | Objectif |
-|--------|----------|
-| `bup_paper12_sparc_alpha_dsdw_v3_1_radial_outer.py` | Première projection réussie avec plateau externe |
-| `bup_paper12_sparc_alpha_dsdw_v3_3_relative_trigger.py` | Déclenchement de transition relatif $\alpha_c = q \alpha_{\max}$ |
-| `bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py` | Version avec fenêtre adaptative et correction de compacité |
-| `paper12_merge_old_sparc_with_v33.py` | Fusionne les anciennes analyses SPARC $d(r)$ avec les profils Paper 12 |
+| Script | Purpose |
+|---|---|
+| `bup_paper12_sparc_alpha_dsdw_v3_1_radial_outer.py` | First successful flat-outer projection |
+| `bup_paper12_sparc_alpha_dsdw_v3_3_relative_trigger.py` | Relative trigger \( \alpha_c=q\alpha_{\max} \) |
+| `bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py` | Adaptive-window and compacity-corrected version |
+| `paper12_merge_old_sparc_with_v33.py` | Merges old SPARC \(d(r)\) runs with Paper 12 profiles |
 
-## Exemple d'exécution : NGC3198
+## Theoretical input
+
+The main Paper 12 relation comes from Paper 11:
+
+\[
+\alpha_{\rm eff}(r)
+=
+\frac{2d_s(r)}{d_w(r)}
++
+d_w(r)
+-
+4.
+\]
+
+## v3.4 model
+
+The transition radius is derived from
+
+\[
+\alpha_{\rm eff}(r_t)
+=
+q\alpha_{\max},
+\qquad
+q=0.97.
+\]
+
+For complex systems,
+
+\[
+r_t^{\rm corr}
+=
+r_t^{(0)}(1-0.75\eta),
+\]
+
+with
+
+\[
+\eta=
+\frac{v_{b,\max}-v_{b,\rm med}}{v_{b,\rm med}}.
+\]
+
+## Example: NGC3198
 
 ```bash
 python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
-  --rotmod "/chemin/vers/SPARC/Rotmod_LTG 2/NGC3198_rotmod.dat" \
+  --rotmod "/Users/dualcomputer/bottomup/sparc/Rotmod_LTG 2/NGC3198_rotmod.dat" \
   --galaxy NGC3198 \
   --nr 20 --ntheta 30 --k 12 --lambda-xy 3.0 \
   --n-windows 8 --window-width 5 \
@@ -218,9 +517,25 @@ python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
   --eta-correction rt --eta-gamma 0.75 --eta-alpha-threshold 8.0 \
   --output-dir results/NGC3198_v3_4
 
-## Scan par meilleure fenêtre (batch)
+Example: NGC5055
+python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
+  --rotmod "/Users/dualcomputer/bottomup/sparc/Rotmod_LTG 2/NGC5055_rotmod.dat" \
+  --galaxy NGC5055 \
+  --nr 20 --ntheta 30 --k 12 --lambda-xy 3.0 \
+  --n-windows 8 --window-width 5 \
+  --min-nodes-window 80 \
+  --ups-disk 0.5 --ups-bulge 0.7 \
+  --shape-mode flat_outer \
+  --alpha-trigger-mode relative_max --q-alpha-max 0.97 \
+  --dr-fixed 2.5 --rt-mode alpha_crossing \
+  --eta-correction rt --eta-gamma 0.75 --eta-alpha-threshold 8.0 \
+  --output-dir results/NGC5055_v3_4_corrected
+# RUNS — Paper 12
 
-  cd ~/bottomup/energie_noir
+## Best-window scan
+
+```bash
+cd ~/bottomup/energie_noir
 
 ROT_DIR="/Users/dualcomputer/bottomup/sparc/Rotmod_LTG 2"
 OUT_BASE="papers/paper12_sparc_alpha_dsdw_bup/results/classe1_extended_window_scan"
@@ -228,9 +543,7 @@ SCRIPT="papers/paper12_sparc_alpha_dsdw_bup/scripts/bup_paper12_sparc_alpha_dsdw
 
 mkdir -p "$OUT_BASE"
 
-for gal in NGC2998 NGC3521 NGC6946 NGC7331 NGC7793 NGC1003 NGC2366 NGC3031 \
-           NGC0300 NGC0024 NGC0055 NGC0247 NGC0925 NGC2403 NGC2841 NGC3198 \
-           NGC3769 NGC4085 NGC4389 NGC5005; do
+for gal in NGC2998 NGC3521 NGC6946 NGC7331 NGC7793 NGC1003 NGC2366 NGC3031 NGC0300 NGC0024 NGC0055 NGC0247 NGC0925 NGC2403 NGC2841 NGC3198 NGC3769 NGC4085 NGC4389 NGC5005; do
   rot="$ROT_DIR/${gal}_rotmod.dat"
   if [ ! -f "$rot" ]; then
     echo "[SKIP] $gal — fichier absent"
@@ -251,15 +564,88 @@ for gal in NGC2998 NGC3521 NGC6946 NGC7331 NGC7793 NGC1003 NGC2366 NGC3031 \
       --output-dir "$OUT_BASE/${gal}_w${w}"
   done
 done
+```
 
-## Références
+## Best-window summary
 
-- **Paper 11** : Dérivation de la loi $\alpha_{\rm eff}(d_s, d_w)$ — établit la relation fondamentale :
-  $$
-  \alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4
-  $$
+```bash
+python3 - <<'PY'
+import json, glob
+import pandas as pd
 
-- **Paper 12** : Présent article — application de la loi aux courbes de rotation SPARC
+BASE="papers/paper12_sparc_alpha_dsdw_bup/results/classe1_extended_window_scan"
 
-- **SPARC** : Lelli, McGaugh & Schombert (2016), *The Astronomical Journal*, 152, 157  
-  Données publiques : http://astroweb.case.edu/SPARC/
+rows=[]
+for f in glob.glob(BASE+"/*/summary.json"):
+    with open(f) as fh:
+        s=json.load(fh)
+
+    rows.append({
+        "galaxy": s["galaxy"],
+        "N_rot": s["N_rot_points"],
+        "window_width": s["local_windows"]["window_width"],
+        "alpha_med": s["alpha_profile"]["alpha_median"],
+        "alpha_max": s["alpha_profile"]["alpha_max"],
+        "rt": s["fit"]["rt_derived"],
+        "eta": s["fit"].get("eta_baryon"),
+        "eta_applied": s["fit"].get("eta_applied"),
+        "chi2_red": s["fit"]["chi2_red"],
+        "chi2_bar_red": s["fit"]["chi2_baryon_only_red"],
+        "delta_chi2": s["fit"]["delta_chi2_vs_baryon"],
+    })
+
+df=pd.DataFrame(rows)
+df=df.sort_values("chi2_red")
+
+best=df.sort_values("chi2_red").drop_duplicates("galaxy", keep="first")
+best=best.sort_values("chi2_red")
+
+out=BASE+"_best_summary.csv"
+best.to_csv(out,index=False)
+
+print(best[[
+    "galaxy","N_rot","window_width","alpha_med","alpha_max",
+    "rt","eta","eta_applied","chi2_red","chi2_bar_red","delta_chi2"
+]].to_string(index=False))
+
+print()
+print("Wrote:",out)
+
+print()
+print("Best-window stats:")
+print("n_galaxies =",len(best))
+print("n chi2<2   =",(best["chi2_red"]<2).sum())
+print("n chi2<5   =",(best["chi2_red"]<5).sum())
+print("n chi2<10  =",(best["chi2_red"]<10).sum())
+print("n improved =", (best["delta_chi2"]<0).sum())
+print("median chi2_red =", best["chi2_red"].median())
+print("mean chi2_red   =", best["chi2_red"].mean())
+PY
+```
+
+## NGC5055 eta scan
+
+```bash
+cd ~/bottomup/energie_noir
+
+ROT_DIR="/Users/dualcomputer/bottomup/sparc/Rotmod_LTG 2"
+OUT_BASE="papers/paper12_sparc_alpha_dsdw_bup/results/NGC5055_v3_4_window_scan_eta"
+SCRIPT="papers/paper12_sparc_alpha_dsdw_bup/scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py"
+
+mkdir -p "$OUT_BASE"
+
+for w in 5 8 10; do
+  python3 "$SCRIPT" \
+    --rotmod "$ROT_DIR/NGC5055_rotmod.dat" \
+    --galaxy NGC5055 \
+    --nr 20 --ntheta 30 --k 12 --lambda-xy 3.0 \
+    --n-windows 8 --window-width "$w" \
+    --min-nodes-window 80 \
+    --ups-disk 0.5 --ups-bulge 0.7 \
+    --shape-mode flat_outer \
+    --alpha-trigger-mode relative_max --q-alpha-max 0.97 \
+    --dr-fixed 2.5 --rt-mode alpha_crossing \
+    --eta-correction rt --eta-gamma 0.75 --eta-alpha-threshold 8.0 \
+    --output-dir "$OUT_BASE/w${w}"
+done
+```
