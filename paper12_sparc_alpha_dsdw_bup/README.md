@@ -204,11 +204,10 @@ Ce dossier contient les résultats numériques pour Paper 12.
 
 ## Exemple d'exécution : NGC3198
 
-Exemple d'exécution : NGC5055
-bash
+```bash
 python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
-  --rotmod "/chemin/vers/SPARC/Rotmod_LTG 2/NGC5055_rotmod.dat" \
-  --galaxy NGC5055 \
+  --rotmod "/chemin/vers/SPARC/Rotmod_LTG 2/NGC3198_rotmod.dat" \
+  --galaxy NGC3198 \
   --nr 20 --ntheta 30 --k 12 --lambda-xy 3.0 \
   --n-windows 8 --window-width 5 \
   --min-nodes-window 80 \
@@ -217,11 +216,11 @@ python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
   --alpha-trigger-mode relative_max --q-alpha-max 0.97 \
   --dr-fixed 2.5 --rt-mode alpha_crossing \
   --eta-correction rt --eta-gamma 0.75 --eta-alpha-threshold 8.0 \
-  --output-dir results/NGC5055_v3_4_corrected
+  --output-dir results/NGC3198_v3_4
 
-Scan par meilleure fenêtre (batch)
-bash
-cd ~/bottomup/energie_noir
+## Scan par meilleure fenêtre (batch)
+
+  cd ~/bottomup/energie_noir
 
 ROT_DIR="/Users/dualcomputer/bottomup/sparc/Rotmod_LTG 2"
 OUT_BASE="papers/paper12_sparc_alpha_dsdw_bup/results/classe1_extended_window_scan"
@@ -253,17 +252,14 @@ for gal in NGC2998 NGC3521 NGC6946 NGC7331 NGC7793 NGC1003 NGC2366 NGC3031 \
   done
 done
 
-
-Dépendances
-Python 3.8+
-NumPy, SciPy
-Pandas (pour les tables de résultats)
-
-SPARC dataset (fichiers Rotmod)
 ## Références
 
-| Référence | Description | Équation clé |
-|-----------|-------------|--------------|
-| Paper 11 | Dérivation de la loi $\alpha_{\rm eff}(d_s, d_w)$ | $\alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4$ |
-| Paper 12 | Présent article — test SPARC | Application de la loi ci-dessus |
-| SPARC (2016) | Données des courbes de rotation | Lelli, McGaugh & Schombert, AJ 152, 157 |
+- **Paper 11** : Dérivation de la loi $\alpha_{\rm eff}(d_s, d_w)$ — établit la relation fondamentale :
+  $$
+  \alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4
+  $$
+
+- **Paper 12** : Présent article — application de la loi aux courbes de rotation SPARC
+
+- **SPARC** : Lelli, McGaugh & Schombert (2016), *The Astronomical Journal*, 152, 157  
+  Données publiques : http://astroweb.case.edu/SPARC/
