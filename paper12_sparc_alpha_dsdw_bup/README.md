@@ -204,20 +204,6 @@ Ce dossier contient les résultats numériques pour Paper 12.
 
 ## Exemple d'exécution : NGC3198
 
-```bash
-python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
-  --rotmod "/chemin/vers/SPARC/Rotmod_LTG 2/NGC3198_rotmod.dat" \
-  --galaxy NGC3198 \
-  --nr 20 --ntheta 30 --k 12 --lambda-xy 3.0 \
-  --n-windows 8 --window-width 5 \
-  --min-nodes-window 80 \
-  --ups-disk 0.5 --ups-bulge 0.7 \
-  --shape-mode flat_outer \
-  --alpha-trigger-mode relative_max --q-alpha-max 0.97 \
-  --dr-fixed 2.5 --rt-mode alpha_crossing \
-  --eta-correction rt --eta-gamma 0.75 --eta-alpha-threshold 8.0 \
-  --output-dir results/NGC3198_v3_4
-
 Exemple d'exécution : NGC5055
 bash
 python3 scripts/bup_paper12_sparc_alpha_dsdw_v3_4_corrected.py \
