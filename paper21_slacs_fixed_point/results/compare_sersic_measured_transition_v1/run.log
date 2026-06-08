@@ -1,0 +1,148 @@
+====================================================================================================
+Analyzing measured_n_only
+====================================================================================================
+{
+  "tag": "measured_n_only",
+  "n": 61,
+  "phi_feature": "rawL_zS_amp_sqrtMstar_phi_mid_mean",
+  "logM_LOO_improvement": 12.53679973155827,
+  "Phi_LOO_improvement": 10.398406137014222,
+  "Phi_minus_logM_LOO": -2.1383935945440484,
+  "frac_Phi_better_logM_global": 0.4426229508196721,
+  "mean_delta_global": -0.018850554692639444,
+  "best_window": {
+    "width": 0.1,
+    "center": 11.595000076293957,
+    "logM_low": 11.545000076293956,
+    "logM_high": 11.645000076293957,
+    "n": 11,
+    "frac_Phi_better_logM": 0.8181818181818182,
+    "mean_delta_logM_minus_Phi": 0.09812936725154052,
+    "median_delta_logM_minus_Phi": 0.07393199603084644,
+    "p_mean_delta_one_sided": 0.0026657780739753416,
+    "p_frac_one_sided": 0.008997000999666778,
+    "mean_abs_err_logM": 0.5472741666437485,
+    "mean_abs_err_Phi": 0.449144799392208,
+    "names": "J0008-0004;J0029-0055;J0330-0020;J0946+1006;J1023+4230;J1142+1001;J1143-0144;J1218+0830;J1416+5136;J1636+4707;J2321-0939"
+  },
+  "huber_Cobs_zero": 11.600580606834484,
+  "linear_Cobs_zero": 11.621238774568447
+}
+
+====================================================================================================
+Analyzing matched_forced_n4
+====================================================================================================
+{
+  "tag": "matched_forced_n4",
+  "n": 61,
+  "phi_feature": "norm_rawS_amp_sqrtMstar_phi_inner_minus_outer",
+  "logM_LOO_improvement": 12.53679973155827,
+  "Phi_LOO_improvement": 9.121230605847904,
+  "Phi_minus_logM_LOO": -3.415569125710366,
+  "frac_Phi_better_logM_global": 0.4918032786885246,
+  "mean_delta_global": -0.0025016012708291447,
+  "best_window": {
+    "width": 0.3,
+    "center": 11.145000076293949,
+    "logM_low": 10.995000076293948,
+    "logM_high": 11.295000076293949,
+    "n": 6,
+    "frac_Phi_better_logM": 0.6666666666666666,
+    "mean_delta_logM_minus_Phi": 0.05385807677162619,
+    "median_delta_logM_minus_Phi": 0.10856251910995476,
+    "p_mean_delta_one_sided": 0.07330889703432189,
+    "p_frac_one_sided": 0.3092302565811396,
+    "mean_abs_err_logM": 0.385970616812408,
+    "mean_abs_err_Phi": 0.33211254004078183,
+    "names": "J0955+0101;J0959+0410;J1029+0420;J1420+6019;J1443+0304;J1538+5817"
+  },
+  "huber_Cobs_zero": 11.600580606834484,
+  "linear_Cobs_zero": 11.621238774568447
+}
+
+====================================================================================================
+Analyzing measured_plus_fallback
+====================================================================================================
+{
+  "tag": "measured_plus_fallback",
+  "n": 70,
+  "phi_feature": "rawL_zS_amp_sqrtMstar_phi_mid_mean",
+  "logM_LOO_improvement": 12.917284192172339,
+  "Phi_LOO_improvement": 10.489524181491925,
+  "Phi_minus_logM_LOO": -2.427760010680414,
+  "frac_Phi_better_logM_global": 0.42857142857142855,
+  "mean_delta_global": -0.020436709245199396,
+  "best_window": {
+    "width": 0.1,
+    "center": 11.595000076293957,
+    "logM_low": 11.545000076293956,
+    "logM_high": 11.645000076293957,
+    "n": 12,
+    "frac_Phi_better_logM": 0.75,
+    "mean_delta_logM_minus_Phi": 0.07125306455510262,
+    "median_delta_logM_minus_Phi": 0.0637881760988793,
+    "p_mean_delta_one_sided": 0.002999000333222259,
+    "p_frac_one_sided": 0.016661112962345886,
+    "mean_abs_err_logM": 0.49769121690477097,
+    "mean_abs_err_Phi": 0.4264381523496683,
+    "names": "J0008-0004;J0029-0055;J0330-0020;J0946+1006;J1023+4230;J1142+1001;J1143-0144;J1218+0830;J1313+4615;J1416+5136;J1636+4707;J2321-0939"
+  },
+  "huber_Cobs_zero": 11.56802328200196,
+  "linear_Cobs_zero": 11.591556245582911
+}
+
+====================================================================================================
+FINAL COMPARISON
+====================================================================================================
+                   tag  n                                   phi_feature  logM_LOO_improvement  Phi_LOO_improvement  Phi_minus_logM_LOO  frac_Phi_better_logM_global  mean_delta_global                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              best_window  huber_Cobs_zero  linear_Cobs_zero
+       measured_n_only 61            rawL_zS_amp_sqrtMstar_phi_mid_mean             12.536800            10.398406           -2.138394                     0.442623          -0.018851 {'width': 0.1, 'center': 11.595000076293957, 'logM_low': 11.545000076293956, 'logM_high': 11.645000076293957, 'n': 11, 'frac_Phi_better_logM': 0.8181818181818182, 'mean_delta_logM_minus_Phi': 0.09812936725154052, 'median_delta_logM_minus_Phi': 0.07393199603084644, 'p_mean_delta_one_sided': 0.0026657780739753416, 'p_frac_one_sided': 0.008997000999666778, 'mean_abs_err_logM': 0.5472741666437485, 'mean_abs_err_Phi': 0.449144799392208, 'names': 'J0008-0004;J0029-0055;J0330-0020;J0946+1006;J1023+4230;J1142+1001;J1143-0144;J1218+0830;J1416+5136;J1636+4707;J2321-0939'}        11.600581         11.621239
+     matched_forced_n4 61 norm_rawS_amp_sqrtMstar_phi_inner_minus_outer             12.536800             9.121231           -3.415569                     0.491803          -0.002502                                                            {'width': 0.3, 'center': 11.145000076293949, 'logM_low': 10.995000076293948, 'logM_high': 11.295000076293949, 'n': 6, 'frac_Phi_better_logM': 0.6666666666666666, 'mean_delta_logM_minus_Phi': 0.05385807677162619, 'median_delta_logM_minus_Phi': 0.10856251910995476, 'p_mean_delta_one_sided': 0.07330889703432189, 'p_frac_one_sided': 0.3092302565811396, 'mean_abs_err_logM': 0.385970616812408, 'mean_abs_err_Phi': 0.33211254004078183, 'names': 'J0955+0101;J0959+0410;J1029+0420;J1420+6019;J1443+0304;J1538+5817'}        11.600581         11.621239
+measured_plus_fallback 70            rawL_zS_amp_sqrtMstar_phi_mid_mean             12.917284            10.489524           -2.427760                     0.428571          -0.020437    {'width': 0.1, 'center': 11.595000076293957, 'logM_low': 11.545000076293956, 'logM_high': 11.645000076293957, 'n': 12, 'frac_Phi_better_logM': 0.75, 'mean_delta_logM_minus_Phi': 0.07125306455510262, 'median_delta_logM_minus_Phi': 0.0637881760988793, 'p_mean_delta_one_sided': 0.002999000333222259, 'p_frac_one_sided': 0.016661112962345886, 'mean_abs_err_logM': 0.49769121690477097, 'mean_abs_err_Phi': 0.4264381523496683, 'names': 'J0008-0004;J0029-0055;J0330-0020;J0946+1006;J1023+4230;J1142+1001;J1143-0144;J1218+0830;J1313+4615;J1416+5136;J1636+4707;J2321-0939'}        11.568023         11.591556
+
+TOP WINDOWS
+                   tag  width  center  logM_low  logM_high  n  frac_Phi_better_logM  mean_delta_logM_minus_Phi  p_mean_delta_one_sided  p_frac_one_sided
+     matched_forced_n4   0.30  11.170    11.020     11.320  6              0.666667                   0.053858                0.085305          0.313229
+     matched_forced_n4   0.30  11.145    10.995     11.295  6              0.666667                   0.053858                0.073309          0.309230
+     matched_forced_n4   0.30  11.195    11.045     11.345  6              0.666667                   0.031747                0.189270          0.328557
+     matched_forced_n4   0.25  11.220    11.095     11.345  6              0.666667                   0.031747                0.195601          0.324225
+     matched_forced_n4   0.10  11.695    11.645     11.745 17              0.529412                   0.011751                0.244252          0.463179
+     matched_forced_n4   0.10  11.745    11.695     11.795 12              0.583333                   0.009283                0.330556          0.351883
+     matched_forced_n4   0.20  11.795    11.695     11.895 17              0.588235                   0.008992                0.293236          0.255581
+     matched_forced_n4   0.25  11.820    11.695     11.945 18              0.555556                   0.008440                0.301566          0.376874
+     matched_forced_n4   0.25  11.770    11.645     11.895 24              0.541667                   0.007154                0.266578          0.341553
+     matched_forced_n4   0.30  11.220    11.070     11.370  7              0.571429                   0.007152                0.384205          0.481839
+       measured_n_only   0.10  11.595    11.545     11.645 11              0.818182                   0.098129                0.002666          0.008997
+       measured_n_only   0.10  11.570    11.520     11.620  9              0.888889                   0.095379                0.004332          0.003665
+       measured_n_only   0.10  11.545    11.495     11.595  9              0.888889                   0.086127                0.010663          0.007997
+       measured_n_only   0.15  11.570    11.495     11.645 14              0.785714                   0.077522                0.000666          0.002666
+       measured_n_only   0.10  11.620    11.570     11.670 11              0.727273                   0.076588                0.004665          0.035322
+       measured_n_only   0.15  11.620    11.545     11.695 18              0.722222                   0.066605                0.001000          0.004665
+       measured_n_only   0.15  11.545    11.470     11.620 14              0.714286                   0.064358                0.004665          0.024325
+       measured_n_only   0.15  11.595    11.520     11.670 14              0.714286                   0.061529                0.008664          0.020993
+       measured_n_only   0.20  11.595    11.495     11.695 21              0.714286                   0.057370                0.000666          0.002333
+       measured_n_only   0.20  11.545    11.445     11.645 20              0.650000                   0.048374                0.004665          0.024992
+measured_plus_fallback   0.10  11.595    11.545     11.645 12              0.750000                   0.071253                0.002999          0.016661
+measured_plus_fallback   0.10  11.570    11.520     11.620 10              0.800000                   0.069020                0.007997          0.017661
+measured_plus_fallback   0.10  11.545    11.495     11.595 10              0.800000                   0.054474                0.019327          0.013995
+measured_plus_fallback   0.15  11.570    11.495     11.645 15              0.733333                   0.052138                0.004332          0.008997
+measured_plus_fallback   0.10  11.620    11.570     11.670 13              0.615385                   0.050793                0.008997          0.109630
+measured_plus_fallback   0.15  11.620    11.545     11.695 20              0.650000                   0.047389                0.000666          0.019993
+measured_plus_fallback   0.15  11.545    11.470     11.620 16              0.687500                   0.044055                0.011663          0.022326
+measured_plus_fallback   0.15  11.595    11.520     11.670 16              0.625000                   0.038612                0.018660          0.065978
+measured_plus_fallback   0.20  11.595    11.495     11.695 23              0.652174                   0.038035                0.003332          0.008664
+measured_plus_fallback   0.20  11.570    11.470     11.670 22              0.590909                   0.028749                0.013329          0.059314
+
+FIXED POINTS
+                   tag model_type  root_logM      method  value_at_root  n_roots  boot_n_ok  boot_median  boot_q05  boot_q16  boot_q84  boot_q95  boot_std  boot_frac_in_11p50_11p65  boot_frac_in_11p55_11p60
+       measured_n_only     linear  11.621239 sign_change   0.000000e+00        1       2000    11.618674 11.534628 11.567437 11.669116 11.703089  0.052179                    0.7120                    0.2795
+       measured_n_only  quadratic  11.630447 sign_change  -5.329071e-15        1       2000    11.619076 11.514945 11.557828 11.675164 11.706991  0.059814                    0.6715                    0.2370
+       measured_n_only      cubic  11.596712 sign_change  -4.547474e-13        1       2000    11.595372 11.519737 11.549935 11.646746 11.681774  0.049939                    0.8345                    0.3775
+       measured_n_only      huber  11.600581 sign_change   0.000000e+00        1       2000    11.600500 11.522812 11.552450 11.647282 11.678123  0.048510                    0.8315                    0.3485
+     matched_forced_n4     linear  11.621239 sign_change   0.000000e+00        1       2000    11.618674 11.534628 11.567437 11.669116 11.703089  0.052179                    0.7120                    0.2795
+     matched_forced_n4  quadratic  11.630447 sign_change  -5.329071e-15        1       2000    11.619076 11.514945 11.557828 11.675164 11.706991  0.059814                    0.6715                    0.2370
+     matched_forced_n4      cubic  11.596712 sign_change  -4.547474e-13        1       2000    11.595372 11.519737 11.549935 11.646746 11.681774  0.049939                    0.8345                    0.3775
+     matched_forced_n4      huber  11.600581 sign_change   0.000000e+00        1       2000    11.600500 11.522812 11.552450 11.647282 11.678123  0.048510                    0.8315                    0.3485
+measured_plus_fallback     linear  11.591556 sign_change   1.776357e-15        1       2000    11.590118 11.511775 11.543213 11.639062 11.669746  0.049139                    0.8585                    0.3885
+measured_plus_fallback  quadratic  11.599442 sign_change   3.552714e-15        1       2000    11.591952 11.492206 11.538750 11.645132 11.677175  0.055140                    0.8045                    0.3425
+measured_plus_fallback      cubic  11.572288 sign_change  -9.094947e-13        1       2000    11.573912 11.503245 11.530962 11.619820 11.655451  0.046581                    0.8945                    0.4415
+measured_plus_fallback      huber  11.568023 sign_change   1.776357e-15        1       2000    11.569106 11.496579 11.523728 11.614734 11.645568  0.045502                    0.9010                    0.4140
