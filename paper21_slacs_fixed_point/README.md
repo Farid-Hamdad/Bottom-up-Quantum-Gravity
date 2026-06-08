@@ -1,568 +1,233 @@
-\documentclass[11pt,a4paper]{article}
+# Paper 21 — The SLACS Fixed Point
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{mathtools}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{geometry}
-\usepackage{hyperref}
-\usepackage{physics}
-\usepackage{bm}
-\usepackage{authblk}
-\usepackage{microtype}
+## Strong-Lensing Validation of the BuP Effective Potential
 
-\geometry{margin=2.5cm}
+**Author:** Farid Hamdad  
+**Project:** Bottom-Up Quantum Gravity  
+**Year:** 2026
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue!60!black,
-    citecolor=blue!60!black,
-    urlcolor=blue!60!black
-}
+---
 
-\title{
-\textbf{Paper 21 --- Le Point Fixe SLACS}\\
-\large Validation par Lentillage Fort du Potentiel Effectif BuP
-}
+## Overview
 
-\author{Farid Hamdad}
-\affil{Programme Gravité Quantique Bottom-Up}
-\date{2026}
+This folder contains the numerical and observational tests associated with **Paper 21** of the Bottom-Up Quantum Gravity program.
 
-\begin{document}
+Paper 21 tests a prediction introduced in **Paper 9**: the effective BuP gravitational potential,
 
-\maketitle
+$$
+\mathcal{L}_{\rm ent}\Phi_{\rm BuP}=S_{\rm flux},
+$$
 
-\begin{abstract}
-Nous testons une prédiction du cadre Gravité Quantique Bottom-Up (BuP) sur l'échantillon de lentillage fort SLACS.
+should leave an observable imprint in gravitational lensing data.
 
-Le Paper 9 a introduit un potentiel gravitationnel effectif généré par une source de matière émergente via une équation de Poisson sur graphe :
+The test is performed on the SLACS strong-lensing sample. The main observable is the residual lensing correction
 
-\[
-L_{\rm ent}\,\Phi_{\rm BuP} = S_{\rm flux}.
-\]
-
-Nous testons ici si ce potentiel prédit les résidus de lentillage au-delà d'un modèle baryonique de référence. L'observable est :
-
-\[
-C_{\rm obs}
-= \log\left(
-\frac{\theta_E^{\rm obs}}{\theta_E^{\rm baryon}}
+$$
+C_{\rm obs} = \log\left(
+\frac{\theta_E^{\rm obs}}
+{\theta_E^{\rm baryon}}
 \right).
-\]
+$$
 
-Nous trouvons une transition robuste autour de :
+The central result is the discovery of a fixed-point transition around
 
-\[
-\log M_\star \simeq 11{,}58 - 11{,}60,
-\]
+$$
+\log M_\star \simeq 11.58-11.60.
+$$
 
-où :
+At this scale:
 
-\begin{itemize}
-    \item \(C_{\rm obs} \simeq 0\),
-    \item le potentiel BuP surpasse localement le proxy global de masse stellaire \(\log M_\star\),
-    \item le secteur dimensionnel satisfait \(\alpha_{\rm eff} \simeq 1\) à une échelle de diffusion intermédiaire.
-\end{itemize}
+1. the observed residual satisfies $C_{\rm obs}\simeq 0$;
+2. the BuP potential $\Phi_{\rm BuP}$ locally outperforms the global proxy $\log M_\star$;
+3. the dimensional sector reaches $\alpha_{\rm eff}\simeq 1$ at an intermediate diffusion scale.
 
-L'utilisation des indices de Sérsic \textbf{mesurés} renforce le signal par rapport à un contrôle à \(n = 4\) forcé.
+This provides a non-trivial observational consistency test of the BuP effective potential.
 
-Ces résultats fournissent un test de cohérence observationnelle non trivial du potentiel effectif BuP prédit dans le Paper 9.
-\end{abstract}
+---
 
-\tableofcontents
+## Physical origin
 
-\section{Introduction}
+Paper 9 predicts the chain
 
-Le programme Gravité Quantique Bottom-Up (BuP) propose que la géométrie et la gravité émergent de la structure de l'intrication quantique.
-
-Les papiers précédents ont développé la chaîne théorique :
-
-\[
-W_{ij}
-\;\rightarrow\;
-L_{\rm ent}
-\;\rightarrow\;
-d_s,\; d_w
-\;\rightarrow\;
-\alpha_{\rm eff}
-\;\rightarrow\;
-\text{gravité effective}.
-\]
-
-Le Paper 9 a introduit une source de matière émergente \(S_{\rm flux}\) et l'a couplée à une équation de Poisson effective sur graphe :
-
-\[
-L_{\rm ent}\,\Phi_{\rm BuP} = S_{\rm flux}.
-\]
-
-Le présent papier teste cette prédiction sur l'échantillon de lentillage fort SLACS.
-
-La question centrale est de savoir si \(\Phi_{\rm BuP}\) laisse une empreinte observable dans les résidus de lentillage.
-
-\section{Prédiction du Paper 9}
-
-Le Paper 9 prédit la chaîne causale suivante :
-
-\[
+$$
 S_{\rm flux}
-\;\rightarrow\;
+\rightarrow
 \Phi_{\rm BuP}
-\;\rightarrow\;
-\text{réponse gravitationnelle}.
-\]
+\rightarrow
+\text{gravitational response}.
+$$
 
-\subsection{Source de matière émergente}
+Paper 21 tests this chain using strong-lensing data. The BuP effective exponent is
 
-La source est construite à partir de quatre contributions :
-
-\[
-S_{\rm flux}
-= T_{00}
-- \frac{1}{2}\,T_{aa}
-+ \frac{1}{2}\,T_{\rm grad}
-+ |T_{0a}|.
-\]
-
-\subsection{Potentiel effectif}
-
-Le potentiel effectif est obtenu par résolution de l'équation de Poisson discrète :
-
-\[
-\boxed{
-L_{\rm ent}\,\Phi_{\rm BuP} = S_{\rm flux}
-}
-\]
-
-\subsection{Résidu de lentillage}
-
-Dans l'application au lentillage, le potentiel BuP est testé à travers la correction résiduelle :
-
-\[
-\boxed{
-C_{\rm obs}
-= \log\left(
-\frac{\theta_E^{\rm obs}}{\theta_E^{\rm baryon}}
-\right)
-}
-\]
-
-\section{Données et observables}
-
-Nous utilisons un catalogue de travail SLACS de lentillage fort contenant :
-
-\begin{itemize}
-    \item les rayons d'Einstein observés \(\theta_E^{\rm obs}\),
-    \item les masses stellaires \(\log M_\star\),
-    \item les rayons effectifs \(R_e\),
-    \item les indices de Sérsic \(n\).
-\end{itemize}
-
-\subsection{Prédiction baryonique de référence}
-
-La prédiction baryonique de référence est notée \(\theta_E^{\rm baryon}\).
-
-\subsection{Résidu observationnel}
-
-Le résidu est défini par :
-
-\[
-C_{\rm obs}
-= \log\left(
-\frac{\theta_E^{\rm obs}}{\theta_E^{\rm baryon}}
-\right).
-\]
-
-\begin{itemize}
-    \item \(C_{\rm obs} > 0\) : excès par rapport à la référence baryonique,
-    \item \(C_{\rm obs} < 0\) : déficit par rapport à la référence baryonique,
-    \item \(C_{\rm obs} = 0\) : la prédiction baryonique coïncide avec l'observation.
-\end{itemize}
-
-\section{Construction du graphe BuP}
-
-Pour chaque galaxie, nous construisons un graphe à partir d'un profil photométrique projeté.
-
-\subsection{Profil de Sérsic}
-
-La densité surfacique paramétrique de base est représentée par un profil de Sérsic :
-
-\[
-\Sigma(R)
-\propto
-\exp\left[
--b_n
-\left(
-\frac{R}{R_e}
-\right)^{1/n}
-\right],
-\qquad
-b_n = 2n - \frac{1}{3}.
-\]
-
-\subsection{Couplage du graphe}
-
-Le couplage entre nœuds est pris sous forme exponentielle :
-
-\[
-\boxed{
-W_{ij}
-\propto
-\sqrt{\Sigma_i \,\Sigma_j}
-\;\exp\left(
--\frac{d_{ij}^2}{2\xi^2}
-\right)
-}
-\]
-
-\subsection{Laplacien d'intrication}
-
-Le Laplacien normalisé du graphe est :
-
-\[
-L_{\rm ent} = D - W,
-\]
-
-où \(D\) est la matrice diagonale des degrés :
-
-\[
-D_{ii} = \sum_j W_{ij}.
-\]
-
-\subsection{Potentiel effectif}
-
-Le potentiel est obtenu par pseudo-inversion du Laplacien :
-
-\[
-\Phi_{\rm BuP} = L_{\rm ent}^{+} \, S_{\rm flux}.
-\]
-
-\section{Secteur dimensionnel}
-
-L'exposant gravitationnel effectif est donné par :
-
-\[
-\boxed{
+$$
 \alpha_{\rm eff}
-= \frac{2d_s}{d_w} + d_w - 4
-}
-\]
+= \frac{2d_s}{d_w}+d_w-4.
+$$
 
-où :
-\begin{itemize}
-    \item \(d_s\) est la dimension spectrale du graphe,
-    \item \(d_w\) est la dimension de marche (exposant de diffusion).
-\end{itemize}
+The Newtonian or baryonic fixed point corresponds to
 
-\subsection{Condition de point fixe}
+$$
+\alpha_{\rm eff}=1.
+$$
 
-La condition de point fixe gravitationnel est :
+For standard Brownian diffusion ($d_w=2$), this condition gives
 
-\[
-\alpha_{\rm eff} = 1.
-\]
+$$
+d_s=3.
+$$
 
-De manière équivalente :
+More generally, the fixed-point condition is
 
-\[
-\frac{2d_s}{d_w} + d_w = 5,
-\]
+$$
+2d_s = d_w(5-d_w).
+$$
 
-ou encore :
+In the SLACS graph, the fixed point is recovered not in the earliest or latest diffusion regime, but in an intermediate diffusion window.
 
-\[
-2d_s = d_w\,(5 - d_w),
-\]
+---
 
-\[
-\boxed{
-d_s = \frac{d_w\,(5 - d_w)}{2}
-}
-\]
+## Main results
 
-\subsection{Cas particulier : diffusion brownienne}
+### 1. Global BuP potential signal
 
-Pour la diffusion brownienne standard, \(d_w = 2\). Le point fixe donne alors :
+The best dynamical BuP feature reaches a leave-one-out improvement of approximately
 
-\[
-d_s = 3.
-\]
+$$
+10.49\%
+$$
 
-Ainsi, \(\alpha_{\rm eff} = 1\) correspond au point fixe newtonien (ou baryonique) du secteur gravitationnel effectif.
+on the full SLACS working sample.
 
-\section{Test global du résidu}
+A dynamic shuffle control, where the stellar-mass amplitude is permuted before constructing the graph, strongly suppresses the signal. This shows that the result depends on the correct association between stellar amplitude and graph structure.
 
-Nous comparons d'abord le potentiel BuP au résidu baryonique \(C_{\rm obs}\).
+---
 
-\subsection{Résultat principal}
+### 2. Measured Sérsic indices strengthen the signal
 
-La meilleure caractéristique BuP dynamique atteint une amélioration \textbf{leave-one-out} (LOO) d'environ :
+A controlled comparison was performed on the same 61 galaxies with measured Sérsic indices.
 
-\[
-\boxed{10{,}49\%}
-\]
+Using measured $n_i$:
 
-sur l'échantillon de travail complet.
+$$
+\text{LOO improvement} = 10.40\%.
+$$
 
-Ce résultat établit que \(\Phi_{\rm BuP}\) porte une information prédictive sur le résidu de lentillage.
+For the exact same galaxies forced to $n=4$:
 
-\subsection{Hiérarchie des modèles}
+$$
+\text{LOO improvement} = 9.12\%.
+$$
 
-\begin{table}[h]
-\centering
-\caption{Résumé de la hiérarchie de prédiction des résidus.}
-\begin{tabular}{lcc}
-\toprule
-\textbf{Modèle} & \textbf{Amélioration LOO} & \textbf{Interprétation} \\
-\midrule
-Baryonique baseline & \(0\%\) & Référence \\
-Régime LOW/HIGH & \(\sim 6-8\%\) & Signal BuP discret \\
-Force BuP (forme seule) & \(\sim 9\%\) & Signal du graphe morphologique \\
-\(\Phi_{\rm BuP}^{\sqrt{M_\star}}\) & \(10{,}49\%\) & Potentiel BuP dynamique \\
-\(\sqrt{M_\star}\) & \(12{,}25\%\) & Proxy de masse stellaire \\
-\(\log M_\star\) & \(12{,}92\%\) & Meilleur proxy global à un paramètre \\
-\bottomrule
-\end{tabular}
-\end{table}
+Thus, the measured photometric morphology increases the BuP dynamical signal.
 
-\section{Contrôle par mélange dynamique}
+---
 
-Pour tester si le signal est \textbf{causal}, nous effectuons un contrôle par mélange dynamique.
+### 3. Transition window
 
-\subsection{Protocole}
+The strongest transition window is
 
-L'amplitude stellaire \(M_\star\) est permutée \textbf{aléatoirement} entre les galaxies \emph{avant} la construction du graphe.
+$$
+11.545 < \log M_\star < 11.645.
+$$
 
-\subsection{Résultat}
+In this window, with measured Sérsic indices,
 
-Le mélange détruit la majeure partie du signal BuP :
+$$
+\Phi_{\rm BuP}
+$$
 
-\[
-\text{Meilleur potentiel mélangé} \ll 10{,}49\%.
-\]
+outperforms $\log M_\star$ for approximately
 
-\subsection{Conclusion du contrôle}
+$$
+81.8\%
+$$
 
-Ce contrôle démontre que :
+of galaxies.
 
-\begin{quote}
-Le résultat dépend de l'\textbf{association correcte} entre amplitude stellaire et structure du graphe, pas seulement de la distribution marginale des masses stellaires.
-\end{quote}
+This indicates that the BuP potential is not merely a global stellar-mass proxy. It captures a localized dynamical correction in the transition regime.
 
-\section{Indices de Sérsic mesurés}
+---
 
-Une comparaison contrôlée est effectuée sur les mêmes 61 galaxies avec des indices de Sérsic \textbf{mesurés}.
+### 4. Observational fixed point
 
-\subsection{Résultat}
+The zero of the observed lensing residual,
 
-\begin{table}[h]
-\centering
-\caption{Effet de l'utilisation des indices de Sérsic mesurés.}
-\begin{tabular}{lcc}
-\toprule
-\textbf{Catalogue} & \(N\) & \textbf{Meilleure amélioration LOO BuP} \\
-\midrule
-\(n_i\) mesurés & 61 & \(10{,}40\%\) \\
-\(n = 4\) forcé & 61 & \(9{,}12\%\) \\
-Mesurés + secours & 70 & \(10{,}49\%\) \\
-\bottomrule
-\end{tabular}
-\end{table}
+$$
+C_{\rm obs}=0,
+$$
 
-\subsection{Interprétation}
+is found around
 
-L'utilisation des indices de Sérsic \textbf{mesurés} renforce le signal dynamique BuP d'environ \(1{,}3\) point de pourcentage.
+$$
+\log M_\star\simeq 11.58-11.60.
+$$
 
-Ainsi, le potentiel BuP est sensible à la \textbf{morphologie photométrique réelle}, pas seulement à la masse stellaire.
+This coincides with the mass window where $\Phi_{\rm BuP}$ locally outperforms $\log M_\star$.
 
-\section{Fenêtre de transition}
+---
 
-Une analyse par \textbf{fenêtre glissante} en masse stellaire révèle un régime de transition localisé.
+### 5. Dimensional fixed point
 
-\subsection{Localisation de la fenêtre}
+A diffusion-window scan shows that the BuP dimensional fixed point is recovered at an intermediate diffusion scale.
 
-La fenêtre de transition est :
+For measured Sérsic indices, the optimal diffusion window is
 
-\[
-\boxed{
-11{,}545 < \log M_\star < 11{,}645
-}
-\]
+$$
+t_{\min}=1,\qquad t_{\max}=21.
+$$
 
-\subsection{Performance dans la fenêtre}
+It gives
 
-Avec les indices de Sérsic mesurés, dans cette fenêtre :
+$$
+\langle \alpha_{\rm eff}\rangle = 1.014,
+$$
 
-\[
-\Phi_{\rm BuP} \quad \text{surpasse} \quad \log M_\star
-\]
+and in the fixed mass window
 
-pour environ :
+$$
+11.545 < \log M_\star < 11.645
+$$
 
-\[
-\boxed{81{,}8\%}
-\]
+it gives
 
-des galaxies.
+$$
+\langle \alpha_{\rm eff}\rangle = 1.014.
+$$
 
-\subsection{Interprétation}
+Thus, the observational fixed point and the BuP dimensional fixed point coincide.
 
-Cela suggère que le potentiel BuP capture une \textbf{correction dynamique localisée} dans le régime de transition.
+---
 
-\section{Point fixe observationnel}
+## Interpretation
 
-Le point fixe observationnel est défini par l'annulation du résidu :
+Paper 21 supports the following statement:
 
-\[
-C_{\rm obs} = 0.
-\]
-
-\subsection{Détermination par régression}
-
-L'ajustement linéaire de \(C_{\rm obs}\) en fonction de \(\log M_\star\) donne un passage par zéro à :
-
-\[
-\boxed{
-\log M_\star \simeq 11{,}58 - 11{,}60
-}
-\]
-
-\subsection{Cohérence}
-
-Cette valeur coïncide avec la fenêtre de transition dans laquelle \(\Phi_{\rm BuP}\) surpasse le proxy global de masse stellaire.
-
-\section{Point fixe dimensionnel}
-
-Un balayage des fenêtres de diffusion (\(t_{\min}, t_{\max}\)) montre que le point fixe dimensionnel est accessible.
-
-\subsection{Fenêtre optimale}
-
-Pour l'échantillon à Sérsic mesuré, la fenêtre de diffusion optimale est :
-
-\[
-t_{\min} = 1, \qquad t_{\max} = 21.
-\]
-
-\subsection{Valeurs obtenues}
-
-Cette fenêtre donne :
-
-\[
-\langle \alpha_{\rm eff} \rangle = 1{,}014,
-\]
-\[
-d_w \simeq 4{,}213,
+$$
+C_{\rm obs}=0,
 \qquad
-d_s \simeq 1{,}688.
-\]
+\Phi_{\rm BuP} > \log M_\star,
+\qquad
+\alpha_{\rm eff}\simeq 1
+$$
 
-\subsection{Valeur dans la fenêtre de masse}
+all occur around the same transition scale,
 
-À l'intérieur de la fenêtre de transition \(11{,}545 < \log M_\star < 11{,}645\), la même fenêtre de diffusion donne :
+$$
+\log M_\star\simeq 11.6.
+$$
 
-\[
-\langle \alpha_{\rm eff} \rangle = 1{,}014.
-\]
+This is interpreted as the **SLACS fixed point** of the BuP effective gravitational potential.
 
-\subsection{Conclusion}
+---
 
-Ainsi, le \textbf{point fixe dimensionnel} (\(\alpha_{\rm eff} = 1\)) et le \textbf{point fixe observationnel} (\(C_{\rm obs} = 0\)) \textbf{coïncident} à la même échelle de masse.
+## Directory structure
 
-\section{Convergence triple}
-
-Le résultat principal du Paper 21 est la \textbf{convergence triple} :
-
-\[
-\boxed{
-C_{\rm obs} = 0
-\qquad\text{et}\qquad
-\Phi_{\rm BuP} > \log M_\star
-\qquad\text{et}\qquad
-\alpha_{\rm eff} \simeq 1
-}
-\]
-
-au voisinage de :
-
-\[
-\boxed{
-\log M_\star \simeq 11{,}6
-}
-\]
-
-\subsection{Statut du point fixe}
-
-Ce point fixe SLACS :
-
-\begin{itemize}
-    \item n'est \textbf{pas introduit} comme un seuil libre,
-    \item \textbf{émerge indépendamment} :
-    \begin{enumerate}
-        \item des données de résidu de lentillage,
-        \item de la fenêtre de performance du potentiel BuP,
-        \item du secteur dimensionnel du graphe.
-    \end{enumerate}
-\end{itemize}
-
-\section{Discussion}
-
-\subsection{Portée du résultat}
-
-Ce résultat ne doit pas être interprété comme une validation complète de l'ensemble du programme BuP.
-
-C'est une validation d'une \textbf{prédiction spécifique du Paper 9} :
-
-\begin{quote}
-Le potentiel effectif BuP porte une information gravitationnelle observable.
-\end{quote}
-
-\subsection{Limitations actuelles}
-
-Le graphe utilisé reste \textbf{paramétrique} (profil radial de Sérsic).
-
-Un test plus solide utiliserait :
-\begin{itemize}
-    \item des cartes de lumière HST \textbf{non-paramétriques},
-    \item un graphe \textbf{véritablement bidimensionnel}.
-\end{itemize}
-
-\subsection{Force du résultat}
-
-Néanmoins, le fait que les indices de Sérsic \textbf{mesurés} renforcent le résultat indique que :
-
-\begin{quote}
-Le potentiel BuP est sensible à la morphologie photométrique \textbf{réelle}, pas seulement à la masse stellaire.
-\end{quote}
-
-\section{Conclusion}
-
-Nous avons testé le potentiel effectif BuP du Paper 9 sur l'échantillon de lentillage fort SLACS.
-
-\subsection{Résultats principaux}
-
-\begin{enumerate}
-    \item Le potentiel BuP prédit les résidus de lentillage avec une amélioration LOO non nulle (\(\sim 10{,}5\%\)).
-    \item Les contrôles par mélange dynamique suppriment le signal (preuve de causalité).
-    \item Les indices de Sérsic \textbf{mesurés} renforcent la prédiction BuP.
-    \item Une fenêtre de transition apparaît autour de \(\log M_\star \simeq 11{,}6\).
-    \item Le résidu observé satisfait \(C_{\rm obs} = 0\) près de la même masse.
-    \item Le secteur dimensionnel atteint \(\alpha_{\rm eff} \simeq 1\) à une échelle de diffusion intermédiaire dans la même fenêtre de masse.
-\end{enumerate}
-
-\subsection{Conclusion finale}
-
-Le Paper 21 fournit une \textbf{validation observationnelle} de la prédiction du Paper 9 :
-
-\begin{quote}
-Le potentiel effectif BuP \(\Phi_{\rm BuP}\) peut encoder les corrections de lentillage gravitationnel.
-\end{quote}
-
-La convergence triple autour de \(\log M_\star \simeq 11{,}6\) constitue un test de cohérence non trivial du cadre BuP.
-
-\bibliographystyle{unsrt}
-\bibliography{references}
-
-\end{document}
+```text
+paper21_slacs_fixed_point/
+  README.md
+  paper21_slacs_fixed_point.tex
+  references.bib
+  data/
+  scripts/
+  results/
+  figures/
