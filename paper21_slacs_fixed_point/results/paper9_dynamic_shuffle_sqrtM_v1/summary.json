@@ -1,0 +1,133 @@
+{
+  "title": "BuP SLACS Paper 9 dynamic sqrtM shuffle control v1",
+  "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_bup_final.csv",
+  "n": 70,
+  "target": "C_obs = log(theta_E_obs/theta_E_baryon)",
+  "settings": {
+    "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_bup_final.csv",
+    "output_dir": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/results/paper9_dynamic_shuffle_sqrtM_v1",
+    "n_rings": 12,
+    "n_theta": 16,
+    "rmin_factor": 0.03,
+    "rmax_factor": 5.0,
+    "xi_factor": 0.35,
+    "default_sersic_n": 4.0,
+    "ridge": 1e-08,
+    "n_boot": 1000,
+    "seed": 0
+  },
+  "best_by_LOO": {
+    "model": "logMs",
+    "mode": "logM",
+    "features": "logMs",
+    "loo_improvement_pct": 12.917284192171923,
+    "loo_rmse_log": 0.4461033516645157,
+    "loo_pearson_C": 0.493792341842636,
+    "loo_spearman_C": 0.5358236374770361,
+    "full_improvement_pct": 15.228447128682557,
+    "full_pearson_C": 0.5303748626619816
+  },
+  "by_mode": [
+    {
+      "mode": "logM",
+      "max": 12.917284192171923,
+      "median": 12.917284192171923,
+      "mean": 12.917284192171923
+    },
+    {
+      "mode": "combined",
+      "max": 12.57438028771699,
+      "median": 10.631602479288652,
+      "mean": 8.075124078901263
+    },
+    {
+      "mode": "sqrtM_true",
+      "max": 12.254543573429856,
+      "median": 12.254543573429856,
+      "mean": 12.254543573429856
+    },
+    {
+      "mode": "Phi_true",
+      "max": 10.489524181492053,
+      "median": 6.761927180659246,
+      "mean": 8.238380407396011
+    },
+    {
+      "mode": "Phi_shuffle",
+      "max": 2.5269122474147774,
+      "median": 2.513076462312567,
+      "mean": 0.12450502373769794
+    },
+    {
+      "mode": "sqrtM_shuffle",
+      "max": -2.5907930633680687,
+      "median": -2.5907930633680687,
+      "mean": -2.5907930633680687
+    }
+  ],
+  "correlations": {
+    "Phi_true_phi_mid_mean_vs_sqrtM": {
+      "pearson": -0.7714611880340146,
+      "spearman": -0.7662866339949093
+    },
+    "Phi_shuffle_phi_mid_mean_vs_sqrtM": {
+      "pearson": 0.1121991563377538,
+      "spearman": 0.29301459628595367
+    }
+  },
+  "bootstrap": {
+    "logM_only": {
+      "n_boot": 1000,
+      "prob_improvement": 1.0,
+      "improvement_mean": 16.509720393885985,
+      "improvement_q05": 9.830443339053216,
+      "improvement_q50": 16.19160196206898,
+      "improvement_q95": 24.00373285161459
+    },
+    "sqrtM_only": {
+      "n_boot": 1000,
+      "prob_improvement": 1.0,
+      "improvement_mean": 15.913980313335138,
+      "improvement_q05": 9.060383045019664,
+      "improvement_q50": 15.812104583613941,
+      "improvement_q95": 23.470993326701084
+    },
+    "Phi_true_phi_mid_mean": {
+      "n_boot": 1000,
+      "prob_improvement": 1.0,
+      "improvement_mean": 13.821390001548272,
+      "improvement_q05": 8.689363582255371,
+      "improvement_q50": 13.783095746559685,
+      "improvement_q95": 19.336658888646422
+    },
+    "Phi_shuffle_phi_mid_mean": {
+      "n_boot": 1000,
+      "prob_improvement": 1.0,
+      "improvement_mean": 1.5500980432966025,
+      "improvement_q05": 0.07202242068310087,
+      "improvement_q50": 1.0757568582334298,
+      "improvement_q95": 4.525539786286663
+    },
+    "Phi_true_plus_sqrtM": {
+      "n_boot": 1000,
+      "prob_improvement": 1.0,
+      "improvement_mean": 17.33406471791185,
+      "improvement_q05": 10.989484923199912,
+      "improvement_q50": 17.155251195074115,
+      "improvement_q95": 24.12282423652311
+    },
+    "Phi_shuffle_plus_sqrtM": {
+      "n_boot": 1000,
+      "prob_improvement": 1.0,
+      "improvement_mean": 17.03337806450805,
+      "improvement_q05": 10.26993563851645,
+      "improvement_q50": 16.78129034135076,
+      "improvement_q95": 24.40819978337874
+    }
+  },
+  "files": {
+    "features": "dynamic_shuffle_sqrtM_features.csv",
+    "summary": "dynamic_shuffle_sqrtM_summary.csv",
+    "by_mode": "dynamic_shuffle_sqrtM_by_mode.csv"
+  }
+}
