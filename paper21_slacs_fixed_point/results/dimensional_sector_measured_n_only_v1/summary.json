@@ -1,0 +1,72 @@
+{
+  "title": "BuP SLACS dimensional sector added v1",
+  "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_measured_n_only.csv",
+  "output_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/measured_n_only_with_dimensional_sector.csv",
+  "n": 61,
+  "settings": {
+    "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_measured_n_only.csv",
+    "output_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/measured_n_only_with_dimensional_sector.csv",
+    "output_summary": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/results/dimensional_sector_measured_n_only_v1/summary.json",
+    "n_rings": 12,
+    "n_theta": 16,
+    "rmin_factor": 0.03,
+    "rmax_factor": 5.0,
+    "xi_factor": 0.35,
+    "default_sersic_n": 4.0,
+    "amp_mode": "shape",
+    "t_min": 0.05,
+    "t_max": 20.0,
+    "n_t": 80,
+    "p_low": 0.05,
+    "p_high": 0.85,
+    "rw_t_min": 1,
+    "rw_t_max": 25
+  },
+  "formula": "alpha_eff_mean = 2*ds_mean/dw_mean + dw_mean - 4",
+  "summary": {
+    "ds_mean": {
+      "n": 61,
+      "mean": 1.6883252140279879,
+      "median": 1.688306011365568,
+      "std": 0.0002528329442455126,
+      "min": 1.687863520004441,
+      "max": 1.6888886415274484
+    },
+    "dw_mean": {
+      "n": 61,
+      "mean": 4.768672611605316,
+      "median": 4.767823518569889,
+      "std": 0.009038026803575138,
+      "min": 4.752889704212428,
+      "max": 4.791156672794799
+    },
+    "alpha_eff_mean": {
+      "n": 61,
+      "mean": 1.4767655247842313,
+      "median": 1.4760317837415737,
+      "std": 0.007592200211601628,
+      "min": 1.463568363568064,
+      "max": 1.4957312193081655
+    },
+    "ds_fit_r2": {
+      "n": 61,
+      "mean": 0.8884584244546716,
+      "median": 0.8884603344580723,
+      "std": 2.4171654268873365e-05,
+      "min": 0.8884043685701151,
+      "max": 0.8885022525330306
+    },
+    "dw_fit_r2": {
+      "n": 61,
+      "mean": 0.7471233007519074,
+      "median": 0.7471488478737109,
+      "std": 7.645458289393854e-05,
+      "min": 0.7468398482230054,
+      "max": 0.7471949376841239
+    },
+    "alpha_vs_logMs": {
+      "pearson": 0.4804996213835098,
+      "n": 61
+    }
+  }
+}
