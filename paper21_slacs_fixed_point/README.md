@@ -1,26 +1,26 @@
-# Paper 21 — The SLACS Fixed Point
+# Paper 21 — Le Point Fixe de SLACS
 
-## Strong-Lensing Validation of the BuP Effective Potential
+## Validation par Lentille Gravitationnelle Forte du Potentiel Effectif BuP
 
-**Author:** Farid Hamdad  
-**Project:** Bottom-Up Quantum Gravity  
-**Year:** 2026
+**Auteur :** Farid Hamdad  
+**Projet :** Gravité Quantique Bottom-Up  
+**Année :** 2026
 
 ---
 
-## Overview
+## Vue d'ensemble
 
-This folder contains the numerical and observational tests associated with **Paper 21** of the Bottom-Up Quantum Gravity program.
+Ce dossier contient les tests numériques et observationnels associés au **Paper 21** du programme de Gravité Quantique Bottom-Up.
 
-Paper 21 tests a prediction introduced in **Paper 9**: the effective BuP gravitational potential,
+Le Paper 21 teste une prédiction introduite dans le **Paper 9** : le potentiel gravitationnel effectif BuP,
 
 $$
 \mathcal{L}_{\rm ent}\Phi_{\rm BuP}=S_{\rm flux},
 $$
 
-should leave an observable imprint in gravitational lensing data.
+doit laisser une empreinte observable dans les données de lentille gravitationnelle.
 
-The test is performed on the SLACS strong-lensing sample. The main observable is the residual lensing correction
+Le test est réalisé sur l'échantillon de lentille forte SLACS. L'observable principal est le résidu de correction de lentille
 
 $$
 C_{\rm obs} = \log\left(
@@ -29,178 +29,178 @@ C_{\rm obs} = \log\left(
 \right).
 $$
 
-The central result is the discovery of a fixed-point transition around
+Le résultat central est la découverte d'une transition par point fixe autour de
 
 $$
-\log M_\star \simeq 11.58-11.60.
+\log M_\star \simeq 11,58-11,60.
 $$
 
-At this scale:
+À cette échelle :
 
-1. the observed residual satisfies $C_{\rm obs}\simeq 0$;
-2. the BuP potential $\Phi_{\rm BuP}$ locally outperforms the global proxy $\log M_\star$;
-3. the dimensional sector reaches $\alpha_{\rm eff}\simeq 1$ at an intermediate diffusion scale.
+1. le résidu observé vérifie $C_{\rm obs}\simeq 0$ ;
+2. le potentiel $\Phi_{\rm BuP}$ performe localement mieux que le proxy global $\log M_\star$ ;
+3. le secteur dimensionnel atteint $\alpha_{\rm eff}\simeq 1$ à une échelle de diffusion intermédiaire.
 
-This provides a non-trivial observational consistency test of the BuP effective potential.
+Ceci fournit un test de consistance observationnelle non trivial du potentiel effectif BuP.
 
 ---
 
-## Physical origin
+## Origine physique
 
-Paper 9 predicts the chain
+Le Paper 9 prédit la chaîne
 
 $$
 S_{\rm flux}
 \rightarrow
 \Phi_{\rm BuP}
 \rightarrow
-\text{gravitational response}.
+\text{réponse gravitationnelle}.
 $$
 
-Paper 21 tests this chain using strong-lensing data. The BuP effective exponent is
+Le Paper 21 teste cette chaîne à l'aide de données de lentille forte. L'exposant effectif BuP est
 
 $$
 \alpha_{\rm eff}
 = \frac{2d_s}{d_w}+d_w-4.
 $$
 
-The Newtonian or baryonic fixed point corresponds to
+Le point fixe newtonien ou baryonique correspond à
 
 $$
 \alpha_{\rm eff}=1.
 $$
 
-For standard Brownian diffusion ($d_w=2$), this condition gives
+Pour la diffusion brownienne standard ($d_w=2$), cette condition donne
 
 $$
 d_s=3.
 $$
 
-More generally, the fixed-point condition is
+Plus généralement, la condition de point fixe est
 
 $$
 2d_s = d_w(5-d_w).
 $$
 
-In the SLACS graph, the fixed point is recovered not in the earliest or latest diffusion regime, but in an intermediate diffusion window.
+Dans le graphe SLACS, le point fixe n'est pas retrouvé dans le régime de diffusion le plus précoce ni le plus tardif, mais dans une fenêtre de diffusion intermédiaire.
 
 ---
 
-## Main results
+## Résultats principaux
 
-### 1. Global BuP potential signal
+### 1. Signal global du potentiel BuP
 
-The best dynamical BuP feature reaches a leave-one-out improvement of approximately
+La meilleure caractéristique dynamique BuP atteint une amélioration leave-one-out d'environ
 
 $$
-10.49\%
+10,49\%
 $$
 
-on the full SLACS working sample.
+sur l'ensemble de l'échantillon de travail SLACS.
 
-A dynamic shuffle control, where the stellar-mass amplitude is permuted before constructing the graph, strongly suppresses the signal. This shows that the result depends on the correct association between stellar amplitude and graph structure.
+Un contrôle dynamique par permutation, où l'amplitude de la masse stellaire est mélangée avant de construire le graphe, supprime fortement le signal. Ceci montre que le résultat dépend de l'association correcte entre l'amplitude stellaire et la structure du graphe.
 
 ---
 
-### 2. Measured Sérsic indices strengthen the signal
+### 2. Les indices de Sérsic mesurés renforcent le signal
 
-A controlled comparison was performed on the same 61 galaxies with measured Sérsic indices.
+Une comparaison contrôlée a été réalisée sur les mêmes 61 galaxies dont les indices de Sérsic sont mesurés.
 
-Using measured $n_i$:
-
-$$
-\text{LOO improvement} = 10.40\%.
-$$
-
-For the exact same galaxies forced to $n=4$:
+Avec les indices $n_i$ mesurés :
 
 $$
-\text{LOO improvement} = 9.12\%.
+\text{Amélioration LOO} = 10,40\%.
 $$
 
-Thus, the measured photometric morphology increases the BuP dynamical signal.
+Pour les mêmes galaxies, mais avec $n=4$ imposé :
+
+$$
+\text{Amélioration LOO} = 9,12\%.
+$$
+
+Ainsi, la morphologie photométrique mesurée augmente le signal dynamique BuP.
 
 ---
 
-### 3. Transition window
+### 3. Fenêtre de transition
 
-The strongest transition window is
+La fenêtre de transition la plus forte est
 
 $$
-11.545 < \log M_\star < 11.645.
+11,545 < \log M_\star < 11,645.
 $$
 
-In this window, with measured Sérsic indices,
+Dans cette fenêtre, avec les indices de Sérsic mesurés,
 
 $$
 \Phi_{\rm BuP}
 $$
 
-outperforms $\log M_\star$ for approximately
+surpasse $\log M_\star$ pour environ
 
 $$
-81.8\%
+81,8\%
 $$
 
-of galaxies.
+des galaxies.
 
-This indicates that the BuP potential is not merely a global stellar-mass proxy. It captures a localized dynamical correction in the transition regime.
+Cela indique que le potentiel BuP n'est pas simplement un proxy global de la masse stellaire. Il capture une correction dynamique localisée dans le régime de transition.
 
 ---
 
-### 4. Observational fixed point
+### 4. Point fixe observationnel
 
-The zero of the observed lensing residual,
+Le zéro du résidu de lentille observé,
 
 $$
 C_{\rm obs}=0,
 $$
 
-is found around
+se trouve autour de
 
 $$
-\log M_\star\simeq 11.58-11.60.
+\log M_\star \simeq 11,58-11,60.
 $$
 
-This coincides with the mass window where $\Phi_{\rm BuP}$ locally outperforms $\log M_\star$.
+Cela coïncide avec la fenêtre de masse où $\Phi_{\rm BuP}$ surpasse localement $\log M_\star$.
 
 ---
 
-### 5. Dimensional fixed point
+### 5. Point fixe dimensionnel
 
-A diffusion-window scan shows that the BuP dimensional fixed point is recovered at an intermediate diffusion scale.
+Un balayage de la fenêtre de diffusion montre que le point fixe dimensionnel BuP est retrouvé à une échelle de diffusion intermédiaire.
 
-For measured Sérsic indices, the optimal diffusion window is
+Pour les indices de Sérsic mesurés, la fenêtre de diffusion optimale est
 
 $$
 t_{\min}=1,\qquad t_{\max}=21.
 $$
 
-It gives
+Elle donne
 
 $$
-\langle \alpha_{\rm eff}\rangle = 1.014,
+\langle \alpha_{\rm eff}\rangle = 1,014,
 $$
 
-and in the fixed mass window
+et dans la fenêtre de masse fixée
 
 $$
-11.545 < \log M_\star < 11.645
+11,545 < \log M_\star < 11,645
 $$
 
-it gives
+elle donne
 
 $$
-\langle \alpha_{\rm eff}\rangle = 1.014.
+\langle \alpha_{\rm eff}\rangle = 1,014.
 $$
 
-Thus, the observational fixed point and the BuP dimensional fixed point coincide.
+Ainsi, le point fixe observationnel et le point fixe dimensionnel BuP coïncident.
 
 ---
 
-## Interpretation
+## Interprétation
 
-Paper 21 supports the following statement:
+Le Paper 21 confirme l'énoncé suivant :
 
 $$
 C_{\rm obs}=0,
@@ -210,17 +210,17 @@ C_{\rm obs}=0,
 \alpha_{\rm eff}\simeq 1
 $$
 
-all occur around the same transition scale,
+se produisent tous autour de la même échelle de transition,
 
 $$
-\log M_\star\simeq 11.6.
+\log M_\star \simeq 11,6.
 $$
 
-This is interpreted as the **SLACS fixed point** of the BuP effective gravitational potential.
+Ceci est interprété comme le **point fixe SLACS** du potentiel gravitationnel effectif BuP.
 
 ---
 
-## Directory structure
+## Structure du répertoire
 
 ```text
 paper21_slacs_fixed_point/
