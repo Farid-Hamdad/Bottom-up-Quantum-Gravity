@@ -1,0 +1,76 @@
+{
+  "title": "BuP SLACS Paper 9 potential residual test v1",
+  "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_bup_final.csv",
+  "n": 70,
+  "target": "C_obs = log(theta_E_obs/theta_E_baryon)",
+  "settings": {
+    "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_bup_final.csv",
+    "output_dir": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/results/residual_phi_bup_paper9_v1",
+    "n_rings": 12,
+    "n_theta": 16,
+    "rmin_factor": 0.03,
+    "rmax_factor": 5.0,
+    "xi_factor": 0.35,
+    "default_sersic_n": 4.0,
+    "grad_weight": 0.5,
+    "flux_weight": 0.5,
+    "ridge": 1e-08,
+    "n_boot": 300,
+    "n_perm": 500,
+    "seed": 0
+  },
+  "n_phi_features": 42,
+  "best_single_phi_feature": "S3_phi_mid_mean",
+  "best_by_LOO": {
+    "model": "logM_only",
+    "features": "logMs",
+    "n_features": 1,
+    "full_improvement_pct": 15.228447128682557,
+    "full_rmse_log": 0.4342638319313987,
+    "full_pearson_C": 0.5303748626619816,
+    "loo_improvement_pct": 12.917284192171923,
+    "loo_rmse_log": 0.4461033516645157,
+    "loo_pearson_C": 0.493792341842636,
+    "loo_spearman_C": 0.5358236374770361
+  },
+  "bootstrap": {
+    "logM_only": {
+      "n_boot": 300,
+      "prob_improvement": 1.0,
+      "improvement_mean": 16.66677286182827,
+      "improvement_q05": 9.829092517919516,
+      "improvement_q50": 16.38160012106144,
+      "improvement_q95": 24.053032790148205
+    },
+    "Phi_best_single": {
+      "n_boot": 300,
+      "prob_improvement": 1.0,
+      "improvement_mean": 12.552167178861426,
+      "improvement_q05": 6.078623684199131,
+      "improvement_q50": 12.389587062904159,
+      "improvement_q95": 19.769159502569863
+    },
+    "logM_plus_Phi_best": {
+      "n_boot": 300,
+      "prob_improvement": 1.0,
+      "improvement_mean": 17.251069571336938,
+      "improvement_q05": 9.995263121153847,
+      "improvement_q50": 17.01872683158846,
+      "improvement_q95": 24.735315987175056
+    }
+  },
+  "added_value_permutation_logM_plus_bestPhi": {
+    "obs_added_LOO_improvement_pct": -0.9778908138800091,
+    "perm_p_one_sided": 0.6147704590818364,
+    "perm_delta_mean": -0.7267891812764757,
+    "perm_delta_q05": -2.193699614008674,
+    "perm_delta_q50": -0.7982188186391026,
+    "perm_delta_q95": 0.9536593722098524,
+    "n_perm": 500
+  },
+  "files": {
+    "features": "paper9_phi_features.csv",
+    "single_feature_screen": "single_phi_feature_screen.csv",
+    "model_summary": "paper9_phi_model_summary.csv"
+  }
+}
