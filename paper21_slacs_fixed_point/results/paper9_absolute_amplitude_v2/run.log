@@ -1,0 +1,314 @@
+Computing absolute-amplitude v2 features...
+[1/70] J0008-0004
+[2/70] J0029-0055
+[3/70] J0037-0942
+[4/70] J0044+0113
+[5/70] J0157-0056
+[6/70] J0216-0813
+[7/70] J0252+0039
+[8/70] J0330-0020
+[9/70] J0728+3835
+[10/70] J0737+3216
+[11/70] J0819+4534
+[12/70] J0822+2652
+[13/70] J0841+3824
+[14/70] J0903+4116
+[15/70] J0912+0029
+[16/70] J0935-0003
+[17/70] J0936+0913
+[18/70] J0946+1006
+[19/70] J0955+0101
+[20/70] J0956+5100
+[21/70] J0959+4416
+[22/70] J0959+0410
+[23/70] J1016+3859
+[24/70] J1020+1122
+[25/70] J1023+4230
+[26/70] J1029+0420
+[27/70] J1032+5322
+[28/70] J1100+5329
+[29/70] J1103+5322
+[30/70] J1106+5228
+[31/70] J1112+0826
+[32/70] J1134+6027
+[33/70] J1142+1001
+[34/70] J1143-0144
+[35/70] J1153+4612
+[36/70] J1204+0358
+[37/70] J1205+4910
+[38/70] J1213+6708
+[39/70] J1218+0830
+[40/70] J1250+0523
+[41/70] J1251-0208
+[42/70] J1306+0600
+[43/70] J1313+4615
+[44/70] J1318-0313
+[45/70] J1330-0148
+[46/70] J1402+6321
+[47/70] J1403+0006
+[48/70] J1416+5136
+[49/70] J1420+6019
+[50/70] J1430+4105
+[51/70] J1432+6317
+[52/70] J1436-0000
+[53/70] J1443+0304
+[54/70] J1451-0239
+[55/70] J1525+3327
+[56/70] J1531-0105
+[57/70] J1538+5817
+[58/70] J1614+4522
+[59/70] J1621+3931
+[60/70] J1627-0053
+[61/70] J1630+4520
+[62/70] J1636+4707
+[63/70] J1644+2625
+[64/70] J1719+2939
+[65/70] J2238-0754
+[66/70] J2300+0022
+[67/70] J2303+1422
+[68/70] J2321-0939
+[69/70] J2341+0000
+[70/70] J2347-0005
+Evaluating norm_zS_shape_norm_force_inner_mean
+Evaluating norm_zS_shape_norm_force_mid_mean
+Evaluating norm_zS_shape_norm_force_outer_mean
+Evaluating norm_zS_shape_norm_force_inner_minus_outer
+Evaluating norm_zS_shape_norm_force_mid_minus_outer
+Evaluating norm_zS_shape_norm_grad_rms
+Evaluating norm_zS_shape_norm_phi_mid_mean
+Evaluating norm_zS_shape_norm_phi_inner_minus_outer
+Evaluating norm_zS_shape_norm_S_std
+Evaluating norm_zS_amp_sqrtMstar_force_inner_mean
+Evaluating norm_zS_amp_sqrtMstar_force_mid_mean
+Evaluating norm_zS_amp_sqrtMstar_force_outer_mean
+Evaluating norm_zS_amp_sqrtMstar_force_inner_minus_outer
+Evaluating norm_zS_amp_sqrtMstar_force_mid_minus_outer
+Evaluating norm_zS_amp_sqrtMstar_grad_rms
+Evaluating norm_zS_amp_sqrtMstar_phi_mid_mean
+Evaluating norm_zS_amp_sqrtMstar_phi_inner_minus_outer
+Evaluating norm_zS_amp_sqrtMstar_S_std
+Evaluating norm_zS_amp_sqrtMstar_amp_factor
+Evaluating norm_zS_amp_Mstar_force_inner_mean
+Evaluating norm_zS_amp_Mstar_force_mid_mean
+Evaluating norm_zS_amp_Mstar_force_outer_mean
+Evaluating norm_zS_amp_Mstar_force_inner_minus_outer
+Evaluating norm_zS_amp_Mstar_force_mid_minus_outer
+Evaluating norm_zS_amp_Mstar_grad_rms
+Evaluating norm_zS_amp_Mstar_phi_mid_mean
+Evaluating norm_zS_amp_Mstar_phi_inner_minus_outer
+Evaluating norm_zS_amp_Mstar_S_std
+Evaluating norm_zS_amp_Mstar_amp_factor
+Evaluating norm_zS_amp_logMstar_force_inner_mean
+Evaluating norm_zS_amp_logMstar_force_mid_mean
+Evaluating norm_zS_amp_logMstar_force_outer_mean
+Evaluating norm_zS_amp_logMstar_force_inner_minus_outer
+Evaluating norm_zS_amp_logMstar_force_mid_minus_outer
+Evaluating norm_zS_amp_logMstar_grad_rms
+Evaluating norm_zS_amp_logMstar_phi_mid_mean
+Evaluating norm_zS_amp_logMstar_phi_inner_minus_outer
+Evaluating norm_zS_amp_logMstar_S_std
+Evaluating norm_zS_amp_logMstar_amp_factor
+Evaluating rawL_zS_shape_norm_force_inner_mean
+Evaluating rawL_zS_shape_norm_force_mid_mean
+Evaluating rawL_zS_shape_norm_force_outer_mean
+Evaluating rawL_zS_shape_norm_force_inner_minus_outer
+Evaluating rawL_zS_shape_norm_force_mid_minus_outer
+Evaluating rawL_zS_shape_norm_grad_rms
+Evaluating rawL_zS_shape_norm_phi_mid_mean
+Evaluating rawL_zS_shape_norm_phi_inner_minus_outer
+Evaluating rawL_zS_shape_norm_S_std
+Evaluating rawL_zS_amp_sqrtMstar_force_inner_mean
+Evaluating rawL_zS_amp_sqrtMstar_force_mid_mean
+Evaluating rawL_zS_amp_sqrtMstar_force_outer_mean
+Evaluating rawL_zS_amp_sqrtMstar_force_inner_minus_outer
+Evaluating rawL_zS_amp_sqrtMstar_force_mid_minus_outer
+Evaluating rawL_zS_amp_sqrtMstar_grad_rms
+Evaluating rawL_zS_amp_sqrtMstar_phi_mid_mean
+Evaluating rawL_zS_amp_sqrtMstar_phi_inner_minus_outer
+Evaluating rawL_zS_amp_sqrtMstar_S_std
+Evaluating rawL_zS_amp_sqrtMstar_amp_factor
+Evaluating rawL_zS_amp_Mstar_force_inner_mean
+Evaluating rawL_zS_amp_Mstar_force_mid_mean
+Evaluating rawL_zS_amp_Mstar_force_outer_mean
+Evaluating rawL_zS_amp_Mstar_force_inner_minus_outer
+Evaluating rawL_zS_amp_Mstar_force_mid_minus_outer
+Evaluating rawL_zS_amp_Mstar_grad_rms
+Evaluating rawL_zS_amp_Mstar_phi_mid_mean
+Evaluating rawL_zS_amp_Mstar_phi_inner_minus_outer
+Evaluating rawL_zS_amp_Mstar_S_std
+Evaluating rawL_zS_amp_Mstar_amp_factor
+Evaluating rawL_zS_amp_logMstar_force_inner_mean
+Evaluating rawL_zS_amp_logMstar_force_mid_mean
+Evaluating rawL_zS_amp_logMstar_force_outer_mean
+Evaluating rawL_zS_amp_logMstar_force_inner_minus_outer
+Evaluating rawL_zS_amp_logMstar_force_mid_minus_outer
+Evaluating rawL_zS_amp_logMstar_grad_rms
+Evaluating rawL_zS_amp_logMstar_phi_mid_mean
+Evaluating rawL_zS_amp_logMstar_phi_inner_minus_outer
+Evaluating rawL_zS_amp_logMstar_S_std
+Evaluating rawL_zS_amp_logMstar_amp_factor
+Evaluating norm_rawS_shape_norm_force_inner_mean
+Evaluating norm_rawS_shape_norm_force_mid_mean
+Evaluating norm_rawS_shape_norm_force_outer_mean
+Evaluating norm_rawS_shape_norm_force_inner_minus_outer
+Evaluating norm_rawS_shape_norm_force_mid_minus_outer
+Evaluating norm_rawS_shape_norm_grad_rms
+Evaluating norm_rawS_shape_norm_phi_mid_mean
+Evaluating norm_rawS_shape_norm_phi_inner_minus_outer
+Evaluating norm_rawS_shape_norm_S_std
+Evaluating norm_rawS_amp_sqrtMstar_force_inner_mean
+Evaluating norm_rawS_amp_sqrtMstar_force_mid_mean
+Evaluating norm_rawS_amp_sqrtMstar_force_outer_mean
+Evaluating norm_rawS_amp_sqrtMstar_force_inner_minus_outer
+Evaluating norm_rawS_amp_sqrtMstar_force_mid_minus_outer
+Evaluating norm_rawS_amp_sqrtMstar_grad_rms
+Evaluating norm_rawS_amp_sqrtMstar_phi_mid_mean
+Evaluating norm_rawS_amp_sqrtMstar_phi_inner_minus_outer
+Evaluating norm_rawS_amp_sqrtMstar_S_std
+Evaluating norm_rawS_amp_sqrtMstar_amp_factor
+Evaluating norm_rawS_amp_Mstar_force_inner_mean
+Evaluating norm_rawS_amp_Mstar_force_mid_mean
+Evaluating norm_rawS_amp_Mstar_force_outer_mean
+Evaluating norm_rawS_amp_Mstar_force_inner_minus_outer
+Evaluating norm_rawS_amp_Mstar_force_mid_minus_outer
+Evaluating norm_rawS_amp_Mstar_grad_rms
+Evaluating norm_rawS_amp_Mstar_phi_mid_mean
+Evaluating norm_rawS_amp_Mstar_phi_inner_minus_outer
+Evaluating norm_rawS_amp_Mstar_S_std
+Evaluating norm_rawS_amp_Mstar_amp_factor
+Evaluating norm_rawS_amp_logMstar_force_inner_mean
+Evaluating norm_rawS_amp_logMstar_force_mid_mean
+Evaluating norm_rawS_amp_logMstar_force_outer_mean
+Evaluating norm_rawS_amp_logMstar_force_inner_minus_outer
+Evaluating norm_rawS_amp_logMstar_force_mid_minus_outer
+Evaluating norm_rawS_amp_logMstar_grad_rms
+Evaluating norm_rawS_amp_logMstar_phi_mid_mean
+Evaluating norm_rawS_amp_logMstar_phi_inner_minus_outer
+Evaluating norm_rawS_amp_logMstar_S_std
+Evaluating norm_rawS_amp_logMstar_amp_factor
+Evaluating rawL_rawS_shape_norm_force_inner_mean
+Evaluating rawL_rawS_shape_norm_force_mid_mean
+Evaluating rawL_rawS_shape_norm_force_outer_mean
+Evaluating rawL_rawS_shape_norm_force_inner_minus_outer
+Evaluating rawL_rawS_shape_norm_force_mid_minus_outer
+Evaluating rawL_rawS_shape_norm_grad_rms
+Evaluating rawL_rawS_shape_norm_phi_mid_mean
+Evaluating rawL_rawS_shape_norm_phi_inner_minus_outer
+Evaluating rawL_rawS_shape_norm_S_std
+Evaluating rawL_rawS_amp_sqrtMstar_force_inner_mean
+Evaluating rawL_rawS_amp_sqrtMstar_force_mid_mean
+Evaluating rawL_rawS_amp_sqrtMstar_force_outer_mean
+Evaluating rawL_rawS_amp_sqrtMstar_force_inner_minus_outer
+Evaluating rawL_rawS_amp_sqrtMstar_force_mid_minus_outer
+Evaluating rawL_rawS_amp_sqrtMstar_grad_rms
+Evaluating rawL_rawS_amp_sqrtMstar_phi_mid_mean
+Evaluating rawL_rawS_amp_sqrtMstar_phi_inner_minus_outer
+Evaluating rawL_rawS_amp_sqrtMstar_S_std
+Evaluating rawL_rawS_amp_sqrtMstar_amp_factor
+Evaluating rawL_rawS_amp_Mstar_force_inner_mean
+Evaluating rawL_rawS_amp_Mstar_force_mid_mean
+Evaluating rawL_rawS_amp_Mstar_force_outer_mean
+Evaluating rawL_rawS_amp_Mstar_force_inner_minus_outer
+Evaluating rawL_rawS_amp_Mstar_force_mid_minus_outer
+Evaluating rawL_rawS_amp_Mstar_grad_rms
+Evaluating rawL_rawS_amp_Mstar_phi_mid_mean
+Evaluating rawL_rawS_amp_Mstar_phi_inner_minus_outer
+Evaluating rawL_rawS_amp_Mstar_S_std
+Evaluating rawL_rawS_amp_Mstar_amp_factor
+Evaluating rawL_rawS_amp_logMstar_force_inner_mean
+Evaluating rawL_rawS_amp_logMstar_force_mid_mean
+Evaluating rawL_rawS_amp_logMstar_force_outer_mean
+Evaluating rawL_rawS_amp_logMstar_force_inner_minus_outer
+Evaluating rawL_rawS_amp_logMstar_force_mid_minus_outer
+Evaluating rawL_rawS_amp_logMstar_grad_rms
+Evaluating rawL_rawS_amp_logMstar_phi_mid_mean
+Evaluating rawL_rawS_amp_logMstar_phi_inner_minus_outer
+Evaluating rawL_rawS_amp_logMstar_S_std
+Evaluating rawL_rawS_amp_logMstar_amp_factor
+
+====================================================================================================
+ABSOLUTE AMPLITUDE V2 SUMMARY
+====================================================================================================
+                                                    model                                        features  n_features  full_improvement_pct  full_rmse_log  full_pearson_C  loo_improvement_pct  loo_rmse_log  loo_pearson_C  loo_spearman_C
+                                                logM_only                                           logMs           1             15.228447       0.434264        0.530375            12.917284      0.446103       0.493792        0.535824
+                                       best_amp_v2_single               norm_rawS_amp_logMstar_amp_factor           1             15.228447       0.434264        0.530375            12.917284      0.446103       0.493792        0.535824
+                                    logM_plus_best_amp_v2         logMs,norm_rawS_amp_logMstar_amp_factor           2             15.228447       0.434264        0.530375            12.917284      0.446103       0.493792        0.535824
+                 canonical_rawL_rawS_amp_Mstar_amp_factor                  rawL_rawS_amp_Mstar_amp_factor           1             12.506872       0.448206        0.484158             9.966911      0.461217       0.438746        0.534739
+     canonical_norm_zS_shape_norm_force_inner_minus_outer      norm_zS_shape_norm_force_inner_minus_outer           1             11.633809       0.452678        0.468032             8.974658      0.466300       0.419843        0.417654
+    canonical_norm_rawS_amp_Mstar_force_inner_minus_outer     norm_rawS_amp_Mstar_force_inner_minus_outer           1              6.189224       0.480570        0.346200             3.816987      0.492722       0.282282        0.288251
+canonical_rawL_rawS_amp_sqrtMstar_force_inner_minus_outer rawL_rawS_amp_sqrtMstar_force_inner_minus_outer           1              4.565124       0.488889        0.298523             1.945387      0.502310       0.223033        0.217286
+         canonical_rawL_rawS_amp_sqrtMstar_force_mid_mean          rawL_rawS_amp_sqrtMstar_force_mid_mean           1              4.548308       0.488976        0.297985             1.932677      0.502375       0.222439        0.216691
+      canonical_rawL_zS_amp_Mstar_force_inner_minus_outer       rawL_zS_amp_Mstar_force_inner_minus_outer           1              7.063986       0.476088        0.369043            -2.708247      0.526149       0.269293        0.352253
+    canonical_rawL_rawS_amp_Mstar_force_inner_minus_outer     rawL_rawS_amp_Mstar_force_inner_minus_outer           1              0.072520       0.511904        0.036572            -2.984537      0.527564      -0.617589       -0.625370
+             canonical_rawL_rawS_amp_Mstar_force_mid_mean              rawL_rawS_amp_Mstar_force_mid_mean           1              0.070890       0.511912        0.036123            -2.986812      0.527576      -0.621508       -0.632088
+
+BY VARIANT
+  variant       max   median     mean
+norm_rawS 12.917284 4.519702 4.258260
+  norm_zS 12.917284 8.771098 5.599167
+rawL_rawS 12.917284 2.758770 2.349041
+  rawL_zS 12.917284 6.683649 4.335586
+
+BY VARIANT + AMP
+  variant      amp_mode       max    median      mean
+norm_rawS  amp_logMstar 12.917284  2.513117  3.857489
+  norm_zS  amp_logMstar 12.917284  8.776940  5.872448
+  rawL_zS  amp_logMstar 12.917284  6.677978  6.169621
+rawL_rawS  amp_logMstar 12.917284  2.769603  2.615950
+rawL_rawS amp_sqrtMstar 12.254544  1.945408  3.006148
+  rawL_zS amp_sqrtMstar 12.254544  6.747617  7.064317
+  norm_zS amp_sqrtMstar 12.254544  8.776940  5.806174
+norm_rawS amp_sqrtMstar 12.254544 -2.193236  2.236801
+  rawL_zS     amp_Mstar  9.966911 -2.650152 -0.099348
+rawL_rawS     amp_Mstar  9.966911 -2.953275  0.459299
+norm_rawS     amp_Mstar  9.966911  4.921796  5.246256
+  norm_zS     amp_Mstar  9.966911  8.776940  5.577411
+  norm_zS    shape_norm  8.974944  8.771098  5.089688
+norm_rawS    shape_norm  8.640389  5.733747  5.851854
+  rawL_zS    shape_norm  7.889074  7.245309  4.193550
+rawL_rawS    shape_norm  6.498385  3.492403  3.422071
+
+TOP FEATURES
+                                      feature   variant      amp_mode  loo_improvement_pct  loo_rmse_log  loo_pearson_C  loo_spearman_C  full_improvement_pct  full_pearson_C
+            norm_rawS_amp_logMstar_amp_factor norm_rawS  amp_logMstar            12.917284      0.446103       0.493792        0.535824             15.228447        0.530375
+            rawL_rawS_amp_logMstar_amp_factor rawL_rawS  amp_logMstar            12.917284      0.446103       0.493792        0.535824             15.228447        0.530375
+              rawL_zS_amp_logMstar_amp_factor   rawL_zS  amp_logMstar            12.917284      0.446103       0.493792        0.535824             15.228447        0.530375
+              norm_zS_amp_logMstar_amp_factor   norm_zS  amp_logMstar            12.917284      0.446103       0.493792        0.535824             15.228447        0.530375
+             norm_zS_amp_sqrtMstar_amp_factor   norm_zS amp_sqrtMstar            12.254544      0.449498       0.481502        0.539603             14.559873        0.519535
+             rawL_zS_amp_sqrtMstar_amp_factor   rawL_zS amp_sqrtMstar            12.254544      0.449498       0.481502        0.539603             14.559873        0.519535
+           rawL_rawS_amp_sqrtMstar_amp_factor rawL_rawS amp_sqrtMstar            12.254544      0.449498       0.481502        0.539603             14.559873        0.519535
+           norm_rawS_amp_sqrtMstar_amp_factor norm_rawS amp_sqrtMstar            12.254544      0.449498       0.481502        0.539603             14.559873        0.519535
+           rawL_zS_amp_sqrtMstar_phi_mid_mean   rawL_zS amp_sqrtMstar            10.489524      0.458540       0.449240        0.480920             12.683727        0.487341
+  rawL_zS_amp_sqrtMstar_phi_inner_minus_outer   rawL_zS amp_sqrtMstar            10.445216      0.458767       0.448299        0.475531             12.628096        0.486343
+                 norm_zS_amp_Mstar_amp_factor   norm_zS     amp_Mstar             9.966911      0.461217       0.438746        0.534739             12.506872        0.484158
+               rawL_rawS_amp_Mstar_amp_factor rawL_rawS     amp_Mstar             9.966911      0.461217       0.438746        0.534739             12.506872        0.484158
+               norm_rawS_amp_Mstar_amp_factor norm_rawS     amp_Mstar             9.966911      0.461217       0.438746        0.534739             12.506872        0.484158
+                 rawL_zS_amp_Mstar_amp_factor   rawL_zS     amp_Mstar             9.966911      0.461217       0.438746        0.534739             12.506872        0.484158
+         norm_rawS_amp_sqrtMstar_phi_mid_mean norm_rawS amp_sqrtMstar             9.232076      0.464982       0.422474        0.483405             11.563519        0.466702
+          norm_zS_shape_norm_force_inner_mean   norm_zS    shape_norm             8.974944      0.466299       0.419850        0.417864             11.634033        0.468036
+           norm_zS_amp_Mstar_force_inner_mean   norm_zS     amp_Mstar             8.974944      0.466299       0.419850        0.417864             11.634033        0.468036
+        norm_zS_amp_logMstar_force_inner_mean   norm_zS  amp_logMstar             8.974944      0.466299       0.419850        0.417864             11.634033        0.468036
+       norm_zS_amp_sqrtMstar_force_inner_mean   norm_zS amp_sqrtMstar             8.974944      0.466299       0.419850        0.417864             11.634033        0.468036
+   norm_zS_shape_norm_force_inner_minus_outer   norm_zS    shape_norm             8.974658      0.466300       0.419843        0.417654             11.633809        0.468032
+    norm_zS_amp_Mstar_force_inner_minus_outer   norm_zS     amp_Mstar             8.974658      0.466300       0.419843        0.417654             11.633809        0.468032
+ norm_zS_amp_logMstar_force_inner_minus_outer   norm_zS  amp_logMstar             8.974658      0.466300       0.419843        0.417654             11.633809        0.468032
+norm_zS_amp_sqrtMstar_force_inner_minus_outer   norm_zS amp_sqrtMstar             8.974658      0.466300       0.419843        0.417654             11.633809        0.468032
+                   norm_zS_amp_Mstar_grad_rms   norm_zS     amp_Mstar             8.932800      0.466515       0.418953        0.417129             11.601093        0.467413
+                  norm_zS_shape_norm_grad_rms   norm_zS    shape_norm             8.932800      0.466515       0.418953        0.417129             11.601093        0.467413
+               norm_zS_amp_sqrtMstar_grad_rms   norm_zS amp_sqrtMstar             8.932800      0.466515       0.418953        0.417129             11.601093        0.467413
+                norm_zS_amp_logMstar_grad_rms   norm_zS  amp_logMstar             8.932800      0.466515       0.418953        0.417129             11.601093        0.467413
+norm_rawS_amp_sqrtMstar_phi_inner_minus_outer norm_rawS amp_sqrtMstar             8.867937      0.466847       0.414714        0.469128             11.211789        0.459975
+        norm_zS_amp_logMstar_force_outer_mean   norm_zS  amp_logMstar             8.782781      0.467283       0.416628        0.390989             11.526960        0.466009
+          norm_zS_shape_norm_force_outer_mean   norm_zS    shape_norm             8.782781      0.467283       0.416628        0.390989             11.526960        0.466009
+           norm_zS_amp_Mstar_force_outer_mean   norm_zS     amp_Mstar             8.782781      0.467283       0.416628        0.390989             11.526960        0.466009
+       norm_zS_amp_sqrtMstar_force_outer_mean   norm_zS amp_sqrtMstar             8.782781      0.467283       0.416628        0.390989             11.526960        0.466009
+          norm_zS_amp_logMstar_force_mid_mean   norm_zS  amp_logMstar             8.771098      0.467343       0.416071        0.404357             11.465922        0.464848
+            norm_zS_shape_norm_force_mid_mean   norm_zS    shape_norm             8.771098      0.467343       0.416071        0.404357             11.465922        0.464848
+             norm_zS_amp_Mstar_force_mid_mean   norm_zS     amp_Mstar             8.771098      0.467343       0.416071        0.404357             11.465922        0.464848
+         norm_zS_amp_sqrtMstar_force_mid_mean   norm_zS amp_sqrtMstar             8.771098      0.467343       0.416071        0.404357             11.465922        0.464848
+            norm_rawS_shape_norm_phi_mid_mean norm_rawS    shape_norm             8.640389      0.468013       0.413030        0.420208             11.412474        0.463828
+     norm_zS_shape_norm_force_mid_minus_outer   norm_zS    shape_norm             8.534864      0.468553       0.410451        0.410095             11.149100        0.458762
+   norm_zS_amp_logMstar_force_mid_minus_outer   norm_zS  amp_logMstar             8.534864      0.468553       0.410451        0.410095             11.149100        0.458762
+      norm_zS_amp_Mstar_force_mid_minus_outer   norm_zS     amp_Mstar             8.534864      0.468553       0.410451        0.410095             11.149100        0.458762
+
+Wrote: papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/results/paper9_absolute_amplitude_v2/summary.json
