@@ -1,0 +1,117 @@
+Computing true/shuffled dynamic sqrtM control...
+[1/70] J0008-0004
+[2/70] J0029-0055
+[3/70] J0037-0942
+[4/70] J0044+0113
+[5/70] J0157-0056
+[6/70] J0216-0813
+[7/70] J0252+0039
+[8/70] J0330-0020
+[9/70] J0728+3835
+[10/70] J0737+3216
+[11/70] J0819+4534
+[12/70] J0822+2652
+[13/70] J0841+3824
+[14/70] J0903+4116
+[15/70] J0912+0029
+[16/70] J0935-0003
+[17/70] J0936+0913
+[18/70] J0946+1006
+[19/70] J0955+0101
+[20/70] J0956+5100
+[21/70] J0959+4416
+[22/70] J0959+0410
+[23/70] J1016+3859
+[24/70] J1020+1122
+[25/70] J1023+4230
+[26/70] J1029+0420
+[27/70] J1032+5322
+[28/70] J1100+5329
+[29/70] J1103+5322
+[30/70] J1106+5228
+[31/70] J1112+0826
+[32/70] J1134+6027
+[33/70] J1142+1001
+[34/70] J1143-0144
+[35/70] J1153+4612
+[36/70] J1204+0358
+[37/70] J1205+4910
+[38/70] J1213+6708
+[39/70] J1218+0830
+[40/70] J1250+0523
+[41/70] J1251-0208
+[42/70] J1306+0600
+[43/70] J1313+4615
+[44/70] J1318-0313
+[45/70] J1330-0148
+[46/70] J1402+6321
+[47/70] J1403+0006
+[48/70] J1416+5136
+[49/70] J1420+6019
+[50/70] J1430+4105
+[51/70] J1432+6317
+[52/70] J1436-0000
+[53/70] J1443+0304
+[54/70] J1451-0239
+[55/70] J1525+3327
+[56/70] J1531-0105
+[57/70] J1538+5817
+[58/70] J1614+4522
+[59/70] J1621+3931
+[60/70] J1627-0053
+[61/70] J1630+4520
+[62/70] J1636+4707
+[63/70] J1644+2625
+[64/70] J1719+2939
+[65/70] J2238-0754
+[66/70] J2300+0022
+[67/70] J2303+1422
+[68/70] J2321-0939
+[69/70] J2341+0000
+[70/70] J2347-0005
+
+====================================================================================================
+DYNAMIC SQRTM SHUFFLE CONTROL SUMMARY
+====================================================================================================
+                              model          mode                               features  loo_improvement_pct  loo_rmse_log  loo_pearson_C  loo_spearman_C  full_improvement_pct  full_pearson_C
+                              logMs          logM                                  logMs            12.917284      0.446103       0.493792        0.535824             15.228447        0.530375
+                Phi_true_plus_sqrtM      combined      sqrtM_proxy,Phi_true_phi_mid_mean            12.574380      0.447860       0.489336        0.546881             15.649250        0.537043
+                        sqrtM_proxy    sqrtM_true                            sqrtM_proxy            12.254544      0.449498       0.481502        0.539603             14.559873        0.519535
+                 logM_plus_Phi_true      combined            logMs,Phi_true_phi_mid_mean            12.176328      0.449899       0.483318        0.537608             15.550776        0.535493
+             Phi_shuffle_plus_sqrtM      combined   sqrtM_proxy,Phi_shuffle_phi_mid_mean            10.631602      0.457812       0.455574        0.518642             14.878330        0.524737
+              Phi_true_phi_mid_mean      Phi_true                  Phi_true_phi_mid_mean            10.489524      0.458540       0.449240        0.480920             12.683727        0.487341
+     Phi_true_phi_inner_minus_outer      Phi_true         Phi_true_phi_inner_minus_outer            10.445216      0.458767       0.448299        0.475531             12.628096        0.486343
+             Phi_true_plus_shuffleM      combined    sqrtM_shuffle,Phi_true_phi_mid_mean             9.278169      0.464746       0.428346        0.438579             12.757417        0.488659
+            Phi_true_force_mid_mean      Phi_true                Phi_true_force_mid_mean             6.761927      0.477636       0.379701        0.430006             10.048604        0.436788
+                  Phi_true_grad_rms      Phi_true                      Phi_true_grad_rms             6.749003      0.477702       0.379559        0.430601             10.048346        0.436782
+   Phi_true_force_inner_minus_outer      Phi_true       Phi_true_force_inner_minus_outer             6.746231      0.477716       0.379528        0.430601             10.048290        0.436781
+Phi_shuffle_force_inner_minus_outer   Phi_shuffle    Phi_shuffle_force_inner_minus_outer             2.526912      0.499331       0.268332        0.346654              6.238524        0.347534
+               Phi_shuffle_grad_rms   Phi_shuffle                   Phi_shuffle_grad_rms             2.524486      0.499343       0.268274        0.346654              6.237000        0.347492
+         Phi_shuffle_force_mid_mean   Phi_shuffle             Phi_shuffle_force_mid_mean             2.513076      0.499402       0.267998        0.346479              6.229830        0.347299
+                      sqrtM_shuffle sqrtM_shuffle                          sqrtM_shuffle            -2.590793      0.525547      -0.269533       -0.212877              0.274517        0.073286
+  Phi_shuffle_phi_inner_minus_outer   Phi_shuffle      Phi_shuffle_phi_inner_minus_outer            -3.465431      0.530028      -0.551713       -0.901916              0.016478        0.014731
+           Phi_shuffle_phi_mid_mean   Phi_shuffle               Phi_shuffle_phi_mid_mean            -3.476519      0.530085      -0.547009       -0.900271              0.016798        0.014947
+          Phi_shuffle_plus_shuffleM      combined sqrtM_shuffle,Phi_shuffle_phi_mid_mean            -4.284859      0.534226      -0.270898       -0.242411              0.558179        0.104982
+
+BY MODE
+         mode       max    median      mean
+         logM 12.917284 12.917284 12.917284
+     combined 12.574380 10.631602  8.075124
+   sqrtM_true 12.254544 12.254544 12.254544
+     Phi_true 10.489524  6.761927  8.238380
+  Phi_shuffle  2.526912  2.513076  0.124505
+sqrtM_shuffle -2.590793 -2.590793 -2.590793
+
+CORRELATIONS
+{
+  "Phi_true_phi_mid_mean_vs_sqrtM": {
+    "pearson": -0.7714611880340146,
+    "spearman": -0.7662866339949093
+  },
+  "Phi_shuffle_phi_mid_mean_vs_sqrtM": {
+    "pearson": 0.1121991563377538,
+    "spearman": 0.29301459628595367
+  }
+}
+
+Wrote: papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/results/paper9_dynamic_shuffle_sqrtM_v1/summary.json
