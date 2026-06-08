@@ -1,0 +1,37 @@
+{
+  "title": "BuP SLACS alternative d_w estimators v1",
+  "tag": "measured_n_only",
+  "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_measured_n_only.csv",
+  "n": 61,
+  "settings": {
+    "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_measured_n_only.csv",
+    "output_dir": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/results/dw_estimators_v1",
+    "tag": "measured_n_only",
+    "n_rings": 12,
+    "n_theta": 16,
+    "rmin_factor": 0.03,
+    "rmax_factor": 5.0,
+    "xi_factor": 0.35,
+    "default_sersic_n": 4.0,
+    "amp_mode": "shape",
+    "ds_t_min": 0.05,
+    "ds_t_max": 20.0,
+    "ds_n_t": 80,
+    "ds_p_low": 0.05,
+    "ds_p_high": 0.85,
+    "discrete_t_max": 60,
+    "fixed_t_min": 1,
+    "fixed_t_max": 25,
+    "heat_t_min": 0.01,
+    "heat_t_max": 30.0,
+    "heat_n_t": 80,
+    "min_fit_points": 6,
+    "msd_frac_low": 0.02,
+    "msd_frac_high": 0.45
+  },
+  "files": {
+    "estimators": "measured_n_only_dw_estimators.csv",
+    "summary": "measured_n_only_dw_estimators_summary.csv",
+    "alpha_one_crossings": "measured_n_only_alpha_one_crossings.csv"
+  }
+}
