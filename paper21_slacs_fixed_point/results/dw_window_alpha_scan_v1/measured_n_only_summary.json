@@ -1,0 +1,55 @@
+{
+  "title": "BuP SLACS diffusion-window alpha scan v1",
+  "tag": "measured_n_only",
+  "input_csv": "papers/paper13_matiere_intrication_critique/experiments/slacs_Hbup_direct/data/slacs_v5_measured_n_only.csv",
+  "n": 61,
+  "fixed_mass_window": [
+    11.545,
+    11.645
+  ],
+  "best_global": {
+    "t_low": 1.0,
+    "t_high": 21.0,
+    "n": 61.0,
+    "mean_alpha": 1.0142924404396114,
+    "median_alpha": 1.013701078381466,
+    "std_alpha": 0.006272258109826002,
+    "mean_dw": 4.212760178968321,
+    "mean_ds": 1.6883252140279879,
+    "mean_r2": 0.7924824967146855,
+    "abs_mean_alpha_minus_1": 0.01429244043961142,
+    "abs_median_alpha_minus_1": 0.013701078381465948,
+    "n_fixed_window": 11.0,
+    "mean_alpha_fixed_window": 1.0139451943278452,
+    "median_alpha_fixed_window": 1.013701078381466,
+    "mean_dw_fixed_window": 4.212322367610143,
+    "mean_ds_fixed_window": 1.6883404354169942,
+    "abs_fixed_window_alpha_minus_1": 0.013945194327845245,
+    "alpha_corr_logM": 0.4805037384338296
+  },
+  "best_fixed_mass_window": {
+    "t_low": 1.0,
+    "t_high": 21.0,
+    "n": 61.0,
+    "mean_alpha": 1.0142924404396114,
+    "median_alpha": 1.013701078381466,
+    "std_alpha": 0.006272258109826002,
+    "mean_dw": 4.212760178968321,
+    "mean_ds": 1.6883252140279879,
+    "mean_r2": 0.7924824967146855,
+    "abs_mean_alpha_minus_1": 0.01429244043961142,
+    "abs_median_alpha_minus_1": 0.013701078381465948,
+    "n_fixed_window": 11.0,
+    "mean_alpha_fixed_window": 1.0139451943278452,
+    "median_alpha_fixed_window": 1.013701078381466,
+    "mean_dw_fixed_window": 4.212322367610143,
+    "mean_ds_fixed_window": 1.6883404354169942,
+    "abs_fixed_window_alpha_minus_1": 0.013945194327845245,
+    "alpha_corr_logM": 0.4805037384338296
+  },
+  "files": {
+    "all_windows": "measured_n_only_scan_window_results.csv",
+    "best_global": "measured_n_only_best_global_alpha1_windows.csv",
+    "best_fixed_mass_window": "measured_n_only_best_fixedmass_alpha1_windows.csv"
+  }
+}
