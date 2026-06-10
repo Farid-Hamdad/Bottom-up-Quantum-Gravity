@@ -1,1 +1,309 @@
-toto
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{bm}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black
+}
+
+\title{
+\textbf{Paper 11 — Le Flot Dimensionnel de la Gravité BuP}\\
+\large Dimension Spectrale, Dimension de Marche et l'Exposant Gravitationnel Effectif
+}
+
+\author{Farid Hamdad\\
+Programme Gravité Quantique Bottom-Up}
+
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Nous introduisons la loi dimensionnelle qui relie la diffusion sur un graphe d'intrication à un exposant gravitationnel effectif dans le cadre de la Gravité Quantique Bottom-Up. À partir d'un graphe d'intrication \(W_{ij}\) et de son laplacien \(L_{\rm ent}\), nous définissons une dimension spectrale \(d_s\) et une dimension de marche \(d_w\). Nous montrons que l'exposant gravitationnel effectif est naturellement donné par
+\[
+\alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4.
+\]
+La condition \(\alpha_{\rm eff} = 1\) définit un point fixe newtonien. Pour la diffusion brownienne ordinaire, \(d_w = 2\), ce point fixe donne \(d_s = 3\). Le Paper 11 fournit donc la colonne vertébrale dimensionnelle utilisée plus tard dans le programme phénoménologique BuP, y compris les courbes de rotation des galaxies et les tests de lentillage fort.
+\end{abstract}
+
+\section{Introduction}
+
+Le programme Gravité Quantique Bottom-Up propose que la géométrie et la gravité émergent de la structure de l'intrication dans un état quantique fini.
+
+Les papiers précédents ont introduit le graphe d'intrication,
+\[
+W_{ij} = I(i : j),
+\]
+et le laplacien d'intrication correspondant,
+\[
+L_{\rm ent} = D - W.
+\]
+
+Le but du Paper 11 est de dériver l'exposant d'échelle gravitationnel effectif à partir des quantités de diffusion sur graphe.
+
+Le résultat principal est la loi dimensionnelle
+\[
+\boxed{
+\alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4
+}.
+\]
+
+Cette équation relie la structure microscopique du graphe à une réponse gravitationnelle émergente.
+
+\section{Graphe d'intrication et laplacien}
+
+Nous considérons un graphe pondéré \(G = (V, E, W)\), où les poids encodent la connectivité par information mutuelle ou un profil d'intrication effectif à grain grossier.
+
+Le laplacien du graphe est
+\[
+L_{\rm ent} = D - W,
+\]
+avec
+\[
+D_{ii} = \sum_j W_{ij}.
+\]
+
+Le graphe est interprété comme le support discret sur lequel la géométrie émergente et la diffusion sont définies.
+
+\section{Dimension spectrale}
+
+La dimension spectrale est définie à partir de la probabilité de retour de la chaleur.
+
+Soit
+\[
+K(t) = e^{-t L_{\rm ent}}.
+\]
+
+La probabilité de retour moyenne est
+\[
+P(t) = \frac{1}{N} \operatorname{Tr} K(t).
+\]
+
+Si le graphe possède un régime d'échelle effectif, alors
+\[
+P(t) \sim t^{-d_s/2}.
+\]
+
+Par conséquent,
+\[
+d_s = -2 \frac{d \log P(t)}{d \log t}.
+\]
+
+Dans les applications numériques, \(d_s\) est estimé par un ajustement log-log sur une fenêtre de diffusion stable.
+
+\section{Dimension de marche}
+
+La dimension de marche \(d_w\) est définie à partir du déplacement quadratique moyen sur le graphe.
+
+Si
+\[
+\langle r^2(t) \rangle \sim t^{2/d_w},
+\]
+alors
+\[
+d_w = \frac{2}{d \log \langle r^2(t) \rangle / d \log t}.
+\]
+
+La dimension de marche mesure la vitesse à laquelle la diffusion explore le graphe.
+
+Pour la diffusion brownienne ordinaire,
+\[
+d_w = 2.
+\]
+
+Pour la diffusion anomale,
+\[
+d_w \neq 2.
+\]
+
+\section{Dérivation dimensionnelle de l'exposant effectif}
+
+Le cadre BuP suppose que la réponse gravitationnelle effective est contrôlée par deux ingrédients :
+
+\begin{enumerate}
+    \item le nombre de canaux de diffusion effectifs, contrôlé par \(d_s\);
+    \item l'échelle de propagation anomale, contrôlée par \(d_w\).
+\end{enumerate}
+
+L'exposant effectif s'écrit donc
+\[
+\alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4.
+\]
+
+Le premier terme,
+\[
+\frac{2d_s}{d_w},
+\]
+encode le volume dimensionnel accessible par diffusion.
+
+Le second terme,
+\[
+d_w - 4,
+\]
+encode la correction de propagation par rapport à la référence relativiste quadridimensionnelle.
+
+Ainsi, la réponse gravitationnelle effective n'est pas assignée arbitrairement. Elle est générée par la paire de diffusion du graphe \((d_s, d_w)\).
+
+\section{Point fixe newtonien}
+
+Le point fixe newtonien (ou baryonique) est défini par
+\[
+\alpha_{\rm eff} = 1.
+\]
+
+En utilisant la loi dimensionnelle BuP,
+\[
+\frac{2d_s}{d_w} + d_w - 4 = 1.
+\]
+
+Par conséquent,
+\[
+2d_s = d_w (5 - d_w),
+\]
+ou
+\[
+d_s = \frac{d_w (5 - d_w)}{2}.
+\]
+
+Pour la diffusion brownienne,
+\[
+d_w = 2,
+\]
+nous obtenons
+\[
+d_s = 3.
+\]
+
+Ainsi, le régime newtonien standard correspond au point fixe
+\[
+(d_s,\; d_w,\; \alpha_{\rm eff}) = (3,\; 2,\; 1).
+\]
+
+\section{Protocole numérique}
+
+Le pipeline numérique est :
+
+\[
+W_{ij}
+\;\rightarrow\;
+L_{\rm ent}
+\;\rightarrow\;
+P(t),\; \langle r^2(t) \rangle
+\;\rightarrow\;
+d_s,\; d_w
+\;\rightarrow\;
+\alpha_{\rm eff}.
+\]
+
+Pour chaque taille de système \(N\), nous calculons :
+
+\[
+d_s(N), \qquad d_w(N), \qquad \alpha_{\rm eff}(N).
+\]
+
+Les tendances en taille finie sont ensuite utilisées pour estimer le comportement à grand \(N\).
+
+\section{Trajectoire en taille finie}
+
+Les résultats numériques sont résumés par les trajectoires :
+
+\[
+d_s(N), \qquad d_w(N), \qquad \alpha_{\rm eff}(N).
+\]
+
+Les figures montrent l'approche vers un régime gravitationnel effectif lorsque la taille du graphe augmente.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig2_ds_vs_N.png}
+\caption{Dimension spectrale \(d_s\) en fonction de la taille du graphe \(N\).}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig3_dw_vs_N.png}
+\caption{Dimension de marche \(d_w\) en fonction de la taille du graphe \(N\).}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig4_alpha_predictions_vs_N.png}
+\caption{Exposant effectif \(\alpha_{\rm eff}\) prédit à partir de \(d_s\) et \(d_w\).}
+\end{figure}
+
+\section{Interprétation physique}
+
+Le flot dimensionnel définit différents régimes :
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Régime} & \textbf{Condition} & \textbf{Interprétation} \\
+\midrule
+Point fixe newtonien & \(\alpha_{\rm eff} = 1\) & Comportement baryonique / newtonien standard \\
+Sous-newtonien & \(\alpha_{\rm eff} < 1\) & Réponse affaiblie \\
+Super-newtonien & \(\alpha_{\rm eff} > 1\) & Réponse renforcée \\
+Régime de transition & \(\alpha_{\rm eff} \approx 1\) & Crossover entre phases du graphe \\
+\bottomrule
+\end{tabular}
+\caption{Interprétation de l'exposant effectif BuP.}
+\end{table}
+
+Cette interprétation devient centrale dans les applications observationnelles ultérieures.
+
+Dans le Paper 12, la loi dimensionnelle est utilisée pour transformer les profils de matière en corrections de courbes de rotation.
+
+Dans le Paper 14, la même loi est utilisée pour classer les galaxies SPARC dans les régimes LOW/HIGH.
+
+Dans le Paper 21, la condition \(\alpha_{\rm eff} \simeq 1\) réapparaît comme un point fixe de lentillage fort dans SLACS.
+
+\section{Discussion}
+
+Le Paper 11 établit que l'exposant gravitationnel effectif est une observable de diffusion sur graphe.
+
+Ceci est important car l'échelle gravitationnelle n'est pas introduite comme un ajustement empirique. Elle est dérivée de la structure du graphe d'intrication par l'intermédiaire de \(d_s\) et \(d_w\).
+
+La principale limitation est que \(d_s\) et \(d_w\) dépendent tous deux de la fenêtre de diffusion. Ce n'est pas nécessairement une faiblesse. Dans BuP, différents régimes gravitationnels peuvent correspondre à différentes échelles de propagation sur le graphe.
+
+\section{Conclusion}
+
+Nous avons introduit la loi du flot dimensionnel de la gravité BuP :
+\[
+\alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4.
+\]
+
+Le point fixe newtonien est défini par
+\[
+\alpha_{\rm eff} = 1.
+\]
+
+Pour la diffusion brownienne, cela donne
+\[
+d_s = 3, \qquad d_w = 2.
+\]
+
+Le Paper 11 fournit donc le pont théorique entre le graphe d'intrication microscopique et la phénoménologie gravitationnelle effective développée dans les papiers ultérieurs.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
+
