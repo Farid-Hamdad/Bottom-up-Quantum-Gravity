@@ -12,6 +12,12 @@
 
 Ce dossier contient le matériel numérique et théorique associé au **Paper 11** du programme Gravité Quantique Bottom-Up (BuP).
 
+Le run principal est dw_scaling_N3000_k24_seed0_recheck.
+Il contient la trajectoire en taille finie de la dimension spectrale d_s,
+de la dimension de marche d_w, et de l’exposant effectif alpha_eff.
+Les résultats numériques synthétiques sont regroupés dans results/final/.
+Les figures finales sont regroupées dans figures/.
+
 Paper 11 introduit la **loi dimensionnelle** qui relie les propriétés spectrales d'un graphe d'intrication à un **exposant gravitationnel effectif** :
 
 $$
