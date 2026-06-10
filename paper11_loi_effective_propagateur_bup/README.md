@@ -1,4 +1,4 @@
-# Paper 11 — Loi effective propagateur Bup
+# Paper 11 — Loi effective propagateur dimentionnel Bup
 
 ## Dimension Spectrale, Dimension de Marche et l'Exposant Gravitationnel Effectif
 
