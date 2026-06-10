@@ -1,155 +1,156 @@
-# Paper 11 — The Dimensional Flow of BuP Gravity
+\documentclass[11pt,a4paper]{article}
 
-## Spectral Dimension, Walk Dimension and the Effective Gravitational Exponent
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
 
-**Author:** Farid Hamdad
-**Project:** Bottom-Up Quantum Gravity
-**Year:** 2026
+\geometry{margin=2.5cm}
 
----
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black
+}
 
-## Overview
+\title{
+\textbf{Paper 11 --- Le Flot Dimensionnel de la Gravité BuP}\\
+\large Dimension Spectrale, Dimension de Marche et Exposant Gravitationnel Effectif
+}
 
-This folder contains the numerical and theoretical material associated with **Paper 11** of the Bottom-Up Quantum Gravity program.
+\author{Farid Hamdad}
+\date{2026}
 
-Paper 11 introduces the dimensional law connecting the spectral properties of an entanglement graph to an effective gravitational exponent:
+\begin{document}
 
-[
-\alpha_{\rm eff}
-================
+\maketitle
 
-\frac{2d_s}{d_w}
-+
-d_w
----
+\begin{abstract}
+Ce dossier contient le matériel numérique et théorique associé au \textbf{Paper 11} du programme Gravité Quantique Bottom-Up (BuP).
 
-4.
+Le Paper 11 introduit la loi dimensionnelle qui relie les propriétés spectrales d'un graphe d'intrication à un exposant gravitationnel effectif :
 
-]
-
-Here:
-
-* (d_s) is the spectral dimension of the entanglement graph;
-* (d_w) is the walk dimension;
-* (\alpha_{\rm eff}) is the effective gravitational exponent controlling the emergent large-scale response.
-
-This paper is the bridge between the microscopic graph program and the phenomenological tests performed later in the BuP sequence.
-
----
-
-## Role in the BuP program
-
-Paper 11 provides the dimensional backbone for later papers:
-
-```text
-Paper 11:
-    W_ij → L_ent → d_s, d_w → alpha_eff
-
-Paper 12:
-    Sigma(R) → W_ij → L_ent → alpha_eff → V(r)
-
-Paper 14:
-    SPARC galaxy rotation curves and LOW/HIGH regimes
-
-Paper 21:
-    SLACS strong-lensing fixed point and alpha_eff ≈ 1
-```
-
-Thus, Paper 11 does not primarily fit a galaxy catalogue. It establishes the theoretical and numerical law that later papers test observationally.
-
----
-
-## Central equation
-
-The central result is:
-
-[
+\[
 \boxed{
 \alpha_{\rm eff}
-================
-
-\frac{2d_s}{d_w}
-+
-d_w
----
-
-4
+= \frac{2d_s}{d_w} + d_w - 4
 }
-]
+\]
 
-This formula combines two graph-diffusion quantities:
+où :
+\begin{itemize}
+    \item \(d_s\) est la \textbf{dimension spectrale} du graphe d'intrication,
+    \item \(d_w\) est la \textbf{dimension de marche},
+    \item \(\alpha_{\rm eff}\) est l'\textbf{exposant gravitationnel effectif} qui contrôle la réponse à grande échelle émergente.
+\end{itemize}
 
-[
-P(t)\sim t^{-d_s/2},
-]
+Ce papier constitue le pont entre le programme microscopique du graphe et les tests phénoménologiques réalisés plus tard dans la séquence BuP.
+\end{abstract}
 
-and
+\tableofcontents
 
-[
-\langle r^2(t)\rangle\sim t^{2/d_w}.
-]
+\section{Rôle dans le programme BuP}
 
-The BuP gravitational exponent is therefore not inserted by hand. It is inferred from diffusion on the entanglement graph.
+Le Paper 11 fournit la colonne vertébrale dimensionnelle pour les papiers ultérieurs :
 
----
+\begin{verbatim}
+Paper 11 :
+    W_ij → L_ent → d_s, d_w → alpha_eff
 
-## Newtonian fixed point
+Paper 12 :
+    Sigma(R) → W_ij → L_ent → alpha_eff → V(r)
 
-The Newtonian or baryonic fixed point corresponds to:
+Paper 14 :
+    Courbes de rotation SPARC et régimes LOW/HIGH
 
-[
-\alpha_{\rm eff}=1.
-]
+Paper 21 :
+    Point fixe de lentillage fort SLACS et alpha_eff ≈ 1
+\end{verbatim}
 
-Therefore,
+Ainsi, le Paper 11 n'ajuste pas un catalogue de galaxies. Il établit la \textbf{loi théorique et numérique} que les papiers ultérieurs testent observationnellement.
 
-[
-\frac{2d_s}{d_w}+d_w-4=1.
-]
+\section{Équation centrale}
 
-Equivalently,
+Le résultat central est :
 
-[
-2d_s=d_w(5-d_w),
-]
+\[
+\boxed{
+\alpha_{\rm eff}
+= \frac{2d_s}{d_w} + d_w - 4
+}
+\]
 
-or
+Cette formule combine deux quantités de diffusion sur graphe :
 
-[
-d_s=\frac{d_w(5-d_w)}{2}.
-]
+\[
+P(t) \sim t^{-d_s/2}
+\]
+et
+\[
+\langle r^2(t) \rangle \sim t^{2/d_w}.
+\]
 
-For Brownian diffusion,
+L'exposant gravitationnel BuP n'est donc pas introduit arbitrairement. Il est \textbf{déduit de la diffusion sur le graphe d'intrication}.
 
-[
-d_w=2,
-]
+\section{Point fixe newtonien}
 
-this gives:
+Le point fixe newtonien (ou baryonique) correspond à :
 
-[
-d_s=3.
-]
+\[
+\alpha_{\rm eff} = 1.
+\]
 
-Thus, ordinary three-dimensional Newtonian behavior appears as a special fixed point of the BuP dimensional flow.
+Par conséquent :
 
----
+\[
+\frac{2d_s}{d_w} + d_w - 4 = 1.
+\]
 
-## Main numerical outputs
+De manière équivalente :
 
-The expected outputs are:
+\[
+2d_s = d_w\,(5 - d_w),
+\]
 
-```text
+ou encore :
+
+\[
+\boxed{
+d_s = \frac{d_w\,(5 - d_w)}{2}
+}
+\]
+
+\subsection{Cas particulier : diffusion brownienne}
+
+Pour la diffusion brownienne standard, \(d_w = 2\). La condition du point fixe donne alors :
+
+\[
+d_s = 3.
+\]
+
+Ainsi, le comportement newtonien tridimensionnel ordinaire apparaît comme un \textbf{point fixe particulier} du flot dimensionnel BuP.
+
+\section{Principaux résultats numériques}
+
+Les résultats attendus sont :
+
+\begin{verbatim}
 results/
   alpha_eff_table.csv
   finite_size_summary.csv
   alpha_predictions_vs_N.csv
   paper11_summary.json
-```
+\end{verbatim}
 
-and the figures:
+et les figures :
 
-```text
+\begin{verbatim}
 figures/
   fig1_pipeline_dimensional_flow.png
   fig2_ds_vs_N.png
@@ -157,42 +158,55 @@ figures/
   fig4_alpha_predictions_vs_N.png
   fig5_alpha_fixed_point_curve.png
   fig6_interpretation_regimes.png
-```
+\end{verbatim}
 
----
+\section{Interprétation}
 
-## Interpretation
+Le Paper 11 montre que le comportement gravitationnel effectif est contrôlé par le couple :
 
-Paper 11 shows that the effective gravitational behavior is controlled by the pair:
+\[
+(d_s,\; d_w).
+\]
 
-[
-(d_s,d_w).
-]
+Différents régimes correspondent à différentes réponses gravitationnelles :
 
-Different regimes correspond to different gravitational responses:
+\begin{table}[h]
+\centering
+\caption{Régimes gravitationnels du flot dimensionnel BuP}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Régime} & \textbf{Condition} & \textbf{Interprétation} \\
+\midrule
+Point fixe newtonien & \(\alpha_{\rm eff} = 1\) & Comportement baryonique/newtonien ordinaire \\
+Sous-newtonien & \(\alpha_{\rm eff} < 1\) & Régime affaibli ou sous-couplé \\
+Super-newtonien & \(\alpha_{\rm eff} > 1\) & Réponse effective renforcée \\
+Régime de transition & \(\alpha_{\rm eff} \approx 1\) & Crossover entre phases du graphe \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-| Regime                | Condition                  | Interpretation                      |
-| --------------------- | -------------------------- | ----------------------------------- |
-| Newtonian fixed point | (\alpha_{\rm eff}=1)       | ordinary baryonic/Newtonian scaling |
-| sub-Newtonian         | (\alpha_{\rm eff}<1)       | softened or under-coupled regime    |
-| super-Newtonian       | (\alpha_{\rm eff}>1)       | enhanced effective response         |
-| transition regime     | (\alpha_{\rm eff}\approx1) | crossover between graph phases      |
+\section{Reproductibilité}
 
----
+Exécuter :
 
-## Reproducibility
-
-Run:
-
-```bash
+\begin{verbatim}
 cd papers/paper11_dimensional_flow
 bash scripts/run_all.sh
-```
+\end{verbatim}
 
-This generates all numerical tables and figures.
+Cela génère toutes les tables numériques et les figures.
 
----
+\section{Statut}
 
-## Status
+Le Paper 11 doit être lu comme une \textbf{dérivation théorique et numérique} de la loi dimensionnelle BuP. Ses conséquences observationnelles sont testées plus tard dans les Papers 12, 14 et 21.
 
-Paper 11 should be read as a theoretical and numerical derivation of the BuP dimensional law. Its observational consequences are tested later in Paper 12, Paper 14 and Paper 21.
+\section*{Résumé pour mémoire}
+
+\begin{itemize}
+    \item Paper 11 établit la loi \(\alpha_{\rm eff} = 2d_s/d_w + d_w - 4\)
+    \item \(d_s\) et \(d_w\) sont extraits du laplacien du graphe d'intrication
+    \item Le point fixe newtonien correspond à \(\alpha_{\rm eff} = 1\), soit \(d_s = 3\) lorsque \(d_w = 2\)
+    \item Cette loi est testée observationnellement dans Papers 12, 14 et 21
+\end{itemize}
+
+\end{document}
