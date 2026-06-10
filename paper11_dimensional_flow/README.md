@@ -1,37 +1,36 @@
-markdown
-# Paper 11 — The Dimensional Flow of BuP Gravity
+# Paper 11 — Le Flot Dimensionnel de la Gravité BuP
 
-## Spectral Dimension, Walk Dimension and the Effective Gravitational Exponent
+## Dimension Spectrale, Dimension de Marche et l'Exposant Gravitationnel Effectif
 
-**Author:** Farid Hamdad  
-**Project:** Bottom-Up Quantum Gravity (BuP)  
-**Year:** 2026  
+**Auteur :** Farid Hamdad  
+**Projet :** Bottom-Up Quantum Gravity (BuP)  
+**Année :** 2026  
 
 ---
 
-## Overview
+## Vue d'ensemble
 
-This folder contains the numerical and theoretical material associated with **Paper 11** of the Bottom-Up Quantum Gravity program.
+Ce dossier contient le matériel numérique et théorique associé au **Paper 11** du programme Gravité Quantique Bottom-Up (BuP).
 
-Paper 11 introduces the **dimensional law** connecting the spectral properties of an entanglement graph to an **effective gravitational exponent**:
+Le Paper 11 introduit la **loi dimensionnelle** qui relie les propriétés spectrales d'un graphe d'intrication à un **exposant gravitationnel effectif** :
 
 \[
 \alpha_{\rm eff} = \frac{2d_s}{d_w} + d_w - 4
 \]
 
-where:
+où :
 
-- \(d_s\) is the **spectral dimension** of the entanglement graph;
-- \(d_w\) is the **walk dimension**;
-- \(\alpha_{\rm eff}\) is the **effective gravitational exponent** controlling the emergent large-scale response.
+- \(d_s\) est la **dimension spectrale** du graphe d'intrication ;
+- \(d_w\) est la **dimension de marche** ;
+- \(\alpha_{\rm eff}\) est l'**exposant gravitationnel effectif** qui contrôle la réponse émergente à grande échelle.
 
-This paper is the **bridge** between the microscopic graph program and the phenomenological tests performed later in the BuP sequence.
+Ce papier constitue le **pont** entre le programme microscopique du graphe et les tests phénoménologiques réalisés plus tard dans la séquence BuP.
 
 ---
 
-## Role in the BuP Program
+## Rôle dans le programme BuP
 
-Paper 11 provides the **dimensional backbone** for later papers:
+Le Paper 11 fournit la **colonne vertébrale dimensionnelle** pour les papiers ultérieurs :
 
 ```text
 Paper 11 :
@@ -41,14 +40,14 @@ Paper 12 :
     Σ(R) → W_ij → L_ent → α_eff → V(r)
 
 Paper 14 :
-    SPARC galaxy rotation curves and LOW/HIGH regimes
+    Courbes de rotation des galaxies SPARC et régimes LOW/HIGH
 
 Paper 21 :
-    SLACS strong-lensing fixed point and α_eff ≈ 1
-Thus, Paper 11 does not primarily fit a galaxy catalogue. It establishes the theoretical and numerical law that later papers test observationally.
+    Point fixe de lentillage fort SLACS et α_eff ≈ 1
+Ainsi, le Paper 11 n'ajuste aucun catalogue de galaxies. Il établit la loi théorique et numérique que les papiers suivants testent observationnellement.
 
-Central Equation
-The central result is:
+Équation centrale
+Le résultat fondamental est :
 
 α
 e
@@ -84,7 +83,7 @@ w
  −4
 ​
  
-This formula combines two graph-diffusion quantities:
+Cette formule combine deux quantités issues de la diffusion sur le graphe :
 
 P
 (
@@ -124,10 +123,10 @@ w
 ​
  
  
-The BuP gravitational exponent is therefore not inserted by hand. It is inferred from diffusion on the entanglement graph.
+L'exposant gravitationnel BuP n'est donc pas postulé : il est déduit de la diffusion sur le graphe d'intrication.
 
-Newtonian Fixed Point
-The Newtonian (or baryonic) fixed point corresponds to:
+Point fixe newtonien
+Le point fixe newtonien (ou baryonique) correspond à :
 
 α
 e
@@ -139,7 +138,7 @@ f
 eff
 ​
  =1
-Therefore:
+Par conséquent :
 
 2
 d
@@ -166,7 +165,7 @@ s
 w
 ​
  −4=1
-Equivalently:
+De manière équivalente :
 
 2
 d
@@ -216,7 +215,7 @@ w
  )
 ​
  
-For Brownian diffusion:
+Pour la diffusion brownienne standard :
 
 d
 w
@@ -226,7 +225,7 @@ d
 w
 ​
  =2
-this gives:
+on obtient :
 
 d
 s
@@ -236,10 +235,10 @@ d
 s
 ​
  =3
-Thus, ordinary three-dimensional Newtonian behavior appears as a special fixed point of the BuP dimensional flow.
+Ainsi, le comportement newtonien tridimensionnel ordinaire apparaît comme un point fixe particulier du flot dimensionnel BuP.
 
-Main Numerical Outputs
-Results:
+Principaux résultats numériques
+Fichiers de résultats :
 
 text
 results/
@@ -247,7 +246,7 @@ results/
   finite_size_summary.csv
   alpha_predictions_vs_N.csv
   paper11_summary.json
-Figures:
+Figures :
 
 text
 figures/
@@ -257,8 +256,8 @@ figures/
   fig4_alpha_predictions_vs_N.png
   fig5_alpha_fixed_point_curve.png
   fig6_interpretation_regimes.png
-Interpretation
-Paper 11 shows that the effective gravitational behavior is controlled by the pair:
+Interprétation
+Le Paper 11 montre que le comportement gravitationnel effectif est contrôlé par le couple :
 
 (
 d
@@ -275,10 +274,10 @@ s
 w
 ​
  )
-Different regimes correspond to different gravitational responses:
+Différents régimes correspondent à différentes réponses gravitationnelles :
 
-Regime	Condition	Interpretation
-Newtonian fixed point	
+Régime	Condition	Interprétation
+Point fixe newtonien	
 α
 e
 f
@@ -288,8 +287,8 @@ f
 α 
 eff
 ​
- =1	ordinary baryonic/Newtonian scaling
-sub-Newtonian	
+ =1	Comportement baryonique / newtonien standard
+Sous-newtonien	
 α
 e
 f
@@ -299,8 +298,8 @@ f
 α 
 eff
 ​
- <1	softened or under-coupled regime
-super-Newtonian	
+ <1	Gravité affaiblie ou sous-couplée
+Super-newtonien	
 α
 e
 f
@@ -310,8 +309,8 @@ f
 α 
 eff
 ​
- >1	enhanced effective response
-transition regime	
+ >1	Gravité renforcée
+Régime de transition	
 α
 e
 f
@@ -321,15 +320,15 @@ f
 α 
 eff
 ​
- ≈1	crossover between graph phases
-Reproducibility
-Run:
+ ≈1	Crossover entre phases du graphe
+Reproductibilité
+Exécuter :
 
 bash
 cd papers/paper11_dimensional_flow
 bash scripts/run_all.sh
-This generates all numerical tables and figures.
+Cela génère toutes les tables numériques et les figures.
 
-Status
-Paper 11 should be read as a theoretical and numerical derivation of the BuP dimensional law.
-Its observational consequences are tested later in Paper 12, Paper 14, and Paper 21.
+Statut
+Le Paper 11 doit être lu comme une dérivation théorique et numérique de la loi dimensionnelle de BuP.
+Ses conséquences observationnelles sont testées plus tard dans les Papers 12, 14 et 21.
