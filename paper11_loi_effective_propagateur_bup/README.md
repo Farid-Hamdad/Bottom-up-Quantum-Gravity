@@ -113,7 +113,7 @@ $$
 d_s = 3
 $$
 
-Ainsi, le **comportement newtonien tridimensionnel ordinaire** apparaît comme un **point fixe particulier** du flot dimensionnel BuP.
+Ainsi, le **comportement newtonien tridimensionnel ordinaire** apparaît comme un **point fixe particulier** du propagateur dimensionnel BuP.
 
 ---
 
