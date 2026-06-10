@@ -1,9 +1,6 @@
-# Paper 11 — Le Flot Dimensionnel de la Gravité BuP
+# Paper 11 — Loi effective propagateur Bup
 
 ## Dimension Spectrale, Dimension de Marche et l'Exposant Gravitationnel Effectif
-
-Paper 11 — The Dimensional Flow of BuP Gravity
-Spectral Dimension, Walk Dimension and the Effective Gravitational Exponent
 
 **Auteur :** Farid Hamdad  
 **Projet :** Bottom-Up Quantum Gravity (BuP)  
