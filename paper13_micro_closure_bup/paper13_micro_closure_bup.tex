@@ -1,0 +1,423 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\title{
+Paper 13 --- Fermeture Microscopique de la Densité Baryonique dans Bottom-Up Quantum Gravity
+}
+
+\author{
+Farid Hamdad
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Le Paper 13 teste la fermeture microscopique de l'identification Bottom-Up Quantum Gravity (BuP) utilisée dans le Paper 12,
+\[
+\Sigma(R) \simeq \rho_{\rm ent}(R).
+\]
+Partant d'un disque quantique discrétisé, nous construisons un hamiltonien microscopique corrélé dont la matrice de couplage combine la géométrie spatiale et la pondération baryonique. Nous calculons son état fondamental, extrayons la matrice d'information mutuelle par paire \(I_{ij}\), et définissons une densité d'intrication microscopique locale
+\[
+\rho_{\rm ent}^{\rm micro}(i)=\sum_j I_{ij}.
+\]
+Après un lissage radial grossier, nous testons si
+\[
+\rho_{\rm ent}^{\rm micro}(R)\propto \Sigma(R).
+\]
+Un balayage affiné sur \(110\) points dans l'espace des paramètres microscopiques \((\xi, h_0)\) montre que \(42\) points satisfont une fermeture forte et \(67\) points satisfont au moins une fermeture modérée. Le meilleur point reconstruit l'échelle de longueur baryonique avec une erreur relative inférieure à \(0,1\%\). Les contrôles structurels montrent que la fermeture est détruite par des couplages aléatoires et par l'inversion radiale de la pondération baryonique, tandis qu'un couplage purement géométrique ne produit qu'une fermeture isolée. Les tests de taille finie jusqu'à \(N=16\) qubits montrent que le phénomène persiste lorsque la dimension de l'espace de Hilbert augmente. Ces résultats soutiennent l'interprétation selon laquelle la densité baryonique est la trace macroscopique d'une intrication critique spatialement organisée.
+\end{abstract}
+
+\section{Introduction}
+
+Le Paper 12 a utilisé l'identification effective
+\[
+\boxed{\;\Sigma(R) \;\simeq\; \rho_{\rm ent}(R)\;}
+\]
+pour construire un graphe d'information mutuelle baryonique et en déduire les observables dynamiques galactiques à partir de la relation BuP
+\[
+\alpha_{\rm eff}
+=
+\frac{2d_s}{d_w}+d_w-4.
+\]
+Dans cette construction, la densité surfacique baryonique observée \(\Sigma(R)\) a été utilisée comme une entrée effective externe.
+
+Le Paper 13 teste si cette identification peut être fermée microscopiquement. La question centrale est de savoir si un état quantique microscopique \(|\Psi_{\rm gal}\rangle\) peut générer une densité d'information mutuelle dont la projection radiale reconstruit le profil baryonique :
+\[
+|\Psi_{\rm gal}\rangle
+\;\longrightarrow\;
+I_{ij}
+\;\longrightarrow\;
+\rho_{\rm ent}^{\rm micro}(R)
+\;\propto\;
+\Sigma(R).
+\]
+
+L'hypothèse physique testée ici est donc plus forte que l'hypothèse effective du Paper 12. Elle énonce que la densité baryonique n'est pas seulement un proxy astrophysique, mais peut être interprétée comme la projection macroscopique d'une densité d'intrication microscopique localisée.
+
+\section{Chaîne de fermeture microscopique}
+
+La chaîne de fermeture testée dans ce papier est
+\[
+\Sigma(R)
+\;\longrightarrow\;
+J_{ij}
+\;\longrightarrow\;
+\mathcal{H}
+\;\longrightarrow\;
+|\Psi_{\rm gal}\rangle
+\;\longrightarrow\;
+I_{ij}
+\;\longrightarrow\;
+\rho_{\rm ent}^{\rm micro}(R)
+\;\longrightarrow\;
+\Sigma(R).
+\]
+
+Le profil baryonique cible est un disque exponentiel,
+\[
+\Sigma(R) = \Sigma_0 \; e^{-R/R_d}.
+\]
+
+Le disque est discrétisé en \(N\) cellules quantiques. Chaque cellule porte un qubit. La matrice de couplage microscopique est définie par
+\[
+J_{ij}
+\;=\;
+J_0 \;
+\sqrt{\Sigma_i \,\Sigma_j} \;
+\exp\!\left(-\frac{d_{ij}}{\xi}\right),
+\]
+où \(d_{ij}\) est la distance spatiale entre les cellules, \(\xi\) est la longueur de corrélation, et \(J_0\) est l'amplitude globale du couplage.
+
+L'hamiltonien est
+\[
+\mathcal{H}
+\;=\;
+- \sum_{i<j} J_{ij} \;\hat{X}_i \hat{X}_j
+\;-\;
+h_0 \sum_i \hat{Z}_i.
+\]
+Le paramètre \(h_0\) joue le rôle d'un champ transverse.
+
+Après diagonalisation exacte, l'état fondamental est noté
+\[
+|\Psi_{\rm gal}\rangle.
+\]
+
+Pour cet état, l'information mutuelle par paire est calculée comme
+\[
+I_{ij} = S_i + S_j - S_{ij},
+\]
+où \(S_i\) et \(S_{ij}\) sont les entropies de von Neumann des matrices densité réduites à un site et deux sites.
+
+La densité d'intrication microscopique est alors définie par
+\[
+\rho_{\rm ent}^{\rm micro}(i) \;=\; \sum_j I_{ij}.
+\]
+
+Enfin, le lissage radial grossier donne
+\[
+\rho_{\rm ent}^{\rm micro}(R),
+\]
+qui est comparée au profil baryonique cible \(\Sigma(R)\).
+
+\section{Diagnostics de fermeture}
+
+La fermeture est évaluée à l'aide de trois diagnostics.
+
+Premièrement, la corrélation de Pearson entre les profils radiaux normalisés :
+\[
+\mathrm{corr}
+\left(
+\rho_{\rm ent}^{\rm micro}(R),\;\Sigma(R)
+\right).
+\]
+
+Deuxièmement, le RMSE normalisé :
+\[
+\mathrm{RMSE}
+\;=\;
+\sqrt{
+\left\langle
+\left(
+\hat{\rho}_{\rm ent}^{\rm micro}(R)
+-
+\hat{\Sigma}(R)
+\right)^2
+\right\rangle
+}.
+\]
+
+Troisièmement, un ajustement exponentiel de la densité d'intrication reconstruite :
+\[
+\rho_{\rm ent}^{\rm micro}(R)
+\;\simeq\;
+A \; e^{-R/R_{\rm ent}},
+\]
+qui est comparée à l'échelle de longueur cible \(R_d\).
+
+La fermeture forte est définie par l'accord simultané de la forme, du profil d'amplitude et de l'échelle radiale :
+\[
+\mathrm{corr} > 0,90,
+\qquad
+\mathrm{RMSE} < 0,10,
+\qquad
+\frac{|R_{\rm ent} - R_d|}{R_d} < 0,20.
+\]
+
+\section{Résultat principal : crête de fermeture critique}
+
+Un balayage affiné a été réalisé sur \(110\) points de paramètres dans le plan \((\xi, h_0)\). Le balayage a utilisé \(N = 12\) qubits et une échelle de longueur cible
+\[
+R_d = 3,0.
+\]
+
+Le balayage donne :
+\[
+N_{\rm total} = 110,
+\]
+\[
+N_{\rm fort} = 42,
+\qquad
+N_{\rm modéré} = 25.
+\]
+Ainsi,
+\[
+f_{\rm fort} = 38,2\%,
+\qquad
+f_{\rm modéré+fort} = 60,9\%.
+\]
+
+Le meilleur point est
+\[
+\xi = 4{,}25,
+\qquad
+h_0 = 1{,}2.
+\]
+À ce point,
+\[
+\mathrm{corr}
+(\rho_{\rm ent}^{\rm micro},\Sigma)
+=
+0,997608,
+\]
+\[
+\mathrm{RMSE} = 0,020802,
+\]
+et
+\[
+R_{\rm ent} = 3,002641,
+\qquad
+R_d = 3,000000.
+\]
+L'erreur relative sur l'échelle est donc
+\[
+\frac{|R_{\rm ent} - R_d|}{R_d}
+\;=\;
+8,80 \times 10^{-4},
+\]
+soit inférieure à \(0,1\%\).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.80\textwidth]{figures/fig_paper13_verdict_map.png}
+\caption{
+Carte des verdicts de fermeture microscopique dans le plan \((\xi, h_0)\).
+La fermeture forte apparaît le long d'une crête diagonale, indiquant que
+la fermeture microscopique nécessite un équilibre entre la longueur de corrélation
+et le champ transverse.
+}
+\end{figure}
+
+\section{Rapport critique effectif}
+
+Les points de fermeture forte ne sont pas distribués aléatoirement. Ils forment une crête diagonale dans le plan \((\xi, h_0)\).
+
+Pour le sous-ensemble à fermeture forte, le rapport moyen est
+\[
+\left\langle
+\frac{\xi}{h_0}
+\right\rangle
+\;=\;
+4{,}35.
+\]
+
+Plus physiquement, en définissant \(J_{\rm eff}^{\rm spec}\) comme le rayon spectral de la matrice de couplage \(J_{ij}\), on obtient
+\[
+\left\langle
+\frac{J_{\rm eff}^{\rm spec}}{h_0}
+\right\rangle
+\;=\;
+1{,}15.
+\]
+
+Cela suggère que la fermeture microscopique se produit près d'un équilibre critique entre la force de couplage effective et le champ transverse :
+\[
+\frac{J_{\rm eff}^{\rm spec}}{h_0}
+\;\simeq\;
+\mathcal{O}(1).
+\]
+
+\section{Contrôles structurels}
+
+Quatre contrôles structurels ont été réalisés afin d'isoler les conditions nécessaires à la fermeture microscopique.
+
+\subsection{Contrôle sans couplage}
+
+Le premier contrôle pose
+\[
+J_0 = 0.
+\]
+Dans ce cas, l'hamiltonien est dominé par le champ transverse, l'état fondamental devient produit, et l'information mutuelle s'annule :
+\[
+\langle I_{ij} \rangle = 0,
+\qquad
+\max(I_{ij}) = 0.
+\]
+Aucune densité d'intrication microscopique non triviale ne peut donc être reconstruite.
+
+\subsection{Contrôles inversé et aléatoire}
+
+Les contrôles \texttt{inverted\_sigma} et \texttt{random\_J} détruisent complètement la fermeture. Dans les deux cas, aucun des \(16\) points testés ne satisfait les critères de fermeture modérée ou forte.
+
+Le contrôle \texttt{inverted\_sigma} inverse l'organisation radiale de la densité entrant dans les couplages, tandis que \texttt{random\_J} remplace la matrice de couplage structurée par une matrice aléatoire symétrique d'échelle comparable. Ces contrôles établissent que la fermeture n'est pas un artefact générique de la diagonalisation et qu'elle nécessite une matrice de couplage non aléatoire avec une organisation radiale cohérente.
+
+\subsection{Densité mélangée}
+
+Le contrôle \texttt{shuffled\_sigma} permute aléatoirement les valeurs de densité entrant dans les couplages microscopiques tout en gardant le profil cible inchangé. Sur \(10\) graines aléatoires, correspondant à \(160\) exécutions, la fraction de fermeture forte est réduite de \(38,2\%\) dans le balayage principal à \(17,5\%\). La fraction modérée ou forte diminue de \(60,9\%\) à \(26,2\%\).
+
+Ainsi, la randomisation de l'assignation spatiale des valeurs de densité affaiblit la fermeture, bien qu'elle ne l'élimine pas complètement à petite échelle. Cela indique que le mécanisme est partiellement robuste au désordre local, mais dépend de l'organisation radiale cohérente de \(\Sigma(R)\).
+
+\subsection{Couplage purement géométrique}
+
+Un contrôle supplémentaire sépare la contribution de la géométrie spatiale de la pondération baryonique. Dans ce test, le couplage est défini par
+\[
+J_{ij} = J_0 \; e^{-d_{ij}/\xi},
+\]
+sans le facteur baryonique \(\sqrt{\Sigma_i \Sigma_j}\).
+
+Sur \(16\) points testés, un seul satisfait la fermeture forte et un point supplémentaire satisfait la fermeture modérée. La fraction de fermeture forte est donc de \(6,2\%\), et la fraction modérée ou forte est de \(12,5\%\).
+
+Le meilleur point purement géométrique est
+\[
+\xi = 2{,}0,
+\qquad
+h_0 = 1{,}0,
+\]
+avec
+\[
+\mathrm{corr} = 0,997297,
+\qquad
+\mathrm{RMSE} = 0,033296,
+\qquad
+R_{\rm ent} = 3,526208.
+\]
+Pour \(R_d = 3,0\), l'erreur sur l'échelle radiale est de \(17,5\%\).
+
+Cela montre que la géométrie seule peut occasionnellement produire une fermeture acceptable, mais ne génère pas de crête de fermeture robuste. La fermeture robuste nécessite la combinaison de la géométrie spatiale et de la pondération baryonique.
+
+\section{Robustesse face à la taille finie}
+
+Pour tester si la fermeture est un artefact de petit système, le balayage a été répété pour
+\[
+N = 8,\qquad N = 12,\qquad N = 16.
+\]
+Les dimensions correspondantes de l'espace de Hilbert sont
+\[
+2^8 = 256,\qquad
+2^{12} = 4096,\qquad
+2^{16} = 65536.
+\]
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c c c c}
+\toprule
+\(N\) & \(\xi\) & \(h_0\) & \(R_{\rm ent}\) & Erreur sur \(R_d\) & Verdict \\
+\midrule
+8  & 4,0 & 0,5 & 2,884991 & 3,83\% & fort \\
+12 & 4,0 & 1,0 & 3,095187 & 3,17\% & fort \\
+16 & 3,0 & 1,0 & 2,959983 & 1,33\% & fort \\
+\bottomrule
+\end{tabular}
+\caption{
+Meilleurs points de fermeture pour \(N = 8, 12, 16\).
+La fermeture persiste lorsque la dimension de l'espace de Hilbert augmente jusqu'à
+\(2^{16} = 65536\).
+}
+\end{table}
+
+Bien que la fraction de fermeture ne soit pas strictement monotone avec \(N\), le phénomène persiste jusqu'à \(N = 16\), et la meilleure reconstruction de l'échelle radiale s'améliore à la plus grande taille testée.
+
+Les meilleurs points restent également associés à un rapport couplage sur champ de l'ordre de l'unité :
+\[
+\frac{J_{\rm eff}^{\rm spec}}{h_0}
+\;\simeq\;
+1,03,\; 1,05,\; 1,27
+\]
+pour \(N = 8, 12, 16\) respectivement.
+
+Cela soutient l'interprétation selon laquelle la fermeture microscopique se produit dans un régime d'équilibre critique entre la force de couplage collective et le champ transverse.
+
+\section{Interprétation}
+
+Les résultats soutiennent une version raffinée de l'hypothèse de fermeture microscopique BuP. La densité baryonique n'est pas simplement associée à la quantité totale d'intrication microscopique. Elle est plutôt associée à une structure d'intrication critique spatialement organisée.
+
+La fermeture est détruite par des matrices de couplage aléatoires et par l'inversion radiale de la pondération baryonique. Elle est affaiblie par le mélange local des valeurs de densité et seulement faiblement reproduite par la géométrie seule. Par conséquent, la fermeture robuste nécessite à la fois :
+\[
+e^{-d_{ij}/\xi}
+\]
+comme noyau de corrélation géométrique, et
+\[
+\sqrt{\Sigma_i \Sigma_j}
+\]
+comme facteur de pondération baryonique.
+
+La boucle conceptuelle peut être résumée par
+\[
+\Sigma(R)
+\;\longrightarrow\;
+J_{ij}
+\;\longrightarrow\;
+|\Psi_{\rm gal}\rangle
+\;\longrightarrow\;
+I_{ij}
+\;\longrightarrow\;
+\rho_{\rm ent}^{\rm micro}(R)
+\;\longrightarrow\;
+\Sigma(R).
+\]
+
+De manière équivalente,
+\[
+\boxed{\text{La matière encode l'intrication.} \qquad \text{L'intrication reconstruit la matière.}}
+\]
+
+Plus précisément,
+\[
+\boxed{\text{La densité baryonique apparaît comme la trace macroscopique d'une intrication critique spatialement organisée.}}
+\]
+
+\section{Conclusion}
+
+Le Paper 13 fournit le premier test de fermeture microscopique de l'identification BuP
+\[
+\Sigma(R) \simeq \rho_{\rm ent}(R).
+\]
+
+Le résultat principal est l'existence d'une crête de fermeture robuste dans l'espace des paramètres microscopiques. Dans ce régime, la densité d'information mutuelle calculée à partir de l'état fondamental reconstruit à la fois la forme et l'échelle radiale du profil baryonique cible.
+
+Le meilleur point reconstruit l'échelle de longueur cible avec une erreur relative inférieure à \(0,1\%\). Les contrôles structurels montrent que la fermeture n'est pas un artefact générique de la diagonalisation et nécessite une matrice de couplage structurée combinant géométrie spatiale et pondération baryonique. Les tests de taille finie jusqu'à \(N = 16\) confirment que le phénomène ne disparaît pas lorsque la dimension de l'espace de Hilbert augmente.
+
+Ces résultats soutiennent l'interprétation selon laquelle la densité baryonique est la trace macroscopique d'une intrication critique spatialement organisée.
+
+\end{document}
