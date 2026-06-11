@@ -5,7 +5,7 @@
 Le Paper 13 teste la fermeture microscopique de l'hypothèse BuP utilisée dans le Paper 12 :
 
 $$
-\boxed{\;\Sigma(R) \;\simeq\; \rho_{\text{ent}}(R)\;}
+\Sigma(R) \simeq \rho_{\rm ent}(R).
 $$
 
 Le Paper 12 utilisait la densité surfacique baryonique $\Sigma(R)$ comme une entrée effective pour construire un graphe inspiré de l'intrication et en déduire les observables de rotation galactique.
@@ -13,16 +13,15 @@ Le Paper 12 utilisait la densité surfacique baryonique $\Sigma(R)$ comme une en
 Le Paper 13 demande si cette identification peut être reconstruite à partir d'un état quantique microscopique :
 
 $$
-|\Psi_{\text{gal}}\rangle
-\;\longrightarrow\;
-I_{ij}
-\;\longrightarrow\;
-\rho_{\text{ent}}^{\text{micro}}(R)
-\;\propto\;
-\Sigma(R).
+|\Psi_{\rm gal}\rangle
+\longrightarrow I_{ij}
+\longrightarrow \rho_{\rm ent}^{\rm micro}(R)
+\propto \Sigma(R).
 $$
 
-**Question centrale :** La densité baryonique observée peut-elle être interprétée comme la projection macroscopique d'une densité d'intrication microscopique localisée ?
+La question centrale est :
+
+> La densité baryonique observée peut-elle être interprétée comme la projection macroscopique d'une densité d'intrication microscopique localisée ?
 
 ---
 
@@ -32,179 +31,227 @@ La chaîne de fermeture complète testée dans ce papier est :
 
 $$
 \Sigma(R)
-\;\longrightarrow\;
+\longrightarrow J_{ij}
+\longrightarrow H
+\longrightarrow |\Psi_{\rm gal}\rangle
+\longrightarrow I_{ij}
+\longrightarrow \rho_{\rm ent}^{\rm micro}(R)
+\longrightarrow \Sigma(R).
+$$
+
+La matrice de couplage microscopique est définie par
+
+$$
 J_{ij}
-\;\longrightarrow\;
-H
-\;\longrightarrow\;
-|\Psi_{\text{gal}}\rangle
-\;\longrightarrow\;
-I_{ij}
-\;\longrightarrow\;
-\rho_{\text{ent}}^{\text{micro}}(R)
-\;\longrightarrow\;
-\Sigma(R).
-$$
-
-### Matrice de couplage microscopique
-
-$$
-J_{ij} \;=\; J_0 \;\sqrt{\Sigma_i \,\Sigma_j} \;\exp\!\left(-\frac{d_{ij}}{\xi}\right)
-$$
-
-avec :
-- $d_{ij}$ = distance spatiale entre les cellules du disque
-- $\xi$ = longueur de corrélation microscopique
-- $J_0$ = amplitude du couplage
-- $\Sigma_i$ = densité baryonique cible au site $i$
-
-### Hamiltonien transverse Ising
-
-$$
-\mathcal{H} = - \sum_{i < j} J_{ij} \, \hat{X}_i \hat{X}_j - h_0 \sum_{i} \hat{Z}_i
+=
+J_0 \sqrt{\Sigma_i\Sigma_j}
+\exp\left(-\frac{d_{ij}}{\xi}\right),
 $$
 
 où :
-- $\hat{X}_i$, $\hat{Z}_i$ sont les matrices de Pauli au site $i$
-- $J_{ij}$ est la matrice de couplage microscopique
-- $h_0$ est le champ transverse
 
-### Information mutuelle
+- $d_{ij}$ est la distance spatiale entre les cellules du disque,
+- $\xi$ est la longueur de corrélation microscopique,
+- $J_0$ est l'amplitude du couplage,
+- $\Sigma_i$ est la densité baryonique cible au site $i$.
 
-À partir de l'état fondamental $|\Psi_{\text{gal}}\rangle$ :
-
-$$
-I_{ij} = S_i + S_j - S_{ij}
-$$
-
-### Densité d'intrication microscopique locale
+L'hamiltonien est un modèle corrélé de type transverse-Ising :
 
 $$
-\rho_{\text{ent}}^{\text{micro}}(i) \;=\; \sum_{j} I_{ij}
+H
+=
+-\sum_{i<j}J_{ij}X_iX_j
+-
+h_0\sum_i Z_i.
 $$
 
-### Test de fermeture (après lissage radial)
+À partir de l'état fondamental $|\Psi_{\rm gal}\rangle$, l'information mutuelle par paire est calculée comme
 
 $$
-\boxed{\;\rho_{\text{ent}}^{\text{micro}}(R) \;\propto\; \Sigma(R)\;}
+I_{ij}
+=
+S_i+S_j-S_{ij}.
+$$
+
+La densité d'intrication microscopique locale est alors définie par
+
+$$
+\rho_{\rm ent}^{\rm micro}(i)
+=
+\sum_j I_{ij}.
+$$
+
+Après un lissage radial grossier, le test de fermeture est :
+
+$$
+\rho_{\rm ent}^{\rm micro}(R)
+\propto
+\Sigma(R).
 $$
 
 ---
 
 ## Résultat principal du balayage
 
-Un balayage affiné a été réalisé sur **110 points** de paramètres dans le plan $(\xi, h_0)$.
+Un balayage affiné a été réalisé sur 110 points de paramètres dans le plan $(\xi, h_0)$.
+
+Résultats :
 
 | Quantité | Valeur |
-|----------|-------:|
+|---|---:|
 | Nombre total d'exécutions | 110 |
 | Fermeture forte | 42 / 110 |
 | Fermeture modérée | 25 / 110 |
-| Fraction de fermeture forte | 38,2 % |
-| Fraction de fermeture modérée ou forte | 60,9 % |
+| Fraction de fermeture forte | 38,2% |
+| Fraction de fermeture modérée ou forte | 60,9% |
 
-### Meilleur point
+Le meilleur point est :
 
 $$
-\xi = 4{,}25 \qquad\text{et}\qquad h_0 = 1{,}2
+\xi = 4,25,
+\qquad
+h_0 = 1,2.
 $$
 
 À ce point :
 
-| Mesure | Valeur |
-|--------|-------:|
-| Corrélation $\text{corr}(\rho_{\text{ent}}^{\text{micro}},\Sigma)$ | $0,997608$ |
-| RMSE | $0,020802$ |
-| $R_{\text{ent}}$ | $3,002641$ |
-| $R_d$ (vraie échelle) | $3,000000$ |
-
-**Erreur relative sur l'échelle de longueur :**
+$$
+\mathrm{corr}
+(\rho_{\rm ent}^{\rm micro},\Sigma)
+=
+0,997608,
+$$
 
 $$
-\frac{|R_{\text{ent}} - R_d|}{R_d} \;=\; 8{,}80 \times 10^{-4}
-\;\;(\text{soit } 0{,}088\%)
+\mathrm{RMSE}
+=
+0,020802,
 $$
+
+$$
+R_{\rm ent}
+=
+3,002641,
+\qquad
+R_d
+=
+3,000000.
+$$
+
+L'erreur relative sur l'échelle de longueur est donc :
+
+$$
+\frac{|R_{\rm ent}-R_d|}{R_d}
+=
+8,80 \times 10^{-4},
+$$
+
+soit inférieure à $0,1\%$.
 
 ---
 
 ## Crête de fermeture critique
 
-Les points de fermeture forte forment une **crête diagonale** dans le plan $(\xi, h_0)$.
+Les points de fermeture forte forment une crête diagonale dans le plan $(\xi, h_0)$.
 
 Pour le sous-ensemble à fermeture forte :
 
 $$
-\left\langle \frac{\xi}{h_0} \right\rangle \;=\; 4{,}35
-\qquad\text{et}\qquad
-\left\langle \frac{J_{\text{eff}}^{\text{spec}}}{h_0} \right\rangle \;=\; 1{,}15
+\left\langle \frac{\xi}{h_0} \right\rangle
+=
+4,35,
 $$
 
-où $J_{\text{eff}}^{\text{spec}}$ est le rayon spectral de la matrice $J_{ij}$.
+et
 
-> **Interprétation :** La fermeture microscopique se produit près d'un équilibre critique entre la force de couplage effective et le champ transverse.
+$$
+\left\langle
+\frac{J_{\rm eff}^{\rm spec}}{h_0}
+\right\rangle
+=
+1,15.
+$$
+
+Ici $J_{\rm eff}^{\rm spec}$ est le rayon spectral de la matrice de couplage microscopique $J_{ij}$.
+
+Cela suggère que la fermeture microscopique se produit près d'un équilibre critique entre la force de couplage effective et le champ transverse.
 
 ---
 
 ## Contrôles structurels
 
-Plusieurs contrôles ont été réalisés pour valider la robustesse du résultat.
+Plusieurs contrôles ont été réalisés.
 
-### 1. Absence de couplage ($J_0 = 0$)
+### Absence de couplage : $J_0 = 0$
 
-L'information mutuelle s'annule complètement :
-
-$$
-\langle I_{ij} \rangle = 0 \qquad\text{et}\qquad \max(I_{ij}) = 0
-$$
-
-✅ **Aucune reconstruction possible** — le couplage est nécessaire.
-
-### 2. Densité inversée (`inverted_sigma`)
-
-On inverse l'organisation radiale de la densité.
+Lorsque $J_0 = 0$, l'information mutuelle s'annule :
 
 $$
-\text{Résultat : } 0/16 \text{ points atteignent une fermeture modérée ou forte}
+\langle I_{ij}\rangle = 0,
+\qquad
+\max(I_{ij}) = 0.
 $$
 
-✅ **L'organisation radiale est cruciale.**
+Aucune densité d'intrication microscopique ne peut être reconstruite.
 
-### 3. Couplage aléatoire (`random_J`)
+### Densité inversée
 
-La matrice structurée est remplacée par une matrice aléatoire symétrique.
+Le contrôle `inverted_sigma` inverse l'organisation radiale de la densité entrant dans la matrice de couplage.
 
-$$
-\text{Résultat : } 0/16 \text{ points atteignent une fermeture modérée ou forte}
-$$
-
-✅ **La structure spécifique du couplage importe.**
-
-### 4. Couplage uniquement géométrique (`geometric_J`)
+Résultat :
 
 $$
-J_{ij} = J_0 \; e^{-d_{ij}/\xi} \quad\text{(sans le facteur } \sqrt{\Sigma_i\Sigma_j}\text{)}
+0/16
 $$
+
+points atteignent une fermeture modérée ou forte.
+
+### Couplage aléatoire
+
+Le contrôle `random_J` remplace la matrice de couplage structurée par une matrice aléatoire symétrique d'échelle comparable.
+
+Résultat :
+
+$$
+0/16
+$$
+
+points atteignent une fermeture modérée ou forte.
+
+### Couplage uniquement géométrique
+
+Le contrôle `geometric_J` utilise
+
+$$
+J_{ij}=J_0 e^{-d_{ij}/\xi},
+$$
+
+sans le facteur de pondération baryonique $\sqrt{\Sigma_i\Sigma_j}$.
+
+Résultat :
 
 | Quantité | Valeur |
-|----------|-------:|
+|---|---:|
 | Fermeture forte | 1 / 16 |
 | Fermeture modérée ou forte | 2 / 16 |
 
-✅ **La géométrie seule ne suffit pas** — le couplage baryonique est nécessaire pour une crête robuste.
+Cela montre que la géométrie seule peut occasionnellement produire une fermeture acceptable, mais ne génère pas de crête de fermeture robuste.
 
-### 5. Densité mélangée (`shuffled_sigma`)
+### Densité mélangée
 
-On permute aléatoirement les valeurs de densité (10 graines aléatoires).
+Le contrôle `shuffled_sigma` permute aléatoirement les valeurs de densité entrant dans les couplages.
+
+Sur 10 graines aléatoires :
 
 | Quantité | Valeur |
-|----------|-------:|
+|---|---:|
 | Nombre total d'exécutions | 160 |
 | Fermeture forte | 28 / 160 |
 | Fermeture modérée ou forte | 42 / 160 |
-| Fraction de fermeture forte | 17,5 % |
-| Fraction de fermeture modérée ou forte | 26,2 % |
+| Fraction de fermeture forte | 17,5% |
+| Fraction de fermeture modérée ou forte | 26,2% |
 
-✅ **Le désordre local affaiblit la fermeture**, mais ne la détruit pas complètement à petite échelle.
+Cela montre que la fermeture est affaiblie par le désordre local, mais pas complètement détruite à petite échelle.
 
 ---
 
@@ -212,30 +259,64 @@ On permute aléatoirement les valeurs de densité (10 graines aléatoires).
 
 Le balayage a été répété pour $N = 8$, $N = 12$ et $N = 16$ qubits.
 
-| $N$ | Dimension de Hilbert | Fermeture forte | Modérée ou forte | Meilleur $R_{\text{ent}}$ | Erreur sur $R_d$ |
-|:---:|---------------------:|----------------:|-----------------:|--------------------------:|-----------------:|
-| 8 | 256 | 3 / 16 | 7 / 16 | 2,884991 | 3,83 % |
-| 12 | 4 096 | 6 / 16 | 10 / 16 | 3,095187 | 3,17 % |
-| 16 | 65 536 | 4 / 16 | 8 / 16 | 2,959983 | 1,33 % |
+| N | Dimension de Hilbert | Fermeture forte | Modérée+forte | Meilleur $R_{\rm ent}$ | Erreur sur $R_d$ |
+|---:|---:|---:|---:|---:|---:|
+| 8 | 256 | 3 / 16 | 7 / 16 | 2,884991 | 3,83% |
+| 12 | 4096 | 6 / 16 | 10 / 16 | 3,095187 | 3,17% |
+| 16 | 65536 | 4 / 16 | 8 / 16 | 2,959983 | 1,33% |
 
-> **Conclusion :** Le phénomène de fermeture persiste jusqu'à $N = 16$, et la reconstruction de l'échelle radiale s'améliore à la plus grande taille testée.
+Le phénomène de fermeture persiste jusqu'à $N = 16$, et la meilleure reconstruction de l'échelle radiale s'améliore à la plus grande taille testée.
 
 ---
 
 ## Résumé conceptuel
 
-Les résultats numériques soutiennent l'énoncé suivant :
+Les résultats numériques soutiennent l'énoncé de fermeture microscopique suivant :
 
 $$
-\boxed{\text{La matière encode l'intrication.} \qquad \text{L'intrication reconstruit la matière.}}
+\boxed{
+\text{La matière encode l'intrication.}
+\qquad
+\text{L'intrication reconstruit la matière.}
+}
 $$
 
 Plus précisément :
 
 $$
-\boxed{\text{La densité baryonique apparaît comme la trace macroscopique d'une intrication critique spatialement organisée.}}
+\boxed{
+\text{La densité baryonique apparaît comme la trace macroscopique}
+\quad
+\text{d'une intrication critique spatialement organisée.}
+}
 $$
 
 ---
 
 ## Contenu du dépôt
+
+```text
+papers/paper13_micro_closure_bup/
+  README.md
+  paper13_micro_closure_bup.tex
+  scripts/
+    bup_paper13_micro_closure_scan_v1.py
+    bup_paper13_micro_closure_scan_v2.py
+    bup_paper13_micro_closure_scan_v2_geometric.py
+  results/
+    scan_v1/
+    scan_v2_zoom/
+    control_no_coupling/
+    control_flat_sigma/
+    control_shuffled_sigma_v2/
+    control_inverted_sigma_v2/
+    control_random_J_v2/
+    control_geometric_J_v2/
+    finite_size_N8/
+    finite_size_N12/
+    finite_size_N16/
+  figures/
+    fig_paper13_verdict_map.png
+    fig_paper13_rmse_map.png
+    fig_paper13_rd_error_map.png
+    fig_paper13_jeff_over_h0.png
