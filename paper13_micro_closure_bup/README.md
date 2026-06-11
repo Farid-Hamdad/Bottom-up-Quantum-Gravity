@@ -60,6 +60,14 @@ avec :
 
 ### toto
 
+markdown$$
+H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
+$$
+
+$$
+H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
+$$
+
 $$
 H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
 $$
