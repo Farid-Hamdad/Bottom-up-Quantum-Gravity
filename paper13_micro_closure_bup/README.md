@@ -60,6 +60,11 @@ avec :
 
 ### toto
 
+$$
+\mathcal{H} = - \sum_{i < j} J_{ij} \, \hat{X}_i \hat{X}_j - h_0 \sum_{i} \hat{Z}_i
+$$
+
+
 markdown$$
 H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
 $$
