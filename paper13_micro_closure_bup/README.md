@@ -58,18 +58,18 @@ avec :
 - $J_0$ = amplitude du couplage
 - $\Sigma_i$ = densité baryonique cible au site $i$
 
-### Hamiltonien transverse-Ising
+## Hamiltonien transverse-Ising
 
 $$
-H \;=\; - \sum_{i<j} J_{ij} X_i X_j \;-\; h_0 \sum_i Z_i
+H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
 $$
 
-### Information mutuelle
+## Information mutuelle
 
-À partir de l'état fondamental $|\Psi_{\text{gal}}\rangle$ :
+À partir de l'état fondamental |Ψ_gal⟩ :
 
 $$
-I_{ij} \;=\; S_i + S_j - S_{ij}
+I_{ij} = S_i + S_j - S_{ij}
 $$
 
 ### Densité d'intrication microscopique locale
