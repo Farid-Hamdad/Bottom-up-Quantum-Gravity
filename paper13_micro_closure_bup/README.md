@@ -58,7 +58,7 @@ avec :
 - $J_0$ = amplitude du couplage
 - $\Sigma_i$ = densité baryonique cible au site $i$
 
-### Hamiltonien transverse-Ising
+### toto
 
 $$
 H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
