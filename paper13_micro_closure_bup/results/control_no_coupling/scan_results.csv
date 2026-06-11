@@ -1,0 +1,2 @@
+xi,h0,j0,ground_state_energy,mean_single_site_entropy,max_single_site_entropy,mean_mutual_information,max_mutual_information,corr_rho_sigma,rmse_normalized,kl_rho_ent_to_sigma,kl_sigma_to_rho_ent,R_ent_fit,R_sigma_fit,R_d_target,R_d_relative_error,verdict
+2.0,0.5,0.0,-5.999999999999995,0.0,-0.0,0.0,0.0,,0.4250536448232862,0.3754467576838717,0.3137081295251418,3.0,2.999999999747567,3.0,0.0,insufficient_diagnostics
