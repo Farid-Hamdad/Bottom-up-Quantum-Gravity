@@ -58,11 +58,17 @@ avec :
 - $J_0$ = amplitude du couplage
 - $\Sigma_i$ = densité baryonique cible au site $i$
 
-## Hamiltonien transverse-Ising
+### Hamiltonien transverse-Ising
 
 $$
 H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
 $$
+
+où :
+
+- $X_i$, $Z_i$ sont les matrices de Pauli
+- $J_{ij}$ est la matrice de couplage
+- $h_0$ est le champ transverse
 
 ## Information mutuelle
 
