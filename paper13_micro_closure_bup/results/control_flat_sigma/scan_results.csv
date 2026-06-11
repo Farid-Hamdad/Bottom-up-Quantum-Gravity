@@ -1,0 +1,2 @@
+xi,h0,j0,ground_state_energy,mean_single_site_entropy,max_single_site_entropy,mean_mutual_information,max_mutual_information,corr_rho_sigma,rmse_normalized,kl_rho_ent_to_sigma,kl_sigma_to_rho_ent,R_ent_fit,R_sigma_fit,R_d_target,R_d_relative_error,verdict
+3.0,0.8,1.0,-11.876606587744025,0.6836197707640049,0.8738618976569408,0.4700420440169055,0.7643167311374344,0.982089542104052,0.0714486413546278,0.023927625992508236,0.025205602353553652,13.145045714920741,998.9999990611443,999.0,0.9868417960811604,weak_or_failed_closure
