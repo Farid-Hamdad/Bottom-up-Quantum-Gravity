@@ -58,28 +58,15 @@ avec :
 - $J_0$ = amplitude du couplage
 - $\Sigma_i$ = densité baryonique cible au site $i$
 
-### toto
+### Hamiltonien transverse Ising
 
 $$
 \mathcal{H} = - \sum_{i < j} J_{ij} \, \hat{X}_i \hat{X}_j - h_0 \sum_{i} \hat{Z}_i
 $$
 
-
-markdown$$
-H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
-$$
-
-$$
-H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
-$$
-
-$$
-H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
-$$
-
 où :
-- $X_i$, $Z_i$ sont les matrices de Pauli
-- $J_{ij}$ est la matrice de couplage
+- $\hat{X}_i$, $\hat{Z}_i$ sont les matrices de Pauli au site $i$
+- $J_{ij}$ est la matrice de couplage microscopique
 - $h_0$ est le champ transverse
 
 ### Information mutuelle
