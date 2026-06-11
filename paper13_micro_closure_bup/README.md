@@ -58,20 +58,20 @@ avec :
 - $J_0$ = amplitude du couplage
 - $\Sigma_i$ = densité baryonique cible au site $i$
 
-\subsection{Hamiltonien transverse-Ising}
+### Hamiltonien transverse-Ising
 
-\[
+$$
 H = - \sum_{i<j} J_{ij} X_i X_j - h_0 \sum_i Z_i
-\]
-où :
+$$
 
+où :
 - $X_i$, $Z_i$ sont les matrices de Pauli
 - $J_{ij}$ est la matrice de couplage
 - $h_0$ est le champ transverse
 
-## Information mutuelle
+### Information mutuelle
 
-À partir de l'état fondamental |Ψ_gal⟩ :
+À partir de l'état fondamental $|\Psi_{\text{gal}}\rangle$ :
 
 $$
 I_{ij} = S_i + S_j - S_{ij}
