@@ -1,0 +1,414 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{microtype}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black
+}
+
+\title{
+\textbf{Ondes Gravitationnelles dans la Gravité Quantique Bottom-Up}\\
+\large Modes Informationnels du Graphe d'Intrication
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+En Gravité Quantique Bottom-Up (BuP), l'espace-temps n'est pas supposé fondamental.
+Le point de départ est un état quantique \(|\Psi\rangle\), à partir duquel on calcule
+les matrices densité réduites, les entropies et les informations mutuelles. Le
+graphe d'intrication
+\[
+W_{ij} = I(i:j)
+\]
+n'est donc pas une structure de fond, mais un objet information-géométrique dérivé.
+Cet article étudie les ondes gravitationnelles dans BuP. Contrairement à l'image
+standard où la métrique est première, une onde gravitationnelle BuP est décrite
+comme une perturbation collective du graphe d'intrication,
+\[
+\delta W_{ij}(t)
+\;\rightarrow\;
+\delta d_{ij}^{\rm ent}(t)
+\;\rightarrow\;
+\delta g_{\mu\nu}^{\rm eff}(t).
+\]
+Nous présentons une séquence de prototypes numériques et variationnels.
+Premièrement, des diagnostics à jauge fixée retrouvent les deux polarisations
+quadripolaires \(+\) et \(\times\). Deuxièmement, des perturbations progressives
+imposées se propagent avec la vitesse de phase attendue. Troisièmement, des
+sources dynamiques localisées émettent des ondes de graphe avec
+\(v_+ \simeq v_\times \simeq 1\) en unités de graphe. Enfin, la linéarisation d'une
+action BuP effective autour d'un graphe d'équilibre donne des modes propres hessiens
+satisfaisant
+\[
+\omega^2 \simeq c_{\rm graphe}^2 \, k^2 + m_{\rm eff}^2,
+\]
+avec des ajustements de dispersion \(R^2 \simeq 0{,}999\). La vitesse de propagation
+est contrôlée par la rigidité informationnelle du graphe et peut être calibrée
+sur la vitesse physique de la lumière dans la limite einsteinienne lisse.
+Ces résultats soutiennent l'interprétation des ondes gravitationnelles comme
+modes informationnels du réseau d'intrication.
+\end{abstract}
+
+\section{Introduction}
+
+En relativité générale, les ondes gravitationnelles sont des perturbations de la
+métrique,
+\[
+g_{\mu\nu} \;\rightarrow\; g_{\mu\nu} + h_{\mu\nu}.
+\]
+
+En Gravité Quantique Bottom-Up, la métrique n'est pas fondamentale. Elle émerge
+de la structure informationnelle d'un état quantique. L'objet fondamental est un
+état \(|\Psi\rangle\). À partir de cet état, on calcule les matrices densité
+réduites \(\rho_i\), \(\rho_{ij}\), les entropies \(S_i\), \(S_{ij}\), et les
+informations mutuelles
+\[
+W_{ij} = I(i:j) = S_i + S_j - S_{ij}.
+\]
+
+Le graphe d'intrication \(W_{ij}\) définit une structure information-géométrique.
+Les distances sont reconstruites à travers une distance d'intrication,
+\[
+d_{ij}^{\rm ent} = -\ell_0 \log\left(\frac{W_{ij}}{W_0}\right),
+\]
+et une métrique effective est reconstruite dans la limite lisse,
+\[
+W_{ij}
+\;\rightarrow\;
+d_{ij}^{\rm ent}
+\;\rightarrow\;
+g_{\mu\nu}^{\rm eff}.
+\]
+
+Une onde gravitationnelle BuP n'est donc pas primitivement une ondulation d'une
+métrique préexistante. C'est une perturbation collective du graphe d'intrication :
+\[
+\delta W_{ij}(t)
+\;\rightarrow\;
+\delta d_{ij}^{\rm ent}(t)
+\;\rightarrow\;
+\delta g_{\mu\nu}^{\rm eff}(t).
+\]
+
+Cet article teste cette idée en utilisant quatre prototypes successifs :
+\begin{enumerate}
+    \item extraction à jauge fixée des deux polarisations ;
+    \item ondes de graphe progressives imposées ;
+    \item sources dynamiques localisées ;
+    \item modes hessiens d'une action BuP effective.
+\end{enumerate}
+
+\section{Ondes gravitationnelles BuP}
+
+La perturbation métrique linéarisée standard s'écrit
+\[
+h_{\mu\nu} = \delta g_{\mu\nu}.
+\]
+
+Dans BuP, cet objet est la projection géométrique finale d'une perturbation
+informationnelle plus profonde :
+\[
+\delta W_{ij}
+\;\rightarrow\;
+\delta d_{ij}^{\rm ent}
+\;\rightarrow\;
+h_{\mu\nu}^{\rm eff}.
+\]
+
+Ceci motive la définition d'une onde gravitationnelle BuP comme un mode collectif
+propagatif du graphe d'intrication. Dans cette perspective, le graviton n'est pas
+une particule ponctuelle fondamentale. C'est le quantum d'un mode collectif du
+réseau d'intrication.
+
+\section{Diagnostics de polarisation}
+
+Dans le premier prototype, la perturbation du graphe d'intrication est projetée
+sur des composantes quadripolaires à jauge fixée,
+\[
+q_+(t), \qquad q_\times(t).
+\]
+
+Les modes plus et croix sont reconstruits à partir de la dépendance angulaire
+des perturbations relatives de distance d'intrication :
+\[
+\frac{\delta d_{ij}^2}{d_{ij}^2}
+\simeq
+q_+(t)\cos(2\theta_{ij})
++
+q_\times(t)\sin(2\theta_{ij}).
+\]
+
+L'analyse à jauge fixée sépare les deux polarisations et confirme que les
+perturbations du graphe BuP peuvent reproduire la structure quadripolaire
+habituelle des ondes gravitationnelles.
+
+\section{Ondes de graphe progressives}
+
+Le second prototype impose une perturbation progressive du graphe d'intrication,
+\[
+\delta W_{ij}(x,t) \sim A \cos(kx - \omega t).
+\]
+
+La phase quadripolaire résultante est mesurée sur des tranches spatiales. La
+pente de phase reconstruit le nombre d'onde imposé :
+\[
+k_{\rm fit} \simeq k_{\rm input}.
+\]
+
+Ceci vérifie que le graphe d'intrication supporte des modes quadripolaires
+propagatifs.
+
+\section{Émission par source dynamique}
+
+Le troisième prototype remplace l'onde progressive imposée par une source
+localisée oscillante. La réponse est mesurée sur des anneaux concentriques.
+
+Pour la polarisation plus, l'ajustement du temps d'arrivée donne
+\[
+v_+^{\rm arrivée} = 1{,}0036,
+\qquad
+R^2_{\rm arrivée} = 0{,}99993.
+\]
+L'ajustement du temps de pic donne
+\[
+v_+^{\rm pic} = 1{,}0036,
+\qquad
+R^2_{\rm pic} = 0{,}99980.
+\]
+
+Pour la polarisation croix, l'ajustement du temps d'arrivée donne
+\[
+v_\times^{\rm arrivée} = 1{,}0036,
+\qquad
+R^2_{\rm arrivée} = 0{,}99980.
+\]
+L'ajustement du temps de pic donne
+\[
+v_\times^{\rm pic} = 0{,}9956,
+\qquad
+R^2_{\rm pic} = 0{,}99974.
+\]
+
+Ainsi les deux polarisations se propagent à la même vitesse de graphe,
+\[
+v_+ \simeq v_\times \simeq 1.
+\]
+
+Après calibration des unités de graphe, cela correspond à
+\[
+v_+ = v_\times = c.
+\]
+
+\section{Modes hessiens de l'action BuP}
+
+Pour aller au-delà des perturbations cinématiques, nous linéarisons une action
+BuP effective autour d'un graphe d'équilibre \(W_{ij}^{(0)}\). Nous utilisons la
+déformation à champ de nœuds contrôlée
+\[
+W_{ij}(\phi) = W_{ij}^{(0)} \exp\left(\frac{\phi_i + \phi_j}{2}\right).
+\]
+
+Le hessien est
+\[
+H_{ab} = \left. \frac{\partial^2 S_{\rm BuP}}{\partial \phi_a \partial \phi_b} \right|_{\phi = 0}.
+\]
+
+Les modes propres satisfont
+\[
+H \phi_n = \omega_n^2 \phi_n.
+\]
+
+Pour un graphe avec \(N = 121\) nœuds, le spectre hessien est strictement positif :
+\[
+\lambda_{\min} = 0{,}0475,
+\qquad
+\lambda_{\max} = 10{,}40,
+\]
+sans modes négatifs. Le graphe de fond est donc linéairement stable.
+
+Les modes bas obéissent à une relation de dispersion effective,
+\[
+\omega^2 \simeq c_{\rm graphe}^2 \, k^2 + m_{\rm eff}^2.
+\]
+
+Pour \(\eta_{\rm lisse} = 1{,}0\), l'ajustement donne
+\[
+c_{\rm graphe}^2 = 2{,}0289,
+\qquad
+m_{\rm eff}^2 = 0{,}0352,
+\qquad
+R^2 = 0{,}99962.
+\]
+Ainsi
+\[
+c_{\rm graphe} = 1{,}424.
+\]
+
+Un balayage du coefficient de rigidité \(\eta_{\rm lisse}\) donne :
+
+\[
+\begin{array}{c|c|c|c}
+\eta_{\rm lisse} & \text{modes négatifs} & R^2_{\rm disp} & c_{\rm graphe} \\
+\hline
+0{,}25 & 0 & 0{,}9948 & 0{,}728 \\
+0{,}35 & 0 & 0{,}9972 & 0{,}854 \\
+0{,}50 & 0 & 0{,}9985 & 1{,}015 \\
+0{,}75 & 0 & 0{,}9993 & 1{,}237 \\
+1{,}00 & 0 & 0{,}9996 & 1{,}424 \\
+1{,}25 & 0 & 0{,}9998 & 1{,}590 \\
+\end{array}
+\]
+
+La calibration naturelle est donc proche de
+\[
+\eta_{\rm lisse} \simeq 0{,}5,
+\]
+pour laquelle
+\[
+c_{\rm graphe} \simeq 1.
+\]
+
+\section{Tenseur d'émergence et secteur dynamique}
+
+Le régime einsteinien effectif est retrouvé lorsque le tenseur d'émergence BuP
+s'annule,
+\[
+\mathcal H_{\mu\nu}^{\rm BuP} = 0.
+\]
+
+Au-delà de la limite lisse, des secteurs supplémentaires peuvent devenir actifs :
+\[
+\mathcal H_{\mu\nu}^{\rm BuP}
+=
+\mathcal H_{\mu\nu}^{\rm spec}
++
+\mathcal H_{\mu\nu}^{\rm dim}
++
+\mathcal H_{\mu\nu}^{\rm nonlocal}
++
+\mathcal H_{\mu\nu}^{\rm topo}
++
+\mathcal H_{\mu\nu}^{\rm fini}
++
+\mathcal H_{\mu\nu}^{\rm dyn}.
+\]
+
+Le secteur dynamique est associé aux déviations de propagation :
+\[
+\mathcal H_{\mu\nu}^{\rm dyn} \neq 0
+\quad\Longleftrightarrow\quad
+c_{\rm graphe} \neq c.
+\]
+
+Dans le vide lisse de l'univers actuel, les observations exigent
+\[
+c_{\rm graphe} \simeq c.
+\]
+Ainsi, l'univers actuel est interprété comme étant proche du point fixe de
+propagation,
+\[
+\eta_{\rm lisse} = \eta_\ast,
+\qquad
+c_{\rm graphe} = c.
+\]
+
+\section{Implications cosmologiques exploratoires}
+
+Les résultats suggèrent une hypothèse exploratoire : la vitesse de propagation
+des ondes gravitationnelles pourrait sonder l'état informationnel de l'univers.
+
+Soit \(\rho_{\rm ent}(t)\) une densité d'intrication effective ou une inertie
+informationnelle. On peut alors écrire schématiquement
+\[
+c_{\rm GW}^2(t) \sim \frac{\eta_{\rm lisse}(t)}{\rho_{\rm ent}(t)}.
+\]
+
+Dans une phase primordiale fortement intriquée,
+\[
+\rho_{\rm ent}(t) \gg \rho_\ast,
+\]
+on pourrait avoir
+\[
+c_{\rm GW} < c.
+\]
+Cela correspondrait à une phase informationnelle dense près de l'origine de
+l'univers géométrique.
+
+Dans la phase lisse actuelle,
+\[
+\eta_{\rm lisse} = \eta_\ast,
+\qquad
+\rho_{\rm ent} = \rho_\ast,
+\]
+on obtient
+\[
+c_{\rm GW} = c.
+\]
+
+Dans une phase future diluée, la densité d'intrication pourrait devenir trop
+faible pour maintenir le même point fixe géométrique. Un \(c_{\rm GW} > c\)
+apparent ne représenterait pas une propagation superluminique ordinaire dans un
+espace-temps fixe, mais plutôt un symptôme de départ du régime géométrique lisse.
+
+Ainsi, l'histoire de \(c_{\rm GW}\) serait un observable de l'histoire de
+l'intrication cosmique.
+
+\section{Limitations}
+
+Le présent article est une preuve de concept. Plusieurs limitations subsistent.
+
+Premièrement, l'analyse hessienne utilise une réduction à champ de nœuds,
+\[
+W_{ij}(\phi) = W_{ij}^{(0)} \exp\left(\frac{\phi_i + \phi_j}{2}\right),
+\]
+plutôt que le hessien complet au niveau des arêtes
+\[
+\frac{\delta^2 S_{\rm BuP}}{\delta W_{ij} \delta W_{kl}}.
+\]
+
+Deuxièmement, les graphes de fond sont idéalisés. Des graphes astrophysiques ou
+cosmologiques réalistes nécessitent une construction dynamique à partir d'états
+quantiques microscopiques.
+
+Troisièmement, l'interprétation cosmologique de \(c_{\rm GW}(t)\) est exploratoire.
+Elle doit être traitée comme un canal de prédiction, pas comme un résultat établi.
+
+\section{Conclusion}
+
+Cet article développe une interprétation BuP des ondes gravitationnelles comme
+modes informationnels du graphe d'intrication. Les prototypes numériques et
+variationnels montrent que les perturbations du graphe peuvent reproduire les
+deux polarisations quadripolaires, se propager comme des modes progressifs,
+émerger de sources dynamiques localisées, et apparaître comme des modes propres
+hessiens d'une action BuP effective.
+
+La chaîne centrale est
+\[
+\delta W_{ij}
+\;\rightarrow\;
+\delta d_{ij}^{\rm ent}
+\;\rightarrow\;
+h_{\mu\nu}^{\rm eff}.
+\]
+
+Ainsi, les ondes gravitationnelles ne sont pas simplement des ondulations d'une
+métrique supposée. Dans BuP, elles sont des sondes du substrat
+information-géométrique à partir duquel l'espace-temps émerge.
+
+\end{document}
