@@ -16,7 +16,7 @@ $$ g_{\mu\nu} \;\rightarrow\; g_{\mu\nu} + h_{\mu\nu} $$
 
 Dans BuP, la perturbation est plus profonde. Elle part du graphe d'intrication :
 
-$$ W_{ij} = I(i : j) $$
+$$ W_{ij} = I(i:j) $$
 
 puis induit une perturbation de distance informationnelle, puis une perturbation métrique effective :
 
@@ -163,7 +163,7 @@ Un scan sur $\alpha_{\rm early}$ donne :
 | 0.70 | 1.000 | 1.230 |
 | 0.90 | 1.000 | 1.069 |
 
-Le maximum apparaît autour de :
+Dans ce modèle phénoménologique, le maximum apparaît autour de :
 
 $$ \alpha_{\rm early} \simeq 0{,}35 $$
 
@@ -253,4 +253,4 @@ Les résultats soutiennent l'idée que les ondes gravitationnelles BuP sont des 
 
 ## En une phrase
 
-> **Paper 22 montre que les ondes gravitationnelles sont des modes collectifs du graphe d'intrication, avec deux polarisations, une vitesse calibrée sur \(c\) dans la limite lisse, et une possible sonde de l'histoire cosmique de l'intrication. La signature v6 prédit : PTA inchangé, LISA amplifié, maximum à \(c_{\rm GW}^{\rm early} \simeq 0{,}35c\).**
+> **Paper 22 montre que les ondes gravitationnelles sont des modes collectifs du graphe d'intrication, avec deux polarisations, une vitesse calibrée sur \(c\) dans la limite lisse, et une possible sonde de l'histoire cosmique de l'intrication. La signature v6 donne : PTA inchangé, LISA amplifié, maximum à \(c_{\rm GW}^{\rm early} \simeq 0{,}35c\).**
