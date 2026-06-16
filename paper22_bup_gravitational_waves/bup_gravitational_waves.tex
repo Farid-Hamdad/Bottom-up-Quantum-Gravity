@@ -1,8 +1,10 @@
 \documentclass[11pt,a4paper]{article}
 
 \usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[french]{babel}
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{physics}
@@ -49,7 +51,7 @@ comme une perturbation collective du graphe d'intrication,
 \]
 Nous présentons une séquence de prototypes numériques et variationnels.
 Premièrement, des diagnostics à jauge fixée retrouvent les deux polarisations
-quadripolaires \(+\) et \(\times\). Deuxièmement, des perturbations progressives
+quadripolaires \(+\) et \(\times\). Deuxièmement, des perturbations propagatives
 imposées se propagent avec la vitesse de phase attendue. Troisièmement, des
 sources dynamiques localisées émettent des ondes de graphe avec
 \(v_+ \simeq v_\times \simeq 1\) en unités de graphe. Enfin, la linéarisation d'une
@@ -61,6 +63,14 @@ satisfaisant
 avec des ajustements de dispersion \(R^2 \simeq 0{,}999\). La vitesse de propagation
 est contrôlée par la rigidité informationnelle du graphe et peut être calibrée
 sur la vitesse physique de la lumière dans la limite einsteinienne lisse.
+
+Nous testons également une extension cosmologique exploratoire dans laquelle
+les ondes gravitationnelles primordiales traversent une phase fortement
+intriquée avec \(c_{\rm GW} < c\). Le modèle phénoménologique suggère une bande PTA
+inchangée mais une amplification dans la bande LISA, maximale pour
+\(\alpha_{\rm early} \simeq 0{,}35\), où accumulation temporelle et amortissement
+informationnel s'équilibrent.
+
 Ces résultats soutiennent l'interprétation des ondes gravitationnelles comme
 modes informationnels du réseau d'intrication.
 \end{abstract}
@@ -109,7 +119,7 @@ métrique préexistante. C'est une perturbation collective du graphe d'intricati
 Cet article teste cette idée en utilisant quatre prototypes successifs :
 \begin{enumerate}
     \item extraction à jauge fixée des deux polarisations ;
-    \item ondes de graphe progressives imposées ;
+    \item ondes de graphe propagatives imposées ;
     \item sources dynamiques localisées ;
     \item modes hessiens d'une action BuP effective.
 \end{enumerate}
@@ -158,9 +168,9 @@ L'analyse à jauge fixée sépare les deux polarisations et confirme que les
 perturbations du graphe BuP peuvent reproduire la structure quadripolaire
 habituelle des ondes gravitationnelles.
 
-\section{Ondes de graphe progressives}
+\section{Ondes de graphe propagatives}
 
-Le second prototype impose une perturbation progressive du graphe d'intrication,
+Le second prototype impose une perturbation propagative du graphe d'intrication,
 \[
 \delta W_{ij}(x,t) \sim A \cos(kx - \omega t).
 \]
@@ -176,7 +186,7 @@ propagatifs.
 
 \section{Émission par source dynamique}
 
-Le troisième prototype remplace l'onde progressive imposée par une source
+Le troisième prototype remplace l'onde propagative imposée par une source
 localisée oscillante. La réponse est mesurée sur des anneaux concentriques.
 
 Pour la polarisation plus, l'ajustement du temps d'arrivée donne
@@ -332,42 +342,206 @@ c_{\rm graphe} = c.
 
 Les résultats suggèrent une hypothèse exploratoire : la vitesse de propagation
 des ondes gravitationnelles pourrait sonder l'état informationnel de l'univers.
+Dans BuP, cette vitesse n'est pas introduite comme une constante primitive.
+Elle est associée aux modes collectifs du graphe d'intrication.
 
-Soit \(\rho_{\rm ent}(t)\) une densité d'intrication effective ou une inertie
-informationnelle. On peut alors écrire schématiquement
+Nous paramétrons une phase primordiale fortement intriquée par
 \[
-c_{\rm GW}^2(t) \sim \frac{\eta_{\rm lisse}(t)}{\rho_{\rm ent}(t)}.
+c_{\rm GW}(z) = c\,\alpha(z), \qquad \alpha(z) < 1,
+\]
+avec
+\[
+\alpha(z) \to 1
+\]
+dans le régime lisse actuel.
+
+Une transition simple est donnée par
+\[
+\alpha(z)
+=
+\alpha_{\rm early}
++
+\frac{1-\alpha_{\rm early}}
+{1+\left(z/z_{\rm transition}\right)^s}.
+\]
+À bas redshift, l'univers est proche du point fixe einsteinien :
+\[
+\alpha(z) \simeq 1, \qquad c_{\rm GW} = c.
+\]
+À très grand redshift, la phase fortement intriquée donne :
+\[
+\alpha(z) \simeq \alpha_{\rm early} < 1.
 \]
 
-Dans une phase primordiale fortement intriquée,
+Nous modélisons l'effet sur le fond stochastique primordial par une fonction de
+transfert phénoménologique :
 \[
-\rho_{\rm ent}(t) \gg \rho_\ast,
+\Omega_{\rm GW}^{\rm BuP}(f)
+=
+\Omega_{\rm GW}^{\rm GR}(f) \, T_\alpha(f) \, T_{\rm mass}(f).
 \]
-on pourrait avoir
+Le facteur \(T_\alpha\) est pris sous la forme
 \[
-c_{\rm GW} < c.
+T_\alpha(\alpha)
+=
+\alpha^{-p_{\rm accum}}
+\exp\left[
+-\tau_{\rm damp}
+\left(
+\frac{1}{\alpha}-1
+\right)
+\right].
 \]
-Cela correspondrait à une phase informationnelle dense près de l'origine de
-l'univers géométrique.
+Le premier terme représente l'accumulation du temps de propagation dans une
+phase d'intrication dense. Le second terme représente un amortissement
+informationnel effectif.
 
-Dans la phase lisse actuelle,
+Le facteur \(T_{\rm mass}\) représente un éventuel gap géométrique de basse
+fréquence :
 \[
-\eta_{\rm lisse} = \eta_\ast,
+T_{\rm mass}(f)
+=
+\frac{1}{1+\left(f_{\rm mass}/f\right)^q}.
+\]
+Les tests montrent qu'un gap trop élevé, par exemple
+\[
+f_{\rm mass}=10^{-6}\,{\rm Hz},
+\]
+supprime fortement la bande PTA. Pour préserver les PTA, il faut donc prendre
+\[
+f_{\rm mass}=0
+\]
+ou
+\[
+f_{\rm mass}\ll10^{-9}\,{\rm Hz}.
+\]
+
+Pour le choix représentatif
+\[
+\alpha_{\rm early}=0{,}35,
 \qquad
-\rho_{\rm ent} = \rho_\ast,
+z_{\rm transition}=10^{13},
+\qquad
+p_{\rm accum}=1,
+\qquad
+\tau_{\rm damp}=0{,}35,
+\qquad
+f_{\rm mass}=0,
+\]
+le modèle donne
+\[
+\alpha_{\rm PTA}=1,
+\qquad
+\alpha_{\rm LISA}\simeq0{,}35.
+\]
+La bande PTA reste inchangée par rapport au spectre de référence :
+\[
+\frac{\Omega_{\rm GW}^{\rm BuP}}
+{\Omega_{\rm GW}^{\rm GR}}
+\simeq
+1{,}00,
+\]
+tandis que la bande LISA est amplifiée :
+\[
+\frac{\Omega_{\rm GW}^{\rm BuP}}
+{\Omega_{\rm GW}^{\rm GR}}
+\simeq
+1{,}49.
+\]
+
+Un scan sur \(\alpha_{\rm early}\) donne :
+\[
+\begin{array}{c|c|c|c}
+\alpha_{\rm early}
+&
+\alpha_{\rm PTA}
+&
+\alpha_{\rm LISA}
+&
+\Omega_{\rm BuP}/\Omega_{\rm GR}\ {\rm dans\ LISA}
+\\
+\hline
+0{,}20 & 1{,}00 & 0{,}20 & 1{,}233 \\
+0{,}30 & 1{,}00 & 0{,}30 & 1{,}473 \\
+0{,}35 & 1{,}00 & 0{,}35 & 1{,}492 \\
+0{,}50 & 1{,}00 & 0{,}50 & 1{,}409 \\
+0{,}70 & 1{,}00 & 0{,}70 & 1{,}230 \\
+0{,}90 & 1{,}00 & 0{,}90 & 1{,}069 \\
+\end{array}
+\]
+
+La réponse LISA est donc non monotone. Le maximum apparaît près de
+\[
+\alpha_{\rm early}\simeq0{,}35.
+\]
+Ce maximum n'est pas accidentel. En effet, pour
+\[
+T_\alpha(\alpha)
+=
+\alpha^{-p}
+\exp\left[
+-\tau
+\left(
+\frac{1}{\alpha}-1
+\right)
+\right],
+\]
+on a
+\[
+\ln T_\alpha
+=
+-p\ln\alpha
+-
+\tau
+\left(
+\frac{1}{\alpha}-1
+\right).
+\]
+Le maximum vérifie
+\[
+\frac{d}{d\alpha}\ln T_\alpha=0,
+\]
+donc
+\[
+-\frac{p}{\alpha}
++
+\frac{\tau}{\alpha^2}
+=
+0.
+\]
+Ainsi
+\[
+\alpha_\star=\frac{\tau}{p}.
+\]
+Avec
+\[
+p=1,
+\qquad
+\tau=0{,}35,
 \]
 on obtient
 \[
-c_{\rm GW} = c.
+\alpha_\star=0{,}35,
 \]
+en accord avec le scan numérique.
 
-Dans une phase future diluée, la densité d'intrication pourrait devenir trop
-faible pour maintenir le même point fixe géométrique. Un \(c_{\rm GW} > c\)
-apparent ne représenterait pas une propagation superluminique ordinaire dans un
-espace-temps fixe, mais plutôt un symptôme de départ du régime géométrique lisse.
+Ce résultat suggère que la signature LISA optimale n'est pas obtenue pour une
+vitesse primordiale arbitrairement faible, mais pour une phase d'intrication
+intermédiaire où l'accumulation temporelle et l'amortissement informationnel
+s'équilibrent. Dans ce scénario, les PTA restent compatibles avec le régime
+lisse actuel, tandis que LISA pourrait sonder la mémoire d'une phase primordiale
+fortement intriquée.
 
-Ainsi, l'histoire de \(c_{\rm GW}\) serait un observable de l'histoire de
-l'intrication cosmique.
+Cette prédiction reste phénoménologique. Elle ne remplace pas un solveur complet
+des modes tensoriels cosmologiques. Elle fournit cependant un canal de test
+falsifiable pour l'hypothèse BuP :
+\[
+c_{\rm GW}^{\rm early}<c
+\quad
+\Longrightarrow
+\quad
+\text{signature spectrale dans la bande LISA}.
+\]
 
 \section{Limitations}
 
@@ -389,12 +563,16 @@ quantiques microscopiques.
 Troisièmement, l'interprétation cosmologique de \(c_{\rm GW}(t)\) est exploratoire.
 Elle doit être traitée comme un canal de prédiction, pas comme un résultat établi.
 
+En particulier, la relation effective entre fréquence observée, redshift
+d'émission et vitesse \(\alpha(z)\) est modélisée phénoménologiquement et devra
+être remplacée par une équation tensorielle cosmologique complète.
+
 \section{Conclusion}
 
 Cet article développe une interprétation BuP des ondes gravitationnelles comme
 modes informationnels du graphe d'intrication. Les prototypes numériques et
 variationnels montrent que les perturbations du graphe peuvent reproduire les
-deux polarisations quadripolaires, se propager comme des modes progressifs,
+deux polarisations quadripolaires, se propager comme des modes propagatifs,
 émerger de sources dynamiques localisées, et apparaître comme des modes propres
 hessiens d'une action BuP effective.
 
@@ -410,5 +588,34 @@ h_{\mu\nu}^{\rm eff}.
 Ainsi, les ondes gravitationnelles ne sont pas simplement des ondulations d'une
 métrique supposée. Dans BuP, elles sont des sondes du substrat
 information-géométrique à partir duquel l'espace-temps émerge.
+
+Enfin, une extension cosmologique exploratoire montre qu'une phase primordiale
+fortement intriquée, caractérisée par une vitesse effective réduite
+\[
+c_{\rm GW}^{\rm early}=c\,\alpha_{\rm early},
+\]
+peut laisser une empreinte dans le fond stochastique d'ondes gravitationnelles.
+Pour \(\alpha_{\rm early}=0{,}35\), le modèle laisse la bande PTA inchangée par
+rapport au spectre de référence,
+\[
+\Omega_{\rm BuP}/\Omega_{\rm GR}\simeq1,
+\]
+tout en produisant une amplification LISA
+\[
+\Omega_{\rm BuP}/\Omega_{\rm GR}\simeq1{,}49.
+\]
+Le scan de \(\alpha_{\rm early}\) montre un maximum près de
+\[
+\alpha_{\rm early}=0{,}35,
+\]
+en accord avec l'estimation analytique
+\[
+\alpha_\star=\tau_{\rm damp}/p_{\rm accum}.
+\]
+Cette prédiction reste exploratoire, mais elle fournit un canal observationnel
+clair pour tester l'hypothèse d'une phase primordiale fortement intriquée.
+
+Les travaux futurs étendront ces outils pour résoudre les régimes d'interaction
+non linéaires et explorer la cosmologie primordiale du graphe.
 
 \end{document}
