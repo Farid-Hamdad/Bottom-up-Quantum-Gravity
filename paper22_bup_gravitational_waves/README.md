@@ -1,256 +1,503 @@
-# Paper 22 — Ondes gravitationnelles dans BuP
+# Paper 22 — Ondes gravitationnelles BuP
 
-## Titre
+**Bottom-Up Quantum Gravity — Modes informationnels du graphe d’intrication**
 
-**Ondes gravitationnelles dans BuP : modes informationnels du graphe d'intrication**
+Ce dossier contient le secteur « ondes gravitationnelles » de la théorie **Bottom-Up Quantum Gravity (BuP)**.
 
----
+L’objectif du papier est d’étudier comment des modes tensoriels de type ondes gravitationnelles émergent à partir de perturbations du graphe d’intrication
 
-## Objectif
+```math
+W_{ij}=I(i:j),
+```
 
-Ce papier étudie les ondes gravitationnelles dans le cadre de la gravité quantique Bottom-Up (BuP).
+plutôt qu’à partir d’une métrique fondamentale de l’espace-temps.
 
-Dans la relativité générale, une onde gravitationnelle est décrite comme une perturbation de la métrique :
+Dans BuP, la métrique est reconstruite à partir de la structure informationnelle de l’état quantique. Les ondes gravitationnelles sont donc interprétées comme des excitations collectives du graphe d’intrication.
 
-$$ g_{\mu\nu} \;\rightarrow\; g_{\mu\nu} + h_{\mu\nu} $$
+La chaîne dynamique finale établie dans ce papier est :
 
-Dans BuP, la perturbation est plus profonde. Elle part du graphe d'intrication :
+```math
+S_{\rm flux}
+\rightarrow
+J_e(t)
+\rightarrow
+J_n(t)
+\rightarrow
+q_n(t)
+\rightarrow
+\delta W_{ij}(t)
+\rightarrow
+h_{\mu\nu}^{\rm eff}.
+```
 
-$$ W_{ij} = I(i:j) $$
-
-puis induit une perturbation de distance informationnelle, puis une perturbation métrique effective :
-
-$$ \delta W_{ij} \;\rightarrow\; \delta d_{ij}^{\rm ent} \;\rightarrow\; \delta g_{\mu\nu}^{\rm eff} \;\rightarrow\; h_{\mu\nu}^{\rm eff} $$
-
-Ainsi, les ondes gravitationnelles BuP sont interprétées comme des **modes collectifs informationnels** du réseau d'intrication.
-
----
-
-## Résumé des prototypes numériques
-
-### v2 — Polarisations \(+\) et \(\times\)
-
-**Objectif :** vérifier que les deux polarisations gravitationnelles peuvent être reconstruites comme modes quadrupolaires de la perturbation du graphe.
-
-**Résultat :** les deux modes sont séparés proprement dans une jauge fixe.
-
-$$ \delta W_{ij} \;\rightarrow\; q_+(t),\; q_\times(t) $$
+Ce résultat montre que BuP ne se contente pas de supporter des modes de type ondes gravitationnelles : la théorie les génère dynamiquement à partir de la source émergente de flux de matière.
 
 ---
 
-### v3 — Propagation imposée
+## Statut du dossier
 
-**Objectif :** imposer une perturbation de type onde plane :
+Ce dossier contient deux étapes du développement de Paper 22 :
 
-$$ \delta W_{ij}(x,t) \sim A \cos(kx - \omega t) $$
+1. **Prototype historique avec hessien nodal limité**
+2. **Secteur final avec vrai hessien d’arêtes**
 
-et vérifier que le mode quadrupolaire se propage avec le bon nombre d'onde.
-
-**Résultat :** la pente de phase reconstruite vérifie :
-
-$$ \frac{k_{\rm fit}}{k_{\rm input}} \simeq 1 $$
+Le secteur historique est conservé pour reproductibilité. Les résultats finaux de Paper 22 sont ceux du vrai hessien d’arêtes, correspondant aux scripts v10–v17.
 
 ---
 
-### v4 — Source dynamique locale
+## 1. Prototype historique : hessien nodal limité
 
-**Objectif :** remplacer l'onde imposée par une source locale oscillante du graphe.
+La première implémentation utilisait une réduction en champ nodal :
 
-**Résultat pour la polarisation \(+\) :**
+```math
+W_{ij}(\phi)=W_{ij}^{(0)}
+\exp\left(\frac{\phi_i+\phi_j}{2}\right),
+```
 
-$$ v_+^{\rm arrivée} = 1{,}0036 \qquad \text{et} \qquad R^2_{\rm arrivée} = 0{,}99993 $$
+avec une perturbation scalaire (\phi_i) par nœud.
 
-**Résultat pour la polarisation \(\times\) :**
+Cette réduction donne un hessien nodal :
 
-$$ v_\times^{\rm arrivée} = 1{,}0036 \qquad \text{et} \qquad R^2_{\rm arrivée} = 0{,}99980 $$
+```math
+H_{ij}
+=
+\frac{\partial^2 S_{\rm BuP}}{\partial \phi_i \partial \phi_j}.
+```
 
-**Conclusion :**
+Elle a permis de montrer que BuP supporte des modes hessiens de type onde, avec une relation de dispersion :
 
-$$ v_+ \simeq v_\times \simeq 1 $$
+```math
+\omega^2\simeq c_{\rm graph}^2 k^2+m_{\rm eff}^2.
+```
 
-Après calibration des unités du graphe :
+Cette étape est conservée comme test préliminaire de compatibilité.
 
-$$ v_+ = v_\times = c $$
+Cependant, la réduction nodale possède deux limites :
 
----
+* elle tronque les vrais degrés de liberté d’arêtes du graphe d’intrication ;
+* elle ne ferme pas la chaîne dynamique matière (\rightarrow) onde.
 
-### v5 — Modes propres du Hessien de l'action BuP
+Emplacement recommandé :
 
-**Objectif :** passer d'une simulation cinématique à une dynamique dérivée de l'action effective.
-
-Cette étape reste une linéarisation effective : elle utilise une réduction nodale \(\phi_i\), pas encore le Hessien complet en variables d'arêtes.
-
-On linéarise autour d'un graphe d'équilibre : $W_{ij}^{(0)}$.
-
-On introduit une déformation nodale :
-
-$$ W_{ij}(\phi) = W_{ij}^{(0)} \exp\left(\frac{\phi_i + \phi_j}{2}\right) $$
-
-Puis on calcule le Hessien :
-
-$$ H_{ab} = \left. \frac{\partial^2 S_{\rm BuP}}{\partial \phi_a \partial \phi_b} \right|_{\phi = 0} $$
-
-Les modes propres vérifient :
-
-$$ H \phi_n = \omega_n^2 \phi_n $$
-
-**Résultat :**
-
-$$ \omega^2 \simeq c_{\rm graphe}^2 \, k^2 + m_{\rm eff}^2 $$
-
-Pour $\eta_{\rm lisse} = 1{,}0$ :
-
-$$ c_{\rm graphe} = 1{,}424 \qquad \text{et} \qquad R^2 = 0{,}99962 $$
-
-Un scan de $\eta_{\rm lisse}$ montre que le point naturel :
-
-$$ \eta_{\rm lisse} \simeq 0{,}5 $$
-
-donne :
-
-$$ c_{\rm graphe} = 1{,}015 \qquad \text{et} \qquad R^2 = 0{,}99855 $$
-
-**Ainsi, la vitesse de propagation est contrôlée par la rigidité informationnelle du graphe.**
+```text
+scripts/legacy/
+results/legacy_v5_node_hessian/
+figures/legacy_v5/
+```
 
 ---
 
-### v6 — Empreinte primordiale phénoménologique d'une vitesse réduite \(c_{\rm GW} < c\)
+## 2. Secteur final : vrai hessien d’arêtes
 
-**Objectif :** tester l'hypothèse selon laquelle les ondes gravitationnelles primordiales ont traversé une phase de l'univers fortement intriquée, dans laquelle la vitesse effective des modes tensoriels était réduite :
+L’implémentation finale utilise des variables d’arêtes normalisées :
 
-$$ c_{\rm GW}(z) = c\,\alpha(z), \qquad \alpha(z) < 1 $$
+```math
+x_e=\frac{\delta W_e}{\sqrt{W_e^{(0)}}},
+```
 
-à très grand redshift, puis :
+où (e=(i,j)) parcourt les arêtes du graphe d’intrication.
 
-$$ \alpha(z) \to 1 $$
+L’équation dynamique est :
 
-dans le régime lisse actuel.
+```math
+\ddot{x}_e+\gamma\dot{x}_e+\sum_f K_{ef}x_f=J_e(t),
+```
 
-Le modèle phénoménologique calcule un spectre stochastique modifié :
+où (K_{ef}) est le hessien dans le secteur des variables d’arêtes de l’action effective BuP, et (J_e(t)) est la projection de la source émergente (S_{\rm flux}) sur les arêtes du graphe.
 
-$$ \Omega_{\rm GW}^{\rm BuP}(f) = \Omega_{\rm GW}^{\rm GR}(f) \, T_\alpha(f) \, T_{\rm mass}(f) $$
+En décomposant sur les modes propres du hessien :
+
+```math
+\ddot{q}_n+\gamma\dot{q}_n+\omega_n^2 q_n=J_n(t).
+```
+
+L’observable numérique centrale est la corrélation modale :
+
+```math
+\mathrm{corr}(|J_n|,q_n^{\rm peak}).
+```
+
+---
+
+## Résultats numériques principaux
+
+### v10 — Génération dynamique par vrai hessien d’arêtes
+
+Meilleur run de génération haut-(k) :
+
+```math
+\eta_{\rm edge}=0.75,
+\qquad
+\text{source-width}=0.12,
+\qquad
+\text{pulse-}\sigma=0.25.
+```
+
+Résultats :
+
+```math
+\overline{\mathrm{corr}}(|J_n|,q_n^{\rm peak})
+=
+0.999718,
+```
+
+```math
+\overline{E}_{\rm low25}=0.006216,
+```
+
+```math
+\overline{k}_{\rm weighted}=4.1556.
+```
+
+Ce résultat valide la génération dynamique des modes du hessien d’arêtes par la source de flux BuP.
+
+---
+
+### v12 — Scaling en taille finie à (\eta_{\rm edge}=1)
+
+Le point Einstein calibré a été testé pour :
+
+```math
+N=121,\ 256,\ 400,\ 625.
+```
+
+| (N) | (c_{\rm edge}) |   (v_g) | (R^2_{\rm disp}) | corrélation moyenne |
+| --: | -------------: | ------: | ---------------: | ------------------: |
+| 121 |       1.000020 | 0.99995 |              1.0 |            0.999806 |
+| 256 |       1.000008 | 0.99998 |              1.0 |            0.999454 |
+| 400 |       1.000003 | 0.99998 |              1.0 |            0.994903 |
+| 625 |       0.999999 | 0.99998 |              1.0 |            0.975093 |
+
+Le mécanisme de génération reste robuste jusqu’à (N=625).
+
+---
+
+### v13–v14 — Analyse du gap de masse
+
+L’offset résiduel
+
+```math
+m_{\rm eff}^2\simeq2\times10^{-3}
+```
+
+a été testé contre des effets de discrétisation et de volume fini.
+
+Le scan à (N) fixé et densité variable montre que le gap ne disparaît pas lorsque le pas effectif (a) varie.
+
+Le scan à densité fixée et volume variable donne :
+
+```math
+m_{\rm eff}^2(L)
+=
+m_0^2+\frac{B}{L^2},
+```
+
+avec :
+
+```math
+m_0^2\simeq2.08\times10^{-3}.
+```
+
+Cela indique que le gap n’est pas un simple artefact de densité locale ni un pur effet infrarouge de volume fini dans la plage testée.
+
+---
+
+### v15–v16 — Origine spectrale du gap résiduel
+
+Le gap résiduel corrèle fortement avec la première valeur propre non nulle du laplacien normalisé d’intrication :
+
+```math
+\lambda_1(\mathcal L_{\rm norm}).
+```
+
+La loi ajustée est :
+
+```math
+m_{\rm eff}^2
+=
+m_0^2
+\left(
+1-\frac{\lambda_1(\mathcal L_{\rm norm})}{\lambda_*}
+\right),
+```
+
+avec :
+
+```math
+m_0^2\simeq2.03\times10^{-3},
+\qquad
+\lambda_*\simeq0.723.
+```
+
+Ce résultat suggère que le gap résiduel du hessien d’arêtes est contrôlé par un déficit spectral infrarouge relatif du graphe d’intrication.
+
+---
+
+### v17 — Calibration LVK
+
+La vitesse des modes vérifie :
+
+```math
+c_{\rm edge}^2\simeq\eta_{\rm edge}.
+```
+
+Un scan local autour de (\eta_{\rm edge}=1) donne :
+
+```math
+\frac{dc_{\rm edge}}{d\eta_{\rm edge}}
+\bigg|_{\eta=1}
+\simeq0.5.
+```
+
+Donc :
+
+```math
+\frac{\delta c_{\rm GW}}{c}
+\simeq
+\frac12
+\frac{\delta\eta_{\rm edge}}{\eta_*}.
+```
+
+La contrainte LVK :
+
+```math
+\left|\frac{c_{\rm GW}}{c}-1\right|
+<
+5\times10^{-16}
+```
+
+se traduit alors par :
+
+```math
+\left|
+\frac{\eta_{\rm edge}}{\eta_*}-1
+\right|
+\lesssim10^{-15}.
+```
+
+Dans BuP, cette condition est interprétée comme une calibration du point fixe géométrique, et non comme un ajustement libre.
+
+---
+
+## Structure finale du point fixe
+
+Paper 22 identifie une double condition critique :
+
+```math
+\eta_{\rm edge}=\eta_*,
+\qquad
+\lambda_1(\mathcal L_{\rm norm})=\lambda_*.
+```
+
+À ce point :
+
+```math
+c_{\rm GW}=c,
+\qquad
+m_{\rm eff}^2=0.
+```
 
 Avec :
 
-$$ T_\alpha(\alpha) = \alpha^{-p_{\rm accum}} \exp\left[ -\tau_{\rm damp} \left( \frac{1}{\alpha} - 1 \right) \right] $$
+```math
+\eta_*=1,
+\qquad
+\lambda_*\simeq0.723.
+```
 
-Le premier facteur représente l'accumulation du temps de propagation dans une phase d'intrication dense. Le second facteur représente un amortissement informationnel possible.
-
-**Résultat principal pour :**
-
-$$ \alpha_{\rm early} = 0{,}35, \qquad z_{\rm transition} = 10^{13}, \qquad \tau_{\rm damp} = 0{,}35, \qquad f_{\rm mass} = 0 $$
-
-on obtient :
-
-$$ \frac{\Omega_{\rm GW}^{\rm BuP}}{\Omega_{\rm GW}^{\rm GR}} = 1{,}00 $$
-
-dans la bande PTA, mais :
-
-$$ \frac{\Omega_{\rm GW}^{\rm BuP}}{\Omega_{\rm GW}^{\rm GR}} \simeq 1{,}49 $$
-
-dans la bande LISA.
-
-Ainsi, dans ce modèle phénoménologique, le scénario BuP laisse la bande PTA inchangée tout en produisant une signature testable dans la bande LISA.
-
-Un scan sur $\alpha_{\rm early}$ donne :
-
-| $\alpha_{\rm early}$ | PTA ratio | LISA ratio |
-|---:|---:|---:|
-| 0.20 | 1.000 | 1.233 |
-| 0.30 | 1.000 | 1.473 |
-| 0.35 | 1.000 | 1.492 |
-| 0.50 | 1.000 | 1.409 |
-| 0.70 | 1.000 | 1.230 |
-| 0.90 | 1.000 | 1.069 |
-
-Dans ce modèle phénoménologique, le maximum apparaît autour de :
-
-$$ \alpha_{\rm early} \simeq 0{,}35 $$
-
-Ce maximum vient de l'équilibre entre l'accumulation temporelle et l'amortissement informationnel. Pour :
-
-$$ T_\alpha(\alpha) = \alpha^{-p} \exp\left[-\tau\left(\frac{1}{\alpha}-1\right)\right] $$
-
-le maximum vérifie :
-
-$$ \alpha_\star = \frac{\tau}{p} $$
-
-Avec :
-
-$$ p = 1, \qquad \tau = 0{,}35 $$
-
-on obtient :
-
-$$ \alpha_\star = 0{,}35 $$
-
-La signature LISA optimale n'apparaît donc pas pour une vitesse arbitrairement faible, mais pour une phase fortement intriquée intermédiaire où mémoire et amortissement sont équilibrés.
+Ce point définit le **point fixe tensoriel BuP–Einstein**.
 
 ---
 
-## Interprétation physique
+## Lien avec Paper 21 — Point fixe SLACS
 
-Dans BuP, une onde gravitationnelle n'est pas primitivement une ondulation d'un espace-temps déjà donné. C'est une **onde informationnelle du graphe d'intrication**, dont la projection géométrique est une onde de courbure.
+Paper 21 correspond au papier **SLACS fixed point**.
 
-$$ \delta W_{ij} \;\rightarrow\; \delta d_{ij}^{\rm ent} \;\rightarrow\; h_{\mu\nu}^{\rm eff} $$
+Paper 22 correspond au papier **ondes gravitationnelles BuP**.
 
-Le graviton BuP n'est donc pas une particule fondamentale. Il est interprété comme le **quantum d'un mode collectif du réseau d'intrication**.
+Les deux papiers sont distincts, mais connectés.
 
----
+Paper 21 a identifié un point fixe observationnel candidat autour de :
 
-## Prédictions exploratoires
+```math
+\log M_\star\simeq11.6,
+```
 
-Dans la limite lisse actuelle, le graphe est au point fixe Einstein :
+où plusieurs signaux SLACS convergent :
 
-$$ c_{\rm graphe} = c $$
+```math
+C_{\rm obs}=0,
+```
 
-Des écarts éventuels :
+```math
+\Phi_{\rm BuP}>\log M_\star,
+```
 
-$$ c_{\rm graphe} \neq c $$
+```math
+\alpha_{\rm eff}\simeq1.
+```
 
-seraient des signatures hors limite lisse, associées à un secteur dynamique du tenseur d'émergence :
+Paper 22 ajoute le secteur tensoriel dynamique :
 
-$$ \mathcal H_{\mu\nu}^{\rm dyn} \neq 0 $$
+```math
+c_{\rm GW}=c,
+\qquad
+m_{\rm eff}^2=0.
+```
 
-Une hypothèse exploratoire est que la vitesse effective des ondes gravitationnelles pourrait sonder l'histoire informationnelle de l'univers :
+Ensemble, ces résultats suggèrent une convergence quadruple vers un point fixe BuP–Einstein.
 
-$$ c_{\rm GW}^2(t) \sim \frac{\eta_{\rm lisse}(t)}{\rho_{\rm ent}(t)} $$
-
-| Phase | Densité d'intrication | Vitesse $c_{\rm GW}$ |
-|-------|----------------------|---------------------|
-| Univers primordial (fortement intriqué) | $\rho_{\rm ent} \gg \rho_\ast$ | $c_{\rm GW} < c$ |
-| Univers actuel (lisse) | $\rho_{\rm ent} = \rho_\ast$ | $c_{\rm GW} = c$ |
-| Univers futur (dilué) | $\rho_{\rm ent} \ll \rho_\ast$ | $c_{\rm GW} > c$ (apparent) |
-
-Cette dernière possibilité ne doit pas être comprise comme une superluminalité ordinaire dans un espace-temps fixe, mais comme une **signature de perte progressive de cohérence géométrique**.
-
----
-
-## Statut
-
-Ce papier fournit une **preuve de concept numérique et variationnelle** :
-
-- **v2** : extraction des polarisations ;
-- **v3** : propagation imposée ;
-- **v4** : source dynamique locale ;
-- **v5** : modes propres du Hessien de l'action BuP effective ;
-- **v6** : empreinte primordiale phénoménologique d'une vitesse réduite et signature LISA/PTA.
-
-Les résultats soutiennent l'idée que les ondes gravitationnelles BuP sont des **modes collectifs propagatifs du graphe d'intrication**, et que leur vitesse peut sonder l'histoire informationnelle de l'univers.
+Cette liaison est interprétée comme une cross-validation candidate, pas comme une preuve d’universalité.
 
 ---
 
-## Limites
+## Organisation recommandée du dossier
 
-| Limitation | Explication |
-|------------|-------------|
-| v5 utilise une réduction nodale | Non encore le Hessien complet en variables d'arêtes $W_{ij}$ |
-| Graphes idéalisés | Les simulations sont effectuées sur des graphes simples |
-| Calibration effective | $c_{\rm graphe} = c$ est calibré, pas dérivé *ab initio* |
-| Cosmologie exploratoire | Les prédictions sur $c_{\rm GW}(t)$ sont phénoménologiques |
-| Dérivation complète nécessaire | Il faudrait le Hessien edge-level : $\displaystyle \frac{\delta^2 S_{\rm BuP}}{\delta W_{ij}\,\delta W_{kl}}$ |
+```text
+papers/paper22_bup_gravitational_waves/
+├── README.md
+├── main.tex
+├── scripts/
+│   ├── legacy/
+│   │   └── bup_gw_hessian_modes_v5.py
+│   └── true_edge/
+│       ├── bup_gw_true_edge_hessian_v10.py
+│       ├── scan_true_edge_hessian_v10.py
+│       ├── scan_finite_size_true_edge_hessian_v12_eta1_fix.py
+│       ├── scan_mass_gap_v13.py
+│       ├── scan_fixed_density_mass_gap_v14.py
+│       ├── correlate_mass_gap_laplacian_v15.py
+│       ├── test_relative_spectral_gap_v16.py
+│       └── scan_lvk_eta_calibration_v17.py
+├── results/
+│   ├── legacy_v5_node_hessian/
+│   ├── true_edge_hessian_v10/
+│   ├── scan_true_edge_hessian_v10/
+│   ├── finite_size_true_edge_hessian_v12_eta1/
+│   ├── mass_gap_v13_fixedN_density/
+│   ├── mass_gap_v14_fixed_density/
+│   ├── mass_gap_v15_laplacian_corr_combined/
+│   ├── mass_gap_v16_relative_spectral/
+│   └── lvk_eta_calibration_v17_fine/
+├── figures/
+│   ├── legacy_v5/
+│   ├── true_edge_hessian/
+│   ├── finite_size/
+│   ├── mass_gap/
+│   └── lvk_calibration/
+└── archive/
+```
 
 ---
 
-## En une phrase
+## Commandes de reproduction
 
-> **Paper 22 montre que les ondes gravitationnelles sont des modes collectifs du graphe d'intrication, avec deux polarisations, une vitesse calibrée sur \(c\) dans la limite lisse, et une possible sonde de l'histoire cosmique de l'intrication. La signature v6 donne : PTA inchangé, LISA amplifié, maximum à \(c_{\rm GW}^{\rm early} \simeq 0{,}35c\).**
+### v17 — Calibration LVK
+
+```bash
+cd ~/bottomup
+
+python3 papers/paper22_bup_gravitational_waves/scripts/true_edge/scan_lvk_eta_calibration_v17.py \
+  --v10-script papers/paper22_bup_gravitational_waves/scripts/true_edge/bup_gw_true_edge_hessian_v10.py \
+  --eta-edge-list 0.999,0.9995,0.9999,1.0,1.0001,1.0005,1.001 \
+  --N-side 11 \
+  --extent 1.0 \
+  --source-width 0.12 \
+  --pulse-sigma 0.25 \
+  --output-dir papers/paper22_bup_gravitational_waves/results/lvk_eta_calibration_v17_fine
+```
+
+### v15 — Corrélation avec le gap spectral
+
+```bash
+cd ~/bottomup
+
+python3 papers/paper22_bup_gravitational_waves/scripts/true_edge/correlate_mass_gap_laplacian_v15.py \
+  --summary-csv papers/paper22_bup_gravitational_waves/results/mass_gap_v13_fixedN_density/results/mass_gap_v13_summary.csv \
+  --summary-csv papers/paper22_bup_gravitational_waves/results/mass_gap_v14_fixed_density/results/mass_gap_v14_summary.csv \
+  --output-dir papers/paper22_bup_gravitational_waves/results/mass_gap_v15_laplacian_corr_combined
+```
+
+### v12 — Scan en taille finie à (\eta_{\rm edge}=1)
+
+```bash
+cd ~/bottomup
+
+python3 papers/paper22_bup_gravitational_waves/scripts/true_edge/scan_finite_size_true_edge_hessian_v12_eta1_fix.py \
+  --v10-script papers/paper22_bup_gravitational_waves/scripts/true_edge/bup_gw_true_edge_hessian_v10.py \
+  --N-side-list 11,16,20,25 \
+  --eta-edge 1.0 \
+  --source-width 0.12 \
+  --pulse-sigma 0.25 \
+  --skip-existing \
+  --output-dir papers/paper22_bup_gravitational_waves/results/finite_size_true_edge_hessian_v12_eta1
+```
+
+---
+
+## Limitations
+
+Le vrai hessien d’arêtes utilisé ici est le hessien du secteur effectif en variables d’arêtes de l’action BuP. Un hessien complet par différences finies de toute l’action spectrale microscopique sur toutes les variables d’arêtes reste une extension future.
+
+Les scans en taille finie couvrent (N=121) à (N=625). Des graphes plus grands seront nécessaires pour tester plus fortement la limite continue.
+
+La loi spectrale :
+
+```math
+m_{\rm eff}^2
+=
+m_0^2
+\left(
+1-\frac{\lambda_1}{\lambda_*}
+\right)
+```
+
+a été validée numériquement sur les points v13+v14, mais l’universalité de (\lambda_*\simeq0.723) sur d’autres familles de graphes reste à tester.
+
+Le lien SLACS doit être interprété comme une cross-validation, pas comme une dérivation directe du point fixe tensoriel à partir des données de lentilles.
+
+---
+
+## Résumé
+
+Paper 22 transforme le prototype historique avec hessien nodal limité en un mécanisme dynamique avec vrai hessien d’arêtes.
+
+Le résultat final est :
+
+```math
+S_{\rm flux}
+\rightarrow
+J_e(t)
+\rightarrow
+J_n(t)
+\rightarrow
+q_n(t)
+\rightarrow
+\delta W_{ij}(t)
+\rightarrow
+h_{\mu\nu}^{\rm eff}.
+```
+
+Le régime tensoriel Einstein est atteint lorsque :
+
+```math
+\eta_{\rm edge}=\eta_*,
+\qquad
+\lambda_1(\mathcal L_{\rm norm})=\lambda_*,
+```
+
+avec :
+
+```math
+\eta_*=1,
+\qquad
+\lambda_*\simeq0.723.
+```
+
+À ce point fixe :
+
+```math
+c_{\rm GW}=c,
+\qquad
+m_{\rm eff}^2=0.
+```
