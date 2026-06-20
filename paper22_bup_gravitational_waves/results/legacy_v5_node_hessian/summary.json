@@ -1,0 +1,23 @@
+{
+  "N_side": 11,
+  "N_nodes": 121,
+  "N_edges_nonzero_directed": 1956,
+  "N_edges_undirected": 978,
+  "beta": 1.0,
+  "mu": 0.05,
+  "lambda_locality": 0.25,
+  "eta_smooth": 1.0,
+  "m2": 0.001,
+  "fd_eps": 0.0001,
+  "hessian_min_eigenvalue": 0.04753096043038241,
+  "hessian_max_eigenvalue": 10.40349973767212,
+  "hessian_negative_modes": 0,
+  "hessian_near_zero_modes": 0,
+  "hessian_positive_modes": 121,
+  "dispersion_fit_modes_used": 25,
+  "dispersion_slope_c2": 2.028923375845152,
+  "dispersion_intercept_mass2": 0.03517314372557929,
+  "dispersion_r2": 0.9996194757715433,
+  "c_graph_from_hessian": 1.424402813759209,
+  "interpretation": "Hessian modes support wave dynamics if Hessian is mostly positive and omega^2 correlates with graph k^2 for low modes."
+}
