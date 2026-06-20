@@ -1,0 +1,92 @@
+{
+  "global_linear_a": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "A_a"
+    ],
+    "coefficients": {
+      "m0_squared": 0.0017947518736933265,
+      "A_a": 0.00018892124987190145
+    },
+    "r2": 0.0,
+    "rmse": 0.00018308804090360028
+  },
+  "global_linear_invL2": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "B_invL2"
+    ],
+    "coefficients": {
+      "m0_squared": 0.0020768518922665313,
+      "B_invL2": -0.0006132592329388107
+    },
+    "r2": 0.9288760814383102,
+    "rmse": 4.882787404703728e-05
+  },
+  "global_linear_a_invL2": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "A_a",
+      "B_invL2"
+    ],
+    "coefficients": {
+      "m0_squared": 0.0020540918715271136,
+      "A_a": 0.0002162201970136652,
+      "B_invL2": -0.0006132592329388107
+    },
+    "r2": 0.9288760814383104,
+    "rmse": 4.882787404703726e-05
+  },
+  "global_power_a_offset": {
+    "ok": true,
+    "n_used": 4,
+    "m0_squared": 0.001370114483717242,
+    "A": 0.0007804156250909919,
+    "p": 0.25,
+    "rmse": 0.00018308804090360028,
+    "r2": 0.0
+  },
+  "fixed_density_linear_a": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "A_a"
+    ],
+    "coefficients": {
+      "m0_squared": 0.0017947518736933265,
+      "A_a": 0.00018892124987190145
+    },
+    "r2": 0.0,
+    "rmse": 0.00018308804090360028
+  },
+  "fixed_density_linear_invL2": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "B_invL2"
+    ],
+    "coefficients": {
+      "m0_squared": 0.0020768518922665313,
+      "B_invL2": -0.0006132592329388107
+    },
+    "r2": 0.9288760814383102,
+    "rmse": 4.882787404703728e-05
+  },
+  "fixed_density_power_a_offset": {
+    "ok": true,
+    "n_used": 4,
+    "m0_squared": 0.001370114483717242,
+    "A": 0.0007804156250909919,
+    "p": 0.25,
+    "rmse": 0.00018308804090360028,
+    "r2": 0.0
+  }
+}
