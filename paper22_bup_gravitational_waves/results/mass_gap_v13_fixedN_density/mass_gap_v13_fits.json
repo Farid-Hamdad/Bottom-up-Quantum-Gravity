@@ -1,0 +1,92 @@
+{
+  "global_linear_a": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "A_a"
+    ],
+    "coefficients": {
+      "m0_squared": 0.0016174654002933224,
+      "A_a": 0.0018840146061261012
+    },
+    "r2": 0.7416491323562762,
+    "rmse": 5.6967346329617035e-05
+  },
+  "global_linear_invL2": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "B_invL2"
+    ],
+    "coefficients": {
+      "m0_squared": 0.002018498474240902,
+      "B_invL2": -0.0006237419057452043
+    },
+    "r2": 0.9077671286387963,
+    "rmse": 3.4037988863520913e-05
+  },
+  "global_linear_a_invL2": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "A_a",
+      "B_invL2"
+    ],
+    "coefficients": {
+      "m0_squared": 0.002015854683526685,
+      "A_a": 1.3326630150285821e-05,
+      "B_invL2": -0.0006201419601478815
+    },
+    "r2": 0.9077739986659686,
+    "rmse": 3.4036721168719886e-05
+  },
+  "global_power_a_offset": {
+    "ok": true,
+    "n_used": 4,
+    "m0_squared": 0.0008382717818802715,
+    "A": 0.0017290409582398983,
+    "p": 0.25,
+    "rmse": 4.975128880078419e-05,
+    "r2": 0.8029544567133827
+  },
+  "fixed_N_density_linear_a": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "A_a"
+    ],
+    "coefficients": {
+      "m0_squared": 0.0016174654002933224,
+      "A_a": 0.0018840146061261012
+    },
+    "r2": 0.7416491323562762,
+    "rmse": 5.6967346329617035e-05
+  },
+  "fixed_N_density_linear_invL2": {
+    "ok": true,
+    "n_used": 4,
+    "labels": [
+      "m0_squared",
+      "B_invL2"
+    ],
+    "coefficients": {
+      "m0_squared": 0.002018498474240902,
+      "B_invL2": -0.0006237419057452043
+    },
+    "r2": 0.9077671286387963,
+    "rmse": 3.4037988863520913e-05
+  },
+  "fixed_N_density_power_a_offset": {
+    "ok": true,
+    "n_used": 4,
+    "m0_squared": 0.0008382717818802715,
+    "A": 0.0017290409582398983,
+    "p": 0.25,
+    "rmse": 4.975128880078419e-05,
+    "r2": 0.8029544567133827
+  }
+}
