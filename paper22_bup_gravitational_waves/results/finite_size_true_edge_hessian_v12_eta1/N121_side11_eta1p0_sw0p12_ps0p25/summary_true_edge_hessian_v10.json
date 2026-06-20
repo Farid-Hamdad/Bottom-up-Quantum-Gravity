@@ -1,0 +1,53 @@
+
+  "version": "v10_true_edge_hessian",
+  "N_side": 11,
+  "N_nodes": 121,
+  "N_edges": 978,
+  "eta_edge": 1.0,
+  "mass2": 0.0001,
+  "lambda_locality": 0.02,
+  "edge_width": 0.3,
+  "w_barrier": 0.0,
+  "n_modes_dyn": 500,
+  "dispersion_c_graph": 1.0000196508436583,
+  "dispersion_slope_c2": 1.0000393020734721,
+  "dispersion_intercept_mass2": 0.0023684399975246384,
+  "dispersion_r2": 0.999999996248919,
+  "plus": {
+    "modal_corr_absJ_qpeak": 0.999839176879922,
+    "low25_energy": 0.0038208866437439105,
+    "packet_v": 0.09070472173084068,
+    "packet_r2": 0.532935735307415,
+    "packet_valid": 10,
+    "spectral_stats": {
+      "total_modal_energy": 0.16088381699938506,
+      "low_mode_cut": 25,
+      "low_mode_energy_fraction": 0.0038208866437439105,
+      "mid_mode_energy_fraction": 0.8001152679394294,
+      "high_mode_energy_fraction": 0.1960638454168266,
+      "dominant_mode": 132,
+      "dominant_mode_k": 3.961400428076057,
+      "dominant_mode_energy_fraction": 0.5671215702339881,
+      "energy_weighted_k": 4.048296465066097
+    }
+  },
+  "cross": {
+    "modal_corr_absJ_qpeak": 0.9997727754432423,
+    "low25_energy": 0.010483732679245841,
+    "packet_v": 0.11465288523251206,
+    "packet_r2": 0.15436466090859657,
+    "packet_valid": 10,
+    "spectral_stats": {
+      "total_modal_energy": 0.1557916723262931,
+      "low_mode_cut": 25,
+      "low_mode_energy_fraction": 0.010483732679245841,
+      "mid_mode_energy_fraction": 0.6606112092804495,
+      "high_mode_energy_fraction": 0.32890505804030473,
+      "dominant_mode": 134,
+      "dominant_mode_k": 3.9748469644949753,
+      "dominant_mode_energy_fraction": 0.3532931744578353,
+      "energy_weighted_k": 4.221347732680343
+    }
+  },
+  "interpretation": "True edge-variable Hessian dynamics with spectral diagnostics. The packet fit is secondary; the main tests are dispersion, modal forcing response, and excited k-band distribution."
+}
