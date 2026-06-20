@@ -1,0 +1,224 @@
+{
+  "rows": [
+    {
+      "run": "fixed_N_density_N400_side20_extent0p7_a0p073684_eta1p0_sw0p12_ps0p25",
+      "family": "fixed_N_density",
+      "N_side": 20,
+      "N_nodes": 400,
+      "extent": 0.7,
+      "L": 1.4,
+      "a": 0.07368421052631578,
+      "invL2": 0.5102040816326532,
+      "eta_edge": 1.0,
+      "source_width": 0.12,
+      "pulse_sigma": 0.25,
+      "status": "ok",
+      "c_edge": 1.0000016666834417,
+      "meff2": 0.0016891758878666817,
+      "R2_disp": 0.9999999997438095,
+      "plus_corr": 0.930977878692822,
+      "cross_corr": 0.9457063410527491,
+      "mean_corr": 0.9383421098727855,
+      "plus_low25_energy": 0.5758494320503302,
+      "cross_low25_energy": 0.5807542958359627,
+      "mean_low25_energy": 0.5783018639431465,
+      "plus_k_weighted": 6.740146774879969,
+      "cross_k_weighted": 6.6697061173872925,
+      "mean_k_weighted": 6.704926446133631,
+      "plus_packet_v": NaN,
+      "cross_packet_v": 2.028519458322603,
+      "plus_packet_R2": 0.5433773140605676,
+      "cross_packet_R2": 0.006372478987294428,
+      "plus_group_velocity": 0.9999830760864925,
+      "cross_group_velocity": 0.9999826813429944
+    },
+    {
+      "run": "fixed_N_density_N400_side20_extent1p0_a0p105263_eta1p0_sw0p12_ps0p25",
+      "family": "fixed_N_density",
+      "N_side": 20,
+      "N_nodes": 400,
+      "extent": 1.0,
+      "L": 2.0,
+      "a": 0.10526315789473684,
+      "invL2": 0.25,
+      "eta_edge": 1.0,
+      "source_width": 0.12,
+      "pulse_sigma": 0.25,
+      "status": "ok",
+      "c_edge": 1.000002805944187,
+      "meff2": 0.0019059068768038604,
+      "R2_disp": 0.9999999995490311,
+      "plus_corr": 0.9948830735255483,
+      "cross_corr": 0.9949220040018343,
+      "mean_corr": 0.9949025387636913,
+      "plus_low25_energy": 0.0832912387155617,
+      "cross_low25_energy": 0.09358742490902457,
+      "mean_low25_energy": 0.08843933181229313,
+      "plus_k_weighted": 6.117665545286248,
+      "cross_k_weighted": 6.19963958090542,
+      "mean_k_weighted": 6.158652563095834,
+      "plus_packet_v": NaN,
+      "cross_packet_v": NaN,
+      "plus_packet_R2": 0.02728447377115606,
+      "cross_packet_R2": 0.06652695190192126,
+      "plus_group_velocity": 0.9999773445362332,
+      "cross_group_velocity": 0.9999780133810963
+    },
+    {
+      "run": "fixed_N_density_N400_side20_extent1p4_a0p147368_eta1p0_sw0p12_ps0p25",
+      "family": "fixed_N_density",
+      "N_side": 20,
+      "N_nodes": 400,
+      "extent": 1.4,
+      "L": 2.8,
+      "a": 0.14736842105263157,
+      "invL2": 0.1275510204081633,
+      "eta_edge": 1.0,
+      "source_width": 0.12,
+      "pulse_sigma": 0.25,
+      "status": "ok",
+      "c_edge": 1.0000134660397695,
+      "meff2": 0.0018903112982697624,
+      "R2_disp": 0.9999999980872328,
+      "plus_corr": 0.9998512258037314,
+      "cross_corr": 0.9998449281411845,
+      "mean_corr": 0.999848076972458,
+      "plus_low25_energy": 0.007676601283447789,
+      "cross_low25_energy": 0.005209031066183259,
+      "mean_low25_energy": 0.006442816174815524,
+      "plus_k_weighted": 4.769207762287417,
+      "cross_k_weighted": 4.769989027402663,
+      "mean_k_weighted": 4.7695983948450404,
+      "plus_packet_v": NaN,
+      "cross_packet_v": 0.11939180407867231,
+      "plus_packet_R2": 0.04353856216215912,
+      "cross_packet_R2": 0.5643343298423602,
+      "plus_group_velocity": 0.9999719153790767,
+      "cross_group_velocity": 0.9999719289880811
+    },
+    {
+      "run": "fixed_N_density_N400_side20_extent2p0_a0p210526_eta1p0_sw0p12_ps0p25",
+      "family": "fixed_N_density",
+      "N_side": 20,
+      "N_nodes": 400,
+      "extent": 2.0,
+      "L": 4.0,
+      "a": 0.21052631578947367,
+      "invL2": 0.0625,
+      "eta_edge": 1.0,
+      "source_width": 0.12,
+      "pulse_sigma": 0.25,
+      "status": "ok",
+      "c_edge": 1.0000223453192372,
+      "meff2": 0.001995885905732264,
+      "R2_disp": 0.9999999878841704,
+      "plus_corr": 0.9986870399559304,
+      "cross_corr": 0.9993792084246605,
+      "mean_corr": 0.9990331241902954,
+      "plus_low25_energy": 0.0009711576797268754,
+      "cross_low25_energy": 0.00016611050374439,
+      "mean_low25_energy": 0.0005686340917356327,
+      "plus_k_weighted": 3.088700914329764,
+      "cross_k_weighted": 3.270550845192002,
+      "mean_k_weighted": 3.179625879760883,
+      "plus_packet_v": 0.3976390511352845,
+      "cross_packet_v": 0.11916612178383867,
+      "plus_packet_R2": 0.17090291806404312,
+      "cross_packet_R2": 0.9155436074394436,
+      "plus_group_velocity": 0.9999177586906932,
+      "cross_group_velocity": 0.9999290642679968
+    }
+  ],
+  "fits": {
+    "global_linear_a": {
+      "ok": true,
+      "n_used": 4,
+      "labels": [
+        "m0_squared",
+        "A_a"
+      ],
+      "coefficients": {
+        "m0_squared": 0.0016174654002933224,
+        "A_a": 0.0018840146061261012
+      },
+      "r2": 0.7416491323562762,
+      "rmse": 5.6967346329617035e-05
+    },
+    "global_linear_invL2": {
+      "ok": true,
+      "n_used": 4,
+      "labels": [
+        "m0_squared",
+        "B_invL2"
+      ],
+      "coefficients": {
+        "m0_squared": 0.002018498474240902,
+        "B_invL2": -0.0006237419057452043
+      },
+      "r2": 0.9077671286387963,
+      "rmse": 3.4037988863520913e-05
+    },
+    "global_linear_a_invL2": {
+      "ok": true,
+      "n_used": 4,
+      "labels": [
+        "m0_squared",
+        "A_a",
+        "B_invL2"
+      ],
+      "coefficients": {
+        "m0_squared": 0.002015854683526685,
+        "A_a": 1.3326630150285821e-05,
+        "B_invL2": -0.0006201419601478815
+      },
+      "r2": 0.9077739986659686,
+      "rmse": 3.4036721168719886e-05
+    },
+    "global_power_a_offset": {
+      "ok": true,
+      "n_used": 4,
+      "m0_squared": 0.0008382717818802715,
+      "A": 0.0017290409582398983,
+      "p": 0.25,
+      "rmse": 4.975128880078419e-05,
+      "r2": 0.8029544567133827
+    },
+    "fixed_N_density_linear_a": {
+      "ok": true,
+      "n_used": 4,
+      "labels": [
+        "m0_squared",
+        "A_a"
+      ],
+      "coefficients": {
+        "m0_squared": 0.0016174654002933224,
+        "A_a": 0.0018840146061261012
+      },
+      "r2": 0.7416491323562762,
+      "rmse": 5.6967346329617035e-05
+    },
+    "fixed_N_density_linear_invL2": {
+      "ok": true,
+      "n_used": 4,
+      "labels": [
+        "m0_squared",
+        "B_invL2"
+      ],
+      "coefficients": {
+        "m0_squared": 0.002018498474240902,
+        "B_invL2": -0.0006237419057452043
+      },
+      "r2": 0.9077671286387963,
+      "rmse": 3.4037988863520913e-05
+    },
+    "fixed_N_density_power_a_offset": {
+      "ok": true,
+      "n_used": 4,
+      "m0_squared": 0.0008382717818802715,
+      "A": 0.0017290409582398983,
+      "p": 0.25,
+      "rmse": 4.975128880078419e-05,
+      "r2": 0.8029544567133827
+    }
+  }
+}
