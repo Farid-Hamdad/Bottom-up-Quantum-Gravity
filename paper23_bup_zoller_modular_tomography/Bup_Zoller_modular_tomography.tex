@@ -1,47 +1,433 @@
-# Paper 23 — BuP/Zoller Modular Tomography
+\documentclass[11pt,a4paper]{article}
 
-This folder contains the scientific paper connecting the BuP tomographic principle to the Zoller/Joshi 2023 trapped-ion entanglement data.
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{microtype}
 
-Core result:
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black
+}
 
-```math
+\title{
+\textbf{Tomographie modulaire expérimentale et géométrie quantique Bottom-Up}\\
+\large Un test BuP sur les données d'intrication de Zoller/Joshi 2023
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+La gravité quantique Bottom-Up (BuP) repose sur l'idée qu'une géométrie effective peut être reconstruite à partir d'un graphe d'intrication. Jusqu'ici, cette structure était principalement testée par des reconstructions phénoménologiques à grande échelle, notamment sur les courbes de rotation galactiques, les lentilles fortes et les modes gravitationnels émergents. Dans ce travail, nous montrons qu'une hypothèse structurelle centrale de BuP peut être testée directement sur table, à partir de données expérimentales de simulateur quantique.
+
+Nous réanalysons les données de Joshi et al. sur une chaîne XXZ de 51 ions piégés, où le hamiltonien d'intrication
+\[
+K_A=-\log\rho_A
+\]
+est appris expérimentalement pour des sous-systèmes allant jusqu'à 20 sites. Les coefficients modulaires locaux $\beta_j$ définissent une température modulaire
+\[
+T_{\rm mod}(j)=\frac{1}{\beta_j}.
+\]
+Nous montrons que ce profil agit comme un proxy mesurable de densité d'intrication de coupure :
+\[
 \rho_{\rm ent}^{\rm cut}(j)
+\propto
+T_{\rm mod}(j).
+\]
+
+Le test met en évidence trois résultats. Premièrement, les états fondamentaux présentent un profil $\beta_j$ fortement parabolique, compatible avec la forme CFT $j(L-j)$, et une température modulaire concentrée aux coupures. Deuxièmement, les états excités présentent une entropie de von Neumann linéaire en $L_A$, avec $R^2\simeq0.995$, et un profil modulaire beaucoup plus homogène, caractéristique d'une loi de volume. Troisièmement, la reconstruction directe de l'information mutuelle paire-à-paire montre que la densité pertinente n'est pas la somme globale $\sum_k I(j:k)$, mais la densité de coupure
+\[
+\rho_{\rm ent}^{\rm cut}(j)=\sum_{k\notin A}I(j:k),
+\]
+qui corrèle nettement mieux avec $1/\beta_j$ (Spearman $r_s=0.777$, contre $r_s=-0.088$ pour la somme globale naïve).
+
+Ces résultats fournissent un ancrage expérimental au principe tomographique BuP : la densité d'intrication utilisée pour reconstruire une géométrie effective possède un analogue mesurable dans un système quantique contrôlé. La distinction entre densité de coupure et densité globale constitue une correction conceptuelle précise de la prescription BuP originale.
+\end{abstract}
+
+%--------------------------------------------------------------------
+\section{Introduction}
+%--------------------------------------------------------------------
+
+Dans BuP, l'espace n'est pas postulé comme une variété fondamentale. Il est reconstruit à partir d'une structure informationnelle, typiquement un graphe pondéré d'intrication
+\[
+W_{ij}=I(i:j),
+\]
+où $I(i:j)$ désigne l'information mutuelle entre degrés de liberté élémentaires. Les distances, le laplacien d'intrication, les dimensions spectrales et les observables gravitationnelles émergent ensuite de ce graphe.
+
+Dans les papiers précédents du programme BuP, cette idée a été testée surtout de manière macroscopique. Les profils de matière galactique $\Sigma(R)$ permettaient de reconstruire un graphe effectif $W_{ij}^{\rm BuP}$, puis un laplacien d'intrication, et enfin des observables telles que les courbes de rotation, les lentilles ou les modes tensoriels émergents. Cette stratégie a fourni des résultats phénoménologiques encourageants, mais elle laissait ouvert un chaînon crucial : le graphe d'intrication BuP peut-il être relié à une tomographie expérimentale directe d'un état quantique réel ?
+
+Les expériences de Zoller, Joshi et collaborateurs sur simulateur quantique à ions piégés fournissent précisément ce chaînon. Leur protocole apprend un hamiltonien d'intrication
+\[
+K_A=-\log\rho_A
+\]
+pour des sous-systèmes d'une chaîne XXZ de 51 ions. Le hamiltonien appris prend la forme quasi-locale
+\[
+\widetilde H_A
 =
-\sum_{k\notin A} I(j:k)
+\sum_{j\in A}\beta_j h_j,
+\]
+où $h_j$ est le terme local du hamiltonien de réseau et $\beta_j$ joue le rôle d'une température inverse modulaire locale.
+
+L'objectif de ce papier est de traduire cette observation dans le langage BuP. Nous testons l'identification :
+\[
+\rho_{\rm ent}^{\rm mod}(j)
 \propto
 T_{\rm mod}(j)
 =
 \frac{1}{\beta_j}.
-```
+\]
+Puis nous comparons ce proxy modulaire avec une densité reconstruite depuis les données brutes :
+\[
+\rho_{\rm ent}^{\rm cut}(j)
+=
+\sum_{k\notin A}I(j:k).
+\]
 
-## Contents
+Le résultat principal est que la densité modulaire ne correspond pas à une somme globale brute de toute l'information mutuelle paire-à-paire. Elle correspond mieux à une densité de coupure, c'est-à-dire à l'intrication entre le sous-système $A$ et son extérieur.
 
-```text
-main.tex
-main.pdf
-scripts/
-results/
-  modular_profiles/
-  raw_mi/
-  fig1_fig3/
-figures/
-```
+%--------------------------------------------------------------------
+\section{Données et méthode}
+%--------------------------------------------------------------------
 
-## Scripts
+Nous utilisons les données expérimentales associées au travail de Joshi et al. sur une chaîne XXZ de $N=51$ ions $^{40}{\rm Ca}^+$. Le hamiltonien simulé est
+\[
+\hat H_{\rm XXZ}
+=
+J\sum_{j=1}^{N-1}
+\left(
+\hat S_j^x\hat S_{j+1}^x
++
+\hat S_j^y\hat S_{j+1}^y
++
+\Delta \hat S_j^z\hat S_{j+1}^z
+\right).
+\]
+Les données couvrent deux anisotropies,
+\[
+\Delta=1,
+\qquad
+\Delta=1.7,
+\]
+et deux familles d'états : états fondamentaux et états excités/chauffés.
 
-- `analyze_zoller_bup.py`: extracts modular profiles and tests `1/beta_j`.
-- `raw_pairwise_mi_test.py`: reconstructs pairwise mutual information from raw Pauli data.
-- `shadow_mi_test.py`: compares global, internal, and cut mutual-information densities.
-- `analyze_fig1_fig3_bup.py`: analyzes entropy scaling, MI decay, and disjoint-subsystem diagnostics.
+Les fichiers analysés fournissent :
+\begin{itemize}
+    \item les profils $\beta_j$ du hamiltonien d'intrication ;
+    \item les entropies de von Neumann $S_A^{\rm VN}(L_A)$ ;
+    \item les données de mutual information entre sous-systèmes disjoints ;
+    \item les fidélités de reconstruction avec et sans liens inter-sous-systèmes.
+\end{itemize}
 
-## Main Numerical Claims
+Les données brutes contiennent les bitstrings mesurés dans 243 bases de Pauli et l'historique des bases de mesure ion par ion, avec 200 shots par base. Nous reconstruisons les matrices réduites $\rho_i$ et $\rho_{ij}$ par inversion Pauli sur les mesures où les ions concernés sont dans la base appropriée, suivant le cadre des \emph{classical shadows}~\cite{Huang2020}. Pour chaque paire $(i,j)$,
+\[
+\rho_{ij}
+=
+\frac14
+\sum_{A,B\in\{I,X,Y,Z\}}
+\langle A_i B_j\rangle A\otimes B.
+\]
+Les matrices reconstruites sont projetées sur le cône des matrices densité positives de trace un avant calcul des entropies, afin de limiter les effets de bruit statistique.
 
-- Ground states: parabolic modular profiles compatible with CFT form `j(L-j)`.
-- Excited states: volume-law entropy with linear fits `R^2 ≈ 0.995`.
-- Naive global density `sum_k I(j:k)` does not match `1/beta_j`.
-- Cut density `sum_{k notin A} I(j:k)` correlates better with `1/beta_j`.
-- Disjoint-subsystem links improve reconstruction fidelity.
+L'information mutuelle paire-à-paire est ensuite calculée par
+\[
+I(i:j)
+=
+S_i+S_j-S_{ij}.
+\]
 
-## Data Note
+Nous comparons trois densités :
+\[
+\rho_{\rm all}(j)=\sum_k I(j:k),
+\]
+\[
+\rho_{\rm in}(j)=\sum_{k\in A}I(j:k),
+\]
+\[
+\rho_{\rm cut}(j)=\sum_{k\notin A}I(j:k).
+\]
+La prédiction BuP raffinée est que le profil modulaire $1/\beta_j$ doit être comparé à $\rho_{\rm cut}(j)$ plutôt qu'à $\rho_{\rm all}(j)$.
 
-The raw `.mat` files from Joshi et al. are not included here by default. Keep derived CSV/JSON summaries in `results/`, and document the original data source in the paper.
+%--------------------------------------------------------------------
+\section{Profil modulaire et température d'intrication}
+%--------------------------------------------------------------------
+
+Le premier diagnostic consiste à examiner directement les profils $\beta_j$. Pour les états fondamentaux, les données montrent une forme parabolique proche de la prédiction CFT
+\[
+\beta_j\sim j(L-j).
+\]
+La corrélation avec la parabole CFT est très élevée.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Dataset & Corrélation avec $j(L-j)$ & $T_{\rm edge}/T_{\rm center}$ & CV($\beta_j$) \\
+\midrule
+$\Delta=1$ GS & 0.9986 & 4.42 & 0.405 \\
+$\Delta=1$ ES & 0.9948 & 1.66 & 0.162 \\
+$\Delta=1.7$ GS & 0.9903 & 7.17 & 0.506 \\
+$\Delta=1.7$ ES & 0.9795 & 1.76 & 0.183 \\
+\bottomrule
+\end{tabular}
+\caption{Structure des profils modulaires mesurés. Le rapport $T_{\rm edge}/T_{\rm center}$ mesure la concentration de la température modulaire aux coupures.}
+\label{tab:beta_profiles}
+\end{table}
+
+La lecture BuP est directe. Dans les états fondamentaux, le profil $\beta_j$ est maximal au centre et faible aux bords, donc
+\[
+T_{\rm mod}(j)=\frac{1}{\beta_j}
+\]
+est concentrée près des coupures. Dans les états excités, le profil est beaucoup plus homogène, et $T_{\rm mod}(j)$ devient quasi uniforme.
+
+Cette observation valide le proxy modulaire BuP :
+\[
+\rho_{\rm ent}^{\rm mod}(j)
+=
+\frac{1/\beta_j}{\sum_k1/\beta_k}.
+\]
+Sur les profils bulk expérimentaux, le rapport bord/centre moyen vaut environ $2.74$ dans l'état fondamental, contre $1.35$ dans l'état excité.
+
+%--------------------------------------------------------------------
+\section{Entropie : loi d'aire et loi de volume}
+%--------------------------------------------------------------------
+
+Les entropies de von Neumann fournissent un diagnostic de phase indépendant. Pour les états fondamentaux, l'entropie reste presque constante avec la taille du sous-système. Pour les états excités, elle croît linéairement avec $L_A$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Dataset & $\Delta S$ & pente linéaire & $R^2_{\rm lin}$ & Lecture \\
+\midrule
+$\Delta=1$ GS & 0.115 & -0.0004 & 0.0006 & loi d'aire/log \\
+$\Delta=1$ ES & 4.133 & 0.4116 & 0.9954 & loi de volume \\
+$\Delta=1.7$ GS & -0.140 & -0.0177 & 0.5887 & loi d'aire/localisée \\
+$\Delta=1.7$ ES & 2.327 & 0.2260 & 0.9948 & loi de volume \\
+\bottomrule
+\end{tabular}
+\caption{Scaling de l'entropie de von Neumann $S_A^{\rm VN}(L_A)$. Les états excités sont clairement volume-law, tandis que les états fondamentaux restent area/log-law dans la plage mesurée.}
+\label{tab:entropy_scaling}
+\end{table}
+
+Dans BuP, ce résultat correspond à une transition de phase du graphe d'intrication. Les états fondamentaux sont dominés par une intrication de coupure, compatible avec une géométrie émergente contrôlée. Les états excités distribuent l'intrication de manière beaucoup plus homogène, ce qui correspond à un régime volume-law moins géométrique.
+
+%--------------------------------------------------------------------
+\section{Test direct par information mutuelle}
+%--------------------------------------------------------------------
+
+Le test le plus fort consiste à reconstruire $I(i:j)$ à partir des données brutes, puis à comparer une densité issue de l'information mutuelle au profil modulaire $1/\beta_j$.
+
+La première hypothèse naïve serait
+\[
+\rho_{\rm all}(j)=\sum_k I(j:k)
+\propto
+\frac{1}{\beta_j}.
+\]
+Cette hypothèse n'est pas vérifiée dans les données. Pour $\Delta=1$, les corrélations moyennes entre $\rho_{\rm all}$ et $1/\beta_j$ sont faibles :
+\[
+r_{\rm GS}\simeq0.050,
+\qquad
+r_{\rm ES}\simeq0.077.
+\]
+De même, la somme interne
+\[
+\rho_{\rm in}(j)=\sum_{k\in A}I(j:k)
+\]
+ne reproduit pas le profil modulaire.
+
+En revanche, la densité de coupure
+\[
+\rho_{\rm cut}(j)=\sum_{k\notin A}I(j:k)
+\]
+donne un signal beaucoup plus cohérent :
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Densité comparée à $1/\beta_j$ & GS Pearson & GS Spearman & ES Pearson & ES Spearman \\
+\midrule
+$\sum_k I(j:k)$ & 0.050 & -0.088 & 0.077 & 0.061 \\
+$\sum_{k\in A}I(j:k)$ & -0.212 & -0.286 & -0.448 & -0.523 \\
+$\sum_{k\notin A}I(j:k)$ & 0.588 & 0.777 & 0.507 & 0.420 \\
+\bottomrule
+\end{tabular}
+\caption{Comparaison entre densités d'information mutuelle et température modulaire locale. Le profil modulaire correspond à une densité de coupure plutôt qu'à une densité globale.}
+\label{tab:cut_density}
+\end{table}
+
+Ce résultat raffine la prescription BuP. La densité pertinente pour la tomographie modulaire n'est pas
+\[
+\rho_{\rm ent}(j)=\sum_k I(j:k),
+\]
+mais
+\[
+\rho_{\rm ent}^{\rm cut}(j)
+=
+\sum_{k\notin A}I(j:k).
+\]
+Autrement dit, le hamiltonien modulaire encode principalement la manière dont le sous-système $A$ est intriqué avec son complément.
+
+\paragraph{Robustesse statistique.}
+Le tableau~\ref{tab:cut_density} rapporte les corrélations obtenues sur les profils expérimentaux moyens. Une étape de consolidation future consistera à appliquer un bootstrap par rééchantillonnage des 200 shots par base afin d'associer des barres d'erreur aux corrélations $\rho_{\rm ent}^{\rm cut}$--$1/\beta_j$. Cette vérification est importante avant toute revendication de significativité statistique fine.
+
+
+%--------------------------------------------------------------------
+\section{Liens non-locaux et sous-systèmes disjoints}
+%--------------------------------------------------------------------
+
+Les données de sous-systèmes disjoints permettent de tester un autre aspect central de BuP : le graphe d'intrication n'est pas nécessairement identique au graphe local du hamiltonien physique. Il peut contenir des liens effectifs entre régions séparées.
+
+La mutual information moyenne décroît avec la distance :
+\[
+I(d=0)\simeq1.133,
+\qquad
+I(d_{\rm max})\simeq0.174.
+\]
+Le fit en loi de puissance est très bon :
+\[
+\log I(d)
+\simeq
+-0.487\log d+\mathrm{const},
+\qquad
+R^2\simeq0.993.
+\]
+
+Les fidélités de reconstruction confirment l'importance des liens inter-sous-systèmes. En moyenne,
+\[
+F_{\rm with\ links}\simeq0.924,
+\]
+tandis que
+\[
+F_{\rm without\ links}\simeq0.855.
+\]
+Le gain moyen est
+\[
+\Delta F\simeq0.069,
+\]
+avec un gain maximal d'environ $0.200$.
+
+Pour BuP, cela signifie que les liens non-locaux du graphe d'intrication ne sont pas une décoration théorique. Ils sont expérimentalement nécessaires pour reconstruire correctement le hamiltonien d'intrication de sous-systèmes disjoints.
+
+%--------------------------------------------------------------------
+\section{Implications pour BuP}
+%--------------------------------------------------------------------
+
+Les résultats précédents transforment le statut expérimental de BuP.
+
+Premièrement, ils fournissent un ancrage expérimental au principe tomographique :
+\[
+|\Psi\rangle
+\rightarrow
+K_A=-\log\rho_A
+\rightarrow
+\beta_j
+\rightarrow
+T_{\rm mod}(j)
+\rightarrow
+\rho_{\rm ent}^{\rm cut}(j).
+\]
+Cette chaîne est le pendant microscopique de la chaîne macroscopique utilisée dans les reconstructions BuP astrophysiques :
+\[
+\Sigma(R)
+\rightarrow
+W_{ij}^{\rm BuP}
+\rightarrow
+\mathcal L_{\rm ent}
+\rightarrow
+d_s,d_w
+\rightarrow
+\mathrm{observables}.
+\]
+
+Deuxièmement, le test force une correction conceptuelle utile. La densité d'intrication modulaire n'est pas une somme globale de mutual information paire-à-paire. Elle est une densité de coupure. Cette distinction est naturelle en théorie du hamiltonien modulaire, mais elle précise la manière dont BuP doit passer de $I(i:j)$ à une densité locale d'intrication.
+
+Troisièmement, les données valident le lien entre phase d'intrication et géométrie effective. Les états area/log-law possèdent une structure modulaire fortement concentrée aux coupures. Les états volume-law possèdent une température modulaire beaucoup plus homogène. BuP peut donc utiliser la tomographie modulaire comme diagnostic expérimental de phase géométrique.
+
+Quatrièmement, l'existence de liens inter-sous-systèmes mesurables soutient l'idée que le graphe BuP $W_{ij}$ doit être reconstruit comme un graphe effectif d'intrication, et non simplement copié depuis la connectivité hamiltonienne locale.
+
+%--------------------------------------------------------------------
+\section{Limites}
+%--------------------------------------------------------------------
+
+Plusieurs limites doivent être explicitées.
+
+Premièrement, le test repose sur les données analysées et les données brutes d'un simulateur quantique spécifique : une chaîne XXZ d'ions piégés. L'universalité de la relation
+\[
+\rho_{\rm ent}^{\rm cut}(j)
+\propto
+1/\beta_j
+\]
+doit être testée sur d'autres architectures, notamment atomes neutres, supraconducteurs et circuits hybrides.
+
+Deuxièmement, la reconstruction paire-à-paire $I(i:j)$ ne capture pas toute l'intrication multipartite. L'écart entre $\rho_{\rm cut}$ et $1/\beta_j$ peut contenir une contribution multipartite, qui devra être modélisée explicitement.
+
+Troisièmement, les matrices densité reconstruites par inversion linéaire doivent être projetées vers des états physiques. Une reconstruction maximum-likelihood ou shadow tomography optimisée pourrait améliorer la précision.
+
+Quatrièmement, ce travail ne prouve pas la gravité émergente BuP. Il valide une hypothèse structurelle importante : la densité modulaire d'intrication utilisée par BuP possède un analogue expérimental mesurable.
+
+%--------------------------------------------------------------------
+\section{Conclusion}
+%--------------------------------------------------------------------
+
+Ce papier montre que les données de tomographie du hamiltonien d'intrication de Zoller/Joshi fournissent un test expérimental direct d'un principe central de BuP.
+
+Le résultat principal est :
+\[
+\rho_{\rm ent}^{\rm cut}(j)
+=
+\sum_{k\notin A}I(j:k)
+\propto
+T_{\rm mod}(j)
+=
+\frac{1}{\beta_j}.
+\]
+La version globale naïve $\sum_k I(j:k)$ ne suffit pas. La bonne densité est une densité de coupure, cohérente avec la nature même du hamiltonien modulaire.
+
+Les états fondamentaux présentent une structure modulaire parabolique, une température modulaire concentrée aux coupures et une entropie area/log-law. Les états excités présentent une entropie volume-law et un profil modulaire plus homogène. Les sous-systèmes disjoints montrent enfin que les liens inter-régions améliorent significativement la fidélité de reconstruction.
+
+Ainsi, BuP n'est plus seulement un cadre phénoménologique testé sur des observables astrophysiques. Il possède maintenant un ancrage expérimental en information quantique : la tomographie modulaire de systèmes quantiques contrôlés.
+
+Cette passerelle ouvre une direction scientifique claire : tester la géométrie quantique Bottom-Up sur des états expérimentaux de plus en plus complexes, dans des simulateurs quantiques et des systèmes de matière condensée contrôlés.
+
+\begin{thebibliography}{9}
+
+\bibitem{Kokail2021}
+C. Kokail, R. van Bijnen, A. Elben, B. Vermersch, and P. Zoller,
+\emph{Entanglement Hamiltonian tomography in quantum simulation},
+Nature Physics 17, 936--942 (2021).
+
+\bibitem{Joshi2023}
+M. K. Joshi, C. Kokail, R. van Bijnen, F. Kranzl, T. V. Zache,
+R. Blatt, C. F. Roos, and P. Zoller,
+\emph{Exploring large-scale entanglement in quantum simulation},
+Nature 624, 539--544 (2023).
+
+\bibitem{BisognanoWichmann}
+J. J. Bisognano and E. H. Wichmann,
+\emph{On the duality condition for a Hermitian scalar field},
+Journal of Mathematical Physics 16, 985 (1975).
+
+\bibitem{Huang2020}
+H.-Y. Huang, R. Kueng, and J. Preskill,
+\emph{Predicting many properties of a quantum state with classical shadows},
+Nature Physics 16, 1050--1057 (2020).
+
+\bibitem{Emerson2005}
+J. Emerson, R. Alicki, and K. Życzkowski,
+\emph{Scalable noise estimation with random unitary operators},
+Journal of Optics B 7, S347 (2005).
+
+\end{thebibliography}
+
+\end{document}
