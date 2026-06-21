@@ -1,0 +1,35 @@
+{
+  "interpretation": "rho_ent is tested here as the normalized operational proxy rho_j = (1/beta_j)/sum_k(1/beta_k), using analysed beta profiles.",
+  "ground_bulk_experimental": {
+    "count": 5,
+    "mean_beta_cv": 0.3079449923236909,
+    "mean_r2_parabola": 0.9729713375484751,
+    "mean_r2_triangle": 0.9181888853005367,
+    "mean_rho_edge_to_center": 2.7411967876074725,
+    "mean_rho_edge_fraction": 0.5169926133076043
+  },
+  "excited_bulk_experimental": {
+    "count": 5,
+    "mean_beta_cv": 0.12292918007274214,
+    "mean_r2_parabola": 0.9362175860595932,
+    "mean_r2_triangle": 0.8223185592596938,
+    "mean_rho_edge_to_center": 1.3520833731423503,
+    "mean_rho_edge_fraction": 0.4075899804174951
+  },
+  "ground_bulk_all": {
+    "count": 9,
+    "mean_beta_cv": 0.3573347405973026,
+    "mean_r2_parabola": 0.9849840764158194,
+    "mean_r2_triangle": 0.9251363233157769,
+    "mean_rho_edge_to_center": 4.472910584322548,
+    "mean_rho_edge_fraction": 0.46089674998120983
+  },
+  "excited_bulk_all": {
+    "count": 5,
+    "mean_beta_cv": 0.12292918007274214,
+    "mean_r2_parabola": 0.9362175860595932,
+    "mean_r2_triangle": 0.8223185592596938,
+    "mean_rho_edge_to_center": 1.3520833731423503,
+    "mean_rho_edge_fraction": 0.4075899804174951
+  }
+}
