@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="460" viewBox="0 0 820 460">
+<rect width="100%" height="100%" fill="white"/>
+<text x="410.0" y="26" text-anchor="middle" font-family="Arial" font-size="18">Fidélité avec/sans liens inter-sous-systèmes</text>
+<line x1="70" y1="395" x2="795" y2="395" stroke="#333"/>
+<line x1="70" y1="45" x2="70" y2="395" stroke="#333"/>
+<text x="410.0" y="440" text-anchor="middle" font-family="Arial" font-size="14">distance</text>
+<text x="20" y="230.0" transform="rotate(-90 20 230.0)" text-anchor="middle" font-family="Arial" font-size="14">fidélité</text>
+<text x="70.0" y="415" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<text x="251.2" y="415" text-anchor="middle" font-family="Arial" font-size="11">2.5</text>
+<text x="432.5" y="415" text-anchor="middle" font-family="Arial" font-size="11">5.0</text>
+<text x="613.8" y="415" text-anchor="middle" font-family="Arial" font-size="11">7.5</text>
+<text x="795.0" y="415" text-anchor="middle" font-family="Arial" font-size="11">10.0</text>
+<line x1="66" y1="395.0" x2="70" y2="395.0" stroke="#333"/>
+<text x="62" y="399.0" text-anchor="end" font-family="Arial" font-size="11">0.68</text>
+<line x1="66" y1="307.5" x2="70" y2="307.5" stroke="#333"/>
+<text x="62" y="311.5" text-anchor="end" font-family="Arial" font-size="11">0.75</text>
+<line x1="66" y1="220.0" x2="70" y2="220.0" stroke="#333"/>
+<text x="62" y="224.0" text-anchor="end" font-family="Arial" font-size="11">0.82</text>
+<line x1="66" y1="132.5" x2="70" y2="132.5" stroke="#333"/>
+<text x="62" y="136.5" text-anchor="end" font-family="Arial" font-size="11">0.89</text>
+<line x1="66" y1="45.0" x2="70" y2="45.0" stroke="#333"/>
+<text x="62" y="49.0" text-anchor="end" font-family="Arial" font-size="11">0.96</text>
+<polyline points="70.0,115.2 142.5,90.6 215.0,69.1 287.5,75.1 360.0,83.6 432.5,85.2 505.0,79.3 577.5,76.8 650.0,91.6 722.5,92.9 795.0,97.2" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="70.0" cy="115.2" r="3" fill="#1f77b4"/>
+<circle cx="142.5" cy="90.6" r="3" fill="#1f77b4"/>
+<circle cx="215.0" cy="69.1" r="3" fill="#1f77b4"/>
+<circle cx="287.5" cy="75.1" r="3" fill="#1f77b4"/>
+<circle cx="360.0" cy="83.6" r="3" fill="#1f77b4"/>
+<circle cx="432.5" cy="85.2" r="3" fill="#1f77b4"/>
+<circle cx="505.0" cy="79.3" r="3" fill="#1f77b4"/>
+<circle cx="577.5" cy="76.8" r="3" fill="#1f77b4"/>
+<circle cx="650.0" cy="91.6" r="3" fill="#1f77b4"/>
+<circle cx="722.5" cy="92.9" r="3" fill="#1f77b4"/>
+<circle cx="795.0" cy="97.2" r="3" fill="#1f77b4"/>
+<text x="585" y="45" font-family="Arial" font-size="13" fill="#1f77b4">avec liens</text>
+<polyline points="70.0,370.9 142.5,243.0 215.0,199.3 287.5,181.2 360.0,183.4 432.5,120.7 505.0,128.5 577.5,119.5 650.0,131.6 722.5,136.5 795.0,115.2" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="70.0" cy="370.9" r="3" fill="#d62728"/>
+<circle cx="142.5" cy="243.0" r="3" fill="#d62728"/>
+<circle cx="215.0" cy="199.3" r="3" fill="#d62728"/>
+<circle cx="287.5" cy="181.2" r="3" fill="#d62728"/>
+<circle cx="360.0" cy="183.4" r="3" fill="#d62728"/>
+<circle cx="432.5" cy="120.7" r="3" fill="#d62728"/>
+<circle cx="505.0" cy="128.5" r="3" fill="#d62728"/>
+<circle cx="577.5" cy="119.5" r="3" fill="#d62728"/>
+<circle cx="650.0" cy="131.6" r="3" fill="#d62728"/>
+<circle cx="722.5" cy="136.5" r="3" fill="#d62728"/>
+<circle cx="795.0" cy="115.2" r="3" fill="#d62728"/>
+<text x="585" y="63" font-family="Arial" font-size="13" fill="#d62728">sans liens</text>
+</svg>
