@@ -1,0 +1,46 @@
+
+  "fit_c_edge_vs_sqrt_eta": {
+    "ok": true,
+    "n_used": 7,
+    "intercept": 4.0033310131069366e-05,
+    "slope": 0.9999799915788778,
+    "r2": 1.0,
+    "rmse": 2.08393497964961e-12
+  },
+  "fit_frac_speed_error_vs_eta_delta": {
+    "ok": true,
+    "n_used": 7,
+    "intercept": 1.997988989769852e-05,
+    "slope": 0.49999004849742384,
+    "r2": 0.9999999697940675,
+    "rmse": 5.2138525034558725e-08
+  },
+  "fit_c_edge_squared_vs_eta": {
+    "ok": true,
+    "n_used": 7,
+    "intercept": 4.0034100227337975e-05,
+    "slope": 1.0000000160751845,
+    "r2": 1.0,
+    "rmse": 6.7837910410244656e-15
+  },
+  "central_derivatives": [
+    {
+      "delta_eta": 9.999999999998899e-05,
+      "dc_deta_central": 0.49998999641426245
+    },
+    {
+      "delta_eta": 0.0004999999999999449,
+      "dc_deta_central": 0.49999001141703925
+    },
+    {
+      "delta_eta": 0.0009999999999998899,
+      "dc_deta_central": 0.4999900582883794
+    }
+  ],
+  "lvk_translation": {
+    "bound_abs_cgw_over_c_minus_1": 5e-16,
+    "eta_star": 1.0,
+    "required_abs_eta_over_eta_star_minus_1_approx": 1e-15,
+    "comment": "Since c_edge/c = sqrt(eta_edge/eta_star), delta c/c \u2248 0.5 delta eta/eta_star near eta_star."
+  }
+}
