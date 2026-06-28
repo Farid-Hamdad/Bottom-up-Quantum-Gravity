@@ -1,704 +1,291 @@
-\documentclass[11pt,a4paper]{article}
+# Paper 14 — Pont spectral entre dynamique modulaire et gravité émergente}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{geometry}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{hyperref}
-\usepackage{physics}
-\usepackage{array}
-\usepackage{xcolor}
+## Situation
 
-\geometry{margin=2.5cm}
+Ce dossier rassemble l’ensemble des tests numériques et phénoménologiques menés pour l’article 14 du programme de gravité quantique *Bottom‑Up* (BuP).
 
-\title{
-\textbf{Paper 14 — Action spectrale modulaire et phénoménologie galactique}\\
-\large Programme Bottom-Up Quantum Gravity
-}
+L’article 14 établit un pont entre trois niveaux distincts du cadre BuP :
 
-\author{Farid Hamdad}
-\date{\today}
+1. l’hamiltonien modulaire $K_A=-\log\rho_A$,
+2. le laplacien d’intrication $L_{\rm ent}$,
+3. la réponse gravitationnelle effective, testée sur les courbes de rotation SPARC.
 
-\begin{document}
+Le résultat central est le suivant : une même structure spectrale gouverne à la fois l’exposant modulaire $\beta_{\rm mod}$ et l’exposant gravitationnel $\beta_{\rm grav}$, ce qui permet de prédire la longueur de corrélation $\lambda_{\rm corr}$ pour chaque galaxie sans avoir à l’ajuster individuellement.
 
-\maketitle
+---
 
-\begin{abstract}
-Ce quatorzième papier du programme Bottom-Up Quantum Gravity étudie le lien
-entre la dynamique modulaire quantique, le spectre du graphe d'intrication et
-la gravité effective. L'objectif est de tester si le Hamiltonien modulaire
-\[
-K_A=-\log\rho_A
-\]
-peut être représenté comme une fonction spectrale du Laplacien d'intrication
-\(L_{\rm ent}\), et si l'exposant modulaire ainsi obtenu est relié à
-l'exposant gravitationnel effectif dérivé dans les papiers précédents.
+## 1. Motivation scientifique
 
-Le résultat central est l'existence d'un pont spectral entre
-\(\beta_{\rm mod}\) et \(\beta_{\rm grav}\), indiquant que la dynamique
-modulaire et la réponse gravitationnelle effective sont deux projections du
-même spectre d'intrication. Ce pont est ensuite testé sur les galaxies SPARC
-en reconstruisant des graphes d'intrication galactiques depuis les profils
-baryoniques.
+La question qui guide l’article 14 est la suivante :
 
-La longueur de corrélation \(\lambda_{\rm corr}\) est prédite sans ajustement
-galaxie par galaxie par un test leave-one-galaxy-out, avec \(173/175\)
-galaxies satisfaisant le pont modulaire--gravitationnel. Enfin, une
-comparaison fraîche et symétrique avec des halos NFW montre qu'une version
-BuP contrainte et semi-flexible devient compétitive, et même supérieure en
-médiane, sur l'échantillon SPARC complet.
-\end{abstract}
+$$
+\text{La dynamique modulaire quantique et la gravité émergente peuvent-elles dériver d’un même spectre d’intrication ?}
+$$
 
-\tableofcontents
+Dans les articles antérieurs, le programme BuP avait déjà introduit
 
-\section{Introduction}
+$$
+L_{\rm ent}
+$$
 
-Le programme Bottom-Up Quantum Gravity repose sur une hypothèse minimale :
-l'espace, le temps et la gravité ne sont pas fondamentaux, mais émergent de
-la structure d'intrication d'un état quantique global fini. Dans cette
-approche, le graphe d'intrication n'est pas un outil auxiliaire ; il est la
-structure première à partir de laquelle se reconstruisent la connectivité,
-la géométrie effective, la dynamique modulaire et la réponse gravitationnelle.
+comme le laplacien du graphe d’intrication, ainsi que l’exposant gravitationnel effectif
 
-Les papiers précédents ont établi plusieurs briques du programme. Le
-Laplacien d'intrication \(L_{\rm ent}\) permet de définir une dimension
-spectrale \(d_s\), une dimension de marche \(d_w\), ainsi qu'un exposant
-gravitationnel effectif
-\[
-\alpha_{\rm eff}
-=
-\frac{2d_s}{d_w}+d_w-4.
-\]
-Ces quantités relient la diffusion sur le graphe d'intrication à une réponse
-gravitationnelle effective.
+$$
+\alpha_{\rm eff} = \frac{2d_s}{d_w}+d_w-4.
+$$
 
-Le présent papier pose une question plus profonde : la dynamique modulaire,
-définie par
-\[
+L’article 14 se demande si l’hamiltonien modulaire,
+
+$$
 K_A=-\log\rho_A,
-\]
-est-elle elle aussi contrôlée par le même spectre d'intrication ? Si oui, la
-gravité effective et la dynamique modulaire ne seraient pas deux structures
-indépendantes, mais deux lectures différentes du même Laplacien émergent.
+$$
 
-Cette question est centrale pour BuP. En effet, dans une théorie où la
-géométrie émerge de l'intrication, la dynamique modulaire joue naturellement
-le rôle d'une dynamique interne de l'information quantique. Relier
-\(K_A\) à \(L_{\rm ent}\) revient donc à relier la dynamique quantique
-locale, la géométrie effective et la gravité.
+peut, lui aussi, être représenté comme une fonction spectrale du même laplacien d’intrication.
 
-\section{Hypothèse centrale}
+---
 
-L'hypothèse de travail de Paper 14 est que le Hamiltonien modulaire peut être
-approché par une fonction spectrale du Laplacien d'intrication :
-\[
+## 2. Hypothèse centrale
+
+L’hypothèse de travail est la suivante :
+
+$$
 K_A \sim f(L_{\rm ent}).
-\]
+$$
 
-Plus précisément, on teste des lois effectives de la forme
-\[
-K_A \sim L_A^{\beta_{\rm mod}},
-\]
-où \(L_A\) désigne un Laplacien effectif associé au sous-système \(A\). Plusieurs
-candidats sont comparés :
-\[
-L_A^{\rm induced},
-\qquad
-L_A^{\rm Schur},
-\qquad
-L_A^{\rm MI-normalized}.
-\]
+Plus précisément, les tests comparent le spectre de $K_A$ aux fonctions spectrales de différents laplaciens candidats :
 
-L'exposant \(\beta_{\rm mod}\) mesure alors la relation spectrale effective
-entre la dynamique modulaire et le graphe d'intrication.
+$$
+L_A^{\rm induit}, \qquad L_A^{\rm Schur}, \qquad L_A^{\rm normalisé\ par\ l’IM}.
+$$
 
-Du côté gravitationnel, l'exposant effectif est défini à partir de
-\[
-\alpha_{\rm eff}
-=
-\frac{2d_s}{d_w}+d_w-4,
-\]
-puis
-\[
-\beta_{\rm grav}
-=
-\frac{\alpha_{\rm eff}+1}{2}.
-\]
+L’ajustement effectif prend la forme :
 
-Le but est donc de tester l'existence d'une relation non triviale :
-\[
-\beta_{\rm mod}
-\leftrightarrow
-\beta_{\rm grav}.
-\]
-
-\section{Test spectral du Hamiltonien modulaire}
-
-La première étape consiste à vérifier si le spectre de \(K_A\) peut être
-représenté par une loi spectrale issue du Laplacien d'intrication. Pour cela,
-on compare les valeurs propres du Hamiltonien modulaire aux valeurs propres
-des différents candidats \(L_A\), selon une loi de puissance positive ou
-négative.
-
-Les résultats numériques montrent que la famille positive donne des fits
-de très bonne qualité, alors que la famille négative échoue. Dans les
-meilleurs cas \(N=16\), on obtient
-\[
-R^2 \simeq 0.99.
-\]
-
-Cela indique que le Hamiltonien modulaire admet une représentation spectrale
-effective :
-\[
+$$
 K_A \sim (L_A)^{\beta_{\rm mod}}.
-\]
+$$
 
-Ce résultat est important car il place \(K_A\) dans le même cadre spectral
-que la géométrie émergente. Le Hamiltonien modulaire n'est pas simplement un
-objet externe associé à \(\rho_A\) ; il encode une dynamique qui peut être
-lue dans le graphe d'intrication.
+L’exposant $\beta_{\rm mod}$ est ensuite confronté à l’exposant gravitationnel :
 
-\section{Échec de la relation naïve \(C\to\beta\)}
+$$
+\beta_{\rm grav} = \frac{\alpha_{\rm eff}+1}{2}.
+$$
 
-Une hypothèse naturelle était que la constante modulaire
-\[
-C_{\rm modular}=d_A g_2^{\rm plateau}
-\]
-pouvait prédire directement l'exposant \(\beta_{\rm mod}\). Cette hypothèse
-a été testée sur les ensembles \(N=9\), \(N=16\) et sur les sous-ensembles
-propres.
+---
 
-Le résultat est négatif. Les régressions directes donnent des coefficients
-de détermination très faibles :
-\[
-R^2 \simeq 0.
-\]
+## 3. Test spectral modulaire
 
-Cet échec est scientifiquement important. Il montre que \(\beta_{\rm mod}\)
-n'est pas contrôlé par une seule constante globale du spectral form factor.
-La structure pertinente est plus riche : elle dépend du spectre du graphe,
-de la topologie, de la rigidité spectrale, et des dimensions effectives.
+La première étape consiste à vérifier si $K_A$ admet une représentation spectrale en termes du laplacien d’intrication.
 
-Autrement dit, \(C_{\rm modular}\) capture une information globale sur le
-plateau spectral, mais ne suffit pas à déterminer la fonction spectrale
-effective reliant \(K_A\) à \(L_A\).
+Pour les meilleurs tests (avec $N=16$), on obtient :
 
-\section{Features spectrales et diagnostic SFF}
+$$
+R^2 \simeq 0,99.
+$$
 
-Pour comprendre ce qui contrôle \(\beta_{\rm mod}\), on extrait des features
-issues du spectral form factor :
-\[
-t_{\rm dip},
-\qquad
-t_{\rm ramp},
-\qquad
-{\rm slope}_{\rm ramp},
-\qquad
-\Delta_3.
-\]
+Ce résultat démontre que l’hamiltonien modulaire possède effectivement une représentation spectrale sur le graphe d’intrication.
 
-La rigidité spectrale \(\Delta_3\) se révèle plus informative que
-\(C_{\rm modular}\), mais elle reste insuffisante seule. Cela confirme que
-\(\beta_{\rm mod}\) est une quantité multivariée.
+La famille spectrale positive fonctionne parfaitement, tandis que la famille négative s’effondre, avec un pouvoir explicatif quasi nul.
 
-Les variables pertinentes incluent :
-\[
-C_{\rm modular},
-\quad
-K_{\rm gap},
-\quad
-\Delta_3,
-\quad
-\lambda_2,
-\quad
-d_s,
-\quad
-d_w,
-\quad
-\frac{d_s}{d_w},
-\quad
-\langle I\rangle,
-\quad
-I_{\max}.
-\]
+---
 
-Les tests de régression montrent que les features SFF seules ne suffisent
-pas. En revanche, les invariants du graphe d'intrication, et en particulier
-les quantités liées à la diffusion, améliorent fortement la prédiction.
+## 4. Échec de la relation naïve $C\to\beta$
 
-\section{Prédiction de \(\beta_{\rm mod}\)}
+Une première hypothèse, naturelle, consistait à penser que la constante topologique modulaire
 
-L'étape décisive consiste à inclure explicitement les dimensions effectives :
-\[
-d_s,
-\qquad
-d_w,
-\qquad
-\frac{d_s}{d_w}.
-\]
+$$
+C_{\rm modulaire} = d_A g_2^{\rm plateau}
+$$
 
-Sur le sous-ensemble Schur/RMT, les modèles non linéaires atteignent des
-performances élevées, avec
-\[
-R^2 \simeq 0.96
-\]
-en validation k-fold, et des performances encore solides en leave-one-regime-out.
+permettait de prédire directement $\beta_{\rm mod}$.
 
-Les variables les plus importantes sont :
-\[
-\lambda_2^{\rm norm},
-\qquad
-\frac{d_s}{d_w},
-\qquad
-\Delta_3,
-\qquad
-d_s.
-\]
+Cette hypothèse est invalidée par les données. Sur les ensembles propres $N=9$, $N=16$ et $N=16$ optimal, la corrélation linéaire directe entre $C_{\rm modulaire}$ et $\beta_{\rm mod}$ reste très faible :
 
-On obtient donc une relation effective :
-\[
-\beta_{\rm mod}
-=
-F(\lambda_2,d_s,d_w,\Delta_3,\ldots).
-\]
+$$
+R^2 \approx 0.
+$$
 
-Ce résultat signifie que \(\beta_{\rm mod}\) est une propriété du spectre
-d'intrication, et non une constante arbitraire attachée au Hamiltonien
-modulaire.
+Cet échec est important : il montre que $\beta_{\rm mod}$ n’est pas dicté par une seule constante de plateau globale. La structure pertinente est multidimensionnelle et de nature spectrale.
 
-\section{Pont modulaire--gravitationnel}
+---
 
-À partir de la relation gravitationnelle BuP
-\[
-\alpha_{\rm eff}
-=
-\frac{2d_s}{d_w}+d_w-4,
-\]
-on définit
-\[
-\beta_{\rm grav}
-=
-\frac{\alpha_{\rm eff}+1}{2}.
-\]
+## 5. Caractéristiques spectrales et diagnostics SFF
 
-Les données montrent une corrélation nette entre \(\beta_{\rm mod}\) et
-\(\beta_{\rm grav}\). La relation empirique mesurée est :
-\[
-\beta_{\rm mod}
-\simeq
-0.531
-+
-1.726\,\beta_{\rm grav}.
-\]
+L’article 14 extrait ensuite un ensemble de caractéristiques issues du facteur de forme spectral (SFF) :
 
-C'est le résultat central de Paper 14. Il établit un pont spectral entre la
-dynamique modulaire et la gravité effective.
+$$
+t_{\rm creux}, \qquad t_{\rm rampe}, \qquad {\rm pente}_{\rm rampe}, \qquad \Delta_3.
+$$
 
-La signification physique est la suivante : la dynamique modulaire et la
-gravité émergente sont deux projections du même spectre de \(L_{\rm ent}\).
-Le Laplacien d'intrication contrôle à la fois :
-\[
-K_A,
-\qquad
-\alpha_{\rm eff},
-\qquad
-\beta_{\rm mod},
-\qquad
-\beta_{\rm grav}.
-\]
+La quantité $\Delta_3$ s’avère plus informative que $C_{\rm modulaire}$, mais elle reste insuffisante prise isolément.
 
-Ce résultat renforce fortement l'économie conceptuelle de BuP. Une seule
-structure première, l'intrication, suffit à produire une dynamique modulaire
-et une réponse gravitationnelle effective.
+On construit alors un modèle multivarié utilisant :
 
-\section{Application aux galaxies SPARC}
+$$
+C_{\rm modulaire}, \quad K_{\rm intervalle}, \quad \Delta_3, \quad \lambda_2, \quad d_s, \quad d_w, \quad d_s/d_w, \quad \langle I\rangle, \quad I_{\max}.
+$$
 
-Le pont modulaire--gravitationnel est ensuite testé sur des graphes
-galactiques reconstruits depuis les profils baryoniques SPARC.
+---
 
-Le pipeline est :
-\[
-\Sigma(R)
-\longrightarrow
-W_{ij}
-\longrightarrow
-L_{\rm ent}
-\longrightarrow
-(d_s,d_w,\lambda_2,\Delta_3)
-\longrightarrow
-\beta_{\rm grav},\beta_{\rm mod}.
-\]
+## 6. Prédiction de $\beta_{\rm mod}$
 
-Pour chaque galaxie, deux estimations de l'exposant modulaire sont comparées :
-\[
-\beta_{\rm mod}^{\rm bridge}
-\]
-obtenu depuis la relation avec \(\beta_{\rm grav}\), et
-\[
-\beta_{\rm mod}^{\rm ML}
-\]
-obtenu par le modèle multivarié entraîné sur les graphes quantiques.
+L’amélioration décisive provient de l’ajout des invariants de graphe et de diffusion :
 
-L'erreur du pont est définie par :
-\[
-\epsilon_{\rm bridge}
-=
-\frac{
-|\beta_{\rm mod}^{\rm ML}
--
-\beta_{\rm mod}^{\rm bridge}|
-}{
-|\beta_{\rm mod}^{\rm ML}|
-}.
-\]
+$$
+d_s, \qquad d_w, \qquad \lambda_2, \qquad d_s/d_w.
+$$
 
-Cette procédure permet de tester si le pont spectral découvert sur les petits
-graphes quantiques survit au passage vers des graphes galactiques issus de
-données observationnelles.
+Sur le sous‑ensemble Schur/RMT, les meilleurs modèles atteignent :
 
-\section{Prédiction de \(\lambda_{\rm corr}\)}
+$$
+R^2 \simeq 0,96
+$$
 
-Les premiers tests sur SPARC scannent le facteur
-\[
-f_\lambda
-=
-\frac{\lambda_{\rm corr}}{R_d}
-\]
-dans l'ensemble discret :
-\[
-f_\lambda\in
-\{0.5,1.0,1.5,2.0,3.0\}.
-\]
+en validation croisée $k$-fold, et restent robustes lors des tests *leave‑one‑regime‑out*.
 
-Le test décisif consiste ensuite à prédire \(f_\lambda\) sans ajustement
-galaxie par galaxie. Pour cela, un modèle leave-one-galaxy-out est entraîné
-sur \(174\) galaxies, puis utilisé pour prédire
-\[
+Les caractéristiques les plus importantes sont :
+
+$$
+\lambda_2^{\rm norm}, \qquad d_s/d_w, \qquad \Delta_3, \qquad d_s.
+$$
+
+On établit ainsi que :
+
+$$
+\beta_{\rm mod} = F(\lambda_2,d_s,d_w,\Delta_3,\ldots).
+$$
+
+---
+
+## 7. Pont modulaire‑gravitationnel
+
+En utilisant la relation gravitationnelle de BuP :
+
+$$
+\alpha_{\rm eff} = \frac{2d_s}{d_w}+d_w-4,
+$$
+
+on définit :
+
+$$
+\beta_{\rm grav} = \frac{\alpha_{\rm eff}+1}{2}.
+$$
+
+La relation mesurée s’écrit :
+
+$$
+\beta_{\rm mod} \simeq 0,531 + 1,726\,\beta_{\rm grav}.
+$$
+
+C’est le pont central de l’article 14.
+
+Il signifie que la dynamique modulaire et la gravité effective ne sont que deux projections spectrales d’un même laplacien d’intrication.
+
+---
+
+## 8. Test du pont sur SPARC
+
+Le pont est ensuite testé sur des graphes d’intrication à l’échelle galactique, reconstruits à partir des profils baryoniques SPARC.
+
+Le pipeline s’articule comme suit :
+
+$$
+\Sigma(R) \rightarrow W_{ij} \rightarrow L_{\rm ent} \rightarrow (d_s,d_w,\lambda_2,\Delta_3) \rightarrow \beta_{\rm grav},\beta_{\rm mod}.
+$$
+
+Pour chaque galaxie, le pont confronte :
+
+$$
+\beta_{\rm mod}^{\rm pont}
+$$
+
+à
+
+$$
+\beta_{\rm mod}^{\rm ML}.
+$$
+
+L’erreur du pont est définie par :
+
+$$
+\epsilon_{\rm pont} = \frac{ |\beta_{\rm mod}^{\rm ML}-\beta_{\rm mod}^{\rm pont}| }{ |\beta_{\rm mod}^{\rm ML}| }.
+$$
+
+---
+
+## 9. Test prédictif sur $\lambda_{\rm corr}$
+
+Les premiers tests sur SPARC explorent les valeurs :
+
+$$
+f_\lambda = \lambda_{\rm corr}/R_d \in \{0,5\,;\ 1,0\,;\ 1,5\,;\ 2,0\,;\ 3,0\}.
+$$
+
+Le test décisif est ensuite réalisé sans ajuster $\lambda_{\rm corr}$ galaxie par galaxie.
+
+Un modèle de type *Random Forest* est entraîné sur 174 galaxies et utilisé pour prédire
+
+$$
 \widehat f_\lambda
-\]
-sur la galaxie laissée de côté.
+$$
 
-Le meilleur modèle est un Random Forest classifier. Il prédit correctement
-la classe de \(f_\lambda\) dans
-\[
-78.3\%
-\]
-des cas. Plus important encore, lorsque le facteur prédit est utilisé pour
-évaluer le pont modulaire--gravitationnel, on obtient :
-\[
+pour la galaxie retenue.
+
+Résultat :
+
+$$
 173/175
-\]
-galaxies compatibles au niveau strong ou moderate.
+$$
 
-Le taux de réussite est :
-\[
-98.86\%
-\]
-en strong+moderate, avec
-\[
-72.0\%
-\]
-de cas strong.
+galaxies satisfont au pont avec la valeur prédite de $\lambda_{\rm corr}$, sans aucun ajustement individuel.
 
-Ainsi, \(\lambda_{\rm corr}\) n'est pas simplement une longueur ajustée après
-coup. Elle devient une grandeur prédictible à partir des invariants
-informationnels du graphe galactique.
+Les taux de réussite sont de :
 
-\section{Taxonomie galactique unifiée}
+$$
+98,86\%
+$$
 
-Paper 14 construit ensuite une taxonomie unifiée croisant trois
-classifications indépendantes :
+pour un pont fort ou modéré, et de :
 
-\begin{enumerate}
-    \item la bifurcation dimensionnelle LOW/HIGH ;
-    \item la qualité des fits rotationnels ;
-    \item la classe de cohérence \(f_\lambda^{\rm opt}\).
-\end{enumerate}
+$$
+72,0\%
+$$
 
-La bifurcation LOW/HIGH est retrouvée sur les \(175\) galaxies :
-\[
-N_{\rm HIGH}=88,
-\qquad
-N_{\rm LOW}=87,
-\]
-avec
-\[
-d_{\min}^{\rm HIGH}=2.487107,
-\qquad
-d_{\min}^{\rm LOW}=2.274448.
-\]
+pour un pont fort.
 
-Les classes de cohérence Paper 14 sont :
-\[
-\begin{array}{lcl}
-{\rm short}_{0.5R_d} &:& 89 \ {\rm galaxies},\\
-{\rm standard}_{1R_d} &:& 38 \ {\rm galaxies},\\
-{\rm extended}_{1.5-2R_d} &:& 39 \ {\rm galaxies},\\
-{\rm very\ extended}_{3R_d} &:& 9 \ {\rm galaxies}.
-\end{array}
-\]
+Ainsi,
 
-Les galaxies LOW/dwarf sont majoritairement concentrées dans la classe courte :
-\[
-63.2\%
-\]
-des LOW/dwarf ont
-\[
-f_\lambda^{\rm opt}=0.5.
-\]
+$$
+\lambda_{\rm corr}
+$$
 
-Les galaxies HIGH/massive sont plus dispersées et présentent une fraction plus
-importante de portées étendues. Les deux taxonomies sont donc corrélées, mais
-non redondantes. Elles mesurent deux aspects distincts : la phase
-dimensionnelle d'une part, et la portée de cohérence informationnelle d'autre
-part.
+n’est pas une simple échelle ajustée *a posteriori* : elle est prédictible à partir des invariants du graphe.
 
-\section{Comparaison fraîche BuP--NFW}
+---
 
-Une première comparaison avec NFW utilisait les fits BuP pré-calculés stockés
-dans les fichiers de synthèse, tandis que NFW était ajusté directement sur les
-fichiers \texttt{rotmod}. Cette comparaison était utile mais méthodologiquement
-asymétrique.
+## 10. Taxonomie unifiée des galaxies
 
-Une comparaison plus propre a ensuite été réalisée en recalculant directement
-les deux modèles sur les mêmes données SPARC. Le modèle NFW est :
-\[
-V_{\rm model}^2(r)
-=
-V_{\rm bar}^2(r)
-+
-V_{\rm NFW}^2(r).
-\]
+L’article 14 propose enfin une taxonomie unifiée qui combine :
 
-Deux variantes sont testées :
-\[
-(M_{200},c) \ {\rm libres},
-\]
-et
-\[
-M_{200} \ {\rm libre},\qquad c=10 \ {\rm fixé}.
-\]
+1. la phase de dimension LOW/HIGH,
+2. la catégorie de qualité d’ajustement,
+3. la classe de cohérence optimale définie par $f_\lambda^{\rm opt}$.
 
-Le modèle BuP frais est écrit :
-\[
-V_{\rm BuP}^2(r)
-=
-V_{\rm bar}^2(r)
-+
-A\,S(r;r_t,w),
-\]
-où \(S(r;r_t,w)\) est une fonction de transition effective. Le modèle ajuste
-l'amplitude \(A\), le rayon de transition \(r_t\), et la largeur \(w\).
+La répartition LOW/HIGH est la suivante :
 
-Dans la version contrainte v3, on impose :
-\[
-0.10R_d \le r_t \le 10R_d,
-\]
-et
-\[
-0.05R_d \le w \le 5R_d.
-\]
+$$
+N_{\rm HIGH}=88, \qquad N_{\rm LOW}=87.
+$$
 
-Ces bornes empêchent les transitions non physiques de largeur arbitrairement
-grande.
+avec :
 
-\section{Résultats BuP--NFW sur SPARC}
+$$
+d_{\min}^{\rm HIGH}=2,487107, \qquad d_{\min}^{\rm LOW}=2,274448.
+$$
 
-Sur le catalogue complet de \(175\) galaxies, la version BuP contrainte v3
-donne :
-\[
-\chi^2_{\rm red,BuP}^{\rm median}=0.467.
-\]
+Les classes de cohérence de l’article 14 sont :
 
-À comparer avec :
-\[
-\chi^2_{\rm red,NFW\,2p}^{\rm median}=1.332,
-\]
-et :
-\[
-\chi^2_{\rm red,NFW\,c=10}^{\rm median}=2.787.
-\]
-
-BuP gagne contre NFW à deux paramètres dans :
-\[
-83.4\%
-\]
-des cas, et contre NFW à concentration fixée dans :
-\[
-94.9\%
-\]
-des cas.
-
-Même après pénalisation AIC, la médiane reste favorable :
-\[
-\Delta{\rm AIC}_{\rm BuP-NFW2}^{\rm median}=-4.79.
-\]
-
-Les paramètres ajustés restent dans un régime physique :
-\[
-{\rm median}(r_t/R_d)=1.178,
-\qquad
-{\rm median}(w/R_d)=0.612.
-\]
-
-Les fractions de saturation des bornes restent faibles :
-\[
-f(r_t=10R_d)=1.14\%,
-\]
-et
-\[
-f(w=5R_d)=9.71\%.
-\]
-
-Cela montre que le gain BuP ne provient pas de largeurs de transition
-artificiellement grandes.
-
-\section{Résultats par catégorie}
-
-Le résultat reste robuste par catégorie :
-
-\[
-\begin{array}{lccc}
-\toprule
-{\rm Catégorie} & \chi^2_{\rm red,BuP} & \chi^2_{\rm red,NFW2} & {\rm Victoires\ BuP}\\
-\midrule
-{\rm excellent} & 0.126 & 0.573 & 84.4\%\\
-{\rm good}      & 0.259 & 1.060 & 77.8\%\\
-{\rm medium}    & 0.455 & 1.048 & 81.3\%\\
-{\rm poor}      & 1.706 & 3.273 & 86.8\%\\
-\bottomrule
-\end{array}
-\]
-
-Ce résultat est important car les anciennes galaxies classées \texttt{poor}
-étaient responsables des échecs du pipeline BuP hybride initial. La version
-fraîche et contrainte montre que ces échecs provenaient principalement d'une
-paramétrisation trop rigide, et non d'une incompatibilité fondamentale entre
-BuP et les courbes de rotation.
-
-\section{Interprétation physique}
-
-Les résultats SPARC ne constituent pas la preuve fondamentale de BuP. Ils
-constituent une validation phénoménologique de certaines conséquences
-effectives de la théorie.
-
-La force de BuP réside dans son économie conceptuelle : un postulat unique,
-l'intrication comme structure première, permet de faire émerger la
-connectivité, la géométrie effective, la dynamique modulaire et la gravité.
-
-Dans ce cadre, les lois effectives ne sont pas postulées indépendamment. Elles
-se déduisent du spectre du graphe d'intrication, notamment à travers :
-\[
-d_s,
-\qquad
-d_w,
-\qquad
-\alpha_{\rm eff},
-\qquad
-\lambda_{\rm corr}.
-\]
-
-BuP n'est donc pas une hypothèse construite pour expliquer les courbes de
-rotation. C'est une théorie bottom-up de la gravité quantique fondée sur
-l'intrication, dont la phénoménologie galactique apparaît comme une
-conséquence testable.
-
-Le fait que cette conséquence devienne compétitive avec NFW sur SPARC, sans
-halo de matière noire particulaire, constitue précisément la force du résultat :
-la phénoménologie n'est pas le point de départ de BuP, mais l'une de ses
-validations expérimentales.
-
-\section{Échecs et limites}
-
-Plusieurs limites doivent être clairement énoncées.
-
-Premièrement, la relation directe
-\[
-C_{\rm modular}\to\beta_{\rm mod}
-\]
-échoue. Cela montre que la dynamique modulaire ne peut pas être réduite à une
-simple constante de plateau.
-
-Deuxièmement, la prédiction leave-one-topology-out échoue dans les petits
-graphes. La topologie du graphe d'intrication reste donc une variable
-structurante de la fonction spectrale effective.
-
-Troisièmement, le mode BuP strict :
-\[
-r_t=\lambda_{\rm corr}^{\rm pred}
-\]
-est seulement comparable à NFW à concentration fixée, mais ne bat pas NFW à
-deux paramètres. Le succès phénoménologique fort apparaît dans le mode
-semi-flexible, où \(\lambda_{\rm corr}^{\rm pred}\) fournit l'échelle
-informationnelle, tandis que \(r_t\) reste une transition dynamique effective.
-
-Quatrièmement, la comparaison SPARC actuelle utilise encore un ansatz
-phénoménologique de transition. Le solveur microscopique complet, partant de
-\[
-\Sigma(R)
-\rightarrow
-W_{ij}
-\rightarrow
-L_{\rm ent}
-\rightarrow
-V_{\rm BuP}(r),
-\]
-reste une étape future.
-
-Enfin, la limite \(N\to\infty\) est soutenue par des arguments de stabilité
-spectrale, mais n'est pas encore démontrée analytiquement.
-
-\section{Conclusion}
-
-Paper 14 établit un pont spectral entre la dynamique modulaire, la gravité
-effective et la phénoménologie galactique.
-
-Le résultat central est :
-\[
-\beta_{\rm mod}
-\simeq
-0.531
-+
-1.726\,\beta_{\rm grav}.
-\]
-
-Ce pont montre que \(K_A\) et la gravité effective sont contrôlés par le même
-spectre d'intrication.
-
-Sur SPARC, la longueur de corrélation \(\lambda_{\rm corr}\) est prédite sans
-ajustement galaxie par galaxie, avec :
-\[
-173/175
-\]
-galaxies satisfaisant le pont modulaire--gravitationnel.
-
-Enfin, la comparaison fraîche et contrainte avec NFW montre que le modèle BuP
-v3 atteint :
-\[
-\chi^2_{\rm red,BuP}^{\rm median}=0.467
-\]
-sur \(175\) galaxies, contre :
-\[
-1.332
-\]
-pour NFW à deux paramètres.
-
-Ainsi, Paper 14 relie quatre niveaux du programme BuP :
-\[
-\text{intrication}
-\rightarrow
-\text{dynamique modulaire}
-\rightarrow
-\text{gravité effective}
-\rightarrow
-\text{phénoménologie galactique}.
-\]
-
-BuP n'apparaît donc pas comme un modèle ad hoc de courbes de rotation, mais
-comme une théorie de gravité émergente dont la phénoménologie galactique est
-une conséquence mesurable.
-
-\end{document}
+```text
+courte_0p5Rd          : 89 galaxies
+standard_1Rd          : 38 galaxies
+étendue_1p5_2Rd       : 39 galaxies
+très_étendue_3Rd      : 9 galaxies
