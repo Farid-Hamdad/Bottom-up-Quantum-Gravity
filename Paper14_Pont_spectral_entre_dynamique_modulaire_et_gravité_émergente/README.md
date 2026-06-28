@@ -296,102 +296,86 @@ f_\lambda^{\rm opt}=0,5.
 
 Les galaxies HIGH/massive sont plus dispersées et présentent une fraction plus importante de portées étendues. Les deux taxonomies sont donc corrélées, mais non redondantes.
 
----
+## 11. Comparaison BuP‑NFW publication‑grade
 
-## 11. Comparaison BuP--NFW publication-grade
+Une première comparaison avec NFW utilisait des fits BuP pré‑calculés et des fits NFW recalculés directement sur les fichiers `rotmod`. Cette étape était utile comme benchmark exploratoire, mais méthodologiquement asymétrique.
 
-Une première comparaison avec NFW utilisait des fits BuP pré-calculés et des fits NFW recalculés directement sur les fichiers `rotmod`. Cette étape était utile comme benchmark exploratoire, mais méthodologiquement asymétrique.
+La version finale utilise une comparaison fraîche et symétrique : BuP et NFW sont recalculés sur les mêmes fichiers `rotmod`, avec les mêmes points observationnels et le même calcul de $\chi^2_{\rm red}$, AIC et BIC.
 
-La version finale utilise une comparaison fraîche et symétrique : BuP et NFW sont recalculés sur les mêmes fichiers `rotmod`, avec les mêmes points observationnels et le même calcul de \(\chi^2_{\rm red}\), AIC et BIC.
+Le modèle BuP semi‑flexible contraint v3 utilise l'ansatz phénoménologique :
 
-Le modèle BuP semi-flexible contraint v3 utilise l'ansatz phénoménologique :
-
-\[
-V_{\rm BuP}^2(r)
-=
-V_{\rm bar}^2(r)
-+
-A\,S(r;r_t,w),
-\]
+$$
+V_{\rm BuP}^2(r) = V_{\rm bar}^2(r) + A\,S(r;r_t,w),
+$$
 
 avec les bornes physiques :
 
-\[
-0,10R_d \le r_t \le 10R_d,
-\qquad
-0,05R_d \le w \le 5R_d.
-\]
+$$
+0,10R_d \le r_t \le 10R_d, \qquad 0,05R_d \le w \le 5R_d.
+$$
 
 Le modèle NFW utilise :
 
-\[
-V_{\rm NFW,total}^2(r)
-=
-V_{\rm bar}^2(r)
-+
-V_{\rm NFW}^2(r).
-\]
+$$
+V_{\rm NFW,total}^2(r) = V_{\rm bar}^2(r) + V_{\rm NFW}^2(r).
+$$
 
 Deux variantes sont testées :
 
-1. \(M_{200}\) et \(c\) libres ;
-2. \(M_{200}\) libre avec \(c=10\) fixé.
+- $(M_{200})$ et $c$ libres ;
+- $M_{200}$ libre avec $c=10$ fixé.
 
 ---
 
 ## 12. Résultat v3 contraint sur 175 galaxies
 
-Sur les 175 galaxies SPARC, la comparaison publication-grade v3 donne :
+Sur les 175 galaxies SPARC, la comparaison publication‑grade v3 donne :
 
-\[
+$$
 {\rm median}(\chi^2_{\rm red,BuP})=0,467,
-\]
+$$
 
 contre :
 
-\[
-{\rm median}(\chi^2_{\rm red,NFW\,2p})=1,332,
-\]
+$$
+{\rm median}(\chi^2_{\rm red,NFW,2p})=1,332,
+$$
 
 et :
 
-\[
-{\rm median}(\chi^2_{\rm red,NFW\,c=10})=2,787.
-\]
+$$
+{\rm median}(\chi^2_{\rm red,NFW,c=10})=2,787.
+$$
 
 BuP gagne contre NFW à deux paramètres dans :
 
-\[
+$$
 83,4\%
-\]
+$$
 
 des galaxies, et contre NFW à concentration fixée dans :
 
-\[
+$$
 94,9\%.
-\]
+$$
 
 Même après pénalisation AIC, la médiane reste favorable :
 
-\[
+$$
 \Delta{\rm AIC}_{\rm BuP-NFW2}^{\rm med}=-4,79.
-\]
+$$
 
 Les paramètres ajustés restent dans un régime physique :
 
-\[
-{\rm median}(r_t/R_d)=1,178,
-\qquad
-{\rm median}(w/R_d)=0,612.
-\]
+$$
+{\rm median}(r_t/R_d)=1,178, \qquad {\rm median}(w/R_d)=0,612.
+$$
 
 Les fractions de saturation des bornes restent faibles :
 
-\[
-f(r_t=10R_d)=1,14\%,
-\qquad
-f(w=5R_d)=9,71\%.
-\]
+$$
+f(r_t=10R_d)=1,14\%, \qquad f(w=5R_d)=9,71\%.
+$$
 
 Ce résultat indique que le succès BuP ne provient pas de largeurs de transition artificiellement grandes.
 
@@ -399,12 +383,12 @@ Ce résultat indique que le succès BuP ne provient pas de largeurs de transitio
 
 ## 13. Résultats par catégorie
 
-| Catégorie | \(n\) | \({\rm median}(\chi^2_{\rm red,BuP})\) | \({\rm median}(\chi^2_{\rm red,NFW2})\) | Victoires BuP |
-|---|---:|---:|---:|---:|
-| excellent | 32 | 0,126 | 0,573 | 84,4 % |
-| good | 27 | 0,259 | 1,060 | 77,8 % |
-| medium | 48 | 0,455 | 1,048 | 81,3 % |
-| poor | 68 | 1,706 | 3,273 | 86,8 % |
+| Catégorie    | $n$ | ${\rm median}(\chi^2_{\rm red,BuP})$ | ${\rm median}(\chi^2_{\rm red,NFW2})$ | Victoires BuP |
+|--------------|-----|--------------------------------------|---------------------------------------|---------------|
+| excellent    | 32  | 0,126                                | 0,573                                 | 84,4 %        |
+| good         | 27  | 0,259                                | 1,060                                 | 77,8 %        |
+| medium       | 48  | 0,455                                | 1,048                                 | 81,3 %        |
+| poor         | 68  | 1,706                                | 3,273                                 | 86,8 %        |
 
 Les anciennes galaxies classées `poor` étaient responsables des échecs du pipeline BuP hybride initial. La version fraîche et contrainte montre que ces échecs provenaient principalement d'une paramétrisation trop rigide.
 
