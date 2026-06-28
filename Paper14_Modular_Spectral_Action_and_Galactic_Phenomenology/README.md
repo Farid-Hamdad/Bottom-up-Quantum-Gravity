@@ -1,34 +1,34 @@
-# Paper 14 — Modular/Spectral Action and Galactic Phenomenology
+# Paper 14 — Action modulaire/spectrale et phénoménologie galactique
 
-## Status
+## Statut
 
-This folder contains the numerical and phenomenological tests for Paper 14 of the Bottom-Up Quantum Gravity program.
+Ce dossier contient les tests numériques et phénoménologiques pour le Paper 14 du programme de gravité quantique Bottom-Up (BuP).
 
-Paper 14 connects three levels of the BuP framework:
+Le Paper 14 relie trois niveaux du cadre BuP :
 
-1. the modular Hamiltonian \(K_A=-\log\rho_A\),
-2. the entanglement Laplacian \(L_{\rm ent}\),
-3. the effective gravitational response tested on SPARC rotation curves.
+1. l'hamiltonien modulaire \(K_A=-\log\rho_A\),
+2. le laplacien d'intrication \(L_{\rm ent}\),
+3. la réponse gravitationnelle effective testée sur les courbes de rotation SPARC.
 
-The central result is that the same spectral structure controls both the modular exponent \(\beta_{\rm mod}\) and the gravitational exponent \(\beta_{\rm grav}\), and that the resulting correlation length \(\lambda_{\rm corr}\) can be predicted on galaxies without fitting it individually.
+Le résultat central est que la même structure spectrale contrôle à la fois l'exposant modulaire \(\beta_{\rm mod}\) et l'exposant gravitationnel \(\beta_{\rm grav}\), et que la longueur de corrélation résultante \(\lambda_{\rm corr}\) peut être prédite pour les galaxies sans ajustement individuel.
 
 ---
 
-## 1. Scientific motivation
+## 1. Motivation scientifique
 
-The starting question of Paper 14 is:
+La question de départ du Paper 14 est :
 
 \[
-\text{Can modular quantum dynamics and emergent gravity be derived from the same entanglement spectrum?}
+\text{La dynamique modulaire quantique et la gravité émergente peuvent-elles être dérivées du même spectre d'intrication ?}
 \]
 
-In previous papers, BuP had already introduced:
+Dans les articles précédents, BuP avait déjà introduit :
 
 \[
 L_{\rm ent}
 \]
 
-as the Laplacian of the entanglement graph, and the effective gravitational exponent:
+comme le laplacien du graphe d'intrication, et l'exposant gravitationnel effectif :
 
 \[
 \alpha_{\rm eff}
@@ -36,41 +36,41 @@ as the Laplacian of the entanglement graph, and the effective gravitational expo
 \frac{2d_s}{d_w}+d_w-4.
 \]
 
-Paper 14 asks whether the modular Hamiltonian,
+Le Paper 14 demande si l'hamiltonien modulaire,
 
 \[
 K_A=-\log\rho_A,
 \]
 
-can also be represented as a spectral function of the same entanglement Laplacian.
+peut également être représenté comme une fonction spectrale du même laplacien d'intrication.
 
 ---
 
-## 2. Core hypothesis
+## 2. Hypothèse centrale
 
-The working hypothesis is:
+L'hypothèse de travail est :
 
 \[
 K_A \sim f(L_{\rm ent}).
 \]
 
-More specifically, the tests compare the spectrum of \(K_A\) with spectral functions of candidate Laplacians:
+Plus précisément, les tests comparent le spectre de \(K_A\) avec les fonctions spectrales de laplaciens candidats :
 
 \[
-L_A^{\rm induced},
+L_A^{\rm induit},
 \qquad
 L_A^{\rm Schur},
 \qquad
-L_A^{\rm MI-normalized}.
+L_A^{\rm normalisé-MI}.
 \]
 
-The effective fit takes the form:
+L'ajustement effectif prend la forme :
 
 \[
 K_A \sim (L_A)^{\beta_{\rm mod}}.
 \]
 
-The exponent \(\beta_{\rm mod}\) is then compared to the gravitational exponent:
+L'exposant \(\beta_{\rm mod}\) est ensuite comparé à l'exposant gravitationnel :
 
 \[
 \beta_{\rm grav}
@@ -80,25 +80,25 @@ The exponent \(\beta_{\rm mod}\) is then compared to the gravitational exponent:
 
 ---
 
-## 3. Modular spectral test
+## 3. Test spectral modulaire
 
-The first step was to test whether \(K_A\) can be represented by a spectral function of the entanglement Laplacian.
+La première étape consistait à tester si \(K_A\) peut être représenté par une fonction spectrale du laplacien d'intrication.
 
-The best \(N=16\) tests gave:
+Les meilleurs tests pour \(N=16\) ont donné :
 
 \[
 R^2 \simeq 0.99.
 \]
 
-This shows that the modular Hamiltonian admits an effective spectral representation in terms of the entanglement graph.
+Cela montre que l'hamiltonien modulaire admet une représentation spectrale effective en termes du graphe d'intrication.
 
-The positive spectral family works well, while the negative family collapses to near-zero explanatory power.
+La famille spectrale positive fonctionne bien, tandis que la famille négative s'effondre avec un pouvoir explicatif proche de zéro.
 
 ---
 
-## 4. Failure of the naive \(C\to\beta\) relation
+## 4. Échec de la relation naïve \(C\to\beta\)
 
-A natural first hypothesis was that the modular topological constant
+Une première hypothèse naturelle était que la constante topologique modulaire
 
 \[
 C_{\rm modular}
@@ -106,37 +106,37 @@ C_{\rm modular}
 d_A g_2^{\rm plateau}
 \]
 
-could directly predict \(\beta_{\rm mod}\).
+pourrait prédire directement \(\beta_{\rm mod}\).
 
-This hypothesis failed.
+Cette hypothèse a échoué.
 
-Across the clean \(N=9\), \(N=16\), and optimal \(N=16\) datasets, the direct linear correlation between \(C_{\rm modular}\) and \(\beta_{\rm mod}\) remains weak:
+Sur l'ensemble des jeux de données propres \(N=9\), \(N=16\) et \(N=16\) optimal, la corrélation linéaire directe entre \(C_{\rm modular}\) et \(\beta_{\rm mod}\) reste faible :
 
 \[
 R^2 \approx 0.
 \]
 
-This failure is important. It shows that \(\beta_{\rm mod}\) is not controlled by a single global plateau constant. The relevant structure is multivariate and spectral.
+Cet échec est important. Il montre que \(\beta_{\rm mod}\) n'est pas contrôlé par une seule constante globale de plateau. La structure pertinente est multivariée et spectrale.
 
 ---
 
-## 5. Spectral features and SFF diagnostics
+## 5. Caractéristiques spectrales et diagnostics SFF
 
-Paper 14 then extracted additional spectral-form-factor features:
+Le Paper 14 a ensuite extrait des caractéristiques supplémentaires du facteur de forme spectral :
 
 \[
 t_{\rm dip},
 \qquad
 t_{\rm ramp},
 \qquad
-{\rm slope}_{\rm ramp},
+{\rm pente}_{\rm ramp},
 \qquad
 \Delta_3.
 \]
 
-The feature \(\Delta_3\) is more informative than \(C_{\rm modular}\), but still insufficient by itself.
+La caractéristique \(\Delta_3\) est plus informative que \(C_{\rm modular}\), mais reste insuffisante par elle-même.
 
-This led to a multivariate model using:
+Ceci a conduit à un modèle multivarié utilisant :
 
 \[
 C_{\rm modular},
@@ -160,9 +160,9 @@ I_{\max}.
 
 ---
 
-## 6. Predicting \(\beta_{\rm mod}\)
+## 6. Prédiction de \(\beta_{\rm mod}\)
 
-The decisive improvement comes from adding the graph and diffusion invariants:
+L'amélioration décisive vient de l'ajout des invariants de graphe et de diffusion :
 
 \[
 d_s,
@@ -174,15 +174,15 @@ d_w,
 d_s/d_w.
 \]
 
-On the Schur/RMT subset, the best models reach:
+Sur le sous-ensemble Schur/RMT, les meilleurs modèles atteignent :
 
 \[
 R^2 \simeq 0.96
 \]
 
-in k-fold validation, and remain strong in leave-one-regime-out tests.
+en validation croisée k-fold, et restent solides dans les tests leave-one-regime-out.
 
-The most important features are:
+Les caractéristiques les plus importantes sont :
 
 \[
 \lambda_2^{\rm norm},
@@ -194,7 +194,7 @@ d_s/d_w,
 d_s.
 \]
 
-This establishes that:
+Ceci établit que :
 
 \[
 \beta_{\rm mod}
@@ -204,9 +204,9 @@ F(\lambda_2,d_s,d_w,\Delta_3,\ldots).
 
 ---
 
-## 7. Modular--gravitational bridge
+## 7. Pont modulaire-gravitationnel
 
-Using the BuP gravitational relation:
+En utilisant la relation gravitationnelle de BuP :
 
 \[
 \alpha_{\rm eff}
@@ -214,7 +214,7 @@ Using the BuP gravitational relation:
 \frac{2d_s}{d_w}+d_w-4,
 \]
 
-we define:
+nous définissons :
 
 \[
 \beta_{\rm grav}
@@ -222,7 +222,7 @@ we define:
 \frac{\alpha_{\rm eff}+1}{2}.
 \]
 
-The measured relation is:
+La relation mesurée est :
 
 \[
 \beta_{\rm mod}
@@ -232,17 +232,17 @@ The measured relation is:
 1.726\,\beta_{\rm grav}.
 \]
 
-This is the central bridge of Paper 14.
+C'est le pont central du Paper 14.
 
-It means that modular dynamics and effective gravity are two spectral projections of the same entanglement Laplacian.
+Cela signifie que la dynamique modulaire et la gravité effective sont deux projections spectrales du même laplacien d'intrication.
 
 ---
 
-## 8. SPARC bridge test
+## 8. Test du pont sur SPARC
 
-The bridge was then tested on galaxy-scale entanglement graphs reconstructed from SPARC baryonic profiles.
+Le pont a ensuite été testé sur des graphes d'intrication à l'échelle galactique reconstruits à partir des profils baryoniques SPARC.
 
-The pipeline is:
+La chaîne de traitement est :
 
 \[
 \Sigma(R)
@@ -256,25 +256,25 @@ L_{\rm ent}
 \beta_{\rm grav},\beta_{\rm mod}.
 \]
 
-For each galaxy, the bridge compares:
+Pour chaque galaxie, le pont compare :
 
 \[
-\beta_{\rm mod}^{\rm bridge}
+\beta_{\rm mod}^{\rm pont}
 \]
 
-against:
+avec :
 
 \[
 \beta_{\rm mod}^{\rm ML}.
 \]
 
-The bridge error is:
+L'erreur du pont est :
 
 \[
-\epsilon_{\rm bridge}
+\epsilon_{\rm pont}
 =
 \frac{
-|\beta_{\rm mod}^{\rm ML}-\beta_{\rm mod}^{\rm bridge}|
+|\beta_{\rm mod}^{\rm ML}-\beta_{\rm mod}^{\rm pont}|
 }{
 |\beta_{\rm mod}^{\rm ML}|
 }.
@@ -282,9 +282,9 @@ The bridge error is:
 
 ---
 
-## 9. Predictive \(\lambda_{\rm corr}\) test
+## 9. Test prédictif de \(\lambda_{\rm corr}\)
 
-The first SPARC tests scanned:
+Les premiers tests SPARC ont balayé :
 
 \[
 f_\lambda
@@ -294,78 +294,78 @@ f_\lambda
 \{0.5,1.0,1.5,2.0,3.0\}.
 \]
 
-The decisive test was then performed without fitting \(\lambda_{\rm corr}\) galaxy by galaxy.
+Le test décisif a ensuite été effectué sans ajuster \(\lambda_{\rm corr}\) galaxie par galaxie.
 
-A leave-one-galaxy-out model was trained on 174 galaxies and used to predict:
+Un modèle leave-one-galaxy-out a été entraîné sur 174 galaxies et utilisé pour prédire :
 
 \[
 \widehat f_\lambda
 \]
 
-for the held-out galaxy.
+pour la galaxie exclue.
 
-The best model was a Random Forest classifier.
+Le meilleur modèle était un classifieur Random Forest.
 
-Result:
+Résultat :
 
 \[
 173/175
 \]
 
-galaxies pass the bridge with predicted \(\lambda_{\rm corr}\), without individual adjustment.
+galaxies passent le pont avec un \(\lambda_{\rm corr}\) prédit, sans ajustement individuel.
 
-The success rates are:
+Les taux de réussite sont :
 
 \[
 98.86\%
 \]
 
-strong or moderate bridge, and:
+de pont fort ou modéré, et :
 
 \[
 72.0\%
 \]
 
-strong bridge.
+de pont fort.
 
-Thus:
+Ainsi :
 
 \[
 \lambda_{\rm corr}
 \]
 
-is not merely a fitted scale. It is predictable from the graph invariants.
+n'est pas simplement une échelle ajustée. Elle est prédictible à partir des invariants du graphe.
 
 ---
 
-## 10. Unified galaxy taxonomy
+## 10. Taxonomie unifiée des galaxies
 
-Paper 14 also builds a unified taxonomy combining:
+Le Paper 14 construit également une taxonomie unifiée combinant :
 
-1. the LOW/HIGH dimension phase,
-2. the fit-quality category,
-3. the optimal coherence class \(f_\lambda^{\rm opt}\).
+1. la phase de dimension BASSE/HAUTE,
+2. la catégorie de qualité d'ajustement,
+3. la classe de cohérence optimale \(f_\lambda^{\rm opt}\).
 
-The LOW/HIGH split is:
-
-\[
-N_{\rm HIGH}=88,
-\qquad
-N_{\rm LOW}=87.
-\]
-
-with:
+La répartition BASSE/HAUTE est :
 
 \[
-d_{\min}^{\rm HIGH}=2.487107,
+N_{\rm HAUTE}=88,
 \qquad
-d_{\min}^{\rm LOW}=2.274448.
+N_{\rm BASSE}=87.
 \]
 
-The Paper 14 coherence classes are:
+avec :
+
+\[
+d_{\min}^{\rm HAUTE}=2.487107,
+\qquad
+d_{\min}^{\rm BASSE}=2.274448.
+\]
+
+Les classes de cohérence du Paper 14 sont :
 
 ```text
-short_0p5Rd          : 89 galaxies
+courte_0p5Rd          : 89 galaxies
 standard_1Rd         : 38 galaxies
-extended_1p5_2Rd     : 39 galaxies
-very_extended_3Rd    : 9 galaxies
+étendue_1p5_2Rd     : 39 galaxies
+très_étendue_3Rd    : 9 galaxies
