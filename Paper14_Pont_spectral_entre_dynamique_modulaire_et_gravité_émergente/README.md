@@ -513,36 +513,10 @@ $$
 4. Le succès phénoménologique fort vient du mode semi‑flexible contraint.
 
 5. Le solveur microscopique complet 
-
 $$
-\Sigma(R)
+\Sigma(R) \to W_{ij} \to L_{\rm ent} \to V_{\rm BuP}(r)
 $$
-
-$$
-\to
-$$
-
-$$
-W_{ij}
-$$
-
-$$
-\to
-$$
-
-$$
-L_{\rm ent}
-$$
-
-$$
-\to
-$$
-
-$$
-V_{\rm BuP}(r)
-$$
-
-reste une étape future.
+ reste une étape future.
 
 6. La limite analytique 
 $$
@@ -572,9 +546,6 @@ results/bup_vs_nfw_publication_grade_v3_full175_constrained/
 ## 18. Résumé en une phrase
 
 Paper 14 montre qu'une même structure spectrale d'intrication relie dynamique modulaire, gravité effective et phénoménologie galactique, avec une longueur de cohérence prédite sans ajustement individuel et une version BuP contrainte compétitive face à NFW sur les 175 galaxies SPARC.
-```
-
-Les classes de cohérence de l’article 14 sont :
 
 ```text
 courte_0p5Rd          : 89 galaxies
