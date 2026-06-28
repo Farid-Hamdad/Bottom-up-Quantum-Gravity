@@ -432,6 +432,148 @@ papers/paper14_modular_spectral_action/
     failures_and_limits.md
     reproducibility.md
 
+```text
+## 15. Figures principales
+
+Les figures finales utilisées par le papier sont :
+
+figures/fig01_beta_mod_vs_beta_grav.png
+figures/fig02_predicted_vs_true_beta_mod.png
+figures/fig03_predictive_lambda_confusion_matrix.png
+figures/fig04_bup_vs_nfw_chi2red_full175.png
+figures/fig05_delta_AIC_BuP_minus_NFW.png
+figures/fig06_rt_width_over_Rd_distributions.png
+
+Elles résument respectivement :
+
+1. le pont 
+$$
+\beta_{\rm mod} \leftrightarrow \beta_{\rm grav}
+$$
+ ;
+
+2. la prédiction multivariée de 
+$$
+\beta_{\rm mod}
+$$
+ ;
+
+3. la prédiction leave‑one‑galaxy‑out de 
+$$
+f_\lambda
+$$
+ ;
+
+4. la comparaison 
+$$
+\chi_{\rm red}^2
+$$
+ BuP vs NFW ;
+
+5. la distribution de 
+$$
+\Delta\mathrm{AIC}
+$$
+ ;
+
+6. les distributions physiques de 
+$$
+r_t/R_d
+$$
+ et 
+$$
+w/R_d
+$$
+.
+
+---
+
+## 16. Limites connues
+
+Les limites principales sont :
+
+1. La relation directe 
+$$
+C_{\rm modular} \to \beta_{\rm mod}
+$$
+ échoue.
+
+2. La prédiction leave‑one‑topology‑out échoue dans les petits graphes.
+
+3. Le mode strict 
+$$
+r_t = \lambda_{\rm corr}^{\rm pred}
+$$
+ est seulement comparable à NFW 
+$$
+c=10
+$$
+, mais ne bat pas NFW à deux paramètres.
+
+4. Le succès phénoménologique fort vient du mode semi‑flexible contraint.
+
+5. Le solveur microscopique complet 
+
+$$
+\Sigma(R)
+$$
+
+$$
+\to
+$$
+
+$$
+W_{ij}
+$$
+
+$$
+\to
+$$
+
+$$
+L_{\rm ent}
+$$
+
+$$
+\to
+$$
+
+$$
+V_{\rm BuP}(r)
+$$
+
+reste une étape future.
+
+6. La limite analytique 
+$$
+N\to\infty
+$$
+ reste à démontrer, même si les tests finite‑size et SPARC soutiennent une stabilité spectrale.
+
+---
+
+## 17. Reproductibilité
+
+Les données de rotation utilisées proviennent du catalogue public SPARC.
+
+Les commandes principales sont documentées dans :
+
+notes/reproducibility.md
+
+Les outputs principaux sont :
+
+results/ds_dw_beta_regression_v2_N9_schur_RMT_fixed/
+results/predictive_lambda_LOO_v1/
+results/unified_galaxy_taxonomy/
+results/bup_vs_nfw_publication_grade_v3_full175_constrained/
+
+---
+
+## 18. Résumé en une phrase
+
+Paper 14 montre qu'une même structure spectrale d'intrication relie dynamique modulaire, gravité effective et phénoménologie galactique, avec une longueur de cohérence prédite sans ajustement individuel et une version BuP contrainte compétitive face à NFW sur les 175 galaxies SPARC.
+```
+
 Les classes de cohérence de l’article 14 sont :
 
 ```text
