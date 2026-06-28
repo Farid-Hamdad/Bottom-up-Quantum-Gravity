@@ -6,11 +6,11 @@ Ce dossier contient les tests numériques et phénoménologiques pour le Paper 1
 
 Le Paper 14 relie trois niveaux du cadre BuP :
 
-1. l'hamiltonien modulaire \(K_A=-\log\rho_A\),
-2. le laplacien d'intrication \(L_{\rm ent}\),
+1. l'hamiltonien modulaire *K indice A* égal à moins le logarithme de *rho indice A*,
+2. le laplacien d'intrication *L indice ent*,
 3. la réponse gravitationnelle effective testée sur les courbes de rotation SPARC.
 
-Le résultat central est que la même structure spectrale contrôle à la fois l'exposant modulaire \(\beta_{\rm mod}\) et l'exposant gravitationnel \(\beta_{\rm grav}\), et que la longueur de corrélation résultante \(\lambda_{\rm corr}\) peut être prédite pour les galaxies sans ajustement individuel.
+Le résultat central est que la même structure spectrale contrôle à la fois l'exposant modulaire *bêta indice mod* et l'exposant gravitationnel *bêta indice grav*, et que la longueur de corrélation résultante *lambda indice corr* peut être prédite pour les galaxies sans ajustement individuel.
 
 ---
 
@@ -18,77 +18,31 @@ Le résultat central est que la même structure spectrale contrôle à la fois l
 
 La question de départ du Paper 14 est :
 
-\[
-\text{La dynamique modulaire quantique et la gravité émergente peuvent-elles être dérivées du même spectre d'intrication ?}
-\]
+« La dynamique modulaire quantique et la gravité émergente peuvent-elles être dérivées du même spectre d'intrication ? »
 
-Dans les articles précédents, BuP avait déjà introduit :
+Dans les articles précédents, BuP avait déjà introduit le laplacien d'intrication *L indice ent* comme le laplacien du graphe d'intrication, et l'exposant gravitationnel effectif *alpha indice eff* défini par la formule : alpha_eff = (2 * d_s / d_w) + d_w - 4, où *d_s* est la dimension spectrale et *d_w* la dimension de marche aléatoire.
 
-\[
-L_{\rm ent}
-\]
-
-comme le laplacien du graphe d'intrication, et l'exposant gravitationnel effectif :
-
-\[
-\alpha_{\rm eff}
-=
-\frac{2d_s}{d_w}+d_w-4.
-\]
-
-Le Paper 14 demande si l'hamiltonien modulaire,
-
-\[
-K_A=-\log\rho_A,
-\]
-
-peut également être représenté comme une fonction spectrale du même laplacien d'intrication.
+Le Paper 14 demande si l'hamiltonien modulaire *K_A* (défini comme moins le logarithme de la matrice densité réduite *rho_A*) peut également être représenté comme une fonction spectrale du même laplacien d'intrication.
 
 ---
 
 ## 2. Hypothèse centrale
 
-L'hypothèse de travail est :
+L'hypothèse de travail est que *K_A* est approximativement une fonction *f* du laplacien d'intrication *L_ent*.
 
-\[
-K_A \sim f(L_{\rm ent}).
-\]
+Plus précisément, les tests comparent le spectre de *K_A* avec les fonctions spectrales de trois laplaciens candidats : le laplacien induit, le laplacien de Schur, et le laplacien normalisé par l'information mutuelle.
 
-Plus précisément, les tests comparent le spectre de \(K_A\) avec les fonctions spectrales de laplaciens candidats :
+L'ajustement effectif prend la forme d'une loi de puissance : *K_A* est proportionnel à *L_A* élevé à la puissance *bêta indice mod*.
 
-\[
-L_A^{\rm induit},
-\qquad
-L_A^{\rm Schur},
-\qquad
-L_A^{\rm normalisé-MI}.
-\]
-
-L'ajustement effectif prend la forme :
-
-\[
-K_A \sim (L_A)^{\beta_{\rm mod}}.
-\]
-
-L'exposant \(\beta_{\rm mod}\) est ensuite comparé à l'exposant gravitationnel :
-
-\[
-\beta_{\rm grav}
-=
-\frac{\alpha_{\rm eff}+1}{2}.
-\]
+L'exposant *bêta mod* est ensuite comparé à l'exposant gravitationnel *bêta grav*, qui est défini par la relation : bêta_grav = (alpha_eff + 1) / 2.
 
 ---
 
 ## 3. Test spectral modulaire
 
-La première étape consistait à tester si \(K_A\) peut être représenté par une fonction spectrale du laplacien d'intrication.
+La première étape consistait à tester si *K_A* peut être représenté par une fonction spectrale du laplacien d'intrication.
 
-Les meilleurs tests pour \(N=16\) ont donné :
-
-\[
-R^2 \simeq 0.99.
-\]
+Les meilleurs tests, réalisés avec des systèmes de taille *N = 16*, ont donné un coefficient de détermination *R au carré* d'environ 0,99.
 
 Cela montre que l'hamiltonien modulaire admet une représentation spectrale effective en termes du graphe d'intrication.
 
@@ -96,141 +50,45 @@ La famille spectrale positive fonctionne bien, tandis que la famille négative s
 
 ---
 
-## 4. Échec de la relation naïve \(C\to\beta\)
+## 4. Échec de la relation naïve entre la constante topologique C et bêta_mod
 
-Une première hypothèse naturelle était que la constante topologique modulaire
-
-\[
-C_{\rm modular}
-=
-d_A g_2^{\rm plateau}
-\]
-
-pourrait prédire directement \(\beta_{\rm mod}\).
+Une première hypothèse naturelle était que la constante topologique modulaire *C_modular*, définie comme le produit de la dimension *d_A* et de la hauteur de plateau *g_2* (notée g_2^plateau), pourrait prédire directement *bêta_mod*.
 
 Cette hypothèse a échoué.
 
-Sur l'ensemble des jeux de données propres \(N=9\), \(N=16\) et \(N=16\) optimal, la corrélation linéaire directe entre \(C_{\rm modular}\) et \(\beta_{\rm mod}\) reste faible :
+Sur l'ensemble des jeux de données propres (pour *N = 9*, *N = 16* et le *N = 16* optimal), la corrélation linéaire directe entre *C_modular* et *bêta_mod* reste très faible, avec un *R au carré* pratiquement nul.
 
-\[
-R^2 \approx 0.
-\]
-
-Cet échec est important. Il montre que \(\beta_{\rm mod}\) n'est pas contrôlé par une seule constante globale de plateau. La structure pertinente est multivariée et spectrale.
+Cet échec est important. Il montre que *bêta_mod* n'est pas contrôlé par une seule constante globale de plateau. La structure pertinente est multivariée et spectrale.
 
 ---
 
-## 5. Caractéristiques spectrales et diagnostics SFF
+## 5. Caractéristiques spectrales et diagnostics du facteur de forme spectral (SFF)
 
-Le Paper 14 a ensuite extrait des caractéristiques supplémentaires du facteur de forme spectral :
+Le Paper 14 a ensuite extrait des caractéristiques supplémentaires du facteur de forme spectral : le temps du dip (*t_dip*), le temps de la rampe (*t_ramp*), la pente de la rampe, et la statistique *Delta_3*.
 
-\[
-t_{\rm dip},
-\qquad
-t_{\rm ramp},
-\qquad
-{\rm pente}_{\rm ramp},
-\qquad
-\Delta_3.
-\]
+La caractéristique *Delta_3* est plus informative que *C_modular*, mais reste insuffisante par elle-même.
 
-La caractéristique \(\Delta_3\) est plus informative que \(C_{\rm modular}\), mais reste insuffisante par elle-même.
-
-Ceci a conduit à un modèle multivarié utilisant :
-
-\[
-C_{\rm modular},
-\quad
-K_{\rm gap},
-\quad
-\Delta_3,
-\quad
-\lambda_2,
-\quad
-d_s,
-\quad
-d_w,
-\quad
-d_s/d_w,
-\quad
-\langle I\rangle,
-\quad
-I_{\max}.
-\]
+Ceci a conduit à un modèle multivarié utilisant neuf variables : *C_modular*, l'écart spectral (*K_gap*), *Delta_3*, la seconde valeur propre du laplacien (*lambda_2*), la dimension spectrale *d_s*, la dimension de marche *d_w*, le rapport *d_s/d_w*, la moyenne de l'information mutuelle (*<I>*), et l'information mutuelle maximale (*I_max*).
 
 ---
 
-## 6. Prédiction de \(\beta_{\rm mod}\)
+## 6. Prédiction de *bêta_mod*
 
-L'amélioration décisive vient de l'ajout des invariants de graphe et de diffusion :
+L'amélioration décisive vient de l'ajout des invariants de graphe et de diffusion que sont *d_s*, *d_w*, *lambda_2* et le rapport *d_s/d_w*.
 
-\[
-d_s,
-\qquad
-d_w,
-\qquad
-\lambda_2,
-\qquad
-d_s/d_w.
-\]
+Sur le sous-ensemble Schur/RMT (théorie des matrices aléatoires), les meilleurs modèles atteignent un *R au carré* d'environ 0,96 en validation croisée k-fold, et restent solides dans les tests où l'on retire un régime entier d'apprentissage.
 
-Sur le sous-ensemble Schur/RMT, les meilleurs modèles atteignent :
+Les caractéristiques les plus importantes sont : *lambda_2 normalisé*, le rapport *d_s/d_w*, *Delta_3*, et *d_s*.
 
-\[
-R^2 \simeq 0.96
-\]
-
-en validation croisée k-fold, et restent solides dans les tests leave-one-regime-out.
-
-Les caractéristiques les plus importantes sont :
-
-\[
-\lambda_2^{\rm norm},
-\qquad
-d_s/d_w,
-\qquad
-\Delta_3,
-\qquad
-d_s.
-\]
-
-Ceci établit que :
-
-\[
-\beta_{\rm mod}
-=
-F(\lambda_2,d_s,d_w,\Delta_3,\ldots).
-\]
+Ceci établit que *bêta_mod* est une fonction de ces invariants : bêta_mod = F(lambda_2, d_s, d_w, Delta_3, ...).
 
 ---
 
 ## 7. Pont modulaire-gravitationnel
 
-En utilisant la relation gravitationnelle de BuP :
+En utilisant la relation gravitationnelle de BuP : alpha_eff = (2*d_s/d_w) + d_w - 4, nous définissons bêta_grav = (alpha_eff + 1) / 2.
 
-\[
-\alpha_{\rm eff}
-=
-\frac{2d_s}{d_w}+d_w-4,
-\]
-
-nous définissons :
-
-\[
-\beta_{\rm grav}
-=
-\frac{\alpha_{\rm eff}+1}{2}.
-\]
-
-La relation mesurée est :
-
-\[
-\beta_{\rm mod}
-\simeq
-0.531
-+
-1.726\,\beta_{\rm grav}.
-\]
+La relation mesurée entre les deux exposants est : bêta_mod ≈ 0,531 + 1,726 * bêta_grav.
 
 C'est le pont central du Paper 14.
 
@@ -238,129 +96,45 @@ Cela signifie que la dynamique modulaire et la gravité effective sont deux proj
 
 ---
 
-## 8. Test du pont sur SPARC
+## 8. Test du pont sur les données SPARC
 
 Le pont a ensuite été testé sur des graphes d'intrication à l'échelle galactique reconstruits à partir des profils baryoniques SPARC.
 
-La chaîne de traitement est :
+La chaîne de traitement est la suivante : à partir de la densité de surface *Sigma(R)*, on construit la matrice de poids *W_ij*, puis le laplacien d'intrication *L_ent*, on en extrait les invariants (*d_s, d_w, lambda_2, Delta_3*), et on calcule les exposants *bêta_grav* et *bêta_mod*.
 
-\[
-\Sigma(R)
-\rightarrow
-W_{ij}
-\rightarrow
-L_{\rm ent}
-\rightarrow
-(d_s,d_w,\lambda_2,\Delta_3)
-\rightarrow
-\beta_{\rm grav},\beta_{\rm mod}.
-\]
+Pour chaque galaxie, le pont compare la valeur prédite *bêta_mod^pont* (issue de la relation linéaire) avec la valeur issue de l'apprentissage automatique *bêta_mod^ML*.
 
-Pour chaque galaxie, le pont compare :
-
-\[
-\beta_{\rm mod}^{\rm pont}
-\]
-
-avec :
-
-\[
-\beta_{\rm mod}^{\rm ML}.
-\]
-
-L'erreur du pont est :
-
-\[
-\epsilon_{\rm pont}
-=
-\frac{
-|\beta_{\rm mod}^{\rm ML}-\beta_{\rm mod}^{\rm pont}|
-}{
-|\beta_{\rm mod}^{\rm ML}|
-}.
-\]
+L'erreur du pont est définie comme la valeur absolue de la différence entre *bêta_mod^ML* et *bêta_mod^pont*, divisée par la valeur absolue de *bêta_mod^ML*.
 
 ---
 
-## 9. Test prédictif de \(\lambda_{\rm corr}\)
+## 9. Test prédictif de la longueur de corrélation *lambda_corr*
 
-Les premiers tests SPARC ont balayé :
+Les premiers tests SPARC ont balayé plusieurs valeurs du rapport *f_lambda = lambda_corr / R_d* (où *R_d* est le rayon caractéristique du disque), à savoir 0,5, 1,0, 1,5, 2,0 et 3,0.
 
-\[
-f_\lambda
-=
-\lambda_{\rm corr}/R_d
-\in
-\{0.5,1.0,1.5,2.0,3.0\}.
-\]
+Le test décisif a ensuite été effectué sans ajuster *lambda_corr* galaxie par galaxie.
 
-Le test décisif a ensuite été effectué sans ajuster \(\lambda_{\rm corr}\) galaxie par galaxie.
-
-Un modèle leave-one-galaxy-out a été entraîné sur 174 galaxies et utilisé pour prédire :
-
-\[
-\widehat f_\lambda
-\]
-
-pour la galaxie exclue.
+Un modèle de type « leave-one-galaxy-out » a été entraîné sur 174 galaxies et utilisé pour prédire la valeur de *f_lambda* pour la galaxie exclue.
 
 Le meilleur modèle était un classifieur Random Forest.
 
-Résultat :
+Résultat : sur les 175 galaxies, 173 passent le pont avec un *lambda_corr* prédit, sans ajustement individuel.
 
-\[
-173/175
-\]
+Les taux de réussite sont de 98,86 % pour un pont fort ou modéré, et de 72,0 % pour un pont fort uniquement.
 
-galaxies passent le pont avec un \(\lambda_{\rm corr}\) prédit, sans ajustement individuel.
-
-Les taux de réussite sont :
-
-\[
-98.86\%
-\]
-
-de pont fort ou modéré, et :
-
-\[
-72.0\%
-\]
-
-de pont fort.
-
-Ainsi :
-
-\[
-\lambda_{\rm corr}
-\]
-
-n'est pas simplement une échelle ajustée. Elle est prédictible à partir des invariants du graphe.
+Ainsi, *lambda_corr* n'est pas simplement une échelle ajustée. Elle est prédictible à partir des invariants du graphe.
 
 ---
 
 ## 10. Taxonomie unifiée des galaxies
 
-Le Paper 14 construit également une taxonomie unifiée combinant :
+Le Paper 14 construit également une taxonomie unifiée combinant trois critères :
 
-1. la phase de dimension BASSE/HAUTE,
+1. la phase de dimension (basse ou haute),
 2. la catégorie de qualité d'ajustement,
-3. la classe de cohérence optimale \(f_\lambda^{\rm opt}\).
+3. la classe de cohérence optimale correspondant à la valeur de *f_lambda^opt*.
 
-La répartition BASSE/HAUTE est :
-
-\[
-N_{\rm HAUTE}=88,
-\qquad
-N_{\rm BASSE}=87.
-\]
-
-avec :
-
-\[
-d_{\min}^{\rm HAUTE}=2.487107,
-\qquad
-d_{\min}^{\rm BASSE}=2.274448.
-\]
+La répartition basse/haute est de 88 galaxies pour la phase haute et 87 pour la phase basse, avec des dimensions minimales respectives de 2,487 et 2,274.
 
 Les classes de cohérence du Paper 14 sont :
 
