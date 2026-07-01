@@ -1,0 +1,45 @@
+{
+  "experiment": "BuP Paper 14 beta regression v1",
+  "n_rows": 240,
+  "candidate": "induced",
+  "family": "pos",
+  "min_r2_fit": 0.9,
+  "rmt_min": 0.45,
+  "rmt_max": 0.6,
+  "numeric_features": [
+    "C_modular",
+    "log_C_modular",
+    "K_gap_ratio",
+    "rmt_distance",
+    "rmt_score",
+    "log_t_dip",
+    "log_t_ramp",
+    "slope_ramp",
+    "log_slope_ramp",
+    "delta3_proxy",
+    "eta_zz",
+    "hx",
+    "hz_random",
+    "j_disorder",
+    "mean_MI",
+    "max_MI",
+    "mean_single_entropy",
+    "n_edges_input",
+    "n",
+    "subsystem_size"
+  ],
+  "categorical_features": [
+    "topology",
+    "candidate_L"
+  ],
+  "best_kfold_model": "random_forest",
+  "best_kfold_metrics": {
+    "model": "random_forest",
+    "cv": "kfold",
+    "n": 240,
+    "r2": 0.7198386651010591,
+    "rmse": 0.14829412803125167,
+    "mae": 0.10588331485979958
+  },
+  "external_test_metrics": null
+}
