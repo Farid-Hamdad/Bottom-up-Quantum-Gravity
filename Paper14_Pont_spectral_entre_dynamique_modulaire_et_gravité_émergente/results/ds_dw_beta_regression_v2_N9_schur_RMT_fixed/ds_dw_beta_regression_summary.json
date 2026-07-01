@@ -1,0 +1,121 @@
+{
+  "experiment": "BuP Paper 14 graph invariants d_s/d_w beta regression v2",
+  "n": 9,
+  "candidate": "schur",
+  "min_r2_fit": 0.9,
+  "rmt_min": 0.45,
+  "rmt_max": 0.6,
+  "n_full_rows": 810,
+  "n_regression_rows": 237,
+  "runtime_seconds": 282.83436608314514,
+  "best_by_cv": [
+    {
+      "feature_set": "dsdw_input_no_topology",
+      "model": "gradient_boosting",
+      "cv": "kfold",
+      "n": 237,
+      "r2": 0.9588717852190232,
+      "rmse": 0.10603046429450508,
+      "mae": 0.04664766266204521
+    },
+    {
+      "feature_set": "basic_no_topology",
+      "model": "gradient_boosting",
+      "cv": "kfold",
+      "n": 237,
+      "r2": 0.922767819423852,
+      "rmse": 0.14529808223558827,
+      "mae": 0.07979849061915953
+    },
+    {
+      "feature_set": "dsdw_no_topology",
+      "model": "gradient_boosting",
+      "cv": "kfold",
+      "n": 237,
+      "r2": 0.8955161047273557,
+      "rmse": 0.1689994967283537,
+      "mae": 0.07917473208375829
+    },
+    {
+      "feature_set": "dsdw_with_topology",
+      "model": "gradient_boosting",
+      "cv": "kfold",
+      "n": 237,
+      "r2": 0.8885001147014429,
+      "rmse": 0.17458138880929963,
+      "mae": 0.07949893766712085
+    },
+    {
+      "feature_set": "dsdw_input_no_topology",
+      "model": "gradient_boosting",
+      "cv": "leave_one_regime",
+      "n": 237,
+      "r2": 0.975601569006441,
+      "rmse": 0.08166607497709477,
+      "mae": 0.03788374663335122
+    },
+    {
+      "feature_set": "dsdw_with_topology",
+      "model": "gradient_boosting",
+      "cv": "leave_one_regime",
+      "n": 237,
+      "r2": 0.9398645512831999,
+      "rmse": 0.12821121377524536,
+      "mae": 0.06735999854134275
+    },
+    {
+      "feature_set": "basic_no_topology",
+      "model": "gradient_boosting",
+      "cv": "leave_one_regime",
+      "n": 237,
+      "r2": 0.9391727866338093,
+      "rmse": 0.12894654025952063,
+      "mae": 0.07058014520808892
+    },
+    {
+      "feature_set": "dsdw_no_topology",
+      "model": "gradient_boosting",
+      "cv": "leave_one_regime",
+      "n": 237,
+      "r2": 0.9388140008211858,
+      "rmse": 0.12932627299322708,
+      "mae": 0.06713317017658099
+    },
+    {
+      "feature_set": "dsdw_input_no_topology",
+      "model": "lasso_01",
+      "cv": "leave_one_topology",
+      "n": 237,
+      "r2": 0.4584181852741068,
+      "rmse": 0.3847625286845391,
+      "mae": 0.24952756025592512
+    },
+    {
+      "feature_set": "dsdw_with_topology",
+      "model": "lasso_01",
+      "cv": "leave_one_topology",
+      "n": 237,
+      "r2": 0.4584181852741068,
+      "rmse": 0.3847625286845391,
+      "mae": 0.24952756025592512
+    },
+    {
+      "feature_set": "basic_no_topology",
+      "model": "lasso_01",
+      "cv": "leave_one_topology",
+      "n": 237,
+      "r2": 0.4584181852741068,
+      "rmse": 0.3847625286845391,
+      "mae": 0.24952756025592512
+    },
+    {
+      "feature_set": "dsdw_no_topology",
+      "model": "lasso_01",
+      "cv": "leave_one_topology",
+      "n": 237,
+      "r2": 0.4584181852741068,
+      "rmse": 0.3847625286845391,
+      "mae": 0.24952756025592512
+    }
+  ]
+}
