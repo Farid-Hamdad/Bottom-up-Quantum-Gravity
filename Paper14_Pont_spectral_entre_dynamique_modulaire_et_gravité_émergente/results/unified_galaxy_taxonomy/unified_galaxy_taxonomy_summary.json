@@ -1,0 +1,18 @@
+{
+  "experiment": "BuP unified galaxy taxonomy v1",
+  "n_galaxies": 175,
+  "has_paper12": false,
+  "has_lowhigh": true,
+  "lambda_class_counts": {
+    "short_0p5Rd": 89,
+    "extended_1p5_2Rd": 39,
+    "standard_1Rd": 38,
+    "very_extended_3Rd": 9
+  },
+  "bridge_verdict_counts": {
+    "strong_bridge": 137,
+    "moderate_bridge": 38
+  },
+  "mean_best_bridge_error": 0.11189030662609603,
+  "median_best_bridge_error": 0.090967291201185
+}
