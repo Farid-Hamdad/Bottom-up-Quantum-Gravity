@@ -1,0 +1,79 @@
+{
+  "experiment": "BuP Paper 14 SFF features v3",
+  "n": 9,
+  "hilbert_dim": 512,
+  "subsystem_size": 4,
+  "d_A": 16,
+  "topologies": [
+    "chain",
+    "grid",
+    "er"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "eta_zz_list": [
+    0.5,
+    0.7,
+    1.0
+  ],
+  "hx_list": [
+    0.4,
+    0.6,
+    0.8
+  ],
+  "hz_random_list": [
+    0.2,
+    0.4,
+    0.6
+  ],
+  "n_rows": 3240,
+  "n_valid_pos": 1620,
+  "n_high_quality_pos": 1297,
+  "runtime_seconds": 63.309184074401855,
+  "best_high_quality": {
+    "n": 9,
+    "hilbert_dim": 512,
+    "subsystem_size": 4,
+    "d_A": 16,
+    "topology": "grid",
+    "seed": 2,
+    "eta_zz": 1.0,
+    "hx": 0.6,
+    "hz": 0.0,
+    "hz_random": 0.2,
+    "j_disorder": 0.2,
+    "j": 1.0,
+    "A_sites": "3,4,5,6",
+    "n_edges_input": 12,
+    "ground_energy": -19.03157964830212,
+    "mean_hz_random": -0.0015005711537953868,
+    "std_hz_random": 0.12508819578815333,
+    "mean_single_entropy": 0.1840921593630699,
+    "mean_MI": 0.051147567634051434,
+    "max_MI": 0.19970193941236714,
+    "K_gap_ratio": 0.6033095442230781,
+    "candidate_L": "induced",
+    "g2_plateau": 0.05973601102405358,
+    "C_modular": 0.9557761763848572,
+    "t_dip": 117.77126099706746,
+    "g2_dip": 4.583698518789607e-05,
+    "t_ramp": 120.0,
+    "g2_ramp": 0.05386424757145423,
+    "slope_ramp": 0.024147471065680125,
+    "log_t_dip": 4.768744277082103,
+    "log_t_ramp": 4.787491742782055,
+    "delta3_proxy": 0.004356583076557435,
+    "family": "pos",
+    "spearman_lambda_kappa": 1.0,
+    "fit_ok": 1,
+    "r2": 0.9959272448888609,
+    "A_fit": 20.735370588074787,
+    "beta": 0.555240294742648,
+    "B_fit": -0.0014048635745351993
+  }
+}
