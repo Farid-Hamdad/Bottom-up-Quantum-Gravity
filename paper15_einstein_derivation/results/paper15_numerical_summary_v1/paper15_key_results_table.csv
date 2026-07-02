@@ -1,0 +1,8 @@
+step,quantity,value,target_or_reference,error_or_delta,status
+Step B — spectral convergence,circle: d_s,1.0021,1,0.0021,positive
+Step B — spectral convergence,grid2d: d_s,1.9938,2,0.0062,positive
+Step B — spectral convergence,interval: d_s,0.9445,1,0.0555,positive
+Step B — spectral convergence,sphere: d_s,1.8964,2,0.1036,positive
+Step C — Ricci signal,sphere mean kappa,0.008854,flat torus mean = -0.001671,delta = 0.010525,positive_relative
+Step E — source response,"flat_torus2d: near/far response, s=-0.30",7.75,near/far > 1,"Spearman(phi,|dkappa|)=0.583",positive
+Step E — source response,"sphere: near/far response, s=-0.30",11.51,near/far > 1,"Spearman(phi,|dkappa|)=0.752",positive
