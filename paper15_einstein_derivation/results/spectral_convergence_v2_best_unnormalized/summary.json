@@ -1,0 +1,83 @@
+{
+  "experiment": "Paper 15 spectral convergence test v2",
+  "geometries": [
+    "interval",
+    "circle",
+    "grid2d",
+    "sphere"
+  ],
+  "Ns": [
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "k_mode": "sqrt",
+  "epsilon_mode": "median_knn",
+  "kernel_factor": 0.5,
+  "laplacians": [
+    "unnormalized_rescaled"
+  ],
+  "n_rows": 20,
+  "mean_abs_error_all": 0.057473711736838864,
+  "median_abs_error_all": 0.05515802517154533,
+  "best_by_geometry": [
+    {
+      "geometry": "circle",
+      "laplacian": "unnormalized_rescaled",
+      "n_cases": 5,
+      "target_dim": 1,
+      "best_N": 1024,
+      "final_ds_plateau": 1.0021089184122474,
+      "final_ds_abs_error": 0.0021089184122473625,
+      "mean_abs_error": 0.009136965708151123,
+      "final_k": 32,
+      "final_epsilon": 0.005435429265744534,
+      "final_lambda2": 7.871268543424767,
+      "final_density": 0.03128054740957967
+    },
+    {
+      "geometry": "grid2d",
+      "laplacian": "unnormalized_rescaled",
+      "n_cases": 5,
+      "target_dim": 2,
+      "best_N": 1024,
+      "final_ds_plateau": 1.993757845976944,
+      "final_ds_abs_error": 0.006242154023055946,
+      "mean_abs_error": 0.053184468281822106,
+      "final_k": 32,
+      "final_epsilon": 0.005202913631633717,
+      "final_lambda2": 64.93109435297919,
+      "final_density": 0.03377207050342131
+    },
+    {
+      "geometry": "interval",
+      "laplacian": "unnormalized_rescaled",
+      "n_cases": 5,
+      "target_dim": 1,
+      "best_N": 1024,
+      "final_ds_plateau": 0.9445147309571063,
+      "final_ds_abs_error": 0.05548526904289375,
+      "mean_abs_error": 0.11374522772528195,
+      "final_k": 32,
+      "final_epsilon": 0.0001380754857247145,
+      "final_lambda2": 77.50871328469555,
+      "final_density": 0.03154020039100684
+    },
+    {
+      "geometry": "sphere",
+      "laplacian": "unnormalized_rescaled",
+      "n_cases": 5,
+      "target_dim": 2,
+      "best_N": 1024,
+      "final_ds_plateau": 1.8963984141647678,
+      "final_ds_abs_error": 0.10360158583523216,
+      "mean_abs_error": 0.05382818523210027,
+      "final_k": 32,
+      "final_epsilon": 0.06468505772763569,
+      "final_lambda2": 12.120932312830817,
+      "final_density": 0.031933498289345066
+    }
+  ]
+}
