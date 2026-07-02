@@ -1,1 +1,834 @@
-too
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+\graphicspath{{figures/}}
+
+\title{
+\textbf{Des graphes d'intrication aux équations d'Einstein}\\
+\large Dérivation effective de la gravité continue dans Bottom-Up Quantum Gravity
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dans les papiers précédents du programme Bottom-Up Quantum Gravity, la
+géométrie émergente a été reconstruite à partir de la matrice d'information
+mutuelle \(W_{ij}=I(i:j)\), via le Laplacien d'intrication \(L_{\rm ent}\).
+Paper~14 a montré que le terme spectral de l'action BuP n'est plus libre :
+l'exposant \(\beta\) est contraint par les invariants spectraux du graphe.
+Le présent papier étudie l'étape suivante : les conditions sous lesquelles
+l'équation variationnelle discrète
+\[
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0
+\]
+admet une limite continue de type Einstein,
+\[
+G_{\mu\nu}[g^{\rm ent}]
++
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+Nous montrons numériquement trois briques nécessaires à cette limite. Le
+Laplacien rescalé \(L_\epsilon=(D-W)/\epsilon\) récupère la dimension
+spectrale attendue sur des géométries contrôlées, avec
+\(d_s({\rm circle})=1.0021\) et \(d_s({\rm grid2d})=1.9938\). La courbure
+d'Ollivier--Ricci distingue une sphère d'un tore plat périodique, avec un
+excès relatif \(\Delta\bar\kappa_{\rm sphere-flat}=0.010525\). Enfin, une
+perturbation radiale locale de \(W_{ij}\) produit une réponse de courbure
+localisée, avec des ratios near/far de \(7.75\) sur le tore plat et \(11.51\)
+sur la sphère. Ces résultats ne constituent pas encore une preuve analytique
+des équations d'Einstein, mais fournissent une validation numérique contrôlée
+des trois flèches nécessaires à la dérivation effective :
+\[
+W_{ij}\to L_\epsilon\to\Delta_g,
+\qquad
+\kappa_{ij}^{\rm OR}\to R_{\mu\nu}u^\mu u^\nu,
+\qquad
+\delta W_{\rm loc}\to\delta\kappa(r).
+\]
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Le programme Bottom-Up Quantum Gravity repose sur l'idée que l'espace, le
+temps et la gravité ne sont pas des structures fondamentales, mais des
+régimes effectifs issus de la structure d'intrication d'un état quantique
+global. L'objet fondamental n'est pas une métrique \(g_{\mu\nu}\), mais une
+matrice relationnelle
+\[
+W_{ij}=I(i:j),
+\]
+où \(I(i:j)\) désigne l'information mutuelle entre les degrés de liberté
+\(i\) et \(j\).
+
+À partir de \(W_{ij}\), on construit le Laplacien d'intrication
+\[
+L_{\rm ent}=D-W,
+\]
+où
+\[
+D_{ii}=\sum_j W_{ij}.
+\]
+Ce Laplacien encode la connectivité, la diffusion, la dimension spectrale
+et les propriétés géométriques émergentes du réseau d'intrication.
+
+Les papiers précédents ont établi plusieurs résultats intermédiaires :
+\begin{itemize}
+    \item la dimension spectrale \(d_s\) et la dimension de marche \(d_w\)
+    définissent un exposant gravitationnel effectif ;
+    \item la courbure discrète d'Ollivier--Ricci réagit aux perturbations
+    locales d'information ;
+    \item Paper~8 a construit un tenseur énergie-impulsion effectif à partir
+    de perturbations locales \(\delta W_{\rm loc}\) ;
+    \item Paper~14 a montré que la dynamique modulaire et la gravité
+    effective sont contrôlées par les mêmes invariants spectraux.
+\end{itemize}
+
+Le présent papier franchit une étape supplémentaire. Il pose la question :
+
+\[
+\boxed{
+\text{Sous quelles conditions l'équation discrète BuP converge-t-elle vers
+une équation d'Einstein effective ?}
+}
+\]
+
+La cible est la chaîne suivante :
+\[
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0
+\quad
+\xrightarrow[N\to\infty]{}
+\quad
+G_{\mu\nu}[g^{\rm ent}]
++
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+
+Il ne s'agit pas ici de postuler les équations d'Einstein, mais d'étudier
+leur émergence comme limite continue d'une condition d'équilibre sur un réseau
+d'intrication.
+
+\section{Point de départ : action BuP discrète}
+
+La formulation variationnelle minimale de BuP est :
+\[
+S_{\rm BuP}[W]
+=
+\underbrace{\mathrm{Tr}\,L(W)^{-\beta[W]}}_{T_1}
++
+\underbrace{\sum_{ij}W_{ij}\kappa_{ij}[W]}_{T_2}
++
+\underbrace{\lambda\sum_{ij}W_{ij}d_{ij}^{2}}_{T_3}
++
+\underbrace{S_{\rm topo}[W]}_{T_4}.
+\]
+
+Chaque terme joue un rôle distinct.
+
+\subsection{Terme spectral}
+
+Le terme
+\[
+T_1=\mathrm{Tr}\,L(W)^{-\beta[W]}
+\]
+encode l'action géométrique globale du graphe d'intrication. Paper~14 a
+montré que \(\beta\) n'est plus un paramètre libre, mais une fonction des
+invariants spectraux :
+\[
+\beta
+=
+F(\lambda_2,d_s,d_w,\Delta_3).
+\]
+
+La relation effective obtenue dans Paper~14 est :
+\[
+\beta_{\rm mod}
+=
+(0.531\pm0.033)
++
+(1.726\pm0.118)\,\beta_{\rm grav},
+\]
+avec
+\[
+\beta_{\rm grav}
+=
+\frac{\alpha_{\rm eff}+1}{2},
+\qquad
+\alpha_{\rm eff}
+=
+\frac{2d_s}{d_w}+d_w-4.
+\]
+
+Ainsi, le terme spectral se ferme sur le spectre du graphe lui-même.
+
+\subsection{Terme de courbure}
+
+Le terme
+\[
+T_2=\sum_{ij}W_{ij}\kappa_{ij}[W]
+\]
+encode la réponse locale de courbure du graphe, où \(\kappa_{ij}\) est la
+courbure d'Ollivier--Ricci du lien \((i,j)\). Ce terme est l'ancêtre discret
+du terme de courbure continue.
+
+Dans une limite géométrique régulière, on s'attend à une correspondance du
+type :
+\[
+\kappa_{ij}^{\rm OR}
+\longrightarrow
+R_{\mu\nu}u^\mu u^\nu,
+\]
+où \(u^\mu\) est la direction tangente associée au lien.
+
+\subsection{Terme de localité}
+
+Le terme
+\[
+T_3=\lambda\sum_{ij}W_{ij}d_{ij}^2
+\]
+pénalise les connexions longues et impose une structure locale. Sans ce terme,
+le graphe optimal tendrait vers une connectivité trop dense, incompatible avec
+une géométrie locale émergente.
+
+\subsection{Terme topologique}
+
+Le terme
+\[
+S_{\rm topo}[W]
+\]
+encode les contraintes globales de connectivité, de composantes, de cycles et
+de topologie effective. Sa forme exacte reste ouverte. Il représente une des
+directions de formalisation futures de BuP.
+
+\section{Équation variationnelle discrète}
+
+L'équation fondamentale est :
+\[
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
+\]
+
+Plutôt que d'écrire explicitement une dérivée simplifiée du terme spectral,
+on définit :
+\[
+\mathcal{G}_{ij}^{(\beta)}[L]
+=
+-\frac{\partial}{\partial W_{ij}}
+\mathrm{Tr}\,L^{-\beta}.
+\]
+
+L'équation d'équilibre prend alors la forme :
+\[
+\mathcal{G}_{ij}^{(\beta)}[L]
+=
+\kappa_{ij}
++
+\lambda d_{ij}^{2}
++
+\frac{\partial S_{\rm topo}}{\partial W_{ij}}.
+\]
+
+Cette équation est l'analogue discret d'une équation géométrique : le
+propagateur spectral du réseau d'intrication est équilibré par la courbure
+locale, le coût de localité et les contraintes topologiques.
+
+La question de Paper~15 est de savoir si, dans une limite continue stable,
+cette équation converge vers :
+\[
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+
+\section{Distance d'intrication et métrique émergente}
+
+Une distance informationnelle candidate est :
+\[
+d_{ij}^{\rm ent}
+=
+-\xi\log\left(
+\frac{W_{ij}+\epsilon}{W_{\max}}
+\right),
+\]
+où \(\epsilon\) régularise les liens nuls et \(\xi\) fixe l'échelle de
+longueur.
+
+Dans une limite lisse, on attend :
+\[
+d_{\rm ent}(x,y)^2
+=
+g_{\mu\nu}^{\rm ent}(x)
+(x^\mu-y^\mu)(x^\nu-y^\nu)
++
+O(|x-y|^4).
+\]
+
+La métrique peut alors être reconstruite localement à partir du développement
+quadratique de la distance :
+\[
+g_{\mu\nu}^{\rm ent}(x)
+\sim
+\frac{1}{2}
+\partial_{x^\mu}\partial_{y^\nu}
+d_{\rm ent}(x,y)^2
+\Big|_{y=x}.
+\]
+
+Numériquement, cette reconstruction peut être approchée par MDS, par
+géométrie des distances locales, ou par ajustement local d'une forme
+quadratique.
+
+\section{Limite spectrale : \(L_N\to\Delta_g\)}
+
+La première flèche nécessaire à la dérivation est :
+\[
+L_N\longrightarrow \Delta_g.
+\]
+
+Le Laplacien cible est le Laplacien de Laplace--Beltrami :
+\[
+\Delta_g
+=
+\frac{1}{\sqrt{|g|}}
+\partial_\mu
+\left(
+\sqrt{|g|}g^{\mu\nu}\partial_\nu
+\right).
+\]
+
+Le test numérique se fait via la trace de chaleur :
+\[
+Z(t)=\mathrm{Tr}\,e^{-tL},
+\]
+et la dimension spectrale :
+\[
+d_s(t)
+=
+-2\frac{d\log Z(t)}{d\log t}.
+\]
+
+Un premier test utilisant le Laplacien normalisé non rescalé
+\[
+L_{\rm norm}=I-D^{-1/2}WD^{-1/2}
+\]
+échoue sur les géométries 2D : les dimensions spectrales se replient vers
+\(d_s\simeq1.2\). Ce résultat négatif montre que le graphe seul ne suffit
+pas ; l'échelle de diffusion doit être prise en compte.
+
+La version positive utilise le Laplacien rescalé :
+\[
+L_\epsilon=\frac{D-W}{\epsilon}.
+\]
+
+Avec \(k=\sqrt{N}\), \(\epsilon=0.5\,\epsilon_{\rm knn}\), et \(N=1024\), on
+obtient :
+
+\[
+\begin{array}{lccc}
+\toprule
+{\rm Géométrie} & d_{\rm cible} & d_s^{\rm mesuré} & {\rm erreur} \\
+\midrule
+{\rm cercle} & 1 & 1.0021 & 0.0021 \\
+{\rm intervalle} & 1 & 0.9445 & 0.0555 \\
+{\rm grille\ 2D} & 2 & 1.9938 & 0.0062 \\
+{\rm sphère} & 2 & 1.8964 & 0.1036 \\
+\bottomrule
+\end{array}
+\]
+
+Ces résultats fournissent une première évidence numérique positive pour :
+\[
+L_N\longrightarrow\Delta_g.
+\]
+
+\section{Courbure discrète et signal de Ricci}
+
+La deuxième flèche nécessaire est :
+\[
+\kappa_{ij}^{\rm OR}
+\longrightarrow
+R_{\mu\nu}u^\mu u^\nu.
+\]
+
+La courbure d'Ollivier--Ricci d'un lien \((i,j)\) est définie par :
+\[
+\kappa_{ij}
+=
+1-
+\frac{W_1(m_i,m_j)}{d(i,j)},
+\]
+où \(W_1\) est la distance de Wasserstein-1 entre les mesures de voisinage
+\(m_i\) et \(m_j\).
+
+Un premier test utilisant une grille plane avec bord produit une courbure
+positive artificielle, due aux effets de frontière. La version v2 remplace la
+grille par un tore plat périodique et utilise des distances géodésiques
+intrinsèques.
+
+À la résolution finale, le tore plat donne :
+\[
+\bar\kappa_{\rm flat}=-0.001671\simeq0,
+\]
+tandis que la sphère donne :
+\[
+\bar\kappa_{\rm sphere}=0.008854.
+\]
+
+Le signal relatif est donc :
+\[
+\Delta\bar\kappa_{\rm sphere-flat}=0.010525.
+\]
+
+Cela fournit une première indication numérique positive que la courbure
+d'Ollivier--Ricci discrète détecte le signal de Ricci continu :
+\[
+\kappa_{ij}^{\rm OR}
+\longrightarrow
+R_{\mu\nu}u^\mu u^\nu.
+\]
+
+Ce résultat reste qualitatif : il ne constitue pas encore une preuve de
+convergence ponctuelle. Il valide cependant la séparation entre géométrie
+plate périodique et géométrie positivement courbée.
+
+\section{Source effective : héritage de Paper 8}
+
+Paper~8 a déjà construit une source effective depuis une perturbation locale
+de l'intrication :
+\[
+\delta W_{\rm loc}
+\longrightarrow
+T_{\mu\nu}^{\rm eff}.
+\]
+
+La forme générale proposée était :
+\[
+T_{\mu\nu}^{\rm eff}
+=
+T_{\mu\nu}^{\rm matter}[\delta W^{\rm loc}]
++
+T_{\mu\nu}^{\rm ent}[d_s].
+\]
+
+La meilleure source candidate dans Paper~8 était :
+\[
+S_{\rm flux}
+=
+T_{00}
+-
+\frac{1}{2}T_{aa}
++
+\frac{1}{2}T_{\rm grad}
++
+F.
+\]
+
+Elle présentait une corrélation de Spearman :
+\[
+\rho=0.741,
+\qquad
+p=1.84\times10^{-4},
+\]
+avec les fluctuations de courbure. Ce résultat constitue une preuve de concept
+numérique pour la correspondance :
+\[
+\delta W_{\rm loc}
+\longrightarrow
+T_{\mu\nu}^{\rm eff}.
+\]
+
+Paper~8 montre également que le secteur matière n'est pas conservé isolément :
+\[
+\nabla^\mu T_{\mu\nu}^{\rm matter}\neq0.
+\]
+
+Dans BuP, cette non-conservation n'est pas interprétée comme un échec, mais
+comme un échange avec le fond d'intrication :
+\[
+J_\nu^{\rm exchange}
+=
+\nabla^\mu
+\left[
+G_{\rm eff}(d_s)T_{\mu\nu}^{\rm matter}
+\right],
+\]
+avec compensation :
+\[
+\nabla^\mu
+\left[
+G\,T_{\mu\nu}^{\rm ent}
+\right]
+=
+-
+J_\nu^{\rm exchange}.
+\]
+
+Le champ d'intrication utilisé comme proxy était :
+\[
+\phi_{\rm ent}
+=
+\delta d_s
++
+\delta R
++
+\frac{1}{2}\Delta\delta R.
+\]
+
+Ainsi, Paper~15 ne part pas d'une source inconnue. Il prend la construction
+de Paper~8 comme point de départ et cherche à la formaliser dans une limite
+continue.
+
+\section{Réponse de courbure à une source d'intrication}
+
+Le test source-response v1 modifiait uniquement les liens internes à la
+région source :
+\[
+W'_{ij}=(1+s)W_{ij},
+\qquad i,j\in{\rm source}.
+\]
+Il produisait une réponse ultra-locale.
+
+La version v2 introduit une source radiale lisse :
+\[
+\phi_i
+=
+\exp\left[
+-\frac{d(i,\mathrm{source})^2}{2\sigma^2}
+\right],
+\]
+et perturbe les poids selon :
+\[
+W'_{ij}
+=
+W_{ij}
+\left[
+1+s\frac{\phi_i+\phi_j}{2}
+\right].
+\]
+
+La réponse de courbure est :
+\[
+\Delta\kappa_{ij}
+=
+\kappa_{ij}^{\rm after}
+-
+\kappa_{ij}^{\rm before}.
+\]
+
+Pour \(s=-0.30\), on obtient sur le tore plat :
+\[
+\frac{
+\langle|\Delta\kappa|\rangle_{\rm near}
+}{
+\langle|\Delta\kappa|\rangle_{\rm far}
+}
+=
+7.75.
+\]
+
+Sur la sphère :
+\[
+\frac{
+\langle|\Delta\kappa|\rangle_{\rm near}
+}{
+\langle|\Delta\kappa|\rangle_{\rm far}
+}
+=
+11.51.
+\]
+
+La réponse suit fortement le profil de source. Pour \(s=-0.30\), la
+corrélation entre \(\phi_{\rm edge}\) et \(|\Delta\kappa|\) vaut :
+\[
+\rho_{\rm Spearman}=0.583,
+\qquad
+p=4.12\times10^{-83}
+\]
+sur le tore plat, et :
+\[
+\rho_{\rm Spearman}=0.752,
+\qquad
+p=5.49\times10^{-165}
+\]
+sur la sphère.
+
+De plus, la réponse signée change de signe lorsque \(s\) passe de négatif à
+positif. Cela montre que la source d'intrication induit une réponse de
+courbure signée et localisée.
+
+Ce test fournit donc une réalisation numérique contrôlée de la chaîne :
+\[
+\delta W_{\rm loc}
+\longrightarrow
+\delta\kappa(r).
+\]
+
+\section{Assemblage vers l'équation d'Einstein effective}
+
+Si les limites précédentes sont satisfaites, l'action discrète BuP admet une
+limite continue schématique :
+\[
+S_{\rm cont}[g]
+=
+\int d^Dx\sqrt{|g|}
+\left[
+\frac{1}{16\pi G_{\rm eff}}R
++
+\Lambda_{\rm ent}
++
+\mathcal{L}_{\rm ent-source}
++
+\text{termes de courbure supérieure}
+\right].
+\]
+
+La variation par rapport à \(g^{\mu\nu}\) donne :
+\[
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
++
+\mathcal{H}_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent},
+\]
+où \(\mathcal{H}_{\mu\nu}\) contient les corrections non locales ou de
+courbure supérieure.
+
+Dans la limite lisse de basse énergie :
+\[
+\mathcal{H}_{\mu\nu}\to0,
+\]
+on obtient :
+\[
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+
+Cette équation n'est pas postulée : elle apparaît comme limite continue de
+l'équilibre variationnel du réseau d'intrication.
+
+\section{Résumé des résultats numériques}
+
+Les trois premiers tests numériques de Paper~15 soutiennent les trois flèches
+nécessaires à la dérivation effective :
+
+\[
+W_{ij}\to L_\epsilon\to\Delta_g,
+\qquad
+\kappa_{ij}^{\rm OR}\to R_{\mu\nu}u^\mu u^\nu,
+\qquad
+\delta W_{\rm loc}\to\delta\kappa(r).
+\]
+
+\[
+\begin{array}{llll}
+\toprule
+{\rm Étape} & {\rm Quantité} & {\rm Valeur} & {\rm Statut} \\
+\midrule
+{\rm Step\ B} & d_s({\rm circle}) & 1.0021 & positif \\
+{\rm Step\ B} & d_s({\rm grid2d}) & 1.9938 & positif \\
+{\rm Step\ B} & d_s({\rm interval}) & 0.9445 & positif \\
+{\rm Step\ B} & d_s({\rm sphere}) & 1.8964 & positif \\
+{\rm Step\ C} & \Delta\bar\kappa_{\rm sphere-flat} & 0.010525 & positif\ relatif \\
+{\rm Step\ E} & {\rm near/far,\ flat\ torus} & 7.75 & positif \\
+{\rm Step\ E} & {\rm near/far,\ sphere} & 11.51 & positif \\
+\bottomrule
+\end{array}
+\]
+
+Ces résultats ne prouvent pas encore les équations d'Einstein continues. Ils
+valident numériquement les briques nécessaires à une dérivation effective.
+
+\section{Limites}
+
+Plusieurs limites doivent être clairement énoncées.
+
+Premièrement, la convergence
+\[
+L_N\to\Delta_g
+\]
+est numériquement soutenue sur des géométries contrôlées, mais pas encore
+prouvée analytiquement.
+
+Deuxièmement, la correspondance
+\[
+\kappa_{ij}^{\rm OR}\to R_{\mu\nu}u^\mu u^\nu
+\]
+est pour l'instant qualitative et relative. Le test montre que la sphère
+présente un excès de courbure par rapport au tore plat, mais ne démontre pas
+une convergence ponctuelle.
+
+Troisièmement, la source \(T_{\mu\nu}^{\rm ent}\) reste à formaliser
+complètement. Paper~8 fournit une construction numérique, mais la dérivation
+continue doit encore être reliée rigoureusement à la première loi de
+l'intrication :
+\[
+\delta S_A=\delta\langle K_A\rangle.
+\]
+
+Quatrièmement, le terme topologique \(S_{\rm topo}[W]\) n'a pas encore de
+forme fermée.
+
+Cinquièmement, l'action continue obtenue peut contenir des corrections
+supérieures :
+\[
+\mathcal{H}_{\mu\nu}\neq0.
+\]
+Il reste à déterminer le régime où ces corrections deviennent négligeables.
+
+\section{Conclusion}
+
+Paper~15 établit la première étape d'une dérivation effective des équations
+d'Einstein depuis l'équilibre d'un réseau d'intrication.
+
+À partir de l'action discrète :
+\[
+S_{\rm BuP}[W]
+=
+\mathrm{Tr}\,L(W)^{-\beta[W]}
++
+\sum_{ij}W_{ij}\kappa_{ij}[W]
++
+\lambda\sum_{ij}W_{ij}d_{ij}^{2}
++
+S_{\rm topo}[W],
+\]
+on étudie la limite :
+\[
+\frac{\delta S_{\rm BuP}}{\delta W_{ij}}=0
+\quad
+\xrightarrow[N\to\infty]{}
+\quad
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+
+Les tests numériques montrent que :
+\[
+L_\epsilon=(D-W)/\epsilon
+\]
+reconstruit la dimension spectrale de géométries contrôlées, que la courbure
+d'Ollivier--Ricci distingue une géométrie positivement courbée d'une
+géométrie plate périodique, et qu'une perturbation locale de \(W_{ij}\)
+produit une réponse de courbure localisée.
+
+Ainsi, Einstein n'est pas posé comme axiome dans BuP. Il apparaît comme une
+cible de limite continue : la gravité est la forme macroscopique de la
+condition variationnelle du réseau d'intrication.
+
+\section*{Disponibilité du code et des données}
+
+Les scripts et résultats de Paper~15 sont organisés dans le dossier :
+\[
+\texttt{papers/paper15\_einstein\_derivation/}.
+\]
+
+Les scripts principaux sont :
+\[
+\texttt{scripts/paper15\_spectral\_convergence\_v2.py},
+\]
+\[
+\texttt{scripts/paper15\_ricci\_convergence\_v2.py},
+\]
+\[
+\texttt{scripts/paper15\_source\_response\_v2.py}.
+\]
+
+Les résultats numériques principaux sont stockés dans :
+\[
+\texttt{results/spectral\_convergence\_v2\_best\_unnormalized/},
+\]
+\[
+\texttt{results/ricci\_convergence\_v2/},
+\]
+\[
+\texttt{results/source\_response\_v2/}.
+\]
+
+\appendix
+
+\section{Commentaires sur la trace de chaleur}
+
+La trace de chaleur d'un opérateur elliptique continu admet l'expansion :
+\[
+\mathrm{Tr}\,e^{-t\Delta_g}
+\sim
+(4\pi t)^{-D/2}
+\sum_{n=0}^{\infty}
+a_n(\Delta_g)t^n.
+\]
+
+La représentation de Mellin donne :
+\[
+\mathrm{Tr}\,L^{-\beta}
+=
+\frac{1}{\Gamma(\beta)}
+\int_0^\infty
+t^{\beta-1}
+\mathrm{Tr}(e^{-tL})\,dt.
+\]
+
+Dans la limite continue, les coefficients de Seeley--DeWitt contiennent les
+termes géométriques :
+\[
+a_0\sim \int d^Dx\sqrt{|g|},
+\]
+et
+\[
+a_1\ \text{ou}\ a_2
+\sim
+\int d^Dx\sqrt{|g|}R,
+\]
+selon la convention de l'opérateur et la dimension. Ce développement suggère
+que le terme spectral BuP contient une contribution de type
+Einstein--Hilbert, ainsi que des corrections supérieures.
+
+\section{Prochaines étapes}
+
+Les prochaines étapes sont :
+
+\begin{enumerate}
+    \item tester la convergence spectrale avec des tailles plus grandes
+    \(N=2048,4096\) en utilisant des méthodes sparse ;
+    \item démontrer ou valider numériquement la convergence ponctuelle de
+    \(\kappa_{ij}^{\rm OR}\) vers \(R_{\mu\nu}u^\mu u^\nu\) ;
+    \item reconstruire explicitement \(g_{\mu\nu}^{\rm ent}\) à partir de
+    \(d_{\rm ent}(i,j)\) ;
+    \item formaliser \(T_{\mu\nu}^{\rm ent}\) depuis la première loi de
+    l'intrication ;
+    \item déterminer la forme minimale de \(S_{\rm topo}[W]\) ;
+    \item identifier les corrections \(\mathcal{H}_{\mu\nu}\) et leur régime
+    de suppression.
+\end{enumerate}
+
+\end{document}
