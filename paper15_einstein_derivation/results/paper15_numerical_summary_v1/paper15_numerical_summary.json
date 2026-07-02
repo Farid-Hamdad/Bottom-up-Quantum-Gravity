@@ -1,0 +1,131 @@
+{
+  "experiment": "Paper 15 numerical summary v1",
+  "spectral_dir": "papers/paper15_einstein_derivation/results/spectral_convergence_v2_best_unnormalized",
+  "ricci_dir": "papers/paper15_einstein_derivation/results/ricci_convergence_v2",
+  "source_dir": "papers/paper15_einstein_derivation/results/source_response_v2",
+  "spectral": {
+    "status": "positive",
+    "interpretation": "Continuum-rescaled graph Laplacian recovers the expected heat-trace spectral dimension on controlled geometries.",
+    "operator": "L_epsilon=(D-W)/epsilon",
+    "rows": [
+      {
+        "geometry": "circle",
+        "target_dim": 1.0,
+        "measured_ds": 1.0021089184122474,
+        "abs_error": 0.0021089184122473,
+        "laplacian": "unnormalized_rescaled",
+        "N": 1024,
+        "k": 32,
+        "epsilon": 0.0054354292657445
+      },
+      {
+        "geometry": "grid2d",
+        "target_dim": 2.0,
+        "measured_ds": 1.993757845976944,
+        "abs_error": 0.0062421540230559,
+        "laplacian": "unnormalized_rescaled",
+        "N": 1024,
+        "k": 32,
+        "epsilon": 0.0052029136316337
+      },
+      {
+        "geometry": "interval",
+        "target_dim": 1.0,
+        "measured_ds": 0.9445147309571064,
+        "abs_error": 0.0554852690428937,
+        "laplacian": "unnormalized_rescaled",
+        "N": 1024,
+        "k": 32,
+        "epsilon": 0.0001380754857247
+      },
+      {
+        "geometry": "sphere",
+        "target_dim": 2.0,
+        "measured_ds": 1.896398414164768,
+        "abs_error": 0.1036015858352321,
+        "laplacian": "unnormalized_rescaled",
+        "N": 1024,
+        "k": 32,
+        "epsilon": 0.0646850577276356
+      }
+    ]
+  },
+  "ricci": {
+    "status": "positive_relative",
+    "interpretation": "Ollivier-Ricci curvature gives a positive curvature excess on the sphere relative to the flat periodic torus.",
+    "flat_mean_kappa": -0.0016709680680738,
+    "sphere_mean_kappa": 0.0088541176190335,
+    "delta_sphere_minus_flat": 0.0105250856871073,
+    "rows": [
+      {
+        "geometry": "sphere",
+        "N": 512,
+        "mean_kappa": 0.0088541176190335,
+        "median_kappa": 0.008781886196974,
+        "positive_fraction": 0.6366666666666667,
+        "delta_mean_vs_flat_torus2d": 0.0105250856871074
+      },
+      {
+        "geometry": "circle",
+        "N": 512,
+        "mean_kappa": 0.0039405494114505,
+        "median_kappa": 1.1102230246251563e-16,
+        "positive_fraction": 0.5016666666666667,
+        "delta_mean_vs_flat_torus2d": 0.0056115174795243
+      },
+      {
+        "geometry": "embedded_torus",
+        "N": 529,
+        "mean_kappa": 0.0062813859314014,
+        "median_kappa": 0.0118317160890725,
+        "positive_fraction": 0.6416666666666667,
+        "delta_mean_vs_flat_torus2d": 0.0079523539994752
+      },
+      {
+        "geometry": "flat_torus2d",
+        "N": 529,
+        "mean_kappa": -0.0016709680680738,
+        "median_kappa": -2.220446049250313e-16,
+        "positive_fraction": 0.415,
+        "delta_mean_vs_flat_torus2d": 0.0
+      }
+    ]
+  },
+  "source": {
+    "status": "positive",
+    "interpretation": "A smooth radial perturbation of W produces a localized signed curvature response correlated with the source profile.",
+    "key_strength": -0.3,
+    "localization_ratio_range": [
+      5.01345776028021,
+      11.513391518484433
+    ],
+    "spearman_phi_absdelta_range": [
+      0.4829488425064213,
+      0.7523919083027675
+    ],
+    "rows_strength_minus_0p30": [
+      {
+        "geometry": "flat_torus2d",
+        "strength": -0.3,
+        "near_abs_mean_delta": 0.0055043250617239,
+        "far_abs_mean_delta": 0.0007105479210647,
+        "localization_ratio_near_far": 7.746592310728272,
+        "spearman_phi_absdelta": 0.5831509756243577,
+        "spearman_phi_absdelta_p": 4.115972117563355e-83,
+        "spearman_phi_delta": -0.4303897737055841,
+        "spearman_phi_delta_p": 6.960942010602424e-42
+      },
+      {
+        "geometry": "sphere",
+        "strength": -0.3,
+        "near_abs_mean_delta": 0.0051911477477827,
+        "far_abs_mean_delta": 0.0004508791123318,
+        "localization_ratio_near_far": 11.513391518484433,
+        "spearman_phi_absdelta": 0.7523919083027675,
+        "spearman_phi_absdelta_p": 5.485348394612077e-165,
+        "spearman_phi_delta": -0.2335211442647871,
+        "spearman_phi_delta_p": 1.300947105327155e-12
+      }
+    ]
+  }
+}
