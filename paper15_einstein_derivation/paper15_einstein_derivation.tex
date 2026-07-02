@@ -586,6 +586,82 @@ Ce test fournit donc une réalisation numérique contrôlée de la chaîne :
 \delta\kappa(r).
 \]
 
+\subsection{Convergence avec les résultats de Paper 7 et Paper 8}
+
+Le résultat central du Step~E est que la réponse de courbure est à la fois
+locale et corrélée au profil de perturbation d'intrication. Sur la sphère,
+pour une perturbation \(s=-0.30\), on obtient :
+\[
+\frac{
+\langle|\Delta\kappa|\rangle_{\rm near}
+}{
+\langle|\Delta\kappa|\rangle_{\rm far}
+}
+=
+11.51,
+\qquad
+\rho_{\rm Spearman}
+\left(
+\phi_{\rm edge},
+|\Delta\kappa|
+\right)
+=
+0.752.
+\]
+Ce résultat montre que la perturbation locale de \(W_{ij}\) induit une réponse
+de courbure fortement localisée, et que l'amplitude de cette réponse suit le
+profil radial de la source d'intrication.
+
+Ce signal rejoint deux résultats antérieurs du programme BuP. Paper~7 avait
+montré, sur des graphes d'information mutuelle quantiques à \(N=16\), qu'une
+perturbation locale de \(W_{ij}\) produit une réponse positive de courbure,
+avec
+\[
+\Delta\kappa_{\rm edge}=0.076
+\]
+et une fraction positive de \(100\%\) dans le régime testé. Paper~8 avait
+ensuite reconstruit un tenseur énergie--impulsion effectif depuis les
+perturbations locales d'intrication, avec une corrélation de Spearman
+\[
+\rho=0.741
+\]
+entre la source reconstruite et les fluctuations de courbure.
+
+Les trois mesures peuvent être résumées ainsi :
+\[
+\begin{array}{llll}
+\toprule
+{\rm Paper} & {\rm Test} & {\rm Cadre} & {\rm Signal}\ \delta W\to\delta\kappa \\
+\midrule
+{\rm Paper\ 7}
+& {\rm Réponse\ de\ courbure}
+& {\rm graphes\ MI\ quantiques}\ (N=16)
+& \Delta\kappa_{\rm edge}=0.076,\ {\rm fraction\ positive}=100\% \\
+{\rm Paper\ 8}
+& T_{\mu\nu}^{\rm eff}\ {\rm reconstruit}
+& {\rm source\ effective\ depuis}\ \delta W_{\rm loc}
+& \rho_{\rm Spearman}=0.741 \\
+{\rm Paper\ 15,\ Step\ E}
+& {\rm source\ radiale\ contrôlée}
+& {\rm géométries\ contrôlées}
+& \rho_{\rm Spearman}=0.752,\ {\rm near/far}=11.51 \\
+\bottomrule
+\end{array}
+\]
+
+Ainsi, le même couplage
+\[
+\delta W_{\rm loc}
+\longrightarrow
+\delta\kappa
+\]
+apparaît sous trois angles indépendants : réponse locale directe
+(Paper~7), reconstruction d'une source effective \(T_{\mu\nu}^{\rm eff}\)
+(Paper~8), et réponse radiale contrôlée sur géométries connues
+(Paper~15). Le résultat de Paper~15 est particulièrement important car il
+confirme ce couplage dans un cadre où la géométrie de référence est contrôlée
+et où la courbure attendue est connue.
+
 \section{Assemblage vers l'équation d'Einstein effective}
 
 Si les limites précédentes sont satisfaites, l'action discrète BuP admet une
@@ -658,13 +734,17 @@ W_{ij}\to L_\epsilon\to\Delta_g,
 {\rm Step\ B} & d_s({\rm sphere}) & 1.8964 & positif \\
 {\rm Step\ C} & \Delta\bar\kappa_{\rm sphere-flat} & 0.010525 & positif\ relatif \\
 {\rm Step\ E} & {\rm near/far,\ flat\ torus} & 7.75 & positif \\
-{\rm Step\ E} & {\rm near/far,\ sphere} & 11.51 & positif \\
+{\rm Step\ E} & {\rm near/far,\ sphere} & 11.51,\ \rho=0.752 & positif \\
 \bottomrule
 \end{array}
 \]
 
 Ces résultats ne prouvent pas encore les équations d'Einstein continues. Ils
 valident numériquement les briques nécessaires à une dérivation effective.
+
+Le Step~E ne constitue donc pas un résultat isolé : il confirme, sur des
+géométries contrôlées, le même couplage \(\delta W_{\rm loc}\to\delta\kappa\)
+déjà observé dans Paper~7 et Paper~8.
 
 \section{Limites}
 
