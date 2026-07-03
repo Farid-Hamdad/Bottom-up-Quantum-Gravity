@@ -1,0 +1,70 @@
+{
+  "experiment": "Paper 17 OR-to-Ricci scaling v2",
+  "geometries": [
+    "flat_torus2d",
+    "sphere"
+  ],
+  "Ns": [
+    128,
+    256,
+    512
+  ],
+  "k_mode": "sqrt",
+  "kernel_factor": 0.5,
+  "alpha_idleness": 0.5,
+  "max_edges": 900,
+  "final_calibration": [
+    {
+      "N_input": 512,
+      "flat_N_actual": 529,
+      "sphere_N_actual": 512,
+      "flat_mean_kappa": -0.002278119055597618,
+      "sphere_mean_kappa": 0.00918342081851335,
+      "delta_mean_kappa": 0.011461539874110967,
+      "B_epsilon_flat_baseline": -0.30128124510278476,
+      "sphere_mean_kappa_over_epsilon": 0.09065200634151223,
+      "delta_kappa_over_epsilon": 0.39193325144429697,
+      "A_epsilon": 2.551454862058632,
+      "B_l2_flat_baseline": -0.7937192647874316,
+      "sphere_mean_kappa_over_l2": 0.1338952722358613,
+      "delta_kappa_over_l2": 0.9276145370232929,
+      "A_l2": 1.0780339894294795
+    }
+  ],
+  "final_calibrated_summary": [
+    {
+      "geometry": "flat_torus2d",
+      "N_input": 512,
+      "n_edges": 900,
+      "N_actual": 529,
+      "ricci_target": 0.0,
+      "mean_Rhat_epsilon": -1.1052887000712669e-16,
+      "median_Rhat_epsilon": 0.7687054976645037,
+      "std_Rhat_epsilon": 7.619272749286286,
+      "mean_Rhat_l2": 3.157967714489334e-17,
+      "median_Rhat_l2": 0.8556563455058077,
+      "std_Rhat_l2": 8.748963218835078,
+      "error_mean_Rhat_epsilon": -1.1052887000712669e-16,
+      "abs_error_mean_Rhat_epsilon": 1.1052887000712669e-16,
+      "error_mean_Rhat_l2": 3.157967714489334e-17,
+      "abs_error_mean_Rhat_l2": 3.157967714489334e-17
+    },
+    {
+      "geometry": "sphere",
+      "N_input": 512,
+      "n_edges": 900,
+      "N_actual": 512,
+      "ricci_target": 1.0,
+      "mean_Rhat_epsilon": 1.0,
+      "median_Rhat_epsilon": 0.9862068889549013,
+      "std_Rhat_epsilon": 0.8697883905685799,
+      "mean_Rhat_l2": 1.0,
+      "median_Rhat_l2": 0.945515657333178,
+      "std_Rhat_l2": 1.0570609505368134,
+      "error_mean_Rhat_epsilon": 0.0,
+      "abs_error_mean_Rhat_epsilon": 0.0,
+      "error_mean_Rhat_l2": 0.0,
+      "abs_error_mean_Rhat_l2": 0.0
+    }
+  ]
+}
