@@ -1,0 +1,627 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+\graphicspath{{figures/}}
+
+\title{
+\textbf{Tenseur énergie--impulsion émergent depuis l'intrication}\\
+\large Source modulaire et réponse de courbure dans Bottom-Up Quantum Gravity
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Paper~18 étudie la troisième flèche nécessaire à la limite d'Einstein
+effective de Bottom-Up Quantum Gravity :
+\[
+\delta W_{\rm loc}
+\longrightarrow
+T_{\mu\nu}^{\rm ent}.
+\]
+Paper~16 a renforcé la convergence spectrale
+\(L_N\to\Delta_g\), et Paper~17 a identifié un proxy moyen de Ricci à partir
+de la courbure d'Ollivier--Ricci. Le présent papier traite le côté source :
+comment une perturbation locale du graphe d'intrication peut-elle jouer le
+rôle d'une source énergie--impulsion effective ?
+
+Nous construisons un analogue graphe de la première loi modulaire. Sur une
+région \(A\), nous définissons
+\[
+\rho_A=
+\frac{(L_A+\mu I)^{-1}}{\mathrm{Tr}(L_A+\mu I)^{-1}},
+\qquad
+S_A=-\mathrm{Tr}(\rho_A\log\rho_A),
+\qquad
+K_A=-\log\rho_A.
+\]
+Après une perturbation locale de \(W_{ij}\), nous vérifions
+\[
+\delta S_A^{\rm graph}
+\simeq
+\delta\langle K_A^{\rm graph}\rangle.
+\]
+Sur le tore plat et la sphère, la pente du fit vaut respectivement
+\(0.989481\) et \(0.989718\), avec \(R^2\simeq0.9966\).
+
+Nous montrons ensuite que la variation modulaire prédit la réponse de
+courbure locale :
+\[
+|\delta\langle K_A\rangle|
+\longrightarrow
+\langle|\Delta\kappa|\rangle_{\rm near}.
+\]
+Le coefficient de détermination vaut \(R^2=0.967229\) sur le tore plat et
+\(R^2=0.982252\) sur la sphère. Ces résultats valident numériquement la chaîne
+\[
+\delta W_{\rm loc}
+\to
+\delta S_A
+\simeq
+\delta\langle K_A\rangle
+\to
+\delta\kappa(r),
+\]
+et fournissent une première source modulaire effective pour la courbure.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Dans Bottom-Up Quantum Gravity, la géométrie et la gravité émergent de la
+structure d'intrication d'un état quantique global. L'objet fondamental est
+la matrice d'information mutuelle
+\[
+W_{ij}=I(i:j).
+\]
+
+Les papiers précédents ont établi deux briques géométriques. Paper~16 a
+montré que le Laplacien d'intrication rescalé reconstruit le bas spectre du
+Laplacien de Laplace--Beltrami :
+\[
+c_N L_N\to-\Delta_g.
+\]
+Paper~17 a montré que la courbure d'Ollivier--Ricci porte un signal de Ricci
+moyen :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu.
+\]
+
+Il reste à comprendre le côté source de l'équation d'Einstein effective :
+\[
+T_{\mu\nu}^{\rm ent}.
+\]
+
+Paper~18 pose donc la question :
+\[
+\boxed{
+\text{Une perturbation locale de }W_{ij}
+\text{ définit-elle une source effective de courbure ?}
+}
+\]
+
+La chaîne visée est :
+\[
+\delta W_{\rm loc}
+\to
+\delta S_A
+\simeq
+\delta\langle K_A\rangle
+\to
+\delta\kappa(r)
+\to
+T_{\mu\nu}^{\rm ent}.
+\]
+
+\section{Héritage de Paper 8 et Paper 15}
+
+Paper~8 avait déjà proposé une construction effective :
+\[
+T_{\mu\nu}^{\rm eff}
+=
+T_{\mu\nu}^{\rm matter}[\delta W_{\rm loc}]
++
+T_{\mu\nu}^{\rm ent}[d_s].
+\]
+Le meilleur proxy source présentait une corrélation de Spearman
+\[
+\rho=0.741,
+\qquad
+p=1.84\times10^{-4}
+\]
+avec les fluctuations de courbure.
+
+Paper~15 Step~E a ensuite montré qu'une perturbation radiale de l'intrication
+produit une réponse de courbure localisée :
+\[
+\delta W_{\rm loc}
+\to
+\delta\kappa(r).
+\]
+Sur la sphère, le test donnait
+\[
+{\rm Spearman}(\phi_{\rm edge},|\Delta\kappa|)
+=
+0.752,
+\]
+et un ratio near/far
+\[
+11.51.
+\]
+
+Paper~18 poursuit cette direction, mais introduit explicitement la variation
+modulaire comme source intermédiaire.
+
+\section{Première loi modulaire}
+
+La première loi modulaire affirme :
+\[
+\delta S_A
+=
+\delta\langle K_A\rangle,
+\]
+où
+\[
+K_A=-\log\rho_A.
+\]
+
+Dans une théorie quantique des champs relativiste, le Hamiltonien modulaire
+local peut être relié au tenseur énergie--impulsion :
+\[
+\delta\langle K_A\rangle
+\sim
+\int_A \xi^\mu\delta T_{\mu\nu}\,d\Sigma^\nu.
+\]
+
+Dans BuP, l'objectif est de construire un analogue discret :
+\[
+\delta S_A[W]
+\simeq
+\delta\langle K_A[W]\rangle,
+\]
+puis d'interpréter
+\[
+\delta\langle K_A\rangle
+\]
+comme une source effective de courbure.
+
+\section{Construction graphe de \(\rho_A\), \(S_A\) et \(K_A\)}
+
+Sur une région \(A\) du graphe, on restreint le Laplacien :
+\[
+L_A=L|_A.
+\]
+
+On définit une matrice densité effective :
+\[
+\rho_A
+=
+\frac{(L_A+\mu I)^{-1}}
+{\mathrm{Tr}(L_A+\mu I)^{-1}}.
+\]
+
+Le paramètre \(\mu\) joue le rôle d'une régularisation infrarouge. Il garantit
+que l'inverse est bien défini.
+
+L'entropie de graphe est :
+\[
+S_A
+=
+-\mathrm{Tr}(\rho_A\log\rho_A).
+\]
+
+Le Hamiltonien modulaire discret est :
+\[
+K_A=-\log\rho_A.
+\]
+
+Après une perturbation locale du graphe,
+\[
+W_{ij}
+\to
+W'_{ij},
+\]
+on obtient
+\[
+\rho_A\to\rho'_A.
+\]
+
+On mesure alors :
+\[
+\delta S_A
+=
+S_A(W')-S_A(W),
+\]
+et :
+\[
+\delta\langle K_A\rangle
+=
+\mathrm{Tr}\left[(\rho'_A-\rho_A)K_A\right].
+\]
+
+La première loi modulaire prédit :
+\[
+\delta S_A
+\simeq
+\delta\langle K_A\rangle.
+\]
+
+\section{Perturbation locale d'intrication}
+
+La perturbation utilisée est radiale :
+\[
+\phi_i
+=
+\exp\left[
+-\frac{d(i,\mathrm{source})^2}{2\sigma^2}
+\right].
+\]
+
+Les poids sont modifiés selon :
+\[
+W'_{ij}
+=
+W_{ij}
+\left[
+1+s\frac{\phi_i+\phi_j}{2}
+\right].
+\]
+
+Le paramètre \(s\) contrôle l'intensité de la source. Les tests utilisent :
+\[
+s\in\{-0.20,-0.10,-0.05,0.05,0.10,0.20\}.
+\]
+
+\section{Résultat v1 : loi modulaire sur graphe}
+
+Le premier test mesure la relation entre
+\[
+\delta S_A
+\]
+et
+\[
+\delta\langle K_A\rangle.
+\]
+
+Sur le tore plat, le fit linéaire donne :
+\[
+\delta S_A
+=
+-0.000068
++
+0.989481\,\delta\langle K_A\rangle.
+\]
+On obtient :
+\[
+R^2=0.996590,
+\qquad
+r_{\rm Pearson}=0.998293.
+\]
+
+Sur la sphère :
+\[
+\delta S_A
+=
+-0.000081
++
+0.989718\,\delta\langle K_A\rangle.
+\]
+On obtient :
+\[
+R^2=0.996592,
+\qquad
+r_{\rm Pearson}=0.998295.
+\]
+
+L'erreur relative moyenne vaut environ :
+\[
+0.0533
+\]
+sur les deux géométries.
+
+Ainsi :
+\[
+\boxed{
+\delta S_A^{\rm graph}
+\simeq
+\delta\langle K_A^{\rm graph}\rangle.
+}
+\]
+
+\section{Résultat v2 : source modulaire et réponse de courbure}
+
+La version v2 mesure simultanément la réponse modulaire et la réponse de
+courbure :
+\[
+\Delta\kappa_{ij}
+=
+\kappa_{ij}^{\rm after}
+-
+\kappa_{ij}^{\rm before}.
+\]
+
+On compare trois zones :
+
+\[
+{\rm near},
+\qquad
+{\rm mid},
+\qquad
+{\rm far}.
+\]
+
+La réponse de courbure est localisée. Le ratio
+\[
+\frac{
+\langle|\Delta\kappa|\rangle_{\rm near}
+}{
+\langle|\Delta\kappa|\rangle_{\rm far}
+}
+\]
+vaut :
+\[
+6.293
+\]
+sur le tore plat, et :
+\[
+9.534
+\]
+sur la sphère.
+
+Le résultat principal est que l'amplitude modulaire prédit l'amplitude de la
+réponse de courbure proche :
+\[
+|\delta\langle K_A\rangle|
+\longrightarrow
+\langle|\Delta\kappa|\rangle_{\rm near}.
+\]
+
+Sur le tore plat :
+\[
+R^2=0.967229,
+\qquad
+r_{\rm Pearson}=0.983478.
+\]
+
+Sur la sphère :
+\[
+R^2=0.982252,
+\qquad
+r_{\rm Pearson}=0.991086.
+\]
+
+La relation signée est également quasi parfaite, à une convention de signe
+près :
+\[
+R^2=0.998336,
+\qquad
+r_{\rm Pearson}=-0.999168
+\]
+sur le tore plat, et :
+\[
+R^2=0.998857,
+\qquad
+r_{\rm Pearson}=-0.999428
+\]
+sur la sphère.
+
+Ces résultats montrent que :
+\[
+\boxed{
+\delta\langle K_A\rangle
+\text{ agit comme une source effective de la réponse de courbure.}
+}
+\]
+
+\section{Résumé des résultats numériques}
+
+\[
+\begin{array}{lllll}
+\toprule
+{\rm Test} & {\rm Géométrie} & {\rm Quantité} & {\rm Valeur} & {\rm Statut}\\
+\midrule
+{\rm v1} & T^2 & {\rm pente}\ \delta S/\delta K & 0.989481 & positif\\
+{\rm v1} & T^2 & R^2(\delta S,\delta K) & 0.996590 & positif\\
+{\rm v1} & S^2 & {\rm pente}\ \delta S/\delta K & 0.989718 & positif\\
+{\rm v1} & S^2 & R^2(\delta S,\delta K) & 0.996592 & positif\\
+{\rm v2} & T^2 & {\rm near/far} & 6.293007 & positif\\
+{\rm v2} & T^2 & R^2(|\delta K|,|\Delta\kappa|_{\rm near}) & 0.967229 & positif\\
+{\rm v2} & S^2 & {\rm near/far} & 9.533529 & positif\\
+{\rm v2} & S^2 & R^2(|\delta K|,|\Delta\kappa|_{\rm near}) & 0.982252 & positif\\
+\bottomrule
+\end{array}
+\]
+
+\section{Interprétation}
+
+Les résultats de Paper~18 valident la chaîne :
+\[
+\delta W_{\rm loc}
+\longrightarrow
+\delta S_A
+\simeq
+\delta\langle K_A\rangle
+\longrightarrow
+\delta\kappa(r).
+\]
+
+La première relation montre que la variation d'entropie de graphe est bien
+capturée par la variation modulaire. La seconde montre que cette variation
+modulaire contrôle la réponse de courbure.
+
+Le résultat n'est pas encore un tenseur énergie--impulsion complet. Il établit
+un proxy scalaire de source :
+\[
+\delta\langle K_A\rangle,
+\]
+qui se comporte comme une source effective de courbure.
+
+Dans la limite continue, l'objectif devient :
+\[
+\delta\langle K_A\rangle
+\to
+\int_A \xi^\mu \delta T_{\mu\nu}^{\rm ent}d\Sigma^\nu.
+\]
+
+\section{Lien avec l'équation d'Einstein effective}
+
+Les résultats de Papers~16--18 fournissent les trois briques nécessaires :
+
+\[
+L_N\to\Delta_g,
+\]
+
+\[
+\kappa^{OR}
+\to
+R_{\mu\nu}u^\mu u^\nu,
+\]
+
+\[
+\delta W_{\rm loc}
+\to
+\delta\langle K_A\rangle
+\to
+\delta\kappa(r).
+\]
+
+Paper~19 pourra donc assembler :
+\[
+\frac{\delta S_{\rm BuP}}{\delta W_{ij}}=0
+\quad
+\Longrightarrow
+\quad
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu}.
+\]
+
+Paper~18 fournit la brique source :
+\[
+T_{\mu\nu}^{\rm ent}.
+\]
+
+\section{Limites}
+
+Plusieurs limites doivent être précisées.
+
+Premièrement, le test construit un proxy de matrice densité depuis le
+Laplacien de graphe :
+\[
+\rho_A=
+\frac{(L_A+\mu I)^{-1}}{\mathrm{Tr}(L_A+\mu I)^{-1}}.
+\]
+Ce n'est pas encore une vraie matrice densité quantique réduite \(\rho_A\).
+
+Deuxièmement, le résultat est scalaire et modulaire. Il ne reconstruit pas
+encore toutes les composantes de \(T_{\mu\nu}\).
+
+Troisièmement, les géométries testées sont contrôlées et synthétiques. Il
+reste à tester des graphes d'information mutuelle issus d'états quantiques.
+
+Quatrièmement, la relation signée dépend de la convention de perturbation.
+
+Cinquièmement, la dérivation continue via le théorème de
+Bisognano--Wichmann reste à formaliser.
+
+\section{Conclusion}
+
+Paper~18 établit que la variation modulaire du graphe d'intrication agit comme
+une source effective de courbure.
+
+Le premier test valide :
+\[
+\delta S_A^{\rm graph}
+\simeq
+\delta\langle K_A^{\rm graph}\rangle.
+\]
+
+Le second test montre :
+\[
+|\delta\langle K_A\rangle|
+\to
+\langle|\Delta\kappa|\rangle_{\rm near}.
+\]
+
+Avec \(R^2=0.967\) sur le tore plat et \(R^2=0.982\) sur la sphère, la réponse
+modulaire prédit fortement la réponse de courbure proche.
+
+Ainsi, Paper~18 fournit la brique source du programme BuP :
+\[
+\delta W_{\rm loc}
+\longrightarrow
+T_{\mu\nu}^{\rm ent}.
+\]
+
+Il ne s'agit pas encore d'une dérivation tensorielle complète, mais d'une
+validation numérique contrôlée montrant que la variation modulaire se comporte
+comme une source de courbure.
+
+\section*{Disponibilité du code et des données}
+
+Les scripts et résultats de Paper~18 sont organisés dans le dossier :
+\[
+\texttt{papers/paper18\_entanglement\_stress\_tensor/}.
+\]
+
+Les scripts principaux sont :
+\[
+\texttt{scripts/paper18\_graph\_modular\_first\_law\_v1.py},
+\]
+\[
+\texttt{scripts/paper18\_modular\_source\_curvature\_v2.py},
+\]
+\[
+\texttt{scripts/paper18\_build\_entanglement\_stress\_summary\_v1.py}.
+\]
+
+Les résultats principaux sont stockés dans :
+\[
+\texttt{results/graph\_modular\_first\_law\_v1/},
+\]
+\[
+\texttt{results/modular\_source\_curvature\_v2/},
+\]
+\[
+\texttt{results/paper18\_entanglement\_stress\_summary\_v1/}.
+\]
+
+\appendix
+
+\section{Prochaines étapes}
+
+Les prochaines étapes sont :
+
+\begin{enumerate}
+    \item reconstruire une vraie matrice densité réduite \(\rho_A\) depuis un état quantique ;
+    \item comparer le proxy graphe à \(K_A=-\log\rho_A\) exact ;
+    \item tester des sources anisotropes pour reconstruire plusieurs composantes de \(T_{\mu\nu}\) ;
+    \item relier \(\delta\langle K_A\rangle\) à un courant d'échange d'intrication ;
+    \item formaliser la limite continue via la première loi de l'intrication ;
+    \item intégrer ce résultat dans Paper~19, l'assemblage de l'équation d'Einstein effective.
+\end{enumerate}
+
+\end{document}
