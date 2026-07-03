@@ -1,0 +1,706 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+\graphicspath{{figures/}}
+
+\title{
+\textbf{Équations d'Einstein effectives depuis l'équilibre d'intrication}\\
+\large Assemblage des limites spectrale, de Ricci et de source modulaire dans BuP
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Paper~19 assemble les trois briques établies dans Papers~16--18 pour obtenir
+la forme effective des équations d'Einstein dans Bottom-Up Quantum Gravity.
+Paper~16 a montré que le Laplacien d'intrication reconstruit le bas spectre
+du Laplacien de Laplace--Beltrami :
+\[
+c_NL_N\to-\Delta_g.
+\]
+Paper~17 a montré que la courbure d'Ollivier--Ricci contient un signal moyen
+de Ricci :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu.
+\]
+Paper~18 a montré que la variation modulaire agit comme source effective de
+la réponse de courbure :
+\[
+\delta W_{\rm loc}
+\to
+\delta S_A
+\simeq
+\delta\langle K_A\rangle
+\to
+\delta\kappa(r).
+\]
+En combinant ces trois flèches, Paper~19 propose l'équation effective :
+\[
+G_{\mu\nu}[g^{\rm ent}]
++
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu}.
+\]
+Le tenseur \(\mathcal{H}_{\mu\nu}\) encode les corrections spectrales,
+topologiques, non locales et de taille finie. Dans la limite lisse et basse
+énergie, \(\mathcal{H}_{\mu\nu}\to0\), et BuP admet un régime effectif de type
+Einstein.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Bottom-Up Quantum Gravity part d'une hypothèse minimale : l'espace, la
+métrique et la gravité ne sont pas fondamentaux, mais émergent de la structure
+d'intrication d'un état quantique global fini.
+
+L'objet fondamental est la matrice d'information mutuelle :
+\[
+W_{ij}=I(i:j).
+\]
+
+À partir de cette matrice, on construit :
+
+\[
+L(W)=D-W,
+\qquad
+D_{ii}=\sum_j W_{ij},
+\]
+ainsi qu'une courbure discrète, une distance d'intrication et des termes
+spectraux.
+
+Les papiers précédents ont progressivement établi les trois ingrédients
+nécessaires à une limite d'Einstein effective :
+
+\[
+L_N\to\Delta_g,
+\]
+
+\[
+\kappa^{OR}\to R_{\mu\nu}u^\mu u^\nu,
+\]
+
+\[
+\delta W_{\rm loc}\to T_{\mu\nu}^{\rm ent}.
+\]
+
+Paper~19 assemble ces trois résultats dans une seule structure variationnelle.
+
+La question centrale est :
+\[
+\boxed{
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0
+\quad
+\Longrightarrow
+\quad
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu}
+?
+}
+\]
+
+\section{Action BuP discrète}
+
+La forme minimale de l'action BuP est :
+\[
+S_{\rm BuP}[W]
+=
+\mathrm{Tr}\,L(W)^{-\beta[W]}
++
+\sum_{ij}W_{ij}\kappa_{ij}[W]
++
+\lambda\sum_{ij}W_{ij}d_{ij}^{2}
++
+S_{\rm topo}[W].
+\]
+
+Le principe dynamique est l'équilibre :
+\[
+\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
+\]
+
+Chaque terme a une fonction précise.
+
+\subsection{Terme spectral}
+
+Le terme
+\[
+\mathrm{Tr}\,L(W)^{-\beta[W]}
+\]
+encode la géométrie spectrale. Il contrôle la diffusion, la dimension
+spectrale et la structure à bas modes du graphe d'intrication.
+
+Paper~14 a motivé le rôle de \(\beta\) comme exposant spectral auto-contraint.
+Paper~16 a ensuite montré que \(L(W)\), correctement rescalé, converge
+spectralement vers le Laplacien de Laplace--Beltrami.
+
+\subsection{Terme de courbure}
+
+Le terme
+\[
+\sum_{ij}W_{ij}\kappa_{ij}[W]
+\]
+encode la réponse de courbure discrète. La courbure utilisée est la courbure
+d'Ollivier--Ricci :
+\[
+\kappa_{ij}^{OR}
+=
+1-
+\frac{W_1(m_i,m_j)}{d(i,j)}.
+\]
+
+Paper~17 a montré que cette courbure contient un signal moyen de Ricci.
+
+\subsection{Terme de localité}
+
+Le terme
+\[
+\lambda\sum_{ij}W_{ij}d_{ij}^{2}
+\]
+pénalise les liens trop longs et force l'émergence d'une géométrie locale. Il
+joue aussi un rôle dans l'apparition d'une échelle infrarouge et donc d'un
+terme cosmologique effectif.
+
+\subsection{Terme topologique}
+
+Le terme
+\[
+S_{\rm topo}[W]
+\]
+encode les contraintes globales de connectivité et de topologie. Il contribue
+aux corrections non locales et globales dans la limite continue.
+
+\section{Pillar I : limite spectrale}
+
+Paper~16 a testé directement la convergence des valeurs propres de \(L_N\)
+vers celles du Laplacien de Laplace--Beltrami.
+
+La forme testée est :
+\[
+c_NL_N
+=
+c_N\frac{D_N-W_N}{\epsilon_N}
+\longrightarrow
+-\Delta_g.
+\]
+
+Sur le cercle \(S^1\), les 12 premiers modes non nuls sont reconstruits avec
+une erreur relative moyenne :
+\[
+0.005072.
+\]
+
+Le premier mode donne :
+\[
+\lambda_1^{\rm scaled}=1.006212,
+\]
+à comparer à :
+\[
+\lambda_1^{S^1}=1.
+\]
+
+Sur le tore plat \(T^2\), les 20 premiers modes non nuls sont reconstruits
+avec une erreur relative moyenne :
+\[
+0.026627.
+\]
+
+Le premier mode donne :
+\[
+\lambda_1^{\rm scaled}=40.961270,
+\]
+à comparer à :
+\[
+\lambda_1^{T^2}=4\pi^2=39.478418.
+\]
+
+Ces résultats soutiennent :
+\[
+L(W)\to-\Delta_g.
+\]
+
+Ainsi, le terme spectral discret peut être relié à une action géométrique
+continue. En particulier, via la représentation de Mellin :
+\[
+\mathrm{Tr}\,L^{-\beta}
+=
+\frac{1}{\Gamma(\beta)}
+\int_0^\infty
+t^{\beta-1}
+\mathrm{Tr}(e^{-tL})\,dt,
+\]
+et l'expansion de la trace de chaleur :
+\[
+\mathrm{Tr}(e^{-t\Delta_g})
+\sim
+(4\pi t)^{-D/2}
+\sum_{n=0}^{\infty}a_n(\Delta_g)t^n,
+\]
+le terme spectral contient des contributions géométriques de type volume,
+courbure scalaire et corrections de courbure supérieure.
+
+\section{Pillar II : limite de Ricci}
+
+Paper~17 a étudié la limite continue de la courbure d'Ollivier--Ricci.
+
+La relation moyenne obtenue est :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu.
+\]
+
+Les tests v1 ont montré que la sphère présente systématiquement un signal de
+courbure supérieur au tore plat :
+\[
+\Delta\bar\kappa_{\rm sphere-flat}=0.013383,
+\]
+\[
+\Delta
+\left\langle
+\frac{\kappa}{\epsilon}
+\right\rangle_{\rm sphere-flat}
+=
+0.197719,
+\]
+\[
+\Delta
+\left\langle
+\frac{\kappa}{\ell^2}
+\right\rangle_{\rm sphere-flat}
+=
+0.557041.
+\]
+
+La calibration affine v2 donne, à \(N=512\) :
+\[
+B_N=-0.301281,
+\]
+\[
+C_N=0.391933,
+\]
+et :
+\[
+A_N=\frac{1}{C_N}=2.551455.
+\]
+
+Ainsi :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+-0.301
++
+0.392\,R_{\mu\nu}u^\mu u^\nu.
+\]
+
+Cela ne constitue pas encore une convergence point par point de la courbure,
+mais cela établit un proxy moyen de Ricci.
+
+Dans la limite continue, ce résultat permet d'identifier le secteur de
+courbure :
+\[
+\kappa^{OR}
+\to
+R_{\mu\nu}u^\mu u^\nu.
+\]
+
+\section{Pillar III : source modulaire}
+
+Paper~18 a étudié le côté source.
+
+Le point de départ est la première loi modulaire :
+\[
+\delta S_A
+=
+\delta\langle K_A\rangle,
+\]
+où :
+\[
+K_A=-\log\rho_A.
+\]
+
+Sur une région \(A\) du graphe, Paper~18 utilise le proxy :
+\[
+\rho_A
+=
+\frac{(L_A+\mu I)^{-1}}
+{\mathrm{Tr}(L_A+\mu I)^{-1}}.
+\]
+
+On définit :
+\[
+S_A=-\mathrm{Tr}(\rho_A\log\rho_A),
+\]
+et :
+\[
+K_A=-\log\rho_A.
+\]
+
+Après perturbation locale de \(W\), Paper~18 mesure :
+\[
+\delta S_A
+\]
+et :
+\[
+\delta\langle K_A\rangle
+=
+\mathrm{Tr}\left[(\rho'_A-\rho_A)K_A\right].
+\]
+
+Le test v1 donne, sur le tore plat :
+\[
+\delta S_A
+\simeq
+0.989481\,\delta\langle K_A\rangle,
+\]
+avec :
+\[
+R^2=0.996590.
+\]
+
+Sur la sphère :
+\[
+\delta S_A
+\simeq
+0.989718\,\delta\langle K_A\rangle,
+\]
+avec :
+\[
+R^2=0.996592.
+\]
+
+Le test v2 montre ensuite que la source modulaire prédit la réponse de
+courbure proche :
+\[
+|\delta\langle K_A\rangle|
+\to
+\langle|\Delta\kappa|\rangle_{\rm near}.
+\]
+
+Sur le tore plat :
+\[
+R^2=0.967229,
+\]
+et sur la sphère :
+\[
+R^2=0.982252.
+\]
+
+La relation signée est quasi parfaite :
+\[
+r=-0.999168
+\]
+sur le tore plat, et :
+\[
+r=-0.999428
+\]
+sur la sphère.
+
+Ainsi :
+\[
+\delta W_{\rm loc}
+\to
+\delta S_A
+\simeq
+\delta\langle K_A\rangle
+\to
+\delta\kappa(r).
+\]
+
+Dans la limite continue, on interprète :
+\[
+\delta\langle K_A\rangle
+\to
+\int_A \xi^\mu\delta T_{\mu\nu}^{\rm ent}\,d\Sigma^\nu.
+\]
+
+Cela définit le secteur source :
+\[
+T_{\mu\nu}^{\rm ent}.
+\]
+
+\section{Dictionnaire continu BuP}
+
+Les résultats précédents permettent d'établir le dictionnaire suivant :
+
+\[
+\begin{array}{ll}
+\toprule
+{\rm Objet\ discret\ BuP} & {\rm Objet\ continu}\\
+\midrule
+W_{ij}=I(i:j) & g_{\mu\nu}^{\rm ent}\\
+L(W) & -\Delta_g\\
+\mathrm{Tr}\,L^{-\beta} & {\rm action\ spectrale\ gravitationnelle}\\
+\kappa_{ij}^{OR} & R_{\mu\nu}u^\mu u^\nu\\
+\delta\langle K_A\rangle & T_{\mu\nu}^{\rm ent}\\
+\lambda\sum W_{ij}d_{ij}^2 & \Lambda_{\rm ent}g_{\mu\nu}\\
+S_{\rm topo}[W] & {\rm contraintes\ topologiques}\\
+{\rm corrections\ finies} & \mathcal{H}_{\mu\nu}\\
+\bottomrule
+\end{array}
+\]
+
+Ce dictionnaire permet de passer de :
+\[
+\frac{\delta S_{\rm BuP}}{\delta W_{ij}}=0
+\]
+à une équation tensorielle effective.
+
+\section{Équation d'Einstein effective}
+
+L'équation effective proposée est :
+\[
+\boxed{
+G_{\mu\nu}[g^{\rm ent}]
++
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu}
+}
+\]
+
+où :
+\[
+G_{\mu\nu}
+=
+R_{\mu\nu}
+-
+\frac{1}{2}Rg_{\mu\nu}.
+\]
+
+Le terme :
+\[
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+\]
+provient du secteur infrarouge, de la contrainte de localité et de l'énergie
+de fond d'intrication.
+
+Le terme :
+\[
+T_{\mu\nu}^{\rm ent}
+\]
+provient de la variation modulaire :
+\[
+\delta\langle K_A\rangle.
+\]
+
+Le tenseur :
+\[
+\mathcal{H}_{\mu\nu}
+\]
+contient les corrections qui ne se réduisent pas à la forme d'Einstein.
+
+\section{Le tenseur de correction \(\mathcal{H}_{\mu\nu}\)}
+
+Le terme \(\mathcal{H}_{\mu\nu}\) est nécessaire car la limite BuP n'est pas
+exactement celle de la relativité générale à toutes les échelles.
+
+Il regroupe :
+
+\begin{enumerate}
+    \item les corrections spectrales d'ordre supérieur ;
+    \item les corrections non locales d'intrication ;
+    \item les effets topologiques globaux ;
+    \item les corrections de courbure supérieure ;
+    \item les corrections de taille finie ;
+    \item les effets de non-uniformité du graphe ;
+    \item les écarts à la limite de variété lisse.
+\end{enumerate}
+
+Dans le régime lisse, local et basse énergie, on attend :
+\[
+\mathcal{H}_{\mu\nu}\to0.
+\]
+
+Alors :
+\[
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+
+\section{Interprétation physique}
+
+La lecture physique de Paper~19 est la suivante.
+
+La géométrie n'est pas posée au départ. Elle émerge du spectre de
+\(L(W)\). La courbure n'est pas postulée comme un champ continu fondamental ;
+elle apparaît comme limite de la courbure d'Ollivier--Ricci. La source n'est
+pas introduite comme matière classique externe ; elle est reconstruite depuis
+la variation modulaire d'une région du graphe.
+
+Ainsi, la gravité apparaît comme une condition d'équilibre de l'intrication :
+\[
+\frac{\delta S_{\rm BuP}}{\delta W}=0.
+\]
+
+Dans cette lecture, l'équation d'Einstein effective n'est pas un postulat.
+Elle est l'expression continue d'un équilibre discret entre :
+
+\begin{itemize}
+    \item spectre ;
+    \item courbure ;
+    \item localité ;
+    \item topologie ;
+    \item source modulaire.
+\end{itemize}
+
+\section{Limites}
+
+Paper~19 est un papier d'assemblage. Il ne constitue pas encore une preuve
+mathématique complète.
+
+Les limites principales sont :
+
+\begin{enumerate}
+    \item la normalisation \(c_N\) de Paper~16 est encore ajustée numériquement ;
+    \item la relation de Ricci de Paper~17 est moyenne, pas point par point ;
+    \item le tenseur \(T_{\mu\nu}^{\rm ent}\) de Paper~18 est encore représenté par un proxy modulaire scalaire ;
+    \item les tests sont réalisés sur des géométries contrôlées ;
+    \item les graphes utilisés ne sont pas encore tous de vrais graphes d'information mutuelle issus d'états quantiques ;
+    \item le tenseur de correction \(\mathcal{H}_{\mu\nu}\) reste à classifier ;
+    \item \(G_{\rm eff}\) et \(\Lambda_{\rm ent}\) restent à dériver analytiquement.
+\end{enumerate}
+
+Cependant, l'assemblage est cohérent : chaque flèche nécessaire à la limite
+d'Einstein possède désormais une validation numérique contrôlée.
+
+\section{Conclusion}
+
+Paper~19 assemble les résultats de Papers~16--18 pour proposer la forme
+effective des équations d'Einstein dans BuP.
+
+Les trois piliers sont :
+
+\[
+L_N\to\Delta_g,
+\]
+
+\[
+\kappa^{OR}\to R_{\mu\nu}u^\mu u^\nu,
+\]
+
+\[
+\delta W_{\rm loc}
+\to
+\delta\langle K_A\rangle
+\to
+T_{\mu\nu}^{\rm ent}.
+\]
+
+En les combinant, on obtient :
+\[
+G_{\mu\nu}[g^{\rm ent}]
++
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu}.
+\]
+
+Dans le régime lisse et basse énergie :
+\[
+\mathcal{H}_{\mu\nu}\to0.
+\]
+
+BuP admet donc un régime effectif de type Einstein :
+\[
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+
+Le résultat ne ferme pas encore la théorie. Il établit cependant que les trois
+structures nécessaires à l'équation d'Einstein — opérateur géométrique,
+courbure de Ricci et source énergie--impulsion — apparaissent naturellement à
+partir de l'intrication.
+
+\section*{Disponibilité du code et des données}
+
+Les scripts et résultats de Paper~19 sont organisés dans le dossier :
+\[
+\texttt{papers/paper19\_effective\_einstein\_equations/}.
+\]
+
+Le script principal est :
+\[
+\texttt{scripts/paper19\_build\_einstein\_limit\_summary\_v1.py}.
+\]
+
+Les résultats principaux sont stockés dans :
+\[
+\texttt{results/einstein\_limit\_summary\_v1/}.
+\]
+
+\appendix
+
+\section{Résumé des résultats assemblés}
+
+\[
+\begin{array}{llll}
+\toprule
+{\rm Paper} & {\rm Flèche} & {\rm Résultat} & {\rm Valeur}\\
+\midrule
+16 & L_N\to\Delta_g & {\rm erreur\ spectrale}\ S^1 & 0.005072\\
+16 & L_N\to\Delta_g & {\rm erreur\ spectrale}\ T^2 & 0.026627\\
+17 & \kappa^{OR}\to Ricci & B_N & -0.301281\\
+17 & \kappa^{OR}\to Ricci & C_N & 0.391933\\
+18 & \delta S\simeq\delta K & {\rm pente}\ T^2 & 0.989481\\
+18 & \delta S\simeq\delta K & {\rm pente}\ S^2 & 0.989718\\
+18 & \delta K\to\delta\kappa & R^2\ T^2 & 0.967229\\
+18 & \delta K\to\delta\kappa & R^2\ S^2 & 0.982252\\
+\bottomrule
+\end{array}
+\]
+
+\section{Prochaines étapes}
+
+Les prochaines étapes sont :
+
+\begin{enumerate}
+    \item dériver analytiquement \(c_N\) dans Paper~16 ;
+    \item dériver analytiquement \(B_N\) et \(C_N\) dans Paper~17 ;
+    \item reconstruire un vrai tenseur \(T_{\mu\nu}^{\rm ent}\) dans Paper~18 ;
+    \item classifier les termes de correction \(\mathcal{H}_{\mu\nu}\) ;
+    \item dériver \(G_{\rm eff}\) depuis les constantes spectrales ;
+    \item relier \(\Lambda_{\rm ent}\) aux résultats cosmologiques BuP ;
+    \item tester la limite effective sur des graphes d'information mutuelle quantiques ;
+    \item préparer Paper~20 : corrections, prédictions et déviations observables.
+\end{enumerate}
+
+\end{document}
