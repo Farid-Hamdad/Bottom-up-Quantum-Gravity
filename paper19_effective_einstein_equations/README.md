@@ -1,22 +1,22 @@
-# Paper 19 — Effective Einstein Equations from Entanglement Equilibrium
+# Paper 19 — Équations d'Einstein effectives à partir de l'équilibre d'intrication
 
-**Assembling the continuum limit of Bottom-Up Quantum Gravity**
+**Assemblage de la limite continue de Bottom-Up Quantum Gravity**
 
 ---
 
-## Status
+## Statut
 
-Paper 19 assembles the three continuum arrows established in Papers 16--18:
+Paper 19 assemble les trois flèches continues établies dans les Papers 16 à 18 :
 
-\[
+$$
 L_N\to\Delta_g,
-\]
+$$
 
-\[
+$$
 \kappa^{OR}\to R_{\mu\nu}u^\mu u^\nu,
-\]
+$$
 
-\[
+$$
 \delta W_{\rm loc}
 \to
 \delta S_A
@@ -26,11 +26,11 @@ L_N\to\Delta_g,
 \delta\kappa(r)
 \to
 T_{\mu\nu}^{\rm ent}.
-\]
+$$
 
-The target effective equation is:
+L'équation effective cible est :
 
-\[
+$$
 \boxed{
 G_{\mu\nu}[g^{\rm ent}]
 +
@@ -40,45 +40,45 @@ G_{\mu\nu}[g^{\rm ent}]
 +
 \mathcal{H}_{\mu\nu}
 }
-\]
+$$
 
-where:
+où :
 
-- \(g_{\mu\nu}^{\rm ent}\) is the emergent entanglement metric;
-- \(T_{\mu\nu}^{\rm ent}\) is the modular entanglement stress-energy source;
-- \(\Lambda_{\rm ent}\) is an entanglement cosmological term;
-- \(G_{\rm eff}\) is the effective gravitational coupling;
-- \(\mathcal{H}_{\mu\nu}\) contains higher-order, nonlocal and finite-scale corrections.
+- \(g_{\mu\nu}^{\rm ent}\) est la métrique d'intrication émergente ;
+- \(T_{\mu\nu}^{\rm ent}\) est la source modulaire de tenseur énergie-impulsion d'intrication ;
+- \(\Lambda_{\rm ent}\) est un terme cosmologique d'intrication ;
+- \(G_{\rm eff}\) est le couplage gravitationnel effectif ;
+- \(\mathcal{H}_{\mu\nu}\) contient des corrections d'ordre supérieur, non locales et à échelle finie.
 
-In the smooth low-energy limit:
+Dans la limite lisse de basse énergie :
 
-\[
+$$
 \mathcal{H}_{\mu\nu}\to0.
-\]
+$$
 
-Then BuP reduces to the effective Einstein form:
+Alors BuP se réduit à la forme effective d'Einstein :
 
-\[
+$$
 G_{\mu\nu}
 +
 \Lambda_{\rm ent}g_{\mu\nu}
 =
 8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
-\]
+$$
 
 ---
 
-## 1. Starting point
+## 1. Point de départ
 
-The fundamental BuP equation is the variational equilibrium condition:
+L'équation BuP fondamentale est la condition d'équilibre variationnelle :
 
-\[
+$$
 \frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.
-\]
+$$
 
-The discrete action is:
+L'action discrète est :
 
-\[
+$$
 S_{\rm BuP}[W]
 =
 \mathrm{Tr}\,L(W)^{-\beta[W]}
@@ -88,104 +88,104 @@ S_{\rm BuP}[W]
 \lambda\sum_{ij}W_{ij}d_{ij}^{2}
 +
 S_{\rm topo}[W].
-\]
+$$
 
-Each term has a continuum interpretation:
+Chaque terme a une interprétation continue :
 
-| Discrete term | Continuum role |
-|---|---|
-| \(\mathrm{Tr}\,L^{-\beta}\) | spectral geometry / Einstein--Hilbert sector |
-| \(\sum_{ij}W_{ij}\kappa_{ij}\) | Ricci curvature sector |
-| \(\lambda\sum_{ij}W_{ij}d_{ij}^2\) | locality and cosmological sector |
-| \(S_{\rm topo}[W]\) | topology and global constraints |
-| \(\delta\langle K_A\rangle\) | source / stress-energy sector |
+| Terme discret | Rôle continu |
+|---------------|--------------|
+| \(\mathrm{Tr}\,L^{-\beta}\) | géométrie spectrale / secteur d'Einstein-Hilbert |
+| \(\sum_{ij}W_{ij}\kappa_{ij}\) | secteur de courbure de Ricci |
+| \(\lambda\sum_{ij}W_{ij}d_{ij}^2\) | secteur de localité et cosmologique |
+| \(S_{\rm topo}[W]\) | topologie et contraintes globales |
+| \(\delta\langle K_A\rangle\) | source / secteur du tenseur énergie-impulsion |
 
-The continuum limit of this equilibrium is the central object of Paper 19.
+La limite continue de cet équilibre est l'objet central de Paper 19.
 
 ---
 
-## 2. Pillar I — Spectral geometry from Paper 16
+## 2. Pilier I — Géométrie spectrale de Paper 16
 
-Paper 16 supports the continuum spectral limit:
+Paper 16 soutient la limite spectrale continue :
 
-\[
+$$
 c_NL_N\to-\Delta_g.
-\]
+$$
 
-The low-spectrum tests gave:
+Les tests du bas du spectre ont donné :
 
-| Geometry | Mean relative spectral error | \(\lambda_1^{\rm scaled}\) | Target |
-|---|---:|---:|---:|
+| Géométrie | Erreur spectrale relative moyenne | \(\lambda_1^{\rm mis\ à\ l'échelle}\) | Cible |
+|-----------|---:|---:|---:|
 | \(S^1\) | 0.005072 | 1.006212 | 1.000000 |
 | \(T^2\) | 0.026627 | 40.961270 | 39.478418 |
 
-This establishes that the entanglement Laplacian reconstructs the low spectrum of the Laplace--Beltrami operator.
+Cela établit que le laplacien d'intrication reconstruit le bas du spectre de l'opérateur de Laplace-Beltrami.
 
-Thus:
+Ainsi :
 
-\[
+$$
 L(W)\to-\Delta_g.
-\]
+$$
 
 ---
 
-## 3. Pillar II — Ricci curvature from Paper 17
+## 3. Pilier II — Courbure de Ricci de Paper 17
 
-Paper 17 supports the Ricci curvature limit:
+Paper 17 soutient la limite de courbure de Ricci :
 
-\[
+$$
 \frac{\kappa^{OR}}{\epsilon}
 \simeq
 B_N+C_N R_{\mu\nu}u^\mu u^\nu.
-\]
+$$
 
-The key results are:
+Les résultats clés sont :
 
-\[
+$$
 \Delta\bar\kappa_{\rm sphere-flat}=0.013383,
-\]
+$$
 
-\[
+$$
 \Delta\left\langle\frac{\kappa}{\epsilon}\right\rangle_{\rm sphere-flat}=0.197719,
-\]
+$$
 
-\[
+$$
 \Delta\left\langle\frac{\kappa}{\ell^2}\right\rangle_{\rm sphere-flat}=0.557041.
-\]
+$$
 
-The affine calibration at \(N=512\) gives:
+L'étalonnage affine à \(N=512\) donne :
 
-\[
+$$
 B_N=-0.301281,
-\]
+$$
 
-\[
+$$
 C_N=0.391933,
-\]
+$$
 
-\[
+$$
 A_N=\frac{1}{C_N}=2.551455.
-\]
+$$
 
-Therefore:
+Par conséquent :
 
-\[
+$$
 \frac{\kappa^{OR}}{\epsilon}
 \simeq
 -0.301
 +
 0.392\,R_{\mu\nu}u^\mu u^\nu.
-\]
+$$
 
-This establishes that the discrete Ollivier--Ricci curvature carries a calibrated mean Ricci signal.
+Cela établit que la courbure d'Ollivier-Ricci discrète porte un signal de Ricci moyen étalonné.
 
 ---
 
-## 4. Pillar III — Modular source from Paper 18
+## 4. Pilier III — Source modulaire de Paper 18
 
-Paper 18 supports the source chain:
+Paper 18 soutient la chaîne de source :
 
-\[
+$$
 \delta W_{\rm loc}
 \to
 \delta S_A
@@ -193,62 +193,62 @@ Paper 18 supports the source chain:
 \delta\langle K_A\rangle
 \to
 \delta\kappa(r).
-\]
+$$
 
-The graph modular first law is validated:
+La première loi modulaire du graphe est validée :
 
-| Geometry | Slope \(\delta S_A\) vs \(\delta\langle K_A\rangle\) | \(R^2\) |
-|---|---:|---:|
-| flat torus | 0.989481 | 0.996590 |
-| sphere | 0.989718 | 0.996592 |
+| Géométrie | Pente \(\delta S_A\) vs \(\delta\langle K_A\rangle\) | \(R^2\) |
+|-----------|---:|---:|
+| tore plat | 0.989481 | 0.996590 |
+| sphère | 0.989718 | 0.996592 |
 
-The modular source predicts the near-source curvature response:
+La source modulaire prédit la réponse de courbure près de la source :
 
-| Geometry | near/far localization ratio | \(R^2(|\delta K|,\langle|\Delta\kappa|\rangle_{\rm near})\) |
-|---|---:|---:|
-| flat torus | 6.293007 | 0.967229 |
-| sphere | 9.533529 | 0.982252 |
+| Géométrie | Rapport de localisation near/far | \(R^2(|\delta K|,\langle|\Delta\kappa|\rangle_{\rm near})\) |
+|-----------|---:|---:|
+| tore plat | 6.293007 | 0.967229 |
+| sphère | 9.533529 | 0.982252 |
 
-The signed Pearson correlations are:
+Les corrélations de Pearson signées sont :
 
-\[
+$$
 r=-0.999168
-\]
+$$
 
-for the flat torus, and
+pour le tore plat, et
 
-\[
+$$
 r=-0.999428
-\]
+$$
 
-for the sphere.
+pour la sphère.
 
-Thus, \(\delta\langle K_A\rangle\) behaves as an effective modular source for curvature.
+Ainsi, \(\delta\langle K_A\rangle\) se comporte comme une source modulaire effective pour la courbure.
 
 ---
 
-## 5. Effective continuum dictionary
+## 5. Dictionnaire continu effectif
 
-Paper 19 uses the following dictionary:
+Paper 19 utilise le dictionnaire suivant :
 
-| Discrete BuP object | Continuum object |
-|---|---|
-| \(W_{ij}=I(i:j)\) | entanglement metric \(g_{\mu\nu}^{\rm ent}\) |
+| Objet BuP discret | Objet continu |
+|-------------------|---------------|
+| \(W_{ij}=I(i:j)\) | métrique d'intrication \(g_{\mu\nu}^{\rm ent}\) |
 | \(L(W)\) | \(-\Delta_g\) |
-| \(\mathrm{Tr}\,L^{-\beta}\) | spectral gravitational action |
+| \(\mathrm{Tr}\,L^{-\beta}\) | action gravitationnelle spectrale |
 | \(\kappa_{ij}^{OR}\) | \(R_{\mu\nu}u^\mu u^\nu\) |
-| \(\delta\langle K_A\rangle\) | modular source / \(T_{\mu\nu}^{\rm ent}\) |
-| locality penalty | cosmological / infrared sector |
-| \(S_{\rm topo}[W]\) | topological and global constraints |
-| finite graph corrections | \(\mathcal{H}_{\mu\nu}\) |
+| \(\delta\langle K_A\rangle\) | source modulaire / \(T_{\mu\nu}^{\rm ent}\) |
+| pénalité de localité | secteur cosmologique / infrarouge |
+| \(S_{\rm topo}[W]\) | contraintes topologiques et globales |
+| corrections de graphe fini | \(\mathcal{H}_{\mu\nu}\) |
 
 ---
 
-## 6. Continuum equation
+## 6. Équation continue
 
-Combining the three pillars gives:
+La combinaison des trois piliers donne :
 
-\[
+$$
 \boxed{
 G_{\mu\nu}[g^{\rm ent}]
 +
@@ -258,74 +258,74 @@ G_{\mu\nu}[g^{\rm ent}]
 +
 \mathcal{H}_{\mu\nu}
 }
-\]
+$$
 
-where:
+où :
 
-\[
+$$
 G_{\mu\nu}
 =
 R_{\mu\nu}
 -
 \frac{1}{2}Rg_{\mu\nu}.
-\]
+$$
 
-The correction tensor \(\mathcal{H}_{\mu\nu}\) includes:
+Le tenseur de correction \(\mathcal{H}_{\mu\nu}\) inclut :
 
-1. spectral higher-order corrections;
-2. nonlocal entanglement corrections;
-3. topology-induced corrections;
-4. finite-\(N\) corrections;
-5. deviations from smooth manifold behavior.
+1. les corrections spectrales d'ordre supérieur ;
+2. les corrections d'intrication non locales ;
+3. les corrections induites par la topologie ;
+4. les corrections à \(N\) fini ;
+5. les écarts par rapport au comportement de variété lisse.
 
-In the smooth low-energy limit:
+Dans la limite lisse de basse énergie :
 
-\[
+$$
 \mathcal{H}_{\mu\nu}\to0.
-\]
+$$
 
-Then:
+Alors :
 
-\[
+$$
 G_{\mu\nu}
 +
 \Lambda_{\rm ent}g_{\mu\nu}
 =
 8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
-\]
+$$
 
 ---
 
-## 7. Interpretation
+## 7. Interprétation
 
-Paper 19 does not claim that Einstein gravity has been fully derived from first principles.
+Paper 19 ne prétend pas que la gravité d'Einstein a été entièrement dérivée à partir de premiers principes.
 
-It establishes a controlled assembly:
+Il établit un assemblage contrôlé :
 
-\[
+$$
 L_N\to\Delta_g,
-\]
+$$
 
-\[
+$$
 \kappa^{OR}\to R_{\mu\nu}u^\mu u^\nu,
-\]
+$$
 
-\[
+$$
 \delta W_{\rm loc}\to T_{\mu\nu}^{\rm ent}.
-\]
+$$
 
-Together, these support the existence of an effective Einstein regime inside BuP.
+Ensemble, ils soutiennent l'existence d'un régime effectif d'Einstein à l'intérieur de BuP.
 
-The remaining task is analytic:
+La tâche restante est analytique :
 
-1. derive the coefficients \(G_{\rm eff}\) and \(\Lambda_{\rm ent}\);
-2. control the correction tensor \(\mathcal{H}_{\mu\nu}\);
-3. prove the continuum limit beyond controlled numerical geometries;
-4. reconstruct a full tensor \(T_{\mu\nu}^{\rm ent}\), not only a modular scalar source.
+1. dériver les coefficients \(G_{\rm eff}\) et \(\Lambda_{\rm ent}\) ;
+2. contrôler le tenseur de correction \(\mathcal{H}_{\mu\nu}\) ;
+3. prouver la limite continue au-delà des géométries numériques contrôlées ;
+4. reconstruire un tenseur complet \(T_{\mu\nu}^{\rm ent}\), pas seulement une source scalaire modulaire.
 
 ---
 
-## 8. Folder structure
+## 8. Structure des dossiers
 
 ```text
 papers/paper19_effective_einstein_equations/
@@ -342,7 +342,7 @@ papers/paper19_effective_einstein_equations/
       paper19_einstein_limit_summary.md
 
   figures/
-    # final synthesis figures
+    # figures de synthèse finales
 
   notes/
     roadmap.md
