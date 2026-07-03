@@ -1,0 +1,904 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+\graphicspath{{figures/}}
+
+\title{
+\textbf{Limite spectrale continue du Laplacien d'intrication BuP}\\
+\large Des valeurs propres discrètes au Laplacien de Laplace--Beltrami
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Paper~15 a fourni une première validation numérique de la limite géométrique
+de Bottom-Up Quantum Gravity en montrant que le Laplacien d'intrication
+rescalé
+\[
+L_\epsilon=\frac{D-W}{\epsilon}
+\]
+reconstruit la dimension spectrale de géométries contrôlées. Le présent papier
+renforce cette validation en passant d'un test global de trace de chaleur à
+un test spectral mode par mode. Nous comparons les premières valeurs propres
+du Laplacien BuP rescalé aux spectres analytiques du cercle \(S^1\) et du tore
+plat \(T^2\). Sur \(S^1\), les 12 premiers modes non nuls sont reconstruits
+avec une erreur relative moyenne de \(0.0051\) à \(N=1024\). Sur \(T^2\), les
+20 premiers modes non nuls sont reconstruits avec une erreur relative moyenne
+de \(0.0266\) à \(N=1024\). Ces résultats soutiennent la convergence
+spectrale bas-modes
+\[
+c_N L_N
+=
+c_N\frac{D_N-W_N}{\epsilon_N}
+\longrightarrow
+-\Delta_g,
+\]
+où \(c_N\) est une normalisation scalaire encore ajustée numériquement. Le
+problème central restant est de dériver analytiquement \(c_N\) et de préciser
+le mode de convergence : convergence ponctuelle sur fonctions tests,
+convergence de formes quadratiques, convergence de trace de chaleur ou
+convergence spectrale.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Le programme Bottom-Up Quantum Gravity propose que la géométrie ne soit pas
+fondamentale, mais émerge de la structure d'intrication d'un état quantique
+global. L'objet de départ n'est donc pas une métrique \(g_{\mu\nu}\), mais une
+matrice relationnelle
+\[
+W_{ij}=I(i:j),
+\]
+où \(I(i:j)\) désigne l'information mutuelle entre les degrés de liberté
+\(i\) et \(j\).
+
+À partir de \(W_{ij}\), on construit un Laplacien d'intrication :
+\[
+L_{\rm ent}=D-W,
+\qquad
+D_{ii}=\sum_j W_{ij}.
+\]
+Ce Laplacien encode la connectivité, la diffusion et la structure spectrale du
+graphe d'intrication.
+
+Paper~15 a montré numériquement que le Laplacien rescalé
+\[
+L_\epsilon=\frac{D-W}{\epsilon}
+\]
+récupère la dimension spectrale attendue sur plusieurs géométries contrôlées.
+La dimension spectrale était extraite de la trace de chaleur :
+\[
+Z(t)=\mathrm{Tr}\,e^{-tL},
+\]
+par
+\[
+d_s(t)
+=
+-2\frac{d\log Z(t)}{d\log t}.
+\]
+
+Le présent papier va plus loin. Au lieu de tester uniquement une quantité
+globale dérivée de la trace de chaleur, nous testons directement la convergence
+des valeurs propres individuelles :
+\[
+\lambda_k(L_N)
+\longrightarrow
+\lambda_k(\Delta_g).
+\]
+
+La question centrale de Paper~16 est donc :
+\[
+\boxed{
+\text{Le Laplacien BuP rescalé converge-t-il spectralement vers le
+Laplacien de Laplace--Beltrami ?}
+}
+\]
+
+La forme recherchée est :
+\[
+c_N L_N
+=
+c_N\frac{D_N-W_N}{\epsilon_N}
+\longrightarrow
+-\Delta_g,
+\]
+où \(c_N\) est une constante de normalisation dépendant de la discrétisation,
+du noyau, de la dimension et de l'échelle \(\epsilon_N\).
+
+\section{Laplacien d'intrication BuP}
+
+Le point de départ est la matrice d'information mutuelle :
+\[
+W_{ij}=I(i:j).
+\]
+
+On définit le degré pondéré :
+\[
+D_{ii}=\sum_j W_{ij},
+\]
+puis le Laplacien discret non normalisé :
+\[
+L_N^0=D_N-W_N.
+\]
+
+Le test de Paper~15 a montré que le Laplacien normalisé standard
+\[
+L_{\rm norm}=I-D^{-1/2}WD^{-1/2}
+\]
+n'est pas le bon opérateur pour approcher directement un Laplacien continu.
+Il tend à donner une dimension spectrale artificielle, notamment en dimension
+deux.
+
+Le bon objet numérique identifié dans Paper~15 est le Laplacien rescalé :
+\[
+L_N=\frac{D_N-W_N}{\epsilon_N}.
+\]
+
+L'échelle \(\epsilon_N\) est obtenue à partir de la distance typique au
+voisinage local. Dans les tests numériques, on utilise :
+\[
+\epsilon_N
+=
+\gamma\,\epsilon_{\rm knn},
+\]
+avec \(\gamma=0.5\), et \(k=\sqrt{N}\). Le noyau utilisé est de type gaussien :
+\[
+W_{ij}
+=
+\exp\left[
+-\frac{d(i,j)^2}{4\epsilon_N}
+\right],
+\]
+restreint à un graphe local \(k\)-NN.
+
+La cible continue est le Laplacien de Laplace--Beltrami :
+\[
+\Delta_g
+=
+\frac{1}{\sqrt{|g|}}
+\partial_\mu
+\left(
+\sqrt{|g|}g^{\mu\nu}\partial_\nu
+\right).
+\]
+
+En convention positive, le spectre de \(-\Delta_g\) est non négatif :
+\[
+-\Delta_g\phi_k=\lambda_k\phi_k,
+\qquad
+\lambda_k\geq0.
+\]
+
+Ainsi, la convergence attendue est :
+\[
+c_N L_N\to -\Delta_g.
+\]
+
+\section{Héritage de Paper 15 : convergence de dimension spectrale}
+
+Paper~15 a établi une première validation numérique de la limite
+\(L_N\to\Delta_g\) au niveau de la dimension spectrale.
+
+Avec le Laplacien rescalé
+\[
+L_\epsilon=\frac{D-W}{\epsilon},
+\]
+les dimensions spectrales mesurées étaient :
+
+\[
+\begin{array}{lccc}
+\toprule
+{\rm Géométrie} & d_{\rm cible} & d_s^{\rm mesuré} & {\rm erreur} \\
+\midrule
+{\rm cercle} & 1 & 1.0021 & 0.0021 \\
+{\rm intervalle} & 1 & 0.9445 & 0.0555 \\
+{\rm grille\ 2D} & 2 & 1.9938 & 0.0062 \\
+{\rm sphère} & 2 & 1.8964 & 0.1036 \\
+\bottomrule
+\end{array}
+\]
+
+Ces résultats soutenaient la flèche :
+\[
+L_N\to\Delta_g
+\]
+au niveau de la trace de chaleur.
+
+Cependant, la dimension spectrale est une quantité globale. Elle peut être
+correcte même si les valeurs propres individuelles présentent encore des
+écarts. Paper~16 cherche donc à tester une condition plus forte :
+\[
+\lambda_k(c_NL_N)
+\simeq
+\lambda_k(-\Delta_g).
+\]
+
+\section{Problème de Paper 16 : convergence spectrale bas-modes}
+
+La convergence spectrale d'un opérateur discret vers un opérateur continu peut
+être testée en comparant leurs premières valeurs propres. Pour un opérateur
+elliptique compact, les bas modes encodent la géométrie à grande échelle.
+
+Le problème étudié ici est :
+\[
+\lambda_k(c_NL_N)
+\to
+\lambda_k(-\Delta_g),
+\qquad
+k=1,\ldots,K,
+\]
+pour des géométries dont le spectre analytique est connu.
+
+Nous utilisons deux cas tests :
+
+\begin{enumerate}
+    \item le cercle unité \(S^1\), de dimension \(1\) ;
+    \item le tore plat unité \(T^2=[0,1)^2\), de dimension \(2\).
+\end{enumerate}
+
+Ces deux géométries sont particulièrement utiles parce qu'elles sont compactes,
+sans bord, et possèdent un spectre analytique explicite. Elles permettent donc
+de tester la convergence spectrale sans ambiguïté due aux conditions de bord.
+
+\section{Test spectral sur le cercle \(S^1\)}
+
+\subsection{Spectre analytique}
+
+Sur le cercle unité \(S^1\), paramétré par
+\[
+\theta\in[0,2\pi),
+\]
+le Laplacien positif possède le spectre :
+\[
+\lambda_m=m^2,
+\qquad
+m=0,1,2,\ldots
+\]
+
+Les modes \(m\geq1\) sont dégénérés, correspondant aux fonctions
+\[
+\cos(m\theta),
+\qquad
+\sin(m\theta).
+\]
+
+Ainsi, le spectre non nul commence par :
+\[
+1,1,4,4,9,9,16,16,\ldots
+\]
+
+\subsection{Construction du graphe}
+
+Nous plaçons \(N\) points uniformément sur le cercle :
+\[
+\theta_i=\frac{2\pi i}{N},
+\qquad
+i=0,\ldots,N-1.
+\]
+
+La distance géodésique intrinsèque est :
+\[
+d(\theta_i,\theta_j)
+=
+\min\left(
+|\theta_i-\theta_j|,
+2\pi-|\theta_i-\theta_j|
+\right).
+\]
+
+Les poids sont définis par :
+\[
+W_{ij}
+=
+\exp\left[
+-\frac{d(\theta_i,\theta_j)^2}{4\epsilon_N}
+\right],
+\]
+sur un graphe local \(k\)-NN avec :
+\[
+k=\sqrt{N}.
+\]
+
+Le Laplacien testé est :
+\[
+L_N=\frac{D_N-W_N}{\epsilon_N}.
+\]
+
+Comme la normalisation exacte du noyau n'est pas encore dérivée, on ajuste un
+facteur scalaire \(c_N\) tel que :
+\[
+c_N\lambda_k^{\rm graph}
+\simeq
+\lambda_k^{S^1}.
+\]
+
+Le facteur \(c_N\) est obtenu par moindres carrés sur les premiers modes :
+\[
+c_N
+=
+\frac{
+\sum_{k=1}^{K_{\rm fit}}
+\lambda_k^{\rm graph}\lambda_k^{\rm target}
+}{
+\sum_{k=1}^{K_{\rm fit}}
+(\lambda_k^{\rm graph})^2
+}.
+\]
+
+\subsection{Résultats}
+
+Les erreurs relatives sur les 12 premiers modes non nuls décroissent
+systématiquement avec \(N\) :
+
+\[
+\begin{array}{cccc}
+\toprule
+N & {\rm erreur\ moyenne} & {\rm erreur\ médiane} & {\rm erreur\ maximale}\\
+\midrule
+64 & 0.0937 & 0.0952 & 0.1852\\
+128 & 0.0492 & 0.0480 & 0.1003\\
+256 & 0.0214 & 0.0215 & 0.0446\\
+512 & 0.0109 & 0.0094 & 0.0249\\
+1024 & 0.0051 & 0.0051 & 0.0107\\
+\bottomrule
+\end{array}
+\]
+
+À \(N=1024\), le premier mode non nul est reconstruit comme :
+\[
+\lambda_1^{\rm scaled}=1.0062,
+\]
+à comparer à la valeur analytique :
+\[
+\lambda_1^{S^1}=1.
+\]
+
+L'erreur relative sur ce premier mode est donc :
+\[
+\frac{|1.0062-1|}{1}
+\simeq
+0.0062.
+\]
+
+Cela fournit une évidence numérique forte pour :
+\[
+c_NL_N
+\longrightarrow
+-\Delta_{S^1}.
+\]
+
+\section{Test spectral sur le tore plat \(T^2\)}
+
+\subsection{Spectre analytique}
+
+Le tore plat unité est :
+\[
+T^2=[0,1)^2,
+\]
+avec conditions périodiques.
+
+Les modes propres sont :
+\[
+e^{2\pi i(mx+ny)},
+\qquad
+(m,n)\in\mathbb{Z}^2.
+\]
+
+Le spectre positif de \(-\Delta_{T^2}\) est :
+\[
+\lambda_{m,n}
+=
+4\pi^2(m^2+n^2),
+\qquad
+(m,n)\neq(0,0).
+\]
+
+Le premier mode non nul est donc :
+\[
+\lambda_1^{T^2}=4\pi^2\simeq39.4784.
+\]
+
+\subsection{Construction du graphe}
+
+Nous utilisons une grille périodique \(m\times m\), avec :
+\[
+N=m^2.
+\]
+
+La distance intrinsèque périodique entre deux points
+\[
+x_i=(u_i,v_i),
+\qquad
+x_j=(u_j,v_j)
+\]
+est :
+\[
+d(x_i,x_j)^2
+=
+\min(|u_i-u_j|,1-|u_i-u_j|)^2
++
+\min(|v_i-v_j|,1-|v_i-v_j|)^2.
+\]
+
+Les poids sont :
+\[
+W_{ij}
+=
+\exp\left[
+-\frac{d(x_i,x_j)^2}{4\epsilon_N}
+\right],
+\]
+sur un graphe local \(k\)-NN.
+
+Le Laplacien testé est :
+\[
+L_N=\frac{D_N-W_N}{\epsilon_N}.
+\]
+
+Comme pour le cercle, un facteur \(c_N\) est ajusté :
+\[
+c_N\lambda_k^{\rm graph}
+\simeq
+\lambda_k^{T^2}.
+\]
+
+\subsection{Résultats}
+
+Les erreurs relatives sur les 20 premiers modes non nuls décroissent avec la
+résolution :
+
+\[
+\begin{array}{cccc}
+\toprule
+N & {\rm erreur\ moyenne} & {\rm erreur\ médiane} & {\rm erreur\ maximale}\\
+\midrule
+64 & 0.0951 & 0.1340 & 0.1467\\
+144 & 0.0757 & 0.0437 & 0.1367\\
+256 & 0.0604 & 0.0574 & 0.1850\\
+576 & 0.0334 & 0.0455 & 0.0504\\
+1024 & 0.0266 & 0.0263 & 0.0522\\
+\bottomrule
+\end{array}
+\]
+
+À \(N=1024\), on obtient :
+\[
+\lambda_1^{\rm scaled}=40.9613.
+\]
+
+La valeur analytique est :
+\[
+\lambda_1^{T^2}
+=
+4\pi^2
+=
+39.4784.
+\]
+
+L'erreur relative du premier mode est :
+\[
+\frac{|40.9613-39.4784|}{39.4784}
+\simeq
+0.0376.
+\]
+
+Le tore plat présente une convergence moins rapide que le cercle, ce qui est
+attendu : en dimension deux, les dégénérescences spectrales sont plus
+nombreuses, les sous-espaces propres sont plus sensibles à la discrétisation,
+et le graphe \(k\)-NN peut légèrement briser les symétries exactes du tore.
+
+Néanmoins, l'erreur moyenne finale sur les 20 premiers modes est :
+\[
+0.0266,
+\]
+ce qui fournit une évidence numérique positive pour :
+\[
+c_NL_N
+\longrightarrow
+-\Delta_{T^2}.
+\]
+
+\section{Résumé des résultats spectraux}
+
+Les deux tests principaux de Paper~16 sont résumés dans le tableau suivant :
+
+\[
+\begin{array}{llllllll}
+\toprule
+{\rm Test} & {\rm Limite} & N & {\rm modes} &
+{\rm erreur\ moy.} & {\rm erreur\ méd.} &
+{\rm erreur\ max.} & \lambda_1^{\rm scaled} \\
+\midrule
+S^1 &
+c_NL_N\to-\Delta_{S^1} &
+1024 & 12 & 0.0051 & 0.0051 & 0.0107 & 1.0062 \\
+T^2 &
+c_NL_N\to-\Delta_{T^2} &
+1024 & 20 & 0.0266 & 0.0263 & 0.0522 & 40.9613 \\
+\bottomrule
+\end{array}
+\]
+
+Pour comparaison, les valeurs cibles du premier mode sont :
+\[
+\lambda_1^{S^1}=1,
+\qquad
+\lambda_1^{T^2}=4\pi^2=39.4784.
+\]
+
+Ainsi, Paper~16 renforce Paper~15 :
+
+\[
+\text{Paper 15 : }
+d_s\to D,
+\]
+
+\[
+\text{Paper 16 : }
+\lambda_k(c_NL_N)\to\lambda_k(-\Delta_g).
+\]
+
+\section{Interprétation}
+
+Ces résultats montrent que le Laplacien BuP rescalé ne reproduit pas seulement
+une dimension spectrale globale. Il reconstruit aussi le bas spectre du
+Laplacien de Laplace--Beltrami sur des géométries contrôlées.
+
+Le passage de Paper~15 à Paper~16 est important :
+
+\[
+\mathrm{Tr}\,e^{-tL_N}
+\quad
+\text{teste une propriété globale},
+\]
+tandis que
+\[
+\lambda_k(L_N)
+\quad
+\text{teste les modes individuels}.
+\]
+
+La convergence des valeurs propres est donc une validation plus fine de la
+limite spectrale.
+
+Le résultat actuel peut être formulé ainsi :
+\[
+\boxed{
+\text{Le bas spectre du Laplacien BuP rescalé converge numériquement vers le
+bas spectre de }-\Delta_g\text{ sur }S^1\text{ et }T^2.
+}
+\]
+
+Il reste toutefois une étape théorique majeure : la normalisation \(c_N\).
+
+\section{Le problème de la normalisation \(c_N\)}
+
+Dans les tests actuels, \(c_N\) est ajusté numériquement. Ce facteur absorbe
+plusieurs effets :
+
+\begin{itemize}
+    \item la normalisation du noyau gaussien ;
+    \item la densité d'échantillonnage ;
+    \item la dimension de la variété ;
+    \item le choix du graphe \(k\)-NN ;
+    \item le facteur \(\epsilon_N\) ;
+    \item la différence entre une intégrale continue et une somme discrète.
+\end{itemize}
+
+Le problème central de Paper~16 est donc de remplacer l'ajustement :
+\[
+c_N
+=
+\operatorname*{argmin}_c
+\sum_k
+\left(
+c\lambda_k^{\rm graph}
+-
+\lambda_k^{\rm target}
+\right)^2
+\]
+par une formule analytique :
+\[
+c_N=C(D,\rho_N,\epsilon_N,k_N,\gamma),
+\]
+où \(D\) est la dimension, \(\rho_N\) la densité d'échantillonnage, et
+\(\gamma\) le facteur définissant \(\epsilon_N\).
+
+Un résultat théorique satisfaisant aurait la forme :
+\[
+c_N\frac{D_N-W_N}{\epsilon_N}
+\longrightarrow
+-\Delta_g.
+\]
+
+\section{Vers un théorème de convergence}
+
+Un énoncé cible possible est le suivant.
+
+\medskip
+
+\noindent
+\textbf{Énoncé cible.}
+Soit \(M\) une variété riemannienne compacte de dimension \(D\), échantillonnée
+par des points \(x_1,\ldots,x_N\). Supposons que les poids BuP vérifient
+localement :
+\[
+W_{ij}
+=
+\exp\left[
+-\frac{d_g(x_i,x_j)^2}{4\epsilon_N}
+\right]
++
+o(1),
+\]
+avec :
+\[
+\epsilon_N\to0,
+\qquad
+N\epsilon_N^{D/2}\to\infty.
+\]
+
+Alors il existe une normalisation \(c_N\) telle que :
+\[
+c_N\frac{D_N-W_N}{\epsilon_N}
+\longrightarrow
+-\Delta_g,
+\]
+dans un mode de convergence à préciser.
+
+\medskip
+
+Les modes de convergence possibles sont :
+
+\begin{enumerate}
+    \item convergence ponctuelle sur fonctions tests lisses ;
+    \item convergence des formes quadratiques ;
+    \item convergence de Mosco ;
+    \item convergence des valeurs propres ;
+    \item convergence des noyaux de chaleur ;
+    \item convergence de la trace de chaleur ;
+    \item convergence de la dimension spectrale.
+\end{enumerate}
+
+Dans le cadre BuP, la difficulté supplémentaire est que les poids ne sont pas
+initialement posés comme un noyau géométrique. Ils proviennent de
+l'intrication :
+\[
+W_{ij}=I(i:j).
+\]
+Il faut donc établir sous quelles conditions \(I(i:j)\) se comporte
+localement comme un noyau thermique ou gaussien.
+
+\section{Lien avec l'action spectrale BuP}
+
+Le résultat spectral est central pour l'action BuP :
+\[
+S_{\rm BuP}[W]
+=
+\mathrm{Tr}\,L(W)^{-\beta[W]}
++
+\sum_{ij}W_{ij}\kappa_{ij}[W]
++
+\lambda\sum_{ij}W_{ij}d_{ij}^{2}
++
+S_{\rm topo}[W].
+\]
+
+Si
+\[
+c_NL_N\to-\Delta_g,
+\]
+alors le terme spectral discret :
+\[
+\mathrm{Tr}\,L_N^{-\beta}
+\]
+peut être relié à une action spectrale continue :
+\[
+\mathrm{Tr}\,(-\Delta_g)^{-\beta}.
+\]
+
+Via la représentation de Mellin :
+\[
+\mathrm{Tr}\,L^{-\beta}
+=
+\frac{1}{\Gamma(\beta)}
+\int_0^\infty
+t^{\beta-1}
+\mathrm{Tr}(e^{-tL})\,dt,
+\]
+et l'expansion de la trace de chaleur :
+\[
+\mathrm{Tr}(e^{-t\Delta_g})
+\sim
+(4\pi t)^{-D/2}
+\sum_{n=0}^{\infty}
+a_n(\Delta_g)t^n,
+\]
+le terme spectral contient des contributions géométriques continues :
+\[
+a_0\sim\int d^Dx\sqrt{|g|},
+\]
+et, selon la convention d'opérateur,
+\[
+a_1\ \text{ou}\ a_2
+\sim
+\int d^Dx\sqrt{|g|}\,R.
+\]
+
+Ainsi, la convergence spectrale étudiée dans Paper~16 est une condition
+nécessaire pour que l'action BuP discrète possède une limite géométrique
+continue.
+
+\section{Limites}
+
+Les résultats actuels sont positifs mais plusieurs limites doivent être
+clairement énoncées.
+
+Premièrement, \(c_N\) est encore ajusté numériquement. Une preuve complète
+nécessite une dérivation analytique de ce facteur.
+
+Deuxièmement, les tests sont effectués sur des géométries synthétiques
+contrôlées. Il reste à étendre la méthode à des graphes d'intrication
+quantiques où
+\[
+W_{ij}=I(i:j)
+\]
+n'est pas imposé comme un noyau gaussien.
+
+Troisièmement, la convergence est testée uniquement sur les bas modes. Les
+hauts modes sont plus sensibles à la discrétisation, au choix du graphe
+\(k\)-NN et au bruit numérique.
+
+Quatrièmement, les variétés testées sont compactes et sans bord. Les
+conditions de bord devront être traitées séparément.
+
+Cinquièmement, la convergence de valeurs propres n'implique pas à elle seule
+la convergence complète des opérateurs. Elle doit être complétée par une
+analyse des fonctions propres, des formes quadratiques ou des noyaux de
+chaleur.
+
+\section{Conclusion}
+
+Paper~16 transforme la validation de dimension spectrale de Paper~15 en une
+validation spectrale plus fine. Le Laplacien BuP rescalé
+\[
+L_N=\frac{D_N-W_N}{\epsilon_N}
+\]
+reconstruit le bas spectre du Laplacien de Laplace--Beltrami sur deux
+géométries contrôlées.
+
+Sur le cercle \(S^1\), les 12 premiers modes non nuls sont reconstruits avec
+une erreur relative moyenne de :
+\[
+0.0051.
+\]
+
+Sur le tore plat \(T^2\), les 20 premiers modes non nuls sont reconstruits
+avec une erreur relative moyenne de :
+\[
+0.0266.
+\]
+
+Ces résultats soutiennent la limite :
+\[
+c_NL_N
+\longrightarrow
+-\Delta_g.
+\]
+
+Le résultat n'est pas encore une preuve analytique. Il indique cependant que
+la direction est correcte : le Laplacien d'intrication BuP, correctement
+rescalé et normalisé, possède le bas spectre attendu d'un opérateur de
+Laplace--Beltrami.
+
+La prochaine étape consiste à dériver la normalisation \(c_N\), à préciser le
+mode de convergence, puis à étendre le résultat des géométries contrôlées aux
+graphes d'information mutuelle issus d'états quantiques.
+
+\section*{Disponibilité du code et des données}
+
+Les scripts et résultats de Paper~16 sont organisés dans le dossier :
+\[
+\texttt{papers/paper16\_spectral\_continuum\_limit/}.
+\]
+
+Les scripts principaux sont :
+\[
+\texttt{scripts/paper16\_circle\_spectrum\_convergence\_v1.py},
+\]
+\[
+\texttt{scripts/paper16\_flat\_torus\_spectrum\_convergence\_v1.py},
+\]
+\[
+\texttt{scripts/paper16\_build\_spectral\_summary\_v1.py}.
+\]
+
+Les résultats principaux sont stockés dans :
+\[
+\texttt{results/circle\_spectrum\_convergence\_v1/},
+\]
+\[
+\texttt{results/flat\_torus\_spectrum\_convergence\_v1/},
+\]
+\[
+\texttt{results/paper16\_spectral\_summary\_v1/}.
+\]
+
+\appendix
+
+\section{Détails sur les erreurs relatives}
+
+Pour chaque mode non nul \(k\), l'erreur relative est définie par :
+\[
+e_k
+=
+\frac{
+\left|
+c_N\lambda_k^{\rm graph}
+-
+\lambda_k^{\rm target}
+\right|
+}{
+\lambda_k^{\rm target}
+}.
+\]
+
+Les statistiques rapportées sont :
+\[
+\bar e
+=
+\frac{1}{K}
+\sum_{k=1}^K e_k,
+\]
+\[
+e_{\rm med}
+=
+\operatorname{median}(e_k),
+\]
+et
+\[
+e_{\max}
+=
+\max_k e_k.
+\]
+
+\section{Prochaines étapes}
+
+Les prochaines étapes de Paper~16 sont :
+
+\begin{enumerate}
+    \item dériver analytiquement la normalisation \(c_N\) ;
+    \item tester \(N=2048\) et \(N=4096\) avec méthodes sparse ;
+    \item tester la convergence des fonctions propres ;
+    \item comparer les formes quadratiques discrètes et continues ;
+    \item tester une sphère avec spectre analytique
+    \[
+    \lambda_\ell=\ell(\ell+1)
+    \]
+    et dégénérescence \(2\ell+1\) ;
+    \item remplacer les noyaux synthétiques par des graphes d'information
+    mutuelle issus de véritables états quantiques ;
+    \item relier le résultat à l'action spectrale de Paper~14 et à la limite
+    Einstein de Paper~15.
+\end{enumerate}
+
+\end{document}
