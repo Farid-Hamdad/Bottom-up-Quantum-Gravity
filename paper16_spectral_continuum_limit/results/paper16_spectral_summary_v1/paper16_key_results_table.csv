@@ -1,0 +1,3 @@
+test,limit,N,modes_compared,mean_rel_error,median_rel_error,max_rel_error,lambda1_scaled,lambda1_target,status
+Circle spectrum,c_N L_N -> -Delta_{S^1},1024,12,0.0050723694954168,0.0050771414514515,0.0106801271830099,1.0062118601982126,1.0,positive
+Flat torus spectrum,c_N L_N -> -Delta_{T^2},1024,20,0.0266274056742776,0.0262638346060128,0.0521957243158179,40.96127009878166,39.47841760435743,positive
