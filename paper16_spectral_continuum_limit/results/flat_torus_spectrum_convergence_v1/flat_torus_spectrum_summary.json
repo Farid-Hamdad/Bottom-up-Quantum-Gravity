@@ -1,0 +1,34 @@
+{
+  "experiment": "Paper 16 flat torus spectrum convergence v1",
+  "Ns": [
+    64,
+    144,
+    256,
+    576,
+    1024
+  ],
+  "k_mode": "sqrt",
+  "kernel_factor": 0.5,
+  "n_modes": 20,
+  "fit_modes": 12,
+  "final": {
+    "N_input": 1024.0,
+    "N_actual": 1024.0,
+    "m_grid": 32.0,
+    "k": 32.0,
+    "epsilon": 0.004882812500000001,
+    "scale_c": 0.1568961677809424,
+    "n_modes": 20.0,
+    "fit_modes": 12.0,
+    "mean_rel_error": 0.026627405674277693,
+    "median_rel_error": 0.02626383460601285,
+    "max_rel_error": 0.05219572431581799,
+    "mean_abs_error": 3.045116864108242,
+    "median_abs_error": 2.2648017104653064,
+    "degree_mean": 25.80649654690907,
+    "degree_std": 0.6647190040975178,
+    "lambda1_raw": 261.07247027200543,
+    "lambda1_scaled": 40.96127009878166,
+    "lambda1_target": 39.47841760435743
+  }
+}
