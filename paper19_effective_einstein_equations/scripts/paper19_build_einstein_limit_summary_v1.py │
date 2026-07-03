@@ -1,0 +1,390 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Paper 19 — Einstein limit summary builder v1
+
+Goal
+----
+Assemble the numerical pillars produced in Papers 16, 17 and 18 into a single
+Paper 19 summary.
+
+Inputs
+------
+Paper 16:
+  papers/paper16_spectral_continuum_limit/results/paper16_spectral_summary_v1/paper16_key_results_table.csv
+
+Paper 17:
+  papers/paper17_ollivier_ricci_limit/results/paper17_ricci_summary_v1/paper17_key_results_table.csv
+
+Paper 18:
+  papers/paper18_entanglement_stress_tensor/results/paper18_entanglement_stress_summary_v1/paper18_key_results_table.csv
+
+Outputs
+-------
+paper19_einstein_limit_key_results.csv
+paper19_einstein_limit_summary.json
+paper19_einstein_limit_summary.md
+
+Recommended run
+---------------
+cd ~/bottomup
+
+python3 papers/paper19_effective_einstein_equations/scripts/paper19_build_einstein_limit_summary_v1.py \
+  --paper16-table papers/paper16_spectral_continuum_limit/results/paper16_spectral_summary_v1/paper16_key_results_table.csv \
+  --paper17-table papers/paper17_ollivier_ricci_limit/results/paper17_ricci_summary_v1/paper17_key_results_table.csv \
+  --paper18-table papers/paper18_entanglement_stress_tensor/results/paper18_entanglement_stress_summary_v1/paper18_key_results_table.csv \
+  --output-dir papers/paper19_effective_einstein_equations/results/einstein_limit_summary_v1
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+import pandas as pd
+
+
+def parse_args():
+    p = argparse.ArgumentParser(description="Build Paper 19 Einstein limit summary v1.")
+    p.add_argument("--paper16-table", required=True)
+    p.add_argument("--paper17-table", required=True)
+    p.add_argument("--paper18-table", required=True)
+    p.add_argument("--output-dir", required=True)
+    return p.parse_args()
+
+
+def load_csv(path: Path) -> pd.DataFrame:
+    if not path.exists():
+        raise FileNotFoundError(f"Missing required file: {path}")
+    return pd.read_csv(path)
+
+
+def normalize_paper16(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for _, r in df.iterrows():
+        rows.append({
+            "paper": "Paper 16",
+            "pillar": "spectral geometry",
+            "arrow": "L_N -> Delta_g",
+            "test": r.get("test", ""),
+            "quantity": "mean relative spectral error",
+            "geometry": r.get("test", "").replace(" spectrum", ""),
+            "value": float(r["mean_rel_error"]),
+            "target": "small",
+            "status": r.get("status", "positive"),
+            "interpretation": "Entanglement Laplacian reconstructs low spectrum of Laplace-Beltrami operator.",
+        })
+        rows.append({
+            "paper": "Paper 16",
+            "pillar": "spectral geometry",
+            "arrow": "L_N -> Delta_g",
+            "test": r.get("test", ""),
+            "quantity": "lambda1 scaled",
+            "geometry": r.get("test", "").replace(" spectrum", ""),
+            "value": float(r["lambda1_scaled"]),
+            "target": str(float(r["lambda1_target"])),
+            "status": r.get("status", "positive"),
+            "interpretation": "First nonzero eigenvalue matches analytic continuum target after scalar normalization.",
+        })
+    return pd.DataFrame(rows)
+
+
+def normalize_paper17(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for _, r in df.iterrows():
+        rows.append({
+            "paper": "Paper 17",
+            "pillar": "curvature",
+            "arrow": "kappa_OR -> Ricci",
+            "test": r.get("step", ""),
+            "quantity": r.get("quantity", ""),
+            "geometry": "flat_torus2d / sphere",
+            "value": float(r["value"]),
+            "target": r.get("reference", ""),
+            "status": r.get("status", "positive"),
+            "interpretation": "Ollivier-Ricci curvature carries a calibrated mean Ricci signal.",
+        })
+    return pd.DataFrame(rows)
+
+
+def normalize_paper18(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for _, r in df.iterrows():
+        quantity = r.get("quantity", "")
+        if "slope" in quantity or "R2 deltaS" in quantity:
+            pillar = "source modular first law"
+            arrow = "delta W_loc -> delta S_A ~= delta<K_A>"
+            interp = "Graph modular first law is numerically validated."
+        else:
+            pillar = "source to curvature"
+            arrow = "delta<K_A> -> delta kappa(r)"
+            interp = "Modular response predicts localized curvature response."
+        rows.append({
+            "paper": "Paper 18",
+            "pillar": pillar,
+            "arrow": arrow,
+            "test": r.get("step", ""),
+            "quantity": quantity,
+            "geometry": r.get("geometry", ""),
+            "value": float(r["value"]),
+            "target": r.get("target", ""),
+            "status": r.get("status", "positive"),
+            "interpretation": interp,
+        })
+    return pd.DataFrame(rows)
+
+
+def build_core_summary(all_df: pd.DataFrame) -> dict:
+    def get_val(mask):
+        sub = all_df[mask]
+        if len(sub) == 0:
+            return None
+        return float(sub.iloc[0]["value"])
+
+    summary = {
+        "paper16": {
+            "circle_mean_rel_error": get_val((all_df.paper == "Paper 16") & (all_df.test == "Circle spectrum") & (all_df.quantity == "mean relative spectral error")),
+            "flat_torus_mean_rel_error": get_val((all_df.paper == "Paper 16") & (all_df.test == "Flat torus spectrum") & (all_df.quantity == "mean relative spectral error")),
+        },
+        "paper17": {
+            "B_N_flat_baseline_kappa_over_epsilon": get_val((all_df.paper == "Paper 17") & (all_df.quantity == "B_N flat baseline for kappa/epsilon")),
+            "C_N_sphere_flat_delta_kappa_over_epsilon": get_val((all_df.paper == "Paper 17") & (all_df.quantity == "sphere-flat delta for kappa/epsilon")),
+            "A_N_epsilon_calibration": get_val((all_df.paper == "Paper 17") & (all_df.quantity == "A_N epsilon calibration")),
+        },
+        "paper18": {
+            "flat_first_law_slope": get_val((all_df.paper == "Paper 18") & (all_df.geometry == "flat_torus2d") & (all_df.quantity == "slope deltaS vs delta<K>")),
+            "sphere_first_law_slope": get_val((all_df.paper == "Paper 18") & (all_df.geometry == "sphere") & (all_df.quantity == "slope deltaS vs delta<K>")),
+            "flat_source_curvature_R2": get_val((all_df.paper == "Paper 18") & (all_df.geometry == "flat_torus2d") & (all_df.quantity == "R2 |deltaK| -> near |delta kappa|")),
+            "sphere_source_curvature_R2": get_val((all_df.paper == "Paper 18") & (all_df.geometry == "sphere") & (all_df.quantity == "R2 |deltaK| -> near |delta kappa|")),
+        },
+    }
+    return summary
+
+
+def write_markdown(outpath: Path, all_df: pd.DataFrame, core: dict):
+    lines = []
+    lines.append("# Paper 19 — Einstein Limit Summary v1")
+    lines.append("")
+    lines.append("This file assembles the numerical pillars needed for the effective Einstein limit of Bottom-Up Quantum Gravity.")
+    lines.append("")
+    lines.append("The target equation is")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"G_{\mu\nu}[g^{\rm ent}]")
+    lines.append(r"+")
+    lines.append(r"\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}")
+    lines.append(r"=")
+    lines.append(r"8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}")
+    lines.append(r"+")
+    lines.append(r"\mathcal{H}_{\mu\nu}.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("In the smooth low-energy limit, the correction tensor is expected to vanish:")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"\mathcal{H}_{\mu\nu}\to0.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## 1. Three pillars")
+    lines.append("")
+    lines.append("### Paper 16 — Spectral geometry")
+    lines.append("")
+    lines.append("Paper 16 supports")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"c_NL_N\to-\Delta_g.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("Key results:")
+    lines.append("")
+    lines.append("| Geometry | Mean relative spectral error |")
+    lines.append("|---|---:|")
+    p16 = core["paper16"]
+    lines.append(f"| \(S^1\) | {p16['circle_mean_rel_error']:.6f} |")
+    lines.append(f"| \(T^2\) | {p16['flat_torus_mean_rel_error']:.6f} |")
+    lines.append("")
+    lines.append("Interpretation: the entanglement Laplacian reconstructs the low spectrum of the Laplace--Beltrami operator.")
+    lines.append("")
+    lines.append("### Paper 17 — Ricci curvature")
+    lines.append("")
+    lines.append("Paper 17 supports")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"\frac{\kappa^{OR}}{\epsilon}")
+    lines.append(r"\simeq")
+    lines.append(r"B_N+C_NR_{\mu\nu}u^\mu u^\nu.")
+    lines.append(r"\]")
+    lines.append("")
+    p17 = core["paper17"]
+    lines.append("At \(N=512\):")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(fr"B_N={p17['B_N_flat_baseline_kappa_over_epsilon']:.6f},")
+    lines.append(r"\qquad")
+    lines.append(fr"C_N={p17['C_N_sphere_flat_delta_kappa_over_epsilon']:.6f},")
+    lines.append(r"\qquad")
+    lines.append(fr"A_N={p17['A_N_epsilon_calibration']:.6f}.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("Interpretation: Ollivier--Ricci curvature carries a calibrated mean Ricci signal.")
+    lines.append("")
+    lines.append("### Paper 18 — Modular source")
+    lines.append("")
+    lines.append("Paper 18 supports")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"\delta W_{\rm loc}")
+    lines.append(r"\to")
+    lines.append(r"\delta S_A")
+    lines.append(r"\simeq")
+    lines.append(r"\delta\langle K_A\rangle")
+    lines.append(r"\to")
+    lines.append(r"\delta\kappa(r).")
+    lines.append(r"\]")
+    lines.append("")
+    p18 = core["paper18"]
+    lines.append("Graph modular first-law slopes:")
+    lines.append("")
+    lines.append("| Geometry | slope \(\delta S_A\) vs \(\delta\langle K_A\rangle\) |")
+    lines.append("|---|---:|")
+    lines.append(f"| flat torus | {p18['flat_first_law_slope']:.6f} |")
+    lines.append(f"| sphere | {p18['sphere_first_law_slope']:.6f} |")
+    lines.append("")
+    lines.append("Modular source to curvature response:")
+    lines.append("")
+    lines.append("| Geometry | \(R^2(|\delta K|,\langle|\Delta\kappa|\rangle_{\rm near})\) |")
+    lines.append("|---|---:|")
+    lines.append(f"| flat torus | {p18['flat_source_curvature_R2']:.6f} |")
+    lines.append(f"| sphere | {p18['sphere_source_curvature_R2']:.6f} |")
+    lines.append("")
+    lines.append("Interpretation: the modular response behaves as an effective source for curvature.")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## 2. Assembly")
+    lines.append("")
+    lines.append("The BuP variational equation is")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"\frac{\delta S_{\rm BuP}[W]}{\delta W_{ij}}=0.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("The action is")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"S_{\rm BuP}[W]")
+    lines.append(r"=")
+    lines.append(r"\mathrm{Tr}\,L(W)^{-\beta[W]}")
+    lines.append(r"+")
+    lines.append(r"\sum_{ij}W_{ij}\kappa_{ij}[W]")
+    lines.append(r"+")
+    lines.append(r"\lambda\sum_{ij}W_{ij}d_{ij}^2")
+    lines.append(r"+")
+    lines.append(r"S_{\rm topo}[W].")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("Using Papers 16--18, the continuum identifications are:")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"L(W)\to-\Delta_g,")
+    lines.append(r"\qquad")
+    lines.append(r"\kappa^{OR}\to R_{\mu\nu}u^\mu u^\nu,")
+    lines.append(r"\qquad")
+    lines.append(r"\delta\langle K_A\rangle\to T_{\mu\nu}^{\rm ent}.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("Therefore, the expected continuum equation is")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"G_{\mu\nu}[g^{\rm ent}]")
+    lines.append(r"+")
+    lines.append(r"\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}")
+    lines.append(r"=")
+    lines.append(r"8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}")
+    lines.append(r"+")
+    lines.append(r"\mathcal{H}_{\mu\nu}.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## 3. Key results table")
+    lines.append("")
+    lines.append("| Paper | Pillar | Arrow | Test | Quantity | Geometry | Value | Target | Status |")
+    lines.append("|---|---|---|---|---|---|---:|---|---|")
+    for _, r in all_df.iterrows():
+        lines.append(
+            f"| {r['paper']} | {r['pillar']} | `{r['arrow']}` | {r['test']} | "
+            f"{r['quantity']} | {r['geometry']} | {float(r['value']):.6f} | {r['target']} | {r['status']} |"
+        )
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## 4. Interpretation")
+    lines.append("")
+    lines.append("Paper 19 does not introduce an isolated new numerical test. It assembles the three validated continuum arrows:")
+    lines.append("")
+    lines.append(r"\[")
+    lines.append(r"L_N\to\Delta_g,")
+    lines.append(r"\qquad")
+    lines.append(r"\kappa^{OR}\to R_{\mu\nu}u^\mu u^\nu,")
+    lines.append(r"\qquad")
+    lines.append(r"\delta W_{\rm loc}\to T_{\mu\nu}^{\rm ent}.")
+    lines.append(r"\]")
+    lines.append("")
+    lines.append("Together, these support the claim that the BuP entanglement equilibrium admits an effective Einstein limit.")
+    lines.append("")
+    lines.append("The remaining task is analytic: derive the coefficients, control the correction tensor \(\mathcal{H}_{\mu\nu}\), and specify the low-energy/smooth regime in which it vanishes.")
+    lines.append("")
+
+    outpath.write_text("\n".join(lines), encoding="utf-8")
+
+
+def main():
+    args = parse_args()
+    paper16_path = Path(args.paper16_table)
+    paper17_path = Path(args.paper17_table)
+    paper18_path = Path(args.paper18_table)
+    outdir = Path(args.output_dir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    p16 = normalize_paper16(load_csv(paper16_path))
+    p17 = normalize_paper17(load_csv(paper17_path))
+    p18 = normalize_paper18(load_csv(paper18_path))
+
+    all_df = pd.concat([p16, p17, p18], ignore_index=True)
+    all_df.to_csv(outdir / "paper19_einstein_limit_key_results.csv", index=False)
+
+    core = build_core_summary(all_df)
+
+    summary = {
+        "experiment": "Paper 19 Einstein limit summary v1",
+        "inputs": {
+            "paper16_table": str(paper16_path),
+            "paper17_table": str(paper17_path),
+            "paper18_table": str(paper18_path),
+        },
+        "core_summary": core,
+        "key_results": all_df.to_dict(orient="records"),
+        "target_equation": "G_mn + Lambda_ent g_mn = 8 pi G_eff T_mn_ent + H_mn",
+    }
+
+    with open(outdir / "paper19_einstein_limit_summary.json", "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2)
+
+    write_markdown(outdir / "paper19_einstein_limit_summary.md", all_df, core)
+
+    print("=" * 110)
+    print("Paper 19 — Einstein limit summary v1")
+    print("=" * 110)
+    print(all_df.to_string(index=False))
+    print("\nFiles written:")
+    print(outdir / "paper19_einstein_limit_key_results.csv")
+    print(outdir / "paper19_einstein_limit_summary.json")
+    print(outdir / "paper19_einstein_limit_summary.md")
+
+
+if __name__ == "__main__":
+    main()
