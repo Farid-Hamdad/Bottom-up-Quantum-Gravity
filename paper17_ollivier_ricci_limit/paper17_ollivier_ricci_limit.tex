@@ -1,0 +1,682 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+\graphicspath{{figures/}}
+
+\title{
+\textbf{Courbure d'Ollivier--Ricci et limite de Ricci continue}\\
+\large Vers la seconde flèche géométrique de Bottom-Up Quantum Gravity
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Paper~15 a montré que la courbure d'Ollivier--Ricci discrète distingue une
+géométrie positivement courbée d'une géométrie plate périodique. Le présent
+papier étudie l'étape suivante : sous quelle forme la courbure
+d'Ollivier--Ricci peut-elle être renormalisée pour approcher le signal de
+Ricci continu
+\[
+R_{\mu\nu}u^\mu u^\nu ?
+\]
+Nous testons cette question sur deux géométries contrôlées : le tore plat
+périodique, pour lequel \(R_{\mu\nu}u^\mu u^\nu=0\), et la sphère unité, pour
+laquelle \(R_{\mu\nu}u^\mu u^\nu=1\). Le premier test montre que le signal
+sphère--plat est positif pour la courbure brute, pour
+\(\kappa^{OR}/\epsilon\), et pour \(\kappa^{OR}/\ell^2\). Le second test
+identifie une calibration affine finie :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu.
+\]
+À \(N=512\), on obtient
+\[
+B_N=-0.301281,
+\qquad
+C_N=0.391933.
+\]
+Cela donne le proxy calibré
+\[
+\widehat{R}_{OR}
+=
+2.551455
+\left(
+\frac{\kappa^{OR}}{\epsilon}
++
+0.301281
+\right),
+\]
+qui envoie le tore plat vers une courbure moyenne \(0\) et la sphère unité
+vers une courbure moyenne \(1\). Ces résultats ne prouvent pas encore une
+convergence locale point par point, mais établissent un proxy moyen de Ricci
+à partir de la courbure d'Ollivier--Ricci.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Dans Bottom-Up Quantum Gravity, la géométrie émerge d'un réseau
+d'intrication. L'objet fondamental est la matrice d'information mutuelle
+\[
+W_{ij}=I(i:j),
+\]
+à partir de laquelle on construit un graphe pondéré, un Laplacien
+d'intrication et des observables géométriques discrètes.
+
+Paper~16 a étudié la première flèche géométrique :
+\[
+L_N\longrightarrow\Delta_g.
+\]
+Le présent papier étudie la seconde :
+\[
+\kappa_{ij}^{OR}
+\longrightarrow
+R_{\mu\nu}u^\mu u^\nu.
+\]
+
+La courbure d'Ollivier--Ricci est une notion de courbure discrète fondée sur
+le transport optimal. Elle compare la distance entre deux voisinages à la
+distance entre leurs centres. Elle est donc adaptée à une géométrie
+relationnelle où la notion de voisinage précède la métrique continue.
+
+Paper~15 avait établi un premier résultat relatif :
+\[
+\bar\kappa_{\rm sphere}
+>
+\bar\kappa_{\rm flat}.
+\]
+Paper~17 cherche à comprendre la forme de renormalisation nécessaire pour
+transformer ce signal discret en proxy de Ricci continu.
+
+La question centrale est :
+\[
+\boxed{
+\frac{\kappa^{OR}}{\epsilon}
+=
+B_N
++
+C_N R_{\mu\nu}u^\mu u^\nu
++
+o(1)
+?
+}
+\]
+
+\section{Courbure d'Ollivier--Ricci}
+
+La courbure d'Ollivier--Ricci d'une arête \((i,j)\) est définie par :
+\[
+\kappa_{ij}^{OR}
+=
+1-
+\frac{W_1(m_i,m_j)}{d(i,j)}.
+\]
+
+Ici, \(W_1(m_i,m_j)\) est la distance de Wasserstein-1 entre les mesures de
+voisinage \(m_i\) et \(m_j\), et \(d(i,j)\) est la distance entre les deux
+nœuds.
+
+La mesure \(m_i\) est définie avec une inertie \(\alpha\) :
+\[
+m_i
+=
+\alpha\delta_i
++
+(1-\alpha)
+\sum_{k\sim i}
+\frac{W_{ik}}{\sum_\ell W_{i\ell}}
+\delta_k.
+\]
+
+Dans les tests numériques de ce papier, nous utilisons :
+\[
+\alpha=0.5.
+\]
+
+La limite continue attendue est de la forme :
+\[
+\kappa_{ij}^{OR}
+\sim
+\epsilon_N R_{\mu\nu}u^\mu u^\nu
++
+\text{biais de discrétisation}.
+\]
+
+Cela motive l'étude de la quantité :
+\[
+\frac{\kappa_{ij}^{OR}}{\epsilon_N}.
+\]
+
+\section{Héritage de Paper 15}
+
+Paper~15 a testé la courbure d'Ollivier--Ricci sur des géométries contrôlées.
+Une première version utilisant une grille plane avec bord était contaminée par
+les effets de frontière. La version corrigée a utilisé un tore plat périodique
+comme référence de courbure nulle.
+
+Les résultats finaux étaient :
+\[
+\bar\kappa_{\rm flat}
+=
+-0.001671
+\simeq0,
+\]
+et :
+\[
+\bar\kappa_{\rm sphere}
+=
+0.008854.
+\]
+
+Le signal relatif était donc :
+\[
+\Delta\bar\kappa_{\rm sphere-flat}
+=
+0.010525.
+\]
+
+Ce résultat confirmait que la courbure d'Ollivier--Ricci distingue bien une
+géométrie positivement courbée d'une géométrie plate périodique. Cependant, il
+ne disait pas encore comment relier quantitativement \(\kappa^{OR}\) à
+\(R_{\mu\nu}u^\mu u^\nu\).
+
+\section{Géométries contrôlées}
+
+Nous utilisons deux géométries de référence.
+
+\subsection{Tore plat}
+
+Le tore plat périodique
+\[
+T^2=[0,1)^2
+\]
+est utilisé comme référence de courbure nulle :
+\[
+R_{\mu\nu}u^\mu u^\nu=0.
+\]
+
+La distance intrinsèque est :
+\[
+d(x_i,x_j)^2
+=
+\min(|u_i-u_j|,1-|u_i-u_j|)^2
++
+\min(|v_i-v_j|,1-|v_i-v_j|)^2.
+\]
+
+\subsection{Sphère unité}
+
+La sphère unité \(S^2\) est utilisée comme référence de courbure positive.
+Sur \(S^2\), le tenseur de Ricci vaut :
+\[
+{\rm Ric}=g.
+\]
+
+Ainsi, pour tout vecteur tangent unitaire \(u^\mu\),
+\[
+R_{\mu\nu}u^\mu u^\nu=1.
+\]
+
+La distance géodésique utilisée est :
+\[
+d(x_i,x_j)
+=
+\arccos(x_i\cdot x_j).
+\]
+
+\section{Test v1 : signal relatif sphère--plat}
+
+Le premier test Paper~17 compare trois observables :
+
+\[
+\kappa^{OR},
+\]
+
+\[
+\frac{\kappa^{OR}}{\epsilon},
+\]
+
+\[
+\frac{\kappa^{OR}}{\ell^2},
+\]
+où \(\ell\) est la longueur intrinsèque de l'arête.
+
+À \(N=256\), on obtient :
+\[
+\Delta\bar\kappa_{\rm sphere-flat}
+=
+0.013383.
+\]
+
+Pour la normalisation par \(\epsilon\) :
+\[
+\Delta
+\left\langle
+\frac{\kappa}{\epsilon}
+\right\rangle_{\rm sphere-flat}
+=
+0.197719.
+\]
+
+Pour la normalisation par \(\ell^2\) :
+\[
+\Delta
+\left\langle
+\frac{\kappa}{\ell^2}
+\right\rangle_{\rm sphere-flat}
+=
+0.557041.
+\]
+
+Les trois signaux sont positifs :
+\[
+\bar\kappa_{\rm sphere}
+>
+\bar\kappa_{\rm flat},
+\]
+\[
+\left\langle\frac{\kappa}{\epsilon}\right\rangle_{\rm sphere}
+>
+\left\langle\frac{\kappa}{\epsilon}\right\rangle_{\rm flat},
+\]
+\[
+\left\langle\frac{\kappa}{\ell^2}\right\rangle_{\rm sphere}
+>
+\left\langle\frac{\kappa}{\ell^2}\right\rangle_{\rm flat}.
+\]
+
+Ce résultat montre que le signal sphère--plat est robuste au choix de
+normalisation. Il ne dépend pas uniquement de la courbure brute.
+
+\section{Test v2 : calibration affine}
+
+Le test v2 introduit une calibration affine :
+\[
+\widehat{R}_{OR}
+=
+A_N
+\left(
+\frac{\kappa^{OR}}{\epsilon}
+-
+B_N
+\right).
+\]
+
+Le tore plat est utilisé pour définir le biais de courbure nulle :
+\[
+B_N
+=
+\left\langle
+\frac{\kappa^{OR}}{\epsilon}
+\right\rangle_{\rm flat}.
+\]
+
+La sphère unité est utilisée pour définir la normalisation :
+\[
+R_{\mu\nu}u^\mu u^\nu=1.
+\]
+
+On pose donc :
+\[
+A_N=
+\frac{1}{
+\left\langle\kappa^{OR}/\epsilon\right\rangle_{\rm sphere}
+-
+\left\langle\kappa^{OR}/\epsilon\right\rangle_{\rm flat}
+}.
+\]
+
+Les constantes obtenues sont :
+\[
+\begin{array}{cccc}
+\toprule
+N_{\rm input} & B_N & \Delta_{\rm sphere-flat} & A_N\\
+\midrule
+128 & -0.2103 & 0.3053 & 3.2760\\
+256 & -0.3079 & 0.4005 & 2.4968\\
+512 & -0.3013 & 0.3919 & 2.5515\\
+\bottomrule
+\end{array}
+\]
+
+La stabilité entre \(N=256\) et \(N=512\) est encourageante :
+\[
+B_N\simeq -0.30,
+\qquad
+\Delta_{\rm sphere-flat}\simeq0.40,
+\qquad
+A_N\simeq2.5.
+\]
+
+À \(N=512\), on obtient :
+\[
+\widehat{R}_{OR}
+=
+2.551455
+\left(
+\frac{\kappa^{OR}}{\epsilon}
++
+0.301281
+\right).
+\]
+
+Par construction :
+\[
+\left\langle
+\widehat{R}_{OR}
+\right\rangle_{\rm flat}
+=
+0,
+\]
+et :
+\[
+\left\langle
+\widehat{R}_{OR}
+\right\rangle_{\rm sphere}
+=
+1.
+\]
+
+Cela identifie une relation moyenne :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu,
+\]
+avec, à \(N=512\),
+\[
+B_N=-0.301281,
+\qquad
+C_N=0.391933.
+\]
+
+\section{Résumé des résultats numériques}
+
+Les résultats principaux sont :
+
+\[
+\begin{array}{lllll}
+\toprule
+{\rm Étape} & {\rm Quantité} & N & {\rm Valeur} & {\rm Statut}\\
+\midrule
+{\rm v1} & \Delta\bar\kappa_{\rm sphere-flat} & 256 & 0.013383 & positif\\
+{\rm v1} & \Delta\langle\kappa/\epsilon\rangle_{\rm sphere-flat} & 256 & 0.197719 & positif\\
+{\rm v1} & \Delta\langle\kappa/\ell^2\rangle_{\rm sphere-flat} & 256 & 0.557041 & positif\\
+{\rm v2} & B_N & 512 & -0.301281 & identifié\\
+{\rm v2} & C_N & 512 & 0.391933 & positif\\
+{\rm v2} & A_N=1/C_N & 512 & 2.551455 & identifié\\
+\bottomrule
+\end{array}
+\]
+
+Le résultat central est :
+\[
+\boxed{
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+-0.301
++
+0.392\,R_{\mu\nu}u^\mu u^\nu
+}
+\]
+à \(N=512\), pour les deux références géométriques utilisées.
+
+\section{Interprétation}
+
+Paper~17 établit que la courbure d'Ollivier--Ricci porte un signal de Ricci
+relatif. La sphère présente systématiquement une courbure moyenne supérieure
+au tore plat. De plus, après soustraction d'un biais de géométrie plate et
+calibration par la sphère unité, la quantité \(\kappa^{OR}/\epsilon\) fournit
+un proxy moyen de \(R_{\mu\nu}u^\mu u^\nu\).
+
+Le résultat n'est pas encore une convergence locale point par point :
+\[
+\kappa_{ij}^{OR}
+\not\equiv
+\epsilon C_N R_{\mu\nu}u^\mu u^\nu
+\]
+pour chaque arête individuelle.
+
+Il s'agit plutôt d'une relation moyenne :
+\[
+\left\langle
+\frac{\kappa^{OR}}{\epsilon}
+\right\rangle
+\simeq
+B_N+C_N
+\left\langle
+R_{\mu\nu}u^\mu u^\nu
+\right\rangle.
+\]
+
+C'est néanmoins une étape importante, car elle transforme le signal qualitatif
+de Paper~15 en relation quantitative calibrée.
+
+\section{Limites}
+
+Plusieurs limites doivent être précisées.
+
+Premièrement, la calibration affine est empirique. Les constantes \(B_N\) et
+\(C_N\) ne sont pas encore dérivées analytiquement.
+
+Deuxièmement, le résultat est un proxy moyen. La dispersion des valeurs de
+\(\widehat{R}_{OR}\) reste importante, notamment sur le tore plat.
+
+Troisièmement, le graphe \(k\)-NN peut introduire une anisotropie locale. Une
+version ultérieure devra tester des graphes à rayon fixe.
+
+Quatrièmement, les tests ne concernent que deux géométries :
+\[
+T^2,
+\qquad
+S^2.
+\]
+Il faudra tester des sphères de rayon différent, des surfaces hyperboliques et
+des géométries mixtes.
+
+Cinquièmement, la relation avec de vrais graphes d'information mutuelle
+\[
+W_{ij}=I(i:j)
+\]
+reste à établir. Les tests actuels utilisent des noyaux géométriques
+contrôlés.
+
+\section{Lien avec l'équation d'Einstein effective}
+
+Paper~15 a proposé la chaîne :
+\[
+W_{ij}
+\to
+L_\epsilon
+\to
+\Delta_g,
+\]
+\[
+\kappa_{ij}^{OR}
+\to
+R_{\mu\nu}u^\mu u^\nu,
+\]
+\[
+\delta W_{\rm loc}
+\to
+\delta\kappa(r).
+\]
+
+Paper~16 a renforcé la première flèche au niveau spectral. Paper~17 renforce
+la seconde en montrant qu'une calibration affine de \(\kappa^{OR}/\epsilon\)
+peut reproduire les valeurs moyennes attendues de Ricci sur deux géométries
+contrôlées.
+
+Ainsi, dans le programme complet :
+\[
+\frac{\delta S_{\rm BuP}}{\delta W_{ij}}=0
+\quad
+\Longrightarrow
+\quad
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu},
+\]
+Paper~17 fournit une brique pour identifier le contenu continu du terme de
+courbure.
+
+\section{Conclusion}
+
+Paper~17 montre que la courbure d'Ollivier--Ricci discrète contient un signal
+de Ricci exploitable. Le signal sphère--plat est positif pour la courbure
+brute, pour \(\kappa/\epsilon\), et pour \(\kappa/\ell^2\). La calibration
+affine v2 identifie ensuite une relation moyenne :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu.
+\]
+
+À \(N=512\), cette relation prend la forme :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+-0.301
++
+0.392\,R_{\mu\nu}u^\mu u^\nu.
+\]
+
+Le proxy calibré est :
+\[
+\widehat{R}_{OR}
+=
+2.551
+\left(
+\frac{\kappa^{OR}}{\epsilon}
++
+0.301
+\right).
+\]
+
+Il envoie le tore plat vers une courbure moyenne \(0\) et la sphère unité vers
+une courbure moyenne \(1\). Ce résultat ne prouve pas encore la convergence
+locale :
+\[
+\kappa_{ij}^{OR}
+\to
+R_{\mu\nu}u^\mu u^\nu,
+\]
+mais il fournit la première calibration quantitative du signal de Ricci dans
+BuP.
+
+\section*{Disponibilité du code et des données}
+
+Les scripts et résultats de Paper~17 sont organisés dans le dossier :
+\[
+\texttt{papers/paper17\_ollivier\_ricci\_limit/}.
+\]
+
+Les scripts principaux sont :
+\[
+\texttt{scripts/paper17\_or\_ricci\_scaling\_v1.py},
+\]
+\[
+\texttt{scripts/paper17\_or\_ricci\_scaling\_v2.py},
+\]
+\[
+\texttt{scripts/paper17\_build\_ricci\_summary\_v1.py}.
+\]
+
+Les résultats principaux sont stockés dans :
+\[
+\texttt{results/or\_ricci\_scaling\_v1/},
+\]
+\[
+\texttt{results/or\_ricci\_scaling\_v2/},
+\]
+\[
+\texttt{results/paper17\_ricci\_summary\_v1/}.
+\]
+
+\appendix
+
+\section{Détails sur la calibration}
+
+La calibration affine est définie par :
+\[
+\widehat{R}_{OR}
+=
+A_N
+\left(
+\frac{\kappa^{OR}}{\epsilon}
+-
+B_N
+\right).
+\]
+
+Le biais plat est :
+\[
+B_N=
+\left\langle
+\frac{\kappa^{OR}}{\epsilon}
+\right\rangle_{\rm flat}.
+\]
+
+La normalisation est :
+\[
+A_N=
+\frac{1}{
+\left\langle\kappa^{OR}/\epsilon\right\rangle_{\rm sphere}
+-
+\left\langle\kappa^{OR}/\epsilon\right\rangle_{\rm flat}
+}.
+\]
+
+En posant :
+\[
+C_N=\frac{1}{A_N},
+\]
+on obtient :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu.
+\]
+
+\section{Prochaines étapes}
+
+Les prochaines étapes sont :
+
+\begin{enumerate}
+    \item tester des graphes à rayon fixe au lieu de \(k\)-NN ;
+    \item réduire la dispersion du tore plat ;
+    \item binning par longueur d'arête \(\ell_{ij}\) ;
+    \item utiliser des moyennes tronquées ;
+    \item augmenter \(N\) avec transport optimal optimisé ;
+    \item tester des sphères de rayon \(r\), avec
+    \[
+    R_{\mu\nu}u^\mu u^\nu=\frac{1}{r^2};
+    \]
+    \item tester des surfaces à courbure négative ;
+    \item dériver analytiquement les constantes \(B_N\) et \(C_N\).
+\end{enumerate}
+
+\end{document}
