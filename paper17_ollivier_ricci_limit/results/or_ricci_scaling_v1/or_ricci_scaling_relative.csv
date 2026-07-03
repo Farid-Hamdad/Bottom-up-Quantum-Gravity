@@ -1,0 +1,2 @@
+N_actual,delta_mean_kappa_sphere_minus_flat,delta_mean_kappa_over_l2_sphere_minus_flat,delta_mean_kappa_over_epsilon_sphere_minus_flat,sphere_mean_kappa,flat_mean_kappa,sphere_mean_kappa_over_l2,flat_mean_kappa_over_l2
+256,0.013382531717235928,0.5570407345991357,0.19771929066049537,0.0123576796391962,-0.0010248520780397291,0.10083656525423697,-0.45620416934489877
