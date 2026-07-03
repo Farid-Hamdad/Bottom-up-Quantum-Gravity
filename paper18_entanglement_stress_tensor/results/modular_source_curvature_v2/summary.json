@@ -1,0 +1,69 @@
+{
+  "experiment": "Paper 18 modular source to curvature response v2",
+  "geometries": [
+    "flat_torus2d",
+    "sphere"
+  ],
+  "N": 256,
+  "k_mode": "sqrt",
+  "kernel_factor": 0.5,
+  "region_radius_factor": 2.5,
+  "sigma_factor": 2.0,
+  "mu_factor": 1.0,
+  "perturbation_strengths": [
+    -0.2,
+    -0.1,
+    -0.05,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "summary": [
+    {
+      "geometry": "flat_torus2d",
+      "n_tests": 6,
+      "N_actual": 256,
+      "k": 16,
+      "epsilon": 0.009765625000000002,
+      "region_size": 45,
+      "n_edges": 700,
+      "mean_first_law_relative_error": 0.053302255768997,
+      "median_first_law_relative_error": 0.0459338426992452,
+      "max_first_law_relative_error": 0.10165637621112433,
+      "first_law_slope": 0.9894809731564347,
+      "first_law_r2": 0.996589633081355,
+      "first_law_pearson": 0.998293360231027,
+      "mean_localization_ratio": 6.293006993683725,
+      "median_localization_ratio": 6.240985144441991,
+      "absK_to_near_abs_slope": 1.9321909565193542,
+      "absK_to_near_abs_r2": 0.9672286463885402,
+      "absK_to_near_abs_pearson": 0.9834778321795261,
+      "K_to_near_signed_slope": -1.6806963967740516,
+      "K_to_near_signed_r2": 0.9983362486746789,
+      "K_to_near_signed_pearson": -0.9991677780406446
+    },
+    {
+      "geometry": "sphere",
+      "n_tests": 6,
+      "N_actual": 256,
+      "k": 16,
+      "epsilon": 0.13320134212632276,
+      "region_size": 50,
+      "n_edges": 700,
+      "mean_first_law_relative_error": 0.053293967391376575,
+      "median_first_law_relative_error": 0.04592773255070334,
+      "max_first_law_relative_error": 0.1016004532662862,
+      "first_law_slope": 0.9897180478054185,
+      "first_law_r2": 0.9965920885884546,
+      "first_law_pearson": 0.9982945900827342,
+      "mean_localization_ratio": 9.533529186495956,
+      "median_localization_ratio": 9.479491074808973,
+      "absK_to_near_abs_slope": 1.4794204826652695,
+      "absK_to_near_abs_r2": 0.9822520452609137,
+      "absK_to_near_abs_pearson": 0.9910862955670983,
+      "K_to_near_signed_slope": -1.406099148434779,
+      "K_to_near_signed_r2": 0.9988572733402521,
+      "K_to_near_signed_pearson": -0.9994284733487696
+    }
+  ]
+}
