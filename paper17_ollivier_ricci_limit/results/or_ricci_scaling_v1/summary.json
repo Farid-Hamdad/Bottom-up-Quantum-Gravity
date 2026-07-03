@@ -1,0 +1,72 @@
+{
+  "experiment": "Paper 17 OR-to-Ricci scaling v1",
+  "geometries": [
+    "flat_torus2d",
+    "sphere"
+  ],
+  "Ns": [
+    128,
+    256,
+    512
+  ],
+  "k_mode": "sqrt",
+  "kernel_factor": 0.5,
+  "alpha_idleness": 0.5,
+  "max_edges": 800,
+  "final_by_geometry": [
+    {
+      "geometry": "sphere",
+      "N_actual": 512,
+      "n_edges": 800,
+      "dim": 2,
+      "ricci_target": 1.0,
+      "k": 23,
+      "epsilon": 0.1013041099599799,
+      "density": 0.04587359344422701,
+      "mean_edge_length": 0.30156189712929654,
+      "median_edge_length": 0.3220567383717211,
+      "mean_kappa": 0.010581352431920606,
+      "median_kappa": 0.008969445917417718,
+      "std_kappa": 0.03378053373617893,
+      "mean_kappa_over_l2": 0.15934592548178958,
+      "median_kappa_over_l2": 0.09755974616612534,
+      "std_kappa_over_l2": 0.9018787375643584,
+      "mean_kappa_over_epsilon": 0.10445136368209304,
+      "median_kappa_over_epsilon": 0.08853980278747911,
+      "positive_fraction": 0.6775
+    },
+    {
+      "geometry": "flat_torus2d",
+      "N_actual": 529,
+      "n_edges": 800,
+      "dim": 2,
+      "ricci_target": 0.0,
+      "k": 23,
+      "epsilon": 0.0075614366729678684,
+      "density": 0.04441628000229134,
+      "mean_edge_length": 0.08295648926384779,
+      "median_edge_length": 0.08695652173913049,
+      "mean_kappa": -0.0013259142399668084,
+      "median_kappa": 0.0,
+      "std_kappa": 0.023458156329810853,
+      "mean_kappa_over_l2": -0.38502224512342353,
+      "median_kappa_over_l2": 0.0,
+      "std_kappa_over_l2": 8.397711651178527,
+      "mean_kappa_over_epsilon": -0.17535215823561032,
+      "median_kappa_over_epsilon": 0.0,
+      "positive_fraction": 0.45125
+    }
+  ],
+  "relative": [
+    {
+      "N_actual": 256,
+      "delta_mean_kappa_sphere_minus_flat": 0.013382531717235928,
+      "delta_mean_kappa_over_l2_sphere_minus_flat": 0.5570407345991357,
+      "delta_mean_kappa_over_epsilon_sphere_minus_flat": 0.19771929066049537,
+      "sphere_mean_kappa": 0.0123576796391962,
+      "flat_mean_kappa": -0.0010248520780397291,
+      "sphere_mean_kappa_over_l2": 0.10083656525423697,
+      "flat_mean_kappa_over_l2": -0.45620416934489877
+    }
+  ]
+}
