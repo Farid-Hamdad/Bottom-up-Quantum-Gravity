@@ -1,0 +1,31 @@
+{
+  "experiment": "Paper 16 circle spectrum convergence v1",
+  "Ns": [
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "k_mode": "sqrt",
+  "kernel_factor": 0.5,
+  "n_modes": 12,
+  "fit_modes": 8,
+  "final": {
+    "N": 1024.0,
+    "k": 32.0,
+    "epsilon": 0.005440360397176394,
+    "scale_c": 0.127938653693736,
+    "n_modes": 12.0,
+    "fit_modes": 8.0,
+    "mean_rel_error": 0.00507236949541687,
+    "median_rel_error": 0.005077141451451567,
+    "max_rel_error": 0.0106801271830099,
+    "mean_abs_error": 0.09711065938074613,
+    "median_abs_error": 0.01997390469276672,
+    "degree_mean": 27.4787515995772,
+    "degree_std": 4.84062331475946e-15,
+    "lambda1_raw": 7.864799504666648,
+    "lambda1_scaled": 1.0062118601982126
+  }
+}
