@@ -458,6 +458,14 @@ papers/paper15_einstein_derivation/
 
   figures/
     # figures finales copiées depuis les dossiers de résultats sélectionnés
+      fig01_spectral_ds_grid2d.png
+      fig02_spectral_ds_sphere.png
+      fig03_spectral_error_vs_N_grid2d.png
+      fig04_spectral_error_vs_N_sphere.png
+      fig05_ricci_mean_kappa_vs_N.png
+      fig06_ricci_final_mean_kappa_by_geometry.png
+      fig07_source_response_correlation_sphere.png
+      fig08_source_response_signed_sphere.png
 
   notes/
     roadmap.md
