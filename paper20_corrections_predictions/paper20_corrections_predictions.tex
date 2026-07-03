@@ -1,0 +1,661 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+\graphicspath{{figures/}}
+
+\title{
+\textbf{Corrections, prédictions et déviations observables}\\
+\large Le tenseur \(\mathcal{H}_{\mu\nu}\) dans Bottom-Up Quantum Gravity
+}
+
+\author{Farid Hamdad}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Paper~20 étudie les corrections à la limite d'Einstein effective de
+Bottom-Up Quantum Gravity. Paper~19 a proposé l'équation
+\[
+G_{\mu\nu}[g^{\rm ent}]
++
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu}.
+\]
+Le présent papier analyse le tenseur de correction
+\(\mathcal{H}_{\mu\nu}\). Nous le décomposons en secteurs spectral, courbure,
+source, dimensionnel, non local, topologique et taille finie :
+\[
+\mathcal{H}_{\mu\nu}
+=
+\mathcal{H}^{\rm spec}_{\mu\nu}
++
+\mathcal{H}^{\rm curv}_{\mu\nu}
++
+\mathcal{H}^{\rm source}_{\mu\nu}
++
+\mathcal{H}^{\rm dim}_{\mu\nu}
++
+\mathcal{H}^{\rm nonlocal}_{\mu\nu}
++
+\mathcal{H}^{\rm topo}_{\mu\nu}
++
+\mathcal{H}^{\rm finite}_{\mu\nu}.
+\]
+Les secteurs spectral, courbure et source sont contraints par Papers~16--18.
+Les secteurs dimensionnel et non local sont reliés aux résultats
+phénoménologiques SPARC et lensing. Le secteur dimensionnel est associé à une
+fenêtre effective \(d_{\rm eff}\sim2.02\to2.64\), tandis que le secteur non
+local est relié à une amplification lensing moyenne
+\(\langle{\rm ratio}_{\rm peak}\rangle=2.721481\). Paper~20 identifie ainsi
+les principales déviations observables de BuP par rapport à la limite
+d'Einstein lisse.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Paper~19 a assemblé les trois briques nécessaires à la limite d'Einstein de
+Bottom-Up Quantum Gravity :
+\[
+L_N\to\Delta_g,
+\qquad
+\kappa^{OR}\to R_{\mu\nu}u^\mu u^\nu,
+\qquad
+\delta W_{\rm loc}\to T_{\mu\nu}^{\rm ent}.
+\]
+
+L'équation effective obtenue est :
+\[
+G_{\mu\nu}[g^{\rm ent}]
++
+\Lambda_{\rm ent}g_{\mu\nu}^{\rm ent}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}
++
+\mathcal{H}_{\mu\nu}.
+\]
+
+Dans la limite lisse, locale et basse énergie :
+\[
+\mathcal{H}_{\mu\nu}\to0.
+\]
+
+BuP se réduit alors à :
+\[
+G_{\mu\nu}
++
+\Lambda_{\rm ent}g_{\mu\nu}
+=
+8\pi G_{\rm eff}T_{\mu\nu}^{\rm ent}.
+\]
+
+Mais dans les régimes où l'intrication n'est pas parfaitement lisse, locale ou
+homogène, le tenseur
+\[
+\mathcal{H}_{\mu\nu}
+\]
+devient non nul. C'est ce tenseur qui porte les prédictions différenciant BuP
+de la relativité générale standard et de \(\Lambda\)CDM.
+
+\section{Décomposition du tenseur de correction}
+
+Nous écrivons :
+\[
+\mathcal{H}_{\mu\nu}
+=
+\mathcal{H}_{\mu\nu}^{\rm spec}
++
+\mathcal{H}_{\mu\nu}^{\rm curv}
++
+\mathcal{H}_{\mu\nu}^{\rm source}
++
+\mathcal{H}_{\mu\nu}^{\rm dim}
++
+\mathcal{H}_{\mu\nu}^{\rm nonlocal}
++
+\mathcal{H}_{\mu\nu}^{\rm topo}
++
+\mathcal{H}_{\mu\nu}^{\rm finite}.
+\]
+
+Chaque terme correspond à une origine physique différente :
+
+\[
+\begin{array}{lll}
+\toprule
+{\rm Secteur} & {\rm Origine} & {\rm Cible}\\
+\midrule
+\mathcal{H}^{\rm spec}_{\mu\nu} & {\rm spectre\ de\ }L & {\rm corrections\ de\ courbure\ supérieure}\\
+\mathcal{H}^{\rm curv}_{\mu\nu} & \kappa^{OR}\to Ricci & {\rm calibration\ de\ courbure}\\
+\mathcal{H}^{\rm source}_{\mu\nu} & \delta\langle K_A\rangle & {\rm reconstruction\ de\ source}\\
+\mathcal{H}^{\rm dim}_{\mu\nu} & d_s,d_w,\alpha_{\rm eff} & {\rm galaxies,\ cosmologie}\\
+\mathcal{H}^{\rm nonlocal}_{\mu\nu} & {\rm liens\ longs\ d'intrication} & {\rm lensing,\ SLACS}\\
+\mathcal{H}^{\rm topo}_{\mu\nu} & S_{\rm topo}[W] & {\rm holonomies,\ topologie}\\
+\mathcal{H}^{\rm finite}_{\mu\nu} & N<\infty & {\rm scaling\ numérique}\\
+\bottomrule
+\end{array}
+\]
+
+\section{Secteur spectral}
+
+Le secteur spectral provient du terme :
+\[
+\mathrm{Tr}\,L^{-\beta}.
+\]
+
+Par représentation de Mellin :
+\[
+\mathrm{Tr}\,L^{-\beta}
+=
+\frac{1}{\Gamma(\beta)}
+\int_0^\infty
+t^{\beta-1}
+\mathrm{Tr}(e^{-tL})\,dt.
+\]
+
+Dans la limite continue :
+\[
+L\to-\Delta_g.
+\]
+
+La trace de chaleur s'écrit :
+\[
+\mathrm{Tr}(e^{-t\Delta_g})
+\sim
+(4\pi t)^{-D/2}
+\left(
+a_0+a_1t+a_2t^2+\cdots
+\right).
+\]
+
+Le terme \(a_1\) contient la courbure scalaire et conduit au secteur
+Einstein--Hilbert. Les termes suivants génèrent :
+\[
+R^2,
+\qquad
+R_{\mu\nu}R^{\mu\nu},
+\qquad
+R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma},
+\qquad
+\nabla^2R,
+\qquad
+\cdots.
+\]
+
+Le budget de corrections donne :
+\[
+\langle |H_{\rm spec}|\rangle=0.015850,
+\]
+avec :
+\[
+\max |H_{\rm spec}|=0.026627.
+\]
+
+Le secteur spectral est donc borné numériquement à quelques pourcents sur les
+géométries contrôlées.
+
+\section{Secteur courbure}
+
+Paper~17 a établi une calibration moyenne :
+\[
+\frac{\kappa^{OR}}{\epsilon}
+\simeq
+B_N+C_N R_{\mu\nu}u^\mu u^\nu.
+\]
+
+À \(N=512\), on obtient :
+\[
+B_N=-0.301281,
+\]
+\[
+C_N=0.391933,
+\]
+\[
+A_N=\frac{1}{C_N}=2.551455.
+\]
+
+La correction de courbure est donc :
+\[
+\mathcal{H}_{\mu\nu}^{\rm curv}
+\sim
+{\rm biais\ fini}
++
+{\rm renormalisation\ OR\to Ricci}.
+\]
+
+Ce secteur n'est pas une anomalie. Il exprime le fait que la courbure
+d'Ollivier--Ricci discrète nécessite une calibration pour se convertir en
+courbure de Ricci continue.
+
+\section{Secteur source}
+
+Paper~18 a montré :
+\[
+\delta S_A^{\rm graph}
+\simeq
+\delta\langle K_A^{\rm graph}\rangle.
+\]
+
+Sur le tore plat :
+\[
+\delta S_A\simeq0.989481\,\delta\langle K_A\rangle,
+\]
+et sur la sphère :
+\[
+\delta S_A\simeq0.989718\,\delta\langle K_A\rangle.
+\]
+
+Le résidu moyen du secteur modulaire est donc :
+\[
+H_{\rm source\_modular}\simeq0.010400.
+\]
+
+Paper~18 a aussi montré :
+\[
+|\delta\langle K_A\rangle|
+\to
+\langle|\Delta\kappa|\rangle_{\rm near}.
+\]
+
+Le résidu source--courbure est :
+\[
+H_{\rm source\_curvature}\simeq0.025260.
+\]
+
+Ainsi, le secteur source est bien contrôlé :
+\[
+\mathcal{H}_{\mu\nu}^{\rm source}
+\]
+représente un petit écart entre la variation modulaire idéale et la réponse de
+courbure mesurée.
+
+\section{Secteur dimensionnel et SPARC}
+
+Le secteur dimensionnel est associé aux variations de dimension effective :
+\[
+d_s(x),
+\qquad
+d_w(x),
+\qquad
+\alpha_{\rm eff}(x).
+\]
+
+Il peut s'écrire formellement :
+\[
+\mathcal{H}_{\mu\nu}^{\rm dim}
+=
+\mathcal{H}_{\mu\nu}
+[
+d_s(x),
+d_w(x),
+\alpha_{\rm eff}(x)
+].
+\]
+
+Des termes typiques peuvent prendre la forme :
+\[
+\nabla_\mu\nabla_\nu d_s
+-
+g_{\mu\nu}\Box d_s,
+\]
+ou :
+\[
+(\nabla_\mu d_s)(\nabla_\nu d_s).
+\]
+
+Le budget v3 relie ce secteur aux courbes de rotation SPARC. Le résultat
+global est :
+\[
+{\rm median}\ \chi^2_{\rm red}=12.568829,
+\]
+\[
+{\rm fraction}(\chi^2_{\rm red}<2)=0.182857,
+\]
+\[
+{\rm fraction}(\chi^2_{\rm red}<10)=0.485714.
+\]
+
+La taxonomie de qualité donne :
+\[
+f_{\rm excellent}=0.182857,
+\]
+\[
+f_{\rm good}=0.154286,
+\]
+\[
+f_{\rm medium}=0.274286,
+\]
+\[
+f_{\rm poor}=0.388571.
+\]
+
+Donc :
+\[
+f_{\rm excellent+good+medium}=0.611429.
+\]
+
+La fenêtre dimensionnelle mesurée est :
+\[
+\langle d_{\rm used,min}\rangle=2.023651,
+\]
+\[
+\langle d_{\rm used,max}\rangle=2.643653.
+\]
+
+Ainsi, \(61.1\%\) des galaxies sont au moins dans un régime exploitable jusqu'à
+medium, tandis que \(38.9\%\) restent dans un régime pauvre. Ces galaxies
+pauvres ne doivent pas être ignorées : elles signalent précisément les
+corrections morphologiques, de phase ou non locales encore absentes.
+
+\section{Secteur non local et lentilles}
+
+Le secteur non local vient des liens longs du graphe d'intrication :
+\[
+W_{ij}\neq0
+\]
+pour des nœuds éloignés dans la géométrie émergente.
+
+Dans la limite continue, il peut prendre une forme intégrale :
+\[
+\mathcal{H}_{\mu\nu}^{\rm nonlocal}(x)
+\sim
+\int
+K_{\mu\nu}^{\ \ \alpha\beta}(x,y)
+T_{\alpha\beta}(y)
+d^Dy.
+\]
+
+Ce secteur peut produire des effets de type matière noire effective :
+\[
+{\rm rotation\ curves},
+\qquad
+{\rm lensing},
+\qquad
+{\rm amplification\ non\ locale}.
+\]
+
+Le budget v3 relie ce secteur au bridge lensing. Les résultats sont :
+\[
+\langle{\rm ratio}_{\rm peak}\rangle=2.721481,
+\]
+\[
+{\rm median}({\rm ratio}_{\rm peak})=1.967831,
+\]
+\[
+\max({\rm ratio}_{\rm peak})=13.807607.
+\]
+
+L'amplitude absolue de réponse est :
+\[
+\langle\Delta_{\rm peak}\rangle=889.087288,
+\]
+\[
+{\rm median}(\Delta_{\rm peak})=704.916728,
+\]
+\[
+\max(\Delta_{\rm peak})=3594.219422.
+\]
+
+La fraction de profils lensing valides est :
+\[
+f_{\rm ok}=0.977143.
+\]
+
+Ainsi :
+\[
+\mathcal{H}_{\mu\nu}^{\rm nonlocal}
+\]
+est maintenant relié quantitativement à la phénoménologie lensing.
+
+\section{Branche lensing historique et SLACS}
+
+Avant la formulation du budget
+\[
+\mathcal{H}_{\mu\nu},
+\]
+BuP contenait déjà une branche lensing, notamment motivée par les tests de
+type SLACS et par l'étude de spirales massives.
+
+Cette branche suivait la chaîne :
+\[
+d(r)
+\to
+f_d(r)
+\to
+g_{\rm eff}(r)
+\to
+\alpha(R).
+\]
+
+Le facteur dimensionnel était :
+\[
+f_d(r)
+=
+\left(
+\frac{r}{r_{\rm ref}}
+\right)^{3-d(r)}.
+\]
+
+La réponse optique effective était :
+\[
+g_{\rm eff}(r)
+=
+g_{\rm bary}(r)
+\left[
+1+
+\lambda w_{\rm tot}(r)
+(f_d(r)-1)
+\right].
+\]
+
+Un régime optique centralisé avait été identifié :
+\[
+(\lambda,\mathrm{width},x_{\rm cap},r_{\rm cut})
+=
+(3.0,0.8,4.0,5.0).
+\]
+
+Ce régime produisait des excès robustes de déflexion typiquement de l'ordre
+de \(30\%\) à \(50\%\) sur plusieurs spirales massives.
+
+Dans le langage de Paper~20, cette ancienne branche se réinterprète comme :
+\[
+\mathcal{H}_{\mu\nu}^{\rm nonlocal/optical}.
+\]
+
+Ainsi :
+\[
+\boxed{
+{\rm branche\ lensing/SLACS}
+\subset
+\mathcal{H}_{\mu\nu}^{\rm nonlocal}.
+}
+\]
+
+Le budget v3 ne remplace donc pas l'ancienne branche lensing : il la formalise
+comme un secteur de correction non locale.
+
+\section{Secteurs topologique et taille finie}
+
+Deux secteurs restent encore partiellement ouverts.
+
+Le secteur topologique :
+\[
+\mathcal{H}_{\mu\nu}^{\rm topo}
+\]
+doit être relié à :
+\[
+S_{\rm topo}[W],
+\]
+aux holonomies, aux constantes modulaires et aux contraintes globales du
+graphe d'intrication.
+
+Le secteur de taille finie :
+\[
+\mathcal{H}_{\mu\nu}^{\rm finite}
+\]
+doit être relié aux lois de scaling :
+\[
+N\to\infty,
+\]
+\[
+\rho_{\rm graph}\to\rho_{\rm continuum}.
+\]
+
+Ces deux secteurs seront importants pour distinguer les effets physiques des
+artefacts numériques.
+
+\section{Résumé du budget v3}
+
+\[
+\begin{array}{llll}
+\toprule
+{\rm Secteur} & {\rm Moyenne} & {\rm Maximum} & {\rm Statut}\\
+\midrule
+H_{\rm spec} & 0.015850 & 0.026627 & {\rm borné}\\
+H_{\rm source\_modular} & 0.010400 & 0.010519 & {\rm petit\ résidu}\\
+H_{\rm source\_curvature} & 0.025260 & 0.032771 & {\rm petit\ résidu}\\
+H_{\rm dim} & 8.508743 & 12.568829 & {\rm SPARC}\\
+H_{\rm nonlocal} & 445.904384 & 889.087288 & {\rm lensing}\\
+H_{\rm localization} & 7.913268 & 9.533529 & {\rm localité\ positive}\\
+\bottomrule
+\end{array}
+\]
+
+Les valeurs associées à \(H_{\rm dim}\) et \(H_{\rm nonlocal}\) doivent être
+lues comme des proxys phénoménologiques et non comme des normes tensorielles.
+
+\section{Interprétation physique}
+
+Paper~20 montre que les déviations BuP ne sont pas arbitraires. Elles sont
+organisées en secteurs :
+
+\[
+\mathcal{H}_{\mu\nu}^{\rm spec}
+\]
+contrôle les corrections géométriques de haute énergie ;
+
+\[
+\mathcal{H}_{\mu\nu}^{\rm dim}
+\]
+contrôle les écarts galactiques et cosmologiques liés à la dimension
+effective ;
+
+\[
+\mathcal{H}_{\mu\nu}^{\rm nonlocal}
+\]
+contrôle les amplifications de type lensing et les effets de liens longs ;
+
+\[
+\mathcal{H}_{\mu\nu}^{\rm source}
+\]
+contrôle les écarts de reconstruction source--courbure ;
+
+\[
+\mathcal{H}_{\mu\nu}^{\rm topo}
+\]
+encode les contraintes globales ;
+
+\[
+\mathcal{H}_{\mu\nu}^{\rm finite}
+\]
+encode les artefacts de discrétisation.
+
+Ainsi, BuP ne prédit pas seulement une limite d'Einstein. Il prédit aussi une
+structure de corrections observables.
+
+\section{Conclusion}
+
+Paper~20 classe les corrections à la limite d'Einstein effective de BuP.
+
+Le résultat principal est :
+\[
+\mathcal{H}_{\mu\nu}
+=
+\mathcal{H}^{\rm spec}_{\mu\nu}
++
+\mathcal{H}^{\rm curv}_{\mu\nu}
++
+\mathcal{H}^{\rm source}_{\mu\nu}
++
+\mathcal{H}^{\rm dim}_{\mu\nu}
++
+\mathcal{H}^{\rm nonlocal}_{\mu\nu}
++
+\mathcal{H}^{\rm topo}_{\mu\nu}
++
+\mathcal{H}^{\rm finite}_{\mu\nu}.
+\]
+
+Les secteurs spectral et source sont déjà petits et bien contrôlés. Le secteur
+dimensionnel est relié à SPARC et à une fenêtre effective
+\[
+d_{\rm eff}\sim2.02\to2.64.
+\]
+Le secteur non local est relié aux lentilles, avec une amplification moyenne
+\[
+\langle{\rm ratio}_{\rm peak}\rangle=2.721481.
+\]
+
+Paper~20 donne donc la première carte structurée des déviations observables de
+BuP par rapport à la limite d'Einstein lisse.
+
+\section*{Disponibilité du code et des données}
+
+Le dossier principal est :
+\[
+\texttt{papers/paper20\_corrections\_predictions/}.
+\]
+
+Les scripts principaux sont :
+\[
+\texttt{scripts/paper20\_build\_correction\_budget\_v1.py},
+\]
+\[
+\texttt{scripts/paper20\_build\_correction\_budget\_v2.py},
+\]
+\[
+\texttt{scripts/paper20\_build\_correction\_budget\_v3.py}.
+\]
+
+Les résultats principaux sont dans :
+\[
+\texttt{results/correction\_budget\_v3\_sparc\_lensing/}.
+\]
+
+\appendix
+
+\section{Prochaines étapes}
+
+Les prochaines étapes sont :
+
+\begin{enumerate}
+    \item relier \(H_{\rm topo}\) aux holonomies et constantes modulaires ;
+    \item relier \(H_{\rm finite}\) aux lois de scaling en \(N\) ;
+    \item intégrer les résultats SLACS dans un fichier standardisé ;
+    \item séparer \(H_{\rm dim}\) par morphologie galactique ;
+    \item séparer \(H_{\rm nonlocal}\) par type de lentille ;
+    \item relier les corrections cosmologiques à \(H_{\rm dim}+H_{\rm IR}\) ;
+    \item produire une version publication-grade du budget de corrections.
+\end{enumerate}
+
+\end{document}
