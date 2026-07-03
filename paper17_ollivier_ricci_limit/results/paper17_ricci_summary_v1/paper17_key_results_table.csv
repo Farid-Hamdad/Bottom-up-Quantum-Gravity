@@ -1,0 +1,7 @@
+step,quantity,N,value,reference,status
+v1 relative OR signal,sphere - flat raw mean kappa,256,0.0133825317172359,> 0,positive
+v1 relative OR signal,sphere - flat mean kappa/epsilon,256,0.1977192906604953,> 0,positive
+v1 relative OR signal,sphere - flat mean kappa/l^2,256,0.5570407345991357,> 0,positive
+v2 affine calibration,B_N flat baseline for kappa/epsilon,512,-0.3012812451027847,finite-N bias,identified
+v2 affine calibration,sphere-flat delta for kappa/epsilon,512,0.3919332514442969,> 0,positive
+v2 affine calibration,A_N epsilon calibration,512,2.551454862058632,1/delta,identified
