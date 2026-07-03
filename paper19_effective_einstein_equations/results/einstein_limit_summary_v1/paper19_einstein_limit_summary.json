@@ -1,0 +1,268 @@
+{
+  "experiment": "Paper 19 Einstein limit summary v1",
+  "inputs": {
+    "paper16_table": "papers/paper16_spectral_continuum_limit/results/paper16_spectral_summary_v1/paper16_key_results_table.csv",
+    "paper17_table": "papers/paper17_ollivier_ricci_limit/results/paper17_ricci_summary_v1/paper17_key_results_table.csv",
+    "paper18_table": "papers/paper18_entanglement_stress_tensor/results/paper18_entanglement_stress_summary_v1/paper18_key_results_table.csv"
+  },
+  "core_summary": {
+    "paper16": {
+      "circle_mean_rel_error": 0.0050723694954168,
+      "flat_torus_mean_rel_error": 0.0266274056742776
+    },
+    "paper17": {
+      "B_N_flat_baseline_kappa_over_epsilon": -0.3012812451027847,
+      "C_N_sphere_flat_delta_kappa_over_epsilon": 0.3919332514442969,
+      "A_N_epsilon_calibration": 2.551454862058632
+    },
+    "paper18": {
+      "flat_first_law_slope": 0.9894809731564348,
+      "sphere_first_law_slope": 0.9897180478054184,
+      "flat_source_curvature_R2": 0.9672286463885402,
+      "sphere_source_curvature_R2": 0.9822520452609136
+    }
+  },
+  "key_results": [
+    {
+      "paper": "Paper 16",
+      "pillar": "spectral geometry",
+      "arrow": "L_N -> Delta_g",
+      "test": "Circle spectrum",
+      "quantity": "mean relative spectral error",
+      "geometry": "Circle",
+      "value": 0.0050723694954168,
+      "target": "small",
+      "status": "positive",
+      "interpretation": "Entanglement Laplacian reconstructs low spectrum of Laplace-Beltrami operator."
+    },
+    {
+      "paper": "Paper 16",
+      "pillar": "spectral geometry",
+      "arrow": "L_N -> Delta_g",
+      "test": "Circle spectrum",
+      "quantity": "lambda1 scaled",
+      "geometry": "Circle",
+      "value": 1.0062118601982126,
+      "target": "1.0",
+      "status": "positive",
+      "interpretation": "First nonzero eigenvalue matches analytic continuum target after scalar normalization."
+    },
+    {
+      "paper": "Paper 16",
+      "pillar": "spectral geometry",
+      "arrow": "L_N -> Delta_g",
+      "test": "Flat torus spectrum",
+      "quantity": "mean relative spectral error",
+      "geometry": "Flat torus",
+      "value": 0.0266274056742776,
+      "target": "small",
+      "status": "positive",
+      "interpretation": "Entanglement Laplacian reconstructs low spectrum of Laplace-Beltrami operator."
+    },
+    {
+      "paper": "Paper 16",
+      "pillar": "spectral geometry",
+      "arrow": "L_N -> Delta_g",
+      "test": "Flat torus spectrum",
+      "quantity": "lambda1 scaled",
+      "geometry": "Flat torus",
+      "value": 40.96127009878166,
+      "target": "39.47841760435743",
+      "status": "positive",
+      "interpretation": "First nonzero eigenvalue matches analytic continuum target after scalar normalization."
+    },
+    {
+      "paper": "Paper 17",
+      "pillar": "curvature",
+      "arrow": "kappa_OR -> Ricci",
+      "test": "v1 relative OR signal",
+      "quantity": "sphere - flat raw mean kappa",
+      "geometry": "flat_torus2d / sphere",
+      "value": 0.0133825317172359,
+      "target": "> 0",
+      "status": "positive",
+      "interpretation": "Ollivier-Ricci curvature carries a calibrated mean Ricci signal."
+    },
+    {
+      "paper": "Paper 17",
+      "pillar": "curvature",
+      "arrow": "kappa_OR -> Ricci",
+      "test": "v1 relative OR signal",
+      "quantity": "sphere - flat mean kappa/epsilon",
+      "geometry": "flat_torus2d / sphere",
+      "value": 0.1977192906604953,
+      "target": "> 0",
+      "status": "positive",
+      "interpretation": "Ollivier-Ricci curvature carries a calibrated mean Ricci signal."
+    },
+    {
+      "paper": "Paper 17",
+      "pillar": "curvature",
+      "arrow": "kappa_OR -> Ricci",
+      "test": "v1 relative OR signal",
+      "quantity": "sphere - flat mean kappa/l^2",
+      "geometry": "flat_torus2d / sphere",
+      "value": 0.5570407345991357,
+      "target": "> 0",
+      "status": "positive",
+      "interpretation": "Ollivier-Ricci curvature carries a calibrated mean Ricci signal."
+    },
+    {
+      "paper": "Paper 17",
+      "pillar": "curvature",
+      "arrow": "kappa_OR -> Ricci",
+      "test": "v2 affine calibration",
+      "quantity": "B_N flat baseline for kappa/epsilon",
+      "geometry": "flat_torus2d / sphere",
+      "value": -0.3012812451027847,
+      "target": "finite-N bias",
+      "status": "identified",
+      "interpretation": "Ollivier-Ricci curvature carries a calibrated mean Ricci signal."
+    },
+    {
+      "paper": "Paper 17",
+      "pillar": "curvature",
+      "arrow": "kappa_OR -> Ricci",
+      "test": "v2 affine calibration",
+      "quantity": "sphere-flat delta for kappa/epsilon",
+      "geometry": "flat_torus2d / sphere",
+      "value": 0.3919332514442969,
+      "target": "> 0",
+      "status": "positive",
+      "interpretation": "Ollivier-Ricci curvature carries a calibrated mean Ricci signal."
+    },
+    {
+      "paper": "Paper 17",
+      "pillar": "curvature",
+      "arrow": "kappa_OR -> Ricci",
+      "test": "v2 affine calibration",
+      "quantity": "A_N epsilon calibration",
+      "geometry": "flat_torus2d / sphere",
+      "value": 2.551454862058632,
+      "target": "1/delta",
+      "status": "identified",
+      "interpretation": "Ollivier-Ricci curvature carries a calibrated mean Ricci signal."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source modular first law",
+      "arrow": "delta W_loc -> delta S_A ~= delta<K_A>",
+      "test": "v1 graph modular first law",
+      "quantity": "slope deltaS vs delta<K>",
+      "geometry": "flat_torus2d",
+      "value": 0.9894809731564348,
+      "target": "1",
+      "status": "positive",
+      "interpretation": "Graph modular first law is numerically validated."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source modular first law",
+      "arrow": "delta W_loc -> delta S_A ~= delta<K_A>",
+      "test": "v1 graph modular first law",
+      "quantity": "R2 deltaS vs delta<K>",
+      "geometry": "flat_torus2d",
+      "value": 0.996589633081355,
+      "target": "near 1",
+      "status": "positive",
+      "interpretation": "Graph modular first law is numerically validated."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source modular first law",
+      "arrow": "delta W_loc -> delta S_A ~= delta<K_A>",
+      "test": "v1 graph modular first law",
+      "quantity": "slope deltaS vs delta<K>",
+      "geometry": "sphere",
+      "value": 0.9897180478054184,
+      "target": "1",
+      "status": "positive",
+      "interpretation": "Graph modular first law is numerically validated."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source modular first law",
+      "arrow": "delta W_loc -> delta S_A ~= delta<K_A>",
+      "test": "v1 graph modular first law",
+      "quantity": "R2 deltaS vs delta<K>",
+      "geometry": "sphere",
+      "value": 0.9965920885884546,
+      "target": "near 1",
+      "status": "positive",
+      "interpretation": "Graph modular first law is numerically validated."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source to curvature",
+      "arrow": "delta<K_A> -> delta kappa(r)",
+      "test": "v2 modular source curvature",
+      "quantity": "near/far localization ratio",
+      "geometry": "flat_torus2d",
+      "value": 6.293006993683725,
+      "target": "> 1",
+      "status": "positive",
+      "interpretation": "Modular response predicts localized curvature response."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source to curvature",
+      "arrow": "delta<K_A> -> delta kappa(r)",
+      "test": "v2 modular source curvature",
+      "quantity": "R2 |deltaK| -> near |delta kappa|",
+      "geometry": "flat_torus2d",
+      "value": 0.9672286463885402,
+      "target": "near 1",
+      "status": "positive",
+      "interpretation": "Modular response predicts localized curvature response."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source to curvature",
+      "arrow": "delta<K_A> -> delta kappa(r)",
+      "test": "v2 modular source curvature",
+      "quantity": "signed Pearson deltaK -> near delta kappa",
+      "geometry": "flat_torus2d",
+      "value": -0.9991677780406446,
+      "target": "|Pearson| near 1",
+      "status": "positive",
+      "interpretation": "Modular response predicts localized curvature response."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source to curvature",
+      "arrow": "delta<K_A> -> delta kappa(r)",
+      "test": "v2 modular source curvature",
+      "quantity": "near/far localization ratio",
+      "geometry": "sphere",
+      "value": 9.533529186495956,
+      "target": "> 1",
+      "status": "positive",
+      "interpretation": "Modular response predicts localized curvature response."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source to curvature",
+      "arrow": "delta<K_A> -> delta kappa(r)",
+      "test": "v2 modular source curvature",
+      "quantity": "R2 |deltaK| -> near |delta kappa|",
+      "geometry": "sphere",
+      "value": 0.9822520452609136,
+      "target": "near 1",
+      "status": "positive",
+      "interpretation": "Modular response predicts localized curvature response."
+    },
+    {
+      "paper": "Paper 18",
+      "pillar": "source to curvature",
+      "arrow": "delta<K_A> -> delta kappa(r)",
+      "test": "v2 modular source curvature",
+      "quantity": "signed Pearson deltaK -> near delta kappa",
+      "geometry": "sphere",
+      "value": -0.9994284733487696,
+      "target": "|Pearson| near 1",
+      "status": "positive",
+      "interpretation": "Modular response predicts localized curvature response."
+    }
+  ],
+  "target_equation": "G_mn + Lambda_ent g_mn = 8 pi G_eff T_mn_ent + H_mn"
+}
