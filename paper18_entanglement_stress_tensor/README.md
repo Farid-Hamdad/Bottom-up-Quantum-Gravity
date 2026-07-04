@@ -1,48 +1,48 @@
-# Paper 18 — Emergent Stress-Energy from Entanglement
+# Paper 18 — Tenseur énergie-impulsion émergent à partir de l'intrication
 
-**From local entanglement perturbations to an effective stress-energy source**
+**Des perturbations locales d'intrication à une source effective de tenseur énergie-impulsion**
 
 ---
 
-## Status
+## Statut
 
-Paper 18 studies the third arrow required for the effective Einstein limit of BuP:
+Paper 18 étudie la troisième flèche nécessaire à la limite einsteinienne effective de BuP :
 
-\[
+$$
 \delta W_{\rm loc}
 \longrightarrow
 T_{\mu\nu}^{\rm ent}.
-\]
+$$
 
-Paper 16 studied the spectral geometry side:
+Paper 16 a étudié le côté géométrie spectrale :
 
-\[
+$$
 L_N\to\Delta_g.
-\]
+$$
 
-Paper 17 studied the curvature side:
+Paper 17 a étudié le côté courbure :
 
-\[
+$$
 \kappa_{ij}^{OR}
 \to
 R_{\mu\nu}u^\mu u^\nu.
-\]
+$$
 
-Paper 18 studies the source side: how a local perturbation of the entanglement graph becomes an effective stress-energy source.
+Paper 18 étudie le côté source : comment une perturbation locale du graphe d'intrication devient une source effective de tenseur énergie-impulsion.
 
 ---
 
-## 1. Starting point
+## 1. Point de départ
 
-The fundamental object is the entanglement graph:
+L'objet fondamental est le graphe d'intrication :
 
-\[
+$$
 W_{ij}=I(i:j).
-\]
+$$
 
-A local source is modeled as a perturbation:
+Une source locale est modélisée comme une perturbation :
 
-\[
+$$
 W_{ij}
 \to
 W'_{ij}
@@ -50,117 +50,117 @@ W'_{ij}
 W_{ij}
 +
 \delta W_{ij}^{\rm loc}.
-\]
+$$
 
-The central question is:
+La question centrale est :
 
-\[
+$$
 \boxed{
-\text{Can }\delta W_{\rm loc}\text{ be interpreted as an effective source }T_{\mu\nu}^{\rm ent}?
+\text{Peut-on interpréter } \delta W_{\rm loc} \text{ comme une source effective } T_{\mu\nu}^{\rm ent} \text{ ?}
 }
-\]
+$$
 
 ---
 
-## 2. Previous evidence
+## 2. Preuves antérieures
 
 ### Paper 8
 
-Paper 8 reconstructed an effective source proxy from local entanglement perturbations:
+Paper 8 a reconstruit une grandeur proxy de source effective à partir de perturbations locales d'intrication :
 
-\[
+$$
 T_{\mu\nu}^{\rm eff}
 =
 T_{\mu\nu}^{\rm matter}[\delta W_{\rm loc}]
 +
 T_{\mu\nu}^{\rm ent}[d_s].
-\]
+$$
 
-It found:
+Il a trouvé :
 
-\[
+$$
 \rho_{\rm Spearman}=0.741,
 \qquad
 p=1.84\times10^{-4}.
-\]
+$$
 
-This supported:
+Cela a soutenu :
 
-\[
+$$
 \delta W_{\rm loc}
 \to
 T_{\mu\nu}^{\rm eff}.
-\]
+$$
 
-### Paper 15 Step E
+### Paper 15 Étape E
 
-Paper 15 showed that a radial entanglement defect produces a localized curvature response:
+Paper 15 a montré qu'un défaut radial d'intrication produit une réponse de courbure localisée :
 
-\[
+$$
 \delta W_{\rm loc}
 \to
 \delta\kappa(r).
-\]
+$$
 
-On the sphere:
+Sur la sphère :
 
-\[
+$$
 {\rm Spearman}(\phi_{\rm edge},|\Delta\kappa|)
 =
 0.752,
-\]
+$$
 
-with near/far response:
+avec un rapport near/far de :
 
-\[
+$$
 11.51.
-\]
+$$
 
-Thus Paper 18 starts from two positive prior signals.
+Ainsi Paper 18 part de deux signaux antérieurs positifs.
 
 ---
 
-## 3. Core identity: modular first law
+## 3. Identité centrale : première loi modulaire
 
-The key theoretical input is the modular first law:
+L'entrée théorique clé est la première loi modulaire :
 
-\[
+$$
 \delta S_A
 =
 \delta\langle K_A\rangle.
-\]
+$$
 
-with
+avec
 
-\[
+$$
 K_A=-\log\rho_A.
-\]
+$$
 
-In continuum QFT, local modular Hamiltonians relate entropy variations to stress-energy variations:
+Dans la TQFT continue, les hamiltoniens modulaires locaux relient les variations d'entropie aux variations du tenseur énergie-impulsion :
 
-\[
+$$
 \delta\langle K_A\rangle
 \sim
 \int_A \xi^\mu \delta T_{\mu\nu}d\Sigma^\nu.
-\]
+$$
 
-In BuP, the graph analogue is:
+Dans BuP, l'analogue sur graphe est :
 
-\[
+$$
 \delta S_A[W]
 \simeq
 \delta\langle K_A[W]\rangle
 \to
 T_{\mu\nu}^{\rm ent}.
-\]
+$$
 
 ---
 
-## 4. Target chain
+## 4. Chaîne cible
 
-Paper 18 aims to establish:
+Paper 18 vise à établir :
 
-\[
+$$
 \delta W_{\rm loc}
 \to
 \delta S_A
@@ -170,166 +170,166 @@ Paper 18 aims to establish:
 \delta\kappa(r)
 \to
 T_{\mu\nu}^{\rm ent}.
-\]
+$$
 
 ---
 
-## 5. Main numerical results
+## 5. Principaux résultats numériques
 
-Paper 18 currently has two positive results.
+Paper 18 possède actuellement deux résultats positifs.
 
-| Step | Geometry | Quantity | Value | Target | Status |
+| Étape | Géométrie | Quantité | Valeur | Cible | Statut |
 |---|---|---|---:|---|---|
-| v1 graph modular first law | flat_torus2d | slope \(\delta S\) vs \(\delta\langle K\rangle\) | 0.989481 | 1 | positive |
-| v1 graph modular first law | flat_torus2d | \(R^2\) \(\delta S\) vs \(\delta\langle K\rangle\) | 0.996590 | near 1 | positive |
-| v1 graph modular first law | sphere | slope \(\delta S\) vs \(\delta\langle K\rangle\) | 0.989718 | 1 | positive |
-| v1 graph modular first law | sphere | \(R^2\) \(\delta S\) vs \(\delta\langle K\rangle\) | 0.996592 | near 1 | positive |
-| v2 modular source curvature | flat_torus2d | near/far localization ratio | 6.293007 | \(>1\) | positive |
-| v2 modular source curvature | flat_torus2d | \(R^2(|\delta K|,\langle|\Delta\kappa|\rangle_{\rm near})\) | 0.967229 | near 1 | positive |
-| v2 modular source curvature | flat_torus2d | signed Pearson \(\delta K\to\Delta\kappa_{\rm near}\) | -0.999168 | \(|r|\) near 1 | positive |
-| v2 modular source curvature | sphere | near/far localization ratio | 9.533529 | \(>1\) | positive |
-| v2 modular source curvature | sphere | \(R^2(|\delta K|,\langle|\Delta\kappa|\rangle_{\rm near})\) | 0.982252 | near 1 | positive |
-| v2 modular source curvature | sphere | signed Pearson \(\delta K\to\Delta\kappa_{\rm near}\) | -0.999428 | \(|r|\) near 1 | positive |
+| v1 première loi modulaire du graphe | tore plat 2D | pente $\delta S$ vs $\delta\langle K\rangle$ | 0.989481 | 1 | positif |
+| v1 première loi modulaire du graphe | tore plat 2D | $R^2$ $\delta S$ vs $\delta\langle K\rangle$ | 0.996590 | proche de 1 | positif |
+| v1 première loi modulaire du graphe | sphère | pente $\delta S$ vs $\delta\langle K\rangle$ | 0.989718 | 1 | positif |
+| v1 première loi modulaire du graphe | sphère | $R^2$ $\delta S$ vs $\delta\langle K\rangle$ | 0.996592 | proche de 1 | positif |
+| v2 source modulaire courbure | tore plat 2D | rapport de localisation near/far | 6.293007 | $>1$ | positif |
+| v2 source modulaire courbure | tore plat 2D | $R^2(|\delta K|,\langle|\Delta\kappa|\rangle_{\rm near})$ | 0.967229 | proche de 1 | positif |
+| v2 source modulaire courbure | tore plat 2D | Pearson signé $\delta K\to\Delta\kappa_{\rm near}$ | -0.999168 | $|r|$ proche de 1 | positif |
+| v2 source modulaire courbure | sphère | rapport de localisation near/far | 9.533529 | $>1$ | positif |
+| v2 source modulaire courbure | sphère | $R^2(|\delta K|,\langle|\Delta\kappa|\rangle_{\rm near})$ | 0.982252 | proche de 1 | positif |
+| v2 source modulaire courbure | sphère | Pearson signé $\delta K\to\Delta\kappa_{\rm near}$ | -0.999428 | $|r|$ proche de 1 | positif |
 
 ---
 
-## 6. Result v1 — Graph modular first law
+## 6. Résultat v1 — Première loi modulaire du graphe
 
-A graph density proxy is defined on a region \(A\) by
+Une grandeur proxy de densité du graphe est définie sur une région $A$ par
 
-\[
+$$
 \rho_A
 =
 \frac{(L_A+\mu I)^{-1}}
 {\mathrm{Tr}(L_A+\mu I)^{-1}}.
-\]
+$$
 
-Then
+Alors
 
-\[
+$$
 S_A=-\mathrm{Tr}(\rho_A\log\rho_A),
 \qquad
 K_A=-\log\rho_A.
-\]
+$$
 
-After a local radial perturbation of \(W_{ij}\), the test measures
+Après une perturbation radiale locale de $W_{ij}$, le test mesure
 
-\[
+$$
 \delta S_A=S_A(W')-S_A(W),
-\]
+$$
 
-and
+et
 
-\[
+$$
 \delta\langle K_A\rangle
 =
 \mathrm{Tr}\left[(\rho'_A-\rho_A)K_A\right].
-\]
+$$
 
-The result is strongly positive.
+Le résultat est fortement positif.
 
-On the flat torus:
+Sur le tore plat :
 
-\[
+$$
 \delta S_A
 =
 -0.000068
 +
 0.989481\,\delta\langle K_A\rangle,
-\]
+$$
 
-with
+avec
 
-\[
+$$
 R^2=0.996590,
 \qquad
 {\rm Pearson}=0.998293.
-\]
+$$
 
-On the sphere:
+Sur la sphère :
 
-\[
+$$
 \delta S_A
 =
 -0.000081
 +
 0.989718\,\delta\langle K_A\rangle,
-\]
+$$
 
-with
+avec
 
-\[
+$$
 R^2=0.996592,
 \qquad
 {\rm Pearson}=0.998295.
-\]
+$$
 
-Thus:
+Ainsi :
 
-\[
+$$
 \boxed{
-\delta S_A^{\rm graph}
+\delta S_A^{\rm graphe}
 \simeq
-\delta\langle K_A^{\rm graph}\rangle.
+\delta\langle K_A^{\rm graphe}\rangle.
 }
-\]
+$$
 
 ---
 
-## 7. Result v2 — Modular source predicts curvature response
+## 7. Résultat v2 — La source modulaire prédit la réponse de courbure
 
-The second test connects the modular response to curvature:
+Le second test relie la réponse modulaire à la courbure :
 
-\[
+$$
 \delta W_{\rm loc}
 \to
 \delta\langle K_A\rangle
 \to
 \delta\kappa(r).
-\]
+$$
 
-The curvature response is localized around the source:
+La réponse de courbure est localisée autour de la source :
 
-| Geometry | mean near/far ratio | median near/far ratio |
+| Géométrie | rapport near/far moyen | rapport near/far médian |
 |---|---:|---:|
-| flat_torus2d | 6.293 | 6.241 |
-| sphere | 9.534 | 9.479 |
+| tore plat 2D | 6.293 | 6.241 |
+| sphère | 9.534 | 9.479 |
 
-Most importantly, the modular source amplitude predicts the near-source curvature response:
+Plus important encore, l'amplitude de la source modulaire prédit la réponse de courbure près de la source :
 
-| Geometry | \(R^2(|\delta\langle K_A\rangle|,\langle|\Delta\kappa|\rangle_{\rm near})\) | Pearson |
+| Géométrie | $R^2(|\delta\langle K_A\rangle|,\langle|\Delta\kappa|\rangle_{\rm near})$ | Pearson |
 |---|---:|---:|
-| flat_torus2d | 0.967229 | 0.983478 |
-| sphere | 0.982252 | 0.991086 |
+| tore plat 2D | 0.967229 | 0.983478 |
+| sphère | 0.982252 | 0.991086 |
 
-The signed relation is also nearly perfect, up to the sign convention:
+La relation signée est également presque parfaite, à la convention de signe près :
 
-| Geometry | signed \(R^2\) | signed Pearson |
+| Géométrie | $R^2$ signée | Pearson signé |
 |---|---:|---:|
-| flat_torus2d | 0.998336 | -0.999168 |
-| sphere | 0.998857 | -0.999428 |
+| tore plat 2D | 0.998336 | -0.999168 |
+| sphère | 0.998857 | -0.999428 |
 
-Therefore:
+Par conséquent :
 
-\[
+$$
 \boxed{
 \delta\langle K_A\rangle
-\text{ behaves as an effective source for the curvature response.}
+\text{ se comporte comme une source effective pour la réponse de courbure.}
 }
-\]
+$$
 
 ---
 
-## 8. Interpretation
+## 8. Interprétation
 
-Paper 18 has two positive numerical pillars:
+Paper 18 possède deux piliers numériques positifs :
 
-1. The graph modular first law holds with slope approximately \(0.989\) and \(R^2\simeq0.9966\).
-2. The modular response predicts localized curvature response with \(R^2\simeq0.967\) to \(0.982\).
+1. La première loi modulaire du graphe est vérifiée avec une pente d'environ $0.989$ et un $R^2\simeq0.9966$.
+2. La réponse modulaire prédit une réponse de courbure localisée avec un $R^2$ de $0.967$ à $0.982$.
 
-Thus:
+Ainsi :
 
-\[
+$$
 \delta W_{\rm loc}
 \to
 \delta S_A
@@ -337,26 +337,26 @@ Thus:
 \delta\langle K_A\rangle
 \to
 \delta\kappa(r).
-\]
+$$
 
-This supports the source-side chain needed for the effective Einstein limit.
-
----
-
-## 9. Limits
-
-The current results are positive but not final.
-
-1. The source is scalar/modular, not yet a full tensor \(T_{\mu\nu}\).
-2. The density matrix \(\rho_A\) is a graph proxy.
-3. The modular Hamiltonian \(K_A=-\log\rho_A\) is not yet derived from a true quantum subsystem density matrix in this test.
-4. The relation is tested on controlled geometries, not yet on full quantum MI graphs.
-5. The sign of the signed relation depends on the perturbation convention.
-6. A continuum derivation via the modular first law remains to be written.
+Cela soutient la chaîne du côté source nécessaire pour la limite einsteinienne effective.
 
 ---
 
-## 10. Folder structure
+## 9. Limites
+
+Les résultats actuels sont positifs mais pas définitifs.
+
+1. La source est scalaire / modulaire, pas encore un tenseur complet $T_{\mu\nu}$.
+2. La matrice densité $\rho_A$ est une grandeur proxy de graphe.
+3. L'hamiltonien modulaire $K_A=-\log\rho_A$ n'est pas encore dérivé d'une véritable matrice densité de sous-système quantique dans ce test.
+4. La relation est testée sur des géométries contrôlées, pas encore sur de véritables graphes d'information mutuelle quantique.
+5. Le signe de la relation signée dépend de la convention de perturbation.
+6. Une dérivation continue via la première loi modulaire reste à écrire.
+
+---
+
+## 10. Structure des dossiers
 
 ```text
 papers/paper18_entanglement_stress_tensor/
@@ -374,7 +374,7 @@ papers/paper18_entanglement_stress_tensor/
     paper18_entanglement_stress_summary_v1/
 
   figures/
-    # final figures copied from selected result folders
+    # figures finales copiées depuis les dossiers de résultats sélectionnés
 
   notes/
     roadmap.md
