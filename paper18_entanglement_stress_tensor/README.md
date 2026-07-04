@@ -39,12 +39,7 @@ L'objet fondamental est le graphe d'intrication :
 $$
 W_{ij}=I(i:j).
 $$
---------------
-Une source locale est modélisée comme une perturbation :
 
-$$
-W_{ij} \longrightarrow W'_{ij} = W_{ij} + \delta W_{ij}^{\rm loc}.
---------------
 Une source locale est modélisée comme une perturbation :
 
 $$
