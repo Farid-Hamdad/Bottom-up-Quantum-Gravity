@@ -1,0 +1,13 @@
+block,papers,core_chain,main_equation,status,role_in_paper25
+Cosmological dimensional sector,Papers 2--4,d(z) -> G_eff(z) -> sigma8 / JWST local dimension,G_eff(z)=2G/(d(z)-1),phenomenological cosmological branch,Feeds H_dim and cross-scale dimensional flow
+Emergent matter and weak-field source,Papers 8--9,delta W_loc -> S_flux -> Phi_BuP -> |delta R|,L_ent Phi_BuP = S_flux,finite graph weak-field precursor,Defines entanglement Green function and source propagation
+Newtonian propagator limit,Papers 10--11,L_ent^+ -> Green function -> alpha_eff,alpha_eff = 2 d_s/d_w + d_w - 4,effective propagator law,Connects graph dimensions to weak-field radial behavior
+Galactic sector,Papers 12--14,"Sigma(R) -> d_s(r), d_w(r) -> alpha_eff(r) -> V(r)",V_BuP from alpha_eff(r),phenomenological validation on SPARC,Macroscopic expression of dimensional propagator law
+Spectral continuum limit,Papers 15--16,W -> L_N -> -Delta_g,c_N L_N -> -Delta_g,controlled numerical convergence,Geometric foundation of continuum limit
+Discrete Ricci limit,Paper 17,kappa_OR -> R_mu nu u^mu u^nu,kappa_OR/epsilon ~= B_N + C_N R_mu nu u^mu u^nu,mean-level affine calibration,Curvature side of Einstein limit
+Modular source sector,Paper 18,delta W_loc -> delta S_A ~= delta<K_A> -> delta kappa,delta S_A ~= delta<K_A>,controlled modular-source precursor,Source side of Einstein limit
+Effective Einstein assembly,Paper 19,spectral + Ricci + source arrows -> Einstein effective equation,G_mu nu + Lambda g_mu nu = 8 pi G_eff T_mu nu^ent + H_mu nu,controlled assembly / theorem target,Main continuum target
+Correction tensor,Paper 20,Einstein limit deviations -> H_mu nu sectors,H_static = H_spec + H_curv + H_source + H_dim + H_nonlocal + H_topo + H_finite,classification plus proxies,Organizes deviations from smooth Einstein regime
+Strong-lensing fixed point,Paper 21,SLACS -> alpha_eff ~= 1,<alpha_eff> ~= 1.014 near log M_star ~= 11.58--11.60,phenomenological fixed point,Nonlocal / optical correction sector
+Gravitational-wave sector,Paper 22,W -> edge Hessian -> modes q_n(t),H_full = H_static + H_dyn,dynamic numerical sector,Adds H_dyn and wave-speed constraints
+Modular tomography,Paper 23,I(i:j) tomography -> rho_ent^cut(j) -> 1/beta_j,rho_ent^cut(j) = sum_{k notin A} I(j:k),experimental testability proposal,Microscopic observability of W_ij
