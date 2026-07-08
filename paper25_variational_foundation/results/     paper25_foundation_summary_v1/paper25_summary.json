@@ -1,0 +1,12 @@
+{
+  "paper": "Paper 25 — Variational Foundation of Bottom-Up Quantum Gravity",
+  "generated_at": "2026-07-07T10:18:35.390669Z",
+  "central_variable": "W_ij = I(i:j)",
+  "fundamental_equation": "delta S_BuP[W,rho] / delta W_ij = 0",
+  "continuum_target": "G_mu nu + Lambda_ent g_mu nu = 8 pi G_eff T_mu nu^ent + H_mu nu^BuP",
+  "num_chain_blocks": 12,
+  "num_dictionary_entries": 7,
+  "num_evidence_entries": 7,
+  "num_open_debts": 6,
+  "next_priority": "Paper 26 — derive normalization c_N for L_N -> -Delta_g"
+}
