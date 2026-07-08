@@ -1,0 +1,7 @@
+debt,why_it_matters,target_paper,priority
+Derive c_N,Needed for rigorous L_N -> -Delta_g,Paper 26,critical
+Reconstruct full Ricci tensor,"Need R_mu nu, not only R_mu nu u^mu u^nu",Paper 27,high
+Construct T_mu nu^ent,Paper 18 gives scalar modular precursor only,Paper 28,high
+Define common norm for H_mu nu,Needed to compare correction sectors consistently,Paper 29,high
+Unify cross-scale alpha_eff constraints,"Connect Mercury, SPARC, SLACS, GW and cosmology",Paper 30,medium-high
+General micro-to-macro theorem,Need theorem for |Psi> -> I_ij -> matter profiles,future,medium
