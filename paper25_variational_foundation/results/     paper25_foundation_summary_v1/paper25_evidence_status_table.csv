@@ -1,0 +1,8 @@
+claim,main_result,source_papers,status,limitation
+Entanglement Laplacian approximates Laplace-Beltrami,circle error 0.0051; flat torus error 0.0266,Papers 15--16,controlled numerical convergence,normalization c_N still analytical debt
+Ollivier--Ricci curvature carries Ricci signal,"B_N=-0.301281, C_N=0.391933 at N=512",Paper 17,mean-level affine calibration,not yet pointwise tensor theorem
+Graph modular first law holds,slope ~=0.989; R2 ~=0.9966,Paper 18,controlled numerical evidence,rho_A is graph proxy; T_mu nu not yet fully reconstructed
+Modular source predicts curvature response,R2 0.967--0.982 for |delta K| vs near curvature response,Paper 18,controlled numerical evidence,"scalar source precursor, not full tensor"
+Discrete Poisson propagation preserves source-curvature signal,"rho(S_flux,|delta R|)=0.741; rho(Phi,|delta R|)=0.738",Paper 9,finite graph weak-field precursor,small N and candidate source
+SPARC branch performs well phenomenologically,median chi2_red BuP=0.467 vs NFW2p=1.332; 83.4 percent better,Paper 14,phenomenological validation,not a derivation of Einstein sector
+Correction tensor has structured sectors,7 static sectors plus dynamic sector from Paper 22,Papers 20--22,classification,dim/nonlocal are currently proxy diagnostics
