@@ -1,0 +1,8 @@
+bup_object,meaning,continuum_target,status
+W_ij = I(i:j),mutual-information graph,entanglement geometry seed,fundamental postulate
+L_ent = D - W,entanglement Laplacian,-Delta_g,supported by Papers 15--16
+L_ent^+,Moore--Penrose pseudoinverse,(-Delta_g)^(-1),weak-field Green function candidate
+kappa_OR,Ollivier--Ricci curvature on W,R_mu nu u^mu u^nu,Paper 17 affine calibration
+delta<K_A>,modular energy variation,source precursor for T_mu nu^ent,Paper 18 modular first law
+alpha_eff,effective propagator exponent,weak-field radial behavior,"Papers 11, 12, 21"
+H_mu nu^BuP,deviation from effective Einstein limit,higher-order / finite / nonlocal corrections,Paper 20 classification
