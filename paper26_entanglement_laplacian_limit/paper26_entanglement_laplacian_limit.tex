@@ -629,19 +629,52 @@ better with the density-drift operator than with the pure Laplacian target.
 \label{fig:nonuniform-drift}
 \end{figure}
 
-\section{Density-corrected Laplacian}
+\section{Density-corrected Laplacians: two conventions}
 
-To reduce the density bias, define
+The density-bias test shows that the raw combinatorial Laplacian should not be
+used blindly in non-uniform sampling regimes. However, density correction is
+convention-dependent. Two graph-operator conventions must be distinguished:
+
+\begin{enumerate}
+\item a symmetric combinatorial correction,
+\[
+L_{\rm comb}^{(\alpha)}
+=
+D^{(\alpha)}-W^{(\alpha)};
+\]
+
+\item the diffusion-maps Markov generator,
+\[
+G^{(\alpha)}
+=
+\frac{I-P^{(\alpha)}}{\epsilon}.
+\]
+\end{enumerate}
+
+This distinction is essential. A finite-\(N\) correction that performs best for
+the symmetric combinatorial operator is not necessarily the same correction that
+is optimal for the Markov diffusion-maps generator.
+
+\subsection{Symmetric combinatorial correction}
+
+Define
 \begin{equation}
 q_i=\sum_j W_{ij}.
 \end{equation}
 
-We tested the corrected kernel
+We first tested the corrected symmetric kernel
 \begin{equation}
 W_{ij}^{(\alpha)}
 =
 \frac{W_{ij}}
 {q_i^\alpha q_j^\alpha}.
+\end{equation}
+
+The associated combinatorial Laplacian is
+\begin{equation}
+L_{\rm comb}^{(\alpha)}
+=
+D^{(\alpha)}-W^{(\alpha)}.
 \end{equation}
 
 The tested cases were
@@ -671,14 +704,15 @@ The median results are:
 \bottomrule
 \end{tabular}
 \caption{
-Density-corrected non-uniform \(S^1\) test. The symmetric correction
-\(\alpha=1/2\) gives the best recovery of the pure Laplacian in this
-combinatorial construction and nearly flattens the degree distribution.
+Density-corrected non-uniform \(S^1\) test for the symmetric combinatorial
+operator \(D^{(\alpha)}-W^{(\alpha)}\). In this finite-\(N\) convention,
+\(\alpha=1/2\) gives the best empirical recovery of the pure Laplacian and
+nearly flattens the degree distribution.
 }
 \label{tab:density-correction}
 \end{table}
 
-The best pure Laplacian recovery is
+The best pure Laplacian recovery in this symmetric combinatorial family is
 \begin{equation}
 \alpha=\frac12,\qquad
 \epsilon=0.04,\qquad
@@ -690,15 +724,97 @@ The degree contrast is reduced to
 1.0537.
 \end{equation}
 
+This result should not be interpreted as a contradiction of diffusion-maps
+theory. The operator tested here is the symmetric combinatorial Laplacian
+\(D^{(\alpha)}-W^{(\alpha)}\), not the row-normalized Markov generator used in
+the standard Coifman--Lafon construction.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/fig11_density_corrected_rmse_summary.png}
 \caption{
-Density correction reduces the bias of the raw graph Laplacian. In this
-controlled test, the symmetric correction \(\alpha=1/2\) gives the best recovery
-of the pure Laplace--Beltrami operator.
+Density correction for the symmetric combinatorial operator. In this finite-\(N\)
+test, \(\alpha=1/2\) reduces the density bias and nearly flattens the graph
+degree distribution.
 }
 \label{fig:density-corrected}
+\end{figure}
+
+\subsection{Diffusion-maps Markov generator}
+
+To test the standard diffusion-maps convention, define
+\begin{equation}
+K_{ij}^{(\alpha)}
+=
+\frac{W_{ij}}
+{q_i^\alpha q_j^\alpha}.
+\end{equation}
+
+The row-normalized Markov matrix is
+\begin{equation}
+P_{ij}^{(\alpha)}
+=
+\frac{K_{ij}^{(\alpha)}}
+{\sum_j K_{ij}^{(\alpha)}}.
+\end{equation}
+
+The corresponding generator is
+\begin{equation}
+G^{(\alpha)}
+=
+\frac{I-P^{(\alpha)}}{\epsilon}.
+\end{equation}
+
+This is the convention in which \(\alpha=1\) is expected to remove sampling
+density bias and recover the pure Laplace--Beltrami operator.
+
+On the same non-uniform \(S^1\) test, the Markov-generator results are:
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{rrr}
+\toprule
+\(\alpha\) & Median pure RMSE & Median drift RMSE \\
+\midrule
+0 & 0.3757 & 0.2521 \\
+0.5 & 0.2343 & 0.2858 \\
+1 & 0.1216 & 0.3680 \\
+\bottomrule
+\end{tabular}
+\caption{
+Diffusion-maps Markov-generator test on the same non-uniform \(S^1\) density.
+In the Markov convention \(G^{(\alpha)}=(I-P^{(\alpha)})/\epsilon\), the
+expected choice \(\alpha=1\) gives the best recovery of the pure Laplacian.
+}
+\label{tab:diffusion-maps-generator}
+\end{table}
+
+The best pure Laplacian recovery is
+\begin{equation}
+\alpha=1,\qquad
+\epsilon=0.08,\qquad
+\mathrm{RMSE}_{\rm pure}=0.0441.
+\end{equation}
+
+The same row has
+\begin{equation}
+\mathrm{RMSE}_{\rm drift}=0.3161.
+\end{equation}
+
+Thus the diffusion-maps Markov generator resolves the apparent anomaly:
+\(\alpha=1/2\) is favoured only in the finite-\(N\) symmetric combinatorial
+construction, whereas \(\alpha=1\) is favoured in the row-normalized
+diffusion-maps convention.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.86\textwidth]{figures/fig12_diffusion_maps_alpha_summary.png}
+\caption{
+Diffusion-maps Markov-generator comparison. In the row-normalized Markov
+convention, \(\alpha=1\) gives the smallest median RMSE against the pure
+Laplace--Beltrami target.
+}
+\label{fig:diffusion-maps-alpha}
 \end{figure}
 
 \section{Relation to mutual-information graphs}
@@ -787,8 +903,12 @@ operator convergence theorem remains a mathematical target.
 
 \paragraph{Normalization convention.}
 Different graph Laplacians --- combinatorial, random-walk, symmetric normalized
---- have different density-drift structures. The normalization must be stated
-together with the operator convention.
+and diffusion-maps Markov generators --- have different density-drift
+structures. The normalization must be stated together with the operator
+convention. In particular, the finite-\(N\) preference for \(\alpha=1/2\) in the
+symmetric combinatorial construction should not be confused with the standard
+diffusion-maps Markov result, where \(\alpha=1\) gives the best recovery of the
+pure Laplace--Beltrami operator in our controlled test.
 
 \section{Conclusion}
 
@@ -838,12 +958,19 @@ S^2:\quad
 \end{equation}
 
 The non-uniform \(S^1\) tests show that the raw combinatorial Laplacian
-develops a density drift, while the symmetric correction
-\begin{equation}
+develops a density drift. In the symmetric combinatorial family
+\(D^{(\alpha)}-W^{(\alpha)}\), the correction
+\[
 W_{ij}\mapsto\frac{W_{ij}}{\sqrt{q_iq_j}}
-\end{equation}
+\]
 substantially improves recovery of the pure Laplace--Beltrami operator in the
-controlled setting.
+finite-\(N\) controlled setting. In the diffusion-maps Markov-generator
+convention
+\[
+G^{(\alpha)}=\frac{I-P^{(\alpha)}}{\epsilon},
+\]
+the expected density-correcting choice \(\alpha=1\) gives the best recovery,
+with a best pure-Laplacian RMSE of \(0.0441\).
 
 Thus Paper 26 closes the principal normalization debt identified in Paper 25
 and clarifies the density-correction required before applying the entanglement
