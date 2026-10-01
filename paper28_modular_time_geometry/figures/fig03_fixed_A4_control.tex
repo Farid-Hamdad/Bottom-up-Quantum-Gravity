@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.76\textwidth,height=6.3cm,
+  ybar,bar width=15pt,
+  ymin=0,ymax=0.14,
+  ylabel={$\Delta_R$},
+  symbolic x coords={N8/A4,N10/A4},xtick=data,
+  title={Fixed-subsystem-size control},
+  legend style={at={(0.5,-0.18)},anchor=north,legend columns=2},
+  grid=major
+]
+\addplot coordinates {(N8/A4,0.1229235652) (N10/A4,0.1241991943)};
+\addplot coordinates {(N8/A4,0.0687091263) (N10/A4,0.0699112761)};
+\legend{Primary,Secondary mean}
+\end{axis}
+\end{tikzpicture}
