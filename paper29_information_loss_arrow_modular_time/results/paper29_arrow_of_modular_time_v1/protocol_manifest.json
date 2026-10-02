@@ -1,0 +1,119 @@
+{
+  "controls": [
+    "s=0 Paper 28 recovery",
+    "reversible TFIM unitary trajectory",
+    "raw versus normalized quantities",
+    "N10/A4 replication"
+  ],
+  "geometry": "w(s)=[I01,I02,I03,I12,I13,I23]",
+  "information_coordinate": "Q(s)=D(rho(s)||I/2^N)=N log 2 - S(rho(s))",
+  "irreversible_channel": {
+    "s_grid": [
+      0.0,
+      0.1,
+      0.2,
+      0.30000000000000004,
+      0.4,
+      0.5,
+      0.6000000000000001,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2000000000000002,
+      1.3,
+      1.4000000000000001,
+      1.5,
+      1.6,
+      1.7000000000000002,
+      1.8,
+      1.9000000000000001,
+      2.0,
+      2.1,
+      2.2,
+      2.3000000000000003,
+      2.4000000000000004,
+      2.5,
+      2.6,
+      2.7,
+      2.8000000000000003,
+      2.9000000000000004,
+      3.0
+    ],
+    "single_qubit_formula": "(1+exp(-s))/2 * rho + (1-exp(-s))/2 * Z rho Z",
+    "type": "independent local dephasing"
+  },
+  "modular": {
+    "K": "-log(rho_A)",
+    "normalization": "(K-mean(kappa)I)/std(kappa)",
+    "primary_profile": "v_ij=sqrt(A_ij) from exact double commutator coefficient"
+  },
+  "numerical": {
+    "entropy_eig_cutoff": 1e-15,
+    "state_norm_tol": 1e-12,
+    "strict_modular_positivity": true
+  },
+  "paper": 29,
+  "paper28_state_preparation": {
+    "J": 1.0,
+    "dt": 0.35,
+    "h": 1.0,
+    "nominal_t": 2.0999999999999996,
+    "p": 6,
+    "state": "time-reversal mixture of Strang-evolved |+>^N"
+  },
+  "primary_endpoint": "mean chi over valid consecutive steps",
+  "primary_system": {
+    "A_keep": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "N": 8,
+    "pair_order": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  "reference": "I / 2^N",
+  "secondary": [
+    "fraction chi > 0",
+    "Spearman(d_W,d_mod)",
+    "Spearman(Sigma,d_W)",
+    "Spearman(Sigma,d_mod)",
+    "cumulative normalized distances",
+    "raw magnitudes"
+  ],
+  "sigma_step": "Sigma_n=Q(s_n)-Q(s_{n+1})",
+  "status": "IMPLEMENTATION_NOT_YET_UNBLINDED",
+  "title": "Information Loss and the Arrow of Modular Time",
+  "zero_step_rule": {
+    "chi": "NaN",
+    "epsilon": 1e-12,
+    "status": "DIRECTION_UNDEFINED_ZERO_STEP"
+  }
+}

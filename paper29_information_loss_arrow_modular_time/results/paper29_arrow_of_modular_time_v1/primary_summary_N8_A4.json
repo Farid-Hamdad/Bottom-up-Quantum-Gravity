@@ -1,0 +1,56 @@
+{
+  "A_size": 4,
+  "N": 8,
+  "N_undefined": 0,
+  "N_valid": 30,
+  "Sigma_max": 1.2814288642115095,
+  "Sigma_min": 0.0008718357011634481,
+  "Sigma_negative_count": 0,
+  "fraction_chi_positive": 0.0,
+  "mean_chi": -0.05310885242761835,
+  "n_states": 31,
+  "n_transitions": 30,
+  "paper28_s0_recovery": {
+    "atol": 1e-10,
+    "delta": {
+      "Delta_R_primary": -2.7755575615628914e-16,
+      "condition_number": 9.094947017729282e-12,
+      "cosine_W": -2.220446049250313e-16,
+      "cosine_chain": 0.0,
+      "kappa_mean": -8.881784197001252e-16,
+      "kappa_std": -4.440892098500626e-16,
+      "lambda_max": 1.1102230246251565e-16,
+      "lambda_min": -2.3310346708438345e-18,
+      "residual_W": 4.440892098500626e-16,
+      "residual_chain": 1.6653345369377348e-16
+    },
+    "expected": {
+      "Delta_R_primary": 0.12292356524542974,
+      "condition_number": 1209.0376641695884,
+      "cosine_W": 0.9660284140131971,
+      "cosine_chain": 0.9244268357377549,
+      "kappa_mean": 4.587517093532144,
+      "kappa_std": 2.163383760368966,
+      "lambda_max": 0.38457742531689254,
+      "lambda_min": 0.00031808556235593744,
+      "residual_W": 0.258435878544654,
+      "residual_chain": 0.38135944379008374
+    },
+    "observed": {
+      "Delta_R_primary": 0.12292356524542947,
+      "condition_number": 1209.0376641695975,
+      "cosine_W": 0.9660284140131968,
+      "cosine_chain": 0.9244268357377549,
+      "kappa_mean": 4.587517093532143,
+      "kappa_std": 2.1633837603689656,
+      "lambda_max": 0.38457742531689265,
+      "lambda_min": 0.0003180855623559351,
+      "residual_W": 0.25843587854465444,
+      "residual_chain": 0.3813594437900839
+    },
+    "passed": true
+  },
+  "spearman_Sigma_dW": 1.0,
+  "spearman_Sigma_dmod": 1.0,
+  "spearman_dW_dmod": 1.0
+}

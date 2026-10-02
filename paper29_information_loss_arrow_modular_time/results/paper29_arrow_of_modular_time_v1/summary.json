@@ -1,0 +1,243 @@
+{
+  "claim_boundary": {
+    "bup_explains_thermodynamic_arrow_claim_allowed": false,
+    "irreversibility_is_externally_imposed": true,
+    "modular_flow_arrow_claim_allowed": false
+  },
+  "primary_N8_A4": {
+    "A_size": 4,
+    "N": 8,
+    "N_undefined": 0,
+    "N_valid": 30,
+    "Sigma_max": 1.2814288642115095,
+    "Sigma_min": 0.0008718357011634481,
+    "Sigma_negative_count": 0,
+    "fraction_chi_positive": 0.0,
+    "mean_chi": -0.05310885242761835,
+    "n_states": 31,
+    "n_transitions": 30,
+    "paper28_s0_recovery": {
+      "atol": 1e-10,
+      "delta": {
+        "Delta_R_primary": -2.7755575615628914e-16,
+        "condition_number": 9.094947017729282e-12,
+        "cosine_W": -2.220446049250313e-16,
+        "cosine_chain": 0.0,
+        "kappa_mean": -8.881784197001252e-16,
+        "kappa_std": -4.440892098500626e-16,
+        "lambda_max": 1.1102230246251565e-16,
+        "lambda_min": -2.3310346708438345e-18,
+        "residual_W": 4.440892098500626e-16,
+        "residual_chain": 1.6653345369377348e-16
+      },
+      "expected": {
+        "Delta_R_primary": 0.12292356524542974,
+        "condition_number": 1209.0376641695884,
+        "cosine_W": 0.9660284140131971,
+        "cosine_chain": 0.9244268357377549,
+        "kappa_mean": 4.587517093532144,
+        "kappa_std": 2.163383760368966,
+        "lambda_max": 0.38457742531689254,
+        "lambda_min": 0.00031808556235593744,
+        "residual_W": 0.258435878544654,
+        "residual_chain": 0.38135944379008374
+      },
+      "observed": {
+        "Delta_R_primary": 0.12292356524542947,
+        "condition_number": 1209.0376641695975,
+        "cosine_W": 0.9660284140131968,
+        "cosine_chain": 0.9244268357377549,
+        "kappa_mean": 4.587517093532143,
+        "kappa_std": 2.1633837603689656,
+        "lambda_max": 0.38457742531689265,
+        "lambda_min": 0.0003180855623559351,
+        "residual_W": 0.25843587854465444,
+        "residual_chain": 0.3813594437900839
+      },
+      "passed": true
+    },
+    "spearman_Sigma_dW": 1.0,
+    "spearman_Sigma_dmod": 1.0,
+    "spearman_dW_dmod": 1.0
+  },
+  "protocol": {
+    "controls": [
+      "s=0 Paper 28 recovery",
+      "reversible TFIM unitary trajectory",
+      "raw versus normalized quantities",
+      "N10/A4 replication"
+    ],
+    "geometry": "w(s)=[I01,I02,I03,I12,I13,I23]",
+    "information_coordinate": "Q(s)=D(rho(s)||I/2^N)=N log 2 - S(rho(s))",
+    "irreversible_channel": {
+      "s_grid": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2000000000000002,
+        1.3,
+        1.4000000000000001,
+        1.5,
+        1.6,
+        1.7000000000000002,
+        1.8,
+        1.9000000000000001,
+        2.0,
+        2.1,
+        2.2,
+        2.3000000000000003,
+        2.4000000000000004,
+        2.5,
+        2.6,
+        2.7,
+        2.8000000000000003,
+        2.9000000000000004,
+        3.0
+      ],
+      "single_qubit_formula": "(1+exp(-s))/2 * rho + (1-exp(-s))/2 * Z rho Z",
+      "type": "independent local dephasing"
+    },
+    "modular": {
+      "K": "-log(rho_A)",
+      "normalization": "(K-mean(kappa)I)/std(kappa)",
+      "primary_profile": "v_ij=sqrt(A_ij) from exact double commutator coefficient"
+    },
+    "numerical": {
+      "entropy_eig_cutoff": 1e-15,
+      "state_norm_tol": 1e-12,
+      "strict_modular_positivity": true
+    },
+    "paper": 29,
+    "paper28_state_preparation": {
+      "J": 1.0,
+      "dt": 0.35,
+      "h": 1.0,
+      "nominal_t": 2.0999999999999996,
+      "p": 6,
+      "state": "time-reversal mixture of Strang-evolved |+>^N"
+    },
+    "primary_endpoint": "mean chi over valid consecutive steps",
+    "primary_system": {
+      "A_keep": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "N": 8,
+      "pair_order": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "reference": "I / 2^N",
+    "secondary": [
+      "fraction chi > 0",
+      "Spearman(d_W,d_mod)",
+      "Spearman(Sigma,d_W)",
+      "Spearman(Sigma,d_mod)",
+      "cumulative normalized distances",
+      "raw magnitudes"
+    ],
+    "sigma_step": "Sigma_n=Q(s_n)-Q(s_{n+1})",
+    "status": "IMPLEMENTATION_NOT_YET_UNBLINDED",
+    "title": "Information Loss and the Arrow of Modular Time",
+    "zero_step_rule": {
+      "chi": "NaN",
+      "epsilon": 1e-12,
+      "status": "DIRECTION_UNDEFINED_ZERO_STEP"
+    }
+  },
+  "replication_N10_A4": {
+    "A_size": 4,
+    "N": 10,
+    "N_undefined": 0,
+    "N_valid": 30,
+    "Sigma_max": 1.6527467384436312,
+    "Sigma_min": 0.0011359336288432331,
+    "Sigma_negative_count": 0,
+    "fraction_chi_positive": 0.0,
+    "mean_chi": -0.06376788266501837,
+    "n_states": 31,
+    "n_transitions": 30,
+    "paper28_s0_recovery": {
+      "atol": 1e-10,
+      "delta": {
+        "Delta_R_primary": 8.326672684688674e-16,
+        "condition_number": 5.1159076974727213e-11,
+        "cosine_W": -1.1102230246251565e-16,
+        "cosine_chain": -4.440892098500626e-16,
+        "kappa_mean": 7.105427357601002e-15,
+        "kappa_std": 8.43769498715119e-15,
+        "lambda_max": 5.551115123125783e-17,
+        "lambda_min": -1.3173056395698879e-17,
+        "residual_W": 3.885780586188048e-16,
+        "residual_chain": 1.2212453270876722e-15
+      },
+      "expected": {
+        "Delta_R_primary": 0.12419919426286236,
+        "condition_number": 1218.6512813308552,
+        "cosine_W": 0.9668328093185072,
+        "cosine_chain": 0.9251468987352471,
+        "kappa_mean": 4.583362007862227,
+        "kappa_std": 2.167375790925045,
+        "lambda_max": 0.3829563020160241,
+        "lambda_min": 0.0003142460094062414,
+        "residual_W": 0.2554100993016585,
+        "residual_chain": 0.37960929356452083
+      },
+      "observed": {
+        "Delta_R_primary": 0.12419919426286319,
+        "condition_number": 1218.6512813309064,
+        "cosine_W": 0.9668328093185071,
+        "cosine_chain": 0.9251468987352467,
+        "kappa_mean": 4.583362007862234,
+        "kappa_std": 2.1673757909250533,
+        "lambda_max": 0.38295630201602415,
+        "lambda_min": 0.00031424600940622825,
+        "residual_W": 0.25541009930165887,
+        "residual_chain": 0.37960929356452205
+      },
+      "passed": true
+    },
+    "spearman_Sigma_dW": 1.0,
+    "spearman_Sigma_dmod": 1.0,
+    "spearman_dW_dmod": 1.0
+  },
+  "unitary_control_N8": {
+    "N": 8,
+    "Q_span": 8.881784197001252e-16,
+    "max_abs_Sigma": 8.881784197001252e-16
+  }
+}
