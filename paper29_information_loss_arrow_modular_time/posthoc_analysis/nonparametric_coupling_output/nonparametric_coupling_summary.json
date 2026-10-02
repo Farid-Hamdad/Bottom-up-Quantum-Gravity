@@ -1,0 +1,160 @@
+{
+  "analysis_status": "POST_HOC_EXPLORATORY",
+  "bandwidth_fractions_Q_range": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "datasets": [
+    {
+      "bandwidth_results": [
+        {
+          "bandwidth_absolute": 0.1801051843754424,
+          "bandwidth_fraction_Q_range": 0.05,
+          "min_effective_weight_sum_dW": 1.0177504516340618e-11,
+          "min_effective_weight_sum_dmod": 1.0177504516340618e-11,
+          "pearson_residuals": -0.9891787785970099,
+          "residual_std_dW": 0.0003154492114428367,
+          "residual_std_dmod": 0.001344829596612448,
+          "spearman_residuals": -0.8709677419354839
+        },
+        {
+          "bandwidth_absolute": 0.3602103687508848,
+          "bandwidth_fraction_Q_range": 0.1,
+          "min_effective_weight_sum_dW": 0.001786715636551617,
+          "min_effective_weight_sum_dmod": 0.001786715636551617,
+          "pearson_residuals": -0.9908017559284351,
+          "residual_std_dW": 0.000326460415377695,
+          "residual_std_dmod": 0.0014045664825473936,
+          "spearman_residuals": -0.9003337041156841
+        },
+        {
+          "bandwidth_absolute": 0.7204207375017696,
+          "bandwidth_fraction_Q_range": 0.2,
+          "min_effective_weight_sum_dW": 0.24015229767275617,
+          "min_effective_weight_sum_dmod": 0.24015229767275617,
+          "pearson_residuals": -0.979713778522406,
+          "residual_std_dW": 0.00038490465976097,
+          "residual_std_dmod": 0.0015158813500038772,
+          "spearman_residuals": -0.9083426028921023
+        },
+        {
+          "bandwidth_absolute": 1.0806311062526543,
+          "bandwidth_fraction_Q_range": 0.3,
+          "min_effective_weight_sum_dW": 1.0194494527962192,
+          "min_effective_weight_sum_dmod": 1.0194494527962192,
+          "pearson_residuals": -0.9761786325732399,
+          "residual_std_dW": 0.00043218913633605717,
+          "residual_std_dmod": 0.0016615261937721927,
+          "spearman_residuals": -0.8816462736373749
+        },
+        {
+          "bandwidth_absolute": 1.4408414750035392,
+          "bandwidth_fraction_Q_range": 0.4,
+          "min_effective_weight_sum_dW": 2.994551040917811,
+          "min_effective_weight_sum_dmod": 2.994551040917811,
+          "pearson_residuals": -0.9704082663447454,
+          "residual_std_dW": 0.0004346069032141947,
+          "residual_std_dmod": 0.0017195001181769057,
+          "spearman_residuals": -0.8242491657397107
+        }
+      ],
+      "label": "N8_A4",
+      "n_transitions": 30,
+      "raw": {
+        "Q_max": 5.020118146011094,
+        "Q_min": 1.4180144585022463,
+        "Q_range": 3.6021036875088477,
+        "pearson_dW_dmod": 0.9912428182801676,
+        "spearman_dW_dmod": 1.0
+      },
+      "sign_robustness": {
+        "pearson_max": -0.9704082663447454,
+        "pearson_min": -0.9908017559284351,
+        "pearson_negative_count": 5,
+        "pearson_positive_count": 0,
+        "spearman_max": -0.8242491657397107,
+        "spearman_min": -0.9083426028921023,
+        "spearman_negative_count": 5,
+        "spearman_positive_count": 0
+      }
+    },
+    {
+      "bandwidth_results": [
+        {
+          "bandwidth_absolute": 0.2377567867167577,
+          "bandwidth_fraction_Q_range": 0.05,
+          "min_effective_weight_sum_dW": 3.213407550415734e-11,
+          "min_effective_weight_sum_dmod": 3.213407550415734e-11,
+          "pearson_residuals": -0.9924560965556253,
+          "residual_std_dW": 0.00028092828227682003,
+          "residual_std_dmod": 0.0015152187870322326,
+          "spearman_residuals": -0.885650723025584
+        },
+        {
+          "bandwidth_absolute": 0.4755135734335154,
+          "bandwidth_fraction_Q_range": 0.1,
+          "min_effective_weight_sum_dW": 0.0023818025666399894,
+          "min_effective_weight_sum_dmod": 0.0023818025666399894,
+          "pearson_residuals": -0.9912861504913915,
+          "residual_std_dW": 0.0002946822019279653,
+          "residual_std_dmod": 0.0015922925081537996,
+          "spearman_residuals": -0.9092324805339266
+        },
+        {
+          "bandwidth_absolute": 0.9510271468670308,
+          "bandwidth_fraction_Q_range": 0.2,
+          "min_effective_weight_sum_dW": 0.2590950353477104,
+          "min_effective_weight_sum_dmod": 0.2590950353477104,
+          "pearson_residuals": -0.9775563687088487,
+          "residual_std_dW": 0.0003442168443545133,
+          "residual_std_dmod": 0.001721090267236294,
+          "spearman_residuals": -0.9159065628476083
+        },
+        {
+          "bandwidth_absolute": 1.426540720300546,
+          "bandwidth_fraction_Q_range": 0.3,
+          "min_effective_weight_sum_dW": 1.0520283833275312,
+          "min_effective_weight_sum_dmod": 1.0520283833275312,
+          "pearson_residuals": -0.9696402959634137,
+          "residual_std_dW": 0.00037818975348157517,
+          "residual_std_dmod": 0.001893587239398326,
+          "spearman_residuals": -0.8727474972191324
+        },
+        {
+          "bandwidth_absolute": 1.9020542937340617,
+          "bandwidth_fraction_Q_range": 0.4,
+          "min_effective_weight_sum_dW": 3.030544828907936,
+          "min_effective_weight_sum_dmod": 3.030544828907936,
+          "pearson_residuals": -0.9594591127203473,
+          "residual_std_dW": 0.0003761142577817181,
+          "residual_std_dmod": 0.001959006668387229,
+          "spearman_residuals": -0.8282536151279198
+        }
+      ],
+      "label": "N10_A4",
+      "n_transitions": 30,
+      "raw": {
+        "Q_max": 6.299912982884356,
+        "Q_min": 1.5447772485492024,
+        "Q_range": 4.755135734335154,
+        "pearson_dW_dmod": 0.9912699624447243,
+        "spearman_dW_dmod": 1.0
+      },
+      "sign_robustness": {
+        "pearson_max": -0.9594591127203473,
+        "pearson_min": -0.9924560965556253,
+        "pearson_negative_count": 5,
+        "pearson_positive_count": 0,
+        "spearman_max": -0.8282536151279198,
+        "spearman_min": -0.9159065628476083,
+        "spearman_negative_count": 5,
+        "spearman_positive_count": 0
+      }
+    }
+  ],
+  "interpretation_boundary": "This is an exploratory robustness analysis. It does not modify or replace the preregistered Paper 29 endpoints.",
+  "method": "Leave-one-out local-linear Gaussian-kernel regression of d_W and d_mod against Q, evaluated at five fixed bandwidth fractions of the observed Q range."
+}
