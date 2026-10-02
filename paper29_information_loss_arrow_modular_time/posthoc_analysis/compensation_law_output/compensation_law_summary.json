@@ -1,0 +1,309 @@
+{
+  "analysis_status": "POST_HOC_EXPLORATORY",
+  "bandwidth_fractions_Q_range": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "bandwidth_results": [
+    {
+      "N10_A4": {
+        "compensation_coefficient_c_minus_slope": 5.352925346704545,
+        "intercept": -4.958643292516841e-05,
+        "n": 30,
+        "pearson": -0.9924560965556253,
+        "r2": 0.9849691035904289,
+        "rmse": 0.0001857666662341807,
+        "slope": -5.352925346704545,
+        "slope_through_origin": -5.311403021647911,
+        "std_resid_dW": 0.00028092828227682003,
+        "std_resid_dmod": 0.0015152187870322326
+      },
+      "N8_A4": {
+        "compensation_coefficient_c_minus_slope": 4.217087409138364,
+        "intercept": -4.088792428254212e-05,
+        "n": 30,
+        "pearson": -0.9891787785970099,
+        "r2": 0.9784746560266732,
+        "rmse": 0.00019730691601960312,
+        "slope": -4.217087409138364,
+        "slope_through_origin": -4.186629045784336,
+        "std_resid_dW": 0.0003154492114428367,
+        "std_resid_dmod": 0.001344829596612448
+      },
+      "bandwidth_fraction_Q_range": 0.05,
+      "cross_size_transfer": {
+        "fit_N10_predict_N8": {
+          "normalized_rmse": 0.3100218693460737,
+          "pearson_observed_predicted": 0.9891787785970103,
+          "r2_external": 0.903886440527166,
+          "rmse": 0.00041692658549371734
+        },
+        "fit_N8_predict_N10": {
+          "normalized_rmse": 0.2481486817732352,
+          "pearson_observed_predicted": 0.992456096555625,
+          "r2_external": 0.9384222317342057,
+          "rmse": 0.00037599954460008895
+        }
+      },
+      "pooled_fit": {
+        "compensation_coefficient_c_minus_slope": 4.717678049552674,
+        "intercept": -4.264497211598026e-05,
+        "n": 60,
+        "pearson": -0.98365976122043,
+        "r2": 0.9675865258442339,
+        "rmse": 0.00025793368938282623,
+        "slope": -4.717678049552674
+      },
+      "slope_comparison": {
+        "absolute_difference": 1.1358379375661807,
+        "ratio_N10_over_N8": 1.2693418056986054,
+        "relative_difference_to_mean_abs_slope": 0.23737438319979293,
+        "same_negative_sign": true
+      }
+    },
+    {
+      "N10_A4": {
+        "compensation_coefficient_c_minus_slope": 5.356338117935961,
+        "intercept": -7.29699694723512e-05,
+        "n": 30,
+        "pearson": -0.9912861504913915,
+        "r2": 0.9826482321560415,
+        "rmse": 0.00020974649680129397,
+        "slope": -5.356338117935961,
+        "slope_through_origin": -5.30972530077525,
+        "std_resid_dW": 0.0002946822019279653,
+        "std_resid_dmod": 0.0015922925081537996
+      },
+      "N8_A4": {
+        "compensation_coefficient_c_minus_slope": 4.262835160630831,
+        "intercept": -5.9533361745311014e-05,
+        "n": 30,
+        "pearson": -0.9908017559284351,
+        "r2": 0.9816881195508704,
+        "rmse": 0.00019006789840617745,
+        "slope": -4.262835160630831,
+        "slope_through_origin": -4.2282847560417025,
+        "std_resid_dW": 0.000326460415377695,
+        "std_resid_dmod": 0.0014045664825473936
+      },
+      "bandwidth_fraction_Q_range": 0.1,
+      "cross_size_transfer": {
+        "fit_N10_predict_N8": {
+          "normalized_rmse": 0.29076775697782836,
+          "pearson_observed_predicted": 0.9908017559284348,
+          "r2_external": 0.9154541115020826,
+          "rmse": 0.0004084026456565438
+        },
+        "fit_N8_predict_N10": {
+          "normalized_rmse": 0.24346296897178266,
+          "pearson_observed_predicted": 0.9912861504913909,
+          "r2_external": 0.9407257827394447,
+          "rmse": 0.0003876642615066505
+        }
+      },
+      "pooled_fit": {
+        "compensation_coefficient_c_minus_slope": 4.752879363723405,
+        "intercept": -6.461713813141339e-05,
+        "n": 60,
+        "pearson": -0.9844941535978226,
+        "r2": 0.9692287384682936,
+        "rmse": 0.00026337232568711367,
+        "slope": -4.752879363723405
+      },
+      "slope_comparison": {
+        "absolute_difference": 1.0935029573051294,
+        "ratio_N10_over_N8": 1.256520113046855,
+        "relative_difference_to_mean_abs_slope": 0.2273590308933609,
+        "same_negative_sign": true
+      }
+    },
+    {
+      "N10_A4": {
+        "compensation_coefficient_c_minus_slope": 4.887799012319291,
+        "intercept": -7.260772392441535e-05,
+        "n": 30,
+        "pearson": -0.9775563687088487,
+        "r2": 0.9556164540032297,
+        "rmse": 0.000362589018835847,
+        "slope": -4.887799012319291,
+        "slope_through_origin": -4.856653780547927,
+        "std_resid_dW": 0.0003442168443545133,
+        "std_resid_dmod": 0.001721090267236294
+      },
+      "N8_A4": {
+        "compensation_coefficient_c_minus_slope": 3.8584356087718623,
+        "intercept": -5.207883367433757e-05,
+        "n": 30,
+        "pearson": -0.979713778522406,
+        "r2": 0.9598390878266496,
+        "rmse": 0.0003037854673516927,
+        "slope": -3.8584356087718623,
+        "slope_through_origin": -3.839288328295379,
+        "std_resid_dW": 0.00038490465976097,
+        "std_resid_dmod": 0.0015158813500038772
+      },
+      "bandwidth_fraction_Q_range": 0.2,
+      "cross_size_transfer": {
+        "fit_N10_predict_N8": {
+          "normalized_rmse": 0.33024528523594143,
+          "pearson_observed_predicted": 0.979713778522406,
+          "r2_external": 0.8909380515794316,
+          "rmse": 0.0005006126688158744
+        },
+        "fit_N8_predict_N10": {
+          "normalized_rmse": 0.2951847346628645,
+          "pearson_observed_predicted": 0.9775563687088485,
+          "r2_external": 0.9128659724220143,
+          "rmse": 0.000508039573864984
+        }
+      },
+      "pooled_fit": {
+        "compensation_coefficient_c_minus_slope": 4.315617862995828,
+        "intercept": -6.018232602178873e-05,
+        "n": 60,
+        "pearson": -0.9716415758770994,
+        "r2": 0.9440873519729314,
+        "rmse": 0.00038347966529924445,
+        "slope": -4.315617862995828
+      },
+      "slope_comparison": {
+        "absolute_difference": 1.0293634035474284,
+        "ratio_N10_over_N8": 1.2667825792420244,
+        "relative_difference_to_mean_abs_slope": 0.23538435638695643,
+        "same_negative_sign": true
+      }
+    },
+    {
+      "N10_A4": {
+        "compensation_coefficient_c_minus_slope": 4.854966255272138,
+        "intercept": -5.8501008175733014e-05,
+        "n": 30,
+        "pearson": -0.9696402959634137,
+        "r2": 0.940202303556016,
+        "rmse": 0.000463049634130427,
+        "slope": -4.854966255272138,
+        "slope_through_origin": -4.839690440748119,
+        "std_resid_dW": 0.00037818975348157517,
+        "std_resid_dmod": 0.001893587239398326
+      },
+      "N8_A4": {
+        "compensation_coefficient_c_minus_slope": 3.7528624193829407,
+        "intercept": -4.1038610203562e-05,
+        "n": 30,
+        "pearson": -0.9761786325732399,
+        "r2": 0.9529247226925599,
+        "rmse": 0.000360498644245524,
+        "slope": -3.7528624193829407,
+        "slope_through_origin": -3.7439887568243373,
+        "std_resid_dW": 0.00043218913633605717,
+        "std_resid_dmod": 0.0016615261937721927
+      },
+      "bandwidth_fraction_Q_range": 0.3,
+      "cross_size_transfer": {
+        "fit_N10_predict_N8": {
+          "normalized_rmse": 0.35990337660751653,
+          "pearson_observed_predicted": 0.9761786325732399,
+          "r2_external": 0.8704695595065082,
+          "rmse": 0.000597988887460447
+        },
+        "fit_N8_predict_N10": {
+          "normalized_rmse": 0.3292564284090929,
+          "pearson_observed_predicted": 0.9696402959634136,
+          "r2_external": 0.8915902043512879,
+          "rmse": 0.0006234757713253268
+        }
+      },
+      "pooled_fit": {
+        "compensation_coefficient_c_minus_slope": 4.230683246055685,
+        "intercept": -4.773118120095903e-05,
+        "n": 60,
+        "pearson": -0.964459912016537,
+        "r2": 0.9301829218869463,
+        "rmse": 0.00047068498884819405,
+        "slope": -4.230683246055685
+      },
+      "slope_comparison": {
+        "absolute_difference": 1.102103835889197,
+        "ratio_N10_over_N8": 1.2936701943020892,
+        "relative_difference_to_mean_abs_slope": 0.25607011420527814,
+        "same_negative_sign": true
+      }
+    },
+    {
+      "N10_A4": {
+        "compensation_coefficient_c_minus_slope": 4.997382473479359,
+        "intercept": -3.816649991746765e-05,
+        "n": 30,
+        "pearson": -0.9594591127203473,
+        "r2": 0.9205617889821167,
+        "rmse": 0.000552141819247946,
+        "slope": -4.997382473479359,
+        "slope_through_origin": -4.990730287140544,
+        "std_resid_dW": 0.0003761142577817181,
+        "std_resid_dmod": 0.001959006668387229
+      },
+      "N8_A4": {
+        "compensation_coefficient_c_minus_slope": 3.8393709725251663,
+        "intercept": -2.6901412155092047e-05,
+        "n": 30,
+        "pearson": -0.9704082663447454,
+        "r2": 0.9416922033902134,
+        "rmse": 0.0004152078206802799,
+        "slope": -3.8393709725251663,
+        "slope_through_origin": -3.8355091077253594,
+        "std_resid_dW": 0.0004346069032141947,
+        "std_resid_dmod": 0.0017195001181769057
+      },
+      "bandwidth_fraction_Q_range": 0.4,
+      "cross_size_transfer": {
+        "fit_N10_predict_N8": {
+          "normalized_rmse": 0.3796232275881222,
+          "pearson_observed_predicted": 0.970408266344745,
+          "r2_external": 0.8558862050755768,
+          "rmse": 0.0006527621847004745
+        },
+        "fit_N8_predict_N10": {
+          "normalized_rmse": 0.3590926449081241,
+          "pearson_observed_predicted": 0.9594591127203471,
+          "r2_external": 0.8710524723728879,
+          "rmse": 0.0007034648859438224
+        }
+      },
+      "pooled_fit": {
+        "compensation_coefficient_c_minus_slope": 4.335190785082605,
+        "intercept": -3.108362482980537e-05,
+        "n": 60,
+        "pearson": -0.9559120878555658,
+        "r2": 0.9137679197083877,
+        "rmse": 0.0005412471392748849,
+        "slope": -4.335190785082605
+      },
+      "slope_comparison": {
+        "absolute_difference": 1.1580115009541925,
+        "ratio_N10_over_N8": 1.301614902347549,
+        "relative_difference_to_mean_abs_slope": 0.2620898066309135,
+        "same_negative_sign": true
+      }
+    }
+  ],
+  "interpretation_boundary": "A stable negative slope and cross-size transfer would support an exploratory quantitative compensation signature, not establish conservation of information or a fundamental transfer law.",
+  "question": "Do the nonparametric residuals obey a stable compensation law epsilon_mod = a + b epsilon_W, and does that law transfer between N8 and N10?",
+  "robustness_summary": {
+    "max_relative_slope_difference": 0.2620898066309135,
+    "mean_cross_R2_N10_to_N8": 0.887326873638153,
+    "mean_cross_R2_N8_to_N10": 0.9109313327239681,
+    "mean_relative_slope_difference": 0.24365553826326042,
+    "mean_slope_N10": -5.089882241142258,
+    "mean_slope_N8": -3.9861183140898326,
+    "min_cross_R2_N10_to_N8": 0.8558862050755768,
+    "min_cross_R2_N8_to_N10": 0.8710524723728879,
+    "negative_slope_count_N10": 5,
+    "negative_slope_count_N8": 5,
+    "std_slope_N10": 0.2212554037614855,
+    "std_slope_N8": 0.21079132047418717
+  },
+  "source": "Frozen nonparametric residual CSV files from posthoc_analysis/nonparametric_coupling_output."
+}
