@@ -1,0 +1,286 @@
+{
+  "analysis_status": "POST_HOC_EXPLORATORY",
+  "bandwidth_fractions_Q_range": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "bandwidth_results": [
+    {
+      "N10_A4": {
+        "bandwidth_fraction_Q_range": 0.05,
+        "distance_of_slope_from_minus_one": 0.007543903444374167,
+        "label": "N10_A4",
+        "mean_epsilon_W": -7.021433028680617e-05,
+        "mean_epsilon_mod": 0.00032626563536896096,
+        "n": 30,
+        "normalized_intercept": -1.6215845185301648e-16,
+        "normalized_r2": 0.9849691035904289,
+        "normalized_slope": -0.9924560965556258,
+        "pearson_standardized": -0.9924560965556254,
+        "scale_ratio_std_mod_over_std_W": 5.393614251836603,
+        "std_epsilon_W": 0.00028092828227682003,
+        "std_epsilon_mod": 0.0015152187870322326
+      },
+      "N8_A4": {
+        "bandwidth_fraction_Q_range": 0.05,
+        "distance_of_slope_from_minus_one": 0.010821221402989245,
+        "label": "N8_A4",
+        "mean_epsilon_W": -7.87450810659342e-05,
+        "mean_epsilon_mod": 0.00029118696561218865,
+        "n": 30,
+        "normalized_intercept": 0.0,
+        "normalized_r2": 0.9784746560266732,
+        "normalized_slope": -0.9891787785970108,
+        "pearson_standardized": -0.9891787785970104,
+        "scale_ratio_std_mod_over_std_W": 4.263220663831483,
+        "std_epsilon_W": 0.0003154492114428367,
+        "std_epsilon_mod": 0.001344829596612448
+      },
+      "bandwidth_fraction_Q_range": 0.05,
+      "cross_size_transfer_standardized": {
+        "fit_N10_predict_N8": {
+          "pearson_observed_predicted": 0.9891787785970102,
+          "r2_external": 0.9784639152136713,
+          "rmse_standardized": 0.1467517794997006
+        },
+        "fit_N8_predict_N10": {
+          "pearson_observed_predicted": 0.9924560965556255,
+          "r2_external": 0.9849583627774271,
+          "rmse_standardized": 0.12264435259143794
+        }
+      },
+      "slope_comparison": {
+        "absolute_difference": 0.003277317958615078,
+        "both_negative": true,
+        "both_within_0p2_of_minus_one": true,
+        "relative_difference_to_mean_abs_slope": 0.003307691038050227
+      }
+    },
+    {
+      "N10_A4": {
+        "bandwidth_fraction_Q_range": 0.1,
+        "distance_of_slope_from_minus_one": 0.008713849508607985,
+        "label": "N10_A4",
+        "mean_epsilon_W": -5.759001601639959e-05,
+        "mean_epsilon_mod": 0.00023550162852883227,
+        "n": 30,
+        "normalized_intercept": 1.6215845185301648e-16,
+        "normalized_r2": 0.9826482321560415,
+        "normalized_slope": -0.991286150491392,
+        "pearson_standardized": -0.991286150491391,
+        "scale_ratio_std_mod_over_std_W": 5.403422730440414,
+        "std_epsilon_W": 0.0002946822019279653,
+        "std_epsilon_mod": 0.0015922925081537996
+      },
+      "N8_A4": {
+        "bandwidth_fraction_Q_range": 0.1,
+        "distance_of_slope_from_minus_one": 0.009198244071564665,
+        "label": "N8_A4",
+        "mean_epsilon_W": -6.42475600503223e-05,
+        "mean_epsilon_mod": 0.0002143433962219434,
+        "n": 30,
+        "normalized_intercept": 1.6215845185301648e-16,
+        "normalized_r2": 0.9816881195508704,
+        "normalized_slope": -0.9908017559284353,
+        "pearson_standardized": -0.9908017559284351,
+        "scale_ratio_std_mod_over_std_W": 4.302409775844937,
+        "std_epsilon_W": 0.000326460415377695,
+        "std_epsilon_mod": 0.0014045664825473936
+      },
+      "bandwidth_fraction_Q_range": 0.1,
+      "cross_size_transfer_standardized": {
+        "fit_N10_predict_N8": {
+          "pearson_observed_predicted": 0.9908017559284353,
+          "r2_external": 0.9816878849127778,
+          "rmse_standardized": 0.13532226382684487
+        },
+        "fit_N8_predict_N10": {
+          "pearson_observed_predicted": 0.991286150491391,
+          "r2_external": 0.9826479975179488,
+          "rmse_standardized": 0.13172699982179487
+        }
+      },
+      "slope_comparison": {
+        "absolute_difference": 0.0004843945629566804,
+        "both_negative": true,
+        "both_within_0p2_of_minus_one": true,
+        "relative_difference_to_mean_abs_slope": 0.00048877202811012
+      }
+    },
+    {
+      "N10_A4": {
+        "bandwidth_fraction_Q_range": 0.2,
+        "distance_of_slope_from_minus_one": 0.022443631291151678,
+        "label": "N10_A4",
+        "mean_epsilon_W": -5.198364110063669e-05,
+        "mean_epsilon_mod": 0.00018147786570403725,
+        "n": 30,
+        "normalized_intercept": 0.0,
+        "normalized_r2": 0.9556164540032297,
+        "normalized_slope": -0.9775563687088483,
+        "pearson_standardized": -0.9775563687088483,
+        "scale_ratio_std_mod_over_std_W": 5.000017562951456,
+        "std_epsilon_W": 0.0003442168443545133,
+        "std_epsilon_mod": 0.001721090267236294
+      },
+      "N8_A4": {
+        "bandwidth_fraction_Q_range": 0.2,
+        "distance_of_slope_from_minus_one": 0.020286221477593958,
+        "label": "N8_A4",
+        "mean_epsilon_W": -5.5606169576632165e-05,
+        "mean_epsilon_mod": 0.00016247399108754572,
+        "n": 30,
+        "normalized_intercept": 1.6215845185301648e-16,
+        "normalized_r2": 0.9598390878266496,
+        "normalized_slope": -0.979713778522406,
+        "pearson_standardized": -0.9797137785224058,
+        "scale_ratio_std_mod_over_std_W": 3.9383294318786786,
+        "std_epsilon_W": 0.00038490465976097,
+        "std_epsilon_mod": 0.0015158813500038772
+      },
+      "bandwidth_fraction_Q_range": 0.2,
+      "cross_size_transfer_standardized": {
+        "fit_N10_predict_N8": {
+          "pearson_observed_predicted": 0.9797137785224057,
+          "r2_external": 0.959834433409546,
+          "rmse_standardized": 0.200413489043163
+        },
+        "fit_N8_predict_N10": {
+          "pearson_observed_predicted": 0.977556368708848,
+          "r2_external": 0.9556117995861261,
+          "rmse_standardized": 0.2106850740177717
+        }
+      },
+      "slope_comparison": {
+        "absolute_difference": 0.00215740981355772,
+        "both_negative": true,
+        "both_within_0p2_of_minus_one": true,
+        "relative_difference_to_mean_abs_slope": 0.002204508985752
+      }
+    },
+    {
+      "N10_A4": {
+        "bandwidth_fraction_Q_range": 0.3,
+        "distance_of_slope_from_minus_one": 0.030359704036586388,
+        "label": "N10_A4",
+        "mean_epsilon_W": -3.771891505018182e-05,
+        "mean_epsilon_mod": 0.00012462305157837607,
+        "n": 30,
+        "normalized_intercept": 3.2431690370603296e-16,
+        "normalized_r2": 0.940202303556016,
+        "normalized_slope": -0.9696402959634136,
+        "pearson_standardized": -0.9696402959634132,
+        "scale_ratio_std_mod_over_std_W": 5.00697658243292,
+        "std_epsilon_W": 0.00037818975348157517,
+        "std_epsilon_mod": 0.001893587239398326
+      },
+      "N8_A4": {
+        "bandwidth_fraction_Q_range": 0.3,
+        "distance_of_slope_from_minus_one": 0.02382136742676022,
+        "label": "N8_A4",
+        "mean_epsilon_W": -4.0747537000655235e-05,
+        "mean_epsilon_mod": 0.00011188129008861286,
+        "n": 30,
+        "normalized_intercept": 0.0,
+        "normalized_r2": 0.9529247226925599,
+        "normalized_slope": -0.9761786325732398,
+        "pearson_standardized": -0.9761786325732399,
+        "scale_ratio_std_mod_over_std_W": 3.844442291766076,
+        "std_epsilon_W": 0.00043218913633605717,
+        "std_epsilon_mod": 0.0016615261937721927
+      },
+      "bandwidth_fraction_Q_range": 0.3,
+      "cross_size_transfer_standardized": {
+        "fit_N10_predict_N8": {
+          "pearson_observed_predicted": 0.9761786325732398,
+          "r2_external": 0.9528819728469365,
+          "rmse_standardized": 0.2170668725371595
+        },
+        "fit_N8_predict_N10": {
+          "pearson_observed_predicted": 0.9696402959634134,
+          "r2_external": 0.9401595537103926,
+          "rmse_standardized": 0.24462306982295723
+        }
+      },
+      "slope_comparison": {
+        "absolute_difference": 0.0065383366098261675,
+        "both_negative": true,
+        "both_within_0p2_of_minus_one": true,
+        "relative_difference_to_mean_abs_slope": 0.006720395730494102
+      }
+    },
+    {
+      "N10_A4": {
+        "bandwidth_fraction_Q_range": 0.4,
+        "distance_of_slope_from_minus_one": 0.04054088727965188,
+        "label": "N10_A4",
+        "mean_epsilon_W": -2.476282226657598e-05,
+        "mean_epsilon_mod": 8.558279407140327e-05,
+        "n": 30,
+        "normalized_intercept": 3.2431690370603296e-16,
+        "normalized_r2": 0.9205617889821167,
+        "normalized_slope": -0.9594591127203481,
+        "pearson_standardized": -0.9594591127203477,
+        "scale_ratio_std_mod_over_std_W": 5.2085413617160965,
+        "std_epsilon_W": 0.0003761142577817181,
+        "std_epsilon_mod": 0.001959006668387229
+      },
+      "N8_A4": {
+        "bandwidth_fraction_Q_range": 0.4,
+        "distance_of_slope_from_minus_one": 0.02959173365525547,
+        "label": "N8_A4",
+        "mean_epsilon_W": -2.722172920764688e-05,
+        "mean_epsilon_mod": 7.761290478668809e-05,
+        "n": 30,
+        "normalized_intercept": 0.0,
+        "normalized_r2": 0.9416922033902134,
+        "normalized_slope": -0.9704082663447445,
+        "pearson_standardized": -0.9704082663447445,
+        "scale_ratio_std_mod_over_std_W": 3.9564491623582314,
+        "std_epsilon_W": 0.0004346069032141947,
+        "std_epsilon_mod": 0.0017195001181769057
+      },
+      "bandwidth_fraction_Q_range": 0.4,
+      "cross_size_transfer_standardized": {
+        "fit_N10_predict_N8": {
+          "pearson_observed_predicted": 0.9704082663447451,
+          "r2_external": 0.9415723194251228,
+          "rmse_standardized": 0.24171818420399663
+        },
+        "fit_N8_predict_N10": {
+          "pearson_observed_predicted": 0.9594591127203472,
+          "r2_external": 0.920441905017026,
+          "rmse_standardized": 0.2820604456193281
+        }
+      },
+      "slope_comparison": {
+        "absolute_difference": 0.010949153624396413,
+        "both_negative": true,
+        "both_within_0p2_of_minus_one": true,
+        "relative_difference_to_mean_abs_slope": 0.011347052904433915
+      }
+    }
+  ],
+  "interpretation_boundary": "A slope near -1 after standardization would support an exploratory universal complementarity pattern in standardized residual coordinates. It would not establish conservation of information or a fundamental transfer law.",
+  "question": "After within-system standardization, does the residual compensation relation approach a universal z(epsilon_mod) \u2248 -z(epsilon_W) law?",
+  "robustness_summary": {
+    "max_distance_from_minus_one_N10": 0.04054088727965188,
+    "max_distance_from_minus_one_N8": 0.02959173365525547,
+    "mean_cross_R2_standardized_N10_to_N8": 0.9628881051616108,
+    "mean_cross_R2_standardized_N8_to_N10": 0.9567639237217842,
+    "mean_normalized_slope_N10": -0.9780796048879257,
+    "mean_normalized_slope_N8": -0.9812562423931672,
+    "mean_scale_ratio_std_mod_over_std_W_N10": 5.202514497875498,
+    "mean_scale_ratio_std_mod_over_std_W_N8": 4.0609702651358806,
+    "min_cross_R2_standardized_N10_to_N8": 0.9415723194251228,
+    "min_cross_R2_standardized_N8_to_N10": 0.920441905017026,
+    "negative_slope_count_N10": 5,
+    "negative_slope_count_N8": 5,
+    "std_normalized_slope_N10": 0.012643692492568378,
+    "std_normalized_slope_N8": 0.007742393805230755
+  },
+  "source": "Frozen nonparametric residual CSV files from posthoc_analysis/nonparametric_coupling_output."
+}
