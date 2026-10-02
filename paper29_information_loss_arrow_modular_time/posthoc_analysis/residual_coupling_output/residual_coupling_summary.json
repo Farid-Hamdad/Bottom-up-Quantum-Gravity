@@ -1,0 +1,119 @@
+{
+  "analysis_status": "POST_HOC_EXPLORATORY",
+  "datasets": [
+    {
+      "control_Q_linear": {
+        "beta_dW_on_Q": [
+          -0.006135248348194727,
+          0.004273783636094959
+        ],
+        "beta_dmod_on_Q": [
+          -0.031109309963616688,
+          0.022082456338303195
+        ],
+        "pearson_residuals": -0.8977160063817846,
+        "residual_std_dW": 0.0002610334121124431,
+        "residual_std_dmod": 0.0010526085799908572,
+        "spearman_residuals": -0.6734149054505005
+      },
+      "control_Q_quadratic": {
+        "beta_dW_on_Q_Q2": [
+          -0.0072943460687985165,
+          0.005279851896783561,
+          -0.00017403558297867435
+        ],
+        "beta_dmod_on_Q_Q2": [
+          -0.024094300661701786,
+          0.015993601117868853,
+          0.0010532858548144217
+        ],
+        "pearson_residuals": -0.9647423594063671,
+        "residual_std_dW": 0.00021436261738223199,
+        "residual_std_dmod": 0.0005434237419581345,
+        "spearman_residuals": -0.9866518353726361
+      },
+      "control_Q_rank_linear": {
+        "pearson_rank_residuals": 1.0,
+        "spearman_rank_residuals": 0.9999999999999999
+      },
+      "control_s_linear": {
+        "beta_dW_on_s": [
+          0.005911068974601345,
+          -0.00281765407827591
+        ],
+        "beta_dmod_on_s": [
+          0.030950769796076773,
+          -0.01443268092991161
+        ],
+        "pearson_residuals": 0.9824192771956329,
+        "residual_std_dW": 0.0024033379362425555,
+        "residual_std_dmod": 0.012499247662405021,
+        "spearman_residuals": 0.9924360400444937
+      },
+      "label": "N8_A4",
+      "n_transitions": 30,
+      "raw": {
+        "pearson_dW_dmod": 0.9912428182801676,
+        "spearman_dW_dmod": 1.0
+      }
+    },
+    {
+      "control_Q_linear": {
+        "beta_dW_on_Q": [
+          -0.004941569831873316,
+          0.003143017701867232
+        ],
+        "beta_dmod_on_Q": [
+          -0.025294062064816655,
+          0.016507791312080758
+        ],
+        "pearson_residuals": -0.8562875875115391,
+        "residual_std_dW": 0.00022928349158756852,
+        "residual_std_dmod": 0.0012041276360888792,
+        "spearman_residuals": -0.6395995550611792
+      },
+      "control_Q_quadratic": {
+        "beta_dW_on_Q_Q2": [
+          -0.005613677093622732,
+          0.003652057174779324,
+          -7.300870451535475e-05
+        ],
+        "beta_dmod_on_Q_Q2": [
+          -0.018989735106239556,
+          0.011733030712550038,
+          0.0006848173949034805
+        ],
+        "pearson_residuals": -0.973217864812391,
+        "residual_std_dW": 0.00020175857833981174,
+        "residual_std_dmod": 0.0006372241399819862,
+        "spearman_residuals": -0.9911012235817575
+      },
+      "control_Q_rank_linear": {
+        "pearson_rank_residuals": 1.0,
+        "spearman_rank_residuals": 0.9999999999999999
+      },
+      "control_s_linear": {
+        "beta_dW_on_s": [
+          0.005752847436047543,
+          -0.002744164567202796
+        ],
+        "beta_dmod_on_s": [
+          0.030783554928506204,
+          -0.014349678059414096
+        ],
+        "pearson_residuals": 0.9824706521091822,
+        "residual_std_dW": 0.002352792593446108,
+        "residual_std_dmod": 0.012412376486657556,
+        "spearman_residuals": 0.9924360400444937
+      },
+      "label": "N10_A4",
+      "n_transitions": 30,
+      "raw": {
+        "pearson_dW_dmod": 0.9912699624447243,
+        "spearman_dW_dmod": 1.0
+      }
+    }
+  ],
+  "interpretation_boundary": "Residual associations are exploratory and do not retroactively modify preregistered endpoints.",
+  "question": "Does d_W remain associated with d_mod after removing shared dependence on Q(s), with s used as an explicit common-parameter control?"
+}

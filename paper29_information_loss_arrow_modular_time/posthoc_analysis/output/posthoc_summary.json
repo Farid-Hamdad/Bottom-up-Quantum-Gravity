@@ -1,0 +1,57 @@
+{
+  "analysis_status": "POST_HOC_EXPLORATORY",
+  "datasets": [
+    {
+      "chi_max": -0.015532625160483104,
+      "chi_mean": -0.05310885242761835,
+      "chi_min": -0.07972441856918346,
+      "fraction_chi_positive": 0.0,
+      "label": "N8_A4",
+      "mean_pair_dot_contributions": {
+        "01": 1.3508280094410402e-05,
+        "02": -7.00958109961278e-06,
+        "03": -1.195324297981898e-06,
+        "12": 2.616819324791455e-07,
+        "13": 1.4336791480388966e-07,
+        "23": -9.095042423066721e-06
+      },
+      "n_transitions": 30,
+      "pearson_Qfrom_Sigma": 0.9850855558418797,
+      "pearson_Qfrom_dW": 0.9970897769235625,
+      "pearson_Qfrom_dmod": 0.9982244235529291,
+      "pearson_dW_dmod": 0.9912428182801676,
+      "spearman_Qfrom_Sigma": 1.0,
+      "spearman_Qfrom_dW": 1.0,
+      "spearman_Qfrom_dmod": 1.0,
+      "spearman_dW_dmod": 1.0,
+      "sum_mean_pair_dot_contributions": -3.386617878967962e-06
+    },
+    {
+      "chi_max": -0.02068852229033356,
+      "chi_mean": -0.06376788266501837,
+      "chi_min": -0.09527932743074823,
+      "fraction_chi_positive": 0.0,
+      "label": "N10_A4",
+      "mean_pair_dot_contributions": {
+        "01": 1.3480004622671186e-05,
+        "02": -6.920690387154958e-06,
+        "03": -1.1663704881114834e-06,
+        "12": 2.3223125830114448e-07,
+        "13": 1.8450447789658364e-07,
+        "23": -8.58154493180152e-06
+      },
+      "n_transitions": 30,
+      "pearson_Qfrom_Sigma": 0.9865992016703147,
+      "pearson_Qfrom_dW": 0.9976455220356224,
+      "pearson_Qfrom_dmod": 0.997645980162336,
+      "pearson_dW_dmod": 0.9912699624447243,
+      "spearman_Qfrom_Sigma": 1.0,
+      "spearman_Qfrom_dW": 1.0,
+      "spearman_Qfrom_dmod": 1.0,
+      "spearman_dW_dmod": 1.0,
+      "sum_mean_pair_dot_contributions": -2.771865448199048e-06
+    }
+  ],
+  "interpretation_boundary": "These diagnostics are exploratory and must not be reclassified as preregistered tests.",
+  "source_results_commit_note": "Reads frozen Paper 29 result files only."
+}
