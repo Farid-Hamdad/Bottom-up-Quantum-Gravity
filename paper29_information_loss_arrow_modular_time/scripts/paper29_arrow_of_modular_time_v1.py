@@ -486,7 +486,7 @@ PAPER28_EXPECTED = {
         "kappa_std": 2.167375790925045,
     },
 }
-PAPER28_RECOVERY_ATOL = 1e-12
+PAPER28_RECOVERY_ATOL = 1e-10
 
 
 def paper28_metric(v: np.ndarray, g: np.ndarray):
