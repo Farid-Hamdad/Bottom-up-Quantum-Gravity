@@ -1,0 +1,483 @@
+{
+  "analysis_status": "POST_HOC_EXPLORATORY",
+  "bandwidth_fractions_Q_range": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "bandwidth_results": [
+    {
+      "alpha_equal_one_control": {
+        "N10_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.5304456168678178,
+          "mean_C": -2.312964634635743e-17,
+          "rms_C": 0.12283243418881327,
+          "variance_C": 0.015087806888749148,
+          "variance_ratio_to_zmod": 0.015087806888749151,
+          "variance_suppression_fraction": 0.9849121931112509
+        },
+        "N8_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.6624295819789837,
+          "mean_C": -6.337523098901935e-17,
+          "rms_C": 0.14711370706354798,
+          "variance_C": 0.0216424428059794,
+          "variance_ratio_to_zmod": 0.02164244280597939,
+          "variance_suppression_fraction": 0.9783575571940206
+        }
+      },
+      "alpha_optimal": {
+        "N10_A4": 0.9924560965556254,
+        "N8_A4": 0.9891787785970105,
+        "absolute_difference_N8_N10": 0.003277317958614856,
+        "distance_pooled_from_one": 0.009182562423681873,
+        "pooled": 0.9908174375763181,
+        "relative_difference_to_mean": 0.003307691038050004
+      },
+      "bandwidth_fraction_Q_range": 0.05,
+      "cross_size_transfer": {
+        "alpha_N10_applied_to_N8": {
+          "alpha": 0.9924560965556254,
+          "max_abs_C": 0.6567511260480206,
+          "mean_C": -6.846375318521799e-17,
+          "rms_C": 0.14675177949970059,
+          "variance_C": 0.021536084786328735,
+          "variance_ratio_to_zmod": 0.021536084786328725,
+          "variance_suppression_fraction": 0.9784639152136713
+        },
+        "alpha_N8_applied_to_N10": {
+          "alpha": 0.9891787785970105,
+          "max_abs_C": 0.5237756290240556,
+          "mean_C": -8.326672684688674e-18,
+          "rms_C": 0.12264435259143795,
+          "variance_C": 0.015041637222572955,
+          "variance_ratio_to_zmod": 0.015041637222572958,
+          "variance_suppression_fraction": 0.984958362777427
+        }
+      },
+      "pooled_alpha_applied": {
+        "N10_A4": {
+          "alpha": 0.9908174375763181,
+          "max_abs_C": 0.5247856661598853,
+          "mean_C": -2.0816681711721685e-17,
+          "rms_C": 0.12261150685323773,
+          "variance_C": 0.015033581612821558,
+          "variance_ratio_to_zmod": 0.015033581612821562,
+          "variance_suppression_fraction": 0.9849664183871785
+        },
+        "N8_A4": {
+          "alpha": 0.9908174375763181,
+          "max_abs_C": 0.6555176727213065,
+          "mean_C": -7.771561172376095e-17,
+          "rms_C": 0.14672433055419723,
+          "variance_C": 0.021528029176577337,
+          "variance_ratio_to_zmod": 0.021528029176577326,
+          "variance_suppression_fraction": 0.9784719708234226
+        }
+      },
+      "within_size_optimal": {
+        "N10_A4": {
+          "alpha": 0.9924560965556254,
+          "max_abs_C": 0.5257957032957146,
+          "mean_C": -2.6367796834847467e-17,
+          "rms_C": 0.12260055631835888,
+          "variance_C": 0.015030896409571087,
+          "variance_ratio_to_zmod": 0.01503089640957109,
+          "variance_suppression_fraction": 0.9849691035904289
+        },
+        "N8_A4": {
+          "alpha": 0.9891787785970105,
+          "max_abs_C": 0.6542842193945921,
+          "mean_C": -5.736152293896643e-17,
+          "rms_C": 0.14671517976449092,
+          "variance_C": 0.02152534397332688,
+          "variance_ratio_to_zmod": 0.02152534397332687,
+          "variance_suppression_fraction": 0.9784746560266732
+        }
+      }
+    },
+    {
+      "alpha_equal_one_control": {
+        "N10_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.2924626325528555,
+          "mean_C": 6.661338147750939e-17,
+          "rms_C": 0.13201401068529506,
+          "variance_C": 0.017427699017217198,
+          "variance_ratio_to_zmod": 0.017427699017217194,
+          "variance_suppression_fraction": 0.9825723009827828
+        },
+        "N8_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.3447370544759877,
+          "mean_C": 2.590520390792032e-17,
+          "rms_C": 0.13563365416860843,
+          "variance_C": 0.018396488143129667,
+          "variance_ratio_to_zmod": 0.018396488143129663,
+          "variance_suppression_fraction": 0.9816035118568703
+        }
+      },
+      "alpha_optimal": {
+        "N10_A4": 0.9912861504913916,
+        "N8_A4": 0.9908017559284353,
+        "absolute_difference_N8_N10": 0.0004843945629562363,
+        "distance_pooled_from_one": 0.008956046790086325,
+        "pooled": 0.9910439532099137,
+        "relative_difference_to_mean": 0.000488772028109672
+      },
+      "bandwidth_fraction_Q_range": 0.1,
+      "cross_size_transfer": {
+        "alpha_N10_applied_to_N8": {
+          "alpha": 0.9912861504913916,
+          "max_abs_C": 0.33917874023411865,
+          "mean_C": 1.850371707708594e-17,
+          "rms_C": 0.13532226382684487,
+          "variance_C": 0.018312115087222205,
+          "variance_ratio_to_zmod": 0.018312115087222202,
+          "variance_suppression_fraction": 0.9816878849127778
+        },
+        "alpha_N8_applied_to_N10": {
+          "alpha": 0.9908017559284353,
+          "max_abs_C": 0.286899459127215,
+          "mean_C": 7.586524001605237e-17,
+          "rms_C": 0.13172699982179487,
+          "variance_C": 0.017352002482051144,
+          "variance_ratio_to_zmod": 0.01735200248205114,
+          "variance_suppression_fraction": 0.9826479975179488
+        }
+      },
+      "pooled_alpha_applied": {
+        "N10_A4": {
+          "alpha": 0.9910439532099137,
+          "max_abs_C": 0.28704594202869055,
+          "mean_C": 5.3660779523549233e-17,
+          "rms_C": 0.13172633185313284,
+          "variance_C": 0.017351826503481674,
+          "variance_ratio_to_zmod": 0.01735182650348167,
+          "variance_suppression_fraction": 0.9826481734965183
+        },
+        "N8_A4": {
+          "alpha": 0.9910439532099137,
+          "max_abs_C": 0.33902424954689125,
+          "mean_C": 3.14563190310461e-17,
+          "rms_C": 0.13532161360496978,
+          "variance_C": 0.018311939108652742,
+          "variance_ratio_to_zmod": 0.01831193910865274,
+          "variance_suppression_fraction": 0.9816880608913473
+        }
+      },
+      "within_size_optimal": {
+        "N10_A4": {
+          "alpha": 0.9912861504913916,
+          "max_abs_C": 0.2871924249301658,
+          "mean_C": 7.586524001605237e-17,
+          "rms_C": 0.13172610919615946,
+          "variance_C": 0.017351767843958525,
+          "variance_ratio_to_zmod": 0.01735176784395852,
+          "variance_suppression_fraction": 0.9826482321560415
+        },
+        "N8_A4": {
+          "alpha": 0.9908017559284353,
+          "max_abs_C": 0.33886975885966364,
+          "mean_C": 3.700743415417188e-17,
+          "rms_C": 0.13532139686365047,
+          "variance_C": 0.018311880449129587,
+          "variance_ratio_to_zmod": 0.018311880449129583,
+          "variance_suppression_fraction": 0.9816881195508704
+        }
+      }
+    },
+    {
+      "alpha_equal_one_control": {
+        "N10_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.4807934517617923,
+          "mean_C": -2.7755575615628914e-17,
+          "rms_C": 0.211866143076952,
+          "variance_C": 0.044887262582303494,
+          "variance_ratio_to_zmod": 0.044887262582303494,
+          "variance_suppression_fraction": 0.9551127374176965
+        },
+        "N8_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.4636602162499146,
+          "mean_C": 5.181040781584064e-17,
+          "rms_C": 0.2014260235301992,
+          "variance_C": 0.04057244295518837,
+          "variance_ratio_to_zmod": 0.04057244295518837,
+          "variance_suppression_fraction": 0.9594275570448116
+        }
+      },
+      "alpha_optimal": {
+        "N10_A4": 0.9775563687088484,
+        "N8_A4": 0.9797137785224057,
+        "absolute_difference_N8_N10": 0.002157409813557276,
+        "distance_pooled_from_one": 0.021364926384372818,
+        "pooled": 0.9786350736156272,
+        "relative_difference_to_mean": 0.0022045089857515464
+      },
+      "bandwidth_fraction_Q_range": 0.2,
+      "cross_size_transfer": {
+        "alpha_N10_applied_to_N8": {
+          "alpha": 0.9775563687088484,
+          "max_abs_C": 0.45419363329310963,
+          "mean_C": 4.810966440042345e-17,
+          "rms_C": 0.20041348904316295,
+          "variance_C": 0.040165566590454005,
+          "variance_ratio_to_zmod": 0.040165566590454005,
+          "variance_suppression_fraction": 0.959834433409546
+        },
+        "alpha_N8_applied_to_N10": {
+          "alpha": 0.9797137785224057,
+          "max_abs_C": 0.4713427092786562,
+          "mean_C": -2.960594732333751e-17,
+          "rms_C": 0.2106850740177717,
+          "variance_C": 0.04438820041387393,
+          "variance_ratio_to_zmod": 0.04438820041387393,
+          "variance_suppression_fraction": 0.9556117995861261
+        }
+      },
+      "pooled_alpha_applied": {
+        "N10_A4": {
+          "alpha": 0.9786350736156272,
+          "max_abs_C": 0.47084017299803244,
+          "mean_C": -2.7755575615628914e-17,
+          "rms_C": 0.21067678942172588,
+          "variance_C": 0.04438470960104622,
+          "variance_ratio_to_zmod": 0.04438470960104622,
+          "variance_suppression_fraction": 0.9556152903989538
+        },
+        "N8_A4": {
+          "alpha": 0.9786350736156272,
+          "max_abs_C": 0.45464862425929786,
+          "mean_C": 5.551115123125783e-17,
+          "rms_C": 0.20040477982729424,
+          "variance_C": 0.04016207577762628,
+          "variance_ratio_to_zmod": 0.04016207577762628,
+          "variance_suppression_fraction": 0.9598379242223737
+        }
+      },
+      "within_size_optimal": {
+        "N10_A4": {
+          "alpha": 0.9775563687088484,
+          "max_abs_C": 0.47033763671740864,
+          "mean_C": -3.8857805861880476e-17,
+          "rms_C": 0.21067402781731379,
+          "variance_C": 0.0443835459967703,
+          "variance_ratio_to_zmod": 0.0443835459967703,
+          "variance_suppression_fraction": 0.9556164540032297
+        },
+        "N8_A4": {
+          "alpha": 0.9797137785224057,
+          "max_abs_C": 0.45510361522548604,
+          "mean_C": 5.181040781584064e-17,
+          "rms_C": 0.20040187667122872,
+          "variance_C": 0.04016091217335036,
+          "variance_ratio_to_zmod": 0.04016091217335036,
+          "variance_suppression_fraction": 0.9598390878266496
+        }
+      }
+    },
+    {
+      "alpha_equal_one_control": {
+        "N10_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.5493096954017299,
+          "mean_C": 1.4802973661668754e-17,
+          "rms_C": 0.24641308421667288,
+          "variance_C": 0.06071940807317312,
+          "variance_ratio_to_zmod": 0.06071940807317313,
+          "variance_suppression_fraction": 0.9392805919268269
+        },
+        "N8_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.5021354370074175,
+          "mean_C": -2.0354088784794535e-17,
+          "rms_C": 0.21827215776072031,
+          "variance_C": 0.04764273485352079,
+          "variance_ratio_to_zmod": 0.047642734853520795,
+          "variance_suppression_fraction": 0.9523572651464792
+        }
+      },
+      "alpha_optimal": {
+        "N10_A4": 0.9696402959634136,
+        "N8_A4": 0.9761786325732399,
+        "absolute_difference_N8_N10": 0.0065383366098262785,
+        "distance_pooled_from_one": 0.027090535731673193,
+        "pooled": 0.9729094642683268,
+        "relative_difference_to_mean": 0.006720395730494217
+      },
+      "bandwidth_fraction_Q_range": 0.3,
+      "cross_size_transfer": {
+        "alpha_N10_applied_to_N8": {
+          "alpha": 0.9696402959634136,
+          "max_abs_C": 0.48754411844429907,
+          "mean_C": -2.960594732333751e-17,
+          "rms_C": 0.21706687253715948,
+          "variance_C": 0.04711802715306343,
+          "variance_ratio_to_zmod": 0.04711802715306344,
+          "variance_suppression_fraction": 0.9528819728469365
+        },
+        "alpha_N8_applied_to_N10": {
+          "alpha": 0.9761786325732399,
+          "max_abs_C": 0.5361018378672059,
+          "mean_C": 1.6653345369377347e-17,
+          "rms_C": 0.24462306982295717,
+          "variance_C": 0.059840446289607385,
+          "variance_ratio_to_zmod": 0.05984044628960739,
+          "variance_suppression_fraction": 0.9401595537103926
+        }
+      },
+      "pooled_alpha_applied": {
+        "N10_A4": {
+          "alpha": 0.9729094642683268,
+          "max_abs_C": 0.5342892337268086,
+          "mean_C": 7.401486830834377e-18,
+          "rms_C": 0.2445575267813073,
+          "variance_C": 0.05980838390538983,
+          "variance_ratio_to_zmod": 0.05980838390538984,
+          "variance_suppression_fraction": 0.9401916160946102
+        },
+        "N8_A4": {
+          "alpha": 0.9729094642683268,
+          "max_abs_C": 0.4891153286285602,
+          "mean_C": -5.551115123125783e-18,
+          "rms_C": 0.2169930062671281,
+          "variance_C": 0.047085964768845905,
+          "variance_ratio_to_zmod": 0.04708596476884591,
+          "variance_suppression_fraction": 0.952914035231154
+        }
+      },
+      "within_size_optimal": {
+        "N10_A4": {
+          "alpha": 0.9696402959634136,
+          "max_abs_C": 0.5324766295864111,
+          "mean_C": 5.551115123125783e-18,
+          "rms_C": 0.24453567519685954,
+          "variance_C": 0.059797696443983986,
+          "variance_ratio_to_zmod": 0.05979769644398399,
+          "variance_suppression_fraction": 0.940202303556016
+        },
+        "N8_A4": {
+          "alpha": 0.9761786325732399,
+          "max_abs_C": 0.4906865388128213,
+          "mean_C": -3.14563190310461e-17,
+          "rms_C": 0.21696837858877052,
+          "variance_C": 0.04707527730744004,
+          "variance_ratio_to_zmod": 0.047075277307440044,
+          "variance_suppression_fraction": 0.9529247226925599
+        }
+      }
+    },
+    {
+      "alpha_equal_one_control": {
+        "N10_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.6212609439381303,
+          "mean_C": -4.625929269271485e-18,
+          "rms_C": 0.28474861643088756,
+          "variance_C": 0.08108177455930474,
+          "variance_ratio_to_zmod": 0.08108177455930474,
+          "variance_suppression_fraction": 0.9189182254406952
+        },
+        "N8_A4": {
+          "alpha": 1.0,
+          "max_abs_C": 0.5519774342968748,
+          "mean_C": 2.960594732333751e-17,
+          "rms_C": 0.24327652437197916,
+          "variance_C": 0.05918346731051018,
+          "variance_ratio_to_zmod": 0.059183467310510184,
+          "variance_suppression_fraction": 0.9408165326894898
+        }
+      },
+      "alpha_optimal": {
+        "N10_A4": 0.9594591127203479,
+        "N8_A4": 0.9704082663447442,
+        "absolute_difference_N8_N10": 0.010949153624396302,
+        "distance_pooled_from_one": 0.03506631046745379,
+        "pooled": 0.9649336895325462,
+        "relative_difference_to_mean": 0.011347052904433804
+      },
+      "bandwidth_fraction_Q_range": 0.4,
+      "cross_size_transfer": {
+        "alpha_N10_applied_to_N8": {
+          "alpha": 0.9594591127203479,
+          "max_abs_C": 0.5321753630803988,
+          "mean_C": 2.2204460492503132e-17,
+          "rms_C": 0.2417181842039966,
+          "variance_C": 0.058427680574877225,
+          "variance_ratio_to_zmod": 0.05842768057487723,
+          "variance_suppression_fraction": 0.9415723194251228
+        },
+        "alpha_N8_applied_to_N10": {
+          "alpha": 0.9704082663447442,
+          "max_abs_C": 0.603968014306103,
+          "mean_C": 9.251858538542971e-19,
+          "rms_C": 0.2820604456193281,
+          "variance_C": 0.07955809498297392,
+          "variance_ratio_to_zmod": 0.07955809498297392,
+          "variance_suppression_fraction": 0.920441905017026
+        }
+      },
+      "pooled_alpha_applied": {
+        "N10_A4": {
+          "alpha": 0.9649336895325462,
+          "max_abs_C": 0.6007687603292529,
+          "mean_C": 2.7755575615628915e-18,
+          "rms_C": 0.2819010145585786,
+          "variance_C": 0.07946818200915592,
+          "variance_ratio_to_zmod": 0.07946818200915592,
+          "variance_suppression_fraction": 0.920531817990844
+        },
+        "N8_A4": {
+          "alpha": 0.9649336895325462,
+          "max_abs_C": 0.5348494032208481,
+          "mean_C": 4.9960036108132046e-17,
+          "rms_C": 0.24153212540169322,
+          "variance_C": 0.05833776760105925,
+          "variance_ratio_to_zmod": 0.05833776760105926,
+          "variance_suppression_fraction": 0.9416622323989408
+        }
+      },
+      "within_size_optimal": {
+        "N10_A4": {
+          "alpha": 0.9594591127203479,
+          "max_abs_C": 0.5975695063524025,
+          "mean_C": -2.7755575615628915e-18,
+          "rms_C": 0.2818478508306978,
+          "variance_C": 0.07943821101788329,
+          "variance_ratio_to_zmod": 0.07943821101788329,
+          "variance_suppression_fraction": 0.9205617889821167
+        },
+        "N8_A4": {
+          "alpha": 0.9704082663447442,
+          "max_abs_C": 0.5375234433612972,
+          "mean_C": 3.14563190310461e-17,
+          "rms_C": 0.24147007394247966,
+          "variance_C": 0.05830779660978659,
+          "variance_ratio_to_zmod": 0.0583077966097866,
+          "variance_suppression_fraction": 0.9416922033902134
+        }
+      }
+    }
+  ],
+  "interpretation_boundary": "A low-variance C_alpha with alpha near 1 would support an exploratory quasi-invariant compensation signature in standardized residual coordinates. It would not establish a fundamental conservation law or literal information transfer.",
+  "question": "Do standardized residuals admit a size-transferable quasi-invariant C_alpha = z(epsilon_mod) + alpha z(epsilon_W) with alpha near 1?",
+  "robustness_summary": {
+    "max_distance_pooled_alpha_from_one": 0.03506631046745379,
+    "max_variance_ratio_alpha_one_N10": 0.08108177455930474,
+    "max_variance_ratio_alpha_one_N8": 0.059183467310510184,
+    "max_variance_ratio_pooled_alpha_N10": 0.07946818200915592,
+    "max_variance_ratio_pooled_alpha_N8": 0.05833776760105926,
+    "mean_pooled_alpha": 0.9796679236405463,
+    "mean_variance_ratio_alpha_one_N10": 0.04384079022414954,
+    "mean_variance_ratio_alpha_one_N8": 0.03748751521366568,
+    "mean_variance_ratio_pooled_alpha_N10": 0.04320933672637904,
+    "mean_variance_ratio_pooled_alpha_N8": 0.037085155286552304,
+    "std_pooled_alpha": 0.010174152709453118
+  },
+  "source": "Frozen nonparametric residual CSV files from posthoc_analysis/nonparametric_coupling_output."
+}
