@@ -1,0 +1,213 @@
+{
+  "analysis_status": "PREREGISTERED_PAPER30_COMPLETED",
+  "cross_size_transfer": [
+    {
+      "alpha_N10_applied_to_N12": {
+        "alpha": 0.9925486404569885,
+        "max_abs_C": 0.40373205043129984,
+        "mean_C": -2.0816681711721684e-18,
+        "rms_C": 0.12184907194332413,
+        "variance_C": 0.014847196333449381,
+        "variance_ratio_R_C": 0.014847196333449377,
+        "variance_suppression_fraction": 0.9851528036665507
+      },
+      "alpha_N12_applied_to_N10": {
+        "alpha": 0.9925486404537315,
+        "max_abs_C": 0.40373205042627364,
+        "mean_C": 1.0292692624129056e-17,
+        "rms_C": 0.12184907191679285,
+        "variance_C": 0.014847196326983756,
+        "variance_ratio_R_C": 0.014847196326983753,
+        "variance_suppression_fraction": 0.9851528036730163
+      },
+      "alpha_N12_applied_to_N8": {
+        "alpha": 0.9925486404537315,
+        "max_abs_C": 0.37863451928382025,
+        "mean_C": 1.5612511283791264e-17,
+        "rms_C": 0.11412172807720679,
+        "variance_C": 0.013023768819327928,
+        "variance_ratio_R_C": 0.01302376881932793,
+        "variance_suppression_fraction": 0.986976231180672
+      },
+      "alpha_N8_applied_to_N12": {
+        "alpha": 0.9934671987186886,
+        "max_abs_C": 0.4033125940949158,
+        "mean_C": 6.245004513516506e-18,
+        "rms_C": 0.12185253416624335,
+        "variance_C": 0.014848040082735504,
+        "variance_ratio_R_C": 0.0148480400827355,
+        "variance_suppression_fraction": 0.9851519599172645
+      },
+      "bandwidth_fraction_gamma_range": 0.05
+    },
+    {
+      "alpha_N10_applied_to_N12": {
+        "alpha": 0.9814036851022946,
+        "max_abs_C": 0.4899391760752777,
+        "mean_C": 1.538121482032769e-17,
+        "rms_C": 0.19195522103081172,
+        "variance_C": 0.03684680688098776,
+        "variance_ratio_R_C": 0.03684680688098777,
+        "variance_suppression_fraction": 0.9631531931190123
+      },
+      "alpha_N12_applied_to_N10": {
+        "alpha": 0.981403685095492,
+        "max_abs_C": 0.48993917607588144,
+        "mean_C": -2.312964634635743e-17,
+        "rms_C": 0.19195522099603474,
+        "variance_C": 0.03684680686763654,
+        "variance_ratio_R_C": 0.03684680686763654,
+        "variance_suppression_fraction": 0.9631531931323635
+      },
+      "alpha_N12_applied_to_N8": {
+        "alpha": 0.981403685095492,
+        "max_abs_C": 0.4624710248118429,
+        "mean_C": 5.238864897449957e-17,
+        "rms_C": 0.18101622327414396,
+        "variance_C": 0.03276687308843474,
+        "variance_ratio_R_C": 0.032766873088434734,
+        "variance_suppression_fraction": 0.9672331269115653
+      },
+      "alpha_N8_applied_to_N12": {
+        "alpha": 0.9834823066935741,
+        "max_abs_C": 0.48825253287081005,
+        "mean_C": 2.2898349882893852e-17,
+        "rms_C": 0.19196647506462106,
+        "variance_C": 0.036851127548735776,
+        "variance_ratio_R_C": 0.03685112754873579,
+        "variance_suppression_fraction": 0.9631488724512642
+      },
+      "bandwidth_fraction_gamma_range": 0.1
+    },
+    {
+      "alpha_N10_applied_to_N12": {
+        "alpha": 0.9804103192505164,
+        "max_abs_C": 0.529288322591643,
+        "mean_C": 1.0084525807011838e-16,
+        "rms_C": 0.19696600191924496,
+        "variance_C": 0.038795605912052014,
+        "variance_ratio_R_C": 0.03879560591205202,
+        "variance_suppression_fraction": 0.961204394087948
+      },
+      "alpha_N12_applied_to_N10": {
+        "alpha": 0.9804103192479905,
+        "max_abs_C": 0.5292883226021206,
+        "mean_C": -1.6653345369377347e-17,
+        "rms_C": 0.1969660019066756,
+        "variance_C": 0.03879560590710054,
+        "variance_ratio_R_C": 0.03879560590710054,
+        "variance_suppression_fraction": 0.9612043940928995
+      },
+      "alpha_N12_applied_to_N8": {
+        "alpha": 0.9804103192479905,
+        "max_abs_C": 0.49826226276367513,
+        "mean_C": 1.572815951552305e-17,
+        "rms_C": 0.18765013165326874,
+        "variance_C": 0.03521257190948909,
+        "variance_ratio_R_C": 0.035212571909489086,
+        "variance_suppression_fraction": 0.9647874280905109
+      },
+      "alpha_N8_applied_to_N12": {
+        "alpha": 0.9822376327371594,
+        "max_abs_C": 0.5312584641159329,
+        "mean_C": 8.604228440844963e-17,
+        "rms_C": 0.1969744780082935,
+        "variance_C": 0.03879894498663971,
+        "variance_ratio_R_C": 0.038798944986639716,
+        "variance_suppression_fraction": 0.9612010550133603
+      },
+      "bandwidth_fraction_gamma_range": 0.2
+    },
+    {
+      "alpha_N10_applied_to_N12": {
+        "alpha": 0.9869333126386983,
+        "max_abs_C": 0.5368651228470342,
+        "mean_C": -9.25185853854297e-18,
+        "rms_C": 0.16112925371665776,
+        "variance_C": 0.025962636403287068,
+        "variance_ratio_R_C": 0.02596263640328707,
+        "variance_suppression_fraction": 0.9740373635967129
+      },
+      "alpha_N12_applied_to_N10": {
+        "alpha": 0.9869333126390623,
+        "max_abs_C": 0.536865122865053,
+        "mean_C": -3.515706244646329e-17,
+        "rms_C": 0.16112925371888753,
+        "variance_C": 0.025962636404005632,
+        "variance_ratio_R_C": 0.025962636404005625,
+        "variance_suppression_fraction": 0.9740373635959944
+      },
+      "alpha_N12_applied_to_N8": {
+        "alpha": 0.9869333126390623,
+        "max_abs_C": 0.5134140485279735,
+        "mean_C": -9.251858538542971e-19,
+        "rms_C": 0.15483697900403257,
+        "variance_C": 0.023974490067095223,
+        "variance_ratio_R_C": 0.023974490067095226,
+        "variance_suppression_fraction": 0.9760255099329048
+      },
+      "alpha_N8_applied_to_N12": {
+        "alpha": 0.9879405470239646,
+        "max_abs_C": 0.5367628975023888,
+        "mean_C": -1.2027416100105863e-17,
+        "rms_C": 0.16113240184516955,
+        "variance_C": 0.025963650924393202,
+        "variance_ratio_R_C": 0.025963650924393206,
+        "variance_suppression_fraction": 0.9740363490756068
+      },
+      "bandwidth_fraction_gamma_range": 0.3
+    },
+    {
+      "alpha_N10_applied_to_N12": {
+        "alpha": 0.99025994189898,
+        "max_abs_C": 0.4662846789836299,
+        "mean_C": -1.4802973661668754e-17,
+        "rms_C": 0.1392309141962949,
+        "variance_C": 0.01938524746793604,
+        "variance_ratio_R_C": 0.019385247467936042,
+        "variance_suppression_fraction": 0.980614752532064
+      },
+      "alpha_N12_applied_to_N10": {
+        "alpha": 0.9902599419001378,
+        "max_abs_C": 0.466284679001959,
+        "mean_C": -5.736152293896643e-17,
+        "rms_C": 0.13923091420452596,
+        "variance_C": 0.01938524747022807,
+        "variance_ratio_R_C": 0.019385247470228066,
+        "variance_suppression_fraction": 0.9806147525297719
+      },
+      "alpha_N12_applied_to_N8": {
+        "alpha": 0.9902599419001378,
+        "max_abs_C": 0.4482434314974483,
+        "mean_C": -1.295260195396016e-17,
+        "rms_C": 0.13428778146384535,
+        "variance_C": 0.018033208250481488,
+        "variance_ratio_R_C": 0.018033208250481495,
+        "variance_suppression_fraction": 0.9819667917495185
+      },
+      "alpha_N8_applied_to_N12": {
+        "alpha": 0.9909426107430577,
+        "max_abs_C": 0.4658841379776595,
+        "mean_C": -9.25185853854297e-18,
+        "rms_C": 0.13923258779712863,
+        "variance_C": 0.019385713504685136,
+        "variance_ratio_R_C": 0.01938571350468514,
+        "variance_suppression_fraction": 0.9806142864953149
+      },
+      "bandwidth_fraction_gamma_range": 0.4
+    }
+  ],
+  "interpretation_boundary": "Support establishes finite-size generalization of the residual compensation signature to amplitude damping at a new system size. It does not establish a fundamental conservation law, literal information transfer, black-hole horizon, thermodynamic-limit universality, or universal alpha constant.",
+  "primary_N": 12,
+  "primary_classification": "SUPPORTED",
+  "primary_success_rule": "N12 must satisfy P1 negative residual Pearson, P2 alpha in [0.8,1.2], and P3 R_C<=0.20 at all five frozen bandwidths.",
+  "primary_summary_file": "primary_summary_N12_A4.json",
+  "regularized_relative_entropy": {
+    "epsilon": 1e-06,
+    "role": "SECONDARY_DIAGNOSTIC_ONLY"
+  },
+  "replication_summary_files": [
+    "replication_summary_N8_A4.json",
+    "replication_summary_N10_A4.json"
+  ]
+}

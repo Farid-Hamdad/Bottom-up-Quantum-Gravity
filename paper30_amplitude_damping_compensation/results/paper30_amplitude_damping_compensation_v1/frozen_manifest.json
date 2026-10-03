@@ -1,0 +1,174 @@
+{
+  "analysis_status": "PROSPECTIVE_PREREGISTERED",
+  "channel": {
+    "evaluation": "each gamma evaluated directly from same prepared rho0",
+    "gamma_definition": "gamma(s)=1-exp(-s)",
+    "gamma_grid": [
+      0.0,
+      0.09516258196404048,
+      0.18126924692201818,
+      0.2591817793182821,
+      0.3296799539643607,
+      0.3934693402873666,
+      0.4511883639059736,
+      0.5034146962085906,
+      0.5506710358827784,
+      0.5934303402594009,
+      0.6321205588285577,
+      0.6671289163019205,
+      0.698805788087798,
+      0.7274682069659875,
+      0.7534030360583935,
+      0.7768698398515702,
+      0.7981034820053446,
+      0.8173164759472654,
+      0.8347011117784134,
+      0.8504313807773649,
+      0.8646647167633873,
+      0.8775435717470181,
+      0.8891968416376661,
+      0.8997411562771963,
+      0.9092820467105875,
+      0.9179150013761012,
+      0.9257264217856661,
+      0.9327944872602503,
+      0.9391899373747821,
+      0.9449767799435927,
+      0.950212931632136
+    ],
+    "name": "independent local amplitude damping",
+    "s_grid": [
+      0.0,
+      0.1,
+      0.2,
+      0.30000000000000004,
+      0.4,
+      0.5,
+      0.6000000000000001,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2000000000000002,
+      1.3,
+      1.4000000000000001,
+      1.5,
+      1.6,
+      1.7000000000000002,
+      1.8,
+      1.9000000000000001,
+      2.0,
+      2.1,
+      2.2,
+      2.3000000000000003,
+      2.4000000000000004,
+      2.5,
+      2.6,
+      2.7,
+      2.8000000000000003,
+      2.9000000000000004,
+      3.0
+    ]
+  },
+  "detrending": {
+    "bandwidth_fractions_of_predictor_range": [
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "method": "leave-one-out local-linear Gaussian-kernel regression",
+    "predictor": "gamma_from for the 30 transitions",
+    "weight_floor": 1e-14
+  },
+  "interpretation_boundary": "Support establishes finite-size generalization of the residual compensation signature to amplitude damping at a new system size. It does not establish a fundamental conservation law, literal information transfer, black-hole horizon, thermodynamic-limit universality, or universal alpha constant.",
+  "numerics": {
+    "density_positivity_tol": 1e-12,
+    "density_trace_tol": 1e-12,
+    "entropy_eig_cutoff": 1e-15,
+    "hermiticity_tol": 1e-12,
+    "paper28_recovery_atol": 1e-10,
+    "state_norm_tol": 1e-12,
+    "strict_modular_positivity": true,
+    "zero_vector_step_eps": 1e-12
+  },
+  "pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "paper": 30,
+  "primary_endpoints_N12": {
+    "P1": "Pearson(resid_dW,resid_dmod)<0 at all 5 bandwidths",
+    "P2": "0.8<=alpha_N12<=1.2 at all 5 bandwidths",
+    "P3": "R_C<=0.2 at all 5 bandwidths",
+    "success_rule": "all P1/P2/P3 at all fixed bandwidths"
+  },
+  "primary_system": {
+    "A": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "N": 12,
+    "role": "NEW_SIZE_PROSPECTIVE_VALIDATION"
+  },
+  "progress_variable": {
+    "primary": "gamma",
+    "secondary_regularized_relative_entropy_eps": 1e-06
+  },
+  "replication_systems": [
+    {
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "N": 8,
+      "role": "SAME_SIZE_CHANNEL_REPLICATION"
+    },
+    {
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "N": 10,
+      "role": "SAME_SIZE_CHANNEL_REPLICATION"
+    }
+  ],
+  "tfim": {
+    "J": 1.0,
+    "dt": 0.35,
+    "h": 1.0,
+    "nominal_t": 2.0999999999999996,
+    "p": 6,
+    "state": "time-reversal mixture of Strang-evolved |+>^N"
+  }
+}

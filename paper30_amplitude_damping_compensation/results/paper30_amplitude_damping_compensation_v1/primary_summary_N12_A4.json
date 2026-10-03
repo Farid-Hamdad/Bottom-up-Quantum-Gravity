@@ -1,0 +1,206 @@
+{
+  "compensation": {
+    "N": 12,
+    "analysis_status": "PREREGISTERED_PRIMARY_ANALYSIS_COMPLETED",
+    "bandwidth_results": [
+      {
+        "P1_negative_pearson": true,
+        "P2_alpha_in_window": true,
+        "P3_R_C_le_0p20": true,
+        "alpha_equal_one_control": {
+          "alpha": 1.0,
+          "max_abs_C": 0.40032941381551596,
+          "mean_C": -6.0137080500529315e-18,
+          "rms_C": 0.12207669348625541,
+          "variance_C": 0.014902719092537155,
+          "variance_ratio_R_C": 0.014902719092537152,
+          "variance_suppression_fraction": 0.9850972809074628
+        },
+        "alpha_optimal": 0.9925486404537315,
+        "bandwidth_absolute": 0.04724883899717964,
+        "bandwidth_fraction_gamma_range": 0.05,
+        "bandwidth_supported": true,
+        "mean_resid_dW": -1.1777803925200857e-05,
+        "mean_resid_dmod": -4.015732847325067e-05,
+        "min_effective_weight_sum_dW": 0.13220331847087977,
+        "min_effective_weight_sum_dmod": 0.13220331847087977,
+        "pearson_residuals": -0.9925486404537318,
+        "quasi_invariant_optimal": {
+          "alpha": 0.9925486404537315,
+          "max_abs_C": 0.40373205043278715,
+          "mean_C": -1.5496863052059477e-17,
+          "rms_C": 0.12184907194332413,
+          "variance_C": 0.014847196333449383,
+          "variance_ratio_R_C": 0.01484719633344938,
+          "variance_suppression_fraction": 0.9851528036665507
+        },
+        "spearman_residuals": -0.9835372636262512,
+        "std_resid_dW": 0.0009107340749954506,
+        "std_resid_dmod": 0.0011047324618627364
+      },
+      {
+        "P1_negative_pearson": true,
+        "P2_alpha_in_window": true,
+        "P3_R_C_le_0p20": true,
+        "alpha_equal_one_control": {
+          "alpha": 1.0,
+          "max_abs_C": 0.4748496820173196,
+          "mean_C": 1.6768993601109134e-17,
+          "rms_C": 0.19285390794333257,
+          "variance_C": 0.037192629809015394,
+          "variance_ratio_R_C": 0.03719262980901541,
+          "variance_suppression_fraction": 0.9628073701909846
+        },
+        "alpha_optimal": 0.981403685095492,
+        "bandwidth_absolute": 0.09449767799435928,
+        "bandwidth_fraction_gamma_range": 0.1,
+        "bandwidth_supported": true,
+        "mean_resid_dW": 9.747794757367362e-05,
+        "mean_resid_dmod": -0.000266932227651781,
+        "min_effective_weight_sum_dW": 0.7868213353085907,
+        "min_effective_weight_sum_dmod": 0.7868213353085907,
+        "pearson_residuals": -0.9814036850954925,
+        "quasi_invariant_optimal": {
+          "alpha": 0.981403685095492,
+          "max_abs_C": 0.4899391760807975,
+          "mean_C": 1.815677238189058e-17,
+          "rms_C": 0.19195522103081172,
+          "variance_C": 0.03684680688098778,
+          "variance_ratio_R_C": 0.03684680688098779,
+          "variance_suppression_fraction": 0.9631531931190123
+        },
+        "spearman_residuals": -0.9870967741935484,
+        "std_resid_dW": 0.0010721587464295873,
+        "std_resid_dmod": 0.0014058210094965004
+      },
+      {
+        "P1_negative_pearson": true,
+        "P2_alpha_in_window": true,
+        "P3_R_C_le_0p20": true,
+        "alpha_equal_one_control": {
+          "alpha": 1.0,
+          "max_abs_C": 0.55040918870151,
+          "mean_C": 9.066821367772112e-17,
+          "rms_C": 0.1979377717971425,
+          "variance_C": 0.03917936150401766,
+          "variance_ratio_R_C": 0.039179361504017664,
+          "variance_suppression_fraction": 0.9608206384959823
+        },
+        "alpha_optimal": 0.9804103192479905,
+        "bandwidth_absolute": 0.18899535598871856,
+        "bandwidth_fraction_gamma_range": 0.2,
+        "bandwidth_supported": true,
+        "mean_resid_dW": 0.0003327141208221708,
+        "mean_resid_dmod": -0.0007851403010783258,
+        "min_effective_weight_sum_dW": 2.352264351708314,
+        "min_effective_weight_sum_dmod": 2.352264351708314,
+        "pearson_residuals": -0.9804103192479913,
+        "quasi_invariant_optimal": {
+          "alpha": 0.9804103192479905,
+          "max_abs_C": 0.5292883225889197,
+          "mean_C": 9.066821367772112e-17,
+          "rms_C": 0.196966001919245,
+          "variance_C": 0.03879560591205203,
+          "variance_ratio_R_C": 0.038795605912052035,
+          "variance_suppression_fraction": 0.961204394087948
+        },
+        "spearman_residuals": -0.9835372636262512,
+        "std_resid_dW": 0.0016487230575105139,
+        "std_resid_dmod": 0.0026466602054439525
+      },
+      {
+        "P1_negative_pearson": true,
+        "P2_alpha_in_window": true,
+        "P3_R_C_le_0p20": true,
+        "alpha_equal_one_control": {
+          "alpha": 1.0,
+          "max_abs_C": 0.535538970127843,
+          "mean_C": -1.3877787807814457e-17,
+          "rms_C": 0.16165820338564807,
+          "variance_C": 0.026133374721875557,
+          "variance_ratio_R_C": 0.02613337472187556,
+          "variance_suppression_fraction": 0.9738666252781244
+        },
+        "alpha_optimal": 0.9869333126390623,
+        "bandwidth_absolute": 0.2834930339830778,
+        "bandwidth_fraction_gamma_range": 0.3,
+        "bandwidth_supported": true,
+        "mean_resid_dW": 0.0003535802647655393,
+        "mean_resid_dmod": -0.0008147170765249391,
+        "min_effective_weight_sum_dW": 4.463594966506026,
+        "min_effective_weight_sum_dmod": 4.463594966506026,
+        "pearson_residuals": -0.986933312639062,
+        "quasi_invariant_optimal": {
+          "alpha": 0.9869333126390623,
+          "max_abs_C": 0.5368651228469973,
+          "mean_C": -1.0177044392397268e-17,
+          "rms_C": 0.16112925371665773,
+          "variance_C": 0.025962636403287068,
+          "variance_ratio_R_C": 0.02596263640328707,
+          "variance_suppression_fraction": 0.9740373635967129
+        },
+        "spearman_residuals": -0.9426028921023359,
+        "std_resid_dW": 0.0022212539131751985,
+        "std_resid_dmod": 0.004037416237929739
+      },
+      {
+        "P1_negative_pearson": true,
+        "P2_alpha_in_window": true,
+        "P3_R_C_le_0p20": true,
+        "alpha_equal_one_control": {
+          "alpha": 1.0,
+          "max_abs_C": 0.46056991302669803,
+          "mean_C": -5.551115123125783e-18,
+          "rms_C": 0.1395711868536079,
+          "variance_C": 0.019480116199724735,
+          "variance_ratio_R_C": 0.01948011619972474,
+          "variance_suppression_fraction": 0.9805198838002752
+        },
+        "alpha_optimal": 0.9902599419001378,
+        "bandwidth_absolute": 0.3779907119774371,
+        "bandwidth_fraction_gamma_range": 0.4,
+        "bandwidth_supported": true,
+        "mean_resid_dW": 0.0002680952941374991,
+        "mean_resid_dmod": -0.0006058016084277076,
+        "min_effective_weight_sum_dW": 7.4381078123108555,
+        "min_effective_weight_sum_dmod": 7.4381078123108555,
+        "pearson_residuals": -0.9902599419001374,
+        "quasi_invariant_optimal": {
+          "alpha": 0.9902599419001378,
+          "max_abs_C": 0.4662846789829507,
+          "mean_C": 1.6653345369377347e-17,
+          "rms_C": 0.13923091419629488,
+          "variance_C": 0.019385247467936028,
+          "variance_ratio_R_C": 0.01938524746793603,
+          "variance_suppression_fraction": 0.980614752532064
+        },
+        "spearman_residuals": -0.9942157953281423,
+        "std_resid_dW": 0.002622980176152496,
+        "std_resid_dmod": 0.0050127412609069725
+      }
+    ],
+    "gamma_predictor_max": 0.9449767799435927,
+    "gamma_predictor_min": 0.0,
+    "gamma_predictor_range": 0.9449767799435927,
+    "primary_supported": true,
+    "raw_pearson_dW_dmod": -0.1358898386063647,
+    "raw_spearman_dW_dmod": 0.6115684093437151
+  },
+  "trajectory": {
+    "A_size": 4,
+    "N": 12,
+    "excitation_increase_count": 0,
+    "excitation_max_increase": 0.0,
+    "gamma_max": 0.950212931632136,
+    "gamma_min": 0.0,
+    "identity_channel_max_abs_error": 0.0,
+    "n_states": 31,
+    "n_transitions": 30,
+    "n_undefined_transitions": 0,
+    "paper28_s0_recovery": {
+      "applicable": false,
+      "passed": null,
+      "reason": "NO_FROZEN_PAPER28_REFERENCE_FOR_THIS_N"
+    }
+  }
+}
