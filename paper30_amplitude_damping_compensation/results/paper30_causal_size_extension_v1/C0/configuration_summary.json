@@ -1,0 +1,25 @@
+{
+  "A_N10": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "A_N12": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "P": 6,
+  "compensation_supported_N10": true,
+  "compensation_supported_N12": true,
+  "configuration": "C0",
+  "role": "ORIGINAL_CONTROL",
+  "size_comparison": {
+    "D_A_max": 1.1199838603059988e-15,
+    "configuration": "C0",
+    "size_sensitive": false,
+    "threshold": 1e-10
+  }
+}

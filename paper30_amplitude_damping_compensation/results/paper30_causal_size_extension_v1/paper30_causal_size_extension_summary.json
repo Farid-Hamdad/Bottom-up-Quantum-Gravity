@@ -1,0 +1,114 @@
+{
+  "C0_official_recovery_passed": true,
+  "analysis_status": "PREREGISTERED_CAUSAL_SIZE_EXTENSION_COMPLETED",
+  "classification": "COMPENSATION_NOT_ROBUST_AFTER_CAUSAL_SIZE_EXPOSURE",
+  "configurations": {
+    "C0": {
+      "A_N10": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A_N12": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "P": 6,
+      "compensation_supported_N10": true,
+      "compensation_supported_N12": true,
+      "configuration": "C0",
+      "role": "ORIGINAL_CONTROL",
+      "size_comparison": {
+        "D_A_max": 1.1199838603059988e-15,
+        "configuration": "C0",
+        "size_sensitive": false,
+        "threshold": 1e-10
+      }
+    },
+    "C1": {
+      "A_N10": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "A_N12": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "P": 6,
+      "compensation_supported_N10": false,
+      "compensation_supported_N12": false,
+      "configuration": "C1",
+      "role": "CENTERED_SUBSYSTEM",
+      "size_comparison": {
+        "D_A_max": 0.08348386016922957,
+        "configuration": "C1",
+        "size_sensitive": true,
+        "threshold": 1e-10
+      }
+    },
+    "C2": {
+      "A_N10": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A_N12": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "P": 8,
+      "compensation_supported_N10": false,
+      "compensation_supported_N12": false,
+      "configuration": "C2",
+      "role": "ENLARGED_CAUSAL_DEPTH",
+      "size_comparison": {
+        "D_A_max": 0.00016809978764363676,
+        "configuration": "C2",
+        "size_sensitive": true,
+        "threshold": 1e-10
+      }
+    },
+    "C3": {
+      "A_N10": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "A_N12": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "P": 8,
+      "compensation_supported_N10": false,
+      "compensation_supported_N12": false,
+      "configuration": "C3",
+      "role": "CENTERED_AND_ENLARGED",
+      "size_comparison": {
+        "D_A_max": 0.40511197788179354,
+        "configuration": "C3",
+        "size_sensitive": true,
+        "threshold": 1e-10
+      }
+    }
+  },
+  "interpretation_boundary": "Finite-size sensitivity, boundary placement, causal reach, and robustness of the Paper 30 information-sector compensation only. No fundamental conservation law, thermodynamic-limit universality, relativistic causal cone, or equality with Paper 22 gravitational-wave speed is established.",
+  "size_sensitive_configurations": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "size_sensitivity_threshold": 1e-10
+}

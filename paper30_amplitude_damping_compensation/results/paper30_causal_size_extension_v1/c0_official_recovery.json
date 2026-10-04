@@ -1,0 +1,24 @@
+{
+  "atol": 1e-10,
+  "passed": true,
+  "systems": {
+    "N10": {
+      "max_R_C_delta": 0.0,
+      "max_alpha_delta": 0.0,
+      "max_local_state_delta": 0.0,
+      "max_pearson_delta": 0.0,
+      "max_transition_delta": 0.0,
+      "passed": true,
+      "status_match": true
+    },
+    "N12": {
+      "max_R_C_delta": 0.0,
+      "max_alpha_delta": 0.0,
+      "max_local_state_delta": 0.0,
+      "max_pearson_delta": 0.0,
+      "max_transition_delta": 0.0,
+      "passed": true,
+      "status_match": true
+    }
+  }
+}

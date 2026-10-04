@@ -1,0 +1,25 @@
+{
+  "A_N10": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "A_N12": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "P": 8,
+  "compensation_supported_N10": false,
+  "compensation_supported_N12": false,
+  "configuration": "C2",
+  "role": "ENLARGED_CAUSAL_DEPTH",
+  "size_comparison": {
+    "D_A_max": 0.00016809978764363676,
+    "configuration": "C2",
+    "size_sensitive": true,
+    "threshold": 1e-10
+  }
+}

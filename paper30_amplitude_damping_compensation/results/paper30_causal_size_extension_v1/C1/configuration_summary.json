@@ -1,0 +1,25 @@
+{
+  "A_N10": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "A_N12": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "P": 6,
+  "compensation_supported_N10": false,
+  "compensation_supported_N12": false,
+  "configuration": "C1",
+  "role": "CENTERED_SUBSYSTEM",
+  "size_comparison": {
+    "D_A_max": 0.08348386016922957,
+    "configuration": "C1",
+    "size_sensitive": true,
+    "threshold": 1e-10
+  }
+}
