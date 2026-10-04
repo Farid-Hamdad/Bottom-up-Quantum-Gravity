@@ -1,0 +1,52 @@
+{
+  "fit": {
+    "R2": 1.0,
+    "intercept": -1.000000000000003,
+    "n": 7,
+    "slope": 2.8571428571428568,
+    "status": "VALID"
+  },
+  "support_rows": [
+    {
+      "P": 1,
+      "furthest_distance_above_1e-12": null,
+      "t": 0.35
+    },
+    {
+      "P": 2,
+      "furthest_distance_above_1e-12": 1,
+      "t": 0.7
+    },
+    {
+      "P": 3,
+      "furthest_distance_above_1e-12": 2,
+      "t": 1.0499999999999998
+    },
+    {
+      "P": 4,
+      "furthest_distance_above_1e-12": 3,
+      "t": 1.4
+    },
+    {
+      "P": 5,
+      "furthest_distance_above_1e-12": 4,
+      "t": 1.75
+    },
+    {
+      "P": 6,
+      "furthest_distance_above_1e-12": 5,
+      "t": 2.0999999999999996
+    },
+    {
+      "P": 7,
+      "furthest_distance_above_1e-12": 6,
+      "t": 2.4499999999999997
+    },
+    {
+      "P": 8,
+      "furthest_distance_above_1e-12": 7,
+      "t": 2.8
+    }
+  ],
+  "v_circuit_estimate": 2.8571428571428568
+}

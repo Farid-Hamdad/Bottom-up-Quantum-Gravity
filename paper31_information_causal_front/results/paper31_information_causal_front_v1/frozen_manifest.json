@@ -1,0 +1,103 @@
+{
+  "analysis_status": "PROSPECTIVE_PREREGISTERED",
+  "circuit_support_threshold": 1e-12,
+  "dynamics": {
+    "J": 1.0,
+    "P_grid": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "dt": 0.35,
+    "evolution": "forward pure-state Strang branch",
+    "h": 1.0,
+    "initial_state": "|+>^N",
+    "t_grid": [
+      0.35,
+      0.7,
+      1.0499999999999998,
+      1.4,
+      1.75,
+      2.0999999999999996,
+      2.4499999999999997,
+      2.8
+    ]
+  },
+  "front_fit": "r_q(t)=v_q*t+b_q by OLS",
+  "front_levels": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "internal_endpoint": {
+    "maximum_relative_velocity_spread": 0.15,
+    "minimum_R2": 0.95,
+    "minimum_valid_points_per_q": 4,
+    "positive_velocity_required": true
+  },
+  "normalization": "single global maximum over complete preregistered d,t grid",
+  "numerics": {
+    "density_positivity_tol": 1e-12,
+    "density_trace_tol": 1e-12,
+    "entropy_eig_cutoff": 1e-15,
+    "hermiticity_tol": 1e-12,
+    "signal_zero_tol": 1e-14,
+    "state_norm_tol": 1e-12
+  },
+  "paper": 31,
+  "paper22": {
+    "c_edge_calibrated": 1.0,
+    "comparison_relative_tolerance": 0.1
+  },
+  "perturbation": {
+    "distances_from_A_boundary": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "operator": "Pauli Z",
+    "sites": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "primary_observable": "trace distance 0.5*||rho_A_pert-rho_A_ref||_1",
+  "secondary_modular_policy": "No regularization. Rank-deficient rho_A is explicitly marked UNDEFINED_RANK_DEFICIENT.",
+  "system": {
+    "A": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "N": 16,
+    "boundary": "open nearest-neighbor chain"
+  },
+  "unit_compatibility_gate": false,
+  "unit_compatibility_note": "No independent common spatial/temporal unit mapping between Paper 31 lattice-time units and Paper 22 calibrated graph units is frozen in this implementation. Cross-sector equality claims are therefore gated.",
+  "v_info": "mean of v_0.10, v_0.25, v_0.50"
+}

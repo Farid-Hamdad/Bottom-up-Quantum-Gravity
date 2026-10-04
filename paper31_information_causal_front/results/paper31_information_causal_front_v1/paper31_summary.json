@@ -1,0 +1,71 @@
+{
+  "A": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "analysis_status": "PREREGISTERED_PAPER31_COMPLETED",
+  "c_edge_paper22": 1.0,
+  "classification": {
+    "cross_sector_classification": "UNIT_COMPATIBILITY_NOT_ESTABLISHED",
+    "internal_front_classification": "INTERNALLY_COHERENT",
+    "reason": "No independent common spatial/temporal unit mapping between Paper 31 lattice-time units and Paper 22 calibrated graph units is frozen in this implementation. Cross-sector equality claims are therefore gated."
+  },
+  "front_fits": [
+    {
+      "R2": 0.9911208927531232,
+      "R2_pass": true,
+      "enough_points": true,
+      "intercept": 0.5024797648435432,
+      "n": 7,
+      "positive_velocity": true,
+      "q": 0.1,
+      "slope": 1.5593042117444886,
+      "status": "VALID"
+    },
+    {
+      "R2": 0.9977076725670253,
+      "R2_pass": true,
+      "enough_points": true,
+      "intercept": 0.28919868670992455,
+      "n": 7,
+      "positive_velocity": true,
+      "q": 0.25,
+      "slope": 1.4437260749148944,
+      "status": "VALID"
+    },
+    {
+      "R2": 0.9778675183463565,
+      "R2_pass": true,
+      "enough_points": true,
+      "intercept": 0.24935912451836564,
+      "n": 6,
+      "positive_velocity": true,
+      "q": 0.5,
+      "slope": 1.1185332836002975,
+      "status": "VALID"
+    }
+  ],
+  "internal_coherence": true,
+  "interpretation_boundary": "Paper31 may establish a reproducible finite-speed information front distinct from the formal circuit-support boundary. A direct equality claim with Paper22 c_edge is prohibited unless the independently frozen unit-compatibility gate passes.",
+  "primary_system_N": 16,
+  "recovery": {
+    "forward_branch": {
+      "max_abs_state_difference": 0.0,
+      "passed": true,
+      "tolerance": 1e-12
+    },
+    "outside_exact_support": {
+      "max_trace_distance_outside_support": 5.581569992065643e-16,
+      "n_outside_support_points": 60,
+      "passed": true,
+      "tolerance": 1e-12
+    }
+  },
+  "relative_velocity_spread": 0.13582476080017447,
+  "sigma_v": 0.18660346201774475,
+  "unit_compatibility_gate": false,
+  "v_circuit_estimate": 2.8571428571428568,
+  "v_info": 1.3738545234198936
+}

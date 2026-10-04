@@ -1,0 +1,43 @@
+{
+  "front_fits": [
+    {
+      "R2": 0.9911208927531232,
+      "R2_pass": true,
+      "enough_points": true,
+      "intercept": 0.5024797648435432,
+      "n": 7,
+      "positive_velocity": true,
+      "q": 0.1,
+      "slope": 1.5593042117444886,
+      "status": "VALID"
+    },
+    {
+      "R2": 0.9977076725670253,
+      "R2_pass": true,
+      "enough_points": true,
+      "intercept": 0.28919868670992455,
+      "n": 7,
+      "positive_velocity": true,
+      "q": 0.25,
+      "slope": 1.4437260749148944,
+      "status": "VALID"
+    },
+    {
+      "R2": 0.9778675183463565,
+      "R2_pass": true,
+      "enough_points": true,
+      "intercept": 0.24935912451836564,
+      "n": 6,
+      "positive_velocity": true,
+      "q": 0.5,
+      "slope": 1.1185332836002975,
+      "status": "VALID"
+    }
+  ],
+  "global_signal_max": 0.33985307991509794,
+  "internal_coherence": true,
+  "relative_velocity_spread": 0.13582476080017447,
+  "sigma_v": 0.18660346201774475,
+  "status": "COMPLETED",
+  "v_info": 1.3738545234198936
+}
