@@ -1,0 +1,22 @@
+{
+  "analysis_status": "POST_UNBLINDING_AMENDED_CAUSAL_COMPENSATION_LANDSCAPE_COMPLETED_REFLECTION_CONTROL_FAILED",
+  "anchor_recovery_passed": true,
+  "attempt": 2,
+  "fraction_supported_all_cells": 0.1259259259259259,
+  "fraction_supported_valid_cells": 0.1402061855670103,
+  "fraction_valid": 0.8981481481481481,
+  "interpretation_boundary": "Finite-size/depth information-sector compensation landscape only. Rank-deficient cells retain their preregistered positions and are reported as modular-sector undefined under the frozen K_A=-log(rho_A) definition. No eigenvalue regularization, conservation law, literal information transfer, thermodynamic universality, relativistic causal cone, equality with Paper 22 gravitational-wave speed, or fundamental spacetime law is established.",
+  "n_PAPER30_SUPPORTED_valid": 68,
+  "n_bandwidth_rows": 2700,
+  "n_cells_expected": 540,
+  "n_cells_observed": 540,
+  "n_modular_undefined": 55,
+  "n_reflection_checks": 300,
+  "n_valid_compensation": 485,
+  "reflection_control_passed": false,
+  "reflection_numeric_max_abs": 1.3766901396650155e-08,
+  "reflection_tolerance": 1e-10,
+  "undefined_reason_counts": {
+    "POSITIVITY_GATE_FAIL": 55
+  }
+}

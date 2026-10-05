@@ -1,0 +1,96 @@
+{
+  "A_size": 4,
+  "aggregates": [
+    "by_N_P",
+    "by_N_P_bandwidth",
+    "by_d_b"
+  ],
+  "analysis_status": "POST_UNBLINDING_AMENDED_LANDSCAPE",
+  "attempt": 2,
+  "causal_descriptor_interpretation": "finite-depth circuit footprint descriptor; not a relativistic causal cone",
+  "compensation": {
+    "R_C_identity": "R_C=1-pearson^2 after z-scoring",
+    "alpha_identity": "alpha_optimal=-pearson after z-scoring",
+    "bandwidth_fractions": [
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "historical_support_criterion_retained": true,
+    "predictor": "gamma_from",
+    "primary_continuous_observable": "pearson_residuals"
+  },
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "extension": "CAUSAL_COMPENSATION_LANDSCAPE_V1",
+  "geometry_descriptors": [
+    "d_L",
+    "d_R",
+    "d_b",
+    "x_A",
+    "x_chain",
+    "delta_center",
+    "causal_lower",
+    "causal_upper",
+    "L_causal",
+    "f_causal"
+  ],
+  "implementation": {
+    "anchor_recovery_atol": 1e-10,
+    "density_representation": "compressed_global_order",
+    "full_global_density_constructed": false,
+    "global_amplitude_damping_qubit_order": "q=0,...,N-1"
+  },
+  "interpretation_boundary": "Finite-size/depth information-sector compensation landscape only. No conservation law, literal information transfer, thermodynamic universality, relativistic causal cone, equality with Paper 22 gravitational-wave speed, or fundamental spacetime law is established.",
+  "n_cells": 540,
+  "paper": 30,
+  "position_rule": "every contiguous four-qubit subsystem",
+  "reflection_control": {
+    "local_qubit_map": {
+      "0": 3,
+      "1": 2,
+      "2": 1,
+      "3": 0
+    },
+    "pair_map": {
+      "01": "23",
+      "02": "13",
+      "03": "03",
+      "12": "12",
+      "13": "02",
+      "23": "01"
+    },
+    "support_booleans_exact": true,
+    "tolerance": 1e-10
+  },
+  "systems": [
+    8,
+    10,
+    12,
+    14,
+    16
+  ],
+  "undefined_modular_handling": {
+    "all_540_cells_retained": true,
+    "captured_errors": [
+      "MODULAR_STD_ZERO",
+      "POSITIVITY_GATE_FAIL"
+    ],
+    "no_eigenvalue_floor": true,
+    "no_pseudolog": true
+  }
+}

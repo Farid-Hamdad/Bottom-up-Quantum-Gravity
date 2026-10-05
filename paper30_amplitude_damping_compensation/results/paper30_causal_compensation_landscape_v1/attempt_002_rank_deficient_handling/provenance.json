@@ -1,0 +1,29 @@
+{
+  "attempt": 2,
+  "attempt_role": "POST_UNBLINDING_RANK_DEFICIENT_HANDLING",
+  "causal_size_extension_script_path": "/Users/dualcomputer/Bottom-up-Quantum-Gravity-bup-cosmology/paper30_amplitude_damping_compensation/scripts/paper30_causal_size_extension_v1.py",
+  "causal_size_extension_script_sha256": "8298890aa0894026caf6434e82dc23d44c9e5c004d98d7ccc1b71a412d8a4f1c",
+  "implementation": "compressed_global_order",
+  "landscape_script_path": "/Users/dualcomputer/Bottom-up-Quantum-Gravity-bup-cosmology/paper30_amplitude_damping_compensation/scripts/paper30_causal_compensation_landscape_v1.py",
+  "landscape_script_sha256": "651896eaae95d996de19bf96a2e2e34a28879fdc772ceaa374259af295ae2431",
+  "numpy_version": "2.4.2",
+  "undefined_handling": "post_unblinding_frozen_amendment",
+  "verified_protocol_files": {
+    "implementation_amendment": {
+      "path": "/Users/dualcomputer/Bottom-up-Quantum-Gravity-bup-cosmology/paper30_amplitude_damping_compensation/notes/IMPLEMENTATION_AMENDMENT_CAUSAL_COMPENSATION_MAP_FROZEN.md",
+      "sha256": "eb80bd17fe553de022ba42e99a9c1381cc379703bb6ca695448a334c3846600a"
+    },
+    "landscape_preregistration": {
+      "path": "/Users/dualcomputer/Bottom-up-Quantum-Gravity-bup-cosmology/paper30_amplitude_damping_compensation/notes/PREREGISTRATION_CAUSAL_COMPENSATION_MAP_FROZEN.md",
+      "sha256": "f119c4f682110066918822b6da6d08187175afbfbd4d8d2a08e33b932d2ff441"
+    },
+    "post_unblinding_rank_amendment": {
+      "path": "/Users/dualcomputer/Bottom-up-Quantum-Gravity-bup-cosmology/paper30_amplitude_damping_compensation/notes/POST_UNBLINDING_AMENDMENT_RANK_DEFICIENT_MODULAR_SECTOR_FROZEN.md",
+      "sha256": "25bde9604319a4ef990b8ffda7a50b5ccfe33b3cc1a73fe10b9080a324b950a0"
+    },
+    "reflection_clarification": {
+      "path": "/Users/dualcomputer/Bottom-up-Quantum-Gravity-bup-cosmology/paper30_amplitude_damping_compensation/notes/IMPLEMENTATION_CLARIFICATION_LANDSCAPE_REFLECTION_FROZEN.md",
+      "sha256": "4cf9964d88637f622df798453ca99f3f9b3ed2c8989f19f8d46274ab91049455"
+    }
+  }
+}
