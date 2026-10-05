@@ -2981,6 +2981,1295 @@ def landscape_anchor_recovery_gate() -> dict:
     }
 
 
+
+# ---------------------------------------------------------------------
+# Post-unblinding attempt 002: rank-deficient modular-sector handling
+# ---------------------------------------------------------------------
+
+LANDSCAPE_POST_UNBLINDING_AMENDMENT_PATH = (
+    ROOT
+    / "notes"
+    / "POST_UNBLINDING_AMENDMENT_RANK_DEFICIENT_MODULAR_SECTOR_FROZEN.md"
+)
+
+LANDSCAPE_POST_UNBLINDING_AMENDMENT_EXPECTED_SHA256 = (
+    "25bde9604319a4ef990b8ffda7a50b5ccfe33b3cc1a73fe10b9080a324b950a0"
+)
+
+LANDSCAPE_ATTEMPT_002_DIR = (
+    LANDSCAPE_OUT_DIR
+    / "attempt_002_rank_deficient_handling"
+)
+
+LANDSCAPE_UNDEFINED_ERRORS = {
+    "POSITIVITY_GATE_FAIL": "MODULAR_SECTOR_UNDEFINED_RANK_DEFICIENT",
+    "MODULAR_STD_ZERO": "MODULAR_SECTOR_UNDEFINED_STD_ZERO",
+}
+
+
+def diagnose_landscape_modular_failure(
+    n: int,
+    p_depth: int,
+    a_keep: tuple[int, ...],
+    psi_plus: np.ndarray,
+    psi_minus: np.ndarray,
+    expected_error: str,
+) -> dict:
+    compressed = compressed_blocks_from_branches(
+        psi_plus,
+        psi_minus,
+        a_keep,
+        n,
+    )
+    blocks0 = compressed["blocks"]
+    rest = compressed["rest"]
+
+    for state_index, (s, gamma) in enumerate(
+        zip(S_GRID, GAMMA_GRID)
+    ):
+        blocks = amplitude_damp_compressed_global_order(
+            blocks0,
+            float(gamma),
+            n,
+            a_keep,
+            rest,
+        )
+        rho_a = reduced_density_from_compressed_blocks(blocks)
+
+        try:
+            analyze_local_density(rho_a)
+        except RuntimeError as exc:
+            reason = str(exc)
+
+            if reason not in LANDSCAPE_UNDEFINED_ERRORS:
+                raise
+
+            if reason != expected_error:
+                raise RuntimeError(
+                    "LANDSCAPE_UNDEFINED_REPLAY_MISMATCH:"
+                    f"expected={expected_error}:observed={reason}:"
+                    f"N{n}:P{p_depth}:A{a_keep[0]}"
+                )
+
+            vals = np.real(
+                np.linalg.eigvalsh(
+                    hermitize(rho_a)
+                )
+            )
+
+            return {
+                "failure_reason": reason,
+                "analysis_status": (
+                    LANDSCAPE_UNDEFINED_ERRORS[reason]
+                ),
+                "first_failure_state_index": int(
+                    state_index
+                ),
+                "first_failure_s": float(s),
+                "first_failure_gamma": float(gamma),
+                "first_failure_lambda_min": float(
+                    vals.min()
+                ),
+                "first_failure_lambda_max": float(
+                    vals.max()
+                ),
+                "first_failure_numerical_rank": int(
+                    np.sum(
+                        vals > DENSITY_POSITIVITY_TOL
+                    )
+                ),
+                "numerical_rank_tolerance": float(
+                    DENSITY_POSITIVITY_TOL
+                ),
+                "rho_A_at_failure": rho_a,
+            }
+
+    raise RuntimeError(
+        "LANDSCAPE_UNDEFINED_REPLAY_DID_NOT_REPRODUCE:"
+        f"{expected_error}:N{n}:P{p_depth}:A{a_keep[0]}"
+    )
+
+
+def _landscape_attempt2_failure_defaults() -> dict:
+    return {
+        "modular_failure_reason": "",
+        "first_failure_state_index": -1,
+        "first_failure_s": np.nan,
+        "first_failure_gamma": np.nan,
+        "first_failure_lambda_min": np.nan,
+        "first_failure_lambda_max": np.nan,
+        "first_failure_numerical_rank": -1,
+        "numerical_rank_tolerance": float(
+            DENSITY_POSITIVITY_TOL
+        ),
+    }
+
+
+def _landscape_attempt2_invalid_cell_row(
+    n: int,
+    p_depth: int,
+    a_start: int,
+    failure: dict,
+) -> dict:
+    return {
+        **landscape_geometry(n, p_depth, a_start),
+        "analysis_status": failure["analysis_status"],
+        "cell_valid_compensation": False,
+        "PAPER30_SUPPORTED": "",
+        "n_supported_bandwidths": "",
+        "f_supported": np.nan,
+        "rho_strong": np.nan,
+        "rho_weak": np.nan,
+        "R_C_worst": np.nan,
+        "modular_failure_reason": (
+            failure["failure_reason"]
+        ),
+        "first_failure_state_index": int(
+            failure["first_failure_state_index"]
+        ),
+        "first_failure_s": float(
+            failure["first_failure_s"]
+        ),
+        "first_failure_gamma": float(
+            failure["first_failure_gamma"]
+        ),
+        "first_failure_lambda_min": float(
+            failure["first_failure_lambda_min"]
+        ),
+        "first_failure_lambda_max": float(
+            failure["first_failure_lambda_max"]
+        ),
+        "first_failure_numerical_rank": int(
+            failure["first_failure_numerical_rank"]
+        ),
+        "numerical_rank_tolerance": float(
+            failure["numerical_rank_tolerance"]
+        ),
+    }
+
+
+def _landscape_attempt2_invalid_bandwidth_rows(
+    n: int,
+    p_depth: int,
+    a_start: int,
+    failure: dict,
+) -> list[dict]:
+    geometry = landscape_geometry(
+        n,
+        p_depth,
+        a_start,
+    )
+    rows = []
+
+    gamma_x = np.asarray(
+        [
+            float(GAMMA_GRID[k])
+            for k in range(len(GAMMA_GRID) - 1)
+        ],
+        dtype=float,
+    )
+    gamma_range = float(
+        np.max(gamma_x) - np.min(gamma_x)
+    )
+
+    for frac in BANDWIDTH_FRACTIONS:
+        rows.append({
+            **geometry,
+            "analysis_status": failure["analysis_status"],
+            "cell_valid_compensation": False,
+            "bandwidth_fraction_gamma_range": float(
+                frac
+            ),
+            "bandwidth_absolute": float(
+                frac * gamma_range
+            ),
+            "pearson_residuals": np.nan,
+            "spearman_residuals": np.nan,
+            "alpha_optimal": np.nan,
+            "R_C": np.nan,
+            "P1_negative_pearson": "",
+            "P2_alpha_in_window": "",
+            "P3_R_C_le_0p20": "",
+            "bandwidth_supported": "",
+            "modular_failure_reason": (
+                failure["failure_reason"]
+            ),
+            "first_failure_state_index": int(
+                failure["first_failure_state_index"]
+            ),
+            "first_failure_gamma": float(
+                failure["first_failure_gamma"]
+            ),
+        })
+
+    return rows
+
+
+def run_landscape_cell_attempt2(
+    n: int,
+    p_depth: int,
+    a_start: int,
+    psi_plus: np.ndarray,
+    psi_minus: np.ndarray,
+) -> dict:
+    a_keep = tuple(
+        range(a_start, a_start + A_SIZE)
+    )
+
+    try:
+        trajectory = (
+            run_compressed_global_order_trajectory_from_branches(
+                n=n,
+                p_depth=p_depth,
+                a_keep=a_keep,
+                psi_plus=psi_plus,
+                psi_minus=psi_minus,
+            )
+        )
+    except RuntimeError as exc:
+        reason = str(exc)
+
+        if reason not in LANDSCAPE_UNDEFINED_ERRORS:
+            raise
+
+        failure = diagnose_landscape_modular_failure(
+            n=n,
+            p_depth=p_depth,
+            a_keep=a_keep,
+            psi_plus=psi_plus,
+            psi_minus=psi_minus,
+            expected_error=reason,
+        )
+
+        return {
+            "status": "UNDEFINED",
+            "a_keep": a_keep,
+            "trajectory": None,
+            "analysis": None,
+            "failure": failure,
+            "cell_row": (
+                _landscape_attempt2_invalid_cell_row(
+                    n,
+                    p_depth,
+                    a_start,
+                    failure,
+                )
+            ),
+            "bandwidth_rows": (
+                _landscape_attempt2_invalid_bandwidth_rows(
+                    n,
+                    p_depth,
+                    a_start,
+                    failure,
+                )
+            ),
+        }
+
+    analysis = analyze_compensation(
+        n,
+        trajectory["transitions"],
+    )
+
+    cell_row, bandwidth_rows = (
+        landscape_cell_summary(
+            n=n,
+            p_depth=p_depth,
+            a_start=a_start,
+            analysis=analysis,
+        )
+    )
+
+    cell_row = {
+        **cell_row,
+        "cell_valid_compensation": True,
+        **_landscape_attempt2_failure_defaults(),
+    }
+
+    bandwidth_rows = [
+        {
+            **row,
+            "analysis_status": analysis[
+                "analysis_status"
+            ],
+            "cell_valid_compensation": True,
+            "modular_failure_reason": "",
+            "first_failure_state_index": -1,
+            "first_failure_gamma": np.nan,
+        }
+        for row in bandwidth_rows
+    ]
+
+    return {
+        "status": "VALID",
+        "a_keep": a_keep,
+        "trajectory": trajectory,
+        "analysis": analysis,
+        "failure": None,
+        "cell_row": cell_row,
+        "bandwidth_rows": bandwidth_rows,
+    }
+
+
+def reflection_compare_cells_attempt2(
+    n: int,
+    p_depth: int,
+    a_left: int,
+    left_record: dict,
+    a_right: int,
+    right_record: dict,
+) -> dict:
+    expected_right = int(
+        n - A_SIZE - a_left
+    )
+
+    if a_right != expected_right:
+        raise ValueError(
+            "LANDSCAPE_REFLECTION_PARTNER_MISMATCH:"
+            f"N{n}:P{p_depth}:A{a_left}:"
+            f"got{a_right}:expected{expected_right}"
+        )
+
+    left_status = left_record["status"]
+    right_status = right_record["status"]
+
+    if (
+        left_status == "VALID"
+        and right_status == "VALID"
+    ):
+        row = reflection_compare_cells(
+            n=n,
+            p_depth=p_depth,
+            a_left=a_left,
+            left_trajectory=left_record[
+                "trajectory"
+            ],
+            left_analysis=left_record[
+                "analysis"
+            ],
+            a_right=a_right,
+            right_trajectory=right_record[
+                "trajectory"
+            ],
+            right_analysis=right_record[
+                "analysis"
+            ],
+        )
+        return {
+            **row,
+            "reflection_mode": "VALID_NUMERIC",
+            "left_cell_status": left_status,
+            "right_cell_status": right_status,
+            "undefined_status_match": "",
+            "failure_reason_match": "",
+            "failure_location_match": "",
+        }
+
+    if (
+        left_status == "UNDEFINED"
+        and right_status == "UNDEFINED"
+    ):
+        lf = left_record["failure"]
+        rf = right_record["failure"]
+
+        reason_match = bool(
+            lf["failure_reason"]
+            == rf["failure_reason"]
+        )
+        location_match = bool(
+            int(lf["first_failure_state_index"])
+            == int(rf["first_failure_state_index"])
+            and abs(
+                float(lf["first_failure_s"])
+                - float(rf["first_failure_s"])
+            ) <= LANDSCAPE_REFLECTION_TOL
+            and abs(
+                float(lf["first_failure_gamma"])
+                - float(rf["first_failure_gamma"])
+            ) <= LANDSCAPE_REFLECTION_TOL
+        )
+        status_match = bool(
+            reason_match and location_match
+        )
+
+        return {
+            "N": int(n),
+            "P": int(p_depth),
+            "A_start_left": int(a_left),
+            "A_start_right": int(a_right),
+            "self_mirror": bool(
+                a_left == a_right
+            ),
+            "tolerance": (
+                LANDSCAPE_REFLECTION_TOL
+            ),
+            "max_abs_rho_A0": np.nan,
+            "max_abs_W": np.nan,
+            "max_abs_A": np.nan,
+            "max_abs_v": np.nan,
+            "max_abs_M_W": np.nan,
+            "max_abs_M_mod": np.nan,
+            "max_abs_pearson": np.nan,
+            "max_abs_alpha": np.nan,
+            "max_abs_R_C": np.nan,
+            "numeric_max_abs": np.nan,
+            "support_exact_match": "",
+            "passed": status_match,
+            "reflection_mode": (
+                "UNDEFINED_QUALITATIVE"
+            ),
+            "left_cell_status": left_status,
+            "right_cell_status": right_status,
+            "undefined_status_match": (
+                status_match
+            ),
+            "failure_reason_match": (
+                reason_match
+            ),
+            "failure_location_match": (
+                location_match
+            ),
+        }
+
+    return {
+        "N": int(n),
+        "P": int(p_depth),
+        "A_start_left": int(a_left),
+        "A_start_right": int(a_right),
+        "self_mirror": bool(
+            a_left == a_right
+        ),
+        "tolerance": LANDSCAPE_REFLECTION_TOL,
+        "max_abs_rho_A0": np.nan,
+        "max_abs_W": np.nan,
+        "max_abs_A": np.nan,
+        "max_abs_v": np.nan,
+        "max_abs_M_W": np.nan,
+        "max_abs_M_mod": np.nan,
+        "max_abs_pearson": np.nan,
+        "max_abs_alpha": np.nan,
+        "max_abs_R_C": np.nan,
+        "numeric_max_abs": np.nan,
+        "support_exact_match": False,
+        "passed": False,
+        "reflection_mode": "STATUS_MISMATCH",
+        "left_cell_status": left_status,
+        "right_cell_status": right_status,
+        "undefined_status_match": False,
+        "failure_reason_match": False,
+        "failure_location_match": False,
+    }
+
+
+def _landscape_attempt2_valid_rows(
+    rows: list[dict],
+) -> list[dict]:
+    return [
+        row
+        for row in rows
+        if bool(row["cell_valid_compensation"])
+    ]
+
+
+def aggregate_landscape_np_attempt2(
+    cell_rows: list[dict],
+) -> list[dict]:
+    out = []
+
+    for n in LANDSCAPE_N_VALUES:
+        for p_depth in LANDSCAPE_P_VALUES:
+            rows = [
+                row
+                for row in cell_rows
+                if int(row["N"]) == n
+                and int(row["P"]) == p_depth
+            ]
+
+            expected = n - A_SIZE + 1
+
+            if len(rows) != expected:
+                raise RuntimeError(
+                    "LANDSCAPE_NP_CELL_COUNT_MISMATCH:"
+                    f"N{n}:P{p_depth}:"
+                    f"{len(rows)}:{expected}"
+                )
+
+            valid = _landscape_attempt2_valid_rows(
+                rows
+            )
+            undefined = len(rows) - len(valid)
+
+            supported = [
+                row
+                for row in valid
+                if bool(row["PAPER30_SUPPORTED"])
+            ]
+
+            f_values = np.asarray(
+                [
+                    float(row["f_supported"])
+                    for row in valid
+                ],
+                dtype=float,
+            )
+
+            out.append({
+                "N": int(n),
+                "P": int(p_depth),
+                "n_positions": int(len(rows)),
+                "n_valid_compensation": int(
+                    len(valid)
+                ),
+                "n_modular_undefined": int(
+                    undefined
+                ),
+                "n_PAPER30_SUPPORTED_valid": int(
+                    len(supported)
+                ),
+                "fraction_valid": float(
+                    len(valid) / len(rows)
+                ),
+                "fraction_supported_all_cells": float(
+                    len(supported) / len(rows)
+                ),
+                "fraction_supported_valid_cells": (
+                    float(
+                        len(supported) / len(valid)
+                    )
+                    if valid
+                    else np.nan
+                ),
+                "f_supported_min_valid": (
+                    float(np.min(f_values))
+                    if valid
+                    else np.nan
+                ),
+                "f_supported_median_valid": (
+                    float(np.median(f_values))
+                    if valid
+                    else np.nan
+                ),
+                "f_supported_max_valid": (
+                    float(np.max(f_values))
+                    if valid
+                    else np.nan
+                ),
+            })
+
+    return out
+
+
+def aggregate_landscape_np_bandwidth_attempt2(
+    bandwidth_rows: list[dict],
+) -> list[dict]:
+    out = []
+
+    for n in LANDSCAPE_N_VALUES:
+        for p_depth in LANDSCAPE_P_VALUES:
+            for frac in BANDWIDTH_FRACTIONS:
+                rows = [
+                    row
+                    for row in bandwidth_rows
+                    if int(row["N"]) == n
+                    and int(row["P"]) == p_depth
+                    and abs(
+                        float(
+                            row[
+                                "bandwidth_fraction_gamma_range"
+                            ]
+                        )
+                        - float(frac)
+                    ) < 1e-12
+                ]
+
+                expected = n - A_SIZE + 1
+
+                if len(rows) != expected:
+                    raise RuntimeError(
+                        "LANDSCAPE_NP_BW_COUNT_MISMATCH:"
+                        f"N{n}:P{p_depth}:BW{frac}:"
+                        f"{len(rows)}:{expected}"
+                    )
+
+                valid = (
+                    _landscape_attempt2_valid_rows(
+                        rows
+                    )
+                )
+
+                supported = [
+                    row
+                    for row in valid
+                    if bool(
+                        row["bandwidth_supported"]
+                    )
+                ]
+
+                rho = np.asarray(
+                    [
+                        float(
+                            row["pearson_residuals"]
+                        )
+                        for row in valid
+                    ],
+                    dtype=float,
+                )
+
+                out.append({
+                    "N": int(n),
+                    "P": int(p_depth),
+                    "bandwidth_fraction_gamma_range": float(
+                        frac
+                    ),
+                    "n_positions": int(len(rows)),
+                    "n_valid_compensation": int(
+                        len(valid)
+                    ),
+                    "n_modular_undefined": int(
+                        len(rows) - len(valid)
+                    ),
+                    "n_bandwidth_supported_valid": int(
+                        len(supported)
+                    ),
+                    "fraction_valid": float(
+                        len(valid) / len(rows)
+                    ),
+                    "fraction_supported_all_cells": float(
+                        len(supported) / len(rows)
+                    ),
+                    "fraction_supported_valid_cells": (
+                        float(
+                            len(supported)
+                            / len(valid)
+                        )
+                        if valid
+                        else np.nan
+                    ),
+                    "rho_min_valid": (
+                        float(np.min(rho))
+                        if valid
+                        else np.nan
+                    ),
+                    "rho_median_valid": (
+                        float(np.median(rho))
+                        if valid
+                        else np.nan
+                    ),
+                    "rho_max_valid": (
+                        float(np.max(rho))
+                        if valid
+                        else np.nan
+                    ),
+                })
+
+    return out
+
+
+def aggregate_landscape_db_attempt2(
+    cell_rows: list[dict],
+) -> list[dict]:
+    groups = {}
+
+    for row in cell_rows:
+        d_b = int(row["d_b"])
+        groups.setdefault(d_b, []).append(row)
+
+    out = []
+
+    for d_b in sorted(groups):
+        rows = groups[d_b]
+        valid = _landscape_attempt2_valid_rows(
+            rows
+        )
+        supported = [
+            row
+            for row in valid
+            if bool(row["PAPER30_SUPPORTED"])
+        ]
+
+        rho_strong = np.asarray(
+            [
+                float(row["rho_strong"])
+                for row in valid
+            ],
+            dtype=float,
+        )
+        rho_weak = np.asarray(
+            [
+                float(row["rho_weak"])
+                for row in valid
+            ],
+            dtype=float,
+        )
+
+        out.append({
+            "d_b": int(d_b),
+            "n_cells": int(len(rows)),
+            "n_valid_compensation": int(
+                len(valid)
+            ),
+            "n_modular_undefined": int(
+                len(rows) - len(valid)
+            ),
+            "n_PAPER30_SUPPORTED_valid": int(
+                len(supported)
+            ),
+            "fraction_valid": float(
+                len(valid) / len(rows)
+            ),
+            "fraction_supported_all_cells": float(
+                len(supported) / len(rows)
+            ),
+            "fraction_supported_valid_cells": (
+                float(
+                    len(supported) / len(valid)
+                )
+                if valid
+                else np.nan
+            ),
+            "rho_strong_min_valid": (
+                float(np.min(rho_strong))
+                if valid
+                else np.nan
+            ),
+            "rho_strong_median_valid": (
+                float(np.median(rho_strong))
+                if valid
+                else np.nan
+            ),
+            "rho_strong_max_valid": (
+                float(np.max(rho_strong))
+                if valid
+                else np.nan
+            ),
+            "rho_weak_min_valid": (
+                float(np.min(rho_weak))
+                if valid
+                else np.nan
+            ),
+            "rho_weak_median_valid": (
+                float(np.median(rho_weak))
+                if valid
+                else np.nan
+            ),
+            "rho_weak_max_valid": (
+                float(np.max(rho_weak))
+                if valid
+                else np.nan
+            ),
+        })
+
+    return out
+
+
+def main_landscape_attempt2() -> None:
+    required_hashes = {
+        "landscape_preregistration": (
+            LANDSCAPE_PREREG_PATH,
+            LANDSCAPE_PREREG_EXPECTED_SHA256,
+        ),
+        "implementation_amendment": (
+            LANDSCAPE_IMPLEMENTATION_AMENDMENT_PATH,
+            LANDSCAPE_IMPLEMENTATION_AMENDMENT_EXPECTED_SHA256,
+        ),
+        "reflection_clarification": (
+            LANDSCAPE_REFLECTION_CLARIFICATION_PATH,
+            LANDSCAPE_REFLECTION_CLARIFICATION_EXPECTED_SHA256,
+        ),
+        "post_unblinding_rank_amendment": (
+            LANDSCAPE_POST_UNBLINDING_AMENDMENT_PATH,
+            LANDSCAPE_POST_UNBLINDING_AMENDMENT_EXPECTED_SHA256,
+        ),
+    }
+
+    verified_protocol_files = {}
+
+    for label, (path, expected_sha) in (
+        required_hashes.items()
+    ):
+        if not path.exists():
+            raise RuntimeError(
+                "LANDSCAPE_REQUIRED_FILE_MISSING:"
+                f"{label}:{path}"
+            )
+
+        observed_sha = sha256_file(path)
+
+        if observed_sha != expected_sha:
+            raise RuntimeError(
+                "LANDSCAPE_FROZEN_HASH_MISMATCH:"
+                f"{label}:{observed_sha}:"
+                f"{expected_sha}"
+            )
+
+        verified_protocol_files[label] = {
+            "path": str(path),
+            "sha256": observed_sha,
+        }
+
+    if LANDSCAPE_ATTEMPT_002_DIR.exists():
+        raise RuntimeError(
+            "LANDSCAPE_ATTEMPT_002_DIR_ALREADY_EXISTS:"
+            f"{LANDSCAPE_ATTEMPT_002_DIR}"
+        )
+
+    print(
+        "LANDSCAPE_ATTEMPT_002_"
+        "ANCHOR_RECOVERY_GATE_START"
+    )
+
+    anchor_recovery = (
+        landscape_anchor_recovery_gate()
+    )
+
+    for key in sorted(
+        anchor_recovery["systems"]
+    ):
+        row = anchor_recovery["systems"][key]
+        print(
+            "LANDSCAPE_ANCHOR "
+            f"{key} "
+            f"passed={row['passed']} "
+            f"state={row['max_local_state_delta']:.3e} "
+            f"transition={row['max_transition_delta']:.3e} "
+            f"residual={row['max_residual_delta']:.3e} "
+            f"compensation="
+            f"{row['max_compensation_delta']:.3e}"
+        )
+
+    if not anchor_recovery["passed"]:
+        raise RuntimeError(
+            "LANDSCAPE_ANCHOR_RECOVERY_GATE_FAILED:"
+            "attempt002 not executed"
+        )
+
+    print(
+        "LANDSCAPE_ATTEMPT_002_"
+        "ANCHOR_RECOVERY_GATE_PASS"
+    )
+
+    LANDSCAPE_ATTEMPT_002_DIR.mkdir(
+        parents=True,
+        exist_ok=False,
+    )
+
+    script_path = Path(__file__).resolve()
+    causal_size_script = (
+        ROOT
+        / "scripts"
+        / "paper30_causal_size_extension_v1.py"
+    )
+
+    provenance = {
+        "attempt": 2,
+        "attempt_role": (
+            "POST_UNBLINDING_RANK_DEFICIENT_HANDLING"
+        ),
+        "landscape_script_path": str(
+            script_path
+        ),
+        "landscape_script_sha256": (
+            sha256_file(script_path)
+        ),
+        "causal_size_extension_script_path": str(
+            causal_size_script
+        ),
+        "causal_size_extension_script_sha256": (
+            sha256_file(causal_size_script)
+        ),
+        "verified_protocol_files": (
+            verified_protocol_files
+        ),
+        "numpy_version": np.__version__,
+        "implementation": (
+            "compressed_global_order"
+        ),
+        "undefined_handling": (
+            "post_unblinding_frozen_amendment"
+        ),
+    }
+
+    manifest = dict(landscape_manifest())
+    manifest["analysis_status"] = (
+        "POST_UNBLINDING_AMENDED_LANDSCAPE"
+    )
+    manifest["attempt"] = 2
+    manifest["undefined_modular_handling"] = {
+        "captured_errors": sorted(
+            LANDSCAPE_UNDEFINED_ERRORS
+        ),
+        "no_eigenvalue_floor": True,
+        "no_pseudolog": True,
+        "all_540_cells_retained": True,
+    }
+
+    write_json(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "frozen_manifest.json",
+        manifest,
+    )
+    write_json(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "provenance.json",
+        provenance,
+    )
+    write_json(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "anchor_recovery.json",
+        anchor_recovery,
+    )
+
+    cell_rows = []
+    bandwidth_rows = []
+    reflection_rows = []
+
+    total_expected_cells = int(
+        sum(
+            n - A_SIZE + 1
+            for n in LANDSCAPE_N_VALUES
+            for _ in LANDSCAPE_P_VALUES
+        )
+    )
+    completed_cells = 0
+
+    for n in LANDSCAPE_N_VALUES:
+        for p_depth in LANDSCAPE_P_VALUES:
+            psi_plus = evolve_tfim(
+                n,
+                DT,
+                p_depth,
+            )
+            psi_minus = evolve_tfim(
+                n,
+                -DT,
+                p_depth,
+            )
+
+            records_by_a = {}
+
+            for a_start in range(
+                n - A_SIZE + 1
+            ):
+                record = (
+                    run_landscape_cell_attempt2(
+                        n=n,
+                        p_depth=p_depth,
+                        a_start=a_start,
+                        psi_plus=psi_plus,
+                        psi_minus=psi_minus,
+                    )
+                )
+
+                records_by_a[a_start] = record
+                cell_rows.append(
+                    record["cell_row"]
+                )
+                bandwidth_rows.extend(
+                    record["bandwidth_rows"]
+                )
+                completed_cells += 1
+
+                if record["status"] == "UNDEFINED":
+                    failure = record["failure"]
+                    print(
+                        "LANDSCAPE_CELL_UNDEFINED "
+                        f"N={n} P={p_depth} "
+                        f"A={a_start} "
+                        f"reason="
+                        f"{failure['failure_reason']} "
+                        f"state="
+                        f"{failure['first_failure_state_index']} "
+                        f"gamma="
+                        f"{failure['first_failure_gamma']:.6g} "
+                        f"rank="
+                        f"{failure['first_failure_numerical_rank']}"
+                    )
+
+            for a_left in range(
+                n - A_SIZE + 1
+            ):
+                a_right = int(
+                    n - A_SIZE - a_left
+                )
+
+                if a_left > a_right:
+                    continue
+
+                reflection_rows.append(
+                    reflection_compare_cells_attempt2(
+                        n=n,
+                        p_depth=p_depth,
+                        a_left=a_left,
+                        left_record=records_by_a[
+                            a_left
+                        ],
+                        a_right=a_right,
+                        right_record=records_by_a[
+                            a_right
+                        ],
+                    )
+                )
+
+            n_valid_block = int(
+                sum(
+                    record["status"] == "VALID"
+                    for record in records_by_a.values()
+                )
+            )
+            n_undefined_block = int(
+                len(records_by_a)
+                - n_valid_block
+            )
+
+            print(
+                "LANDSCAPE_BLOCK_COMPLETED "
+                f"N={n} P={p_depth} "
+                f"positions={len(records_by_a)} "
+                f"valid={n_valid_block} "
+                f"undefined={n_undefined_block} "
+                f"completed_cells="
+                f"{completed_cells}/"
+                f"{total_expected_cells}"
+            )
+
+            del records_by_a
+            del psi_plus
+            del psi_minus
+
+    if completed_cells != total_expected_cells:
+        raise RuntimeError(
+            "LANDSCAPE_CELL_COUNT_MISMATCH:"
+            f"{completed_cells}:"
+            f"{total_expected_cells}"
+        )
+
+    expected_bandwidth_rows = int(
+        total_expected_cells
+        * len(BANDWIDTH_FRACTIONS)
+    )
+
+    if len(bandwidth_rows) != (
+        expected_bandwidth_rows
+    ):
+        raise RuntimeError(
+            "LANDSCAPE_BANDWIDTH_ROW_COUNT_MISMATCH:"
+            f"{len(bandwidth_rows)}:"
+            f"{expected_bandwidth_rows}"
+        )
+
+    aggregate_np = (
+        aggregate_landscape_np_attempt2(
+            cell_rows
+        )
+    )
+    aggregate_np_bandwidth = (
+        aggregate_landscape_np_bandwidth_attempt2(
+            bandwidth_rows
+        )
+    )
+    aggregate_db = (
+        aggregate_landscape_db_attempt2(
+            cell_rows
+        )
+    )
+
+    reflection_passed = all(
+        bool(row["passed"])
+        for row in reflection_rows
+    )
+
+    finite_reflection = [
+        float(row["numeric_max_abs"])
+        for row in reflection_rows
+        if np.isfinite(
+            float(row["numeric_max_abs"])
+        )
+    ]
+
+    max_reflection_numeric_abs = (
+        max(finite_reflection)
+        if finite_reflection
+        else np.nan
+    )
+
+    write_csv(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "landscape_cells.csv",
+        cell_rows,
+    )
+    write_csv(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "landscape_bandwidths.csv",
+        bandwidth_rows,
+    )
+    write_csv(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "reflection_control.csv",
+        reflection_rows,
+    )
+    write_csv(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "aggregate_by_N_P.csv",
+        aggregate_np,
+    )
+    write_csv(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "aggregate_by_N_P_bandwidth.csv",
+        aggregate_np_bandwidth,
+    )
+    write_csv(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / "aggregate_by_d_b.csv",
+        aggregate_db,
+    )
+
+    valid_cells = (
+        _landscape_attempt2_valid_rows(
+            cell_rows
+        )
+    )
+    n_valid = int(len(valid_cells))
+    n_undefined = int(
+        len(cell_rows) - n_valid
+    )
+    n_supported = int(
+        sum(
+            bool(row["PAPER30_SUPPORTED"])
+            for row in valid_cells
+        )
+    )
+
+    undefined_reason_counts = {}
+
+    for row in cell_rows:
+        if bool(
+            row["cell_valid_compensation"]
+        ):
+            continue
+        reason = str(
+            row["modular_failure_reason"]
+        )
+        undefined_reason_counts[reason] = (
+            undefined_reason_counts.get(
+                reason,
+                0,
+            )
+            + 1
+        )
+
+    final_status = (
+        "POST_UNBLINDING_AMENDED_"
+        "CAUSAL_COMPENSATION_LANDSCAPE_COMPLETED"
+        if reflection_passed
+        else (
+            "POST_UNBLINDING_AMENDED_"
+            "CAUSAL_COMPENSATION_LANDSCAPE_"
+            "COMPLETED_REFLECTION_CONTROL_FAILED"
+        )
+    )
+
+    final_summary = {
+        "analysis_status": final_status,
+        "attempt": 2,
+        "anchor_recovery_passed": bool(
+            anchor_recovery["passed"]
+        ),
+        "n_cells_expected": int(
+            total_expected_cells
+        ),
+        "n_cells_observed": int(
+            len(cell_rows)
+        ),
+        "n_valid_compensation": n_valid,
+        "n_modular_undefined": n_undefined,
+        "fraction_valid": float(
+            n_valid / len(cell_rows)
+        ),
+        "undefined_reason_counts": (
+            undefined_reason_counts
+        ),
+        "n_bandwidth_rows": int(
+            len(bandwidth_rows)
+        ),
+        "n_reflection_checks": int(
+            len(reflection_rows)
+        ),
+        "reflection_control_passed": bool(
+            reflection_passed
+        ),
+        "reflection_numeric_max_abs": float(
+            max_reflection_numeric_abs
+        ),
+        "reflection_tolerance": (
+            LANDSCAPE_REFLECTION_TOL
+        ),
+        "n_PAPER30_SUPPORTED_valid": (
+            n_supported
+        ),
+        "fraction_supported_all_cells": float(
+            n_supported / len(cell_rows)
+        ),
+        "fraction_supported_valid_cells": (
+            float(n_supported / n_valid)
+            if n_valid
+            else np.nan
+        ),
+        "interpretation_boundary": (
+            "Finite-size/depth information-sector "
+            "compensation landscape only. Rank-"
+            "deficient cells retain their preregistered "
+            "positions and are reported as modular-"
+            "sector undefined under the frozen "
+            "K_A=-log(rho_A) definition. No "
+            "eigenvalue regularization, conservation "
+            "law, literal information transfer, "
+            "thermodynamic universality, relativistic "
+            "causal cone, equality with Paper 22 "
+            "gravitational-wave speed, or fundamental "
+            "spacetime law is established."
+        ),
+    }
+
+    write_json(
+        LANDSCAPE_ATTEMPT_002_DIR
+        / (
+            "paper30_causal_compensation_"
+            "landscape_summary.json"
+        ),
+        final_summary,
+    )
+
+    print(
+        "PAPER30_CAUSAL_COMPENSATION_"
+        "LANDSCAPE_ATTEMPT_002_COMPLETED"
+    )
+    print(
+        "reflection_control_passed="
+        f"{reflection_passed}"
+    )
+    print(
+        "valid_cells="
+        f"{n_valid}/{len(cell_rows)}"
+    )
+    print(
+        "modular_undefined="
+        f"{n_undefined}/{len(cell_rows)}"
+    )
+    print(
+        "PAPER30_SUPPORTED_valid="
+        f"{n_supported}/{n_valid}"
+        if n_valid
+        else "PAPER30_SUPPORTED_valid=0/0"
+    )
+    print(LANDSCAPE_ATTEMPT_002_DIR)
+
+    if not reflection_passed:
+        raise RuntimeError(
+            "LANDSCAPE_REFLECTION_CONTROL_FAILED:"
+            "attempt002 results preserved but "
+            "interpretation blocked"
+        )
+
+
 def main_landscape() -> None:
     required_hashes = {
         "landscape_preregistration": (
@@ -3477,4 +4766,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main_landscape()
+    main_landscape_attempt2()
