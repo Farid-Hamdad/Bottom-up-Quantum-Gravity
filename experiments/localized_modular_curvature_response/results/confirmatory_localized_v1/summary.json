@@ -1,0 +1,85 @@
+{
+  "H1": {
+    "confirmatory_test_performed": true,
+    "extreme_count": 25,
+    "n_permutations": 100000,
+    "observed_spearman": -0.6120978120978121,
+    "p_perm_two_sided": 0.0002599974000259997,
+    "seed": 20261006,
+    "status": "ok",
+    "target": "delta_M_W"
+  },
+  "H2": {
+    "confirmatory_test_performed": true,
+    "extreme_count": 1357,
+    "n_permutations": 100000,
+    "observed_spearman": 0.47078507078507076,
+    "p_perm_two_sided": 0.013579864201357986,
+    "seed": 20261006,
+    "status": "ok",
+    "target": "delta_kappa_A"
+  },
+  "claim_boundary": {
+    "Einstein_equation_claim": false,
+    "W_to_OR_is_pipeline_construction": true,
+    "continuum_claim": false,
+    "independent_curvature_source_claim": false,
+    "localized_curvature_definition_frozen_pre_N12": true,
+    "universality_claim": false
+  },
+  "classification": "LOCALIZED_MODULAR_CURVATURE_RESPONSE_SUPPORTED",
+  "global_curvature_control_is_confirmatory": false,
+  "n_conditions": 36,
+  "n_modular_rank_undefined": 0,
+  "n_ok": 36,
+  "robustness": {
+    "H1": {
+      "all_same_sign_as_full": true,
+      "full_spearman": -0.6120978120978121,
+      "leave_one_level_out": [
+        {
+          "excluded_epsilon": 0.075,
+          "same_sign_as_full": true,
+          "spearman": -0.6652173913043479
+        },
+        {
+          "excluded_epsilon": 0.15,
+          "same_sign_as_full": true,
+          "spearman": -0.6669565217391304
+        },
+        {
+          "excluded_epsilon": 0.3,
+          "same_sign_as_full": true,
+          "spearman": -0.5739130434782609
+        }
+      ],
+      "max_spearman": -0.5739130434782609,
+      "min_spearman": -0.6669565217391304,
+      "target": "delta_M_W"
+    },
+    "H2": {
+      "all_same_sign_as_full": true,
+      "full_spearman": 0.47078507078507076,
+      "leave_one_level_out": [
+        {
+          "excluded_epsilon": 0.075,
+          "same_sign_as_full": true,
+          "spearman": 0.47130434782608693
+        },
+        {
+          "excluded_epsilon": 0.15,
+          "same_sign_as_full": true,
+          "spearman": 0.43217391304347824
+        },
+        {
+          "excluded_epsilon": 0.3,
+          "same_sign_as_full": true,
+          "spearman": 0.4782608695652174
+        }
+      ],
+      "max_spearman": 0.4782608695652174,
+      "min_spearman": 0.43217391304347824,
+      "target": "delta_kappa_A"
+    }
+  }
+}

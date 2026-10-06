@@ -1,0 +1,23 @@
+{
+  "H1_modular_information": {
+    "confirmatory_test_performed": true,
+    "extreme_count": 25,
+    "n_permutations": 100000,
+    "observed_spearman": -0.6120978120978121,
+    "p_perm_two_sided": 0.0002599974000259997,
+    "seed": 20261006,
+    "status": "ok",
+    "target": "delta_M_W"
+  },
+  "H2_modular_local_curvature": {
+    "confirmatory_test_performed": true,
+    "extreme_count": 1357,
+    "n_permutations": 100000,
+    "observed_spearman": 0.47078507078507076,
+    "p_perm_two_sided": 0.013579864201357986,
+    "seed": 20261006,
+    "status": "ok",
+    "target": "delta_kappa_A"
+  },
+  "hierarchical_testing": true
+}
