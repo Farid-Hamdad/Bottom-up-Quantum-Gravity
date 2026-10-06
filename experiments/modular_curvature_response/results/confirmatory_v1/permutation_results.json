@@ -1,0 +1,21 @@
+{
+  "H1_modular_information": {
+    "extreme_count": 0,
+    "n_permutations": 100000,
+    "observed_spearman": -0.5780420716404548,
+    "p_perm_two_sided": 9.99990000099999e-06,
+    "seed": 20261005,
+    "status": "ok",
+    "target": "delta_M_W"
+  },
+  "H2_modular_curvature": {
+    "extreme_count": 6737,
+    "n_permutations": 100000,
+    "observed_spearman": 0.5087529178356222,
+    "p_perm_two_sided": 0.06737932620673794,
+    "seed": 20261005,
+    "status": "ok",
+    "target": "delta_kappa_edge"
+  },
+  "hierarchical_testing": true
+}

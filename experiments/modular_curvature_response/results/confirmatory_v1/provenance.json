@@ -1,0 +1,8 @@
+{
+  "implementation_script": "/Users/dualcomputer/Bottom-up-Quantum-Gravity-bup-cosmology/experiments/modular_curvature_response/scripts/bup_modular_curvature_response_v1.py",
+  "implementation_script_sha256": "8d806fbacd4a4176b547696f5b7ebfcc84196f171d756c7fed548d040f412c98",
+  "ollivier_ricci_source_blob": "3fd6eceb9c107075c80abf9eefd8fa73db1b69cd",
+  "paper28_source_blob": "5fc9e845115a68135199e31f65324290ae0f210e",
+  "preregistration_commit": "c90bcc35df4f303149e60eaf9a4bb98c025128ff",
+  "preregistration_sha256": "71d51493492853e24742f0c0569e0a2d4742ddc46d030ae01539bde869e27e6e"
+}

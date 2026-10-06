@@ -1,0 +1,45 @@
+{
+  "J": 1.0,
+  "N": 10,
+  "P": 6,
+  "analysis_state": "0.5*(|psi(+t)><psi(+t)| + |psi(-t)><psi(-t)|)",
+  "dt": 0.35,
+  "entropy_log_base": "natural",
+  "eps_length": 1e-09,
+  "epsilons": [
+    -0.2,
+    -0.1,
+    -0.05,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "graph_density": 0.333,
+  "graph_mode": "frozen_baseline",
+  "h": 1.0,
+  "nominal_t": 2.0999999999999996,
+  "or_alpha": 0.5,
+  "or_backend": "internal",
+  "permutation_seed": 20261005,
+  "permutations": 100000,
+  "perturbation": "Ry(q, epsilon) applied to |+>^N before both +/-t evolutions",
+  "significance_alpha": 0.05,
+  "sites": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "subsystem_A": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

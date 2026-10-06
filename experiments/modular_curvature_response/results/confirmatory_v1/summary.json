@@ -1,0 +1,72 @@
+{
+  "H1": {
+    "extreme_count": 0,
+    "n_permutations": 100000,
+    "observed_spearman": -0.5780420716404548,
+    "p_perm_two_sided": 9.99990000099999e-06,
+    "seed": 20261005,
+    "status": "ok",
+    "target": "delta_M_W"
+  },
+  "H2": {
+    "extreme_count": 6737,
+    "n_permutations": 100000,
+    "observed_spearman": 0.5087529178356222,
+    "p_perm_two_sided": 0.06737932620673794,
+    "seed": 20261005,
+    "status": "ok",
+    "target": "delta_kappa_edge"
+  },
+  "claim_boundary": {
+    "Einstein_equation_claim": false,
+    "W_to_OR_is_pipeline_construction": true,
+    "continuum_claim": false,
+    "independent_curvature_source_claim": false,
+    "universality_claim": false
+  },
+  "classification": "MODULAR_INFORMATION_ALIGNMENT_SUPPORTED_CURVATURE_ALIGNMENT_NOT_SUPPORTED",
+  "n_conditions": 60,
+  "n_modular_rank_undefined": 0,
+  "n_ok": 60,
+  "robustness": {
+    "H1": {
+      "all_same_sign_as_full": true,
+      "full_spearman": -0.5780420716404548,
+      "leave_one_level_out": [
+        {
+          "excluded_epsilon": -0.2,
+          "same_sign_as_full": true,
+          "spearman": -0.5798194244401575
+        },
+        {
+          "excluded_epsilon": -0.1,
+          "same_sign_as_full": true,
+          "spearman": -0.5843738001359612
+        },
+        {
+          "excluded_epsilon": -0.05,
+          "same_sign_as_full": true,
+          "spearman": -0.5892042459851088
+        },
+        {
+          "excluded_epsilon": 0.05,
+          "same_sign_as_full": true,
+          "spearman": -0.5892042459851088
+        },
+        {
+          "excluded_epsilon": 0.1,
+          "same_sign_as_full": true,
+          "spearman": -0.5843738001359612
+        },
+        {
+          "excluded_epsilon": 0.2,
+          "same_sign_as_full": true,
+          "spearman": -0.5798194244401575
+        }
+      ],
+      "max_spearman": -0.5798194244401575,
+      "min_spearman": -0.5892042459851088,
+      "target": "delta_M_W"
+    }
+  }
+}
